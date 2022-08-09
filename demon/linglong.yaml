@@ -1,7 +1,7 @@
 package:
   id: org.deepin.demo
   name: deepin-demo
-  version: 0.0.4
+  version: 0.0.5
   kind: app
   description: |
     simple qt demo.
