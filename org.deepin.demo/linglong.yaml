@@ -1,7 +1,7 @@
 package:
   id: org.deepin.demo
   name: deepin-demo
-  version: 1.1.1
+  version: 1.1.2
   kind: app
   description: |
     simple qt demo.
@@ -17,7 +17,7 @@ depends:
 
 source:
   kind: git
-  url: "https://github.com/linuxdeepin/linglong-builder-demo.git"
+  url: "https://github.com/linux22in/linglong-builder-demo.git"
   commit: a3b89c3aa34c1aff8d7f823f0f4a87d5da8d4dc0
 
 build:
