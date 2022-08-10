@@ -1,0 +1,65 @@
+package:
+  id: org.deepin.album
+  version: 5.9.8
+  kind: app
+  description: |
+    album for deepin os
+
+runtime:
+  id: org.deepin.Runtime
+  version: 20.5.0
+
+source:
+  kind: local
+  patch:
+    - patches/fix-cmake-include-dir-and-install-prefix.patch
+
+depends:
+  - id: "udisks2-qt5"
+    version: 5.0.3
+    type: runtime
+  - id: "gio-qt"
+    version: 0.0.11
+    type: runtime
+  - id: freeimage
+    version: 3.18.0
+    type: runtime
+  - id: ffmpegthumbnailer
+    version: 2.1.1
+  - id: "image-editor"
+    version: 1.0.9
+    type: runtime
+  - id: icu
+    version: 63.1
+    type: runtime
+  - id: jxrlib 
+    version: 1.1.1
+    type: runtime
+  - id: openexr 
+    version: 2.2.1.4
+    type: runtime
+  - id: ilmbase
+    version: 2.2.1
+    type: runtime
+  - id: libraw
+    version: 0.19.2
+    type: runtime
+  - id: xcb-util
+    version: 0.3.8.1
+    type: runtime
+
+variable:
+  extra_args: |
+    -DCMAKE_BUILD_TYPE=Release \
+    -DAPP_VERSION=5.9.8 \
+    -DVERSION=5.9.8
+
+build:
+  kind: manual
+  manual:
+    configure: |
+      mkdir build
+      cd build
+      cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} ..
+      make -j6
+      make install -j
