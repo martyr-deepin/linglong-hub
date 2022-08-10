@@ -1,7 +1,7 @@
 package:
-  id: org.deepin.demo
+  id: org.deepin.demo4
   name: deepin-demo
-  version: 1.1.4
+  version: 1.1.3
   kind: app
   description: |
     simple qt demo.
@@ -11,13 +11,9 @@ runtime:
   version: 20.5.0
 
 depends:
+  - id: icu
     version: 63.1
     type: runtime
-    source:
-      kind: git
-      url: "https://github.com/whyandong/icu.git"
-      version: v23/63.1
-      commit: 0212323f88bfd4b1589eb36a537a7ae85695dbe9
 
 source:
   kind: git
