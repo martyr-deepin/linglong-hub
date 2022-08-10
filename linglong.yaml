@@ -1,65 +1,39 @@
 package:
-  id: org.deepin.album
-  version: 5.9.8
+  id: "blue-test"
+  name: "blue-test"
+  version: 0.1.1
   kind: app
-  description: |
-    album for deepin os
+  discription: |
+    gst plugins.
 
-runtime:
-  id: org.deepin.Runtime
+base:
+  id: org.deepin.base
   version: 20.5.0
 
-source:
-  kind: local
-  patch:
-    - patches/fix-cmake-include-dir-and-install-prefix.patch
-
+#pkg-kde-tools gettext graphviz 
 depends:
-  - id: "udisks2-qt5"
-    version: 5.0.3
-    type: runtime
-  - id: "gio-qt"
-    version: 0.0.11
-    type: runtime
-  - id: freeimage
-    version: 3.18.0
-    type: runtime
-  - id: ffmpegthumbnailer
-    version: 2.1.1
-  - id: "image-editor"
-    version: 1.0.9
-    type: runtime
-  - id: icu
-    version: 63.1
-    type: runtime
-  - id: jxrlib 
-    version: 1.1.1
-    type: runtime
-  - id: openexr 
-    version: 2.2.1.4
-    type: runtime
-  - id: ilmbase
-    version: 2.2.1
-    type: runtime
+  - id: qtbase
+    version: 5.11.3.15
+  - id: qtx11extras
+    version: 5.11.3
+  - id: qtdeclarative
+    version: 5.11.3
+  - id: gstreamer1.0
+    version: 1.14.6
+  - id: libdv
+    version: 1.0.0
   - id: libraw
     version: 0.19.2
-    type: runtime
-  - id: xcb-util
-    version: 0.3.8.1
-    type: runtime
+  - id: taglib
+    version: 1.11.1
+  - id: bzip2
+    version: 1.0.6
 
-variable:
-  extra_args: |
-    -DCMAKE_BUILD_TYPE=Release \
-    -DAPP_VERSION=5.9.8 \
-    -DVERSION=5.9.8
+source:
+  kind: git
+  url: "http://gerrit.uniontech.com/base/gst-plugins-good1.0"
+  version: 1.14.5
+  commit: 156aefdfed590fcd56b1442c4588ddf015126ef2
 
 build:
-  kind: manual
-  manual:
-    configure: |
-      mkdir build
-      cd build
-      cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} ..
-      make -j6
-      make install -j
+  kind: autotools
