@@ -3,7 +3,7 @@ on:
   pull_request_target:
     paths-ignore:
       - ".github/workflows/**"
-    types: [ opened, closed, synchronize ]
+    types: [ opened, synchronize ]
 
 concurrency:
   group: ${{ github.workflow }}-pull/${{ github.event.number }}
