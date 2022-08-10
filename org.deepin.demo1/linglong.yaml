@@ -11,7 +11,7 @@ runtime:
   version: 20.5.0
 
 depends:
- - id: icu
+  - id: icu
     version: 63.1
     type: runtime
     source:
