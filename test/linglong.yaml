@@ -1,0 +1,24 @@
+package:
+  id: org.deepin.test
+  name: deepin-test
+  version: 0.0.2
+  kind: app
+  description: |
+    simple qt demo.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 20.5.0
+
+depends:
+  - id: icu
+    version: 63.1
+    type: runtime
+
+source:
+  kind: git
+  url: "https://github.com/linuxdeepin/linglong-builder-demo.git"
+  commit: a3b89c3aa34c1aff8d7f823f0f4a87d5da8d4dc0
+
+build:
+  kind: qmake
