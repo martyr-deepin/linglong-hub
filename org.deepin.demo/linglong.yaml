@@ -11,14 +11,21 @@ runtime:
   version: 20.5.0
 
 depends:
-    - id: icu
+ - id: icu
     version: 63.1
     type: runtime
     source:
       kind: git
       url: "ssh://github.com/whyandong/icu.git"
       version: v23/63.1
-      commit: 0212323f88bfd4b1589eb36a537a7ae85695dbe9
+      commit: 500216817e728e96f554c8b290e50f3fc6a14343
+    build:
+      kind: autotools
+      manual:
+        configure: |
+          cd source
+          autoreconf -ivf
+          ./configure --prefix=${PREFIX}s
 
 source:
   kind: git
