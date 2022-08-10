@@ -19,6 +19,7 @@ depends:
       url: "https://github.com/whyandong/icu.git"
       version: v23/63.1
       commit: 0212323f88bfd4b1589eb36a537a7ae85695dbe9
+    build:
       kind: autotools
       manual:
         configure: |
