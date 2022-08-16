@@ -1,0 +1,16 @@
+name: Call build-linglong
+on:
+  pull_request_target:
+    paths-ignore:
+      - ".github/workflows/**"
+    types: [ opened, synchronize ]
+
+concurrency:
+  group: ${{ github.workflow }}-pull/${{ github.event.number }}
+  cancel-in-progress: true
+
+jobs:
+  check_job:
+    uses: linuxdeepin/.github/.github/workflows/build-linglong.yml@master
+    secrets:
+      BridgeToken: ${{ secrets.BridgeToken }}
