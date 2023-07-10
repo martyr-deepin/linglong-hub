@@ -12,5 +12,4 @@ concurrency:
 jobs:
   check_job:
     uses: linuxdeepin/.github/.github/workflows/build-linglong.yml@master
-    secrets:
-      BridgeToken: ${{ secrets.BridgeToken }}
+    secrets: inherit
