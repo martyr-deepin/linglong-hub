@@ -1,0 +1,19 @@
+package:
+  id: eu.ototu.quteqoin
+  name: quteqoin
+  version: 1.1.6
+  kind: app
+  description: |
+    Quteqoin is a chat application dedicated to free boards.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/dguihal/quteqoin.git"
+  commit: fe7c9d62678c4bb6df37e4cb44505f4805a93614
+
+build:
+  kind: qmake
