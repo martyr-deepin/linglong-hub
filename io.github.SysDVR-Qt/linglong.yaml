@@ -1,0 +1,19 @@
+package:
+  id: io.github.SysDVR-Qt
+  name: SysDVR-Qt
+  version: 0.2.1
+  kind: app
+  description: |
+    Stream Switch games to your PC via USB or network
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Parnassius/SysDVR-Qt.git
+  commit: 4c61320c2a96595c9efd9637428802221766abee
+
+build:
+  kind: qmake
