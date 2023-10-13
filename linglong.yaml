@@ -1,0 +1,24 @@
+package:
+  id: org.deepin.notes
+  name: deepin-notes
+  version: 0.0.1
+  kind: app
+  description: |
+    notes.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: icu
+    version: 63.1
+    type: runtime
+
+source:
+  kind: git
+  url: "https://github.com/nuttyartist/notes.git" 
+  commit: bd69c2165261df38689a26241a3db3d3d8cd9189
+
+build:
+  kind: cmake
