@@ -1,0 +1,19 @@
+package:
+  id: io.github.notes
+  name: notes
+  version: 2.2.1
+  kind: app
+  description: |
+    Notes is an open source and cross-platform note-taking app that is both beautiful and powerful.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/nuttyartist/notes.git
+  commit: bd69c2165261df38689a26241a3db3d3d8cd9189
+
+build:
+  kind: cmake
