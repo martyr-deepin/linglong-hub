@@ -1,0 +1,12 @@
+[Desktop Entry]
+Categories=Office;Development;
+Comment=Simple cross-platform text editor based on Qt and QScintilla
+Exec=ll-cli run io.github.textosaurus --exec textosaurus %F
+GenericName=Text editor
+Icon=textosaurus
+MimeType=text/plain;text/xml;
+Name=Textosaurus
+Terminal=false
+Type=Application
+Version=1.0
+X-linglong=io.github.textosaurus

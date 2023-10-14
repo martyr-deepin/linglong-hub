@@ -1,0 +1,14 @@
+{
+    "appid": "io.github.textosaurus",
+    "arch": [
+        "x86_64"
+    ],
+    "base": "/latest/x86_64",
+    "description": "Simple cross-platform text editor based on Qt and QScintilla\n",
+    "kind": "app",
+    "module": "devel",
+    "name": "textosaurus",
+    "runtime": "org.deepin.Runtime/23.0.0/x86_64",
+    "size": 0,
+    "version": "0.9.12"
+}
