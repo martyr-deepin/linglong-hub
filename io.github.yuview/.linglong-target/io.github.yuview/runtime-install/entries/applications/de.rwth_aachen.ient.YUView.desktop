@@ -1,0 +1,11 @@
+[Desktop Entry]
+Categories=AudioVideo;
+Exec=ll-cli run io.github.yuview --exec YUView %F
+GenericName=YUV Video Player
+Icon=de.rwth_aachen.ient.YUView
+MimeType=application/YUView;
+Name=YUView
+Terminal=false
+Type=Application
+X-KDE-StartupNotify=true
+X-linglong=io.github.yuview

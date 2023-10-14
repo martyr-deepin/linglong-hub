@@ -1,0 +1,3 @@
+module GSettings
+plugin GSettingsQmlPlugin
+typeinfo plugins.qmltypes

@@ -1,0 +1,13 @@
+prefix=/runtime
+exec_prefix=${prefix}
+libdir=${prefix}/lib/x86_64-linux-gnu
+includedir=${prefix}/include/x86_64-linux-gnu/qt5
+
+
+Name: Qt5 QuickControls2
+Description: Qt QuickControls2 module
+Version: 5.15.7
+Libs: -lQt5QuickControls2 
+Cflags: -DQT_QUICKCONTROLS2_LIB -I${includedir}/QtQuickControls2 -I${includedir}
+Requires: Qt5Core Qt5Gui Qt5Quick
+
