@@ -1,10 +1,10 @@
+
 package:
-  id: org.deepin.qTsConverter
-  name: qTsConverter
+  id: org.deepin.torrent-file-editor
+  name: torrent-file-editor
   version: 0.0.1
   kind: app
   description: |
-    simple qt demo.
 
 runtime:
   id: org.deepin.Runtime
@@ -17,7 +17,6 @@ depends:
 
 source:
   kind: local
-  
 
 build:
   kind: cmake
