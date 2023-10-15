@@ -1,0 +1,1 @@
+../../../../../../../../files/share/qtcreator/templates/wizards/projects/qml-app-template/src/main/main.cpp

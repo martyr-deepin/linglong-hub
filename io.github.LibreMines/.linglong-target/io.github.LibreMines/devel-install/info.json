@@ -1,0 +1,14 @@
+{
+    "appid": "io.github.LibreMines",
+    "arch": [
+        "x86_64"
+    ],
+    "base": "/latest/x86_64",
+    "description": "simple qt demo.\n",
+    "kind": "app",
+    "module": "devel",
+    "name": "LibreMines",
+    "runtime": "org.deepin.Runtime/23.0.0/x86_64",
+    "size": 0,
+    "version": "1.9.1"
+}

@@ -1,0 +1,17 @@
+Usage with CMake on Debian systems
+==================================
+
+Starting with 4.0.0+ds-1, the Debian package provides CMake config files
+for downstream use.
+
+To use fmtlib in your CMake project, include 'fmt' package and link with
+'fmt::fmt' target, e.g.:
+
+-------------------8<-------------------
+project(libfmt-client)
+
+find_package(fmt REQUIRED CONFIG)
+
+add_executable(client a.cpp)
+target_link_libraries(client fmt::fmt)
+------------------->8-------------------

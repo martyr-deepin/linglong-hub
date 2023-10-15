@@ -1,0 +1,13 @@
+prefix=/runtime
+exec_prefix=${prefix}
+libdir=${prefix}/lib/x86_64-linux-gnu
+includedir=${prefix}/include/x86_64-linux-gnu/qt5
+
+
+Name: Qt5 Widgets
+Description: Qt Widgets module
+Version: 5.15.7
+Libs: -L${libdir} -lQt5Widgets 
+Cflags: -DQT_WIDGETS_LIB -I${includedir}/QtWidgets -I${includedir}
+Requires: Qt5Core Qt5Gui
+

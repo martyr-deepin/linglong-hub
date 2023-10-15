@@ -1,0 +1,10 @@
+[Desktop Entry]
+Categories=Game;LogicGame
+Comment=A Qt5 based Minesweeper game
+Exec=ll-cli run io.github.LibreMines --exec libremines
+Icon=libremines
+Keywords=Minesweeper;mines
+Name=LibreMines
+Terminal=false
+Type=Application
+X-linglong=io.github.LibreMines
