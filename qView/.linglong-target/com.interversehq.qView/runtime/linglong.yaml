@@ -1,0 +1,59 @@
+package:
+  id: org.deepin.Runtime
+  kind: runtime
+  version: 23.0.0.18 
+  description: |
+    runtime test qt 5.15.7
+
+base:
+  id: org.deepin.base/23.0.0
+
+depends:
+  - id: qtbase/5.15.7
+  - id: qttranslations/5.15.7
+  - id: qt3d/5.15.7
+  - id: qtcharts/5.15.7
+  - id: qtconnectivity/5.15.7
+  - id: qtgamepad/5.15.7
+  - id: qtsensors/5.15.7
+  - id: qtspeech/5.15.7
+  - id: qtvirtualkeyboard/5.15.7
+  - id: qtserialport/5.15.7
+  - id: qtnetworkauth/5.15.7
+  - id: qttools/5.15.7
+  - id: qtx11extras/5.15.7
+  - id: qtdeclarative/5.15.7
+  - id: qtsvg/5.15.7
+  - id: qtscript/5.15.7
+  - id: qtgraphicaleffects/5.15.7
+  - id: qtquickcontrols/5.15.7
+  - id: qtquickcontrols2/5.15.7
+  - id: qtxmlpatterns/5.15.7
+  - id: qtwayland/5.15.7
+  - id: qtmultimedia/5.15.7
+  - id: qtwebchannel/5.15.7
+  - id: qtwebsockets/5.15.7
+  - id: qtimageformats/5.15.7
+  - id: qtlocation/5.15.7
+  - id: dtkcommon/5.6.0.3
+  - id: dtkcore/5.6.0.9
+  - id: dtkgui/5.6.0.13
+  - id: dtkwidget/5.6.0.6
+  - id: dtkdeclarative/5.6.0.7
+  - id: spdlog/1.10.0
+  - id: fmtlib/10.1.2
+  - id: qt5integration/5.6.0.5
+  - id: qt5platform-plugins/5.6.0.5
+  - id: libqtxdg/3.6.0.1
+  - id: double-conversion/3.1.0.3
+  - id: deepin-shortcut-viewer/5.0.6.1
+  - id: fcitx-qt5/1.2.6.6
+  - id: gsettings-qt/0.3.1.1
+  - id: linglong-config/0.0.1.2
+
+
+build:
+  kind: manual
+  manual:
+    configure: |
+      echo skip configure

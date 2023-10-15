@@ -1,0 +1,14 @@
+{
+    "appid": "com.interversehq.qView",
+    "arch": [
+        "x86_64"
+    ],
+    "base": "/latest/x86_64",
+    "description": "QVIEW.\n",
+    "kind": "app",
+    "module": "runtime",
+    "name": "qView",
+    "runtime": "org.deepin.Runtime/23.0.0/x86_64",
+    "size": 72449079,
+    "version": "0.0.1"
+}

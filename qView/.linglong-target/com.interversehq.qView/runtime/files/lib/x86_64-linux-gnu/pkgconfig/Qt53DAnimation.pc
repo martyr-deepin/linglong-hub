@@ -1,0 +1,13 @@
+prefix=/runtime
+exec_prefix=${prefix}
+libdir=${prefix}/lib/x86_64-linux-gnu
+includedir=${prefix}/include/x86_64-linux-gnu/qt5
+
+
+Name: Qt5 3DAnimation
+Description: Qt 3DAnimation module
+Version: 5.15.7
+Libs: -lQt53DAnimation 
+Cflags: -DQT_3DANIMATION_LIB -I${includedir}/Qt3DAnimation -I${includedir}
+Requires: Qt5Core Qt5Gui Qt53DCore Qt53DRender
+

@@ -1,0 +1,11 @@
+prefix=/runtime
+exec_prefix=${prefix}
+libdir=${prefix}/lib/x86_64-linux-gnu
+includedir=${prefix}/include/dtk5/DWidget
+
+Name: dtkwidget
+Description: Deepin Tool Kit dtkwidget header files
+Version: 5.6.12
+Libs: -L${libdir} -ldtkwidget
+Cflags: -I${includedir}
+Requires: dtkcore dtkgui Qt5Core Qt5Widgets Qt5DBus Qt5Network Qt5PrintSupport
