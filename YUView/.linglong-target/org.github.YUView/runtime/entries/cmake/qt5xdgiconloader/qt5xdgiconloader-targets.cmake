@@ -1,1 +1,0 @@
-../../../files/share/cmake/qt5xdgiconloader/qt5xdgiconloader-targets.cmake

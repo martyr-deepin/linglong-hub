@@ -1,1 +1,0 @@
-../../../../../../files/share/qt5/doc/global/template/scripts/main.js

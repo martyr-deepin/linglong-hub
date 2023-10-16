@@ -1,7 +1,0 @@
-[Desktop Entry]
-Categories=DTK;Development;
-Exec=/runtime/bin/dtk-exhibition
-Icon=example
-Name=DTK Exhibition
-Type=Application
-X-Deepin-Vendor=user-custom

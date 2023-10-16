@@ -1,8 +1,0 @@
-[Desktop Entry]
-Categories=DTK;Development;
-Exec=ll-cli run org.deepin.Runtime --exec /runtime/bin/dtk-exhibition
-Icon=example
-Name=DTK Exhibition
-Type=Application
-X-Deepin-Vendor=user-custom
-X-linglong=org.deepin.Runtime
