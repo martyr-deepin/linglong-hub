@@ -1,0 +1,13 @@
+QT.dtkdeclarative.VERSION = 5.6.8
+QT.dtkdeclarative.MAJOR_VERSION = 5
+QT.dtkdeclarative.MINOR_VERSION = 6
+QT.dtkdeclarative.PATCH_VERSION = 8
+QT.dtkdeclarative.name = dtkdeclarative
+QT.dtkdeclarative.module = dtkdeclarative
+QT.dtkdeclarative.libs = /runtime/lib/x86_64-linux-gnu
+QT.dtkdeclarative.includes = /runtime/include/dtk5/DDeclarative
+QT.dtkdeclarative.frameworks =
+QT.dtkdeclarative.depends = core dbus xml gui dtkcore dtkgui quick quick_private
+QT.dtkdeclarative.module_config = v2 ltcg
+QT.dtkdeclarative.DEFINES = 
+QT_MODULES +=

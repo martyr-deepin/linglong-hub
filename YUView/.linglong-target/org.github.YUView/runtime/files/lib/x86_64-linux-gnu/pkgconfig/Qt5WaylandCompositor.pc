@@ -1,0 +1,13 @@
+prefix=/runtime
+exec_prefix=${prefix}
+libdir=${prefix}/lib/x86_64-linux-gnu
+includedir=${prefix}/include/x86_64-linux-gnu/qt5
+
+
+Name: Qt5 WaylandCompositor
+Description: Qt WaylandCompositor module
+Version: 5.15.7
+Libs: -lQt5WaylandCompositor 
+Cflags: -DQT_WAYLANDCOMPOSITOR_LIB -I${includedir}/QtWaylandCompositor -I${includedir}
+Requires: Qt5Core Qt5Gui Qt5Quick Qt5Qml
+

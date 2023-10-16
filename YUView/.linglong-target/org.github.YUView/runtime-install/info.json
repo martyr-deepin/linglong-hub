@@ -1,0 +1,14 @@
+{
+    "appid": "org.github.YUView",
+    "arch": [
+        "x86_64"
+    ],
+    "base": "/latest/x86_64",
+    "description": "YuView.\n",
+    "kind": "app",
+    "module": "runtime",
+    "name": "YuView",
+    "runtime": "org.deepin.Runtime/23.0.0/x86_64",
+    "size": 77018081,
+    "version": "0.0.1"
+}

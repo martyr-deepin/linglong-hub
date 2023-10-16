@@ -1,0 +1,76 @@
+.\" Hey, Emacs! This is -*-nroff-*- you know...
+.\"
+.\" icuinfo.1: manual page for the icuinfo utility
+.\"
+.\" Copyright (C) 2005-2006 International Business Machines Corporation and others
+.\"
+.TH ICUINFO 1 "1 May 2010" "ICU MANPAGE" "ICU 63.1 Manual"
+.SH NAME
+.B icuinfo
+\- Shows some basic info about the current ICU
+.SH SYNOPSIS
+.B icuinfo
+[
+.BR "\-h\fP, \fB\-?\fP, \fB\-\-help"
+]
+[
+.BR "\-V\fP, \fB\-\-version"
+]
+[
+.BR "\-c\fP, \fB\-\-copyright"
+]
+[
+.BI "\-i\fP, \fB\-\-icudatadir" " directory"
+]
+[
+.BR "\-v\fP, \fB\-\-verbose"
+]
+[
+.BI "\-L\fP, \fB\-\-list-plugins"
+]
+[
+.BI "\-m\fP, \fB\-\-milisecond-time"
+]
+[
+.BI "\-K\fP, \fB\-\-cleanup"
+]
+.SH DESCRIPTION
+.B icuinfo
+prints basic information about the current version of ICU.
+.SH OPTIONS
+.TP
+.BR "\-h\fP, \fB\-?\fP, \fB\-\-help"
+Print help about usage and exit.
+.TP
+.BR "\-V\fP, \fB\-\-version"
+Print the version of
+.B icuinfo
+and exit.
+.TP
+.BR "\-c\fP, \fB\-\-copyright"
+Embeds the standard ICU copyright into the
+.IR output-file .
+.TP
+.BR "\-v\fP, \fB\-\-verbose"
+Display extra informative messages during execution.
+.TP
+.BI "\-i\fP, \fB\-\-icudatadir" " directory"
+Look for any necessary ICU data files in
+.IR directory .
+For example, the file
+.B pnames.icu
+must be located when ICU's data is not built as a shared library.
+The default ICU data directory is specified by the environment variable
+.BR ICU_DATA .
+Most configurations of ICU do not require this argument.
+.TP
+.BI "\-L\fP, \fB\-\-list-plugins"
+If specified, list and diagnose issues with ICU plugins.
+.TP
+.BI "\-K\fP, \fB\-\-cleanup"
+Attempt to unload plugins before exiting.
+.TP
+.BI "\-m\fP, \fB\-\-milisecond-time"
+Print the current UTC time in milliseconds.
+.SH COPYRIGHT
+Copyright (C) 2010 International Business Machines Corporation and others

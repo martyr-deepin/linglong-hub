@@ -1,0 +1,24 @@
+package:
+  id: org.github.YUView
+  name: YuView
+  version: 0.0.1
+  kind: app
+  description: |
+    YuView.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: icu
+    version: 63.1
+    type: runtime
+
+source:
+  kind: git
+  url: "https://github.com/IENT/YUView.git"
+  commit: 3805e69cf5376b8bd8e416fbfc1793eb9fa3802e
+
+build:
+  kind: qmake
