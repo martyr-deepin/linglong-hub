@@ -1,0 +1,20 @@
+package:
+  id: io.github.tiny-image-finder
+  name: tiny-image-finder
+  version: 0.0.1
+  kind: app
+  description: |
+    Find all images in selected path and show its previews.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/sergey-levin/tiny-image-finder.git"
+  commit: 359870d6be31664a1ed9a65b38151bb8d1fc30cc
+
+build:
+  kind: cmake
