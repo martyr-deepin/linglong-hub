@@ -1,0 +1,20 @@
+package:
+  id: com.gitlab.cutecom.cutecom
+  name: Cutecom
+  version: 0.51.0
+  kind: app
+  description: |
+    CuteCom is a graphical serial terminal, like minicom.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://gitlab.com/cutecom/cutecom.git"
+  commit: fe55f279a7da0b19948ebff6d1fb2990cccfd4fb
+
+build:
+  kind: cmake
