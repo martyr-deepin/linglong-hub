@@ -1,0 +1,19 @@
+package:
+  id: io.github.Redpanda
+  name: github.Redpanda
+  version: 0.0.1
+  kind: app
+  description: |
+    Redpanda IDE for new learner!
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/royqh1979/RedPanda-CPP.git"
+  commit: 814f3a28dbc0c987c5e053776ff1811a70e39900
+
+build:
+  kind: qmake
