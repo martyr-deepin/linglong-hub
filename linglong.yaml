@@ -1,0 +1,23 @@
+package:
+  id: org.deepin.Furnace
+  name: Furnace
+  version: 0.0.1
+  kind: app
+  description: |
+    simple qt demo.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: icu
+    version: 63.1
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/tildearrow/furnace.git
+  commit: fbc34fae02b2751b1ca21d71cac74af5e7aa24dd
+build:
+  kind: cmake
