@@ -1,0 +1,25 @@
+package:
+  id: tesseract
+  name: tesseract
+  version: 4.1.3
+  kind: lib
+  description: |
+    This package contains an OCR engine - libtesseract and a command line program - tesseract.
+    Tesseract was originally developed at Hewlett-Packard Laboratories Bristol UK and at Hewlett-Packard Co, Greeley Colorado USA between 1985 and 1994, with some more changes made in 1996 to port to Windows, and some C++izing in 1998. In 2005 Tesseract was open sourced by HP. From 2006 until November 2018 it was developed by Google.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+depends:
+  - id: automake/1.16.5
+  - id: pkgconf/2.0.3
+  - id: libtool/2.4.2
+
+source:
+  kind: git
+  url: https://github.com/tesseract-ocr/tesseract.git
+  commit: f38e7a7ba850b668d4505dd4c712238d7ec63ca8
+
+build:
+    kind: autotools
