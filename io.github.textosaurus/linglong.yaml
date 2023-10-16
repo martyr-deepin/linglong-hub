@@ -1,0 +1,19 @@
+package:
+  id: io.github.textosaurus
+  name: textosaurus
+  version: 0.9.12
+  kind: app
+  description: |
+    Simple cross-platform text editor based on Qt and QScintilla
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/martinrotter/textosaurus.git"
+  commit: ad410b75d69173306bd9c81ca51b3a4531305d09
+
+build:
+  kind: qmake
