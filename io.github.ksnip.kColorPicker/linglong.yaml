@@ -1,0 +1,22 @@
+package:
+  id: kColorPicker
+  name: kColorPicker
+  version: 0.2.0
+  kind: lib
+  description: |
+    QToolButton with color popup menu with lets you select a color. The popup features a color dialog button which can be used to add custom colors to the popup menu.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/ksnip/kColorPicker.git"
+  commit: 15e16374e51153006d3400cb88066d5272698743
+
+
+build:
+  kind: cmake
