@@ -1,0 +1,19 @@
+package:
+  id: io.github.android-file-transfer-linux
+  name: android-file-transfer
+  version: 0.0.1
+  kind: app
+  description: |
+    The MTP's file-transfer by QT.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/whoozle/android-file-transfer-linux.git"
+  commit: a9495bfd712a72011449af6a6d40bc4fc41592e4
+
+build:
+  kind: cmake
