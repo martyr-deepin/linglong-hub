@@ -1,0 +1,19 @@
+package:
+  id: com.interversehq.qView
+  name: qView
+  version: 6.1.0
+  kind: app
+  description: |
+    qView is an image viewer designed with minimalism and usability in mind.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/jurplel/qView.git"
+  commit: e37c8eaef5ac6def4d9f42f33b1e661424c1b20b
+
+build:
+  kind: qmake
