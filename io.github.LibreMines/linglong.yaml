@@ -1,0 +1,19 @@
+package:
+  id: io.github.LibreMines
+  name: LibreMines
+  version: 1.9.1
+  kind: app
+  description: |
+    A Free/Libre and Open Source Software Qt based Minesweeper game available for GNU/Linux, FreeBSD and Windows systems.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Bollos00/LibreMines.git"
+  commit: fe9c638d4af2555d2e1315314a60b7987ec44e1d
+
+build:
+  kind: cmake
