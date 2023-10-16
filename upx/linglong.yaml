@@ -1,0 +1,20 @@
+package:
+  id: upx
+  name: upx
+  version: 4.1.0
+  kind: lib
+  description: |
+    pack tool.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/upx/upx.git"
+  commit: 2b371e99bd712ba98cf02bf0c433fab82e88c817
+
+build:
+  kind: cmake
