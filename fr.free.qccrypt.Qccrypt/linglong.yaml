@@ -1,0 +1,27 @@
+package:
+  id: fr.free.qccrypt.Qccrypt
+  name: Qccrypt
+  version: 0.9.1
+  kind: app
+  description: |
+    QT based graphical frontend for ccrypt tool. ccrypt is a tool for encrypting and decrypting files and streams.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: ccrypt/1.11.0
+    type: runtime
+
+source:
+  kind: archive
+  url: http://qccrypt.free.fr/download/qccrypt-0.9.1-src.zip
+  digest: be5de607330d152eb9ec75305866f9e0913c397a352c134cf4aa738b99614e69
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd qccrypt-0.9.1-src
+      qmake -makefile ${conf_args} ${extra_args}
