@@ -1,7 +1,7 @@
 package:
   id: io.github.yuview
   name: yuview
-  version: 2.14
+  version: 2.14.0
   kind: app
   description: |
     QT based, cross-platform YUV player with an advanced analytic toolset.
