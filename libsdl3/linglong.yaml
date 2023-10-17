@@ -1,0 +1,18 @@
+package:
+  id: libsdl3
+  name: libsdl3
+  version: 3.0.0
+  kind: lib
+  description: |
+    Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D. It is used by video playback software, emulators, and popular games including Valve's award winning catalog and many Humble Bundle games.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/libsdl-org/SDL.git"
+  commit: b733adb503407efffe249bfad86624fb7bdb25be
+build:
+  kind: cmake
