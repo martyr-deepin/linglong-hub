@@ -1,0 +1,42 @@
+package:
+  id: com.github.lib.adwaita-qt
+  name: adwaita-qt
+  version: 1.4.2
+  kind: app
+  description: |
+    adwaita-qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: icu
+    version: 63.1.0
+    type: runtime
+
+
+source:
+  kind: git
+  url: https://github.com/FedoraQt/adwaita-qt.git
+  version: master
+  commit: 0a774368916def5c9889de50f3323dec11de781e
+
+
+build:
+  kind: cmake
+  manual:
+    configure: |
+      mkdir build && cd build
+    build: |
+      cmake ..
+      make
+    install: |
+      make install
+
+
+
+
+
+
+
