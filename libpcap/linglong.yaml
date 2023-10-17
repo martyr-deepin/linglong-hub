@@ -1,0 +1,19 @@
+package:
+  id: libpcap
+  name: libpcap
+  version: 0.0.1
+  kind: lib
+  description: |
+    Libpcap, a system-independent interface for user-level packet capture. libpcap provides a portable framework for low-level network monitoring. Applications include network statistics collection, security monitoring, network debugging, etc.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/the-tcpdump-group/libpcap.git"
+  commit: f8fa785dc5bfe928f1adb4a2e49cd14be19ee890
+
+build:
+  kind: cmake
