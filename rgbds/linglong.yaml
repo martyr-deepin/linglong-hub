@@ -1,0 +1,21 @@
+package:
+  id: rgbds
+  name: rgbds
+  version: 0.6.1
+  kind: lib
+  description: |
+    rgbds.
+
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/gbdev/rgbds.git"
+  commit: 7a39e9e569783962d54265809d8ec654b91c318b
+
+build:
+  kind: cmake
+
