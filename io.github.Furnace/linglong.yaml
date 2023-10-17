@@ -4,6 +4,8 @@ package:
   version: 0.0.1
   kind: app
   description: |
+  Furnace - the biggest chiptune tracker ever made!
+  it allows you to create songs using a music tracker interface for several computer/game console/arcade sound chips.
 
 runtime:
   id: org.deepin.Runtime
