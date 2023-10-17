@@ -1,0 +1,24 @@
+package:
+  id: io.github.ksnip
+  name: ksnip
+  version: 1.11.0
+  kind: app
+  description: |
+    Ksnip is a Qt-based cross-platform screenshot tool that provides many annotation features for your screenshots.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: kImageAnnotator
+    version: 0.7.0
+  - id: kColorPicker
+    version: 0.2.0
+
+source:
+  kind: git
+  url: "https://github.com/ksnip/ksnip.git"
+  commit: 1f9616fea53fb3dcb77a28e89535efdbd8cccbf0
+build:
+  kind: cmake
