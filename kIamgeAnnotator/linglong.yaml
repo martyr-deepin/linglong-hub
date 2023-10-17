@@ -1,0 +1,24 @@
+package:
+  id: kImageAnnotator 
+  name: kImageAnnotator 
+  version: 0.7.0
+  kind: lib
+  description: |
+    Tool for annotating images.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: kColorPicker
+    version: 0.2.0
+
+source:
+  kind: git
+  url: "https://github.com/ksnip/kImageAnnotator.git"
+  commit: 057595d478b31f50b3af1d4dafcacf052fc92541
+
+
+build:
+  kind: cmake
