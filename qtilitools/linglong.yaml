@@ -1,0 +1,22 @@
+package:
+  id: qtilitools
+  name: qtilitools
+  version: 0.1.1
+  kind: lib
+  description: |
+    Scripts/commands used in the Qtilities organization.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/qtilities/qtilitools.git
+  version: master
+  commit: ea30c040705bf65bafde32586a453ee0f011daa8
+
+
+build:
+  kind: cmake
