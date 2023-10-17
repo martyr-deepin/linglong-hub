@@ -1,0 +1,24 @@
+package:
+  id: libopenrazer
+  name: libopenrazer
+  version: 0.2.0
+  kind: lib
+  description: |
+    Qt wrapper around the D-Bus API from OpenRazer,RazerGenie need this dependency.
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/z3ntu/libopenrazer.git
+  commit: c8f2c3f242edc79b313e55b2d7b8a9858aaa98eb
+build:
+  kind: manual
+  manual: 
+    configure: |
+      cd build && meson ..
+    build: |
+      ninja
+    install: |
+      ninja install
