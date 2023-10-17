@@ -1,0 +1,20 @@
+package:
+  id: net.blumia.pineapple-pictures
+  name: pineapple-pictures
+  version: 0.7.2
+  kind: app
+  description: |
+    Pineapple-pictures is a local photoviewer.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/BLumia/pineapple-pictures.git"
+  commit: 9677fed3f26db0962d234e679ff88a08762476ab
+
+build:
+  kind: cmake
