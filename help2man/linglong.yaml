@@ -1,0 +1,19 @@
+package:
+  id: help2man
+  name: help2man
+  version: 1.14.5
+  kind: lib
+  description: |
+    help2man is a script to create simple man pages from the --help and --version output of programs.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/mwcampbell/help2man.git"
+  commit: 386d991cd431e13b82754c1ad02caad29e8b1336
+
+build:
+  kind: autotools
