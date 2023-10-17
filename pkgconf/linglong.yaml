@@ -1,0 +1,27 @@
+package:
+  id: pkgconf
+  name: pkgconf
+  version: 2.0.3
+  kind: lib
+  description: |
+    package compiler and linker metadata toolkit.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+depends:
+  - id: automake/1.16.5
+  - id: libtool/2.4.2
+
+source:
+  kind: git
+  url: https://github.com/pkgconf/pkgconf.git
+  commit: a6fb59a0ed86cfe302a2916cf93e9b032b95c8c5
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      ./autogen.sh
+      ./configure ${conf_args} ${extra_args}
