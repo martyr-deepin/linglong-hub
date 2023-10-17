@@ -1,0 +1,26 @@
+package:
+  id: automake
+  name: automake
+  version: 1.16.5
+  kind: lib
+  description: |
+    Tool for generating GNU Standards-compliant Makefiles.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+depends:
+  - id: texinfo/6.8.1
+
+source:
+  kind: git
+  url: https://github.com/autotools-mirror/automake.git
+  commit: 18416d641dc5c220ec82283ff43cdaa7cb0d619c
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      ./bootstrap
+      ./configure ${conf_args} ${extra_args}

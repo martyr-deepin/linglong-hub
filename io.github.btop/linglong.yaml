@@ -1,0 +1,19 @@
+package:
+  id: io.github.btop
+  name: github.btop
+  version: 0.0.1
+  kind: app
+  description: |
+    btop for Linux see the system.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/aristocratos/btop.git"
+  commit: 2a864f6f2ea60df16b3f015885eb3c18a48b9b78
+
+build:
+  kind: cmake
