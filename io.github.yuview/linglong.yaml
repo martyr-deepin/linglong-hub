@@ -1,0 +1,20 @@
+package:
+  id: io.github.yuview
+  name: yuview
+  version: 2.14.0
+  kind: app
+  description: |
+    QT based, cross-platform YUV player with an advanced analytic toolset.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/IENT/YUView.git"
+  commit: 12742078d011a5b56410e6fad40fdf514ce9a857
+
+build:
+  kind: qmake
