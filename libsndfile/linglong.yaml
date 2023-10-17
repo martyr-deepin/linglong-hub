@@ -1,0 +1,21 @@
+package:
+  id: libsndfile
+  name: libsndfile
+  kind: lib
+  version: 1.2.2
+  description: |
+    A C library for reading and writing sound files containing sampled audio data.
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/libsndfile/libsndfile.git
+  commit: 7ed4773251c26653b5ee1a0815bfe8b213c14b54
+
+
+build:
+  kind: cmake
+
