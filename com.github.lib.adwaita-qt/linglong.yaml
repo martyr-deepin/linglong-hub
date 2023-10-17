@@ -1,5 +1,5 @@
 package:
-  id: com.github.lib.adwaita-qt
+  id: io.github.MediaWriter.adwaita-qt
   name: adwaita-qt
   version: 1.4.2
   kind: app
@@ -25,18 +25,3 @@ source:
 
 build:
   kind: cmake
-  manual:
-    configure: |
-      mkdir build && cd build
-    build: |
-      cmake ..
-      make
-    install: |
-      make install
-
-
-
-
-
-
-
