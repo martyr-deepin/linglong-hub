@@ -1,0 +1,19 @@
+package:
+  id: io.github.qjackctl
+  name: github.qjackctl
+  version: 0.0.1
+  kind: app
+  description: |
+    qjackctl a simple Qt application to control the JACK sound server
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/rncbc/qjackctl.git"
+  commit: 55bcc161b27d7363a08e0822b104390764f86963
+
+build:
+  kind: cmake
