@@ -1,0 +1,19 @@
+package:
+  id: double-convention
+  name: double-convention
+  version: 3.3.0
+  kind: lib
+  description: |
+    This project (double-conversion) provides binary-decimal and decimal-binary routines for IEEE doubles.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/google/double-conversion.git"
+  commit: 68ab78898b20067b9354fe4847f31ec8f0d71bcd
+
+build:
+  kind: cmake
