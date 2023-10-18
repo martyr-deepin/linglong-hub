@@ -1,10 +1,10 @@
 package:
-  id: io.github.MediaWriter.adwaita-qt
+  id: adwaita-qt
   name: adwaita-qt
   version: 1.4.2
   kind: lib
   description: |
-    adwaita-qt.
+    A native style to bend Qt5/Qt6 applications to look like they belong into GNOME Shell. This style provides all four variants of GTK Adwaita theme.
 
 runtime:
   id: org.deepin.Runtime
