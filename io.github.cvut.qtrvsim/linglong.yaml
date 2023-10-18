@@ -1,0 +1,22 @@
+package:
+  id: io.github.cvut.qtrvsim
+  name: qtrvsim
+  version: 0.9.5
+  kind: app
+  description: |
+    RISC-V CPU simulator for education purposes
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+source:
+  kind: git
+  url: "https://github.com/cvut/qtrvsim.git"
+  commit: ea0a68eb0fde014839a31a0430527e1755b76458
+build:
+  kind: manual
+  manual:
+    configure: |
+      cmake -DCMAKE_BUILD_TYPE=Release 
+    install: |
+      make
