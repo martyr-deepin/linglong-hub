@@ -1,0 +1,19 @@
+package:
+  id: io.github.Furnace
+  name: Furnace
+  version: 0.0.1
+  kind: app
+  description: |
+  Furnace - the biggest chiptune tracker ever made!
+  it allows you to create songs using a music tracker interface for several computer/game console/arcade sound chips.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/tildearrow/furnace.git
+  commit: fbc34fae02b2751b1ca21d71cac74af5e7aa24dd
+build:
+  kind: cmake
