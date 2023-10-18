@@ -1,0 +1,28 @@
+package:
+  id: adwaita-qt
+  name: adwaita-qt
+  version: 1.4.2
+  kind: lib
+  description: |
+    A native style to bend Qt5/Qt6 applications to look like they belong into GNOME Shell.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/FedoraQt/adwaita-qt.git
+  commit: 0a774368916def5c9889de50f3323dec11de781e
+
+
+build:
+  kind: cmake
+
+
+
+
+
+
+
