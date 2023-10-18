@@ -1,0 +1,23 @@
+package:
+  id: qtkeychain
+  name: qtkeychain
+  version: 0.14.0
+  kind: lib
+  description: |
+    QtKeychain is a Qt API to store passwords and other secret data securely.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/frankosterfeld/qtkeychain.git
+  commit: 01a900bad178f69fcb0f9bc4b067c37d97762aa2
+
+
+build:
+  kind: cmake
+
