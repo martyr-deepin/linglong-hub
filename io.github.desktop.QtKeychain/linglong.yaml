@@ -1,10 +1,10 @@
 package:
-  id: io.github.desktop.QtKeychain
-  name: QtKeychain
+  id: qtkeychain
+  name: qtkeychain
   version: main
   kind: lib
   description: |
-    QtKeychain.
+    QtKeychain is a Qt API to store passwords and other secret data securely.
 
 runtime:
   id: org.deepin.Runtime
