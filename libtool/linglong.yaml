@@ -1,0 +1,28 @@
+package:
+  id: libtool
+  name: libtool
+  version: 2.4.2
+  kind: lib
+  description: |
+    Generic library support script.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+depends:
+  - id: texinfo/6.8.1
+  - id: automake/1.16.5
+  - id: help2man/1.14.5
+
+source:
+  kind: git
+  url: https://github.com/mwcampbell/libtool.git
+  commit: 8743799a8e211d368a6b6db7bd1604703d5ea49b
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      ./bootstrap
+      ./configure ${conf_args} ${extra_args}
