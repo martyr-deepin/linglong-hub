@@ -1,5 +1,5 @@
 package:
-  id: org.randombit.botan
+  id: io.github.randombit.botan
   name: botan
   version: 0.0.1
   kind: lib
@@ -10,10 +10,6 @@ runtime:
   id: org.deepin.Runtime
   version: 23.0.0
 
-depends:
-  - id: icu
-    version: 63.1
-    type: runtime
 
 source:
   kind: git
@@ -23,6 +19,6 @@ build:
   kind: manual
   manual:
     configure: |
-      python configure.py
+      python configure.py --prefix=/usr/local
     install:
       make install
