@@ -1,0 +1,24 @@
+package:
+  id: LuaJIT
+  name: LuaJIT 
+  version: 2.1.1
+  kind: lib
+  description: |
+    LuaJIT is a Just-In-Time Compiler (JIT) for the Lua programming language. Lua is a powerful, dynamic and light-weight programming language. It may be embedded or used as a general-purpose, stand-alone language..
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/LuaJIT/LuaJIT.git"
+  commit: 656ecbcf8f669feb94e0d0ec4b4f59190bcd2e48
+
+
+build:
+  kind: manual
+  manual:
+    configure: |
+      make 
+      make PREFIX=${PREFIX} MULTILIB=lib/${TRIPLET}  install 
