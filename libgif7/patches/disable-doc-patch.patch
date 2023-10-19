@@ -1,0 +1,22 @@
+diff --git a/Makefile b/Makefile
+index e4ded69..9c344a4 100644
+--- a/Makefile
++++ b/Makefile
+@@ -63,7 +63,7 @@ UTILS = $(INSTALLABLE) \
+ LDLIBS=libgif.a -lm
+ 
+ all: libgif.so libgif.a libutil.so libutil.a $(UTILS)
+-	$(MAKE) -C doc
++#	$(MAKE) -C doc
+ 
+ $(UTILS):: libgif.a libutil.a
+ 
+@@ -105,7 +105,7 @@ install-lib:
+ 	ln -sf libgif.so.$(LIBMAJOR) "$(DESTDIR)$(LIBDIR)/libgif.so"
+ install-man:
+ 	$(INSTALL) -d "$(DESTDIR)$(MANDIR)/man1"
+-	$(INSTALL) -m 644 doc/*.1 "$(DESTDIR)$(MANDIR)/man1"
++#	$(INSTALL) -m 644 doc/*.1 "$(DESTDIR)$(MANDIR)/man1"
+ uninstall: uninstall-man uninstall-include uninstall-lib uninstall-bin
+ uninstall-bin:
+ 	cd "$(DESTDIR)$(BINDIR)" && rm -f $(INSTALLABLE)
