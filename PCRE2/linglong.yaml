@@ -1,0 +1,16 @@
+package:
+  id: PCRE2
+  version: 2.10.42
+  kind: lib
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/PCRE2Project/pcre2.git
+  commit: 1e146e7343ed5bd893a1617d2b8c0072baa7a992
+
+build:
+  kind: cmake
