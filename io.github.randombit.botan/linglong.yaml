@@ -1,5 +1,5 @@
 package:
-  id: io.github.randombit.botan
+  id: botan
   name: botan
   version: 0.0.1
   kind: lib
