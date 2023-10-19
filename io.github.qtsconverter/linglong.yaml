@@ -1,0 +1,19 @@
+package:
+  id: io.github.qTsConverter
+  name: qtsconverter
+  version: 4.4.0
+  kind: app
+  description: |
+    A simple tool to convert qt translation file (ts) to other format (xlsx / csv) and vice versa.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/guerinoni/qTsConverter.git"
+  commit: 60190f8b5558496b79f8d1909c6e5d8ee5bc21bc
+
+build:
+  kind: cmake
