@@ -1,0 +1,24 @@
+package:
+  id: botan
+  name: botan
+  version: 0.0.1
+  kind: lib
+  description: |
+    qt library botan
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/randombit/botan"
+  commit: 4c6612c3a4179dad774afa85f04925703418563c
+build:
+  kind: manual
+  manual:
+    configure: |
+      python configure.py --prefix=$PREFIX
+    install:
+      make install
