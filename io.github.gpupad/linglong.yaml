@@ -1,0 +1,19 @@
+package:
+  id: io.github.gpupad
+  name: gpupad
+  version: 1.35.0
+  kind: app
+  description: |
+    A lightweight editor for GLSL shaders of all kinds and a fully-featured IDE for developing GPU based algorithms.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/houmain/gpupad.git"
+  commit: b843165298f70671366a2db580c7ae0ec9a316c8
+
+build:
+  kind: cmake

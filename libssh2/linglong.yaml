@@ -1,0 +1,22 @@
+package:
+  id: libssh2
+  name: libssh2
+  version: 1.10.0
+  kind: lib
+  description: |
+    libssh2 is a library implementing the SSH2 protocol, available under the revised BSD license.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: automake/1.16.5
+
+source:
+  kind: git
+  url: "https://github.com/deepin-community/libssh2.git"
+  commit: 756d8635a1c008ba38495a53fcfa282970b55bde
+
+build:
+  kind: autotools

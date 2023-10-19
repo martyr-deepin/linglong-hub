@@ -1,0 +1,19 @@
+package:
+  id: io.github.qgit
+  name: qgit
+  version: 0.0.1
+  kind: app
+  description: |
+    qgit
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/tibirna/qgit.git"
+  commit: df6326c9076febd87dc07aace445b89f46387324
+
+build:
+  kind: cmake

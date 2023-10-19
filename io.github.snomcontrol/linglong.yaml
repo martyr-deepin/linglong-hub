@@ -1,0 +1,23 @@
+package:
+  id: io.github.snomcontrol
+  name: snomcontrol
+  version: 3.0.0
+  kind: app
+  description: |
+    An application to control snom (D)3xx phones from the desktop
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine
+    version: 5.15.7
+
+source:
+  kind: git
+  url: "https://github.com/ballessay/snomcontrol.git"
+  commit: fb27615081890ae88a394fb169957779d950f0f1
+
+build:
+  kind: cmake
