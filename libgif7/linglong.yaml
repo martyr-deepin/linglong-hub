@@ -1,0 +1,28 @@
+package:
+  id: libgif7
+  name: libgif7
+  version: 5.1.9.0
+  kind: lib
+  description: |
+    library for GIF images.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://git.code.sf.net/p/giflib/code.git
+  commit: 866ea0643315db2d985e9ec4b1707a4f4ca404f0
+  patch:
+    - patches/disable-doc-patch.patch
+    - patches/fix-install-var-patch.patch
+
+build:
+    kind: autotools
+    manual:
+      configure: |
+      build: |
+        make ${jobs} CC=gcc
+      install: |
+        make ${jobs} DESTDIR=${dest_dir} PREFIX=${PREFIX} LIBDIR=${PREFIX}/lib/${TRIPLET} install

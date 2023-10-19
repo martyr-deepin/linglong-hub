@@ -1,0 +1,20 @@
+diff --git a/Makefile b/Makefile
+index e4ded69..2fad940 100644
+--- a/Makefile
++++ b/Makefile
+@@ -14,11 +14,11 @@ SHELL = /bin/sh
+ TAR = tar
+ INSTALL = install
+ 
+-PREFIX = /usr/local
+-BINDIR = $(PREFIX)/bin
+-INCDIR = $(PREFIX)/include
+-LIBDIR = $(PREFIX)/lib
+-MANDIR = $(PREFIX)/share/man
++PREFIX ?= /usr/local
++BINDIR ?= $(PREFIX)/bin
++INCDIR ?= $(PREFIX)/include
++LIBDIR ?= $(PREFIX)/lib
++MANDIR ?= $(PREFIX)/share/man
+ 
+ # No user-serviceable parts below this line
