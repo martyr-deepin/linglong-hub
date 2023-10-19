@@ -1,0 +1,31 @@
+package:
+  id: io.github.pipewalker
+  name: pipewalker
+  version: 0.9.4.1
+  kind: app
+  description: |
+    This is a puzzle game in which you need to combine the components into a single circuit: connect all computers to a network server, bring water to the taps, etc.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/artemsen/pipewalker.git"
+  commit: e19ec46d48ff488c41d3ac9f08f4bd01a4d08053
+depends:
+  - id: automake1.11
+    version: 1.11.0.2
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      ./configure ${conf_args} ${extra_args}
+    build: |
+       make ${jobs}
+    install: |
+       make ${jobs} DESTDIR=${dest_dir} install
+
+
