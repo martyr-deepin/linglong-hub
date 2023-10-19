@@ -1,0 +1,19 @@
+package:
+  id: io.github.Groot
+  name: Groot
+  version: 1.0.0
+  kind: app
+  description: |
+    a Graphical Editor, to create BehaviorTrees.
+    
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/BehaviorTree/Groot.git"
+  commit: ca6c8f253f033bbdbe9294d1c9d0ac0beeb00241
+
+build:
+  kind: cmake
