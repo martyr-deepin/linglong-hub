@@ -1,0 +1,19 @@
+package:
+  id: io.github.torrent-file-editor
+  name: torrent-file-editor
+  version: 0.3.18
+  kind: app
+  description: | 
+    Qt based GUI tool designed to create and edit .torrent files. This shows full content of .torrent file and allow to change any fields.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/torrent-file-editor/torrent-file-editor.git"
+  commit: bc37d12a62159b6d838bf7aad0c6095bf970949c
+
+build:
+  kind: cmake
