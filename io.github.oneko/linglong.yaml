@@ -1,0 +1,26 @@
+package:
+  id: io.github.oneko
+  name: oneko
+  version: 0.0.1
+  kind: app
+  description: |
+    The ever popular kitty-that-follows-your-mouse-pointer toy..
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/tie/oneko.git"
+  commit: 5bbb5113fb30eda4dc5ba74718b2de1979139587
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
+
+
+
+
+
+      
