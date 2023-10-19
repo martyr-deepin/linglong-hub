@@ -1,0 +1,19 @@
+package:
+  id: io.github.nitroshare-desktop
+  name: nitroshare-desktop
+  version: 0.3.4
+  kind: app
+  description: |
+    A cross-platform network file transfer application designed to make transferring.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/nitroshare/nitroshare-desktop.git"
+  commit: a2fc0eae88fb2ea8a13f02e052a0af47b8532a2f
+
+build:
+  kind: cmake
