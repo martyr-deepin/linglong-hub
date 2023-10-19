@@ -1,0 +1,19 @@
+package:
+  id: kquickimageeditor
+  name: kquickimageeditor
+  version: 4.8.1
+  kind: lib
+  description: |
+    "KQuickImageEditor" is an image editor library based on Qt and KDE Frameworks, which provides functionality for image editing in Qt Quick applications.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://invent.kde.org/libraries/kquickimageeditor.git"
+  commit: bd111966bace6886869bb6e9bf5a688d9cdc31bc
+
+build:
+  kind: cmake
