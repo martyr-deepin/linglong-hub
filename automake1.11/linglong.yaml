@@ -1,7 +1,7 @@
 package:
   id: automake1.11
   name: automake1.11
-  version: 1.11.0.1
+  version: 1.11.0.2
   kind: lib
   description: |
 
@@ -19,5 +19,10 @@ build:
   manual:
     configure: |
       ./bootstrap
-      ./configure ${conf_args} 
+      ./configure ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
+      mkdir ${PREFIX}/share/aclocal && ln -s ${PREFIX}/share/aclocal-1.11  ${PREFIX}/share/aclocal
       
