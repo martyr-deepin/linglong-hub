@@ -1,0 +1,19 @@
+package:
+  id: io.github.Nanonote
+  name: Nanonote
+  version: 1.4.0
+  kind: app
+  description: |
+    Nanonote is a minimalist note taking application.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/agateau/nanonote.git"
+  commit: 5ccf2f846004f442ef82a450573a389d4f9f6ea7
+
+build:
+  kind: cmake
