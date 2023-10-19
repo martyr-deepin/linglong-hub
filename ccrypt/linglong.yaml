@@ -1,0 +1,27 @@
+package:
+  id: ccrypt
+  name: ccrypt
+  version: 1.11.0
+  kind: lib
+  description: |
+    Encryption and decryption.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+depends:
+  - id: automake/1.16.5
+
+source:
+  kind: archive
+  url: https://ccrypt.sourceforge.net/download/1.11/ccrypt-1.11.tar.gz
+  digest: b19c47500a96ee5fbd820f704c912f6efcc42b638c0a6aa7a4e3dc0a6b51a44f
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      cd ccrypt-1.11
+      autoreconf -ivf
+      ./configure ${conf_args} ${extra_args}
