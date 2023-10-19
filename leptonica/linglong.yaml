@@ -1,0 +1,24 @@
+package:
+  id: leptonica
+  name: leptonica
+  version: 1.79.0
+  kind: lib
+  description: |
+    Leptonica is an open source library containing software that is broadly useful for image processing and image analysis applications.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+depends:
+  - id: automake/1.16.5
+  - id: pkgconf/2.0.3
+  - id: libtool/2.4.2
+
+source:
+  kind: git
+  url: https://github.com/danbloomberg/leptonica.git
+  commit: 002843bdf81ef4018fdf0f5c53262bbeab2b0fdc
+
+build:
+    kind: autotools
