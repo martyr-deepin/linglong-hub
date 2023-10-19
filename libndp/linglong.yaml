@@ -1,0 +1,20 @@
+package:
+  id: libndp
+  name: libndp
+  version: 1.7.1
+  kind: lib
+  description: |
+    libndp - Library for Neighbor Discovery Protocol.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+depends:
+  - id: automake/1.16.5
+source:
+  kind: git
+  url: "https://github.com/deepin-community/libndp.git"
+  commit: 9f50629debf6fcacccca1cf403669ccdfd9228cd
+
+build:
+  kind: autotools
