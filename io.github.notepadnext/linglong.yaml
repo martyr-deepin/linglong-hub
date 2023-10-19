@@ -1,0 +1,42 @@
+package:
+  id: io.github.notepadnext
+  name: notepadnext
+  version: 0.0.1
+  kind: app
+  description: |
+    Notepad Next is yet another text and source code editor.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: icu
+    version: 63.1
+    type: runtime
+
+source:
+  kind: git
+  url: "https://github.com/dail8859/NotepadNext.git"
+  commit: d8cffb7a48d10d52616b5b8bf071279cc7a5f308
+
+variables:
+  build_dir: build_dir
+  conf_args: |
+    PREFIX=${PREFIX} \
+    LIB_INSTALL_DIR=${PREFIX}/lib/${TRIPLET}
+  extra_args: |
+
+  dest_dir: |
+  jobs: -j${JOBS}
+
+build:
+  kind: manual
+  manual:
+    configure: |
+       qmake -makefile ${conf_args} src/NotepadNext.pro
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
+    
