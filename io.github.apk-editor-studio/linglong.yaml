@@ -1,0 +1,19 @@
+package:
+  id: io.github.apk-editor-studio
+  name: apk-editor-studio
+  version: 1.8.0
+  kind: app
+  description: |
+     powerful yet easy to use APK reverse-engineering tool
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/kefir500/apk-editor-studio.git"
+  commit: 59eb47df6b83d956a2047c2d1da863dcf09b8fb9
+
+build:
+  kind: cmake
