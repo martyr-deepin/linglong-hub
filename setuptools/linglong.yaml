@@ -1,0 +1,24 @@
+package:
+  id: setuptools
+  name: setuptools
+  version: 68.2.2
+  kind: lib
+  description: |
+    setuptools lib is a python3's lib to install some python libs. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/deepin-community/setuptools.git"
+  commit: 001acea34fe326fe239cfe451ff9a8d5b7bcc3c2
+
+build:
+  kind: manual
+  manual:
+    configure: |
+      echo "tempuser:x:$(id -u):$(id -g):,,,:${HOME}:/bin/bash" >> /etc/passwd
+    install: |
+      python3 setup.py install --prefix=${PREFIX}
