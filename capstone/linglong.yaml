@@ -1,0 +1,18 @@
+package:
+  id: capstone
+  name: capstone
+  version: 5.0.1
+  kind: lib
+  description: |
+    Capstone disassembly framework for ARM,ARM64...
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/capstone-engine/capstone"
+  commit: 5fb8a423d4455cade99b12912142fd3a0c10d957
+build:
+  kind: cmake
