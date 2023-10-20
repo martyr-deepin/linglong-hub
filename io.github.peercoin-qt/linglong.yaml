@@ -1,0 +1,42 @@
+package:
+  id: io.github.peercoin
+  name: peercoin
+  version: 0.12.7
+  kind: app
+  description: |
+    Reference implementation of the Peercoin protocol
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: automake
+    version: 1.16.5
+    type: runtime
+  - id: pkgconf
+    version: 2.0.3
+    type: runtime
+  - id: libtool
+    version: 2.4.2
+    type: runtime
+  - id: libevent
+    version: 2.1.8
+    type: runtime
+
+source:
+  kind: git
+  url: "https://github.com/peercoin/peercoin.git"
+  commit: 6d1f798822cbaed9777077d76baea13a24e8f403
+
+build:
+  kind: manual
+  manual:
+    configure: |
+      ./autogen.sh
+      ./configure --prefix=$PREFIX
+    install: |
+      make
+      make install
+      cp src/qt/peercoin-qt /opt/apps/io.github.peercoin/files/bin/
+      cp contrib/debian/peercoin-qt.desktop /opt/apps/io.github.peercoin/files/share/applications
