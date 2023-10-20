@@ -1,7 +1,7 @@
 package:
   id: extra-cmake-modules  
   name: extra-cmake-modules  
-  version: 5.111.0
+  version: 5.245.0
   kind: lib
   description: |
     Extra CMake Modules , or ECM.
@@ -12,8 +12,8 @@ base:
 
 source:
   kind: git
-  url: "https://invent.kde.org/frameworks/extra-cmake-modules.git"
-  commit: e9f771e006f26ad79efa2eee18c99bfd8b1b2aaf
-
+  url: "https://github.com/KDE/extra-cmake-modules.git
+  commit: 0ea9fc494b749a39d0110a9de8227d7723596ce6
+    
 build:
   kind: cmake
