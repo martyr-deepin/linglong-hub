@@ -1,0 +1,27 @@
+package:
+  id: io.github.puNES
+  name: puNES
+  version: 0.11.0
+  kind: app
+  description: |
+    Nintendo Entertaiment System emulator.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtbase
+    version: 5.15.7
+
+  - id: qtsvg
+    version: 5.15.7
+
+source:
+  kind: git
+  url: "https://github.com/punesemu/puNES.git"
+  commit: 24451d6458b8dbd4030cf00da12226fb4f5a262c
+
+build:
+  kind: cmake
