@@ -1,0 +1,21 @@
+package:
+  id: io.github.flameshot
+  name: flameshot
+  version: 12.1.0
+  kind: app
+  description: |
+    Powerful yet simple to use screenshot software.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/flameshot-org/flameshot.git
+  commit: 70be63d478a271da549597d69bd4868607c0a395
+
+
+build:
+  kind: cmake
