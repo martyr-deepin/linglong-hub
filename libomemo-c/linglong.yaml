@@ -1,0 +1,19 @@
+package:
+  id: libomemo-c
+  name: libomemo-c
+  version: 0.5.0
+  kind: lib
+  description: |
+    This is a fork of libsignal-protocol-c, an implementation of Signal's ratcheting forward secrecy protocol that works in synchronous and asynchronous messaging. The fork adds support for OMEMO as defined in XEP-0384 versions 0.3.0 and later.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/dino/libomemo-c.git"
+  commit: 0efc07f2811c8fa0edffad28c31ded45186fcdb1
+
+build:
+  kind: cmake
