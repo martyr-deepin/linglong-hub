@@ -1,0 +1,17 @@
+package:
+  id: glfw
+  name: glfw
+  version: 3.3.8
+  kind: lib
+  description: |
+    A multi-platform library for OpenGL, OpenGL ES, Vulkan, window and input,vimix need this dependency.
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/glfw/glfw.git
+  commit: 3eaf1255b29fdf5c2895856c7be7d7185ef2b241
+build:
+  kind: cmake
