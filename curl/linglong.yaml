@@ -1,0 +1,22 @@
+package:
+  id: curl
+  name: curl
+  version: 8.4.1
+  kind: lib
+  description: |
+    Curl is a command-line tool for transferring data specified with URL syntax.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/curl/curl.git"
+  commit: d31a8424e8bac2725ee54a1678f1b679c5e31a18
+
+build:
+  kind: cmake
+
+
+    
