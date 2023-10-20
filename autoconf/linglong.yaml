@@ -1,0 +1,23 @@
+package:
+  id: autoconf
+  name: autoconf
+  version: 2.4.7
+  kind: lib
+  description: |
+    Autoconf is an extensible package of M4 macros that produce shell scripts to automatically configure software source code packages.
+
+depends:
+  - id: automake/1.16.5
+  - id: texinfo/6.8.1
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/deepin-community/autoconf.git"
+  commit: 5742e95e78704694a8b3645ca795969f4e60cabc
+
+build:
+  kind: autotools
