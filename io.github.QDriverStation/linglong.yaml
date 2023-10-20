@@ -1,0 +1,19 @@
+package:
+  id: io.github.QDriverStation
+  name: QDriverStation
+  version: 21.04.0
+  kind: app
+  description: |
+     cross-platform and open-source alternative to the FRC Driver Station.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/FRC-Utilities/QDriverStation.git"
+  commit: c18daf76956195155ce30fe001c4d87cac0787f9
+
+build:
+  kind: qmake
