@@ -1,0 +1,17 @@
+package:
+  id: flatbuffers
+  name: flatbuffers
+  version: 23.5.26
+  kind: lib
+  description: |
+    FlatBuffers Memory Efficient Serialization Library.
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/google/flatbuffers.git
+  commit: 205285c35c164c0368c913b3f611cf8d672bc103
+build:
+  kind: cmake
