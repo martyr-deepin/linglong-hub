@@ -1,0 +1,32 @@
+package:
+  id: toxcore
+  name: toxcore
+  version: 0.0.1
+  kind: lib
+  description: |
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: automake/1.16.5
+  - id: libtool/2.4.2
+       
+source:
+  kind: git
+  url: "https://github.com/irungentoo/toxcore.git"
+  commit: bf69b54f64003d160d759068f4816b2d9b2e1e21
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      autoreconf -i
+      ./configure ${conf_args} ${extra_args}
+
+ 
+       
+
+
+    
