@@ -1,0 +1,29 @@
+package:
+  id: com.gitlab.sayonara-player
+  name: sayonara-player
+  version: 1.7.0
+  kind: app
+  description: |
+    Sayonara is a small, clear, not yet platform-independent music player. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: taglib
+    version: 1.12.0
+
+  - id: qtbase
+    version: 5.15.7
+
+  - id : qtsvg
+    version: 5.15.7
+
+source:
+  kind: git
+  url: "https://gitlab.com/luciocarreras/sayonara-player.git"
+  commit: 5768b7392dc54dd81545f1d18fe2293f3b3bae17
+
+build:
+  kind: cmake
