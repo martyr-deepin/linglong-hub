@@ -1,0 +1,19 @@
+package:
+  id: io.github.laigter
+  name: laigter
+  version: 1.11.0
+  kind: app
+  description: |
+    a tool that automatically generates maps for dynamic lighting effects in games. It allows normal, parallax, specular and occlusion map generation. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/azagaya/laigter.git"
+  commit: ca753108144903ed37c3dcc370d33ae5f7b34152
+
+build:
+  kind: qmake
