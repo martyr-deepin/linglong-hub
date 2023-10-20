@@ -1,0 +1,19 @@
+package:
+  id: qxmpp
+  name: qxmpp
+  version: 1.5.5
+  kind: lib
+  description: |
+    QXmpp is a cross-platform C++ XMPP client and server library. It is written in C++ and uses Qt framework.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/qxmpp-project/qxmpp"
+  commit: 5a5bebe82e740336bac1914443351d332776b90e
+
+build:
+  kind: cmake
