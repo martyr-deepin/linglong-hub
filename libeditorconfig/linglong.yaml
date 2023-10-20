@@ -1,0 +1,19 @@
+package:
+  id: libeditorconfig
+  name: libeditorconfig
+  version: 0.12.6
+  kind: lib
+  description: |
+    EditorConfig makes it easy to maintain the correct coding style when switching between different text editors and between different projects.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/editorconfig/editorconfig-core-c.git"
+  commit: 4e6b3bb042cf9ac2bfe11a35ff4d24ea586a5d22
+
+build:
+  kind: cmake
