@@ -1,0 +1,39 @@
+package:
+  id: io.github.peercoin
+  name: peercoin
+  version: 0.12.7
+  kind: app
+  description: |
+    Reference implementation of the Peercoin protocol
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: automake
+    type: runtime
+  - id: pkgconf
+    type: runtime
+  - id: libtool
+    type: runtime
+  - id: libevent
+    type: runtime
+
+source:
+  kind: git
+  url: "https://github.com/peercoin/peercoin.git"
+  commit: 6d1f798822cbaed9777077d76baea13a24e8f403
+
+build:
+  kind: manual
+  manual:
+    configure: |
+      ./autogen.sh
+      ./configure --prefix=$PREFIX
+    install: |
+      make
+      make install
+      ls
+      cp /runtime/lib/x86_64-linux-gnu/libevent_pthreads-2.1.so.6.0.2 /opt/apps/io.github.peercoin/files/lib/x86_64-linux-gnu/libevent_pthreads-2.1.so.6
+      cp /runtime/lib/x86_64-linux-gnu/libevent-2.1.so.6 /opt/apps/io.github.peercoin/files/lib/x86_64-linux-gnu/libevent-2.1.so.6
