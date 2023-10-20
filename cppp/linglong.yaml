@@ -1,0 +1,27 @@
+package:
+  id: cppp
+  name: cppp
+  version: 2.6.0
+  kind: lib
+  description: |
+    Samboy depend.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/BR903/cppp.git
+  commit: ec30890dd431b97b47e727c73820049dbd4040ed
+
+build:
+  kind: manual
+  manual:
+    configure: |
+      mkdir ${PREFIX}/bin
+      mkdir -p ${PREFIX}/share/man/man1/
+    build: |
+      make
+    install: |
+      make prefix=${PREFIX} install
