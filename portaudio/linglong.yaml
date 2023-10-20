@@ -1,0 +1,18 @@
+package:
+  id: portaudio
+  name: portaudio
+  version: 19.7.0
+  kind: lib
+  description: |
+    PortAudio is a cross-platform, open-source C language library for real-time audio input and output.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/PortAudio/portaudio.git
+  commit: 24c8d575e588d557d28f4011becb753421346860
+build:
+  kind: cmake
