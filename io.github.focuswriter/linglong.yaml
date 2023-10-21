@@ -1,0 +1,19 @@
+package:
+  id: io.github.focuswriter
+  name: focuswriter
+  version: 1.7.6
+  kind: app
+  description: |
+    Simple fullscreen word processor.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/jacquetc/focuswriter.git
+  commit: 979cdad05e170e23c4359ce3a9eedf03bebe322b
+
+build:
+  kind: qmake
