@@ -1,0 +1,32 @@
+package:
+  id: io.github.MediaWriter
+  name: MediaWriter
+  version: 4.2.2
+  kind: app
+  description: |
+    Fedora Media Writer is a tool that helps users put Fedora images on their portable drives such as flash disks.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: adwaita-qt
+    version: 1.4.2
+    type: runtime
+
+
+source:
+  kind: git
+  url: https://github.com/FedoraQt/MediaWriter.git
+  commit: 2b9acbd94e9c2c93cd79fbbc692eed2b672ca010
+
+build:
+  kind: cmake
+
+
+
+
+
+
+
