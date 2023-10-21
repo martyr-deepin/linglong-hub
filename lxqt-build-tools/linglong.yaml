@@ -1,0 +1,21 @@
+package:
+  id: lxqt-build-tools
+  name: lxqt-build-tools
+  version: 0.13.0
+  kind: lib
+  description: |
+    Various packaging tools and scripts for LXQt applications.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/lxqt/lxqt-build-tools.git
+  commit: 1304079edbe62c8c9e528de8ee0cf1a1119724dc
+
+
+build:
+  kind: cmake
