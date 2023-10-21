@@ -1,0 +1,20 @@
+package:
+  id: itstool
+  name: itstool
+  version: 0.0.1
+  kind: lib
+  description: |
+    pack tool.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/deepin-community/itstool.git"
+  commit: 9a9ab8e7386ab46c758bcd1bb5f76b867c23670e
+
+build:
+  kind: Makefile
