@@ -1,0 +1,26 @@
+package:
+  id: libcprime
+  name: libcprime
+  version: 0.0.1
+  kind: lib
+  description: |
+    Library for bookmarking,saving activities,sharing files and more.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://gitlab.com/cubocore/libcprime.git" 
+  commit: 647022384c3123f85b372b12503f7b0fa5328a1e
+build:
+  kind: manual
+  manual:
+    configure: |
+      meson build --prefix=$PREFIX --libdir=$PREFIX/lib/$TRIPLET
+    build: |
+      ninja -C build
+    install: |
+     ninja -C build install
