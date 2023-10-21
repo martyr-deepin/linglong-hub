@@ -1,0 +1,31 @@
+package:
+  id: texinfo
+  name: texinfo
+  version: 6.8
+  kind: lib
+  description: |
+    lib texinfo.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: archive
+  url: https://ftp.gnu.org/gnu/texinfo/texinfo-6.8.tar.xz
+  digest: 8eb753ed28bca21f8f56c1a180362aed789229bd62fff58bf8368e9beb59fec4
+
+
+build:
+  kind: manual
+  manual:
+    configure: |
+      cd texinfo-6.8
+      ./configure
+    build: |
+      make
+    install: |
+      make install
+
