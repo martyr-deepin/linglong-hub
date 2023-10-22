@@ -1,0 +1,22 @@
+package:
+  id: crengine-ng
+  name: crengine-ng
+  version: 0.9.10
+  kind: lib
+  description: |
+    crengine-ng is cross-platform library designed to implement text and e-book readers
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: zlib
+    version: 1.2.12.4
+    type: runtime
+source:
+  kind: git
+  url: https://gitlab.com/coolreader-ng/crengine-ng.git  
+  commit: 460124f7d46373c7b9f9aa981938ffa6e3396f75
+build:
+  kind: cmake
