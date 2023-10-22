@@ -1,0 +1,22 @@
+package:
+  id: io.github.moonlight-qt
+  name: moonlight-qt
+  version: 5.0.0
+  kind: app
+  description: |
+    GameStream client for PCs (Windows, Mac, Linux, and Steam Link).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: libsdl2/2.0.16.1
+
+source:
+  kind: git
+  url: https://github.com/moonlight-stream/moonlight-qt
+  commit: 413993ab6fc97bbd3650d06ccb1a54a915f58fee
+
+build:
+  kind: qmake
