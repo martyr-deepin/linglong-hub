@@ -1,0 +1,22 @@
+package:
+  id: io.gitlab.crqt-ng
+  name: crqt-ng
+  version: 1.0.11
+  kind: app
+  description: |
+    crqt-ng -cross-platform open source e-book reader using crengine-ng
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: crengine-ng
+    version: 0.9.10
+    type: runtime
+source:
+  kind: git
+  url: https://gitlab.com/coolreader-ng/crqt-ng.git
+  commit: 4a876703ea637f2f8a0fff8c212ee395cdbad3d9
+build:
+  kind: cmake
