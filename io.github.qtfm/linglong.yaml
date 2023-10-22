@@ -1,0 +1,17 @@
+package:
+  id: io.github.qtfm
+  name: qtfm
+  version: 6.1.9
+  kind: app
+  description: |
+    Qt File Manager.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/rodlie/qtfm.git
+  commit: 7d9b5d560afc2c3991fe64da67df3cebbd1f706e
+build:
+  kind: qmake
