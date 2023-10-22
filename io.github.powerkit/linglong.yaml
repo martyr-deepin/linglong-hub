@@ -1,0 +1,18 @@
+package:
+  id: io.github.powerkit
+  name: powerkit
+  version: 1.0.0
+  kind: app
+  description: |
+    Desktop Independent Power Manager.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/rodlie/powerkit.git
+  commit: 73d7a39d30c78bfee918515c1ebe07e8d475ab1e
+build:
+  kind: qmake
