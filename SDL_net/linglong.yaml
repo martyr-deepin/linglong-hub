@@ -1,0 +1,37 @@
+package:
+  id: SDL_net
+  name: SDL_net
+  version: 2.0.0
+  kind: lib
+  description: |
+    SDL_net.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+depends:
+  - id: libsdl2
+    version: 2.0.16.1
+    type: runtime
+  - id: automake
+    type: runtime
+    version: 1.16.5
+  - id: libtool
+    version: 2.4.2
+    type: runtime
+
+source:
+  kind: git
+  url: "https://github.com/SDL-mirror/SDL_net.git"
+  commit: 96478de8ef9d2195cd2606da5f2fb81e9e867039
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      ./autogen.sh
+      ./configure ${conf_args} ${extra_args}
+
+
+
