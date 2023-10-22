@@ -1,0 +1,22 @@
+package:
+  id: io.github.geometrize
+  name: geometrize
+  version: 1.0.1
+  kind: app
+  description: |
+    Geometrize is a desktop app that geometrizes images into geometric primitives.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Tw1ddle/geometrize.git
+  commit: f496af6a0824a4654a27114b2f59e3dd7a3d8992
+  patch:
+    - patches/fix-C-version.patch
+    - patches/fix-install-var-patch.patch
+
+build:
+  kind: qmake

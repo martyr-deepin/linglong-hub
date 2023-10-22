@@ -1,0 +1,13 @@
+diff --git a/geometrize.pro b/geometrize.pro
+index 0546411..2b727cc 100644
+--- a/geometrize.pro
++++ b/geometrize.pro
+@@ -47,3 +47,8 @@ include($$PWD/translations/translations.pri)
+ # Include resources that Geometrize requires, such as icons, images and scripts
+ # Note this must come last, as resource files are automatically generated
+ include($$PWD/resources/resources.pri)
++
++isEmpty(PREFIX): PREFIX = /usr/local
++
++target.path = $$PREFIX/bin
++INSTALLS += target

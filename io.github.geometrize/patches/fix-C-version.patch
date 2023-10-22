@@ -1,0 +1,13 @@
+diff --git a/geometrize.pro b/geometrize.pro
+index 0546411..96d6447 100644
+--- a/geometrize.pro
++++ b/geometrize.pro
+@@ -4,7 +4,7 @@ TARGET = Geometrize
+ TEMPLATE = app
+ 
+ # Enable C++14 features
+-CONFIG += c++14
++CONFIG += c++17
+ 
+ # Disable assertions in release builds (for gcc, clang etc builds)
+ CONFIG(release, debug|release): DEFINES += NDEBUG
