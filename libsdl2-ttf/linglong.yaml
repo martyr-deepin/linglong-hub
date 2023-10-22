@@ -1,0 +1,19 @@
+package:
+  id: libsdl2-ttf
+  name: libsdl2-ttf
+  version: 2.0.18
+  kind: lib
+  description: |
+    TrueType Font library for Simple DirectMedia Layer 2, libraries.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/libsdl-org/SDL_ttf.git
+  commit: 3e702ed9bf400b0a72534f144b8bec46ee0416cb
+
+build:
+  kind: cmake
