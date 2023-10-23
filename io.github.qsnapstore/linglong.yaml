@@ -1,0 +1,29 @@
+package:
+  id: io.github.qsnapstore
+  name: qsnapstore
+  version: 0.0.1
+  kind: app
+  description: |
+     Qt based Graphical frontend for browsing and searching snapstore.io/store .
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+  
+source:
+  kind: git
+  url: "https://github.com/keshavbhatt/qsnapstore.git"
+  commit: a9f803a38cbd858c5b1bc81bda34a687605f28f7
+build:
+  kind: qmake 
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
+
+    
+    
