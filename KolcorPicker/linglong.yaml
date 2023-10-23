@@ -1,0 +1,29 @@
+package:
+  id: io.github.ColorPicker
+  name: ColorPicker
+  version: 1.0.3
+  kind: app
+  description: |
+    ColorPicker is a powerful screen color picker based on Qt's QColorDialog Class.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+  
+source:
+  kind: git
+  url: "https://github.com/keshavbhatt/ColorPicker.git"
+  commit: 34594350d9c60ea6f96db07694a5ed2e84673f46
+
+build:
+  kind: qmake 
+  manual:
+    configure: |
+      qmake src/  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
+
+    
+    
