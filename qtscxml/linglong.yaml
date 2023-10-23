@@ -1,0 +1,19 @@
+package:
+  id: qtscxml
+  name: qtscxml
+  version: 5.15.7
+  kind: lib
+  description: |
+    SCXML (state machine notation) compiler and related tools.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/qt/qtscxml.git
+  commit: e1faea1db52b91d90ef64dd57eb6529e323b5526
+
+build:
+  kind: qmake
