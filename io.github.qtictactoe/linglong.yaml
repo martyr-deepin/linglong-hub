@@ -1,0 +1,22 @@
+package:
+  id: io.github.qtictactoe
+  name: qtictactoe
+  version: 0.5.3
+  kind: app
+  description: |
+    Simple tictactoe game.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dawidd6/qtictactoe.git
+  commit: c893331271b7aada0b099f362b052f8e2f0cd75c
+
+
+build:
+  kind: cmake
+
+
