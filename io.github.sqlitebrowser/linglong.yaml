@@ -1,0 +1,19 @@
+package:
+  id: io.github.sqlitebrowser
+  name: sqlitebrowser
+  version: 3.12.2
+  kind: app
+  description: |
+    a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/sqlitebrowser/sqlitebrowser.git"
+  commit: 00a5e2ebe937af4d46a8b51b67fc7eba4950f2be
+
+build:
+  kind: cmake
