@@ -1,0 +1,19 @@
+package:
+  id: io.github.Symphonium
+  name: Symphonium
+  version: 1.0.0
+  kind: app
+  description: |
+    A tool to help when learning to play the piano.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/ttdm/Symphonium.git"
+  commit: 2393ff680366a5ae1f2dfeba8a542b5ac1d82768
+
+build:
+  kind: qmake
