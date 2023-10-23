@@ -1,0 +1,29 @@
+package:
+  id: io.github.Flips
+  name: Flips
+  version: 1.31.0
+  kind: app
+  description: |
+    Floating IPS is a patcher for IPS and BPS files.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/Alcaro/Flips.git
+  commit: fdd5c6e34285beef5b9be759c9b91390df486c66
+
+
+build:
+  kind: manual
+  manual:
+    configure: |
+      ./make.sh
+    build: |
+      make
+    install: |
+      make install
+
