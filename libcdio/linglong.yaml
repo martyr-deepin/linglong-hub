@@ -1,0 +1,38 @@
+package:
+  id: libcdio
+  name: libcdio
+  version: 2.0.0
+  kind: lib
+  description: |
+    The libcdio package contains a library for CD-ROM and CD image access. Applications wishing to be oblivious of the OS- and device-dependent properties of a CD-ROM or of the specific details of various CD-image formats may benefit from using this library.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+depends:
+  - id: automake
+    version: 1.16.5
+  - id: libtool
+    version: 2.4.2
+  - id: texinfo
+    version: 6.8.1
+  - id: help2man
+    version: 1.14.5
+
+
+source:
+  kind: git
+  url: https://git.savannah.gnu.org/git/libcdio.git
+  commit: 908ec296cdffbee8bfe9ff9196caa13a49262b91
+
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      ./autogen.sh
+      ./configure ${conf_args}
+
