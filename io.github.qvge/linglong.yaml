@@ -1,0 +1,32 @@
+package:
+  id: io.github.qvge
+  name: qvge
+  version: 0.6.3
+  kind: app
+  description: |
+     QVGE is a multiplatform graph editor written in C++/Qt. Its main goal is to make possible visually edit two-dimensional graphs in a simple and intuitive way.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/ArsMasiuk/qvge.git"
+  commit: f9e8d7bd6a62f03df4618cfea24c345252e55e29
+
+build:
+  kind: qmake 
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
+      
+
+      
+    
