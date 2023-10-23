@@ -1,0 +1,17 @@
+package:
+  id: cmake-shared
+  name: cmake-shared
+  version: 1.1.0
+  kind: lib
+  description: |
+    Shared CMake functions and macros.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/lirios/cmake-shared.git
+  commit: b1e33eb4145d997ae6b3e823d846a9e52be14610
+build:
+  kind: cmake
