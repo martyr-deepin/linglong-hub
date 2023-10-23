@@ -1,0 +1,27 @@
+package:
+  id: io.github.rpi-imager
+  name: pri-imager
+  version: 1.8.1
+  kind: app
+  description: |
+    Raspberry Pi imaging utility.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/raspberrypi/rpi-imager.git"
+  commit: 253a9ced6407d8eccc249bbf9bdfb9bb883c0e6e
+
+build:
+  kind: cmake
+  manual :
+    configure: |
+      cd src
+      cmake -B ${build_dir} ${conf_args} ${extra_args}
+    build: |
+      cmake --build ${build_dir} -- ${jobs}
+    install: |
+      env DESTDIR=${dest_dir} cmake --build ${build_dir} --target install
