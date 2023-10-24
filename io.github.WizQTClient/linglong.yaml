@@ -1,0 +1,27 @@
+package:
+  id: io.github.WizQTClient
+  name: WizQTClient
+  version: 12.1.0
+  kind: app
+  description: |
+    WizNote is an open-sourced project, published under GPLv3 for individual/personal users and custom commercial license for company users.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+  
+depends:
+  - id: qtwebengine/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: "https://github.com/WizTeam/WizQTClient.git"
+  commit: 7067bcfc421edce932aa3144ef2d1d631f27595a
+
+build:
+  kind: cmake
+
+    
+    
