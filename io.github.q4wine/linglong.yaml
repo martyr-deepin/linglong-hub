@@ -1,0 +1,30 @@
+package:
+  id: io.github.q4wine
+  name: q4wine
+  version: 1.3.13
+  kind: app
+  description: |
+    Q4Wine is a Qt GUI for W.I.N.E. It will help you manage wine prefixes and installed applications. 
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+variables:
+  extra_args: |
+    -DWITH_ICOUTILS="OFF"
+
+source:
+  kind: git
+  url: "https://github.com/brezerk/q4wine.git"
+  commit: 82ced8eaa14ac1b705ec71404155bf6cf03e8657
+build:
+  kind: cmake
+
+
+
+      
+      
+    
+    
