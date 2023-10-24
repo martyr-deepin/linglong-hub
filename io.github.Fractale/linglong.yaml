@@ -1,0 +1,19 @@
+package:
+  id: io.github.Fractale
+  name: Fractale
+  version: 1.5.1
+  kind: app
+  description: |
+    Two-dimensional simulation of Von Koch fractal and its variation
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/PJK136/Fractale.git"
+  commit: cadfc6efefb461a7e6e9b21d8702aba3860341fc
+
+build:
+  kind: qmake
