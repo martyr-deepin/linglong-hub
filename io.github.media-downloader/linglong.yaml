@@ -1,0 +1,23 @@
+package:
+  id: io.github.media-downloader
+  name: media-downloader
+  version: 3.4.0
+  kind: app
+  description: |
+    This project is a Qt/C++ based GUI frontend to CLI multiple CLI based tools that deal with downloading online media.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/mhogomchungu/media-downloader.git"
+  commit: 304671ca4428c4128975a8cd48769bfdc6badf66
+
+build:
+  kind: cmake
+
+    
+    
