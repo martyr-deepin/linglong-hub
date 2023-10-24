@@ -1,0 +1,20 @@
+package:
+  id: io.github.qmidictl
+  name: qmidictl
+  version: 0.9.12
+  kind: app
+  description: |
+    QmidiCtl is a MIDI remote controller application that sends MIDI data ver the network, using UDP/IP multicast.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/rncbc/qmidictl.git
+  commit: 441acc70c37a0596c353e6fb0a9709f9cfb68c77
+
+build:
+  kind: cmake
+
