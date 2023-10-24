@@ -1,0 +1,26 @@
+package:
+  id: io.github.FeatherPad
+  name: FeatherPad
+  version: 1.4.1
+  kind: app
+  description: |
+    FeatherPad (by Pedram Pourang, a.k.a. Tsu Jan tsujan2000@gmail.com) is a lightweight Qt plain-text editor for Linux. 
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/tsujan/FeatherPad.git"
+  commit: 57777bf0d87f33ed36d25c6f8f00bf4e31061dfd
+
+build:
+  kind: cmake
+
+      
+      
+    
+    
