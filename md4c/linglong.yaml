@@ -1,0 +1,19 @@
+package:
+  id: md4c
+  name: md4c
+  version: 0.5.0
+  kind: lib
+  description: |
+    MD4C stands for "Markdown for C" and that's exactly what this project is about.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/mity/md4c.git"
+  commit: se9ff661ff818ee94a4a231958d9b6768dc6882c9
+
+build:
+  kind: cmake
