@@ -1,0 +1,17 @@
+package:
+  id: io.github.pacmanlogviewer
+  name: pacmanlogviewer
+  version: 1.5.1
+  kind: app
+  description: |
+    Inspect pacman log file.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/gcala/pacmanlogviewer.git
+  commit: 7e47e1856f3b0e8fd484653f0760d480507db0e2
+build:
+  kind: cmake
