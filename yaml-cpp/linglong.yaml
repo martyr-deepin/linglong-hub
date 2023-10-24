@@ -1,0 +1,19 @@
+package:
+  id: yaml-cpp
+  name: yaml-cpp
+  version: 0.8.0
+  kind: lib
+  description: |
+    yaml-cpp is a YAML parser and emitter in C++ matching the YAML 1.2 spec.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/jbeder/yaml-cpp.git"
+  commit: f791b955d8649751421911048a7c9dd967689811
+
+build:
+  kind: cmake
