@@ -1,0 +1,25 @@
+package:
+  id: io.github.A-Photo-Tool-Libre
+  name: A-Photo-Tool-Libre
+  version: 1.0.5
+  kind: app
+  description: |
+    Easy to use photo editing software..
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/aphototool/A-Photo-Tool-Libre.git"
+  commit: bb5623538c0df226406336298fbe467e39857b6f
+  patch: patches/src.patch
+
+
+build:
+  kind: qmake
+
+
+
+   
