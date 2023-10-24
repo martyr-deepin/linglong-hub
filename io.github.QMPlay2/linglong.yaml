@@ -1,0 +1,17 @@
+package:
+  id: io.github.QMPlay2
+  name: QMPlay2
+  version: 23.10.22
+  kind: app
+  description: |
+    QMPlay2 is a video and audio player which can play most formats and codecs.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/zaps166/QMPlay2.git
+  commit: da6036373a72eab4c346b09e77207c94a35a6cd0
+build:
+  kind: cmake
