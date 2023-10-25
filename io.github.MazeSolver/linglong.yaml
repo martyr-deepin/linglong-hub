@@ -1,0 +1,19 @@
+package:
+  id: io.github.MazeSolver
+  name: MazeSolver
+  version: 1.0.0
+  kind: app
+  description: |
+    Create and solve mazes using DFS or BFS algorithm
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Arquanite/MazeSolver.git"
+  commit: 2a1032ac87fd5d78b9a96902bdb42c5d6d7ffacb
+
+build:
+  kind: qmake
