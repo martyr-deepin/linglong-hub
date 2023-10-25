@@ -1,0 +1,17 @@
+package:
+  id: io.github.qliquidsfz
+  name: qliquidsfz
+  version: 0.1.2
+  kind: app
+  description: |
+    Qt graphical user interface to the liquidsfz library, an SFZ synth player.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/be1/qabc.git
+  commit: be420d59a3b0d499657e03a25ec270f42a1574de
+build:
+  kind: qmake
