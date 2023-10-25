@@ -1,0 +1,19 @@
+package:
+  id: io.github.Heimer
+  name: Hermer
+  version: 4.2.0
+  kind: app
+  description: |
+    a desktop application for creating mind maps and other suitable diagrams.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/juzzlin/Heimer.git"
+  commit: b4eba269fb31abb0e447b62bee54ecaa79301024
+
+build:
+  kind: cmake
