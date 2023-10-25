@@ -1,0 +1,24 @@
+package:
+  id: fluidsynth
+  name: fluidsynth
+  version: 2.3.4
+  kind: lib
+  description: |
+    FluidSynth is a cross-platform, real-time software synthesizer based on the Soundfont 2 specification.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/FluidSynth/fluidsynth.git
+  commit: 377ab9db2f87bc407eeb940e0361edc77da77055
+
+build:
+  kind: cmake
+
+
+
+
