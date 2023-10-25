@@ -1,0 +1,17 @@
+package:
+  id: io.github.qFlipper
+  name: qFlipper
+  version: 1.3.2
+  kind: app
+  description: |
+    qFlipper — desktop application for updating Flipper Zero firmware via PC
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/flipperdevices/qFlipper.git
+  commit: 7b0839e178b98ba77f732fc679141a82a90c67dc
+build:
+  kind: qmake
