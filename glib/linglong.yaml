@@ -1,0 +1,30 @@
+package:
+  id: glib
+  name: glib
+  version: 2.79.0
+  kind: lib
+  description: |
+    Low-level core library that forms the basis for projects such as GTK+ and GNOME.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+      
+source:
+  kind: git
+  url: "https://gitlab.gnome.org/GNOME/glib.git"
+  commit: 4ba42dc5647d5790f431007cced5413954d4cd23
+
+build:
+  kind: manual
+  manual:
+    configure: |
+      echo "tempuser:x:$(id -u):$(id -g):,,,:${HOME}:/bin/bash" >> /etc/passwd
+      echo "tempuser:x:$(id -G | cut -d' ' -f 2)" >> /etc/group
+      meson configure build --prefix=${PREFIX} --libdir=${PREFIX}/lib/${TRIPLET}
+    build: |
+      meson compile -C build 
+    install: |
+      meson install -C build 
+
+
+      
