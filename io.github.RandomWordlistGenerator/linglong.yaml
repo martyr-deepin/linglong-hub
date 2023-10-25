@@ -1,0 +1,17 @@
+package:
+  id: io.github.RandomWordlistGenerator
+  name: RandomWordlistGenerator
+  version: 0.2.1
+  kind: app
+  description: |
+    Generate random wordlist to test your passwords' security.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Faster3ck/RandomWordlistGenerator.git
+  commit: ff92a029068547605cd0ecf0de738a2409cafb08
+build:
+  kind: cmake
