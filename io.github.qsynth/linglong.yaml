@@ -1,0 +1,26 @@
+package:
+  id: io.github.qsynth
+  name: qsynth
+  version: 0.9.13
+  kind: app
+  description: |
+    Qsynth is a fluidsynth GUI front-end application written in C++ around the Qt framework using Qt Designer.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: fluidsynth
+    version: 2.3.4
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/rncbc/qsynth.git
+  commit: ff42b352cfda5f86ee9ddeefdc854a7b1d6a466b
+
+
+build:
+  kind: cmake
+
