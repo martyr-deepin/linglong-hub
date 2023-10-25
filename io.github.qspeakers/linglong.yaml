@@ -1,0 +1,16 @@
+package:
+  id: io.github.qspeakers
+  name: qspeakers
+  version: 1.6.9
+  kind: app
+  description: |
+    loudspeaker enclosure designer.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+source:
+  kind: git
+  url: https://github.com/be1/qspeakers.git
+  commit: e50cdfebf943cf25728bdd9506285947a6aa60e5
+build:
+  kind: qmake
