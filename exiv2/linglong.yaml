@@ -1,0 +1,22 @@
+package:
+  id: exiv2
+  name: exiv2
+  version: 2.0.28.0
+  kind: lib
+  description: |
+    Exiv2 is a C++ library and a command-line utility to read, write, delete and modify Exif, IPTC, XMP and ICC image metadata.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: inih/0.0.57
+
+source:
+  kind: git
+  url: "https://github.com/Exiv2/exiv2.git"
+  commit: 4f548c61017bfaa33faaab4f484cfd6a60ed1e39
+build:
+  kind: cmake
+ 
