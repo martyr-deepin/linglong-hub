@@ -1,0 +1,17 @@
+package:
+  id: io.github.KDiskMark
+  name: KDiskMark
+  version: 3.1.4
+  kind: app
+  description: |
+    A simple open-source disk benchmark tool for Linux distros.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/JonMagon/KDiskMark.git
+  commit: 298099ca5cab4c38c6f6ac471a88db2984cde0b0
+build:
+  kind: cmake
