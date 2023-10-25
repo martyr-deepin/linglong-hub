@@ -1,0 +1,23 @@
+package:
+  id: libsdl2-ttf-dev
+  name: libsdl2-ttf-dev
+  version: 2.20.2
+  kind: lib
+  description: |
+    TrueType Font library for Simple DirectMedia Layer 2, development files.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: archive
+  url: http://deb.debian.org/debian/pool/main/libs/libsdl2-ttf/libsdl2-ttf_2.20.2+dfsg.orig.tar.gz
+  digest: 5292a97f834dabea5d8db989ee64c90c89f5e90ba782cfebd9cd9d5f547c006d
+
+build:
+  kind: cmake
+  manual:
+    configure: |
+      cd SDL2_ttf-2.20.2
+      cmake -B ${build_dir} ${conf_args} ${extra_args}
