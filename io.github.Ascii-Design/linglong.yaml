@@ -1,0 +1,17 @@
+package:
+  id: io.github.Ascii-Design
+  name: Ascii-Design
+  version: 1.1.1
+  kind: app
+  description: |
+    Ascii Design is an ascii-art program based on figlet engine.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Faster3ck/Ascii-Design.git
+  commit: 5cb9af5be9db17489c6d4d51e380534cb0cb6345
+build:
+  kind: cmake
