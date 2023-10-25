@@ -1,0 +1,30 @@
+package:
+  id: io.github.htmldoc
+  name: htmldoc
+  version: 1.9.17
+  kind: app
+  description: |
+    HTMLDOC is a program that reads HTML and Markdown source files or web pages and generates corresponding EPUB, HTML, PostScript, or PDF files with an optional table of contents.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+  
+depends:
+  - id: fltk/1.4.0
+
+source:
+  kind: git
+  url: "https://github.com/michaelrsweet/htmldoc.git"
+  commit: e6bdf4bf42cce459ee6120cfa4ebe747a9abb052
+
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+       ./configure ${conf_args} ${extra_args}
+
+
+
+    
