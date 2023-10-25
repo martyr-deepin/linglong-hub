@@ -1,0 +1,19 @@
+package:
+  id: io.github.qucs_s
+  name: qucs_s
+  version: 2.0.0
+  kind: app
+  description: |
+    provides a fancy graphical user interface for a number of popular circuit simulation engines
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/ra3xdh/qucs_s.git"
+  commit: 846ec630c7085498da3f208c94af1c3cffd7c236
+
+build:
+  kind: cmake
