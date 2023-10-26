@@ -1,0 +1,28 @@
+package:
+  id: io.github.otter-browser
+  name: browser
+  version: 1.0.03
+  kind: app
+  description: |
+    A browser controlled by the user, not vice-versa.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine/5.15.7 
+
+source:
+  kind: git
+  url: "https://github.com/OtterBrowser/otter-browser.git"
+  commit: ed2e0c12aea69a11a0d000e107100ed29bb4c290
+
+
+build:
+  kind: cmake
+
+
+
+
+    
