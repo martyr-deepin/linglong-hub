@@ -1,0 +1,36 @@
+package:
+  id: io.github.qimgv
+  name: qimgv
+  version: 1.0.3
+  kind: app
+  description: |
+    Image viewer. Fast, easy to use. Optional video support.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+variables:
+  extra_args: |
+    -DOPENCV_SUPPORT="ON"
+    -DEXIV2="ON"
+
+depends:
+  - id: inih/0.0.57
+    type: runtime
+  - id: mpv/0.34.1.2
+  - id: exiv2/2.0.28.0
+    type: runtime
+  - id: opencv/3.4.0
+    type: runtime
+  - id: tbb/2020.3.0
+    type: runtime
+   
+
+source:
+  kind: git
+  url: "https://github.com/easymodo/qimgv.git"
+  commit: 4c12677113b781d2d175227dded65a1f6a2a6dc5
+build:
+  kind: cmake
+ 
