@@ -1,0 +1,31 @@
+package:
+  id: io.github.kontrast
+  name: kontrast
+  version: 21.12.3
+  kind: app
+  description: |
+    Tool to check contrast for colors that allows verifying that your colors are correctly accessible.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: ki18n/5.90.0
+  - id: kcoreaddons/5.90.0
+  - id: kirigami/5.90.0
+        
+source:
+  kind: git
+  url: "https://invent.kde.org/accessibility/kontrast.git"
+  commit: 6ee85a2a9bacb90724f4f7eb0c6f399fd42589d2
+
+
+build:
+  kind: cmake
+
+
+
+
+
+    
