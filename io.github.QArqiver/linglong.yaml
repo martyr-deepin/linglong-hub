@@ -1,0 +1,19 @@
+package:
+  id: io.github.Arqiver
+  name: Arqiver
+  version: 0.11.0
+  kind: app
+  description: |
+    a simple and lightweight Qt archive manager as a front-end for libarchive (bsdtar), gzip and 7z. Not depending on any desktop environment.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/tsujan/Arqiver.git"
+  commit: 5180e3cac07c66f5401d1bd4b59e340eb7e18b8c
+
+build:
+  kind: cmake
