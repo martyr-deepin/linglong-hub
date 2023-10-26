@@ -1,0 +1,18 @@
+package:
+  id: io.github.QtMips
+  name: QtMips
+  version: 0.7.5
+  kind: app
+  description: |
+    MIPS CPU emulator.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/cvut/QtMips.git
+  commit: 3d8ea4a7a2aa4c95e3e270111f6128686203913c
+build:
+  kind: cmake
