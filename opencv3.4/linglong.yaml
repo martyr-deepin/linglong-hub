@@ -1,0 +1,25 @@
+package:
+  id: opencv
+  name: opencv
+  version: 3.4.0
+  kind: lib
+  description: |
+    OpenCV: Open Source Computer Vision Library
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/opencv/opencv.git"
+  commit: 4761c2814327f1cc6c8da6e099eb3321be9be4e7
+
+build:
+  kind: cmake
+
+
+
+
+
+    
