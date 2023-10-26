@@ -1,0 +1,18 @@
+package:
+  id: io.github.SimpleNormalMapper
+  name: SimpleNormalMapper
+  version: 1.1.0
+  kind: app
+  description: |
+    "Quickly and easily generate normal maps from your 2D images with adjustable height and sampling radius using this intuitive and easy to use application" -Softpedia
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/juzzlin/SimpleNormalMapper.git
+  commit: b0e23f0e646bae556bba8883deafe813e32332ad
+build:
+  kind: qmake
