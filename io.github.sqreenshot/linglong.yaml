@@ -1,0 +1,23 @@
+package:
+  id: io.github.sqreenshot
+  name: sqreenshot
+  version: 0.1.0
+  kind: app
+  description: |
+    Simple screenshot tool based on Gnome Screenshot.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/qtilities/sqreenshot.git
+  commit: 0fbe5129db2c118a669e9e3a5d460097e6c49d0b
+
+
+build:
+  kind: cmake
+
+
