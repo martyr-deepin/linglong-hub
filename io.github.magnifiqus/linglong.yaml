@@ -1,0 +1,24 @@
+package:
+  id: io.github.magnifiqus
+  name: magnifiqus
+  version: 0.3.0
+  kind: app
+  description: |
+    Magnifiqus is a screen magnifier made with Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtilitools/0.1.1
+
+
+source:
+  kind: git
+  url: https://github.com/qtilities/magnifiqus.git
+  commit: e58efaebcc6e57a3ec4f581b14ce172822564524
+
+
+build:
+  kind: cmake
