@@ -1,0 +1,27 @@
+package:
+  id: kirigami
+  name: kirigami
+  version: 5.90.0
+  kind: lib
+  description: |
+    QtQuick plugins to build user interfaces following the KDE Human Interface Guidelines.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/KDE/kirigami.git"
+  commit: f22db4ce9849f3e7f5f755aac9ff26989698ff1a
+
+
+build:
+  kind: cmake
+
+
+
+
+
+    
