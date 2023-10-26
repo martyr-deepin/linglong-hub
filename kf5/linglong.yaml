@@ -1,0 +1,17 @@
+package:
+  id: kf5
+  name: kf5
+  version: 5.90.0
+  kind: lib
+  description: |
+    Reading, creating, and manipulating file archives
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/KDE/karchive.git"
+  commit: 979691e3c1e5a97e10ae018917dafe3423d1c41c
+build:
+  kind: cmake
