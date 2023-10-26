@@ -1,0 +1,24 @@
+package:
+  id: io.github.qruler
+  name: qruler
+  version: 0.1.1
+  kind: app
+  description: |
+    A simple on-screen pixel meter, based on IRuler (SPDX ID: GPL-2.0-or-later).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtilitools/0.1.1
+
+
+source:
+  kind: git
+  url: https://github.com/qtilities/qruler.git
+  commit: 66eb18d79941a023508b0aceef73e223591de9d3
+
+
+build:
+  kind: cmake
