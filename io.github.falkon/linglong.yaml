@@ -1,0 +1,22 @@
+package:
+  id: io.github.falkon
+  name: falkon
+  version: 3.18.0
+  kind: app
+  description: |
+    Falkon is a KDE web browser. It uses QtWebEngine rendering engine.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine/5.15.7
+  - id: ki18n/5.90.0
+  - id: karchive/5.54.0.1
+source:
+  kind: git
+  url: "https://github.com/KDE/falkon.git"
+  commit: 24786a1a9b1a34e3b4a3ff44bdb720d8e51e35e1
+build:
+  kind: cmake
