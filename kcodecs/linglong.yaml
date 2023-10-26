@@ -1,0 +1,25 @@
+package:
+  id: kcodecs
+  name: kcodecs
+  version: 5.90.0
+  kind: lib
+  description: |
+    String encoding library
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/KDE/kcodecs.git"
+  commit: 8a8d1690343aad7ffdcbdc7cbe480edb2ee1ad8f
+
+build:
+  kind: cmake
+
+
+
+
+
+    
