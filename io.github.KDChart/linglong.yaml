@@ -1,0 +1,23 @@
+package:
+  id: io.github.KDChart
+  name: KDChart
+  version: 3.0.0
+  kind: app
+  description: |
+    A Qt tool for creating business and scientific charts. This is the canonical repository for KDChart.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/BLumia/KDChart.git
+  commit: a489a7b0ec18dbfebac49f881df811c60a2e3560
+
+build:
+  kind: cmake
+
+
+
+
