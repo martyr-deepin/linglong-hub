@@ -1,0 +1,16 @@
+--- ../CMakeLists.txt	2023-10-26 17:24:07.812574242 +0800
++++ ../CMakeLists.txt	2023-10-26 17:25:05.817094286 +0800
+@@ -147,7 +147,12 @@
+     install(FILES "resources/freedesktop/${PROJECT_ID}.appdata.xml"
+         DESTINATION "${CMAKE_INSTALL_DATADIR}/metainfo"
+     )
+-    install(FILES "${PROJECT_QM_FILES}"
++    list(GET PROJECT_QM_FILES -1 FIRST_FILE)
++    install(FILES "${FIRST_FILE}"
++        DESTINATION "${CMAKE_INSTALL_DATADIR}/${PROJECT_ID}/translations"
++    )
++    list(GET PROJECT_QM_FILES 0 SECOND_FILE)
++    install(FILES "${SECOND_FILE}"
+         DESTINATION "${CMAKE_INSTALL_DATADIR}/${PROJECT_ID}/translations"
+     )
+     install(FILES "resources/icons/application.svg"

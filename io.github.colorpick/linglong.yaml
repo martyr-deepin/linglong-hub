@@ -1,0 +1,26 @@
+package:
+  id: io.github.colorpick
+  name: colorpick
+  version: 0.1.0
+  kind: app
+  description: |
+    Colorpick is a color picker, which makes it easy to check text readability by letting you pick a background and foreground color and computing the contrast between them.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/qtilities/colorpick.git
+  commit: 6c3b195e29e3d4d7d967b1f8a16280e4393b4d69
+  patch: 
+    - patches/fix-install-001.patch
+
+
+build:
+  kind: cmake
+
+
+
