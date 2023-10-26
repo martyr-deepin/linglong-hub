@@ -1,0 +1,28 @@
+package:
+  id: io.github.LIII
+  name: LIII
+  version: 0.1.1.20
+  kind: app
+  description: |
+    multi-platform bittorrent client.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: boost-defaults/1.74.0.3
+
+source:
+  kind: git
+  url: "https://github.com/aliakseis/LIII.git"
+  commit: f35f4d64f38d8b8770167e41929e8ab7fc930f34
+
+
+build:
+  kind: cmake
+
+
+
+
+    
