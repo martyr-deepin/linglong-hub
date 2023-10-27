@@ -1,0 +1,31 @@
+package:
+  id: io.github.kristall
+  name: kristall
+  version: 0.4.0
+  kind: app
+  description: |
+    A high-quality visual cross-platform gemini browser.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/MasterQ32/kristall.git"
+  commit: 6d97b7f19824e36caee34219e02e7bbe7ec29fa1
+
+
+build:
+  kind: qmake 
+  manual:
+    configure: |
+      qmake src/ ${conf_args} ${extra_args}
+
+      
+
+
+
+
+
+    
