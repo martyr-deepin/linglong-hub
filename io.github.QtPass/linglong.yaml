@@ -1,0 +1,28 @@
+package:
+  id: io.github.QtPass
+  name: QtPass
+  version: 1.4.0
+  kind: app
+  description: |
+    QtPass is a GUI for pass, the standard unix password manager.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/IJHack/QtPass.git"
+  commit: 30736d9af0cffebfea00cd8af8bd049c464b781e
+  patch:
+    - patches/0001-fix-install.patch
+build:
+  kind: qmake
+ 
+      
+
+
+
+
+
+    

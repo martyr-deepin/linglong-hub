@@ -1,0 +1,31 @@
+From 84ae3e39f2e4b33251cced61b814935e7df0d3c8 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Fri, 27 Oct 2023 16:47:23 +0800
+Subject: [PATCH] fix-install
+
+---
+ qtpass.pro | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+diff --git a/qtpass.pro b/qtpass.pro
+index 438b09e8..2602a1c1 100644
+--- a/qtpass.pro
++++ b/qtpass.pro
+@@ -57,3 +57,14 @@ CONFIG(coverage) {
+ }
+ 
+ system($$QMAKE_LUPDATE -locations absolute ./src ./main -ts localization/*.ts)
++
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++
++target.path = $$BINDIR
++
++
++desktop.files = qtpass.desktop
++desktop.path = $$DATADIR/applications/
++
++INSTALLS += target desktop
+-- 
+2.33.1
+
