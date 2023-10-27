@@ -1,0 +1,20 @@
+package:
+  id: io.github.cubiomes-viewer
+  name: cubiomes-viewer
+  version: 3.3.0
+  kind: app
+  description: |
+    Cubiomes Viewer provides a graphical interface for the efficient and flexible seed-finding utilities provided by cubiomes and a map viewer for the Minecraft biomes and structure generation.
+  
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Cubitect/cubiomes-viewer.git"
+  commit: 1d061bf941bffe64232bcd325a3adaa15110f845
+  patch:
+    - patches/0001-fix-install.patch
+build:
+  kind: qmake
