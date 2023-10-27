@@ -1,0 +1,33 @@
+package:
+  id: io.github.alligator
+  name: alligator
+  version: 21.12.0
+  kind: app
+  description: |
+    Kirigami-based RSS reader.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: kcodecs/5.90.0
+  - id: kcoreaddons/5.90.0
+  - id: kconfig/5.90.0
+  - id: ki18n/5.90.0
+  - id: ksyndication/5.90.0
+    type: runtime
+
+source:
+  kind: git
+  url: "https://invent.kde.org/network/alligator.git"
+  commit: 8afa7e3fb9742504d6a339f3cc0aeee84f9e2233
+
+build:
+  kind: cmake
+
+
+
+
+
+    
