@@ -1,0 +1,23 @@
+package:
+  id: io.github.CurrencyConv
+  name: CurrencyConv
+  version: 1.0.0
+  kind: app
+  description: |
+     a simple Application for Linux Desktop that converts currencies in seconds.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/keshavbhatt/CurrencyConv.git"
+  commit: 97b378c627ffb1b06a81c9b301ebb3fb25f6df55
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
