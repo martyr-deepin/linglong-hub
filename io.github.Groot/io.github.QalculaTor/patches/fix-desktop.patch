@@ -1,0 +1,39 @@
+--- ../QalculaTor.pro	2023-10-27 21:18:37.121054297 +0800
++++ ../QalculaTor.pro	2023-10-27 21:19:23.525878430 +0800
+@@ -37,10 +37,35 @@
+     metricswindow.ui \
+     temperaturewindow.ui
+ 
++
++DESTDIR = /opt/apps/io.github.QalculaTor # 根：目标路径
++
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $${DESTDIR}/files/bin # 修改bin路径
+ !isEmpty(target.path): INSTALLS += target
+ 
++
++############# 构建desktop文件 ######################
++# 定义：.desktop 文件路径
++DESKTOP_FILE = ./QalculaTor.desktop
++
++# 输入内容： .desktop 文件
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.2' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=QalculaTor' >> $$DESKTOP_FILE")
++system("echo 'Comment=QalculaTor, a tool for calculate.' >> $$DESKTOP_FILE")
++system("echo 'Exec=/opt/apps/io.github.QalculaTor/files/bin/QalculaTor' >> $$DESKTOP_FILE")
++system("echo 'Icon=/source/images/GNOME_CALC_mini.png' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++# 将 .desktop 文件复制到构建目录中
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$DESTDIR/files/share/applications
++INSTALLS += desktop
++
++
+ RESOURCES += \
+     images.qrc
