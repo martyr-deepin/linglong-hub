@@ -1,0 +1,27 @@
+package:
+  id: io.github.tiled
+  name: tiled
+  version: 1.8.6
+  kind: app
+  description: |
+    Tiled is a general purpose tile map editor for all tile-based games, such as RPGs, platformers or Breakout clones.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/mapeditor/tiled.git"
+  commit: e79f4fe8ee98d0087f35cbfce21f6bfedfaf6d22
+
+
+build:
+  kind: qmake
+      
+
+
+
+
+
+    
