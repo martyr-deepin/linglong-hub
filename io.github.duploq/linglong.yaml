@@ -1,0 +1,23 @@
+package:
+  id: io.github.duploq
+  name: duploq
+  version: 0.1.0
+  kind: app
+  description: |
+     Its goal is to find duplicates (i.e. copy-pasted parts of code) across several source files.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/duploq/duploq.git"
+  commit: 321625a93f8ef54f290f30d295be61cf72b1cbcb
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
