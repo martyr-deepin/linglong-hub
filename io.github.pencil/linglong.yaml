@@ -1,0 +1,22 @@
+package:
+  id: io.github.pencil
+  name: pencil
+  version: 0.6.6
+  kind: app
+  description: |
+    Pencil2D is an easy, intuitive tool to make 2D hand-drawn animations. Pencil2D is open source and cross-platform.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/pencil2d/pencil.git
+  commit: 127cd62212311b6b72a731c7a96b74021801bec4
+
+
+build:
+  kind: qmake
+
