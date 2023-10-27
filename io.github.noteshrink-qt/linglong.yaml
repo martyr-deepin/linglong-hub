@@ -1,0 +1,19 @@
+package:
+  id: io.github.noteshrink-qt
+  name: noteshrink-qt
+  version: 10.0.0
+  kind: app
+  description: |
+    Convert scans of handwritten notes to beautiful, compact PDFs
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/clapautius/noteshrink-qt.git
+  commit: 08476f78a555bf70144eef75d960b8a9fbba82c8
+
+build:
+  kind: qmake
