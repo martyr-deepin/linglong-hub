@@ -1,0 +1,31 @@
+package:
+  id: io.github.2048-qt
+  name: 2048-qt
+  version: 3.0.0
+  kind: app
+  description: |
+    Web based Popular 2048 game app implemented in Qt 5, uses QWebKit.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine
+    version: 5.15.7
+
+source:
+  kind: git
+  url: "https://github.com/keshavbhatt/2048-qt.git"
+  commit: 1386b8240363dfef7724d95db95902d1e5e2e877
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
