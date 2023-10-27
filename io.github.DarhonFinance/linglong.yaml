@@ -1,0 +1,25 @@
+package:
+  id: io.github.DarhonFinance
+  name: DarhonFinance
+  version: 1.5.1
+  kind: app
+  description: |
+    Darhon Finance is a robust, user-friendly personal finance program that includes features that allow you to manage your finances, track your credit cards, bank accounts, investments and plan for your expenses. It is a very comprehensive software orient to desktop computers and easy to use.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/DarhonSoftware/DarhonFinance.git
+  commit: 26d4a5514c988b11de3e2c3dd7994c88f5806ee6
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: cmake
+
+
