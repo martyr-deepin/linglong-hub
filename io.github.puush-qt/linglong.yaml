@@ -1,0 +1,19 @@
+package:
+  id: io.github.puush-qt
+  name: puush-qt
+  version: 0.2.5
+  kind: app
+  description: |
+   this will create a system tray icon and contains similar options to puush from Windows 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/jplsek/puush-qt.git
+  commit: 4732b58fdba31f820d07e4e5e5be1c0c0dfd5d66
+
+build:
+  kind: cmake
