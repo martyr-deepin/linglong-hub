@@ -1,0 +1,19 @@
+package:
+  id: io.github.GammaRay
+  name: GammaRay
+  version: 3.0.0
+  kind: app
+  description: |
+    Leveraging the QObject introspection mechanism it allows you to observe and manipulate your application at runtime.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/KDAB/GammaRay.git"
+  commit: 93428a9da835c04162fa817678e44795d0f80033
+
+build:
+  kind: cmake
