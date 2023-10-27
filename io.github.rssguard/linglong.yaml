@@ -1,0 +1,23 @@
+package:
+  id: io.github.rssguard
+  name: rssguard
+  version: 4.5.1
+  kind: app
+  description: |
+     a simple RSS/ATOM feed reader for Windows, Linux, BSD, OS/2 or macOS which can work with RSS/ATOM/JSON/Sitemap feeds as well as many online feed services.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine
+    version: 5.15.7
+
+source:
+  kind: git
+  url: "https://github.com/martinrotter/rssguard.git"
+  commit: 4ae7ba1e356dd83bd388f9b4e036964a64874fa2
+
+build:
+  kind: cmake
