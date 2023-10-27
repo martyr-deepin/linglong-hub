@@ -1,0 +1,19 @@
+package:
+  id: io.github.pixsrt
+  name: pixsrt
+  version: 1.6.0
+  kind: app
+  description: |
+    Processing script to sort portions of pixels in an image with threshold control.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/thorpelawrence/pixsrt.git
+  commit: f96945750423273c01c99cff5bda38abfbef14ef
+
+build:
+  kind: qmake
