@@ -1,0 +1,19 @@
+package:
+  id: io.github.texstudio
+  name: texstudio
+  version: 4.6.3
+  kind: app
+  description: |
+    TeXstudio is a fully featured LaTeX editor.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/texstudio-org/texstudio.git"
+  commit: 86ce072fe1df6103c289bf771fb294df4f0d3984
+
+build:
+  kind: cmake
