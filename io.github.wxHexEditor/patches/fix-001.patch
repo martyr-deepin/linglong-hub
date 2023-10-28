@@ -1,0 +1,13 @@
+--- ../CMakeLists.txt	2023-10-28 21:30:31.753728000 +0800
++++ ../CMakeLists.txt	2023-10-28 18:09:51.878305184 +0800
+@@ -52,6 +52,10 @@
+ 	wxHexEditor PRIVATE mhash udis ${wxWidgets_LIBRARIES}
+ )
+ 
++install(TARGETS wxHexEditor DESTINATION /opt/apps/io.github.wxHexEditor/files/bin)
++install(PROGRAMS resources/wxHexEditor.desktop DESTINATION /opt/apps/io.github.wxHexEditor/files/share/applications)
++install(FILES resources/wxHexEditor.ico DESTINATION /opt/apps/io.github.wxHexEditor/files/share/applications)
++
+ if (WIN32)
+ 	target_link_libraries(wxHexEditor PRIVATE mhash udis ${wxWidgets_LIBRARIES} uxtheme oleacc psapi ws2_32)
+ endif()
