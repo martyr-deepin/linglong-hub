@@ -1,0 +1,19 @@
+package:
+  id: io.github.pdfquirk
+  name: pdfquirk
+  version: 0.95
+  kind: app
+  description: |
+    Creating PDFs from images or scanner made easy.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dragotin/pdfquirk.git
+  commit: 79f3bb003a0e269399b1eec4632411090ad79e84
+
+build:
+  kind: cmake
