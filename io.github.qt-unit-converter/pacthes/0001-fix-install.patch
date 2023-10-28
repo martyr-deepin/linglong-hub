@@ -1,0 +1,54 @@
+From 8d0e50155bc9251e77281ed8a46df1ab5b00e381 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sat, 28 Oct 2023 21:43:04 +0800
+Subject: [PATCH] fix-install
+
+---
+ qt-unit-converter.desktop | 10 ++++++++++
+ qt-unit-converter.pro     | 11 +++++++++--
+ 2 files changed, 19 insertions(+), 2 deletions(-)
+ create mode 100644 qt-unit-converter.desktop
+
+diff --git a/qt-unit-converter.desktop b/qt-unit-converter.desktop
+new file mode 100644
+index 0000000..cafb7cd
+--- /dev/null
++++ b/qt-unit-converter.desktop
+@@ -0,0 +1,10 @@
++[Desktop Entry]
++Name=qt-unit-converter
++Categories=Game;Qt;
++Comment=a simple tool
++Exec=qt-unit-converter
++Icon=icons/areaIcon.png
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/qt-unit-converter.pro b/qt-unit-converter.pro
+index 1686ed4..5607996 100644
+--- a/qt-unit-converter.pro
++++ b/qt-unit-converter.pro
+@@ -32,9 +32,16 @@ CONFIG += lrelease
+ CONFIG += embed_translations
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++qnx: target.path = /tmp/$${PREFIX}/bin
++else: unix:!android: target.path = /opt/$${PREFIX}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     icons.qrc
++
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = qt-unit-converter.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
