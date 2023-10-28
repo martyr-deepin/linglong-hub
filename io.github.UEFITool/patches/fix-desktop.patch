@@ -1,0 +1,51 @@
+--- ../UEFITool/uefitool.pro	2023-10-28 09:58:22.434702000 +0800
++++ ../UEFITool/uefitool.pro	2023-10-28 11:53:56.790721919 +0800
+@@ -150,7 +150,7 @@
+  qhexview5/model/qhexdocument.cpp \
+  qhexview5/model/qhexmetadata.cpp \
+  qhexview5/model/qhexutils.cpp \
+- qhexview5/qhexview.cpp 
++ qhexview5/qhexview.cpp
+ 
+ FORMS += uefitool.ui \
+  searchdialog.ui \
+@@ -163,3 +163,39 @@
+ ICON = icons/uefitool.icns
+ QMAKE_BUNDLE_DATA += ICONFILE
+ QMAKE_INFO_PLIST = Info.plist
++
++
++# 定义目标路径
++DESTDIR = /opt/apps/io.github.UEFITool
++
++
++############# 构建desktop文件 ######################
++
++
++# bin路径https://github.com/LongSoft/UEFITool/commits/new_engine
++qnx: target.path = /tmp/$${TARGET}/bin
++else: unix:!android: target.path = $${DESTDIR}/files/bin/ # /opt/$${TARGET}/bin
++!isEmpty(target.path): INSTALLS += target
++
++
++# 定义：.desktop 文件路径
++DESKTOP_FILE = ./UEFITool.desktop
++
++# 输入内容： .desktop 文件
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=UEFITool' >> $$DESKTOP_FILE")
++system("echo 'Comment=UEFITool, a tool.' >> $$DESKTOP_FILE")
++system("echo 'Exec=/opt/apps/io.github.UEFITool/files/bin/UEFITool' >> $$DESKTOP_FILE")
++system("echo 'Icon=/source/images/GNOME_CALC_mini.png' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++system("echo 'Keywords=BIOS;UEFI;' >> $$DESKTOP_FILE")
++
++
++# 将 .desktop 文件复制到构建目录中
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$DESTDIR/files/share/applications
++INSTALLS += desktop
++
