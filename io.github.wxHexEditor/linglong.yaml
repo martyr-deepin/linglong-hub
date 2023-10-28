@@ -1,0 +1,28 @@
+package:
+  id: io.github.wxHexEditor
+  name: wxHexEditor
+  version: 0.24.0
+  kind: app
+  description: |
+    wxHexEditor official GIT.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: wxWidgets
+    version: 3.2.3
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/EUA/wxHexEditor.git
+  commit: 516cfd842eea49a2c0f1649d0a0b2894113f4228
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: cmake
+
+
