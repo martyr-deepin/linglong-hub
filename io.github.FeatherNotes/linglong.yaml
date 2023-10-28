@@ -1,0 +1,19 @@
+package:
+  id: io.github.FeatherNotes
+  name: FeatherNotes
+  version: 1.1.1
+  kind: app
+  description: |
+     FeatherNotes (by Pedram Pourang, a.k.a. Tsu Jan tsujan2000@gmail.com) is a lightweight Qt hierarchical notes-manager for Linux.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/tsujan/FeatherNotes.git"
+  commit: a30dfd53de17a9525e3dff3836e9f2c9254389e0
+
+build:
+  kind: cmake
