@@ -1,0 +1,48 @@
+From c3ca3844a946cc0d09c2a432f4ae56e3526a2717 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sun, 29 Oct 2023 02:21:26 +0800
+Subject: [PATCH] fix-install
+
+---
+ Video_Converter.desktop |  9 +++++++++
+ Video_Converter.pro     | 10 +++++++---
+ 2 files changed, 16 insertions(+), 3 deletions(-)
+ create mode 100644 Video_Converter.desktop
+
+diff --git a/Video_Converter.desktop b/Video_Converter.desktop
+new file mode 100644
+index 0000000..e268681
+--- /dev/null
++++ b/Video_Converter.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Name=Video_Converter
++Categories=Game;Qt;
++Comment=a simple tool
++Exec=Video_Converter
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Video_Converter.pro b/Video_Converter.pro
+index 6f0f127..0ebbcfa 100644
+--- a/Video_Converter.pro
++++ b/Video_Converter.pro
+@@ -21,6 +21,10 @@ FORMS += \
+     mainwindow.ui
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
++
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = Video_Converter.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
