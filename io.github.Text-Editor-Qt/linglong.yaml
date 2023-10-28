@@ -1,0 +1,19 @@
+package:
+  id: io.github.Text-Editor-Qt
+  name: Text-Editor-Qt
+  version: 0.0.1
+  kind: app
+  description: |
+    A Basic text-editing app which allows you to Bold / Unbold an individual text..
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/nymika/Text-Editor-Qt.git"
+  commit: 4c0627b517f8d6d68188756ec158962603781c56
+  patch: patches/0001-install.patch
+build:
+  kind: qmake

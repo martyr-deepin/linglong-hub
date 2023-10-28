@@ -1,0 +1,51 @@
+From 7c020845adddba6758389587a228fa785347d033 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Sun, 5 Nov 2023 14:45:42 +0800
+Subject: [install.patch_] install
+
+---
+ Text-Editor.desktop | 11 +++++++++++
+ Text-Editor.pro     | 12 ++++++++++++
+ 2 files changed, 23 insertions(+)
+ create mode 100644 Text-Editor.desktop
+
+diff --git a/Text-Editor.desktop b/Text-Editor.desktop
+new file mode 100644
+index 0000000..06d2e76
+--- /dev/null
++++ b/Text-Editor.desktop
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=Text-Editor
++Comment=Text-Editor
++Categories=Graphics;Qt;
++Icon=bold
++Exec=Text-Editor
++MimeType=image/jpeg;image/png;
++Terminal=false
++
+diff --git a/Text-Editor.pro b/Text-Editor.pro
+index 6cc2669..8626852 100644
+--- a/Text-Editor.pro
++++ b/Text-Editor.pro
+@@ -35,3 +35,15 @@ FORMS += \
+ 
+ RESOURCES += \
+     appresources.qrc
++
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = ./$${TARGET}.desktop
++INSTALLS += unix_desktop
++
++unix_icons.path = $${PREFIX}/share/icons/hicolor/scalable/apps
++unix_icons.files = icons/bold.png
++INSTALLS += unix_icons
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
+-- 
+2.33.1
+
