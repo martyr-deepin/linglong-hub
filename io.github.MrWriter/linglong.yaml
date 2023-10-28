@@ -1,0 +1,26 @@
+package:
+  id: io.github.MrWriter
+  name: MrWriter
+  version: 0.0.7
+  kind: app
+  description: |
+    Notetaking and blackboard replacement application. Inspired by Xournal. Written in C++/Qt for Linux / Windows / Mac.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: libzip
+    version: 1.5.1.8
+
+source:
+  kind: git
+  url: https://github.com/unruhschuh/MrWriter.git
+  commit: 9b9ae093fc194ef7e782fb31d0e8aad71c3349ad
+  patch: patches/fix-desktop-001.patch
+
+
+build:
+  kind: cmake 
+
