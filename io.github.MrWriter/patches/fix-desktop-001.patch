@@ -1,0 +1,9 @@
+--- ../CMakeLists.txt	2023-10-28 09:26:36.902747000 +0800
++++ ../CMakeLists.txt	2023-10-28 09:45:32.959267025 +0800
+@@ -166,4 +166,5 @@
+ 
+ target_link_libraries(MrWriter ${LIBS})
+ 
+-install(TARGETS MrWriter DESTINATION ${CMAKE_BINARY_DIR}/appdir/usr/bin)
++install(TARGETS MrWriter DESTINATION /opt/apps/io.github.MrWriter/files/bin)
++install(PROGRAMS ./MrWriter.desktop DESTINATION /opt/apps/io.github.MrWriter/files/share/applications)
