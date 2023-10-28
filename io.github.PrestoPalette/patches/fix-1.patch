@@ -1,0 +1,22 @@
+--- ../CMakeLists.txt	2023-10-28 15:24:47.181301000 +0800
++++ ../CMakeLists.txt	2023-10-28 15:37:03.426721530 +0800
+@@ -60,6 +60,19 @@
+ 		ARCHIVE DESTINATION lib
+ 		)
+ 
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=PrestoPalette
++Exec=${CMAKE_PROJECT_NAME}
++Icon=/source/icon.bmp
++Categories=Utility;
++")
++file(WRITE ./PrestoPalette.desktop "${DESKTOP_FILE_CONTENT}")
++
++install(PROGRAMS ./PrestoPalette.desktop DESTINATION /opt/apps/io.github.PrestoPalette/files/share/applications)
++install(TARGETS ${CMAKE_PROJECT_NAME} DESTINATION /opt/apps/io.github.PrestoPalette/files/bin)
++
+ IF(MINGW)
+ 	function(force_find_library file_name)
+ 		SET(FOUND_LIB "FOUND_LIB-NOTFOUND")
