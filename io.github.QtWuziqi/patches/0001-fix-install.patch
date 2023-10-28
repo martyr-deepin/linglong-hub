@@ -1,0 +1,46 @@
+From b94a2d4dfb1236fef5215efcb49c435ea53f59cb Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sat, 28 Oct 2023 15:37:27 +0800
+Subject: [PATCH] fix-install
+
+---
+ QtWuziqi.pro         |  7 +++++++
+ pic/QtWuziqi.desktop | 10 ++++++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100755 pic/QtWuziqi.desktop
+
+diff --git a/QtWuziqi.pro b/QtWuziqi.pro
+index 5c0bfaa..c1ae75d 100644
+--- a/QtWuziqi.pro
++++ b/QtWuziqi.pro
+@@ -21,3 +21,10 @@ HEADERS  += mainwindow.h \
+ 
+ RESOURCES += \
+     resource.qrc
++
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = pic/QtWuziqi.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+diff --git a/pic/QtWuziqi.desktop b/pic/QtWuziqi.desktop
+new file mode 100755
+index 0000000..6caecc3
+--- /dev/null
++++ b/pic/QtWuziqi.desktop
+@@ -0,0 +1,10 @@
++[Desktop Entry]
++Name=QtWuziqi
++Categories=Game;Qt;
++Comment=a simple wuziqi game
++Exec=QtWuziqi
++Icon=wuziqi.gif
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+-- 
+2.33.1
+

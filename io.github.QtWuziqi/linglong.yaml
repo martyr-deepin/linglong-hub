@@ -1,0 +1,20 @@
+package:
+  id: io.github.QtWuziqi
+  name: QtWuziqi
+  version: 1.0.0
+  kind: app
+  description: |
+    a simple wuziqi game
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/tashaxing/QtWuziqi.git"
+  commit: f4a8700699fce1b4d4a9d07e4618045c57ad3666
+  patch:
+    - patches/0001-fix-install.patch
+build:
+  kind: qmake
