@@ -1,0 +1,15 @@
+--- ./hmtimer.pro	2023-11-01 14:38:29.385004000 +0800
++++ ./hmtimer.pro	2023-11-01 14:43:06.921408219 +0800
+@@ -7,10 +7,10 @@
+ 
+ install_desktop.files=io.github.cges30901.hmtimer.desktop
+ CONFIG(flatpak):install_desktop.path=/app/share/applications
+-else:install_desktop.path=/usr/share/applications
++else:install_desktop.path=$$PREFIX/share/applications
+ 
+ install_appdata.files=io.github.cges30901.hmtimer.appdata.xml
+ CONFIG(flatpak):install_appdata.path=/app/share/appdata
+-else:install_appdata.path=/usr/share/appdata
++else:install_appdata.path=$$PREFIX/share/appdata
+ 
+ INSTALLS+=install_desktop install_appdata

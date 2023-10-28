@@ -1,0 +1,30 @@
+package:
+  id: io.github.hmtimer
+  name: hmtimer
+  version: 3.2.1
+  kind: app
+  description: |
+    A graphical shutdown timer.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/cges30901/hmtimer.git
+  commit: bd87442639cc9ec44b35ba195caf73bc171ed2a1
+  patch: 
+    - patches/fix-001.patch
+    - patches/fix-002.patch
+
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      qmake -makefile ${conf_args} ${extra_args} ./hmtimer.pro
+
+
+
