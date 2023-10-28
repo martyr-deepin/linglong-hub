@@ -1,0 +1,10 @@
+--- ../src/CMakeLists.txt	2023-11-01 19:20:14.952697000 +0800
++++ ../src/CMakeLists.txt	2023-11-01 19:27:24.184917221 +0800
+@@ -120,3 +120,7 @@
+     Qt5::Gui
+     Qt5::Widgets
+ )
++
++install(TARGETS bpmdetect DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
++install(PROGRAMS bpmdetect.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++install(FILES bpmdetect-icon.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)

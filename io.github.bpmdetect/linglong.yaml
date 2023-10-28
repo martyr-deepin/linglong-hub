@@ -1,0 +1,25 @@
+package:
+  id: io.github.bpmdetect
+  name: bpmdetect
+  version: 0.7.0
+  kind: app
+  description: |
+    BPMDetect updated for Qt 5.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: portaudio19
+    version: 19.6.0
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/Tatsh/bpmdetect.git
+  commit: 5bb55a000a447327d22f8521c69521e5728a8fa8
+  patch: patches/fix-001.patch
+
+build:
+  kind: cmake
