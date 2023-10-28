@@ -1,0 +1,28 @@
+package:
+  id: io.github.UEFITool
+  name: UEFITool
+  version: 6.7.0
+  kind: app
+  description: |
+    UEFITool is a viewer and editor of firmware images conforming to UEFI Platform Interface (PI) Specifications.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/LongSoft/UEFITool.git
+  commit: eaef5c819e6c0d88ffa7fef49b9a48459137ceda
+  patch: patches/fix-desktop.patch
+
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      mkdir build && cd build
+      qmake -makefile ${conf_args} ${extra_args} ../UEFITool/uefitool.pro CONFIG+=release
+
+
