@@ -1,0 +1,20 @@
+package:
+  id: io.github.DustRacing2D
+  name: DustRacing2D
+  version: 2.1.1
+  kind: app
+  description: |
+    Dust Racing 2D is a traditional top-down car racing game including a level editor.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/juzzlin/DustRacing2D.git
+  commit: 2c00334135aa004213758a0121a23a872660aa79
+  patch: patches/fix-001.patch
+
+build:
+  kind: cmake
