@@ -1,0 +1,17 @@
+diff --git a/qt-unit-converter.pro b/qt-unit-converter.pro
+index fc8b963..ba10648 100644
+--- a/qt-unit-converter.pro
++++ b/qt-unit-converter.pro
+@@ -36,7 +36,12 @@ CONFIG += embed_translations
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
++target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += qt-unit-converter.desktop
++INSTALLS += desktop
++
+ RESOURCES += \
+     icons.qrc

@@ -1,0 +1,14 @@
+diff --git a/qt-unit-converter.desktop b/qt-unit-converter.desktop
+new file mode 100644
+index 0000000..31a4cf4
+--- /dev/null
++++ b/qt-unit-converter.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Type=Application
++Name=Qt unit converter
++Exec=qt-unit-converter %f
++Icon=qt-unit-converter
++Categories=Qt;
++GenericName=A program for unit conversions made using the Qt framework.
++
