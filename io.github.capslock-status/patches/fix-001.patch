@@ -1,0 +1,32 @@
+--- ../capslock.pro	2023-10-29 09:53:51.748830000 +0800
++++ ../capslock.pro	2023-10-29 10:02:35.075829134 +0800
+@@ -16,3 +16,29 @@
+ RESOURCES=capslock.qrc
+ 
+ LIBS+=-lX11
++
++
++DESTDIR = /opt/apps/io.github.capslock-status
++
++target.path = $${DESTDIR}/files/bin
++DESKTOP_FILE = ./QalculaTor.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=0.1.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=capslock-status' >> $$DESKTOP_FILE")
++system("echo 'Comment=capslock-status, a tool for calculate.' >> $$DESKTOP_FILE")
++system("echo 'Exec=/opt/apps/io.github.capslock-status/files/bin/capslock' >> $$DESKTOP_FILE")
++system("echo 'Icon=/source/capslock_off.png' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$DESTDIR/files/share/applications
++
++INSTALLS += target desktop
++
++
++
++
++
++
++

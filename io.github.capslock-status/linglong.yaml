@@ -1,0 +1,28 @@
+package:
+  id: io.github.capslock-status
+  name: capslock-status
+  version: 1.0.0
+  kind: app
+  description: |
+    display an icon in system tray to indicate the status of capslock.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/cges30901/capslock-status.git
+  commit: fd2bbecf9f4564657e645734c6af0c493cd44fa8
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      mkdir build && cd build 
+      qmake -makefile ${conf_args} ${extra_args} ../capslock.pro
+
+
