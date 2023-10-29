@@ -1,0 +1,7 @@
+--- ../src/CMakeLists.txt	2023-10-29 16:04:23.105692000 +0800
++++ ../src/CMakeLists.txt	2023-10-29 16:16:18.058530069 +0800
+@@ -41,3 +41,4 @@
+ target_link_libraries(flow Qt5::Gui Qt5::Quick Qt5::DBus Qt5::Widgets)
+ 
+ install (TARGETS flow DESTINATION bin)
++install (PROGRAMS ../flow.desktop DESTINATION /opt/apps/io.github.flow-pomodoro/files/share/applications)
