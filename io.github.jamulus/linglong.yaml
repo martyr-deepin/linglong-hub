@@ -1,0 +1,19 @@
+package:
+  id: io.github.jamulus
+  name: jamulus
+  version: 3.10.0
+  kind: app
+  description: |
+    Jamulus enables musicians to perform in real-time together over the internet.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/jamulussoftware/jamulus.git"
+  commit: f6e3bf6973eec459ec329c2c1b5fc2bca8c49768
+
+build:
+  kind: qmake
