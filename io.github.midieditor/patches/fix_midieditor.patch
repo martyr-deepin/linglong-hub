@@ -1,0 +1,32 @@
+--- ../midieditor.pro	2023-10-28 17:14:53.029606000 +0800
++++ ../midieditor.pro	2023-10-28 17:10:28.458211000 +0800
+@@ -88,3 +88,29 @@
+     MOC_DIR = .tmp
+     ICON = midieditor.icns
+ }
++#DESTDIR = /opt/apps/io.github.midieditor # 目标路径
++# Default rules for deployment.
++target.path = /opt/apps/io.github.midieditor/files/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++
++message($${target.path})
++
++############# 构建desktop文件 ######################
++# 定义：.desktop 文件路径
++DESKTOP_FILE = ./MidiEditor.desktop
++
++# 输入内容： .desktop 文件
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.2' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=MidiEditor' >> $$DESKTOP_FILE")
++system("echo 'Comment=MidiEditor.' >> $$DESKTOP_FILE")
++system("echo 'Exec=MidiEditor' >> $$DESKTOP_FILE")
++system("echo 'Icon=MidiEditor' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++# 将 .desktop 文件复制到构建目录中
++desktop.files += $$DESKTOP_FILE
++desktop.path = /opt/apps/io.github.midieditor/files/share/applications
++INSTALLS += desktop

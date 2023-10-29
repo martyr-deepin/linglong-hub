@@ -1,0 +1,19 @@
+package:
+  id: io.github.midieditor
+  name: midieditor
+  version: 3.3.2
+  kind: app
+  description: |
+    Provides an interface to edit, record, and play Midi data.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/markusschwenk/midieditor.git
+  commit: 1b42f009873a0582cb2ad0f2e02c773bfdbc60a4
+  patch: patches/fix_midieditor.patch
+build:
+  kind: qmake
