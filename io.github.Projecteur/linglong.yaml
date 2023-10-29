@@ -1,0 +1,18 @@
+package:
+  id: io.github.Projecteur
+  name: Projecteur
+  version: 0.10.0
+  kind: app
+  description: |
+    for the Logitech Spotlight device
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/jahnf/Projecteur.git
+  commit: eb9ff490f8206c8010df7f73d3aa8fe9ed9e51b3
+build:
+  kind: cmake
