@@ -1,0 +1,23 @@
+package:
+  id: io.github.TextEditor-Qt
+  name: TextEditor-Qt
+  version: 0.2.0
+  kind: app
+  description: |
+    It's a simple TextEditor using QT (like Notepad) with C++.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/pr-ravi/TextEditor-Qt.git
+  commit: 15e43ae48bb2e9712902e2ffeab231ebab548d5a
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake 
+
