@@ -1,0 +1,23 @@
+package:
+  id: io.github.magicfountain
+  name: magicfountain
+  version: 1.0.0
+  kind: app
+  description: |
+    A screenwriting program available
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine
+    version: 5.15.7
+
+source:
+  kind: git
+  url: https://github.com/Aztorius/magicfountain.git
+  commit: 4ce6643371d1ab244be2f555cd9860cdaa200ac1
+
+build:
+  kind: qmake
