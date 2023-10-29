@@ -1,0 +1,19 @@
+package:
+  id: io.github.qdia
+  name: qdia
+  version: 0.37.0
+  kind: app
+  description: |
+    Simple schematic/diagram editor with focus on quick diagram generation with high quality graphics.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/sunderme/qdia.git
+  commit: b368939caddf490256475d3c93f72949dfbff977
+
+build:
+  kind: cmake
