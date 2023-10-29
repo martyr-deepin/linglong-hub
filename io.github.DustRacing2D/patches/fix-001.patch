@@ -1,0 +1,17 @@
+--- ../CMakeLists.txt	2023-11-02 15:13:05.888239000 +0800
++++ ../CMakeLists.txt	2023-11-02 15:37:38.812679571 +0800
+@@ -195,3 +195,14 @@
+ 
+ add_subdirectory(src/editor)
+ add_subdirectory(src/game)
++
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=dustrac-editor
++Exec=dustrac-editor
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_INSTALL_PREFIX}/share/applications/dustrac-editor.desktop "${DESKTOP_FILE_CONTENT}")
++install(TARGETS dustrac-editor DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
