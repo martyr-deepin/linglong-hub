@@ -1,0 +1,26 @@
+package:
+  id: io.github.MedianXLOfflineTools
+  name: MedianXLOfflineTools
+  version: 0.6.4
+  kind: app
+  description: |
+    Character manager for Diablo 2 - Median XL mod.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/kambala-decapitator/MedianXLOfflineTools.git
+  commit: e603beb7e435290409505be5ee9bcc3faec021ff
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+variables:
+  extra_args: |
+    MedianXLOfflineTools.pro
+
+build:
+  kind: qmake
