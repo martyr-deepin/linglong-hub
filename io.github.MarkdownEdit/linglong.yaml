@@ -1,0 +1,18 @@
+package:
+  id: io.github.MarkdownEdit
+  name: MarkdownEdit
+  version: 1.5.5
+  kind: app
+  description: |
+    Experience the speed and simplicity of MarkdownEdit
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/tim-gromeyer/MarkdownEdit.git
+  commit: 4ffeac063fecc4d0dcffbe4e131a02921f51cb2e
+
+build:
+  kind: cmake
