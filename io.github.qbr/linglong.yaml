@@ -1,0 +1,35 @@
+package:
+  id: io.github.qbr
+  name: qbr
+  version: 0.0.6
+  kind: app
+  description: |
+    Simple e-Book reader, written on C++ with Qt library.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine/5.15.7
+  - id: quazip
+    version: 0.9.1
+    type: runtime
+    source:
+      kind: git
+      url: https://github.com/stachenov/quazip.git
+      commit: 6938d8b108b09ebb14ef25542abd2d9108f8e036
+    build:
+      kind: cmake
+
+source:
+  kind: git
+  url: https://github.com/moose-kazan/qbr.git
+  commit: b4a1433b5ba9dcf226f8f8399c9b25da6b89fa55
+
+variables:
+  extra_args: |
+    INCLUDEPATH+=/runtime/include
+
+build:
+  kind: qmake
