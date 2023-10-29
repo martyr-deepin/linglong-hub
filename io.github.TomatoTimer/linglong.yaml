@@ -1,0 +1,26 @@
+package:
+  id: io.github.TomatoTimer
+  name: TomatoTimer
+  version: 0.1.2
+  kind: app
+  description: |
+    A Simple Pomodoro Timer that lives in the Menu Bar 🍅.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/lmartinking/TomatoTimer.git
+  commit: bf6845f981d0383890fd20c23d0c9b327e9b9381
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake 
+  manual :
+    configure: |
+      qmake -makefile ${conf_args} ${extra_args} ./TomatoTimer.pro
+
