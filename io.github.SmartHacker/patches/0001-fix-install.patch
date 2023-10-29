@@ -1,0 +1,46 @@
+From b8799145249fc75865136122956b5025a8e6f134 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sun, 29 Oct 2023 12:29:38 +0800
+Subject: [PATCH] fix-install
+
+---
+ SmartHacker.desktop | 9 +++++++++
+ SmartHacker.pro     | 9 ++++++---
+ 2 files changed, 15 insertions(+), 3 deletions(-)
+ create mode 100644 SmartHacker.desktop
+
+diff --git a/SmartHacker.desktop b/SmartHacker.desktop
+new file mode 100644
+index 0000000..3f0e7c3
+--- /dev/null
++++ b/SmartHacker.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Name=SmartHacker
++Categories=Game;Qt;
++Comment=Tool to automatically decode 
++Exec=SmartHacker
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/SmartHacker.pro b/SmartHacker.pro
+index 2e3240f..4cd3413 100644
+--- a/SmartHacker.pro
++++ b/SmartHacker.pro
+@@ -33,6 +33,9 @@ FORMS += \
+     mainwindow.ui
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = SmartHacker.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
