@@ -1,0 +1,31 @@
+--- ../CMakeLists.txt	2023-11-02 17:04:06.964224000 +0800
++++ ../CMakeLists.txt	2023-11-02 17:06:47.107792001 +0800
+@@ -87,7 +87,19 @@
+ 
+ target_link_libraries(youtubedl-gui PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+ 
+-install(TARGETS youtubedl-gui RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=youtubedl-gui
++Exec=youtubedl-gui
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/youtubedl-gui.desktop "${DESKTOP_FILE_CONTENT}")
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/youtubedl-gui.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++
++install(TARGETS youtubedl-gui DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+ 
+ install(FILES icons/16x16.png
+     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/16x16/apps
+@@ -108,5 +120,5 @@
+     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/512x512/apps
+     RENAME youtubedl-gui.png)
+ 
+-install(FILES resources/youtubedl-gui.desktop
+-    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
++#install(FILES resources/youtubedl-gui.desktop
++#    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
