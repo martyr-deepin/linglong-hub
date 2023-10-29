@@ -1,0 +1,19 @@
+package:
+  id: io.github.esee
+  name: esee
+  version: 1.0.0
+  kind: app
+  description: |
+    esee provides a UI for editing the EXIF data in JPG files.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/nathan-osman/esee.git
+  commit: ea1d728b249d1975c9ec0316fdab2c02cb755b4a
+
+build:
+  kind: cmake
