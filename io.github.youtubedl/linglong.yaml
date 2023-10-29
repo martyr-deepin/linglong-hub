@@ -1,0 +1,20 @@
+package:
+  id: io.github.youtubedl
+  name: youtubedl
+  version: 1.9.0
+  kind: app
+  description: |
+    A simple-to-use, cross-platform graphical interface for youtube-dl.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/JaGoLi/ytdl-gui.git
+  commit: 6ea9ad84b476bf39e35cc3b2ed769c18152cbbda
+  patch: patches/fix_ytdl.patch
+
+build:
+  kind: cmake
