@@ -1,0 +1,27 @@
+From ce93dda00136d26d5bd16fff8a9d90acd387fecd Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 29 Oct 2023 15:41:59 +0800
+Subject: [PATCH] install
+
+---
+ TexasSolverGui.pro | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/TexasSolverGui.pro b/TexasSolverGui.pro
+index c932ba6..8416a92 100644
+--- a/TexasSolverGui.pro
++++ b/TexasSolverGui.pro
+@@ -200,3 +200,10 @@ FORMS += \
+ RESOURCES += \
+     translations.qrc \
+     compairer.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =resources/desktop/TexasSolverGui.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
