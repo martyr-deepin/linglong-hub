@@ -1,0 +1,24 @@
+--- ../CMakeLists.txt	2023-10-28 12:09:28.601666654 +0800
++++ ../CMakeLists.txt	2023-10-28 10:03:47.639970000 +0800
+@@ -39,6 +39,20 @@
+     ${QT_LIBRARIES}
+     ${sprinter_LIBRARIES}
+     )
++# 设置.desktop文件的内容
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=sprinter
++Exec=sprinter
++Icon=/source/resources/icon
++Categories=Utility;
++")
+ 
+-install(TARGETS sprinter DESTINATION bin)
++# 将.desktop文件写入构建目录
++file(WRITE ${CMAKE_BINARY_DIR}/sprinter.desktop "${DESKTOP_FILE_CONTENT}")
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/sprinter.desktop DESTINATION /opt/apps/io.github.sprinter/files/share/applications)
++
++install(TARGETS sprinter DESTINATION /opt/apps/io.github.sprinter/files/bin)
+ 

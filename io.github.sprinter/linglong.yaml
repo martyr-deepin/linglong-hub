@@ -1,0 +1,20 @@
+package:
+  id: io.github.sprinter
+  name: sprinter
+  version: 0.0.1
+  kind: app
+  description: |
+    Simple Qt application based on dmenu.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/hluk/sprinter.git
+  commit: 396c84bf22695dcb5a51f8e8b7375ca7101218bd
+  patch: patches/fix.patch
+
+build:
+  kind: cmake
