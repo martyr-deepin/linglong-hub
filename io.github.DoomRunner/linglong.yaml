@@ -1,0 +1,23 @@
+package:
+  id: io.github.DoomRunner
+  name: DoomRunner
+  version: 1.8.2
+  kind: app
+  description: |
+    Preset-oriented graphical launcher of various ported Doom engines (an alternative to ZDL).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Youda008/DoomRunner.git
+  commit: 4a61c9a55a952d03e448503cf81f395953950b30
+  patch: patches/fix-001.patch
+
+build:
+  kind: qmake 
+  manual:
+    configure: |
+      qmake -makefile ${conf_args} ${extra_args} ./DoomRunner.pro
