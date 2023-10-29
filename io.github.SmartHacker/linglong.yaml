@@ -1,0 +1,21 @@
+package:
+  id: io.github.SmartHacker
+  name: SmartHacker
+  version: 0.1.0
+  kind: app
+  description: |
+    Tool to automatically decode unknown SmartMeter data formats via "cypher known plaintext 'attack'" / intelligent brute forcing. A QT/GUI driven inspector for working with SmartMeter data. Blazingly fast! Compact C++ routines ready for embedded use!
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/M64GitHub/SmartHacker.git"
+  commit: aa7b0f0d2939680d3711400ae2b7d1250a481fa1
+  patch:
+    - patches/0001-fix-install.patch
+build:
+  kind: qmake
