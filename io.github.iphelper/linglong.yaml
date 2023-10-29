@@ -1,0 +1,19 @@
+package:
+  id: io.github.iphelper
+  name: iphelper
+  version: 0.2.1
+  kind: app
+  description: |
+    This simple tool displays the user's public-facing IPv4 address.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/nathan-osman/iphelper.git
+  commit: 86f3bf44f79d522dbd30772811902facf1c046ce
+
+build:
+  kind: cmake
