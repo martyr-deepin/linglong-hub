@@ -1,0 +1,22 @@
+package:
+  id: io.github.flow-pomodoro
+  name: flow-pomodoro
+  version: 1.2.0
+  kind: app
+  description: |
+    A pomodoro app that blocks distractions while you work.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/iamsergio/flow-pomodoro.git
+  commit: cdc28b0dbcc65589d34a03f640089406be53aaaf
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: cmake 
