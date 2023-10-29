@@ -1,0 +1,24 @@
+package:
+  id: io.github.cpeditor
+  name: cpeditor
+  version: 6.10.3
+  kind: app
+  description: |
+    Boost your competitive programming experience!
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: ksyntax-highlighting
+    type: runtime
+    version: 5.54.0
+
+source:
+  kind: git
+  url: https://github.com/cpeditor/cpeditor.git
+  commit: 4cd8904dc83aa8ccdc438d66ca0ec084ea8bd4f3
+
+build:
+  kind: cmake
