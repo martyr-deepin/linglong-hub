@@ -1,0 +1,22 @@
+package:
+  id: io.github.mousePointerHelper
+  name: mousePointerHelper  
+  version: 1.1.1
+  kind: app
+  description: |
+    a mini-application to help user adjust cursor position.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/BLumia/mousePointerHelper.git
+  commit: 26a5d022d183cf81f5d547a5f8c0de3a0a7021e1
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
