@@ -1,0 +1,46 @@
+From 27d7b6597cd31547c5051925f1863988b1207d89 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Mon, 30 Oct 2023 00:18:13 +0800
+Subject: [PATCH] fix-install
+
+---
+ QJsonify.desktop | 9 +++++++++
+ QJsonify.pro     | 9 +++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 QJsonify.desktop
+
+diff --git a/QJsonify.desktop b/QJsonify.desktop
+new file mode 100644
+index 0000000..86535e8
+--- /dev/null
++++ b/QJsonify.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Comment=Prettify and Minify your JSON files locally. Don't give out your precious information to online sources.
++Exec=QJsonify
++Name=QJsonify
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/QJsonify.pro b/QJsonify.pro
+index e45dda7..5fe5fbb 100644
+--- a/QJsonify.pro
++++ b/QJsonify.pro
+@@ -54,3 +54,12 @@ RESOURCES += \
+ OTHER_FILES += \
+     LICENSE \
+     menu_defs.json
++
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = QJsonify.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
