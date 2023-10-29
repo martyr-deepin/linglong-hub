@@ -1,0 +1,31 @@
+--- ../QVKbd.pro	2023-10-28 20:49:00.902030000 +0800
++++ ../QVKbd.pro	2023-10-28 20:49:58.358326644 +0800
+@@ -30,10 +30,27 @@
+ 
+ unix {
+ 	isEmpty( PREFIX ) {
+-		PREFIX = /usr
++		PREFIX = /opt/apps/io.github.QVKbd/files
+ 	}
+ 	BINDIR = $$PREFIX/bin
+ 
++	DESKTOP_FILE = ./qvkbd.desktop
++
++	system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++	system("echo 'Version=1.2' >> $$DESKTOP_FILE")
++	system("echo 'Type=Application' >> $$DESKTOP_FILE")
++	system("echo 'Name=qvkbd' >> $$DESKTOP_FILE")
++	system("echo 'Comment=qvkbd.' >> $$DESKTOP_FILE")
++	system("echo 'Exec=qvkbd' >> $$DESKTOP_FILE")
++	system("echo 'Icon=qvkbd' >> $$DESKTOP_FILE")
++	system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++	system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++	desktopfile.files = qvkbd.desktop
++ 	desktopfile.path = /opt/apps/io.github.QVKbd/files/share/applications
++	
++	INSTALLS += desktopfile
++
+ 	INSTALLS += target
+ 	target.path = $$BINDIR
+ }
