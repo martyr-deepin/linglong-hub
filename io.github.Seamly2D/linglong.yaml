@@ -1,0 +1,19 @@
+package:
+  id: io.github.Seamly2D
+  name: Seamly2D
+  version: 148.0.0
+  kind: app
+  description: |
+    Seamly2D is pattern design software to create scalable.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/FashionFreedom/Seamly2D.git"
+  commit: 3559a55cecac00a4c8c473aac8b885c11f621b9b
+
+build:
+  kind: qmake
