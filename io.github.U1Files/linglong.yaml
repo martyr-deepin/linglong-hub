@@ -1,0 +1,19 @@
+package:
+  id: io.github.U1Files
+  name: U1Files
+  version: 0.5.0
+  kind: app
+  description: |
+    Ubuntu One cross-platform Qt mobile application.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/JoseExposito/ubuntuone-qt-files.git
+  commit: 30893d86547be3b04a1d95ee15116bd4c4835c92
+  patch: patches/fix_uqf.patch
+build:
+  kind: qmake
