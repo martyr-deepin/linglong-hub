@@ -1,0 +1,25 @@
+package:
+  id: io.github.QtAddressBar
+  name: QtAddressBar
+  version: 0.0.1
+  kind: app
+  description: |
+    windows address bar by Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Longxr/QtAddressBar"
+  commit: 7b2103658cc1744f5bc75a06fbd964366854b20a
+  patch: patches/install.patch
+
+variables:
+  extra_args: |
+      src
+
+build:
+  kind: qmake
+      

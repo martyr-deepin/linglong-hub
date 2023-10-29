@@ -1,0 +1,29 @@
+diff --git a/src/MainApps/QtAddressBar/QtAddressBar.desktop b/src/MainApps/QtAddressBar/QtAddressBar.desktop
+new file mode 100644
+index 0000000..6570ae9
+--- /dev/null
++++ b/src/MainApps/QtAddressBar/QtAddressBar.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=QtAddressBar
++Exec=QtAddressBar
++Terminal=false
++
+diff --git a/src/MainApps/QtAddressBar/QtAddressBar.pro b/src/MainApps/QtAddressBar/QtAddressBar.pro
+index e18a7d4..eb9a235 100644
+--- a/src/MainApps/QtAddressBar/QtAddressBar.pro
++++ b/src/MainApps/QtAddressBar/QtAddressBar.pro
+@@ -32,3 +32,10 @@ FORMS    += MainWindow.ui \
+ 
+ RESOURCES += \
+     res.qrc
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = QtAddressBar.desktop
++INSTALLS += unix_desktop
+\ No newline at end of file
