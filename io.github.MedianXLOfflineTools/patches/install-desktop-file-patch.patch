@@ -1,0 +1,14 @@
+diff --git a/MedianXLOfflineTools.pro b/MedianXLOfflineTools.pro
+index 36fd0348..c258445f 100644
+--- a/MedianXLOfflineTools.pro
++++ b/MedianXLOfflineTools.pro
+@@ -1,2 +1,9 @@
+ TARGET = MedianXLOfflineTools
+ include(app.pri)
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += MedianXLOfflineTools.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
