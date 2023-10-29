@@ -1,0 +1,19 @@
+package:
+  id: io.github.QWeave
+  name: QWeave
+  version: 1.2.1
+  kind: app
+  description: |
+    Visualization of weaving patterns
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/sunderme/QWeave.git
+  commit: 185834b929b321a2925577b2f41e94b981bfb681
+
+build:
+  kind: cmake
