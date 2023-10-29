@@ -1,0 +1,19 @@
+package:
+  id: io.github.panini
+  name: panini
+  version: 0.73.0
+  kind: app
+  description: |
+     visual tool for creating perspective views from panoramic and wide angle photographs. More than a pano viewer, more than a view camera, with features of both.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/lazarus-pkgs/panini.git
+  commit: 4a44825a75256b40e491a6733c77a94e3c4b1d1c
+
+build:
+  kind: qmake
