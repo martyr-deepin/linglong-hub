@@ -1,0 +1,27 @@
+package:
+  id: io.github.texworks
+  name: texworks
+  version: 0.6.8
+  kind: app
+  description: |
+    TeXworks is an environment for authoring TeX (LaTeX, ConTeXt, etc) documents, with a Unicode-based, TeX-aware editor.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: poppler
+    type: runtime
+    version: 0.71.0.2
+  - id: qtscript
+    type: runtime
+    version: 5.15.7
+
+source:
+  kind: git
+  url: https://github.com/sunderme/texworks.git
+  commit: 9eeb42d5fcbab46df258d1b0846d694293d39a86
+
+build:
+  kind: cmake
