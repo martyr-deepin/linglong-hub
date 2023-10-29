@@ -1,0 +1,37 @@
+--- ../elforkane.pro	2023-11-27 15:05:52.705246000 +0800
++++ ../elforkane.pro	2023-11-27 15:30:35.538082474 +0800
+@@ -133,25 +133,25 @@
+ MKDIR = mkdir -p /usr/share/elforkane
+ 
+  data.files =usr/share/elforkane*
+- data.path=/usr/share/
++ data.path=$$PREFIX/share/
+ 
+  desktopfile.files = elforkane.desktop
+- desktopfile.path = /usr/share/applications
++ desktopfile.path = $$PREFIX/share/applications
+ 
+  icon.files = usr/share/icons/hicolor/22x22/apps/elforkane.png
+- icon.path = /usr/share/icons/hicolor/22x22/apps
++ icon.path = $$PREFIX/share/icons/hicolor/22x22/apps
+  icon1.files = usr/share/icons/hicolor/24x24/apps/elforkane.png
+- icon1.path = /usr/share/icons/hicolor/24x24/apps
++ icon1.path = $$PREFIX/share/icons/hicolor/24x24/apps
+  icon2.files = usr/share/icons/hicolor/32x32/apps/elforkane.png
+- icon2.path = /usr/share/icons/hicolor/32x32/apps
++ icon2.path = $$PREFIX/share/icons/hicolor/32x32/apps
+  icon3.files = usr/share/icons/hicolor/48x48/apps/elforkane.png
+- icon3.path = /usr/share/icons/hicolor/48x48/apps
++ icon3.path = $$PREFIX/share/icons/hicolor/48x48/apps
+  icon4.files = usr/share/icons/hicolor/64x64/apps/elforkane.png
+- icon4.path = /usr/share/icons/hicolor/64x64/apps
++ icon4.path = $$PREFIX/share/icons/hicolor/64x64/apps
+  icon5.files = usr/share/icons/hicolor/scalable/apps/elforkane.svg
+- icon5.path = /usr/share/icons/hicolor/scalable/apps
++ icon5.path = $$PREFIX/share/icons/hicolor/scalable/apps
+ 
+- target.path = /usr/bin
++ target.path = $$PREFIX/bin
+ 
+  INSTALLS +=    data \
+                 target \
