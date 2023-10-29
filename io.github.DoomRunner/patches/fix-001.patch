@@ -1,0 +1,32 @@
+--- ../DoomRunner.pro	2023-11-01 19:46:44.266923000 +0800
++++ ../DoomRunner.pro	2023-11-01 19:48:47.611413456 +0800
+@@ -148,8 +148,10 @@
+ 
+ #-- deployment -----------------------------------
+ 
++DESTDIR = $$PREFIX
++
+ # add "INSTALL_DIR=/custom/path" to the qmake command to override this default value
+-isEmpty(INSTALL_DIR): INSTALL_DIR = /usr/bin
++isEmpty(INSTALL_DIR): INSTALL_DIR = $$DESTDIR/bin
+ 
+ unix: !android
+ {
+@@ -157,3 +159,17 @@
+ }
+ 
+ !isEmpty(target.path): INSTALLS += target
++
++DESKTOP_FILE = ./DoomRunner.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.8.1' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=DoomRunner' >> $$DESKTOP_FILE")
++system("echo 'Comment=DoomRunner, a tool for calculate.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$DESTDIR/bin/DoomRunner' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$DESTDIR/share/applications
++INSTALLS += desktop
