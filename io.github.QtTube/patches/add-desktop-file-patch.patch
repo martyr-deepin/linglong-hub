@@ -1,0 +1,14 @@
+diff --git a/QtTube.desktop b/QtTube.desktop
+new file mode 100644
+index 0000000..6a0d835
+--- /dev/null
++++ b/QtTube.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Type=Application
++Name=Qt Tube
++Exec=QtTube %f
++Icon=QtTube
++Categories=Qt;
++GenericName=A Qt frontend for YouTube.
++

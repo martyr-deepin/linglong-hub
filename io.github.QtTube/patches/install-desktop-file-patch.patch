@@ -1,0 +1,10 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 91c6d06..f1c3473 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -365,3 +365,5 @@ install(TARGETS QtTube
+     BUNDLE DESTINATION .
+     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+ )
++
++install(FILES QtTube.desktop DESTINATION share/applications)
