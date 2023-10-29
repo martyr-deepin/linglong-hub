@@ -1,0 +1,31 @@
+package:
+  id: io.github.Kvantum
+  name: Kvantum
+  version: 1.0.10
+  kind: app
+  description: |
+    Kvantum is an SVG-based theme engine for Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: kwindowsystem
+    version: 5.90.0
+
+source:
+  kind: git
+  url: "https://github.com/tsujan/Kvantum.git"
+  commit: 6674b74156cb0b143eebcf64c6aeda737246ea86
+
+build:
+  kind: cmake
+  manual :
+    configure: |
+      cd Kvantum
+      cmake -B ${build_dir} ${conf_args} ${extra_args}
+    build: |
+      cmake --build ${build_dir} -- ${jobs}
+    install: |
+      env DESTDIR=${dest_dir} cmake --build ${build_dir} --target install
