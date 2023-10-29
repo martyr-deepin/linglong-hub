@@ -1,0 +1,27 @@
+--- ../porymap.pro	2023-11-02 16:12:45.290391000 +0800
++++ ../porymap.pro	2023-11-02 16:11:24.410341000 +0800
+@@ -225,4 +225,24 @@
+ INCLUDEPATH += include/lib
+ INCLUDEPATH += forms
+ 
++#DESTDIR = $$PREFIX # 目标路径
++
++# Default rules for deployment.
++qnx: target.path = /tmp/$${TARGET}/bin
++else: unix:!android: target.path = $${PREFIX}/bin # /opt/$${TARGET}/bin
++!isEmpty(target.path): INSTALLS += target
++
++DESKTOP_FILE = ./porymap.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=porymap' >> $$DESKTOP_FILE")
++system("echo 'Comment=porymap.' >> $$DESKTOP_FILE")
++system("echo 'Exec=porymap' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $${PREFIX}/share/applications
++INSTALLS += desktop
++
+ include(src/vendor/QtGifImage/gifimage/qtgifimage.pri)
