@@ -1,0 +1,24 @@
+--- ../TomatoTimer.pro	2023-10-29 15:40:09.432896000 +0800
++++ ../TomatoTimer.pro	2023-11-01 15:43:31.443857512 +0800
+@@ -43,3 +43,21 @@
+     SOURCES += systemsounds/systemsounds_unix.cpp
+     SOURCES += notifications/notifications_unix.cpp
+ }
++
++
++DESTDIR = $$PRFEIX
++DESKTOP_FILE = ./TomatoTimer.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.2' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=TomatoTimer' >> $$DESKTOP_FILE")
++system("echo 'Comment=TomatoTimer, a tool.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$DESTDIR/bin/TomatoTimer' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$DESTDIR/files/share/applications
++target.path = $${DESTDIR}/files/bin
++INSTALLS += desktop target
++
