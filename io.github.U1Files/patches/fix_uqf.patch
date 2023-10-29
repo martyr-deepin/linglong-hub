@@ -1,0 +1,22 @@
+--- ../ubuntuone-qt-files.pro	2023-11-07 17:05:37.885736000 +0800
++++ ../ubuntuone-qt-files.pro	2023-11-07 17:06:48.025903588 +0800
+@@ -16,3 +16,19 @@
+ include(third-party/liboauthcpp/third-party.liboauthcpp.pri)
+ include(android/android.pri)
+ include(ios/ios.pri)
++
++target.path = $${PREFIX}/bin 
++INSTALLS += target
++
++DESKTOP_FILE = ./U1Files.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=U1Files' >> $$DESKTOP_FILE")
++system("echo 'Comment=U1Files.' >> $$DESKTOP_FILE")
++system("echo 'Exec=U1Files' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $${PREFIX}/share/applications
++INSTALLS += desktop
