@@ -1,0 +1,23 @@
+package:
+  id: io.github.MIDIVisualizer
+  name: MIDIVisualizer
+  version: 7.2.0
+  kind: app
+  description: |
+    A small MIDI visualizer tool, using OpenGL.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: glfw
+    version: 3.3.8
+source:
+  kind: git
+  url: https://github.com/kosua20/MIDIVisualizer.git
+  commit: be9ec082d809115ceb0a5a5f3a23371019cfdad7
+  patch: patches/fix_mdv.patch
+
+build:
+  kind: cmake
