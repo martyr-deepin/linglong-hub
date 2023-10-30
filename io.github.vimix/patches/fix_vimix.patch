@@ -1,0 +1,24 @@
+--- ../CMakeLists.txt	2023-10-30 16:44:05.301211000 +0800
++++ ../CMakeLists.txt	2023-10-30 17:55:01.974182785 +0800
+@@ -664,6 +664,21 @@
+ #####
+ add_subdirectory(src)
+ 
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=vimix
++Exec=vimix
++Icon=vimix
++Categories=Utility;
++")
++
++
++file(WRITE ${CMAKE_BINARY_DIR}/vimix.desktop "${DESKTOP_FILE_CONTENT}")
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/vimix.desktop DESTINATION /opt/apps/io.github.vimix/files/share/applications)
++
++install(TARGETS vimix DESTINATION /opt/apps/io.github.vimix/files/bin)
+ 
+ # To Create a package, run "cpack"
+ include(CPack)
