@@ -1,0 +1,35 @@
+diff --git a/JQTools.desktop b/JQTools.desktop
+new file mode 100644
+index 0000000..d28631b
+--- /dev/null
++++ b/JQTools.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=JQTools
++GenericName=JQTools
++Hidden=false
++Name=JQTools
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+diff --git a/JQTools.pro b/JQTools.pro
+index 3644228..8d97d2b 100644
+--- a/JQTools.pro
++++ b/JQTools.pro
+@@ -47,3 +47,15 @@ mac {
+ win32 {
+     RC_ICONS = $$PWD/icon/icon.ico
+ }
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = JQTools.desktop
++INSTALLS += unix_desktop
++
++
++}
+\ No newline at end of file
