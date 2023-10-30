@@ -1,0 +1,36 @@
+diff --git a/Beslyric-for-X.pro b/Beslyric-for-X.pro
+index 2b92463..534d294 100644
+--- a/Beslyric-for-X.pro
++++ b/Beslyric-for-X.pro
+@@ -263,7 +263,7 @@ unix:!macx {
+     # For AppImage.
+     #   INSTALL_ROOT=AppDir
+ 
+-    target.path = "/usr/bin"
++    target.path = "$${PREFIX}/bin"
+ } else {
+     target.path = "/"
+ }
+@@ -274,9 +274,8 @@ INSTALLS *= target
+ # For AppImage.
+ #   INSTALL_ROOT=AppDir
+ unix:!macx {
+-    appdir_desktop.path = "/usr/share/applications"
+-    appdir_desktop.files = "$${_PRO_FILE_PWD_}/BesLyric-for-X.AppDir$${appdir_desktop.path}/BesLyric-for-X.desktop"
+-
++    appdir_desktop.path = "$${PREFIX}/share/applications"
++    appdir_desktop.files = "BesLyric-for-X.AppDir/usr/share/applications/BesLyric-for-X.desktop"
+     INSTALLS *= appdir_desktop
+ 
+ 
+@@ -295,8 +294,8 @@ unix:!macx {
+         "256x256@2" \
+ 
+     for(icon_size, icon_sizes) {
+-        appdir_icon_$${icon_size}.path = "/usr/share/icons/hicolor/$${icon_size}/apps"
+-        appdir_icon_$${icon_size}.files = "$${_PRO_FILE_PWD_}/BesLyric-for-X.AppDir$$eval(appdir_icon_$${icon_size}.path)/BesLyric-for-X.png"
++        appdir_icon_$${icon_size}.path = "$${PREFIX}/share/icons/hicolor/$${icon_size}/apps"
++        appdir_icon_$${icon_size}.files = "BesLyric-for-X.AppDir/usr/share/icons/hicolor/$${icon_size}/apps/BesLyric-for-X.png"
+ 
+         INSTALLS *= appdir_icon_$${icon_size}
+     }

@@ -1,0 +1,21 @@
+package:
+  id: io.github.Beslyric-for-X
+  name: Beslyric-for-X
+  version: 3.1.1
+  kind: app
+  description: |
+    BesLyric-for-X 是一款操作简单、功能实用的歌词制作软件。云村的村民们能够在网易云风格的界面中获得良好的歌词制作体验。
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/BensonLaur/Beslyric-for-X.git"
+  commit: 8b06a38e8f833650e8e273e97f6a0c0f34fd7ec5
+  patch: patches/install.patch
+
+build:
+  kind: qmake
+      
