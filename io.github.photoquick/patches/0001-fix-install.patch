@@ -1,0 +1,49 @@
+From 7f888d3de244e412e98b388fc35a0d63f94d92e7 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Mon, 30 Oct 2023 13:06:53 +0800
+Subject: [PATCH] fix-install
+
+---
+ src/photoquick.desktop |  8 ++++++++
+ src/photoquick.pro     | 10 ++++++++--
+ 2 files changed, 16 insertions(+), 2 deletions(-)
+ create mode 100644 src/photoquick.desktop
+
+diff --git a/src/photoquick.desktop b/src/photoquick.desktop
+new file mode 100644
+index 0000000..25a2ab1
+--- /dev/null
++++ b/src/photoquick.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Qt;
++Exec=photoquick
++Name=photoquick
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/src/photoquick.pro b/src/photoquick.pro
+index fea6f9a..bce1216 100644
+--- a/src/photoquick.pro
++++ b/src/photoquick.pro
+@@ -32,8 +32,14 @@ win32 {
+ }
+ 
+ # install
++
++
+ unix {
+-    INSTALLS += target
+-    target.path = /usr/local/bin
++    BINDIR  = $$PREFIX/bin
++    DATADIR = $$PREFIX/share
++    target.path = $$BINDIR
++    desktop.files =photoquick.desktop
++    desktop.path = $$DATADIR/applications/
++    INSTALLS += target desktop
+ }
+ 
+-- 
+2.33.1
+
