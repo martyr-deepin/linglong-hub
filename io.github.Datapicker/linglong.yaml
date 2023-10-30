@@ -1,0 +1,27 @@
+package:
+  id: io.github.Datapicker
+  name: Datapicker
+  version: 1.0.0
+  kind: app
+  description: |
+    This open source, digitizing software converts an image file showing a graph or map, into numbers.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/ankitwagadre/Datapicker.git
+  commit: 29937eeeb4392e3fbfd2c80734634af91fcd42bf
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      mkdir build && cd build
+      qmake -makefile ${conf_args} ${extra_args} ../Datapicker.pro
+
