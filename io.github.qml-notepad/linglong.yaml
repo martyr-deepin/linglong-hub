@@ -1,0 +1,26 @@
+package:
+  id: io.github.qml-notepad
+  name: qml-notepad
+  version: 1.0.0
+  kind: app
+  description: |
+    qml notepad example using desktop component.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/dridk/qml-notepad.git
+  commit: c64225b524dc8a0b3205ded47bc99fb336d352fe
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      qmake -makefile ${conf_args} ${extra_args} ./qml-notepad.pro
+

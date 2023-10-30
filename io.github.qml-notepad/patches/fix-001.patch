@@ -1,0 +1,25 @@
+--- ../qml-notepad.pro	2023-11-01 19:37:13.620433000 +0800
++++ ../qml-notepad.pro	2023-11-01 19:41:38.289647609 +0800
+@@ -15,3 +15,22 @@
+ 
+ HEADERS += \
+     notepad.h
++
++DESTDIR = $$PREFIX
++
++DESKTOP_FILE = ./qml-notepad.desktop
++
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=qml-notepad' >> $$DESKTOP_FILE")
++system("echo 'Comment=qml-notepad, a tool.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$DESTDIR/bin/qml-notepad' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$DESTDIR/share/applications
++target.path = $${DESTDIR}/bin
++INSTALLS += desktop
++INSTALLS += target
