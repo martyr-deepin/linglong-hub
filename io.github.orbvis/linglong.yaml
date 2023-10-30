@@ -1,0 +1,26 @@
+package:
+  id: io.github.orbvis
+  name: orbvis
+  version: 0.3.0
+  kind: app
+  description: |
+    Realtime Satellite Orbit Visualizer.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/wojciech-graj/OrbVis.git
+  commit: c9bb4bbf20593875216ca7294390bdd7f43b5977
+  patch: patches/fix_orbvis.patch
+build:
+  kind: manual
+  manual:
+    configure: |
+      mkdir build && cd build && meson ..
+    build: |
+      ninja
+    install: |
+      ninja install
