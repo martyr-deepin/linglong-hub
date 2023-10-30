@@ -1,0 +1,35 @@
+From 5e8ec277503138d5a57d605744537e8f7b6c2522 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Mon, 30 Oct 2023 12:50:29 +0800
+Subject: [PATCH] fix-install
+
+---
+ CMakeLists.txt | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 7e779f6..00ef0d4 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -61,3 +61,17 @@ add_executable(
+ )
+ 
+ target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Core Qt5::Gui Qt5::Widgets)
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=HolySheet.desktop
++Exec=HolySheet
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/HolySheet.desktop "${DESKTOP_FILE_CONTENT}")
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/HolySheet.desktop DESTINATION /opt/apps/io.github.HolySheet/files/share/applications)
++
++install(TARGETS HolySheet DESTINATION /opt/apps/io.github.HolySheet/files/bin)
++#install(TARGETS duckstation-qt DESTINATION bin)
+\ No newline at end of file
+-- 
+2.33.1
+

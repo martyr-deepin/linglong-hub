@@ -1,0 +1,20 @@
+package:
+  id: io.github.HolySheet
+  name: HolySheet
+  version: 0.1.0
+  kind: app
+  description: |
+     A cross platform application for managing datasheet - Written in Qt5 / C++.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/SSRVodka/HolySheet.git"
+  commit: 2688fe67f6155cb984a83b9a46591ca0aa0c30cd
+  patch:
+    - patches/0001-fix-install.patch
+build:
+  kind: cmake
