@@ -1,27 +1,28 @@
 package:
   id: SDL_ttf
   name: SDL_ttf
-  version: 2.0.18
+  version: 2.0.19
   kind: lib
   description: |
     Support for TrueType (.ttf) font files with Simple Directmedia Layer.
-
 
 runtime:
   id: org.deepin.Runtime
   version: 23.0.0
 
+depends:
+  - id: automake/1.16.5
 
 source:
   kind: git
   url: https://github.com/libsdl-org/SDL_ttf.git
-  version: release-2.0.18
   commit: 3e702ed9bf400b0a72534f144b8bec46ee0416cb
 
-
 build:
-  kind: cmake
-
+  kind: autotools
+  manual:
+    configure: |
+      ./configure ${conf_args} ${extra_args}
 
 
 
