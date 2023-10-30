@@ -1,0 +1,36 @@
+--- ../Datapicker.pro	2023-10-29 17:57:28.932991000 +0800
++++ ../Datapicker.pro	2023-10-29 18:00:40.512282612 +0800
+@@ -4,7 +4,7 @@
+ #
+ #-------------------------------------------------
+ 
+-QT       += core gui
++QT += core gui
+ 
+ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+ 
+@@ -21,3 +21,23 @@
+ 
+ FORMS    += mainwindow.ui \
+     Datapicker.ui
++
++
++DESTDIR = /opt/apps/io.github.Datapicker/files
++
++DESKTOP_FILE = ./Datapicker.desktop
++
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=Datapicker' >> $$DESKTOP_FILE")
++system("echo 'Comment=Datapicker, a tool.' >> $$DESKTOP_FILE")
++system("echo 'Exec=/opt/apps/io.github.Datapicker/files/bin/Datapicker' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$DESTDIR/share/applications
++target.path = $${DESTDIR}/bin
++INSTALLS += desktop
++INSTALLS += target
+\ 文件尾没有换行符
