@@ -1,0 +1,19 @@
+package:
+  id: io.github.file-commander
+  name: file-commander
+  version: 0.9.7.1
+  kind: app
+  description: |
+    The goal of the project is to provide consistent user experience across all the major desktop systems.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/VioletGiraffe/file-commander.git
+  commit: 0f539f6c011390cfc1308aa498bb57650d54b3a2
+
+build:
+  kind: qmake
