@@ -1,0 +1,19 @@
+package:
+  id: io.github.strawberry
+  name: strawberry
+  version: 0.6.8
+  kind: app
+  description: |
+    Strawberry is a music player and music collection organizer. It is a fork of Clementine released in 2018 aimed at music collectors and audiophiles.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/NucleaPeon/strawberry.git
+  commit: ddc3af28ab2804a907b9701da52723d72f2817a3
+
+build:
+  kind: cmake
