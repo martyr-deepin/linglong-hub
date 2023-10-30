@@ -1,0 +1,41 @@
+From fe9406aeb51b70d66e0829a189b0f7d3ee430709 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 29 Oct 2023 21:16:39 +0800
+Subject: [PATCH] install
+
+---
+ HotShots.pro | 13 +++++++------
+ 1 file changed, 7 insertions(+), 6 deletions(-)
+
+diff --git a/HotShots.pro b/HotShots.pro
+index a0b11e6..ffc23e6 100644
+--- a/HotShots.pro
++++ b/HotShots.pro
+@@ -359,8 +359,6 @@ unix:!macx {
+     # generate desktop file
+     VERSION = $$system(grep VERSION src/AppSettings.h | awk \' { print $NF }\' | sed   \'s/\"//g\')
+     system( sh  packaging/hotshots-desktop.sh  $$INSTALL_PREFIX $$VERSION > hotshots.desktop )
+-    desktop.files += hotshots.desktop
+-    desktop.path = $$MYAPP_INSTALL_DESKTOP
+ 
+     icons.files += res/hotshots.png
+     icons.path = $$MYAPP_INSTALL_PIXMAPS
+@@ -373,7 +371,10 @@ unix:!macx {
+     system( gzip -9 -f hotshots.1  )
+     manual.files += hotshots.1.gz
+     manual.path = $$MYAPP_INSTALL_MAN
+-
+-    INSTALLS += target transl data desktop icons manual mimetype
+-}
+-
++	BINDIR = $$PREFIX/bin
++	DATADIR = $$PREFIX/share
++	target.path = $$BINDIR
++	desktop.files =hotshots.desktop
++	desktop.path = $$DATADIR/applications/
++	INSTALLS += target desktop
++}
+\ No newline at end of file
+-- 
+2.33.1
+

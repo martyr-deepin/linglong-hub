@@ -1,0 +1,20 @@
+package:
+  id: io.github.HotShots
+  name: HotShots
+  version: 2.2.0
+  kind: app
+  description: |
+    HotShots is an application for capturing screens and saving them in a variety of image formats as well as adding annotations and graphical data
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/obiwankennedy/HotShots.git
+  commit: e3712ae13d6f58e640069e8370fea6c15ffe241c
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
