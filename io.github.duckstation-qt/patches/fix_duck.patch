@@ -1,0 +1,22 @@
+--- ../CMakeLists.txt	2023-11-07 19:32:54.305872000 +0800
++++ ../CMakeLists.txt	2023-11-07 19:35:14.048686000 +0800
+@@ -276,6 +276,19 @@
+ add_subdirectory(dep)
+ add_subdirectory(src)
+ 
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=duckstation-qt
++Exec=duckstation-qt
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/duckstation-qt.desktop "${DESKTOP_FILE_CONTENT}")
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/duckstation-qt.desktop DESTINATION share/applications)
++
++install(TARGETS duckstation-qt DESTINATION bin)
+ if(ANDROID)
+   add_subdirectory(android/app/src/cpp)
+ endif()
