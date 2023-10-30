@@ -1,0 +1,20 @@
+package:
+  id: io.github.gencolormap
+  name: gencolormap
+  version: 0.0.1
+  kind: app
+  description: |
+    generate color maps for visualization from intuitive parameters
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/cggarcia/gencolormap.git
+  commit: 95a1de3a45c65a8248c5fb17f279a3f47bfaa42a
+  patch: patches/fix_gcm.patch
+
+build:
+  kind: cmake
