@@ -1,0 +1,22 @@
+package:
+  id: io.github.JQTools
+  name: JQTools
+  version: 20.6.9
+  kind: app
+  description: |
+    Jason Qt Tools.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/188080501/JQTools.git"
+  commit: 4c901a0671c0610f63bf38070d6674ef9bf00ef1
+  patch: patches/install.patch
+
+build:
+  kind: qmake
+
+      
