@@ -1,0 +1,19 @@
+package:
+  id: io.github.qdirstat
+  name: qdirstat
+  version: 1.8.1
+  kind: app
+  description: |
+    
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/shundhammer/qdirstat.git
+  commit: 8174478b4ac59ccf31a14edca9dfaf4b6012e9b6
+
+build:
+  kind: qmake
