@@ -1,0 +1,19 @@
+package:
+  id: RabbitCommon
+  name: RabbitCommon
+  version: 1.0.13
+  kind: lib
+  description: |
+    RabbitCommon is a Qt common library.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/KangLin/RabbitCommon.git"
+  commit: 271ce965d4d85005c9a76cdc291d4c9973520c35
+
+build:
+  kind: cmake
