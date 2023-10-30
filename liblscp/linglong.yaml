@@ -1,23 +1,24 @@
 package:
   id: liblscp
   name: liblscp
-  version: 0.9.12
+  version: 0.9.13
   kind: lib
   description: |
     liblscp is an implementation of the LinuxSampler control protocol, proposed as a C language API.
-
 runtime:
   id: org.deepin.Runtime
   version: 23.0.0
+
 
 source:
   kind: git
   url: https://github.com/rncbc/liblscp.git
   commit: 611525254cc015b7b6c93c0379d6e8c1be5c6e46
 
+
+variables:
+  conf_args: |
+    -DCMAKE_INSTALL_PREFIX=${PREFIX} \
+    -DCMAKE_INSTALL_LIBDIR=/lib/${TRIPLET}
 build:
   kind: cmake
-
-
-
-
