@@ -1,0 +1,19 @@
+package:
+  id: io.github.qwiiload
+  name: qwiiload
+  version: 0.80.0
+  kind: app
+  description: |
+    Wii homebrew executable uploader written in Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dev-0x7C6/qwiiload.git
+  commit: e1926fe128a5289edf8692c590e546f5d64b7c06
+
+build:
+  kind: qmake
