@@ -1,0 +1,21 @@
+package:
+  id: io.github.vimix
+  name: vimix
+  version: 0.8.1
+  kind: app
+  description: |
+    Live Video Mixer.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+depends: 
+  - id: glfw
+    version: 3.3.8
+source:
+  kind: git
+  url: https://github.com/brunoherbelin/vimix.git
+  commit: 38bac83dddd07c3a08d66da01ad9e34dd73c017d
+  patch: patches/fix_vimix.patch
+build:
+  kind: cmake
