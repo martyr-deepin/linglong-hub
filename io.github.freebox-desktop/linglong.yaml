@@ -1,0 +1,22 @@
+package:
+  id: io.github.freebox-desktop
+  name: freebox-desktop
+  version: 0.1.1
+  kind: app
+  description: |
+    Application native Qt5, permettant la gestion de la Freebox Revolution. Basé sur l'API version 1.0.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/dridk/freebox-desktop.git
+  commit: c89ac9fb4044743811f68d7cf0197d9c7098a659
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
