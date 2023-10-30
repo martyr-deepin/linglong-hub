@@ -1,0 +1,22 @@
+From 551aece57936af519456eeff8cb6b24585f05958 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Mon, 30 Oct 2023 14:08:25 +0800
+Subject: [PATCH] fix-install
+
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 345f282..797f0dd 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -118,4 +118,4 @@ ADD_SUBDIRECTORY(doc)
+ 
+ # Install README, VERSION, COPYING and other raw txt files
+ INSTALL(FILES AUTHORS DEVELOPERS COPYING NEWS README VERSION DESTINATION "${CMAKE_INSTALL_PREFIX}/${CANORUS_INSTALL_DATA_DIR}")
+-
++INSTALL(PROGRAMS canorus.desktop DESTINATION /opt/apps/io.github.canorus/files/share/applications)
+-- 
+2.33.1
+
