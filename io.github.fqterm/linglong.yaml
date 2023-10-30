@@ -1,0 +1,24 @@
+package:
+  id: io.github.fqterm
+  name: fqterm
+  version: 0.9.10.1
+  kind: app
+  description: |
+    FQTerm是为Telnet BBS设计的终端模拟器(俗称Term)，支持Telnet,SSH协议。
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtscript
+    type: runtime
+    version: 5.15.7
+
+source:
+  kind: git
+  url: https://github.com/mytbk/fqterm.git
+  commit: 634b9612179c289c9f8c7ed18b25a0439a598131
+
+build:
+  kind: cmake
