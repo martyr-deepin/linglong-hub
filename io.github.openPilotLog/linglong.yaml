@@ -1,0 +1,22 @@
+package:
+  id: io.github.openPilotLog
+  name: openPilotLog
+  version: 1.0.0
+  kind: app
+  description: |
+    the free and open source airline pilot logbook application.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/fiffty-50/openPilotLog.git"
+  commit: d71d01cd94a10fcb4a1243397c24291e3bc74f43
+  patch: 
+    - patches/0001-fix-desktop.patch
+
+build:
+  kind: cmake
