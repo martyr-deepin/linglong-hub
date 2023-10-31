@@ -1,0 +1,19 @@
+package:
+  id: io.github.gltf-insight
+  name: gltf-insight
+  version: 2.0.0
+  kind: app
+  description: |
+    gltf-insight is a C++11 based data insight tool for glTF 2.0 model.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/lighttransport/gltf-insight.git
+  commit: fd96740d1aee41cc64cb6eb560902895c1b31a38
+
+build:
+  kind: cmake
