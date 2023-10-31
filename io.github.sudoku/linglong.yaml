@@ -1,0 +1,20 @@
+package:
+  id: io.github.sudoku
+  name: sudoku
+  version: 0.1.0
+  kind: app
+  description: |
+     This is a simple Sudoku Puzzle game made with C++ and Qt5. 
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/satvik-tandon/sudoku.git"
+  commit: 8243542f15335bb3ea6924878f8e1dfb6869907d
+  patch: patches/0001-fix-install.patch
+
+build:
+  kind: cmake
+
