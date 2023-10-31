@@ -1,0 +1,20 @@
+package:
+  id: io.github.memory-game
+  name: memory-game
+  version: 0.0.1
+  kind: app
+  description: |
+     Memory game coded using Qt framework.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/maherme/memory-game.git"
+  commit: d637156e4757ffaa8785d310416c3aa972b23176
+  patch: patches/0001-fix-install.patch
+
+build:
+  kind: qmake
+
