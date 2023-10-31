@@ -1,0 +1,45 @@
+From c43a66b054dde9a6e9959de4b375df4e991b7288 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Wed, 1 Nov 2023 00:24:06 +0800
+Subject: [PATCH] fix-install
+
+---
+ memory.desktop | 8 ++++++++
+ memory.pro     | 8 ++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 memory.desktop
+
+diff --git a/memory.desktop b/memory.desktop
+new file mode 100644
+index 0000000..7b88834
+--- /dev/null
++++ b/memory.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=memory
++Name=memory
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/memory.pro b/memory.pro
+index bd2c1e2..6457fd5 100644
+--- a/memory.pro
++++ b/memory.pro
+@@ -29,3 +29,11 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ 
+ RESOURCES += \
+     images.qrc
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = memory.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
