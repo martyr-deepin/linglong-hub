@@ -1,0 +1,20 @@
+package:
+  id: io.github.wii-region-check
+  name: wii-region-check
+  version: 0.1.0
+  kind: app
+  description: |
+    Wii tool for checking game region.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dev-0x7C6/wii-region-check.git
+  commit: a9e50306a54ff526588a699bb5738333c9826ce8
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
