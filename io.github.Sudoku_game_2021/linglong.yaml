@@ -1,0 +1,23 @@
+package:
+  id: io.github.Sudoku_game_2021
+  name: Sudoku_game_2021
+  version: 1.5.1
+  kind: app
+  description: |
+     Game that shall be Written using C++ standards 14/17
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Max-Sir/Sudoku_game_2021.git"
+  commit: 653fcdead0cae4a391db91e14547979307e39de5
+  patch: patches/0001-fix-install.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd sudoku
+      qmake -makefile ${conf_args} ${extra_args}
