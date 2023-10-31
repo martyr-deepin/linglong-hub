@@ -1,0 +1,44 @@
+From 6a0b6141c3f84a8974dedc250303c004422e684b Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 31 Oct 2023 18:51:09 +0800
+Subject: [PATCH] install
+
+---
+ src/LANShare.desktop | 8 ++++++++
+ src/LANShare.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 src/LANShare.desktop
+
+diff --git a/src/LANShare.desktop b/src/LANShare.desktop
+new file mode 100644
+index 0000000..a026f31
+--- /dev/null
++++ b/src/LANShare.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=LANShare
++Name=LANShare
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/src/LANShare.pro b/src/LANShare.pro
+index 806c19d..051b5ac 100644
+--- a/src/LANShare.pro
++++ b/src/LANShare.pro
+@@ -56,3 +56,10 @@ FORMS += ui/mainwindow.ui \
+ 
+ RESOURCES += \
+     res.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =LANShare.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+

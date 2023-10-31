@@ -1,0 +1,24 @@
+package:
+  id: io.github.LAN-Share
+  name: LAN-Share
+  version: 1.2.1
+  kind: app
+  description: |
+    LAN Share is a cross platform local area network file transfer application, built using Qt GUI framework. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/abdularis/LAN-Share.git
+  commit: aa7a3bc61e38191088bf2a68b2ed94bfee4a04af
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
