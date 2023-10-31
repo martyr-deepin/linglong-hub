@@ -1,0 +1,44 @@
+From b93b53a71514dcc9bdc00c9682ae501a12204149 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Wed, 1 Nov 2023 00:05:19 +0800
+Subject: [PATCH] fix-install
+
+---
+ sudoku/sudoku.desktop | 8 ++++++++
+ sudoku/sudoku.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 sudoku/sudoku.desktop
+
+diff --git a/sudoku/sudoku.desktop b/sudoku/sudoku.desktop
+new file mode 100644
+index 0000000..5ebf4ec
+--- /dev/null
++++ b/sudoku/sudoku.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=sudoku
++Name=sudoku
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/sudoku/sudoku.pro b/sudoku/sudoku.pro
+index 62760c2..3ab4a91 100644
+--- a/sudoku/sudoku.pro
++++ b/sudoku/sudoku.pro
+@@ -25,3 +25,10 @@ FORMS    += mainwindow.ui
+ 
+ RESOURCES += \
+     res.qrc
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = sudoku.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
