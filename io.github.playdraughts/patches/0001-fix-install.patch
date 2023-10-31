@@ -1,0 +1,38 @@
+From ce473117d231671f99652d7a6a51a9265b92c5a6 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Tue, 31 Oct 2023 23:28:01 +0800
+Subject: [PATCH] fix-install
+
+---
+ src/CMakeLists.txt | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 202be83..e7fd143 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.22.0)
++cmake_minimum_required(VERSION 3.21.0)
+ 
+ project(draughts)
+ 
+@@ -72,3 +72,15 @@ INSTALL(TARGETS
+ )
+ 
+ 
++
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=draughts.desktop
++Exec=draughts
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/draughts.desktop "${DESKTOP_FILE_CONTENT}")
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/draughts.desktop DESTINATION share/applications)
+-- 
+2.33.1
+
