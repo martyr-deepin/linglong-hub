@@ -1,0 +1,52 @@
+From c4ce2f1dceb858918e2c8ad6b6ead5609c3e1e87 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Tue, 31 Oct 2023 11:50:24 +0800
+Subject: [PATCH] fix-install
+
+---
+ Advanced_Chess.desktop |  8 ++++++++
+ Advanced_Chess.pro     | 13 ++++++++++---
+ 2 files changed, 18 insertions(+), 3 deletions(-)
+ create mode 100644 Advanced_Chess.desktop
+
+diff --git a/Advanced_Chess.desktop b/Advanced_Chess.desktop
+new file mode 100644
+index 0000000..8d7ea75
+--- /dev/null
++++ b/Advanced_Chess.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Advanced_Chess
++Name=Advanced_Chess
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Advanced_Chess.pro b/Advanced_Chess.pro
+index b3471fc..7a12117 100644
+--- a/Advanced_Chess.pro
++++ b/Advanced_Chess.pro
+@@ -40,9 +40,16 @@ QML_IMPORT_PATH =
+ QML_DESIGNER_IMPORT_PATH =
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
++#qnx: target.path = /tmp/$${TARGET}/bin
++#else: unix:!android: target.path = /opt/$${TARGET}/bin
++#!isEmpty(target.path): INSTALLS += target
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = Advanced_Chess.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+ 
+ includeS += \
+     include/Bishop.hpp \
+-- 
+2.33.1
+
