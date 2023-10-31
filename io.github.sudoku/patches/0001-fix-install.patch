@@ -1,0 +1,31 @@
+From 35940993d91c7557775497d87e627f53789b73f0 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Tue, 31 Oct 2023 23:38:13 +0800
+Subject: [PATCH] fix-install
+
+---
+ CMakeLists.txt | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index b9a0cdd..123faf4 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -69,4 +69,14 @@ install(TARGETS ${PROJECT_NAME}
+ )
+ 
+ install(FILES ${QM_FILES} DESTINATION ${CMAKE_INSTALL_BINDIR})
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=sudoku.desktop
++Exec=sudoku
++Categories=Utility;
++")
+ 
++file(WRITE ${CMAKE_BINARY_DIR}/sudoku.desktop "${DESKTOP_FILE_CONTENT}")
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/sudoku.desktop DESTINATION share/applications)
+-- 
+2.33.1
+
