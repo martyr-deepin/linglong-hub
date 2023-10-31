@@ -1,0 +1,27 @@
+From 46351791654f5b91f7aa8ee15719ddbb9ea40427 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 29 Oct 2023 21:00:29 +0800
+Subject: [PATCH] install
+
+---
+ wiiregioncheck.pro | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/wiiregioncheck.pro b/wiiregioncheck.pro
+index a052a05..dbc207b 100644
+--- a/wiiregioncheck.pro
++++ b/wiiregioncheck.pro
+@@ -64,3 +64,9 @@ SOURCES += src/main.cpp src/mainwindow.cpp
+ HEADERS  += src/mainwindow.h
+ FORMS    += forms/mainwindow.ui
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =res/wiiregioncheck.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
