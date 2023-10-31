@@ -1,0 +1,19 @@
+package:
+  id: io.github.OpenTTD
+  name: OpenTTD
+  version: 1.3.3
+  kind: app
+  description: |
+    a transport simulation game based upon the popular game Transport Tycoon Deluxe, written by Chris Sawyer.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/OpenTTD/OpenTTD.git"
+  commit: 375f24956cf9c8d315c512552f0f8e2ff167c530
+
+build:
+  kind: cmake
