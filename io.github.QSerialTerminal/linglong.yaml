@@ -1,0 +1,25 @@
+package:
+  id: io.github.QSerialTerminal
+  name: QSerialTerminal
+  version: 1.0.0
+  kind: app
+  description: |
+    A simple, cross-platform serial port terminal application written with Qt/QML.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtserialport
+    type: runtime
+    version: 5.15.7
+
+source:
+  kind: git
+  url: https://github.com/alex-spataru/QSerialTerminal.git
+  commit: 976d7f8d7e3d439edccd76634e39f7d2cec0bf75
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
