@@ -1,0 +1,23 @@
+package:
+  id: io.github.playdraughts
+  name: playdraughts
+  version: 0.2.0
+  kind: app
+  description: |
+     Play Draughts is a Linux human vs computer draughts game developed using C++ and Qt5.15.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/crispinalan/playdraughts.git"
+  commit: abcb9410aade3984a74947007536a5d080c90480
+  patch: patches/0001-fix-install.patch 
+
+build:
+  kind: cmake
+  manual: 
+    configure: |
+      cd src
+      cmake -B ${build_dir} ${conf_args} ${extra_args}
