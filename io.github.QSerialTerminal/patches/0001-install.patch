@@ -1,0 +1,44 @@
+From e349ecbafd3e4ec54cf160125ea44eee0d0e57a1 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 31 Oct 2023 13:15:01 +0800
+Subject: [PATCH] install
+
+---
+ QSerialTerminal.pro | 18 ++++++++++++------
+ 1 file changed, 12 insertions(+), 6 deletions(-)
+
+diff --git a/QSerialTerminal.pro b/QSerialTerminal.pro
+index b6b40dd..1fd2e94 100644
+--- a/QSerialTerminal.pro
++++ b/QSerialTerminal.pro
+@@ -60,15 +60,21 @@ macx* {
+ }
+ 
+ linux:!android {
+-    TARGET = qserialterminal
++    #TARGET = qserialterminal
+     
+-    target.path = /usr/bin
+-    icon.path = /usr/share/pixmaps
+-    desktop.path = /usr/share/applications
+-    icon.files += deploy/linux/*.svg
+-    desktop.files += deploy/linux/*.desktop
++   # target.path = /usr/bin
++   icon.path = /usr/share/pixmaps
++  #  desktop.path = /usr/share/applications
++   icon.files += deploy/linux/*.svg
++ #   desktop.files += deploy/linux/*.desktop
+ 
+     INSTALLS += target desktop icon
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = deploy/linux/qserialterminal.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+ }
+ 
+ #-------------------------------------------------------------------------------
+-- 
+2.33.1
+
