@@ -1,0 +1,29 @@
+package:
+  id: io.github.coinflip-gtk
+  name: coinflip-gtk
+  version: 0.0.1
+  kind: app
+  description: |
+    Coin Flip is a simple GTK application.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/jkotra/coinflip-gtk.git
+  commit: 904575fa0df7365f38a341cfd4ec05d3778010cd
+  patch: patches/fix_coinflip.patch
+
+build:
+  kind: manual
+  manual:
+    configure: |
+      mkdir build && cd build && meson ..
+    build: |
+      ninja
+    install: |
+      ninja install
+
