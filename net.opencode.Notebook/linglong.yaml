@@ -1,0 +1,26 @@
+package:
+  id: net.opencode.Notebook
+  name: Notebook
+  version: 0.0.1
+  kind: app
+  description: |
+    Simple software for notes creation and managment.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://www.opencode.net/piotrintes/notebook.git"
+  commit: a1857372b6c4683f82f2fafd8bffca676ea24480
+  patch: patches/0001-install.patch
+
+variables:
+  extra_args: |
+    source
+
+build:
+  kind: qmake
+
+      
