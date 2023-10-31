@@ -1,0 +1,20 @@
+package:
+  id: io.github.IslandRacer
+  name: IslandRacer
+  version: 0.0.1
+  kind: app
+  description: |
+     A small qt-based Racegame.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/CraignRush/IslandRacer.git"
+  commit: 3ed132210c9a0829024e89905082d91e89411f44
+  patch: patches/0001-fix-install.patch
+
+build:
+  kind: qmake
+
