@@ -1,0 +1,28 @@
+package:
+  id: io.github.fsearch
+  name: fsearch
+  version: 0.2.3
+  kind: app
+  description: |
+    FSearch is a fast file search utility, inspired by Everything Search Engine. It's written in C and based on GTK3..
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/cboxdoerfer/fsearch.git
+  commit: b11fc231d91d838d59a325313cb35f33d8a1a6ff
+
+
+build:
+  kind: cmake
+  manual:
+    configure: |
+    build: |
+      meson builddir --prefix=$PREFIX
+    install: |
+      ninja -C builddir install
+
