@@ -1,0 +1,53 @@
+From 2528a0bad7452afc127dbd6d38b4fafc5db23fd5 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Tue, 31 Oct 2023 11:32:35 +0800
+Subject: [PATCH] fix-install
+
+---
+ super_mary.desktop |  8 ++++++++
+ super_mary.pro     | 12 +++++++++---
+ 2 files changed, 17 insertions(+), 3 deletions(-)
+ create mode 100644 super_mary.desktop
+
+diff --git a/super_mary.desktop b/super_mary.desktop
+new file mode 100644
+index 0000000..583ce77
+--- /dev/null
++++ b/super_mary.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=super_mary
++Name=super_mary
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/super_mary.pro b/super_mary.pro
+index f553584..79e4b9d 100644
+--- a/super_mary.pro
++++ b/super_mary.pro
+@@ -50,10 +50,16 @@ FORMS += \
+     mainwindow.ui
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     res.qrc
+ ICON = icon.icns
++
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = super_mary.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
