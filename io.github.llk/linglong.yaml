@@ -1,0 +1,21 @@
+package:
+  id: io.github.llk
+  name: llk
+  version: 1.0.0
+  kind: app
+  description: |
+     A game where you connect stuff together. This goes by a lot of games like: Onet Classic, Animal Connect Game, Kawai,... but it's mostly known as Pikachu where I live ;)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/toaranotdev/llk.git"
+  commit: bda638425f2fafe78a7a8508f4b59f2a48053ed2
+  patch:  patches/0001-fix-desktop.patch
+
+build:
+  kind: cmake
+
