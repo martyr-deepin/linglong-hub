@@ -1,0 +1,23 @@
+package:
+  id: io.github.Counter-Desktop
+  name: Counter-Desktop
+  version: 2.9.0
+  kind: app
+  description: |
+     Counter is desktop application that counts the number of characters and words in the text.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/DionysusBenstein/Counter-Desktop.git"
+  commit: 8a1cf3963ee31613249a55afa88b3ba8fd6c3ec8
+  patch: patches/0001-fix-install.patch
+
+build:
+  kind: qmake
+  
