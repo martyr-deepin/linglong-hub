@@ -1,0 +1,27 @@
+From 17d609aec1a2042127c5a98e9bcbe16db98f1ab2 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Wed, 1 Nov 2023 11:56:52 +0800
+Subject: [PATCH] fix-install
+
+---
+ main.pro | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/main.pro b/main.pro
+index 25c1fb0..91b9f7d 100644
+--- a/main.pro
++++ b/main.pro
+@@ -77,3 +77,10 @@ DIRS_DC = object_script.* .ui .moc .rcc .obj *.pro.user $$TARGET
+ 
+ unix:QMAKE_DISTCLEAN  += -r $$DIRS_DC
+ win32:QMAKE_DISTCLEAN += /s /f /q $$DIRS_DC && rd /s /q $$DIRS_DC
++
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = qmqtt-plot.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+

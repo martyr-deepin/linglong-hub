@@ -1,0 +1,23 @@
+package:
+  id: io.github.qmqtt-plot
+  name: qmqtt-plot
+  version: 1.0.0
+  kind: app
+  description: |
+     A Qt5 app that plots timestamped MQTT data
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/koppi/qmqtt-plot.git"
+  commit: 153e953da56d987215f4dc3e9ffb7b01d5994ac6
+  patch: patches/0001-fix-install.patch
+
+build:
+  kind: qmake
+  
