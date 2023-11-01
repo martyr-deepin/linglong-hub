@@ -1,0 +1,45 @@
+From dd35ed6e9546671cfead24894e93394cc1999d4c Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Wed, 1 Nov 2023 12:14:57 +0800
+Subject: [PATCH] fix-install
+
+---
+ Counter.desktop | 8 ++++++++
+ Counter.pro     | 9 +++++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 Counter.desktop
+
+diff --git a/Counter.desktop b/Counter.desktop
+new file mode 100644
+index 0000000..885f793
+--- /dev/null
++++ b/Counter.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=tool;Qt;
++Exec=Counter
++Name=Counter
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Counter.pro b/Counter.pro
+index 53fd000..f6744cb 100644
+--- a/Counter.pro
++++ b/Counter.pro
+@@ -34,3 +34,12 @@ HEADERS += \
+     Counter.h
+ 
+ RC_FILE = images/icons/icon.rc
++
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = Counter.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
