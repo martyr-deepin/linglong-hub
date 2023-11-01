@@ -1,0 +1,45 @@
+From 53efcca5d6420607ca9ab8cb544d4441c815c8ad Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Wed, 1 Nov 2023 11:06:41 +0800
+Subject: [PATCH] fix-install
+
+---
+ hexglass.desktop | 8 ++++++++
+ hexglass.pro     | 9 +++++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 hexglass.desktop
+
+diff --git a/hexglass.desktop b/hexglass.desktop
+new file mode 100644
+index 0000000..03845eb
+--- /dev/null
++++ b/hexglass.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=hexglass
++Name=hexglass
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/hexglass.pro b/hexglass.pro
+index 619141a..2238fe2 100644
+--- a/hexglass.pro
++++ b/hexglass.pro
+@@ -134,3 +134,12 @@ QMAKE_EXTRA_TARGETS += source_dist
+ 
+ DISTFILES += \
+     README.md
++
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = hexglass.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += desktop target
+-- 
+2.33.1
+

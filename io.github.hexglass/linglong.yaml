@@ -1,0 +1,20 @@
+package:
+  id: io.github.hexglass
+  name: hexglass
+  version: 1.0.0
+  kind: app
+  description: |
+     The HexGlass is a Tetris-like puzzle game 
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/michurin/hexglass.git"
+  commit: 0d48dc0872644e693798d39ef43205be7c0f4bb9
+  patch: patches/0001-fix-install.patch
+
+build:
+  kind: qmake
+
