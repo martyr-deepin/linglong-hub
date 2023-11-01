@@ -1,0 +1,22 @@
+package:
+  id: net.opencode.metronomek
+  name: metronomek
+  version: 0.6.0
+  kind: app
+  description: |
+    Metronome that works and sounds similar to mechanical devices
+but with all goods of computer program.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://www.opencode.net/seelook/metronomek.git"
+  commit: ef78b874686863d00ed7204f27d03f898a7a6dab
+
+build:
+  kind: cmake
+
+      
