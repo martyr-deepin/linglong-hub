@@ -1,0 +1,44 @@
+From 8449eb9497b622b3c580c13eb358236906b9ddd5 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Wed, 1 Nov 2023 12:07:25 +0800
+Subject: [PATCH] fix-install
+
+---
+ kroket.desktop | 8 ++++++++
+ kroket.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 kroket.desktop
+
+diff --git a/kroket.desktop b/kroket.desktop
+new file mode 100644
+index 0000000..8cec9e5
+--- /dev/null
++++ b/kroket.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=tool;Qt;
++Exec=kroket
++Name=kroket
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/kroket.pro b/kroket.pro
+index c4cb8ed..74a5bf7 100644
+--- a/kroket.pro
++++ b/kroket.pro
+@@ -31,3 +31,10 @@ MOC_DIR = build
+ RCC_DIR = build
+ 
+ QT += gui widgets printsupport
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = kroket.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
