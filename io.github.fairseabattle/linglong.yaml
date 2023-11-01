@@ -1,0 +1,22 @@
+package:
+  id: io.github.fairseabattle
+  name: fairseabattle
+  version: 1.0.0
+  kind: app
+  description: |
+     The FairSeaBattle -- sink the computer's fleet.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/michurin/fairseabattle.git"
+  commit: b1a3b2d669616183d4c2a03f8b54e063fc2c3e22
+  patch: patches/0001-fix-install.patch
+
+build:
+  kind: qmake
+

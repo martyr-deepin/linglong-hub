@@ -1,0 +1,46 @@
+From 3987e722feec164064a6ec47b6cc1063cb8365bd Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Wed, 1 Nov 2023 11:14:39 +0800
+Subject: [PATCH] fix-install
+
+---
+ fairseabattle.desktop | 8 ++++++++
+ fairseabattle.pro     | 9 +++++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 fairseabattle.desktop
+
+diff --git a/fairseabattle.desktop b/fairseabattle.desktop
+new file mode 100644
+index 0000000..192ee0e
+--- /dev/null
++++ b/fairseabattle.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=fairseabattle
++Name=fairseabattle
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/fairseabattle.pro b/fairseabattle.pro
+index d9490d7..3044243 100644
+--- a/fairseabattle.pro
++++ b/fairseabattle.pro
+@@ -130,3 +130,12 @@ QMAKE_EXTRA_TARGETS += deb_dist_root
+ # end of section
+ #
+ }
++
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = fairseabattle.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
