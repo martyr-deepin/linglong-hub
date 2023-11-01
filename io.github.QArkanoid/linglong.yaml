@@ -1,0 +1,22 @@
+package:
+  id: io.github.QArkanoid
+  name: QArkanoid
+  version: 1.0.0
+  kind: app
+  description: |
+     Simple "Arkanoid" type game, based on QT libraries, with sounds.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/felmur/QArkanoid.git"
+  commit: 2b014622fc11c2e3df0194e50b927942b9b363c1
+  patch: patches/0001-fix-install.patch
+
+build:
+  kind: qmake
