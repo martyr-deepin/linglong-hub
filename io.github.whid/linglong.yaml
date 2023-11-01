@@ -1,0 +1,23 @@
+package:
+  id: io.github.whid
+  name: whid
+  version: 2.0.2
+  kind: app
+  description: |
+     What Have I Done - Time Tracker for Freelancers and Individual Contractors
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/jgaa/whid.git"
+  commit: c41ea0871b9cc29446668d4f181d18a33c11fe9c
+  patch: patches/0001-fix-install.patch
+build:
+  kind: qmake
+
+    
