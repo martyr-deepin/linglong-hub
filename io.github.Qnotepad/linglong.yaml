@@ -1,0 +1,20 @@
+package:
+  id: io.github.Qnotepad
+  name: Qnotepad
+  version: 0.0.1
+  kind: app
+  description: |
+    A simple notepad program written in C++ with Qt, inspired by the Windows notepad.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/CamK06/QNotepad.git"
+  commit: 61ead6ab7bb879dfeaf839e6371be0ab3599dcab
+  patch: patches/ install.patch
+
+build:
+  kind: cmake
