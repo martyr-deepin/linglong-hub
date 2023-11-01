@@ -1,0 +1,19 @@
+package:
+  id: io.github.QTRVSim
+  name: QTRVSim
+  version: 0.9.5
+  kind: app
+  description: |
+    QtRVSim is experimentally available for WebAssembly and it can be run in most browsers without installation. QtRVSim online
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/cvut/qtrvsim.git"
+  commit: ea0a68eb0fde014839a31a0430527e1755b76458
+
+build:
+  kind: cmake
