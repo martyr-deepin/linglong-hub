@@ -1,0 +1,46 @@
+From 89dd9e7df40ad20642807dfbd22e719f6f18ee0f Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Wed, 1 Nov 2023 18:04:02 +0800
+Subject: [PATCH] fix-install
+
+---
+ hydratool.desktop | 8 ++++++++
+ hydratool.pro     | 9 +++++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 hydratool.desktop
+
+diff --git a/hydratool.desktop b/hydratool.desktop
+new file mode 100644
+index 0000000..eed4722
+--- /dev/null
++++ b/hydratool.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=tool;Qt;
++Exec=hydratool
++Name=hydratool
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/hydratool.pro b/hydratool.pro
+index 132ca87..5f9de06 100644
+--- a/hydratool.pro
++++ b/hydratool.pro
+@@ -57,3 +57,12 @@ RESOURCES += \
+     hydratool.qrc
+ 
+ RC_FILE = resources.rc
++
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = hydratool.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
