@@ -1,0 +1,20 @@
+package:
+  id: io.github.Qt-based-video-editor
+  name: Qt-based-video-editor
+  version: 0.0.1
+  kind: app
+  description: |
+    A Qt-based(Qt5) video editing software. Using FFmpeg as the backend.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Ethkuil/Qt-based-video-editor.git"
+  commit: cce3146d223420b169d32bf008dd193c2597da30
+  patch: patches/install.patch
+
+build:
+  kind: cmake
