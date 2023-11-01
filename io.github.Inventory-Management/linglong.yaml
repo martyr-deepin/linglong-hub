@@ -1,0 +1,23 @@
+package:
+  id: io.github.Inventory-Management
+  name: Inventory-Management
+  version: 1.0.0
+  kind: app
+  description: |
+     Inventory Management 库存管理.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/liolok/Inventory-Management.git"
+  commit: 9d774453ff9a0c68141f4c75fc30bbb324ce5236
+  patch: patches/0001-fix-install.patch
+build:
+  kind: qmake
+
+    
