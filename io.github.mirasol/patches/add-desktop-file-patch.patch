@@ -1,0 +1,12 @@
+diff --git a/mirasol.desktop b/mirasol.desktop
+new file mode 100644
+index 0000000..168bcbf
+--- /dev/null
++++ b/mirasol.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Name=mirasol
++Type=Application
++Exec=mirasol %f
++
+
