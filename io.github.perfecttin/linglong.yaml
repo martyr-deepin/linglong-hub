@@ -1,0 +1,19 @@
+package:
+  id: io.github.perfecttin
+  name: perfecttin
+  version: 0.0.1
+  kind: app
+  description: |
+    PerfectTIN reads a point cloud in LAS or PLY format and computes a TIN, which approximates the point cloud to within a vertical tolerance.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/phma/perfecttin.git"
+  commit: 955ab940f04a3ac9c2a711a884ff091fc8d9ee70
+
+build:
+  kind: cmake
