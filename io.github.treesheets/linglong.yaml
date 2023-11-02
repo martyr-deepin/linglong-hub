@@ -1,0 +1,26 @@
+package:
+  id: io.github.treesheets
+  name: treesheets
+  version: 1.0.2
+  kind: app
+  description: |
+    TreeSheets : Free Form Data Organizer (see strlen.com/treesheets).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: wxWidgets
+    version: 3.2.3
+    type: runtime
+  - id: cmake
+    version: 3.28.0
+
+source:
+  kind: git
+  url: https://github.com/aardappel/treesheets.git
+  commit: baf4feaa26a945cd955976f6f0f201f3bc4d6404
+
+build:
+  kind: cmake
