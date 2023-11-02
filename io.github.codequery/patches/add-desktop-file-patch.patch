@@ -1,0 +1,11 @@
+diff --git a/codequery.desktop b/codequery.desktop
+new file mode 100644
+index 0000000..9b133b4
+--- /dev/null
++++ b/codequery.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=codequery
++Type=Application
++Exec=codequery %f
+
