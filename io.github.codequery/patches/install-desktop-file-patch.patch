@@ -1,0 +1,10 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 183ba04..c500b10 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -101,3 +101,4 @@ include(CPack)
+ 
+ endif(UNIX)
+ 
++install(FILES codequery.desktop DESTINATION share/applications)
+
