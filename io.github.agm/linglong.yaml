@@ -1,0 +1,22 @@
+package:
+  id: io.github.agm
+  name: agm
+  version: 0.0.1
+  kind: app
+  description: |
+    AGM is a program for computing the arithmetic-geometric mean of complex numbers. It also computes a new function called khe (խ(z)) such that the AGM of խ(z) and խ(z+πi) is 1 for all z in the left half-plane, and one step of the AGM of these numbers produces խ(2z) as the arithmetic mean and խ(2z+πi) as the geometric mean.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/phma/agm.git"
+  commit: 405ce7864bd2a6a1fb4a21b8b98815b9494d8ab3
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: cmake

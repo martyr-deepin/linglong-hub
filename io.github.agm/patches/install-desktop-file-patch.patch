@@ -1,0 +1,11 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 3fdb26d..ecd5ae4 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -35,3 +35,5 @@ set(CPACK_PACKAGE_VERSION_MINOR ${AGM_MINOR_VERSION})
+ set(CPACK_PACKAGE_VERSION_PATCH ${AGM_PATCH_VERSION})
+ set(CPACK_SOURCE_IGNORE_FILES /\\\\.git;.*~)
+ include(CPack)
++
++install(FILES agm.desktop DESTINATION share/applications)
+
