@@ -1,0 +1,25 @@
+package:
+  id: io.github.qsampler
+  name: qsampler
+  version: 0.9.12
+  kind: app
+  description: |
+    Qsampler is a LinuxSampler GUI front-end application written in C++ around the Qt framework using Qt Designer.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: liblscp
+    version: 0.9.13
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/rncbc/qsampler.git
+  commit: a28d7c56bcfce0b4a257c1b733ee6f6e000a1d57
+  patch: patches/fix-cpp-001.patch
+
+build:
+  kind: cmake
