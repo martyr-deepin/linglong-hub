@@ -1,0 +1,24 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index ba15a97..e6022b0 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -39,3 +39,6 @@ target_link_libraries(${PROJECT_NAME}
+ 
+ 
+ include(packaging)
++
++install(TARGETS ecalc DESTINATION bin)
++install(PROGRAMS ecalc.desktop DESTINATION share/applications)
+diff --git a/ecalc.desktop b/ecalc.desktop
+new file mode 100644
+index 0000000..a42e156
+--- /dev/null
++++ b/ecalc.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=ecalc
++Exec=ecalc
++Terminal=false
+\ No newline at end of file
