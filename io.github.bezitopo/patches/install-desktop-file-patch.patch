@@ -1,0 +1,11 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index a10a45e..3362915 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -422,3 +422,5 @@ add_test(layer bezitest layer color)
+ add_test(contour bezitest contour foldcontour zigzagcontour tracingstop)
+ add_test(roscat bezitest roscat absorient)
+ add_test(histogram bezitest histogram)
++
++install(FILES bezitopo.desktop DESTINATION share/applications)
+

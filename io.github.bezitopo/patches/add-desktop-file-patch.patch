@@ -1,0 +1,11 @@
+diff --git a/bezitopo.desktop b/bezitopo.desktop
+new file mode 100644
+index 0000000..ff86b31
+--- /dev/null
++++ b/bezitopo.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=bezitopo
++Type=Application
++Exec=bezitopo %f
+
