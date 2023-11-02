@@ -1,0 +1,22 @@
+package:
+  id: io.github.codequery
+  name: codequery
+  version: 0.26.0
+  kind: app
+  description: |
+    This is a tool to index, then query or search C, C++, Java, Python, Ruby, Go and Javascript source code.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/ruben2020/codequery.git"
+  commit: 54aa2accd9d5dbd415da4d2ae30970fbdd314511
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: cmake
