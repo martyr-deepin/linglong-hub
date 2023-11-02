@@ -1,0 +1,22 @@
+package:
+  id: io.github.qxgedit
+  name: qxgedit
+  version: 0.9.12
+  kind: app
+  description: |
+    QXGEdit is a Qt GUI for editing MIDI System Exclusive files for XG devices (eg. Yamaha DB50XG).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtscxml/5.15.7
+
+source:
+  kind: git
+  url: https://github.com/rncbc/qxgedit.git
+  commit: b12055b65a95ff550111fa37201efa03feee28a7
+
+build:
+  kind: cmake
