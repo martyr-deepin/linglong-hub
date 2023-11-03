@@ -1,0 +1,20 @@
+package:
+  id: io.github.jiepingruanjian
+  name: jiepingruanjian
+  version: 0.0.1
+  kind: app
+  description: |
+    Simple screenshot software, the ultimate enjoyment
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/lsylovews/jiepingruanjian.git"
+  commit: 3b1419486e0a375dc968ea8c3b2dbd5ee73adfc0
+  patch: patches/install.patch
+
+build:
+  kind: qmake
