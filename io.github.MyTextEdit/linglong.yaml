@@ -1,0 +1,20 @@
+package:
+  id: io.github.MyTextEdit
+  name: MyTextEdit
+  version: 0.0.1
+  kind: app
+  description: |
+    Simple text editing software, the ultimate enjoyment
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/starlxy123/text-edit_demo.git"
+  commit: 9b23b2430bc7fb7df9700cb2616db565d1e11094
+  patch: patches/install.patch
+  
+build:
+  kind: qmake
