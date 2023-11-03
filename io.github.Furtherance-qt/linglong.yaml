@@ -1,0 +1,21 @@
+package:
+  id: io.github.Furtherance-qt
+  name: Furtherance-qt
+  version: 0.0.1
+  kind: app
+  description: |
+    Keep track of time spent on tasks.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/rickykresslein/Furtherance-qt.git"
+  commit: 509c9b9c492c6991fac73111f46fcf1cbf3f72ee
+  patch: patches/fix_furth.patch
+
+build:
+  kind: qmake
