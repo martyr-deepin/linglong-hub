@@ -1,0 +1,17 @@
+--- ../VaktiSalah.pro	2023-11-03 10:37:08.051576000 +0800
++++ ../VaktiSalah.pro	2023-11-03 10:57:36.202680519 +0800
+@@ -42,3 +42,14 @@
+ 
+ TRANSLATIONS += translations/vaktisalah.ts \
+     translations/vaktisalah_tr.ts
++DESKTOP_FILE = ./vaktisalah.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application'>> $$DESKTOP_FILE")
++system("echo 'Name=vaktisalah' >> $$DESKTOP_FILE")
++system("echo 'Comment=vaktisalah' >> $$DESKTOP_FILE")
++system("echo 'Exec=vaktisalah' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $${PREFIX}/share/applications
++INSTALLS += desktop

@@ -1,0 +1,21 @@
+package:
+  id: io.github.vaktisalah
+  name: vaktisalah
+  version: 1.4.6
+  kind: app
+  description: |
+    a Qt-Based Prayer Times application for Win/Linux/Mac
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/eminfedar/vaktisalah.git"
+  commit: 734bdc8434a05643e29806edf33697c4be56f772
+  patch: patches/fix_vak.patch
+
+build:
+  kind: qmake
