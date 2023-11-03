@@ -1,0 +1,34 @@
+diff --git a/SendServer.desktop b/SendServer.desktop
+new file mode 100644
+index 0000000..4ca6172
+--- /dev/null
++++ b/SendServer.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=SendServer
++Exec=SendServer
++Terminal=false
+\ No newline at end of file
+diff --git a/SendServer.pro b/SendServer.pro
+index 910b30d..a320cc7 100644
+--- a/SendServer.pro
++++ b/SendServer.pro
+@@ -37,3 +37,15 @@ FORMS    += mainwindow.ui \
+     sendfilewindow.ui \
+     messagebox.ui \
+     settingwindow.ui
++
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = SendServer.desktop
++INSTALLS += unix_desktop
++
++}
+\ No newline at end of file
