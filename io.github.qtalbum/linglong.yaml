@@ -1,0 +1,24 @@
+package:
+  id: io.github.qtalbum
+  name: qtalbum
+  version: 0.0.1
+  kind: app
+  description: |
+    A photo album file editing system for image processing, such as zoom in and out
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/LC_YYDS/qt-album---c---qt.git"
+  commit: 2204037c23012f652543965982e97da681008ed5
+  patch: patches/nstall.patch
+  
+variables:
+  extra_args: |
+     picture
+
+build:
+  kind: qmake

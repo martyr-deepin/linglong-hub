@@ -1,0 +1,28 @@
+diff --git a/YQ_day3_pro_1.desktop b/YQ_day3_pro_1.desktop
+new file mode 100644
+index 0000000..62eae4a
+--- /dev/null
++++ b/YQ_day3_pro_1.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=qtalbum
++Exec= YQ_day3_pro_1
++Terminal=false
+\ No newline at end of file
+diff --git a/picture/YQ_day3_pro_1.pro b/picture/YQ_day3_pro_1.pro
+index 0086fd6..9b020f6 100644
+--- a/picture/YQ_day3_pro_1.pro
++++ b/picture/YQ_day3_pro_1.pro
+@@ -27,5 +27,9 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $${PREFIX}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = YQ_day3_pro_1.desktop
++INSTALLS += unix_desktop
