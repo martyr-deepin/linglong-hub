@@ -1,0 +1,25 @@
+package:
+  id: io.github.compass
+  name: compass
+  version: 1.1.0
+  kind: app
+  description: |
+    A simple orienteering compass
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+depends:
+  - id: qtsensors
+    version: 5.15.7
+    type: runtime
+source:
+  kind: git
+  url: https://github.com/janbar/compass.git
+  commit: ac1d3b404ac334a4e15837dcfd45b2bc9298cd0e
+  patch: 
+    - patches/fix_exec.patch
+    - patches/fix_desktop.patch
+build:
+  kind: cmake
+
