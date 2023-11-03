@@ -1,0 +1,25 @@
+package:
+  id: com.gitee.qtscreenshottool
+  name: qtscreenshottool
+  version: 0.0.1
+  kind: app
+  description: |
+    A shortcut to screenshots, for the user to bring the ultimate screenshot experience
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/hotlab/qt-screenshot-tool.git"
+  commit: 16765fdfc898490904582b674ac54ab3ced1e7b7
+  patch: patches/0001-install.patch
+
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd 'Lite Shot'
+      qmake -makefile ${conf_args} ${extra_args}
