@@ -1,0 +1,20 @@
+package:
+  id: io.github.mpz
+  name: mpz
+  version: 1.0.23
+  kind: app
+  description: |
+    Music player for big local collections
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/olegantonyan/mpz.git
+  commit: 81285d398b9ea6870d8bfe1ad6f24002fa8a4190
+  patch: patches/install.patch
+
+build:
+  kind: qmake
