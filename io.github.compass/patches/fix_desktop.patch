@@ -1,0 +1,35 @@
+--- ../CMakeLists.txt	2023-11-07 18:00:12.472793000 +0800
++++ ../CMakeLists.txt	2023-11-07 19:00:48.913130000 +0800
+@@ -5,7 +5,7 @@
+ set(APP_VERSION_CODE  3)
+ set(APP_NAME          "compass")
+ set(APP_ID            "io.github.janbar.compass")
+-set(EXEC              "compass")
++set(EXEC              "compass-gui")
+ set(ICON_FILE         "compass.png")
+ set(DESKTOP_FILE_NAME "compass.desktop")
+ set(APPDATA_FILE_NAME "compass.appdata.xml")
+@@ -24,10 +24,10 @@
+ set(PLUGINS_DIR ${CMAKE_INSTALL_FULL_LIBDIR}/${APP_NAME})
+ set(COMPASS_GUI "${PLUGINS_DIR}/compass-gui")
+ 
+-install(
+-  PROGRAMS "${CMAKE_CURRENT_BINARY_DIR}/${EXEC}"
+-  DESTINATION ${CMAKE_INSTALL_BINDIR}
+-)
++#install(
++#  PROGRAMS "${CMAKE_CURRENT_BINARY_DIR}/${EXEC}"
++#  DESTINATION ${CMAKE_INSTALL_BINDIR}
++#)
+ 
+ configure_file(
+   ${DESKTOP_FILE_NAME}.in
+@@ -36,7 +36,7 @@
+ 
+ install(
+   FILES ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE_NAME}
+-  DESTINATION ${DESKTOP_DIR} RENAME ${APP_ID}.desktop
++  DESTINATION ${DESKTOP_DIR}
+ )
+ 
+ install(

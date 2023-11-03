@@ -1,0 +1,8 @@
+--- ../gui/CMakeLists.txt	2023-11-07 19:04:23.308794000 +0800
++++ ../gui/CMakeLists.txt	2023-11-07 19:00:47.333132000 +0800
+@@ -63,4 +63,4 @@
+ endif()
+ 
+ install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/compass-gui
+-	DESTINATION ${PLUGINS_DIR})
++	DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
