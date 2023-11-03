@@ -1,0 +1,31 @@
+diff --git a/qiniu_demo.pro b/qiniu_demo.pro
+index fd72d86..abdd86a 100644
+--- a/qiniu_demo.pro
++++ b/qiniu_demo.pro
+@@ -28,3 +28,13 @@ FORMS    += mainwindow.ui \
+ 
+ RESOURCES += \
+     asset.qrc
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = qiuniu_Qt.desktop
++INSTALLS += unix_desktop
++
++
++
+diff --git a/qiuniu_Qt.desktop b/qiuniu_Qt.desktop
+new file mode 100644
+index 0000000..ac58869
+--- /dev/null
++++ b/qiuniu_Qt.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=qiniu_Qt
++Exec=qiniu_Qt
++Terminal=false
+\ No newline at end of file
