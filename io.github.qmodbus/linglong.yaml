@@ -1,0 +1,24 @@
+package:
+  id: io.github.qmodbus
+  name: qmodbus
+  version: 0.3.0
+  kind: app
+  description: |
+    QModBus is a free Qt-based implementation of a ModBus master application. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+
+source:
+  kind: git 
+  url: https://github.com/ed-chemnitz/qmodbus.git
+  commit: 46378d9fcc131c507631b10ddf26468f7497f787
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      

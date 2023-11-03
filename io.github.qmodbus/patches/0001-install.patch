@@ -1,0 +1,52 @@
+From ed82ce254a8765e9aa49cbdff4c07a6b6f8b4bc1 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Sun, 5 Nov 2023 16:04:59 +0800
+Subject: [install.patch_] u
+
+---
+ qmodbus.desktop |  4 ++--
+ qmodbus.pro     | 15 +++++++++++++++
+ 2 files changed, 17 insertions(+), 2 deletions(-)
+
+diff --git a/qmodbus.desktop b/qmodbus.desktop
+index 8aa8c53..cd3593e 100644
+--- a/qmodbus.desktop
++++ b/qmodbus.desktop
+@@ -2,8 +2,8 @@
+ Type=Application
+ Name=QModBus
+ Comment=ModBus master emulator with GUI
+-Exec=/usr/share/qmodbus/build/qmodbus
+-Icon=/usr/share/qmodbus/data/logo.png
++Exec=qmodbus
++Icon=logo
+ Terminal=false
+ Categories=Development;Electronics;
+ Keywords=embedded electronics;electronics;microcontroller;
+diff --git a/qmodbus.pro b/qmodbus.pro
+index 2d9d3f1..c8a6419 100644
+--- a/qmodbus.pro
++++ b/qmodbus.pro
+@@ -60,3 +60,18 @@ RESOURCES += data/qmodbus.qrc
+ RC_FILE += qmodbus.rc
+ 
+ include(deployment.pri)
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = qmodbus.desktop
++INSTALLS += unix_desktop
++
++unix_icons.path = $${PREFIX}/share/icons/hicolor/scalable/apps
++unix_icons.files = data/logo.png
++INSTALLS += unix_icons
++
++}
+\ No newline at end of file
+-- 
+2.33.1
+
