@@ -1,0 +1,30 @@
+diff --git a/TexasSolverGui.desktop b/TexasSolverGui.desktop
+new file mode 100644
+index 0000000..246d6e2
+--- /dev/null
++++ b/TexasSolverGui.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=TexasSolverGui
++Exec=TexasSolverGui
++Terminal=false
+\ No newline at end of file
+diff --git a/TexasSolverGui.pro b/TexasSolverGui.pro
+index c932ba6..462a001 100644
+--- a/TexasSolverGui.pro
++++ b/TexasSolverGui.pro
+@@ -200,3 +200,12 @@ FORMS += \
+ RESOURCES += \
+     translations.qrc \
+     compairer.qrc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = TexasSolverGui.desktop
++INSTALLS += unix_desktop
++}
