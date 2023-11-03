@@ -1,10 +1,10 @@
 package:
   id: io.github.IanniX
   name: IanniX
-  version: 0.9.21
+  version: 0.9.21.1
   kind: app
   description: |
-     graphical open-source sequencer, based on Iannis Xenakis works, for digital art. 
+    graphical open-source sequencer, based on Iannis Xenakis works, for digital art.
 
 runtime:
   id: org.deepin.Runtime
@@ -17,8 +17,9 @@ depends:
 
 source:
   kind: git
-  url: https://github.com/buzzinglight/IanniX.git
+  url: "https://github.com/buzzinglight/IanniX.git"
   commit: 7d1870ee92379a44e5767947591024849613f882
+  patch: patches/0001-install.patch
 
 build:
   kind: qmake

@@ -1,0 +1,41 @@
+From 90c66a863bdc05c23b22dde41501cc8160740dae Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Sun, 5 Nov 2023 17:34:40 +0800
+Subject: [install.patch_] install
+
+---
+ IanniX.pro     | 2 +-
+ iannix.desktop | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/IanniX.pro b/IanniX.pro
+index b2d0e50..0bada2e 100644
+--- a/IanniX.pro
++++ b/IanniX.pro
+@@ -83,7 +83,7 @@ unix:!mac {
+     desktop.files  = iannix.desktop
+     INSTALLS      += desktop
+ 
+-    icons.path     = /usr/share/pixmaps
++    icons.path     = $$PREFIX/share/pixmaps
+     icons.files    = iannix.png
+     INSTALLS      += icons
+ }
+diff --git a/iannix.desktop b/iannix.desktop
+index 420322f..164dda4 100644
+--- a/iannix.desktop
++++ b/iannix.desktop
+@@ -1,8 +1,8 @@
+ [Desktop Entry]
+ Name=IanniX
+ Comment=Graphical sequencer for digital art
+-Exec=IanniX
+-Icon=/usr/share/pixmaps/IanniX.png
++Exec=iannix
++Icon=iannix
+ Terminal=false
+ Type=Application
+ X-MultipleArgs=false
+-- 
+2.33.1
+
