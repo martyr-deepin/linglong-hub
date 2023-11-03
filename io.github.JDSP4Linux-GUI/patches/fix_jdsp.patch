@@ -1,0 +1,32 @@
+--- ../JDSP4Linux-GUI.pro	2023-11-03 11:04:29.586210000 +0800
++++ ../JDSP4Linux-GUI.pro	2023-11-03 11:16:05.245445083 +0800
+@@ -51,11 +51,11 @@
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /usr/bin/
++else: unix:!android: target.path = $${PREFIX}/bin/
+ 
+ # Set BUILDPATH variable to change the output path
+-!isEmpty($$BUILDPATH): target.path = $$BUILDPATH
+-!isEmpty($$BUILDPATH): DESTDIR = $$BUILDPATH
++#!isEmpty($$BUILDPATH): target.path = $$PREFIX
++#!isEmpty($$BUILDPATH): DESTDIR = $$PREFIX
+ 
+ !isEmpty(target.path): INSTALLS += target
+ 
+@@ -65,3 +65,14 @@
+     ddc.qrc \
+     resources.qrc \
+     styles/styles.qrc
++DESKTOP_FILE = ./jdsp-gui.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application'>> $$DESKTOP_FILE")
++system("echo 'Name=jdsp-gui' >> $$DESKTOP_FILE")
++system("echo 'Comment=jdsp-gui' >> $$DESKTOP_FILE")
++system("echo 'Exec=jdsp-gui' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $${PREFIX}/share/applications
++INSTALLS += desktop

@@ -1,0 +1,21 @@
+package:
+  id: io.github.JDSP4Linux-GUI
+  name: JDSP4Linux-GUI
+  version: 1.1.0
+  kind: app
+  description: |
+    User Interface for JamesDSP on Linux
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/ThePBone/JDSP4Linux-GUI.git"
+  commit: cf96720644bc1b5c96efffadfd2628585cf4c59f
+  patch: patches/fix_jdsp.patch
+
+build:
+  kind: qmake
