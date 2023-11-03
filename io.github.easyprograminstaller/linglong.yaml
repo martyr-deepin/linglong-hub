@@ -1,0 +1,21 @@
+package:
+  id: io.github.easyprograminstaller
+  name: easyprograminstaller
+  version: 1.5.0
+  kind: app
+  description: |
+    Install Linux programs easily after a fresh boot. (Only for Debian-Based Distros)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/eminfedar/easyprograminstaller.git"
+  commit: e9ca87b1cb286549eee5436beb5ea2847151c5c5
+  patch: patches/fix_easy.patch
+
+build:
+  kind: qmake

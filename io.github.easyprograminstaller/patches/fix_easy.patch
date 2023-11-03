@@ -1,0 +1,21 @@
+--- ../EasyProgramInstaller.pro	2023-11-03 10:21:03.531660000 +0800
++++ ../EasyProgramInstaller.pro	2023-11-03 10:23:49.511329169 +0800
+@@ -21,3 +21,18 @@
+     qtresource.qrc
+ 
+ QMAKE_CXXFLAGS += -std=c++11
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++DESKTOP_FILE = ./EasyProgramInstaller.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application'>> $$DESKTOP_FILE")
++system("echo 'Name=EasyProgramInstaller' >> $$DESKTOP_FILE")
++system("echo 'Comment=EasyProgramInstaller' >> $$DESKTOP_FILE")
++system("echo 'Exec=EasyProgramInstaller' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $${PREFIX}/share/applications
++INSTALLS += desktop
