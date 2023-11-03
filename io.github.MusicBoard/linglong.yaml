@@ -1,0 +1,24 @@
+package:
+  id: io.github.MusicBoard
+  name: MusicBoard
+  version: 1.4.0
+  kind: app
+  description: |
+    Welcome to MusicBoard! 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+
+source:
+  kind: git 
+  url: 'https://github.com/MusicBoard-Linux-Launchpad/musicboard.git' 
+  commit: 54811952aaf4c3ff4de67b59a3ceb880eb8aec9f
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
