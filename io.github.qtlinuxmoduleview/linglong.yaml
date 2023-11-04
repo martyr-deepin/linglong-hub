@@ -1,0 +1,20 @@
+package:
+  id: io.github.linuxmoduleview
+  name: linuxmoduleview
+  version: 0.0.1
+  kind: app
+  description: |
+    Linux kernel driver module viewer
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/zinface/qt.linuxmoduleview.git"
+  commit: 7a67aa72c764196b995222a4346992b5dd929196
+  patch: patches/install.patch
+  
+build:
+  kind: cmake
