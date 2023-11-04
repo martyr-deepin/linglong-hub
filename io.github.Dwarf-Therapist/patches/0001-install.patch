@@ -1,0 +1,25 @@
+From bb73ef0fc4e962de07c5fb980e13ffd526986ef4 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Sun, 5 Nov 2023 16:31:13 +0800
+Subject: [install.patch_] install
+
+---
+ dist/dwarftherapist.desktop | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/dist/dwarftherapist.desktop b/dist/dwarftherapist.desktop
+index f2aa281..c3d920d 100644
+--- a/dist/dwarftherapist.desktop
++++ b/dist/dwarftherapist.desktop
+@@ -2,7 +2,7 @@
+ Version=1.0
+ Name=Dwarf Therapist
+ Comment=Dwarf Viewer and Manager for Dwarf Fortress
+-Exec=dwarftherapist
++Exec=DwarfTherapist
+ TryExec=dwarftherapist
+ Icon=dwarftherapist
+ Terminal=false
+-- 
+2.33.1
+
