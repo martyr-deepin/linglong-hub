@@ -1,0 +1,47 @@
+From b5af0b1f9c211df0f775fc31cce219d63eba70cd Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 4 Nov 2023 12:16:39 +0800
+Subject: [PATCH] install
+
+---
+ tcpview.desktop | 8 ++++++++
+ tcpview.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 tcpview.desktop
+
+diff --git a/tcpview.desktop b/tcpview.desktop
+new file mode 100644
+index 0000000..282daf5
+--- /dev/null
++++ b/tcpview.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=tcpview
++Name=tcpview
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/tcpview.pro b/tcpview.pro
+index 0d02681..b663059 100644
+--- a/tcpview.pro
++++ b/tcpview.pro
+@@ -105,6 +105,13 @@ TRANSLATIONS += \
+     translations/language_zh_CN.ts \
+     translations/language_zh_TW.ts
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =tcpview.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+ #af		Afrikaans
+ #sq		Albanian
+ #ar		Arabic
+-- 
+2.33.1
+
