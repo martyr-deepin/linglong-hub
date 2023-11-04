@@ -1,0 +1,44 @@
+From 9653fba8a61f36a5e9716e3699ddf3d46ea61a31 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 4 Nov 2023 12:24:24 +0800
+Subject: [PATCH] install
+
+---
+ rgbtest.desktop | 8 ++++++++
+ rgbtest.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 rgbtest.desktop
+
+diff --git a/rgbtest.desktop b/rgbtest.desktop
+new file mode 100644
+index 0000000..702a8c7
+--- /dev/null
++++ b/rgbtest.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=rgbtest
++Name=rgbtest
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/rgbtest.pro b/rgbtest.pro
+index d8282fa..fc1cad0 100644
+--- a/rgbtest.pro
++++ b/rgbtest.pro
+@@ -53,3 +53,10 @@ win32 {
+   RC_FILE     += rgbtest.rc
+   OTHER_FILES += rgbtest.rc
+ }
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =rgbtest.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
