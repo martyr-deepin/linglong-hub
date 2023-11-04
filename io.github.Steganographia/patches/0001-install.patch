@@ -1,0 +1,44 @@
+From 3107e18a6d66dcd645881a29e00c433989964325 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 4 Nov 2023 11:32:45 +0800
+Subject: [PATCH] install
+
+---
+ src/Steganographia.desktop | 8 ++++++++
+ src/Steganographia.pro     | 8 ++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 src/Steganographia.desktop
+
+diff --git a/src/Steganographia.desktop b/src/Steganographia.desktop
+new file mode 100644
+index 0000000..420b547
+--- /dev/null
++++ b/src/Steganographia.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Steganographia
++Name=Steganographia
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/src/Steganographia.pro b/src/Steganographia.pro
+index 1f0db4a..5080511 100644
+--- a/src/Steganographia.pro
++++ b/src/Steganographia.pro
+@@ -37,3 +37,11 @@ HEADERS += \
+ 
+ FORMS += \
+         steganographia.ui
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Steganographia.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
