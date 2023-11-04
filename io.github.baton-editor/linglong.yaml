@@ -1,0 +1,20 @@
+package:
+  id: io.github.baton-editor
+  name: baton-editor
+  version: 0.0.1
+  kind: app
+  description: |
+    Baton is a code editor for C++ Design document:
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/mkornaukhov03/baton-editor.git"
+  commit: bf1f8a59305ed37356710610ce5e13488ceb2a67
+  patch: patches/install.patch
+
+build:
+  kind: cmake
