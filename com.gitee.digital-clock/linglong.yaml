@@ -1,0 +1,22 @@
+package:
+  id: com.gitee.digital-clock
+  name: digital-clock
+  version: 0.0.1
+  kind: app
+  description: |
+    digital-clock.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/alon-1787/digital-clock.git"
+  commit: de092227096e0645915a0dbc3ce6ff6c93cced04
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
+
+      

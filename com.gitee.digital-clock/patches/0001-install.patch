@@ -1,0 +1,40 @@
+From 254092381d5875b62351dbe1d606d2a54b3f3ecd Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Sun, 5 Nov 2023 16:21:36 +0800
+Subject: [install.patch_] install
+
+---
+ CMakeLists.txt       | 4 ++++
+ DigitalClock.desktop | 7 +++++++
+ 2 files changed, 11 insertions(+)
+ create mode 100644 DigitalClock.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 44d67b5..f60d7b6 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -42,3 +42,7 @@ else()
+ endif()
+ 
+ target_link_libraries(DigitalClock PRIVATE Qt5::Widgets)
++
++install(TARGETS DigitalClock DESTINATION bin)
++install(PROGRAMS DigitalClock.desktop DESTINATION share/applications)
++
+diff --git a/DigitalClock.desktop b/DigitalClock.desktop
+new file mode 100644
+index 0000000..3d134bc
+--- /dev/null
++++ b/DigitalClock.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=DigitalClock
++GenericName=DigitalClock
++Hidden=false
++Name=DigitalClock
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+-- 
+2.33.1
+
