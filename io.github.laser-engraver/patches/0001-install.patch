@@ -1,0 +1,41 @@
+From cdb1a3718b61d215e9bd5556c89ba576eb6883e5 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 4 Nov 2023 12:37:38 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt                           | 3 ++-
+ build_dir/laser-engraver-toolkit.desktop | 8 ++++++++
+ 2 files changed, 10 insertions(+), 1 deletion(-)
+ create mode 100644 build_dir/laser-engraver-toolkit.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 2095395..a56b9ef 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -123,6 +123,7 @@ target_link_libraries(laser-engraver-toolkit PRIVATE
+     Threads::Threads
+     semi-gcode-lib
+ )
+-
++install(PROGRAMS ${CMAKE_BINARY_DIR}/laser-engraver-toolkit.desktop DESTINATION share/applications)
+ install(TARGETS laser-engraver-toolkit RUNTIME DESTINATION bin)
+ 
++
+diff --git a/build_dir/laser-engraver-toolkit.desktop b/build_dir/laser-engraver-toolkit.desktop
+new file mode 100644
+index 0000000..c2a44ff
+--- /dev/null
++++ b/build_dir/laser-engraver-toolkit.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=laser-engraver-toolkit
++Name=laser-engraver-toolkit
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+-- 
+2.33.1
+
