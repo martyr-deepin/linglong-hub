@@ -1,0 +1,22 @@
+package:
+  id: io.github.qt-todo
+  name: qt-todo
+  version: 0.1.0
+  kind: app
+  description: |
+    a simple cross-platform Desktop TODO application for learning the basics of Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/datho7561/qt-todo.git"
+  commit: 74e383e3f20470fa2129fdfb292b576ab37d79c6
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake
