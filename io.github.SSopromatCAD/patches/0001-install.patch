@@ -1,0 +1,44 @@
+From a135d9c5e3865e830564e90121706ee6b52f904e Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 4 Nov 2023 11:42:56 +0800
+Subject: [PATCH] install
+
+---
+ SSopromatCAD.desktop | 8 ++++++++
+ SSopromatCAD.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 SSopromatCAD.desktop
+
+diff --git a/SSopromatCAD.desktop b/SSopromatCAD.desktop
+new file mode 100644
+index 0000000..3ea4484
+--- /dev/null
++++ b/SSopromatCAD.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=SSopromatCAD
++Name=SSopromatCAD
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/SSopromatCAD.pro b/SSopromatCAD.pro
+index b13f702..36eab5f 100644
+--- a/SSopromatCAD.pro
++++ b/SSopromatCAD.pro
+@@ -26,3 +26,10 @@ FORMS    += ssopromatcad.ui \
+ 
+ RESOURCES += \
+     recourses.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =SSopromatCAD.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
