@@ -1,0 +1,20 @@
+package:
+  id: org.deepin.ChineseChess
+  name: ChineseChess
+  version: 6.1.0
+  kind: app
+  description: |
+    The Chinese chess online battle platform (including communication function) developed based on Qt5 realizes the function of chess game in a single or networked state
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/XMuli/ChineseChess.git"
+  commit: 80bdb58e08f06579c6b90c31001d5309e0d48ce5
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
