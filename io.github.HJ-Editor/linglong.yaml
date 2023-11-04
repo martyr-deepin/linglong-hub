@@ -1,0 +1,20 @@
+package:
+  id: io.github.HJ-Editor
+  name: HJ-Editor
+  version: 0.0.1
+  kind: app
+  description: |
+    A simple C + + IDE with Lenovo, code highlighting, compile and run, and more
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/m-iDev-0792/HJ-Editor.git"
+  commit: bf4d55f2522ca24850f136f79efcf1e3e893ebba
+  patch: patches/install.patch
+
+build:
+  kind: qmake
