@@ -1,0 +1,20 @@
+package:
+  id: io.github.GitQlient
+  name: deepin-demo
+  version: 1.6.2   
+  kind: app
+  description: |
+    GitQlient, pronounced as git+client (/gɪtˈklaɪənt/) is a multi-platform Git client originally forked from QGit.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/francescmm/GitQlient.git"
+  commit: 4d197a8720c5978dddb3f36ae790793891e592e9
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
