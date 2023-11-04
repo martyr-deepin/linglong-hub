@@ -1,0 +1,44 @@
+From 69564dc81dd83cbae4cb7b6b0a33dfbc864e0621 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 3 Nov 2023 19:56:14 +0800
+Subject: [PATCH] install
+
+---
+ SmartCode.desktop | 8 ++++++++
+ SmartCode.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 SmartCode.desktop
+
+diff --git a/SmartCode.desktop b/SmartCode.desktop
+new file mode 100644
+index 0000000..a6e1581
+--- /dev/null
++++ b/SmartCode.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=SmartCode
++Name=SmartCode
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/SmartCode.pro b/SmartCode.pro
+index f0278c0..9acce81 100644
+--- a/SmartCode.pro
++++ b/SmartCode.pro
+@@ -66,3 +66,10 @@ FORMS += \
+ 
+ RESOURCES += \
+     resources.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =SmartCode.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
