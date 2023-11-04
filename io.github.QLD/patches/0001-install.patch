@@ -1,0 +1,50 @@
+From 21a8d0e91fbeacf004c2a65448e2dd93fdc85034 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 4 Nov 2023 12:30:42 +0800
+Subject: [PATCH] install
+
+---
+ QLD.desktop | 8 ++++++++
+ QLD.pro     | 8 +++++++-
+ 2 files changed, 15 insertions(+), 1 deletion(-)
+ create mode 100644 QLD.desktop
+
+diff --git a/QLD.desktop b/QLD.desktop
+new file mode 100644
+index 0000000..cfbc290
+--- /dev/null
++++ b/QLD.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QLD
++Name=QLD
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/QLD.pro b/QLD.pro
+index 4b92139..412c51a 100755
+--- a/QLD.pro
++++ b/QLD.pro
+@@ -23,9 +23,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =QLD.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+ SOURCES += \
+     main.cpp \
+     CPP/baseclass.cpp \
+-- 
+2.33.1
+
