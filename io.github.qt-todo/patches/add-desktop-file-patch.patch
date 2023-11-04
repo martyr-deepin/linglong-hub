@@ -1,0 +1,12 @@
+diff --git a/qt-todo.desktop b/qt-todo.desktop
+new file mode 100644
+index 0000000..7ed9a07
+--- /dev/null
++++ b/qt-todo.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=qt-todo
++Type=Application
++Exec=qt-todo %f
++Icon=qt-todo
+
