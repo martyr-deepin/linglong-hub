@@ -1,0 +1,30 @@
+diff --git a/kale.desktop b/kale.desktop
+new file mode 100644
+index 0000000..a5587cb
+--- /dev/null
++++ b/kale.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=kale
++Exec=kale
++Terminal=false
+\ No newline at end of file
+diff --git a/kale.pro b/kale.pro
+index 0d1ff32..844d5ee 100644
+--- a/kale.pro
++++ b/kale.pro
+@@ -106,3 +106,12 @@ OTHER_FILES += \
+     TODO.txt \
+     CHANGES.txt \
+     README.md
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = kale.desktop
++INSTALLS += unix_desktop
++}
