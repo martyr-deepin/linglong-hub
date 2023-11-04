@@ -1,0 +1,24 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index e6b7d01..bb0b7c8 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -236,3 +236,6 @@ elseif(APPLE)
+ endif()
+ 
+ include(CPack)
++
++install(TARGETS qawno DESTINATION bin)
++install(PROGRAMS qawno.desktop DESTINATION share/applications)
+diff --git a/qawno.desktop b/qawno.desktop
+new file mode 100644
+index 0000000..4d79bca
+--- /dev/null
++++ b/qawno.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=qawno
++Exec=qawno
++Terminal=false
+\ No newline at end of file
