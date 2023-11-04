@@ -1,0 +1,44 @@
+From a9e5ffa6e1f901e6a7676866b3fb2245ab7e25cc Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 4 Nov 2023 11:38:08 +0800
+Subject: [PATCH] install
+
+---
+ SArtificialNeuralWeb.desktop | 8 ++++++++
+ SArtificialNeuralWeb.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 SArtificialNeuralWeb.desktop
+
+diff --git a/SArtificialNeuralWeb.desktop b/SArtificialNeuralWeb.desktop
+new file mode 100644
+index 0000000..bb119f7
+--- /dev/null
++++ b/SArtificialNeuralWeb.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=SArtificialNeuralWeb
++Name=SArtificialNeuralWeb
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/SArtificialNeuralWeb.pro b/SArtificialNeuralWeb.pro
+index 30588dd..26639e7 100644
+--- a/SArtificialNeuralWeb.pro
++++ b/SArtificialNeuralWeb.pro
+@@ -24,3 +24,10 @@ HEADERS  += sartificialneuralweb.h \
+     SArtificialNeuralWebKernel/sartificialneuralwebkernel.h
+ 
+ FORMS    += sartificialneuralweb.ui
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =SArtificialNeuralWeb.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
