@@ -1,0 +1,20 @@
+package:
+  id: io.github.tcpview
+  name: tcpview
+  version: 3.4.0
+  kind: app
+  description: |
+    Graphical network connections viewer for Linux
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/chipmunk-sm/tcpview.git
+  commit: f3847e34432fd0721103d369718bfe5d20725c67
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
