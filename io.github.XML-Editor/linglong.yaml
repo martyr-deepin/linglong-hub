@@ -1,0 +1,20 @@
+package:
+  id: io.github.XML-Editor
+  name: XML-Editor
+  version: 0.0.1
+  kind: app
+  description: |
+    Baton is a code editor for C++ Design document:
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/AhmadAbdElHakim/XML-Editor.git"
+  commit: 62ed1700db89f8eb94365bf6e2b16563a1ea0423
+  patch: patches/install.patch
+
+build:
+  kind: qmake
