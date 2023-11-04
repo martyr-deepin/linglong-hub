@@ -1,0 +1,42 @@
+From 33e251f4fbef6c318bedc4a4874bc858afeabcc9 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 3 Nov 2023 19:12:13 +0800
+Subject: [PATCH] install
+
+---
+ Disass.desktop | 8 ++++++++
+ Disass.pro     | 6 ++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 Disass.desktop
+
+diff --git a/Disass.desktop b/Disass.desktop
+new file mode 100644
+index 0000000..b2cb930
+--- /dev/null
++++ b/Disass.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Disass
++Name=Disass
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Disass.pro b/Disass.pro
+index f8dab6b..908f3e7 100644
+--- a/Disass.pro
++++ b/Disass.pro
+@@ -45,3 +45,9 @@ FORMS += \
+ RESOURCES += \
+  Icons.qrc
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Disass.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
