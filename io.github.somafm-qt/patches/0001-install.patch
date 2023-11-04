@@ -1,0 +1,50 @@
+From ada67d356d28ba7005c2c6ffa922fa7ebf744c8c Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 4 Nov 2023 11:51:29 +0800
+Subject: [PATCH] install
+
+---
+ somafm-qt.desktop |  8 ++++++++
+ somafm-qt.pro     | 11 +++++++++--
+ 2 files changed, 17 insertions(+), 2 deletions(-)
+ create mode 100644 somafm-qt.desktop
+
+diff --git a/somafm-qt.desktop b/somafm-qt.desktop
+new file mode 100644
+index 0000000..4dbb556
+--- /dev/null
++++ b/somafm-qt.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=somafm-qt
++Name=somafm-qt
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/somafm-qt.pro b/somafm-qt.pro
+index bf4add3..5cc8dc8 100644
+--- a/somafm-qt.pro
++++ b/somafm-qt.pro
+@@ -9,8 +9,15 @@ QT       += core gui network xml multimedia
+ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets webenginewidgets
+ 
+ TARGET = somafm-qt
+-target.path = /usr/bin
+-INSTALLS += target
++#target.path = /usr/bin
++#INSTALLS += target
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =somafm-qt.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+ TEMPLATE = app
+ 
+ # QMAKE_CXXFLAGS += "-fno-sized-deallocation"
+-- 
+2.33.1
+
