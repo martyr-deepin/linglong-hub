@@ -1,0 +1,20 @@
+package:
+  id: io.github.owoncontrol-qt
+  name: owoncontrol-qt
+  version: 1.0.0
+  kind: app
+  description: |
+    This is the next step from my "owoncontrol" project and provides a simple user interface for the end user to allow control of an SDS7102v oscilloscope via USB.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/7oxicshadow/owoncontrol-qt.git
+  commit: 80c74c4a432bb00f8a3fc577b7e11931b03f99dd
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
