@@ -1,0 +1,24 @@
+package:
+  id: io.github.somafm-qt
+  name: somafm-qt
+  version: 0.1.0
+  kind: app
+  description: |
+    SomaFM Radio Player (somafm-qt)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine
+    version: 5.15.7
+
+source:
+  kind: git
+  url: https://github.com/pbek/somafm-qt.git
+  commit: 0f02e9dbbfa281e5b964c44dad924fd558e3ebf9
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
