@@ -1,0 +1,20 @@
+package:
+  id: io.github.SArtificialNeuralWeb
+  name: SArtificialNeuralWeb
+  version: 1.0.0
+  kind: app
+  description: |
+    Teaching product system
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/shotInLeg/SArtificialNeuralWeb.git
+  commit: 5a6d23ee21b2ddabd96da26351bb10915a4d573c
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
