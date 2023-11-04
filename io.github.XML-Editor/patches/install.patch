@@ -1,0 +1,37 @@
+diff --git a/XML.desktop b/XML.desktop
+new file mode 100644
+index 0000000..f89f5f2
+--- /dev/null
++++ b/XML.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=XML
++Exec=XML
++Terminal=false
+\ No newline at end of file
+diff --git a/XML.pro b/XML.pro
+index 821788e..faff06e 100644
+--- a/XML.pro
++++ b/XML.pro
+@@ -1,5 +1,8 @@
+ QT       += core gui
+ 
++TARGET = XML
++TEMPLATE = app
++
+ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+ 
+ CONFIG += c++11
+@@ -27,5 +30,9 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $${PREFIX}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = XML.desktop
++INSTALLS += unix_desktop
