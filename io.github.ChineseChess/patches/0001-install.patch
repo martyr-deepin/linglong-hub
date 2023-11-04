@@ -1,0 +1,44 @@
+From 7eca57540fde61ba99b6ed8e00ed371829d4263b Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 3 Nov 2023 19:41:47 +0800
+Subject: [PATCH] install
+
+---
+ ChineseChess.desktop | 8 ++++++++
+ ChineseChess.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 ChineseChess.desktop
+
+diff --git a/ChineseChess.desktop b/ChineseChess.desktop
+new file mode 100644
+index 0000000..efac7c6
+--- /dev/null
++++ b/ChineseChess.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=ChineseChess
++Name=ChineseChess
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/ChineseChess.pro b/ChineseChess.pro
+index c7571ab..31f8513 100755
+--- a/ChineseChess.pro
++++ b/ChineseChess.pro
+@@ -50,3 +50,10 @@ RESOURCES += \
+ 
+ RC_FILE = res.rc
+ 
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =ChineseChess.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
