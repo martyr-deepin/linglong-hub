@@ -1,0 +1,19 @@
+package:
+  id: io.github.HexEditor
+  name: HexEditor
+  version: 1.17.0
+  kind: app
+  description: |
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/chipmunk-sm/HexEditor.git
+  commit: 70fb812249558ce17f680c31940608260235b4e4
+
+build:
+  kind: qmake
