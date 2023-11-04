@@ -1,0 +1,24 @@
+package:
+  id: io.github.ObjGui
+  name: ObjGui
+  version: 1.0.0
+  kind: app
+  description: |
+    ObjGui uses objdump to disassemble executables, analyzes the data, and then provides an easy way to navigate through the disassembly.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/jubal-R/ObjGui.git
+  commit: b9a60fa8505dda184a8d6922ddeeb35137a2432d
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
