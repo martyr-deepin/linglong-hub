@@ -1,0 +1,45 @@
+diff --git a/SnakeGame b/SnakeGame
+new file mode 100755
+index 0000000..3cd838c
+Binary files /dev/null and b/SnakeGame differ
+diff --git a/SnakeGame.desktop b/SnakeGame.desktop
+new file mode 100644
+index 0000000..a40a1d8
+--- /dev/null
++++ b/SnakeGame.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=SnakeGame
++Exec=SnakeGame
++Terminal=false
+\ No newline at end of file
+diff --git a/SnakeGameTest.pro b/SnakeGameTest.pro
+index 4878fe3..860984d 100644
+--- a/SnakeGameTest.pro
++++ b/SnakeGameTest.pro
+@@ -8,7 +8,7 @@ QT       += core gui
+ 
+ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+ 
+-TARGET = SnakeGameTest
++TARGET = SnakeGame
+ TEMPLATE = app
+ 
+ # The following define makes your compiler emit warnings if you use
+@@ -32,3 +32,14 @@ HEADERS += \
+ 
+ FORMS += \
+         mainwindow.ui
++
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = SnakeGame.desktop
++INSTALLS += unix_desktop
++}
++
