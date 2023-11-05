@@ -1,0 +1,50 @@
+From 1ef8e4ce4a6687f8ed5781c7b5a00f9421265807 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Sun, 5 Nov 2023 17:04:23 +0800
+Subject: [install.patch_] install
+
+---
+ QtNotepad/QtNotepad.desktop |  7 +++++++
+ QtNotepad/QtNotepad.pro     | 14 ++++++++++++++
+ 2 files changed, 21 insertions(+)
+ create mode 100644 QtNotepad/QtNotepad.desktop
+
+diff --git a/QtNotepad/QtNotepad.desktop b/QtNotepad/QtNotepad.desktop
+new file mode 100644
+index 0000000..b47f121
+--- /dev/null
++++ b/QtNotepad/QtNotepad.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=QtNotepad
++GenericName=QtNotepad
++Hidden=false
++Name=QtNotepad
++StartupNotify=false
++Type=Application
+diff --git a/QtNotepad/QtNotepad.pro b/QtNotepad/QtNotepad.pro
+index 4b35934..793f38f 100644
+--- a/QtNotepad/QtNotepad.pro
++++ b/QtNotepad/QtNotepad.pro
+@@ -35,3 +35,17 @@ FORMS += \
+ 
+ RESOURCES += \
+     resources.qrc
++
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = QtNotepad.desktop
++INSTALLS += unix_desktop
++
++
++}
+\ No newline at end of file
+-- 
+2.33.1
+

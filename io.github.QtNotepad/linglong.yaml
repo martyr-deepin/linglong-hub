@@ -1,0 +1,25 @@
+package:
+  id: io.github.QtNotepad
+  name: QtNotepad
+  version: 1.0.0
+  kind: app
+  description: |
+    he notepad app is about 50KB in size and is a standalone executable with basic functionalities such as opening, saving, printing and creating new files.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git 
+  url: "https://github.com/rattle99/QtNotepad.git"
+  commit: 1bf0033716e4ad3c60c74544f560b138aa6f2d00
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd QtNotepad
+      qmake -makefile ${conf_args} ${extra_args}
+      
