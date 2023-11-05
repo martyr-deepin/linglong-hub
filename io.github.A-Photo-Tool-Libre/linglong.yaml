@@ -14,7 +14,7 @@ source:
   kind: git
   url: "https://github.com/aphototool/A-Photo-Tool-Libre.git"
   commit: bb5623538c0df226406336298fbe467e39857b6f
-  patch: patches/src.patch
+  patch: patches/0001-install.patch
 
 
 build:
