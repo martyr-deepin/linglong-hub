@@ -1,0 +1,21 @@
+package:
+  id: io.github.MystiQ
+  name: MystiQ
+  version: 20.03.23
+  kind: app
+  description: |
+    MystiQ is a GUI for FFmpeg, a powerful media converter. FFmpeg can read audio and video files in various formats and convert them into other formats.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/swl-x/MystiQ.git"
+  commit: d3494c21f5979a2f9a41a4a685913f521dbb2301
+  patch: patches/0001-install.patch
+
+
+build:
+  kind: qmake
