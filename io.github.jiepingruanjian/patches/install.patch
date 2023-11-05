@@ -1,0 +1,41 @@
+diff --git a/CatchScreen.desktop b/CatchScreen.desktop
+new file mode 100644
+index 0000000..d1c79c0
+--- /dev/null
++++ b/CatchScreen.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=CatchScreen
++Exec=CatchScreen
++Terminal=false
+\ No newline at end of file
+diff --git a/CatchScreen.pro b/CatchScreen.pro
+index 6fd82a6..0925f5c 100644
+--- a/CatchScreen.pro
++++ b/CatchScreen.pro
+@@ -11,7 +11,6 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+ TARGET = CatchScreen
+ TEMPLATE = app
+ 
+-
+ SOURCES += main.cpp\
+         mainwindow.cpp \
+     catchdialog.cpp
+@@ -21,3 +20,14 @@ HEADERS  += mainwindow.h \
+ 
+ FORMS    += mainwindow.ui \
+     catchdialog.ui
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = CatchScreen.desktop
++INSTALLS += unix_desktop
++
++}
+\ No newline at end of file
