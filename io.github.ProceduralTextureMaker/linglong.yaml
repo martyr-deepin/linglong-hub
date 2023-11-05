@@ -1,0 +1,22 @@
+package:
+  id: io.github.ProceduralTextureMaker
+  name: ProceduralTextureMaker
+  version: 0.0.1
+  kind: app
+  description: |
+    ProceduralTextureMaker generates texture images in arbitrary sizes based on graphs of nodes.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/johanokl/ProceduralTextureMaker.git"
+  commit: 1d46e273b5e213ad15c635233b4e7763d5404be4
+  patch: 
+    -  patches/install.patch
+
+
+build:
+  kind: qmake
