@@ -1,0 +1,20 @@
+package:
+  id: io.github.f-crm
+  name: f-crm
+  version: 0.2.0
+  kind: app
+  description: |
+    Customer Relations Management for Freelancers and Individual Contractors 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/jgaa/f-crm.git"
+  commit: 65d012445cf6c87d9ab36fea54fa4a4fdbd447ed
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

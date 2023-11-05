@@ -1,0 +1,48 @@
+From bbc36d5ac169e594b40c2fab6797a364f91a96de Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 3 Nov 2023 21:50:49 +0800
+Subject: [PATCH] install
+
+---
+ f-crm.desktop | 8 ++++++++
+ f-crm.pro     | 8 ++++++--
+ 2 files changed, 14 insertions(+), 2 deletions(-)
+ create mode 100644 f-crm.desktop
+  
+diff --git a/f-crm.desktop b/f-crm.desktop
+new file mode 100644
+index 0000000..7e6b8b9
+--- /dev/null
++++ b/f-crm.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=f-crm
++Name=f-crm
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/f-crm.pro b/f-crm.pro
+index 95e7d16..965b71d 100644
+--- a/f-crm.pro
++++ b/f-crm.pro
+@@ -28,8 +28,12 @@ linux {
+     isEmpty(DIST_DIR) {
+         DIST_DIR = $$_PRO_FILE_PWD_/../dist/desktop-linux
+     }
+-    target.path = $${DIST_DIR}/root/usr/bin
+-    INSTALLS += target
++    BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =f-crm.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+ }
+ 
+ 
+-- 
+2.33.1
+
