@@ -1,3 +1,12 @@
+From 3de156ce072d4e0cf4fd302ad8f153ea45b84c90 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Sun, 5 Nov 2023 14:09:59 +0800
+Subject: [install.patch_] ww
+
+---
+ Beslyric-for-X.pro | 11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
+
 diff --git a/Beslyric-for-X.pro b/Beslyric-for-X.pro
 index 2b92463..534d294 100644
 --- a/Beslyric-for-X.pro
@@ -34,3 +43,6 @@ index 2b92463..534d294 100644
  
          INSTALLS *= appdir_icon_$${icon_size}
      }
+-- 
+2.33.1
+
