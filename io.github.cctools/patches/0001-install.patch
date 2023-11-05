@@ -1,0 +1,39 @@
+From 9fa33c573319ddf33add6dbe04c8fb6bfc1c2950 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 5 Nov 2023 13:06:30 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt            | 1 +
+ build_dir/cctools.desktop | 8 ++++++++
+ 2 files changed, 9 insertions(+)
+ create mode 100644 build_dir/cctools.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 2a1446e..6f746ac 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -76,3 +76,4 @@ else()
+             DESTINATION share/cctools
+     )
+ endif()
++install(PROGRAMS ${CMAKE_BINARY_DIR}/cctools.desktop DESTINATION share/applications)
+\ No newline at end of file
+diff --git a/build_dir/cctools.desktop b/build_dir/cctools.desktop
+new file mode 100644
+index 0000000..73e2954
+--- /dev/null
++++ b/build_dir/cctools.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=CC2Edit
++Name=cctools
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+-- 
+2.33.1
+

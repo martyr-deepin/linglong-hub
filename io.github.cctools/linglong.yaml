@@ -1,0 +1,25 @@
+package:
+  id: io.github.cctools
+  name: cctools
+  version: 1.0.0
+  kind: app
+  description: |
+   Editor and Tool suite for Chip's Challenge, Chip's Challenge 2, and Tile World
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: ksyntax-highlighting
+    type: runtime
+    version: 5.54.0
+
+source:
+  kind: git
+  url: https://github.com/Eggbertx/cctools.git
+  commit: f6d07f837e87cf88e77eef9b2ed75285f0af63aa
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
