@@ -1,0 +1,21 @@
+package:
+  id: io.github.qmarkdowntextedit
+  name: qmarkdowntextedit
+  version: 1.0.0
+  kind: app
+  description: |
+    A C++ Qt QPlainTextEdit  with markdown highlighting support and a lot of other extras
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/pbek/qmarkdowntextedit.git"
+  commit: a7ed8197fad0e1a314ea1f4c4373eeb192a31963
+  patch: patches/0001-install.patch
+
+
+build:
+  kind: cmake
