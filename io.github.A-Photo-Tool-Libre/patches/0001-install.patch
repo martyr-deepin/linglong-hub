@@ -1,37 +1,22 @@
-diff --git a/source b/source
-new file mode 160000
-index 0000000..bb56235
---- /dev/null
-+++ b/source
-@@ -0,0 +1 @@
-+Subproject commit bb5623538c0df226406336298fbe467e39857b6f
+From 6edc10733f3cf40c29d1019231a1302d7d222c3f Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Sun, 5 Nov 2023 12:44:38 +0800
+Subject: [PATCH] update
+
+---
+ src/src.pro | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
 diff --git a/src/src.pro b/src/src.pro
-index 0f02798..e8e70d9 100644
+index 0f02798..5f6af27 100644
 --- a/src/src.pro
 +++ b/src/src.pro
-@@ -4,7 +4,7 @@ qtHaveModule(printsupport): QT += printsupport
- 
- greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
- 
--# For use with Qt 6
-+# For use with Qt 6  
- # CONFIG += c++11
- 
- TARGET = aphototoollibre
-@@ -14,6 +14,7 @@ CONFIG += warn_on
- # TRANSLATIONS = i18n/aphototoollibre_en_US.ts
- # RESOURCES = i18n/aphototoollibre_en_US.qm
- 
-+
- DESTDIR = ../bin
- MOC_DIR = ../build/moc
- RCC_DIR = ../build/rcc
-@@ -116,22 +117,22 @@ RESOURCES += \
+@@ -116,22 +116,22 @@ RESOURCES += \
  
  unix: {
  
 -target.path = /usr/bin/
-+target.path = $${PREFIX}/bin
++target.path = $${PREFIX}/bin/
  INSTALLS += target
  
 -unix_man.path = /usr/share/man/man1
@@ -54,3 +39,6 @@ index 0f02798..e8e70d9 100644
  unix_metainfo.files = ../desktop/aphototoollibre.metainfo.xml
  INSTALLS += unix_metainfo
  
+-- 
+2.33.1
+
