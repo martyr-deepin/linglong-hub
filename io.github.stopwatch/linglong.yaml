@@ -1,0 +1,20 @@
+package:
+  id: io.github.stopwatch
+  name: stopwatch
+  version: 1.0.0
+  kind: app
+  description: |
+    一个简单易用的秒表
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/llf137224350/stopwatch.git
+  commit: 82558deb47cba3d3f180354672be8a5d3800d5b8
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
