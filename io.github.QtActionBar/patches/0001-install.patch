@@ -1,0 +1,45 @@
+From ed7771047c4455af22b2f8eceb4eabf5aaad230b Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 5 Nov 2023 12:31:01 +0800
+Subject: [PATCH] install
+
+---
+ ActionBar.desktop | 8 ++++++++
+ ActionBar.pro     | 7 ++++++-
+ 2 files changed, 14 insertions(+), 1 deletion(-)
+ create mode 100644 ActionBar.desktop
+
+diff --git a/ActionBar.desktop b/ActionBar.desktop
+new file mode 100644
+index 0000000..f1e2d7c
+--- /dev/null
++++ b/ActionBar.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=ActionBar
++Name=ActionBar
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/ActionBar.pro b/ActionBar.pro
+index 13c0249..b373017 100644
+--- a/ActionBar.pro
++++ b/ActionBar.pro
+@@ -31,4 +31,9 @@ TRANSLATIONS =  \
+     resources/i18n/translations_ar.ts \
+     resources/i18n/translations_en.ts \
+     resources/i18n/translations_de.ts
+-
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =ActionBar.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

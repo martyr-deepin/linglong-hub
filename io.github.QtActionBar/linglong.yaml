@@ -1,0 +1,20 @@
+package:
+  id: io.github.QtActionBar
+  name: QtActionBar
+  version: 1.0.0
+  kind: app
+  description: |
+    Android ActionBar in Qt
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/jmbowman/QtActionBar.git
+  commit: b8513595104bb3b1885329e7292ef707dbb5742d
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
