@@ -1,0 +1,45 @@
+From ee2260fd75494d30fb9aec139429b581660c403c Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Sun, 5 Nov 2023 14:02:49 +0800
+Subject: [install.patch_] install
+
+---
+ TSWaveMaker.desktop |  6 ++++++
+ TSWaveMaker.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 TSWaveMaker.desktop
+
+diff --git a/TSWaveMaker.desktop b/TSWaveMaker.desktop
+new file mode 100644
+index 0000000..4ddf26f
+--- /dev/null
++++ b/TSWaveMaker.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=TSWaveMaker
++Exec=TSWaveMaker
++Terminal=false
+\ No newline at end of file
+diff --git a/TSWaveMaker.pro b/TSWaveMaker.pro
+index 7dfdceb..0869431 100644
+--- a/TSWaveMaker.pro
++++ b/TSWaveMaker.pro
+@@ -25,3 +25,13 @@ debug:UI_DIR = debug/.ui
+ 
+ DEFINES += VERSION='"\\\"$$system(git describe --tags --abbrev=0)\\\""'
+ DEFINES += GIT_VERSION='"\\\"$$system(git describe --tags)\\\""'
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = TSWaveMaker.desktop
++INSTALLS += unix_desktop
++}
++
+-- 
+2.33.1
+
