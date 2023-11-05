@@ -1,0 +1,20 @@
+package:
+  id: io.github.SkyMPC
+  name: SkyMPC
+  version: 0.1.0
+  kind: app
+  description: |
+    a simple MPD (Music Player Daemon) client, powerd by Qt
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/soramimi/SkyMPC.git
+  commit: 3aada102177301d1275d9b09b97ebcd7fd34fa9e
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
