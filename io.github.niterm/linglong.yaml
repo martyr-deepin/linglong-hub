@@ -1,0 +1,26 @@
+package:
+  id: io.github.niterm
+  name: niterm
+  version: 1.0.1.1
+  kind: app
+  description: |
+    Convert XML files to ASCII and HEX.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtserialport
+    version: 5.15.7
+    type: runtime
+  
+source:
+  kind: git
+  url: "https://github.com/pavelrangelov/niterm.git"
+  commit: 365852fde2f03894046c0445cfb49c0037372211
+  patch:
+    - patches/install.patch
+
+build:
+  kind: qmake

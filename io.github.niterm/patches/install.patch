@@ -1,0 +1,30 @@
+diff --git a/niterm.desktop b/niterm.desktop
+new file mode 100644
+index 0000000..a72e948
+--- /dev/null
++++ b/niterm.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=niterm
++Exec=niterm %f
++Icon=main
+diff --git a/niterm.pro b/niterm.pro
+index 169c9b2..9d0b9c0 100644
+--- a/niterm.pro
++++ b/niterm.pro
+@@ -45,3 +45,14 @@ RESOURCES += \
+        main.qrc
+ 
+ RC_FILE = main.rc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += niterm.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = images/main.png
++INSTALLS += icons
