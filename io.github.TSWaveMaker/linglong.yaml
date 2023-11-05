@@ -1,0 +1,20 @@
+package:
+  id: io.github.TSWaveMaker
+  name: TSWaveMaker
+  version: 0.1.42
+  kind: app
+  description: |
+    A great trigger, team, script and taskforce editor for C&C Tiberian Sun.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/PTapioK/TSWaveMaker.git"
+  commit: b77aa26915c173f3924018152837eda3b8474fbe
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
