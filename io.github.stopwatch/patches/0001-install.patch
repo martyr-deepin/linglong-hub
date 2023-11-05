@@ -1,0 +1,59 @@
+From 0ed632757d622d43387e782d22d220908b1eadfd Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 5 Nov 2023 12:11:33 +0800
+Subject: [PATCH] install
+
+---
+ stopwatch.desktop |  4 ++--
+ stopwatch.pro     | 20 +++++++++++++-------
+ 2 files changed, 15 insertions(+), 9 deletions(-)
+
+diff --git a/stopwatch.desktop b/stopwatch.desktop
+index ad87463..5058ae0 100644
+--- a/stopwatch.desktop
++++ b/stopwatch.desktop
+@@ -1,8 +1,8 @@
+ [Desktop Entry]
+ Categories=Application;Utility;stopwatch;
+ Encoding=UTF-8
+-Exec=/usr/bin/stopwatch
+-Icon=/usr/share/icons/stopwatch/app.ico
++Exec=stopwatch
++Icon=app.ico
+ Name=stopwatch
+ Name[zh_CN]=秒表
+ Name[zh_TW]=秒表
+diff --git a/stopwatch.pro b/stopwatch.pro
+index 0f34d0e..41bf2cf 100644
+--- a/stopwatch.pro
++++ b/stopwatch.pro
+@@ -40,13 +40,19 @@ RESOURCES += \
+ 
+ QMAKE_CXXFLAGS += -g
+ 
+-isEmpty(BINDIR):BINDIR=/usr/bin
+-isEmpty(APPDIR):APPDIR=/usr/share/applications
+-isEmpty(ICONSDIR):ICONSDIR=/usr/share/icons/stopwatch
+-
+-target.path = $$INSTROOT$$BINDIR
+-desktop.path = $$INSTROOT$$APPDIR
+-desktop.files = stopwatch.desktop
++isEmpty(BINDIR):BINDIR=$$PREFIX/bin
++isEmpty(APPDIR):APPDIR=$$PREFIX/share/applications
++isEmpty(ICONSDIR):ICONSDIR=$$PREFIX/share/icons/stopwatch
++
++#target.path = $$INSTROOT$$BINDIR
++#desktop.path = $$INSTROOT$$APPDIR
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =stopwatch.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++#desktop.files = stopwatch.desktop
+ 
+ icons.path = $$INSTROOT$$ICONSDIR
+ icons.files = app.ico
+-- 
+2.33.1
+
