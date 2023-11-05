@@ -1,0 +1,42 @@
+From eefe87fa08d6bd8816348733e5ba2554515c84c5 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 5 Nov 2023 12:17:45 +0800
+Subject: [PATCH] install
+
+---
+ ColorPicker.desktop | 8 ++++++++
+ ColorPicker.pro     | 6 ++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 ColorPicker.desktop
+
+diff --git a/ColorPicker.desktop b/ColorPicker.desktop
+new file mode 100644
+index 0000000..2340baa
+--- /dev/null
++++ b/ColorPicker.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=ColorPicker
++Name=ColorPicker
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/ColorPicker.pro b/ColorPicker.pro
+index ae11faa..f7fcd6f 100644
+--- a/ColorPicker.pro
++++ b/ColorPicker.pro
+@@ -41,3 +41,9 @@ RESOURCES += \
+     images.qrc\
+     qm.qrc
+ RC_FILE = app.rc
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =ColorPicker.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
