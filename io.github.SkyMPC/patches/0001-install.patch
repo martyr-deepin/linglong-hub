@@ -1,0 +1,41 @@
+From e71ba6fadb1005fe9821f97d3dd9a6db97a70580 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 5 Nov 2023 10:27:48 +0800
+Subject: [PATCH] install
+
+---
+ LinuxDesktop/SkyMPC.desktop | 4 ++--
+ SkyMPC.pro                  | 6 ++++++
+ 2 files changed, 8 insertions(+), 2 deletions(-)
+  
+diff --git a/LinuxDesktop/SkyMPC.desktop b/LinuxDesktop/SkyMPC.desktop
+index bd43642..0f6eb07 100644
+--- a/LinuxDesktop/SkyMPC.desktop
++++ b/LinuxDesktop/SkyMPC.desktop
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ Name=SkyMPC
+-Exec=/opt/SkyMPC/SkyMPC
+-Icon=/opt/SkyMPC/SkyMPC.svg
++Exec=SkyMPC
++Icon=SkyMPC.svg
+ Terminal=false
+ Type=Application
+diff --git a/SkyMPC.pro b/SkyMPC.pro
+index c54f130..8a92d72 100644
+--- a/SkyMPC.pro
++++ b/SkyMPC.pro
+@@ -176,3 +176,9 @@ haiku {
+ 	LIBS += -lnetwork
+ }
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =LinuxDesktop/SkyMPC.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
