@@ -1,0 +1,25 @@
+package:
+  id: io.github.Cataclysm
+  name: Cataclysm
+  version: 23.03.01
+  kind: app
+  description: |
+     Cataclysm: Dark Days Ahead is a turn-based survival game set in a post-apocalyptic world.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+variables:
+  extra_args: |
+    -DCMAKE_BUILD_TYPE=Release
+
+source:
+  kind: git
+  url: "https://github.com/CleverRaven/Cataclysm-DDA.git"
+  commit: f295ac055490c51ae75995dd20ce9437e0b982ce
+  patch: patches/0001-fix-install.patch
+build:
+  kind: cmake
+
+    

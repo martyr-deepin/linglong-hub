@@ -1,0 +1,31 @@
+From 7644d21920bddecf9ae6393c96d06305e923c1ac Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Mon, 6 Nov 2023 23:11:54 +0800
+Subject: [PATCH] fix-install
+
+---
+ CMakeLists.txt | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index b45e7104ba..a42004d42c 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -427,3 +427,14 @@ add_custom_target(uninstall
+         "${CMAKE_COMMAND}"
+         -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
+ 
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=cataclysm.desktop
++Exec=cataclysm
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/cataclysm.desktop "${DESKTOP_FILE_CONTENT}")
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/cataclysm.desktop DESTINATION share/applications)
+-- 
+2.33.1
+
