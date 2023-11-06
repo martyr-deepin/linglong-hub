@@ -1,0 +1,15 @@
+diff --git a/NotePad/NotePad.pro b/NotePad/NotePad.pro
+index 2f4514a..83a37ac 100644
+--- a/NotePad/NotePad.pro
++++ b/NotePad/NotePad.pro
+@@ -21,4 +21,9 @@ FORMS += \
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
++target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += NotePad.desktop
++INSTALLS += desktop
+
