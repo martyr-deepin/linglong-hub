@@ -1,0 +1,38 @@
+From 8517c285d27ba2cdb2f6e71265412fa9ac7f1d72 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Mon, 6 Nov 2023 14:33:21 +0800
+Subject: [install.patch_] isntall
+
+---
+ CMakeLists.txt | 3 +++
+ qxkb5.desktop  | 6 ++++++
+ 2 files changed, 9 insertions(+)
+ create mode 100644 qxkb5.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 5b79b0a..e6c022b 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -30,3 +30,6 @@ target_link_libraries(qxkb5 Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Multimedia)
+ target_link_libraries(qxkb5 ${XCB_LIBRARIES} ${XCB_XKB_LIBRARIES} ${XKBCOMMON_X11_LIBRARIES})
+ 
+ set_target_properties(qxkb5 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
++
++install(TARGETS qxkb5 DESTINATION bin)
++install(PROGRAMS qxkb5.desktop DESTINATION share/applications)
+diff --git a/qxkb5.desktop b/qxkb5.desktop
+new file mode 100644
+index 0000000..5e796f4
+--- /dev/null
++++ b/qxkb5.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=qxkb5
++Exec=qxkb5
++Terminal=false
+\ No newline at end of file
+-- 
+2.33.1
+

@@ -1,0 +1,20 @@
+package:
+  id: io.github.qxkb5
+  name: qxkb5
+  version: 0.0.1
+  kind: app
+  description: |
+    Xkb switcher based xcb and Qt5
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/AndreyBarmaley/qxkb5.git"
+  commit: 76bfa3cb1866fc92a8a3289375771a9a3df89f76
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
