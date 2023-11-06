@@ -1,0 +1,56 @@
+From c3d037aaf112ac2e08bc615649c5a02b6968daad Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Mon, 6 Nov 2023 18:26:59 +0800
+Subject: [install.patch_] install
+
+---
+ air.desktop |  6 ++++++
+ air.pro     | 14 ++++++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 air.desktop
+
+diff --git a/air.desktop b/air.desktop
+new file mode 100644
+index 0000000..69ab7c3
+--- /dev/null
++++ b/air.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=air
++Exec=air
++Terminal=false
+\ No newline at end of file
+diff --git a/air.pro b/air.pro
+index 9d924c1..09c515b 100644
+--- a/air.pro
++++ b/air.pro
+@@ -1,6 +1,10 @@
+ 
+ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+ 
++
++TARGET = air
++TEMPLATE = app
++
+ HEADERS += \
+     flyer.h \
+     playerPlane.h \
+@@ -73,3 +77,13 @@ OTHER_FILES += \
+ 
+ RESOURCES += \
+     image.qrc
++
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files =air.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+

@@ -1,0 +1,20 @@
+package:
+  id: io.github.air_plane
+  name: air_plane
+  version: 0.0.1
+  kind: app
+  description: |
+    A Qt GraphicsView Framework based on the 2D flying games, commonly known as“Masturbation”
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/zhouX/air_plane.git"
+  commit: 69a7e90074eebd297fbc8934b1ce4baaa9bf92b9
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
