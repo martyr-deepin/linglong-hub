@@ -1,0 +1,45 @@
+From 735cf1c2e51ae113ff1bef0337c1c0e0bc115c7d Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Tue, 7 Nov 2023 00:47:22 +0800
+Subject: [PATCH] fix-desktop
+
+---
+ Zork.desktop | 9 +++++++++
+ Zork.pro     | 7 +++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 Zork.desktop
+
+diff --git a/Zork.desktop b/Zork.desktop
+new file mode 100644
+index 0000000..e381180
+--- /dev/null
++++ b/Zork.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Zork
++Name=Zork
++ICON=zork.ico
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Zork.pro b/Zork.pro
+index 446d511..6bba2cd 100644
+--- a/Zork.pro
++++ b/Zork.pro
+@@ -105,3 +105,10 @@ RC_ICONS = "zork.ico"
+ 
+ DISTFILES += \
+     license
++
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = Zork.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

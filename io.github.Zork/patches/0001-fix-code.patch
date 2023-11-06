@@ -1,0 +1,39 @@
+From 3d6221c4fab95777abcf3f91bc2817c1a63871af Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Tue, 7 Nov 2023 00:42:49 +0800
+Subject: [PATCH] fix-install
+
+---
+ loadingwidget.cpp | 2 +-
+ mainwindow.cpp    | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/loadingwidget.cpp b/loadingwidget.cpp
+index 1523e78..a04acc2 100644
+--- a/loadingwidget.cpp
++++ b/loadingwidget.cpp
+@@ -82,7 +82,7 @@ void LoadingWidget::showSubtitle()
+     commandLinkButton = findChild<QCommandLinkButton*> ("commandLinkButton");
+     commandLinkButton->setText(tr("Skip"));
+     //commandLinkButton->setDescription(tr("Skip the introduction"));
+-    commandLinkButton->setEnabled(TRUE);
++    commandLinkButton->setEnabled(1);
+     commandLinkButton->setStyleSheet("QCommandLinkButton {color:white;text-align:center;background:yellow;}");
+     commandLinkButton->setGeometry(270, 300, 230, 60);
+ 
+diff --git a/mainwindow.cpp b/mainwindow.cpp
+index 9879fcb..0a48e4a 100644
+--- a/mainwindow.cpp
++++ b/mainwindow.cpp
+@@ -28,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent) :
+ 
+     max = new QPushButton;
+     max->setIcon(QIcon(":/images/max.jpg"));
+-    max->setCheckable(TRUE);
++    max->setCheckable(1);
+     min = new QPushButton;
+     min->setIcon(QIcon(":/images/min.png"));
+     close = new QPushButton;
+-- 
+2.33.1
+

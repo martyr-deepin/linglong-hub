@@ -1,0 +1,25 @@
+package:
+  id: io.github.Zork
+  name: Zork
+  version: 0.0.1
+  kind: app
+  description: |
+     A simple game
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/naichuan-zhang/Zork.git
+  commit: b0002fb3cf9b2ed0daa0738ac7d529a7cea84261
+  patch: 
+    - patches/0001-fix-code.patch
+    - patches/0001-fix-desktop.patch
+build:
+  kind: qmake
+
+    
