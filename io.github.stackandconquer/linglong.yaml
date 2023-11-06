@@ -1,0 +1,20 @@
+package:
+  id: io.github.stackandconquer
+  name: stackandconquer
+  version: 0.10.0
+  kind: app
+  description: |
+    tackAndConquer is a challenging tower conquest board game inspired by Mixtour created by Dieter Stein who allows free copying and using the rule texts and graphics under CC license (BY-NC). Objective is to build a stack of stones with at least five stones and a stone with the players color on top.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/ElTh0r0/stackandconquer.git
+  commit: e9a083b4643993c484c8c578d4e5c83f91206d56
+  
+build:
+  kind: qmake
