@@ -1,0 +1,18 @@
+diff --git a/lineditor/lineditor.pro b/lineditor/lineditor.pro
+index 96b22f4..1a0dccd 100644
+--- a/lineditor/lineditor.pro
++++ b/lineditor/lineditor.pro
+@@ -26,7 +26,12 @@ CONFIG += embed_translations
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
++target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     resources.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += lineditor.desktop
++INSTALLS += desktop
+
