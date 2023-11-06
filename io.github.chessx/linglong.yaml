@@ -1,0 +1,19 @@
+package:
+  id: io.github.chessx
+  name: chessx
+  version: 0.0.1
+  kind: app
+  description: |
+    A free and open source chess database application for Linux, Mac OS X and Windows.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Isarhamster/chessx.git"
+  commit: 9797d46aa28804282bd58ce139b22492ab6881e6
+
+build:
+  kind: qmake
