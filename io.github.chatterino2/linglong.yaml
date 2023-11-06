@@ -1,0 +1,22 @@
+package:
+  id: io.github.chatterino2
+  name: chatterino2
+  version: 2.4.6
+  kind: app
+  description: |
+    Chatterino 2 is a chat client for Twitch.tv. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git 
+  url: https://github.com/Chatterino/chatterino2.git
+  commit: 5209e47df18d102925b9d59c79716cab8d89292c
+
+build:
+  kind: cmake
+
+      
