@@ -1,0 +1,20 @@
+package:
+  id: io.github.Qnote
+  name: Qnote
+  version: 0.0.1
+  kind: app
+  description: |
+    A modern, fully-featured note taking app for Linux Built with Qt 5, Qt Dropbox, and ❤️
+                                                                
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/pybae/QNote.git"
+  commit: 0b566e15c3933cfa6317bf3a375b4a59b14e3d38
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

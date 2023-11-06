@@ -1,0 +1,46 @@
+From ca81846df8a1ae5c609fc0a01540eef4554ccb4e Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Mon, 6 Nov 2023 09:07:34 +0800
+Subject: [install.patch_] install
+
+---
+ notetaking.desktop |  6 ++++++
+ qnote.pro          | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 notetaking.desktop
+
+diff --git a/notetaking.desktop b/notetaking.desktop
+new file mode 100644
+index 0000000..c9b1b38
+--- /dev/null
++++ b/notetaking.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=notetaking
++Exec=notetaking
++Terminal=false
+\ No newline at end of file
+diff --git a/qnote.pro b/qnote.pro
+index a8ce6db..ca77bae 100644
+--- a/qnote.pro
++++ b/qnote.pro
+@@ -22,3 +22,13 @@ HEADERS  += \
+ 
+ FORMS    += \
+     qnote.ui
++
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = notetaking.desktop
++INSTALLS += unix_desktop
++}
+\ No newline at end of file
+-- 
+2.33.1
+
