@@ -1,0 +1,30 @@
+package:
+  id: io.github.NotePadApplication
+  name: NotePadApplication
+  version: 0.0.1
+  kind: app
+  description: |
+    A simple Notepad application, built using C++ and the Qt Creator IDE.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/hpgDesigns/NotePadApplication.git"
+  commit: 3eff7c4c87146727a9a4154f82a2fc5265db682a
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd NotePad
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
