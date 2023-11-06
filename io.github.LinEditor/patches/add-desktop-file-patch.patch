@@ -1,0 +1,12 @@
+diff --git a/lineditor/lineditor.desktop b/lineditor/lineditor.desktop
+new file mode 100644
+index 0000000..e53feed
+--- /dev/null
++++ b/lineditor/lineditor.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=Lin Editor
++Exec=lineditor %f
++Icon=lineditor
+
