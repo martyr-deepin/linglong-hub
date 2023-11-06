@@ -1,0 +1,44 @@
+From 8299209a356d64e286b6f952fce679d4c93414a1 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Mon, 6 Nov 2023 15:15:02 +0800
+Subject: [install.patch_] install
+
+---
+ timer.desktop | 6 ++++++
+ timer.pro     | 9 +++++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 timer.desktop
+
+diff --git a/timer.desktop b/timer.desktop
+new file mode 100644
+index 0000000..c575f19
+--- /dev/null
++++ b/timer.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=timer
++Exec=timer
++Terminal=false
+\ No newline at end of file
+diff --git a/timer.pro b/timer.pro
+index 7323a06..1ab1217 100644
+--- a/timer.pro
++++ b/timer.pro
+@@ -43,3 +43,12 @@ win32:RC_ICONS += timer.ico
+ 
+ RESOURCES += \
+         qrc.qrc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = timer.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+
