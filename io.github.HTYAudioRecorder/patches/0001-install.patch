@@ -1,0 +1,45 @@
+From f665d728fba796f38090398e62aa90ef522aecc1 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Mon, 6 Nov 2023 21:55:57 +0800
+Subject: [install.patch_] install
+
+---
+ HTYAR.desktop |  6 ++++++
+ HTYAR.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 HTYAR.desktop
+
+diff --git a/HTYAR.desktop b/HTYAR.desktop
+new file mode 100644
+index 0000000..e5806a0
+--- /dev/null
++++ b/HTYAR.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=HTYAR
++Exec=HTYAR
++Terminal=false
+\ No newline at end of file
+diff --git a/HTYAR.pro b/HTYAR.pro
+index 23e5397..47c39f7 100644
+--- a/HTYAR.pro
++++ b/HTYAR.pro
+@@ -22,3 +22,13 @@ FORMS    += mainwindow.ui
+ RESOURCES += res.qrc
+ 
+ RC_FILE += res.rc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = HTYAR.desktop
++INSTALLS += unix_desktop
++}
++
+-- 
+2.33.1
+
