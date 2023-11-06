@@ -1,0 +1,85 @@
+From 83a674816b896b87b6598db52159a28648fe8cc0 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Mon, 6 Nov 2023 15:46:41 +0800
+Subject: [PATCH] fix-all
+
+---
+ EzGraverCli/EzGraverCli.pro   |  7 ++++++-
+ EzGraverCore/EzGraverCore.pro |  2 +-
+ EzGraverUi/EzGraverUi.desktop |  8 ++++++++
+ EzGraverUi/EzGraverUi.pro     | 11 ++++++++++-
+ 4 files changed, 25 insertions(+), 3 deletions(-)
+ create mode 100644 EzGraverUi/EzGraverUi.desktop
+
+diff --git a/EzGraverCli/EzGraverCli.pro b/EzGraverCli/EzGraverCli.pro
+index 549d2a7..ee2b9ca 100644
+--- a/EzGraverCli/EzGraverCli.pro
++++ b/EzGraverCli/EzGraverCli.pro
+@@ -13,7 +13,12 @@ SOURCES += main.cpp
+ 
+ win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../EzGraverCore/release/ -lEzGraverCore
+ else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../EzGraverCore/debug/ -lEzGraverCore
+-else:unix: LIBS += -L$$OUT_PWD/../EzGraverCore/ -lEzGraverCore
++else:unix: LIBS += -L$$OUT_PWD/../EzGraverCore/ -lEzGraverCore
+ 
+ INCLUDEPATH += $$PWD/../EzGraverCore
+ DEPENDPATH += $$PWD/../EzGraverCore
++
++#install role
++BINDIR  = $$PREFIX/bin
++target.path = $$BINDIR
++INSTALLS += target 
+\ No newline at end of file
+diff --git a/EzGraverCore/EzGraverCore.pro b/EzGraverCore/EzGraverCore.pro
+index d8731be..235455a 100644
+--- a/EzGraverCore/EzGraverCore.pro
++++ b/EzGraverCore/EzGraverCore.pro
+@@ -23,6 +23,6 @@ HEADERS += ezgraver.h\
+     ezgraver_v3.h
+ 
+ unix {
+-    target.path = /usr/lib
++    target.path = $$PREFIX/lib/$$TRIPLET
+     INSTALLS += target
+ }
+
+diff --git a/EzGraverUi/EzGraverUi.desktop b/EzGraverUi/EzGraverUi.desktop
+new file mode 100644
+index 0000000..9ed5f69
+--- /dev/null
++++ b/EzGraverUi/EzGraverUi.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=EzGraverUi
++Name=EzGraverUi
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/EzGraverUi/EzGraverUi.pro b/EzGraverUi/EzGraverUi.pro
+index d27867a..b5470b3 100644
+--- a/EzGraverUi/EzGraverUi.pro
++++ b/EzGraverUi/EzGraverUi.pro
+@@ -23,7 +23,16 @@ FORMS    += mainwindow.ui
+ 
+ win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../EzGraverCore/release/ -lEzGraverCore
+ else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../EzGraverCore/debug/ -lEzGraverCore
+-else:unix: LIBS += -L$$OUT_PWD/../EzGraverCore/ -lEzGraverCore
++else:unix: LIBS += -L$$OUT_PWD/../EzGraverCore/ -lEzGraverCore
+ 
+ INCLUDEPATH += $$PWD/../EzGraverCore
+ DEPENDPATH += $$PWD/../EzGraverCore
++
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = EzGraverUi.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
