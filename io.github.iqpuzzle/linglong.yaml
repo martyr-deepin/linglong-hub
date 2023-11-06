@@ -1,0 +1,23 @@
+package:
+  id: io.github.iqpuzzle
+  name: iqpuzzle
+  version: 1.2.9
+  kind: app
+  description: |
+     iQPuzzle is a diverting I.Q. challenging pentomino puzzle. Pentominos are used as puzzle pieces and more than 300 different board shapes are available, which have to be filled with them.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/ElTh0r0/iqpuzzle.git
+  commit: 5341a5d64eadc9bd60c8217b75a0786cf098c4ec
+  
+build:
+  kind: qmake
+
+    
