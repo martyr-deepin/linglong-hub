@@ -1,0 +1,45 @@
+From e8cae44572db336fcec87b8d5a6dfff014c442f9 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Mon, 6 Nov 2023 10:16:43 +0800
+Subject: [install.patch_] install
+
+---
+ classiphy.desktop |  6 ++++++
+ classiphy.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 classiphy.desktop
+
+diff --git a/classiphy.desktop b/classiphy.desktop
+new file mode 100644
+index 0000000..c52bbd0
+--- /dev/null
++++ b/classiphy.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=classiphy
++Exec=classiphy
++Terminal=false
+diff --git a/classiphy.pro b/classiphy.pro
+index 04077d1..20a4173 100644
+--- a/classiphy.pro
++++ b/classiphy.pro
+@@ -55,4 +55,14 @@ OTHER_FILES += classiphy_zh_TW.ts
+ RESOURCES += \
+     resource.qrc
+ 
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = classiphy.desktop
++INSTALLS += unix_desktop
++}
++
++
+ 
+-- 
+2.33.1
+

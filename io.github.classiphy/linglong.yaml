@@ -1,0 +1,20 @@
+package:
+  id: io.github.classiphy
+  name: classiphy
+  version: 0.3.0
+  kind: app
+  description: |
+    A photo classifying software.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/brucehsu/classiphy.git"
+  commit: 02667ea137da926c7055e48b501585dcebd11750
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
