@@ -1,0 +1,55 @@
+From c704d0c3017980b1977cad4876d1251b9254bc1e Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Tue, 7 Nov 2023 13:30:36 +0800
+Subject: [install.patch_] install
+
+---
+ MinesweeperFloating.desktop |  6 ++++++
+ src/MinesweeperFloating.pro | 13 +++++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 MinesweeperFloating.desktop
+
+diff --git a/MinesweeperFloating.desktop b/MinesweeperFloating.desktop
+new file mode 100644
+index 0000000..5264191
+--- /dev/null
++++ b/MinesweeperFloating.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=MinesweeperFloating
++Exec=MinesweeperFloating
++Terminal=false
+\ No newline at end of file
+diff --git a/src/MinesweeperFloating.pro b/src/MinesweeperFloating.pro
+index 8e8dfff..82c2a9f 100644
+--- a/src/MinesweeperFloating.pro
++++ b/src/MinesweeperFloating.pro
+@@ -4,6 +4,10 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+ 
+ CONFIG += c++11
+ 
++
++TARGET = MinesweeperFloating
++TEMPLATE = app
++
+ # You can make your code fail to compile if it uses deprecated APIs.
+ # In order to do so, uncomment the following line.
+ #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+@@ -58,3 +62,12 @@ contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
+     ANDROID_PACKAGE_SOURCE_DIR = \
+         $$PWD/android
+ }
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = MinesweeperFloating.desktop
++INSTALLS += unix_desktop
++}
++
+-- 
+2.33.1
+
