@@ -1,0 +1,20 @@
+package:
+  id: io.github.SVGStationPlanEditor
+  name: SVGStationPlanEditor
+  version: 1.0.0
+  kind: app
+  description: |
+    A simple editor for railway station plan in SVG format
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/gfgit/SVGStationPlanEditor.git
+  commit: 0614fb5f8c57eb82ab7d59634f48e6a9fc328053
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
