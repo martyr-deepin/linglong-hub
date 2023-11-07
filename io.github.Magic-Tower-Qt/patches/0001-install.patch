@@ -1,0 +1,53 @@
+From defcf6003a432112915ecd2add18d4b1a6caa7b6 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 7 Nov 2023 19:01:18 +0800
+Subject: [PATCH] install
+
+---
+ MagicTower/MagicTower.desktop |  8 ++++++++
+ MagicTower/MagicTower.pro     | 12 +++++++-----
+ 2 files changed, 15 insertions(+), 5 deletions(-)
+ create mode 100644 MagicTower/MagicTower.desktop
+
+diff --git a/MagicTower/MagicTower.desktop b/MagicTower/MagicTower.desktop
+new file mode 100644
+index 0000000..c329fe0
+--- /dev/null
++++ b/MagicTower/MagicTower.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=MagicTower
++Name=MagicTower
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/MagicTower/MagicTower.pro b/MagicTower/MagicTower.pro
+index 218d212..b80ade8 100644
+--- a/MagicTower/MagicTower.pro
++++ b/MagicTower/MagicTower.pro
+@@ -36,13 +36,15 @@ HEADERS += mainwindow.h \
+ RESOURCES += \
+     application.qrc
+ 
+-APPSHAREDIR = /usr/share/MagicTower
+-unix:!android: target.path = /usr/bin
+-
+-desktop.path = /usr/share/applications/
++APPSHAREDIR = $$PREFIX/share/MagicTower
++unix:!android: target.path = $$PREFIX/bin
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.path = $$PREFIX/share/applications/
+ desktop.files = $$PWD/install/MagicTower.desktop
+ 
+-icon.path =/usr/share/icons
++icon.path =$$PREFIX/share/icons
+ icon.files=$$PWD/install/MagicTower.png
+ 
+ !isEmpty(target.path): INSTALLS += target icon desktop
+-- 
+2.33.1
+

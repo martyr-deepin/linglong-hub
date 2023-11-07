@@ -1,0 +1,20 @@
+package:
+  id: io.github.Magic-Tower-Qt
+  name: Magic-Tower-Qt
+  version: 1.0.0
+  kind: app
+  description: |
+    This is the C++(with Qt) version Magic-Tower game
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dependon/Magic-Tower-Qt.git
+  commit: 3834c6ecb899508b3e3dec6cf122c445995ea1f0
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
