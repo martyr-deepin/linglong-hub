@@ -1,0 +1,25 @@
+package:
+  id: io.github.widgetci
+  name: widgetci
+  version: 1.0.3
+  kind: app
+  description: |
+    a Cross-Platform Widget Management App. (Win/Linux/Mac)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/eminfedar/widgetci.git"
+  commit: 05588c036cd4c6d6eddd5b595d027968ac484140
+  patch: patches/fix_widgetci.patch
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd widgetci
+      qmake -makefile ${conf_args} ${extra_args} ./Widgetci.pro
+

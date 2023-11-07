@@ -1,0 +1,20 @@
+--- ../widgetci/Widgetci.pro	2023-11-07 20:17:02.956581000 +0800
++++ ../widgetci/Widgetci.pro	2023-11-07 20:10:57.325457000 +0800
+@@ -33,3 +33,17 @@
+     qtresource.qrc
+ 
+ RC_FILE = widgetci.rc
++target.path = $${PREFIX}/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++DESKTOP_FILE = ./Widgetci.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=Widgetci' >> $$DESKTOP_FILE")
++system("echo 'Comment=Widgetci.' >> $$DESKTOP_FILE")
++system("echo 'Exec=Widgetci' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $${PREFIX}/share/applications
++INSTALLS += desktop
