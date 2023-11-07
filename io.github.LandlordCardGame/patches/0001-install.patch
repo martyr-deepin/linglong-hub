@@ -1,0 +1,44 @@
+From 4ff15f9b46d74607e87f0aa9381d183953d9d83c Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 7 Nov 2023 19:06:29 +0800
+Subject: [PATCH] install
+
+---
+ LandlordCardGame.desktop | 8 ++++++++
+ LandlordCardGame.pro     | 7 ++++++-
+ 2 files changed, 14 insertions(+), 1 deletion(-)
+ create mode 100644 LandlordCardGame.desktop
+
+diff --git a/LandlordCardGame.desktop b/LandlordCardGame.desktop
+new file mode 100644
+index 0000000..f076131
+--- /dev/null
++++ b/LandlordCardGame.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=LandlordCardGame
++Name=LandlordCardGame
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/LandlordCardGame.pro b/LandlordCardGame.pro
+index 7ca562e..5fab427 100644
+--- a/LandlordCardGame.pro
++++ b/LandlordCardGame.pro
+@@ -54,4 +54,9 @@ OTHER_FILES += \
+     zh.ts \
+     LandlordCardGame.rc \
+     stylesheet.qss
+-
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =LandlordCardGame.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+

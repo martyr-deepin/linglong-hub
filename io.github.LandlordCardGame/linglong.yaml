@@ -1,0 +1,20 @@
+package:
+  id: io.github.LandlordCardGame
+  name: LandlordCardGame
+  version: 1.0.0
+  kind: app
+  description: |
+    具有简单出牌策略的单机斗地主游戏
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dependon/LandlordCardGame.git
+  commit: aa57fe2151ac937f3ef9d482f9f015f500808f82
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
