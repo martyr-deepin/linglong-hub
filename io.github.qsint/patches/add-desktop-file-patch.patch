@@ -1,0 +1,11 @@
+diff --git a/examples/chartwidgets/qsint.desktop b/examples/chartwidgets/qsint.desktop
+new file mode 100644
+index 0000000..e5be1a7
+--- /dev/null
++++ b/examples/chartwidgets/qsint.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=qsint
++Exec=chartwidgets %f
+

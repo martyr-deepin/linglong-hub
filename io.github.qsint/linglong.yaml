@@ -1,0 +1,22 @@
+package:
+  id: io.github.qsint
+  name: qsint
+  version: 0.0.1
+  kind: app
+  description: |
+    A Qt UI Development program.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/ArsMasiuk/qsint.git"
+  commit: 4b1d13c69e501a1dbf5f1bd381e152ad3b4f3a43
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake

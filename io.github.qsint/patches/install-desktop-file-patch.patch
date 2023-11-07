@@ -1,0 +1,17 @@
+diff --git a/examples/chartwidgets/chartwidgets.pro b/examples/chartwidgets/chartwidgets.pro
+index 971f261..89137e8 100644
+--- a/examples/chartwidgets/chartwidgets.pro
++++ b/examples/chartwidgets/chartwidgets.pro
+@@ -9,3 +9,11 @@ SOURCES += main.cpp\
+ HEADERS  += mainwidget.h
+ 
+ FORMS    += mainwidget.ui
++
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += qsint.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
+
