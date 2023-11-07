@@ -1,0 +1,44 @@
+From ba93a93256abed4c83850c20e33330cce5edd66b Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 6 Nov 2023 16:08:34 +0800
+Subject: [PATCH] install
+
+---
+ nisview.desktop | 8 ++++++++
+ nisview.pro     | 6 ++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 nisview.desktop
+
+diff --git a/nisview.desktop b/nisview.desktop
+new file mode 100644
+index 0000000..e78572b
+--- /dev/null
++++ b/nisview.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=nisview
++Name=nisview
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/nisview.pro b/nisview.pro
+index 29ec648..fc74f00 100644
+--- a/nisview.pro
++++ b/nisview.pro
+@@ -24,3 +24,9 @@ HEADERS  += MainWindow.h \
+     formats/ImageNIS.h
+ 
+ FORMS    += MainWindow.ui
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =nisview.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

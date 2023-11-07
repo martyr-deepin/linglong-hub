@@ -1,0 +1,20 @@
+package:
+  id: io.github.nisview
+  name: nisview
+  version: 1.0.0
+  kind: app
+  description: |
+     extremely-WIP resource viewer for Disgaea 1 and 2 and other games (hence the title). Among other things, there will eventually be a map viewer of some sort.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/devinacker/nisview.git
+  commit: a247d31c6d166fbd1514ff4f79b2921402f77300
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
