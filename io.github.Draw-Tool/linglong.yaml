@@ -1,0 +1,20 @@
+package:
+  id: io.github.Draw-Tool
+  name: Draw-Tool
+  version: 1.0.0
+  kind: app
+  description: |
+    绘图工具/图片编辑.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dependon/Draw-Tool.git
+  commit: 3c62091706bbd14b5134f273dc56b82c6fb53ecd
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
