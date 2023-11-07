@@ -1,0 +1,20 @@
+package:
+  id: io.github.X11-transparency-tools
+  name: X11-transparency-tools
+  version: 1.0.0
+  kind: app
+  description: |
+    linux set x11 window opacity transparency tools,using qt
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dependon/X11-transparency-tools.git
+  commit: b3d3df8acc123bc5740bd1d04408fb92e38c6c49
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

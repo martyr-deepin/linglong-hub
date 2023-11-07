@@ -1,0 +1,55 @@
+From 1b6d521306df57de15eae79f09a9ffa48f5cfc88 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 7 Nov 2023 12:57:29 +0800
+Subject: [PATCH] install
+
+---
+ x11-transparency-tools.desktop |  8 ++++++++
+ x11-transparency-tools.pro     | 12 +++++++-----
+ 2 files changed, 15 insertions(+), 5 deletions(-)
+ create mode 100644 x11-transparency-tools.desktop
+
+diff --git a/x11-transparency-tools.desktop b/x11-transparency-tools.desktop
+new file mode 100644
+index 0000000..ac47c66
+--- /dev/null
++++ b/x11-transparency-tools.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=x11-transparency-tools
++Name=x11-transparency-tools
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/x11-transparency-tools.pro b/x11-transparency-tools.pro
+index b83a10e..b9e2a91 100644
+--- a/x11-transparency-tools.pro
++++ b/x11-transparency-tools.pro
+@@ -38,14 +38,16 @@ FORMS += \
+         mainwindow.ui
+ 
+ # Default rules for deployment.
+-target.path = /usr/bin
+ 
+-desktop.path = /usr/share/applications/
+-desktop.files = $$PWD/install/x11-transparency-tools.desktop
+ 
+-icon.path= /usr/share/icons
++icon.path= $$PREFIX/share/icons
+ icon.files= $$PWD/install/x11-transparency-tools.svg
+-
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =x11-transparency-tools.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+ !isEmpty(target.path): INSTALLS += target desktop icon
+ 
+ INSTALLS +=
+-- 
+2.33.1
+
