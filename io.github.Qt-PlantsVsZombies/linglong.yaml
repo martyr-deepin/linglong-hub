@@ -1,0 +1,23 @@
+package:
+  id: io.github.Qt-PlantsVsZombies
+  name: Qt-PlantsVsZombies
+  version: 0.0.1
+  kind: app
+  description: |
+    It's a project for my Qt Summer Semester. The goal of the project is to implement a plants vs zombies using Qt.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git 
+  url: https://github.com/sunziping2016/Qt-PlantsVsZombies.git
+  commit: a8049f724c788c5cafd9c8f86d1e85f427d3f54f
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
