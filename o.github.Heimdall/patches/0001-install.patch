@@ -1,0 +1,39 @@
+From 2df0f97086c34b5012744405bc9be29e20accbac Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 6 Nov 2023 15:02:05 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt             | 1 +
+ build_dir/heimdall.desktop | 8 ++++++++
+ 2 files changed, 9 insertions(+)
+ create mode 100644 build_dir/heimdall.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 55efbd9..17b1eee 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -16,3 +16,4 @@ if(NOT DISABLE_FRONTEND)
+     add_subdirectory(heimdall-frontend)
+     add_dependencies(heimdall-frontend heimdall)
+ endif()
++install(PROGRAMS ${CMAKE_BINARY_DIR}/heimdall.desktop DESTINATION share/applications)
+\ No newline at end of file
+diff --git a/build_dir/heimdall.desktop b/build_dir/heimdall.desktop
+new file mode 100644
+index 0000000..5cb12ad
+--- /dev/null
++++ b/build_dir/heimdall.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=heimdall-frontend
++Name=heimdall
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+-- 
+2.33.1
+
