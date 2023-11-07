@@ -1,0 +1,23 @@
+package:
+  id: io.github.rektangles
+  name: rektangles
+  version: 0.0.1
+  kind: app
+  description: |
+     Implementation of a Japanese puzzle game known as shikaku. A game for PinePhone (and for desktop).
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: kirigami/5.90.0
+  - id: ki18n/5.90.0
+
+source:
+  kind: git
+  url: https://github.com/Helguli/rektangles.git
+  commit: cef71fa0cc5445a3fcb9bf36f4be35f0ba1b5953
+
+build:
+  kind: cmake
+
