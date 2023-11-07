@@ -1,0 +1,47 @@
+From f27e32275f9e7e5b65b1f48befa7f15f6dfd1404 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 7 Nov 2023 13:21:31 +0800
+Subject: [PATCH] install
+
+---
+ openUrls.desktop | 8 ++++++++
+ openUrls.pro     | 9 ++++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 openUrls.desktop
+
+diff --git a/openUrls.desktop b/openUrls.desktop
+new file mode 100644
+index 0000000..b50beb0
+--- /dev/null
++++ b/openUrls.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=openUrls
++Name=openUrls
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/openUrls.pro b/openUrls.pro
+index be7b9c8..9271154 100644
+--- a/openUrls.pro
++++ b/openUrls.pro
+@@ -38,5 +38,12 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =openUrls.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
