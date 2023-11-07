@@ -1,0 +1,24 @@
+package:
+  id: io.github.TicTacToe-3x3x3
+  name: TicTacToe-3x3x3
+  version: 0.0.1
+  kind: app
+  description: |
+    Simple games bring great enjoyment
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/oFwano/TicTacToe-3x3x3.git"
+  commit: 29b4b72c542a743622756333e6184bf22d4366e7
+  patch: patches/0001-install.patch
+
+variables:
+  extra_args: |
+     TicTacToe3x3x3
+
+build:
+  kind: qmake
