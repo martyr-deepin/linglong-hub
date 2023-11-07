@@ -1,0 +1,45 @@
+From a63d1c58689ea908a45438e2dc176970d8f11ad4 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Tue, 7 Nov 2023 17:44:10 +0800
+Subject: [install.patch_] install
+
+---
+ TTKCalendar.desktop |  6 ++++++
+ TTKCalendar.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 TTKCalendar.desktop
+
+diff --git a/TTKCalendar.desktop b/TTKCalendar.desktop
+new file mode 100644
+index 0000000..df2cbf8
+--- /dev/null
++++ b/TTKCalendar.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=TTKCalendar
++Exec=TTKCalendar
++Terminal=false
+\ No newline at end of file
+diff --git a/TTKCalendar.pro b/TTKCalendar.pro
+index 5deb585..32ca9d7 100644
+--- a/TTKCalendar.pro
++++ b/TTKCalendar.pro
+@@ -38,3 +38,13 @@ HEADERS += \
+ 
+ RESOURCES += \
+         TTKCalendar.qrc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = TTKCalendar.desktop
++INSTALLS += unix_desktop
++}
++
+-- 
+2.33.1
+
