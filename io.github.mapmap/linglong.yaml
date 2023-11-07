@@ -1,0 +1,27 @@
+package:
+  id: io.github.mapmap
+  name: mapmap
+  version: 0.0.1
+  kind: app
+  description: |
+    MapMap is a free video mapping software.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine
+    version: 5.15.7
+    type: runtime
+
+source:
+  kind: git 
+  url: https://github.com/mapmapteam/mapmap.git
+  commit: dde2acf4ebcfd8ee9fce5bb6565aded8d109f73b
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
