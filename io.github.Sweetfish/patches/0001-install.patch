@@ -1,0 +1,41 @@
+From 23f0a7fa4f945efdff9728220d633280e33a1765 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 6 Nov 2023 13:44:31 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt              | 2 ++
+ build_dir/sweetfish.desktop | 8 ++++++++
+ 2 files changed, 10 insertions(+)
+ create mode 100644 build_dir/sweetfish.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 1806ac6..e309665 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -30,5 +30,7 @@ target_link_libraries(sweetfish UI) #UI <= Twitter <= Setting <= Networkとつ
+ 
+ add_dependencies(sweetfish translations)
+ 
++install(PROGRAMS ${CMAKE_BINARY_DIR}/sweetfish.desktop DESTINATION share/applications)
+ install(TARGETS sweetfish DESTINATION bin)
++
+ install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/locales DESTINATION lib/sweetfish)
+diff --git a/build_dir/sweetfish.desktop b/build_dir/sweetfish.desktop
+new file mode 100644
+index 0000000..a38c879
+--- /dev/null
++++ b/build_dir/sweetfish.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=sweetfish
++Name=sweetfish
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+-- 
+2.33.1
+

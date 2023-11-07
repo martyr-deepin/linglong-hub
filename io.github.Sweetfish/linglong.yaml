@@ -1,0 +1,20 @@
+package:
+  id: io.github.Sweetfish
+  name: Sweetfish
+  version: 0.0.7
+  kind: app
+  description: |
+    The Mastodon client for Linux with Qt
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/PG-MANA/Sweetfish.git
+  commit: 2460c1bc374e4b19e8113136eb115a860cd5ba5d
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
