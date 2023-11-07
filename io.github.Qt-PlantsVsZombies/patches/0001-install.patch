@@ -1,0 +1,52 @@
+From b173edccdaec9ef33abd84e18ed8126d07153f4b Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Tue, 7 Nov 2023 17:38:27 +0800
+Subject: [install.patch_] install
+
+---
+ PVZ.desktop |  7 +++++++
+ main.pro    | 15 ++++++++++++++-
+ 2 files changed, 21 insertions(+), 1 deletion(-)
+ create mode 100644 PVZ.desktop
+
+diff --git a/PVZ.desktop b/PVZ.desktop
+new file mode 100644
+index 0000000..ab90158
+--- /dev/null
++++ b/PVZ.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=main
++GenericName=PVZ
++Hidden=false
++Name=PVZ
++StartupNotify=false
++Type=Application
+diff --git a/main.pro b/main.pro
+index 5ed69d5..6332a27 100644
+--- a/main.pro
++++ b/main.pro
+@@ -16,4 +16,17 @@ TRANSLATIONS = translations/main.zh_CN.ts
+ TARGET = main
+ 
+ OBJECTS_DIR = out/obj
+-MOC_DIR = out/moc
+\ No newline at end of file
++MOC_DIR = out/moc
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = PVZ.desktop
++INSTALLS += unix_desktop
++
++
++
++}
+\ No newline at end of file
+-- 
+2.33.1
+
