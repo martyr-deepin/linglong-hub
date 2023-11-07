@@ -1,0 +1,45 @@
+From 83eb14dbabe1aa17f122771b6aab53cf562c94d4 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Tue, 7 Nov 2023 10:21:20 +0800
+Subject: [install.patch_] install
+
+---
+ TTKLinksGame.desktop |  6 ++++++
+ TTKLinksGame.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 TTKLinksGame.desktop
+
+diff --git a/TTKLinksGame.desktop b/TTKLinksGame.desktop
+new file mode 100644
+index 0000000..c61d034
+--- /dev/null
++++ b/TTKLinksGame.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=TTKLinksGame
++Exec=TTKLinksGame
++Terminal=false
+\ No newline at end of file
+diff --git a/TTKLinksGame.pro b/TTKLinksGame.pro
+index 66c9255..e9edba6 100644
+--- a/TTKLinksGame.pro
++++ b/TTKLinksGame.pro
+@@ -41,3 +41,13 @@ HEADERS += \
+ RESOURCES += \
+         TTKLinksGame.qrc
+ 
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = TTKLinksGame.desktop
++INSTALLS += unix_desktop
++}
++
++
+-- 
+2.33.1
+
