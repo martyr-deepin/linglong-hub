@@ -1,0 +1,20 @@
+package:
+  id: io.github.OpenQtPlayer
+  name: OpenQtPlayer
+  version: 1.0.0
+  kind: app
+  description: |
+    openqtmovie 利用QMediaPlay(multimedia) qt的技术实现的一个简单的播放器
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dependon/OpenQtPlayer.git
+  commit: 455dd4d251c6c32b20dc35e7284740a2d1086bb1
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
