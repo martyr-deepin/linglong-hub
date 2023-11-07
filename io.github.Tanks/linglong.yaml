@@ -1,0 +1,20 @@
+package:
+  id: io.github.Tanks
+  name: Tanks
+  version: 0.0.1
+  kind: app
+  description: |
+    A 2D game using the QT framework (5.15.2 +) . Works on a PC, but also works on an Android smartphone.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/anevero/tanks.git"
+  commit: eb2a9e0783d5ee4fb70769535034a474e7f59370
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
