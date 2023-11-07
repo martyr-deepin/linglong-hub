@@ -1,0 +1,44 @@
+From 8d1dd9230f1968659f5aab0cb85787b31ed8d40f Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Tue, 7 Nov 2023 09:53:31 +0800
+Subject: [install.patch_] install
+
+---
+ TTKSnakeGame.desktop | 6 ++++++
+ TTKSnakeGame.pro     | 9 +++++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 TTKSnakeGame.desktop
+
+diff --git a/TTKSnakeGame.desktop b/TTKSnakeGame.desktop
+new file mode 100644
+index 0000000..6a8a39b
+--- /dev/null
++++ b/TTKSnakeGame.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=TTKSnakeGame
++Exec=TTKSnakeGame
++Terminal=false
+\ No newline at end of file
+diff --git a/TTKSnakeGame.pro b/TTKSnakeGame.pro
+index f81d6fe..9b8a6cb 100644
+--- a/TTKSnakeGame.pro
++++ b/TTKSnakeGame.pro
+@@ -38,3 +38,12 @@ HEADERS += \
+ 
+ RESOURCES += \
+         TTKSnakeGame.qrc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = TTKSnakeGame.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+
