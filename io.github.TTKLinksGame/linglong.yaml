@@ -1,0 +1,20 @@
+package:
+  id: io.github.TTKLinksGame
+  name: TTKLinksGame
+  version: 0.0.1
+  kind: app
+  description: |
+    TTKLinksGame is free software licensed under the term of Licence GPL v3
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/TTKProject/TTKLinksGame.git"
+  commit: 757847b76dfd53fa291c402e8d86542aa7e6637d
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
