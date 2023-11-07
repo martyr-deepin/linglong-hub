@@ -1,0 +1,12 @@
+diff --git a/ExampleApp/TypesetWidget.desktop b/ExampleApp/TypesetWidget.desktop
+new file mode 100644
+index 0000000..c1246d4
+--- /dev/null
++++ b/ExampleApp/TypesetWidget.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=YAWYSIWYGEE
++Exec=TypesetWidget %f
++Icon=lambda.ico
+

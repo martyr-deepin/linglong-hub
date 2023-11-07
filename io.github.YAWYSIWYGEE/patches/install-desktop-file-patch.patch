@@ -1,0 +1,19 @@
+diff --git a/ExampleApp/ExampleApp.pro b/ExampleApp/ExampleApp.pro
+index 782e1ad..72efbc6 100644
+--- a/ExampleApp/ExampleApp.pro
++++ b/ExampleApp/ExampleApp.pro
+@@ -16,8 +16,14 @@ FORMS += mainwindow.ui
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
++target.path = $$PREFIX/bin
++
+ !isEmpty(target.path): INSTALLS += target
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += TypesetWidget.desktop
++INSTALLS += desktop
++
+ RESOURCES += example_resource.qrc
+ RC_ICONS += lambda.ico
+
