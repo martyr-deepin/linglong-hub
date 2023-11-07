@@ -1,0 +1,22 @@
+package:
+  id: io.github.QTalarm
+  name: QTalarm
+  version: 2.5.1
+  kind: app
+  description: |
+    A handy alarm clock program written in QT. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git 
+  url: https://github.com/CountMurphy/QTalarm.git
+  commit: 52a9a6fe51ad6aa026adc0d586f0bda86459cb75
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
