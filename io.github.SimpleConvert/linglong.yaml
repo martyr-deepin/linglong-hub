@@ -1,0 +1,19 @@
+package:
+  id: io.github.SimpleConvert
+  name: SimpleConvert
+  version: 3.2.0
+  kind: app
+  description: |
+    Simple Convert is a small application in which you can convert multiple files to another file type at once using FFMPEG.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/bartkessels/SimpleConvert.git
+  commit: c8609f64466b87e34930df2af2bfc9dbccaa0358
+
+build:
+  kind: qmake
