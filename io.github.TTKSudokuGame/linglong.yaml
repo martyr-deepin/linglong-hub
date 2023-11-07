@@ -1,0 +1,20 @@
+package:
+  id: io.github.TTKSudokuGame
+  name: TTKSudokuGame
+  version: 0.0.1
+  kind: app
+  description: |
+    TTKSudokuGame is free software licensed under the term of Licence GPL
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/TTKProject/TTKSudokuGame.git"
+  commit: 8f3d0c99f7ddc4fefb6cf046953c286cb071b3d1
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
