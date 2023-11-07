@@ -1,0 +1,32 @@
+package:
+  id: kcompletion
+  name: kcompletion
+  version: 5.90.0
+  kind: lib
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: kconfig
+    version: 5.90.0
+
+  - id: kwidgetsaddons
+    version: 5.90.0
+    source:
+      kind: git
+      url: https://github.com/KDE/kwidgetsaddons.git
+      version: master
+      commit: 72239319d36648ccf2ac6612811adf65e22c5a84
+    build:
+      kind: cmake
+
+source:
+  kind: git
+  url: https://github.com/KDE/kcompletion.git
+  commit: 1eedc226144c00048262e2f4bd92c674775b8334
+
+
+build:
+  kind: cmake
