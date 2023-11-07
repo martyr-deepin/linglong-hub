@@ -1,0 +1,20 @@
+package:
+  id: io.github.MineSweep
+  name: MineSweep
+  version: 1.0.1
+  kind: app
+  description: |
+    Qt扫雷游戏
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dependon/MineSweep.git
+  commit: c569df6921629c8ee5cfae5be48d360b2dd6635a
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
