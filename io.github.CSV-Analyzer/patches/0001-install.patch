@@ -1,0 +1,55 @@
+From 30fc2faeac0c803c4d7bdf629ba61eaec84b24e6 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 7 Nov 2023 19:15:45 +0800
+Subject: [PATCH] install
+
+---
+ CsvAnalyzer.desktop | 8 ++++++++
+ CsvAnalyzer.pro     | 8 +++++++-
+ 2 files changed, 15 insertions(+), 1 deletion(-)
+ create mode 100644 CsvAnalyzer.desktop
+
+diff --git a/CsvAnalyzer.desktop b/CsvAnalyzer.desktop
+new file mode 100644
+index 0000000..bcedab5
+--- /dev/null
++++ b/CsvAnalyzer.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=CsvAnalyzer
++Name=CsvAnalyzer
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/CsvAnalyzer.pro b/CsvAnalyzer.pro
+index 9cd6a40..7fca46f 100644
+--- a/CsvAnalyzer.pro
++++ b/CsvAnalyzer.pro
+@@ -40,7 +40,7 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+@@ -57,6 +57,12 @@ DISTFILES += \
+ 
+ ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =CsvAnalyzer.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+ 
+ 
+ 
+-- 
+2.33.1
+
