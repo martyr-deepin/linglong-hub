@@ -1,0 +1,55 @@
+From 0253b54fcdab0ddaff9cd4c55a317dfe3c8b4524 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Tue, 7 Nov 2023 16:59:52 +0800
+Subject: [install.patch_] install
+
+---
+ QTalam.desktop |  8 ++++++++
+ QTalarm.pro    | 17 +++++++++++++++++
+ 2 files changed, 25 insertions(+)
+ create mode 100644 QTalam.desktop
+
+diff --git a/QTalam.desktop b/QTalam.desktop
+new file mode 100644
+index 0000000..1733a98
+--- /dev/null
++++ b/QTalam.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Exec=qtalarm
++GenericName=qtalarm
++Hidden=false
++Name=qtalarm
++StartupNotify=false
++Type=Application
++Icon=1349069370_Alarm_Clock
+\ No newline at end of file
+diff --git a/QTalarm.pro b/QTalarm.pro
+index d1b62bd..e62815c 100644
+--- a/QTalarm.pro
++++ b/QTalarm.pro
+@@ -44,3 +44,20 @@ FORMS    += mainwindow.ui \
+ RESOURCES += \
+     Icons.qrc
+ CONFIG += precompile_header
++
++
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = QTalam.desktop
++INSTALLS += unix_desktop
++
++unix_icons.path = $${PREFIX}/share/icons/hicolor/scalable/apps
++unix_icons.files = Icons/1349069370_Alarm_Clock.png
++INSTALLS += unix_icons
++
++}
+\ No newline at end of file
+-- 
+2.33.1
+
