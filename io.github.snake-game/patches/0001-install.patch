@@ -1,0 +1,44 @@
+From 46e818fa5590c05631ec8fc6c62df9a78e791b8b Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 7 Nov 2023 18:53:33 +0800
+Subject: [PATCH] install
+
+---
+ snake.desktop | 8 ++++++++
+ snake.pro     | 6 ++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 snake.desktop
+
+diff --git a/snake.desktop b/snake.desktop
+new file mode 100644
+index 0000000..0b5e8bf
+--- /dev/null
++++ b/snake.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=snake
++Name=snake
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/snake.pro b/snake.pro
+index 0a1d75a..e66aa80 100644
+--- a/snake.pro
++++ b/snake.pro
+@@ -28,4 +28,10 @@ HEADERS  += mainwindow.h \
+ 
+ RESOURCES += \
+     res.qrc
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =snake.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+ 
+-- 
+2.33.1
+
