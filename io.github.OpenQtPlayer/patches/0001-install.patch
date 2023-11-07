@@ -1,0 +1,36 @@
+From 2d3fc6dba561e7008d4cdca54f4e4ff5314b8041 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 7 Nov 2023 13:16:14 +0800
+Subject: [PATCH] install
+
+---
+ openqtplayer/openqtplayer.pro | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+
+diff --git a/openqtplayer/openqtplayer.pro b/openqtplayer/openqtplayer.pro
+index b1dcd50..f5e15ac 100644
+--- a/openqtplayer/openqtplayer.pro
++++ b/openqtplayer/openqtplayer.pro
+@@ -45,16 +45,14 @@ INCLUDEPATH += view \
+                model
+ # Default rules for deployment.
+ 
+-isEmpty(PREFIX){
+-    PREFIX = /usr
+-}
+ 
+-target.path = /usr/bin
++
++target.path = $$PREFIX/bin
+ 
+ desktop.path = $$PREFIX/share/applications/
+ desktop.files = $$PWD/openQtPlayer.desktop
+ 
+-icon.path =/usr/share/icons
++icon.path =$$PREFIX/share/icons
+ icon.files= $$PWD/view/svg/video_player.svg
+ 
+ #/opt/openqtplayer/setting/config.ini
+-- 
+2.33.1
+
