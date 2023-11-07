@@ -1,0 +1,45 @@
+From 502d2098ee6634432459a081eb8ff9747b11bd78 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Tue, 7 Nov 2023 12:24:56 +0800
+Subject: [install.patch_] install
+
+---
+ TicTacToe3x3x3/TicTacToe3x3x3.pro | 11 +++++++++++
+ TicTacToe3x3x3_Game.desktop       |  6 ++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 TicTacToe3x3x3_Game.desktop
+
+diff --git a/TicTacToe3x3x3/TicTacToe3x3x3.pro b/TicTacToe3x3x3/TicTacToe3x3x3.pro
+index 059ef47..40a2ded 100644
+--- a/TicTacToe3x3x3/TicTacToe3x3x3.pro
++++ b/TicTacToe3x3x3/TicTacToe3x3x3.pro
+@@ -47,3 +47,14 @@ DISTFILES +=
+ 
+ RESOURCES += \
+     resource.qrc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = TicTacToe3x3x3_Game.desktop
++INSTALLS += unix_desktop
++}
++
++
+diff --git a/TicTacToe3x3x3_Game.desktop b/TicTacToe3x3x3_Game.desktop
+new file mode 100644
+index 0000000..d693f6c
+--- /dev/null
++++ b/TicTacToe3x3x3_Game.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=TicTacToe3x3x3_Game
++Exec=TicTacToe3x3x3_Game
++Terminal=false
+-- 
+2.33.1
+
