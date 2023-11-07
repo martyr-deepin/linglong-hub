@@ -1,0 +1,45 @@
+From 6c1225fdd0639d47ab45e82ef9e37d079639012f Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Tue, 7 Nov 2023 10:45:30 +0800
+Subject: [install.patch_] install
+
+---
+ Chess.desktop |  6 ++++++
+ Chess.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 Chess.desktop
+
+diff --git a/Chess.desktop b/Chess.desktop
+new file mode 100644
+index 0000000..5db1dfa
+--- /dev/null
++++ b/Chess.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=Chess
++Exec=Chess
++Terminal=false
+\ No newline at end of file
+diff --git a/Chess.pro b/Chess.pro
+index aa051e6..2ac453e 100644
+--- a/Chess.pro
++++ b/Chess.pro
+@@ -42,3 +42,13 @@ win32 {
+ CONFIG(debug, release|debug):DEFINES += _DEBUG
+ 
+ ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = Chess.desktop
++INSTALLS += unix_desktop
++}
++
+-- 
+2.33.1
+
