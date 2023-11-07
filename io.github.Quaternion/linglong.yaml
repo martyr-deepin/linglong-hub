@@ -1,0 +1,24 @@
+package:
+  id: io.github.Quaternion
+  name: Quaternion
+  version: 0.0.9.3
+  kind: app
+  description: |
+    A Qt5-based IM client for Matrix
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtkeychain
+    type: runtime
+    version: 0.14.0
+
+source:
+  kind: git
+  url: https://github.com/ddanilov/Quaternion.git
+  commit: 5cddd9adf25e2e48dc608c73c6267da986d185a7
+
+build:
+  kind: cmake
