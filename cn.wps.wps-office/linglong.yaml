@@ -1,7 +1,7 @@
 package:
   id: cn.wps.wps-office
   name: wps-office
-  version: 11.1.0.11704
+  version: 11.1.0.11705
   kind: app
   description: |
     WPS Writer.
@@ -13,7 +13,7 @@ runtime:
 source:
   kind: git
   url: "https://atomgit.com/threedog/wps_binary.git"
-  commit: 31014cfc08d3cfb2e5feebb8cbb8fa01e96b7e35
+  commit: 06d5509854f692a93f9f3eee415bb78075fcb0ae
 
 build: 
   kind: manual
