@@ -1,0 +1,31 @@
+package:
+  id: immer
+  name: immer
+  version: 0.8.1
+  kind: lib
+  description: |
+    Postmodern immutable and persistent data structures for C++.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: Catch2
+    version: 3.4.0
+    source:
+      kind: git
+      url: https://github.com/catchorg/Catch2.git
+      version: master
+      commit: b735dfce2d604db256c155b13db8ab258a88c0ba
+    build:
+      kind:  cmake
+
+source:
+  kind: git
+  url: https://github.com/arximboldi/immer.git
+  commit: 5875f7739a6c642ad58cbedadb509c86d421217e
+
+
+build:
+  kind: cmake
