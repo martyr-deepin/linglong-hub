@@ -1,0 +1,50 @@
+From a60d82d0eb69b324ac764ad39228874c63099acd Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Wed, 8 Nov 2023 09:48:13 +0800
+Subject: [install.patch_] install
+
+---
+ JR.desktop    |  7 +++++++
+ Jerry-Rig.pro | 13 +++++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 JR.desktop
+
+diff --git a/JR.desktop b/JR.desktop
+new file mode 100644
+index 0000000..fc52952
+--- /dev/null
++++ b/JR.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=jerryrig
++GenericName=jerryrig
++Hidden=false
++Name=jerryrig
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+diff --git a/Jerry-Rig.pro b/Jerry-Rig.pro
+index 6828a4d..c57a24e 100755
+--- a/Jerry-Rig.pro
++++ b/Jerry-Rig.pro
+@@ -29,3 +29,16 @@ FORMS    += mainmenu.ui \
+ 
+ RESOURCES += \
+     icons.qrc
++
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = JR.desktop
++INSTALLS += unix_desktop
++
++
++}
+\ No newline at end of file
+-- 
+2.33.1
+
