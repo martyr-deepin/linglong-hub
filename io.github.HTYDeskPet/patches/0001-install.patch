@@ -1,0 +1,47 @@
+From bc95e54a6c9263df7feb3124a6de3449c1490e5d Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Wed, 8 Nov 2023 13:00:29 +0800
+Subject: [install.patch_] install
+
+---
+ HTYDeskPet.desktop |  6 ++++++
+ HTYDeskPet.pro     | 11 ++++++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 HTYDeskPet.desktop
+
+diff --git a/HTYDeskPet.desktop b/HTYDeskPet.desktop
+new file mode 100644
+index 0000000..a2e6d98
+--- /dev/null
++++ b/HTYDeskPet.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=HTYDeskPet
++Exec=HTYDeskPet
++Terminal=false
+\ No newline at end of file
+diff --git a/HTYDeskPet.pro b/HTYDeskPet.pro
+index d61f5cc..2f30abf 100644
+--- a/HTYDeskPet.pro
++++ b/HTYDeskPet.pro
+@@ -15,4 +15,13 @@ HEADERS += \
+         mainwindow.h
+ 
+ RESOURCES += \
+-    res.qrc
+\ No newline at end of file
++    res.qrc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = HTYDeskPet.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+
