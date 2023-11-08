@@ -1,0 +1,49 @@
+From b51afb7644c33a7e777448d12641660d6dede93c Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Wed, 8 Nov 2023 12:04:55 +0800
+Subject: [install.patch_] install
+
+---
+ MRichTextEditor.desktop |  7 +++++++
+ MRichTextEditor.pro     | 13 +++++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 MRichTextEditor.desktop
+
+diff --git a/MRichTextEditor.desktop b/MRichTextEditor.desktop
+new file mode 100644
+index 0000000..5cd17c2
+--- /dev/null
++++ b/MRichTextEditor.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=MRichTextEdit
++GenericName=MRichTextEdit
++Hidden=false
++Name=MRichTextEdit
++StartupNotify=false
++Type=Application
+diff --git a/MRichTextEditor.pro b/MRichTextEditor.pro
+index 6b93bda..bd2c0d4 100644
+--- a/MRichTextEditor.pro
++++ b/MRichTextEditor.pro
+@@ -13,3 +13,16 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+ HEADERS += mrichtextedit.h mtextedit.h
+ FORMS += mrichtextedit.ui
+ SOURCES += mrichtextedit.cpp mtextedit.cpp test.cpp
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = MRichTextEditor.desktop
++INSTALLS += unix_desktop
++
++
++}
+\ No newline at end of file
+-- 
+2.33.1
+

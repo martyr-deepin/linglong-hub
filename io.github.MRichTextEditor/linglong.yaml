@@ -1,0 +1,24 @@
+package:
+  id: io.github.MRichTextEditor
+  name: MRichTextEditor
+  version: 1.0.0
+  kind: app
+  description: |
+    A simple Qt rich-text editor widget, easy to use in any Qt project.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+
+source:
+  kind: git
+  url: https://github.com/Anchakor/MRichTextEditor.git
+  commit: d7334459f6c112de8e4697f480f53b77064949ba
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
