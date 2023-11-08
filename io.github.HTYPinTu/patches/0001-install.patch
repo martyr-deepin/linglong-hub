@@ -1,0 +1,45 @@
+From 5db7a144cc4f2070c2aa278516b89d2e26068939 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Wed, 8 Nov 2023 12:40:34 +0800
+Subject: [install.patch_] install
+
+---
+ HTYPinTu.desktop |  6 ++++++
+ HTYPinTu.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 HTYPinTu.desktop
+
+diff --git a/HTYPinTu.desktop b/HTYPinTu.desktop
+new file mode 100644
+index 0000000..84c1fd8
+--- /dev/null
++++ b/HTYPinTu.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=HTYPinTu
++Exec=HTYPinTu
++Terminal=false
+\ No newline at end of file
+diff --git a/HTYPinTu.pro b/HTYPinTu.pro
+index 3c14dbe..5b46898 100644
+--- a/HTYPinTu.pro
++++ b/HTYPinTu.pro
+@@ -35,3 +35,13 @@ FORMS += \
+ 
+ RESOURCES += \
+     res.qrc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = HTYPinTu.desktop
++INSTALLS += unix_desktop
++}
++
+-- 
+2.33.1
+
