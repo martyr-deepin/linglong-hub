@@ -1,0 +1,50 @@
+From 2e76f68710abb1eaadd42b82fb4765ac787a9925 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Wed, 8 Nov 2023 20:30:17 +0800
+Subject: [install.patch_] install
+
+---
+ qt2048.desktop |  7 +++++++
+ qt2048.pro     | 14 ++++++++++++++
+ 2 files changed, 21 insertions(+)
+ create mode 100644 qt2048.desktop
+
+diff --git a/qt2048.desktop b/qt2048.desktop
+new file mode 100644
+index 0000000..645b4cd
+--- /dev/null
++++ b/qt2048.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=qt2048
++GenericName=qt2048
++Hidden=false
++Name=qt2048
++StartupNotify=false
++Type=Application
+diff --git a/qt2048.pro b/qt2048.pro
+index 272ee65..d289354 100644
+--- a/qt2048.pro
++++ b/qt2048.pro
+@@ -19,3 +19,17 @@ include(deployment.pri)
+ HEADERS += \
+     board.h \
+     boardmodel.h
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = qt2048.desktop
++INSTALLS += unix_desktop
++
++
++
++}
+\ No newline at end of file
+-- 
+2.33.1
+
