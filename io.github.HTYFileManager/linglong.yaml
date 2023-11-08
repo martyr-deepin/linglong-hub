@@ -1,0 +1,20 @@
+package:
+  id: io.github.HTYFileManager
+  name: HTYFileManager
+  version: 0.0.1
+  kind: app
+  description: |
+    Linux platform Qt-based file management program, file operation to be careful,
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/sonichy/HTYFileManager.git"
+  commit: ab1122fcf9c78bdb8504e5cf0169326280039e38
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

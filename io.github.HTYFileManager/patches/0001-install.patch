@@ -1,0 +1,45 @@
+From 79a202ea025aea1905fe7302fb34bce30185a2d4 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Wed, 8 Nov 2023 12:31:17 +0800
+Subject: [install.patch_] install
+
+---
+ HTYFileManager.desktop |  6 ++++++
+ HTYFileManager.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 HTYFileManager.desktop
+
+diff --git a/HTYFileManager.desktop b/HTYFileManager.desktop
+new file mode 100644
+index 0000000..f91dcde
+--- /dev/null
++++ b/HTYFileManager.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=HTYFileManager
++Exec=HTYFileManager
++Terminal=false
+\ No newline at end of file
+diff --git a/HTYFileManager.pro b/HTYFileManager.pro
+index 0d67276..b6776a8 100644
+--- a/HTYFileManager.pro
++++ b/HTYFileManager.pro
+@@ -22,3 +22,13 @@ FORMS    += mainwindow.ui \
+ 
+ RESOURCES += \
+     files.qrc
++
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = HTYFileManager.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+
