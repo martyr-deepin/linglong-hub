@@ -1,0 +1,22 @@
+--- ../Calc/Calc.pro	2023-11-08 15:06:56.410949000 +0800
++++ ../Calc/Calc.pro	2023-11-08 15:05:22.686827000 +0800
+@@ -34,5 +34,18 @@
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $${PREFIX}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++DESKTOP_FILE = ./Calc.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=Calc' >> $$DESKTOP_FILE")
++system("echo 'Comment=Calc.' >> $$DESKTOP_FILE")
++system("echo 'Exec=Calc' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $${PREFIX}/share/applications
++INSTALLS += desktop
