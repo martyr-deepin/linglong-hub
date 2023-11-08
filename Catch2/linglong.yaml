@@ -1,0 +1,20 @@
+package:
+  id: Catch2
+  name: Catch2
+  version: 3.4.0
+  kind: lib
+  description: |
+    A modern, C++-native, test framework for unit-tests, TDD and BDD 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/catchorg/Catch2.git
+  commit: b735dfce2d604db256c155b13db8ab258a88c0ba
+
+
+build:
+  kind: cmake
