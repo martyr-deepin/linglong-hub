@@ -1,0 +1,22 @@
+package:
+  id: io.github.qt2048
+  name: qt2048
+  version: 1.0.0
+  kind: app
+  description: |
+    qt2048.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/sogilis/qt2048.git
+  commit: b770b35a626a42d6850e1431f1a071ed161d21f1
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
