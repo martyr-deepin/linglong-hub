@@ -1,0 +1,41 @@
+From fda13ce887017f271fc77c2f522bfbd111a06807 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Wed, 8 Nov 2023 14:40:55 +0800
+Subject: [install.patch_] install
+
+---
+ CMakeLists.txt   | 2 ++
+ qtmonkey.desktop | 7 +++++++
+ 2 files changed, 9 insertions(+)
+ create mode 100644 qtmonkey.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 71f1f6c..e750cb2 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -143,6 +143,8 @@ endif ()
+ file(GLOB QT_MONKEY_HEADERS ${qt_monkey_SOURCE_DIR}/*.hpp)
+ install(FILES ${QT_MONKEY_HEADERS} DESTINATION include/qt_monkey)
+ 
++install(FILES qtmonkey.desktop DESTINATION share/applications)
++
+ install(TARGETS qtmonkey_agent DESTINATION lib)
+ 
+ install(TARGETS qtmonkey_app qtmonkey_gui
+diff --git a/qtmonkey.desktop b/qtmonkey.desktop
+new file mode 100644
+index 0000000..e6ba893
+--- /dev/null
++++ b/qtmonkey.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=qtmonkey_gui
++GenericName=qtmonkey
++Hidden=false
++Name=qtmonkey
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+-- 
+2.33.1
+
