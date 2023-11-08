@@ -1,0 +1,40 @@
+From 88e626318b63f97718f35a83312c3ede440965df Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Wed, 8 Nov 2023 17:21:20 +0800
+Subject: [install.patch_] install
+
+---
+ CMakeLists.txt | 5 +++++
+ Dust.desktop   | 7 +++++++
+ 2 files changed, 12 insertions(+)
+ create mode 100644 Dust.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 1c4dcbaf..1a62f438 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -195,3 +195,8 @@ resolve_install_paths()
+ 
+ add_subdirectory(src/editor)
+ add_subdirectory(src/game)
++
++
++install(TARGETS dustrac-editor DESTINATION bin)
++install(FILES Dust.desktop DESTINATION share/applications)
++
+diff --git a/Dust.desktop b/Dust.desktop
+new file mode 100644
+index 00000000..e945d43a
+--- /dev/null
++++ b/Dust.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=dustrac-editor
++GenericName=dustrac-editor
++Hidden=false
++Name=dustrac-editor
++StartupNotify=false
++Type=Application
+-- 
+2.33.1
+
