@@ -1,0 +1,221 @@
+From f8502c8bd28da14575e0649b2b78a41fdbb988ab Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 8 Nov 2023 13:28:17 +0800
+Subject: [PATCH] install
+
+---
+ resources/gui/gui.css | 201 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 201 insertions(+)
+ create mode 100644 resources/gui/gui.css
+
+diff --git a/resources/gui/gui.css b/resources/gui/gui.css
+new file mode 100644
+index 0000000..27e130f
+--- /dev/null
++++ b/resources/gui/gui.css
+@@ -0,0 +1,201 @@
++/**
++*
++*  lager - library for functional interactive c++ programs
++*  Copyright (C) 2017 Juan Pedro Bolivar Puente
++*
++*  This file is part of lager.
++*
++*  lager is free software: you can redistribute it and/or modify
++*  it under the terms of the MIT License, as detailed in the LICENSE
++*  file located at the root of this source code distribution,
++*  or here: <https://github.com/arximboldi/lager/blob/master/LICENSE>
++*
++*/
++
++$normal-font: "Source Sans Pro", sans;
++$tt-font: "Fira Code", "Fira Mono", Inconsolata, monospace;
++
++body {
++    font-family: $normal-font;
++}
++
++.interactive {
++    user-select: none;
++    -webkit-user-select: none;
++    -moz-user-select: none;
++    -ms-user-select: none;
++    -webkit-touch-callout: none;
++    cursor: default;
++}
++
++.header {
++    position: absolute;
++    left: 0;
++    right: 0;
++    top: 0;
++    height: 3rem;
++    margin: 0;
++    padding: 0;
++
++    background-color: #0C0C0D;
++    color: #676769;
++    font-weight: bold;
++
++    .tt {
++        font-family: $tt-font;
++    }
++
++    .hl {
++        color: #B1B1B1;
++    }
++
++    .left-side {
++        position: absolute;
++        top: 0;
++        bottom: 0;
++        left: 0;
++
++        .block {
++            float: left;
++            top: 0;
++            bottom: 0;
++            line-height: 3em;
++            border-right: 1px solid #323234;
++            padding-right: 1em;
++            padding-left: 1em;
++            &:last-child {
++                border-right: 0;
++            }
++        }
++    }
++
++    .right-side {
++        position: absolute;
++        top: 0;
++        bottom: 0;
++        right: 0;
++        line-height: 3rem;
++        background-color: #0C0C0D;
++        box-shadow: 0 0 10px #0C0C0D;
++
++        .button {
++            @extend .interactive;
++            font-family: $tt-font;
++            float: right;
++            color: white;
++            background-color: transparent;
++            height: 3rem;
++            width: 3rem;
++            font-size: 1.8em;
++            line-height: 3rem;
++            text-align: center;
++            border-left: 1px solid #323234;
++            &:hover {
++                color: #1abdff;
++                background-color: #323234;
++            }
++            &:active {
++                color: #1abdff;
++                background-color: transparent;
++            }
++            &.disabled, &.disabled:hover {
++                color: #323234;
++                background-color: transparent;
++            }
++        }
++    }
++}
++
++$history-width: 5rem;
++
++.main {
++    position: absolute;
++    top: 3rem;
++    bottom: 0;
++    left: 0;
++    right: 0;
++
++    .detail {
++        position: absolute;
++        right: 5rem;
++        left: 0;
++        bottom: 0;
++        top: 0;
++        color: #B1B1B1;
++        background-color: #323234;
++        overflow: auto;
++        padding: 2rem;
++
++        .info {
++            font-weight: bold;
++            color: #676769;
++            text-transform: uppercase;
++            letter-spacing: 0.3em;
++        }
++
++        .code {
++            font-size: 1.1em;
++            font-family: $tt-font;
++            padding-top: 0em;
++            padding-bottom: 1em;
++        }
++    }
++
++    .history {
++        position: absolute;
++        width: $history-width;
++        right: 0;
++        bottom: 0;
++        top: 0;
++        background-color: #474749;
++        overflow-y: scroll;
++
++        .step {
++            @extend .interactive;
++            position: relative;
++            width: 100%;
++            height: 2.5em;
++            user-select: none;
++            div {
++                box-sizing: border-box;
++                margin: 0.5em;
++                position: relative;
++                left: 0;
++                right: 0;
++                top: 0;
++                bottom: 0;
++                line-height: 2em;
++                border-radius: 0.5em;
++                background-color: #0C0C0D;
++                color: #1abdff;
++                font-weight: bold;
++                text-align: center;
++                transition: 0.3s;
++                border: 4px solid #474749;
++            }
++            &:hover {
++                div {
++                    color: black;
++                    background-color: white;
++                }
++            }
++            &.selected {
++                div {
++                    border-color: #1abdff;
++                }
++            }
++            &.cursor {
++                &::before {
++                    position: absolute;
++                    top: 0%;
++                    left: -4px;
++                    width: 8px;
++                    height: 100%;
++                    content: "";
++                    background-color: #1abdff;
++                    border-radius: 8px;
++                }
++            }
++        }
++    }
++}
+-- 
+2.33.1
+
+ 
