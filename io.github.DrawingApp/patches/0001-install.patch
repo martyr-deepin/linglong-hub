@@ -1,0 +1,62 @@
+From ac3fe45cd35e4c2a62539abe9482c9b4bc6e5c49 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Wed, 8 Nov 2023 13:43:00 +0800
+Subject: [install.patch_] install
+
+---
+ DrawingApp.desktop |  7 +++++++
+ DrawingApp.pro     |  5 ++++-
+ app/app.pro        | 12 ++++++++++++
+ 3 files changed, 23 insertions(+), 1 deletion(-)
+ create mode 100644 DrawingApp.desktop
+
+diff --git a/DrawingApp.desktop b/DrawingApp.desktop
+new file mode 100644
+index 0000000..75636a3
+--- /dev/null
++++ b/DrawingApp.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=DrawingApp
++GenericName=DrawingApp
++Hidden=false
++Name=DrawingApp
++StartupNotify=false
++Type=Application
+diff --git a/DrawingApp.pro b/DrawingApp.pro
+index bf9572e..5a8ca76 100644
+--- a/DrawingApp.pro
++++ b/DrawingApp.pro
+@@ -4,4 +4,7 @@ CONFIG+=ordered
+ 
+ SUBDIRS = \
+     app \
+-    tests
++    #tests
++
++
++
+diff --git a/app/app.pro b/app/app.pro
+index 375e2c7..17746a5 100644
+--- a/app/app.pro
++++ b/app/app.pro
+@@ -116,3 +116,15 @@ INCLUDEPATH += \
+ 
+ RESOURCES += \
+     resource.qrc
++
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = ../DrawingApp.desktop
++INSTALLS += unix_desktop
++
++}
+\ No newline at end of file
+-- 
+2.33.1
+
