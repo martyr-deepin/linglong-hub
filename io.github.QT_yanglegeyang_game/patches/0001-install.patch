@@ -1,0 +1,58 @@
+From 17d8df4c4b708d02a881424fd8c8585c4997fc4e Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Wed, 8 Nov 2023 10:15:40 +0800
+Subject: [install.patch_] isntall
+
+---
+ GoodsDelete.desktop |  6 ++++++
+ GoodsDelete.pro     | 16 ++++++++++++++++
+ 2 files changed, 22 insertions(+)
+ create mode 100644 GoodsDelete.desktop
+
+diff --git a/GoodsDelete.desktop b/GoodsDelete.desktop
+new file mode 100644
+index 0000000..d10e8a2
+--- /dev/null
++++ b/GoodsDelete.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=GoodsDelete
++Exec=GoodsDelete
++Terminal=false
+\ No newline at end of file
+diff --git a/GoodsDelete.pro b/GoodsDelete.pro
+index 8bffd57..f3a7c33 100644
+--- a/GoodsDelete.pro
++++ b/GoodsDelete.pro
+@@ -4,6 +4,10 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+ 
+ CONFIG += c++11
+ 
++
++TARGET = GoodsDelete
++TEMPLATE = app
++
+ # The following define makes your compiler emit warnings if you use
+ # any Qt feature that has been marked deprecated (the exact warnings
+ # depend on your compiler). Please consult the documentation of the
+@@ -39,3 +43,15 @@ DISTFILES += \
+     README.md \
+     json/level_1.json \
+     json/level_2.json
++
++
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files =GoodsDelete.desktop
++INSTALLS += unix_desktop
++}
++
+-- 
+2.33.1
+
