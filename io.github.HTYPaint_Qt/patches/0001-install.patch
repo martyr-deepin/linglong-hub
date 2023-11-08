@@ -1,0 +1,48 @@
+From 8ff6a6586b62c2b8b561864ff9e4232c336346c0 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Wed, 8 Nov 2023 12:13:47 +0800
+Subject: [install.patch_] install
+
+---
+ HTYPaint.desktop |  6 ++++++
+ HTYPaint.pro     | 11 ++++++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 HTYPaint.desktop
+
+diff --git a/HTYPaint.desktop b/HTYPaint.desktop
+new file mode 100644
+index 0000000..1e4f8fc
+--- /dev/null
++++ b/HTYPaint.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=HTYPaint
++Exec=HTYPaint
++Terminal=false
+\ No newline at end of file
+diff --git a/HTYPaint.pro b/HTYPaint.pro
+index d2e80c5..65a3245 100644
+--- a/HTYPaint.pro
++++ b/HTYPaint.pro
+@@ -17,4 +17,13 @@ FORMS    += mainwindow.ui
+ RESOURCES += \
+     res.qrc
+ 
+-RC_FILE = res.rc
+\ No newline at end of file
++RC_FILE = res.rc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = HTYPaint.desktop
++INSTALLS += unix_desktop
++}
+\ No newline at end of file
+-- 
+2.33.1
+
