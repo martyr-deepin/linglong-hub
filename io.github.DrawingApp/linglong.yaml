@@ -1,0 +1,20 @@
+package:
+  id: io.github.DrawingApp
+  name: DrawingApp
+  version: 1.0.0
+  kind: app
+  description: |
+    A simple drawing app.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/bruceoutdoors/DrawingApp.git
+  commit: ccd740db1b3e128daa167686a8a2a225f3fea4df
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
