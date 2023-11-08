@@ -1,0 +1,20 @@
+package:
+  id: io.github.HTYColorPicker
+  name: HTYColorPicker
+  version: 0.0.1
+  kind: app
+  description: |
+    Linux platform Qt-based color picker.C key color, click RGB or hex color values to copy the color text, drag the mouse mobile interface, Ctrl + Q exit.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/sonichy/HTYColorPicker.git"
+  commit: c283e48682ccf67bdf70a900c12dadc2519eacf7
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
