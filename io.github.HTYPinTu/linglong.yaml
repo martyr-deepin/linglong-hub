@@ -1,0 +1,20 @@
+package:
+  id: io.github.HTYPinTu
+  name: HTYPinTu
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt-based puzzle program, horizontal or vertical arrangement, save the puzzle.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/sonichy/HTYPinTu.git"
+  commit: f7754d0750eb8976cba9ddebc12872f58f737e0c
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
