@@ -1,0 +1,20 @@
+package:
+  id: io.github.HTYGIFPlayer
+  name: HTYGIFPlayer
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt-based GIF player, support 0.1 to 10 times the speed of play, pause, drag browse, save a single frame of pictures, one-click export all pictures.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/sonichy/HTYGIFPlayer.git"
+  commit: e7725b1a050780317841f91e4fb1ff6220287b83
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
