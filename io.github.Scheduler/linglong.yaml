@@ -1,0 +1,23 @@
+package:
+  id: io.github.Scheduler
+  name: Scheduler
+  version: 1.0.0
+  kind: app
+  description: |
+    Scheduler.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/abhishekbalu/Scheduler.git
+  commit: ff99f15da8c16936b4ec0d6e20fb4ff46ae7671b
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
