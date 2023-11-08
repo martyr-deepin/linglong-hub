@@ -1,0 +1,20 @@
+package:
+  id: io.github.nedit-ng
+  name: nedit-ng
+  version: 0.0.1
+  kind: app
+  description: |
+    nedit-ng is a Qt port of the Nirvana Editor (NEdit)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/eteran/nedit-ng.git"
+  commit: 450ad1733b74829c5cddd70999611e5b2c11565b
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake

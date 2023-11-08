@@ -1,0 +1,37 @@
+From 40925088649f583a3752eb2f163acda7b99414f0 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Wed, 8 Nov 2023 13:42:46 +0800
+Subject: [install.patch_] install
+
+---
+ CMakeLists.txt   | 3 +++
+ nedit-ng.desktop | 2 +-
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index b6b8846d..904e1425 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -79,3 +79,6 @@ if(UNIX)
+         add_subdirectory(import)
+     endif()
+ endif()
++
++install(TARGETS nedit-ng DESTINATION bin)
++install(PROGRAMS nedit-ng.desktop DESTINATION share/applications)
+diff --git a/nedit-ng.desktop b/nedit-ng.desktop
+index 0badd6fb..7cfa8f68 100644
+--- a/nedit-ng.desktop
++++ b/nedit-ng.desktop
+@@ -2,7 +2,7 @@
+ GenericName=NEdit-ng
+ Name=nedit-ng
+ MimeType=text/plain;
+-Exec=nedit %U
++Exec=nedit-ng
+ Icon=nedit
+ Type=Application
+ Terminal=false
+-- 
+2.33.1
+
