@@ -1,0 +1,45 @@
+From 8d9bc534ffb5c4e834f6efce2e71f736ab4717d5 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Wed, 8 Nov 2023 13:25:51 +0800
+Subject: [install.patch_] install
+
+---
+ HTYGIFPlayer.desktop | 6 ++++++
+ HTYGIFPlayer.pro     | 9 +++++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 HTYGIFPlayer.desktop
+
+diff --git a/HTYGIFPlayer.desktop b/HTYGIFPlayer.desktop
+new file mode 100644
+index 0000000..9c123b0
+--- /dev/null
++++ b/HTYGIFPlayer.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=HTYGIFPlayer
++Exec=HTYGIFPlayer
++Terminal=false
+\ No newline at end of file
+diff --git a/HTYGIFPlayer.pro b/HTYGIFPlayer.pro
+index 5ee24d8..c37d725 100644
+--- a/HTYGIFPlayer.pro
++++ b/HTYGIFPlayer.pro
+@@ -21,3 +21,12 @@ FORMS    += mainwindow.ui
+ 
+ RESOURCES += \
+     files.qrc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = HTYGIFPlayer.desktop
++INSTALLS += unix_desktop
++}
+\ No newline at end of file
+-- 
+2.33.1
+
