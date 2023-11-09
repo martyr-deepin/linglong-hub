@@ -1,0 +1,48 @@
+From d71f3bdf43b27ca361dd1f3e2e00abeaeabc90b9 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Thu, 9 Nov 2023 09:45:20 +0800
+Subject: [install.patch_] install
+
+---
+ HTYVS.desktop |  2 +-
+ HTYVS.pro     | 12 +++++++++++-
+ 2 files changed, 12 insertions(+), 2 deletions(-)
+
+diff --git a/HTYVS.desktop b/HTYVS.desktop
+index d279f81..124be1d 100644
+--- a/HTYVS.desktop
++++ b/HTYVS.desktop
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Name=HTYVS
+ Comment=
+-Exec=/media/sonichy/job/HY/Linux/Qt/HTYVS/HTYVS
++Exec=HTYVS
+ Icon=/media/sonichy/job/HY/Linux/Qt/HTYVS/icon.jpg
+ Path=/media/sonichy/job/HY/Linux/Qt/HTYVS
+ Terminal=false
+diff --git a/HTYVS.pro b/HTYVS.pro
+index 4d7e9a4..5f8c945 100644
+--- a/HTYVS.pro
++++ b/HTYVS.pro
+@@ -19,4 +19,14 @@ FORMS += \
+     clip.ui
+ 
+ RESOURCES += \
+-    res.qrc
+\ No newline at end of file
++    res.qrc
++
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = HTYVS.desktop
++INSTALLS += unix_desktop
++}
+\ No newline at end of file
+-- 
+2.33.1
+
