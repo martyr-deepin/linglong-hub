@@ -1,0 +1,45 @@
+From 423488bcc913764cccd0127f7e14ae4a8b0b38a1 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Thu, 9 Nov 2023 08:46:24 +0800
+Subject: [install.patch_] install
+
+---
+ HTYEdit.desktop |  6 ++++++
+ HTYEdit.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 HTYEdit.desktop
+
+diff --git a/HTYEdit.desktop b/HTYEdit.desktop
+new file mode 100644
+index 0000000..5163449
+--- /dev/null
++++ b/HTYEdit.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=HTYEdit
++Exec=HTYEdit
++Terminal=false
+\ No newline at end of file
+diff --git a/HTYEdit.pro b/HTYEdit.pro
+index 6551368..f8c6e9d 100644
+--- a/HTYEdit.pro
++++ b/HTYEdit.pro
+@@ -24,3 +24,13 @@ FORMS    += mainwindow.ui \
+ 
+ RESOURCES += \
+     res.qrc
++
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = HTYEdit.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+
