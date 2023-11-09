@@ -1,0 +1,46 @@
+From 4c5ebe5c80b162196010e53f330c5ea18595dd95 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Thu, 9 Nov 2023 09:59:42 +0800
+Subject: [install.patch_] install
+
+---
+ HTYHex.desktop |  6 ++++++
+ HTYHex.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 HTYHex.desktop
+
+diff --git a/HTYHex.desktop b/HTYHex.desktop
+new file mode 100644
+index 0000000..ce3de6f
+--- /dev/null
++++ b/HTYHex.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=HTYHex
++Exec=HTYHex
++Terminal=false
+\ No newline at end of file
+diff --git a/HTYHex.pro b/HTYHex.pro
+index 9fdbc3a..68d23eb 100644
+--- a/HTYHex.pro
++++ b/HTYHex.pro
+@@ -17,3 +17,13 @@ FORMS += \
+ 
+ RESOURCES += \
+     res.qrc
++
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = HTYHex.desktop
++INSTALLS += unix_desktop
++}
+\ No newline at end of file
+-- 
+2.33.1
+
