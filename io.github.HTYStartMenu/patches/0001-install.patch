@@ -1,0 +1,43 @@
+From d005262ec0e358c592365e1ee0d1e74ee1ee9a53 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Thu, 9 Nov 2023 09:21:25 +0800
+Subject: [install.patch_] install
+
+---
+ HTYStartMenu.desktop | 2 +-
+ HTYStartMenu.pro     | 9 +++++++++
+ 2 files changed, 10 insertions(+), 1 deletion(-)
+
+diff --git a/HTYStartMenu.desktop b/HTYStartMenu.desktop
+index 3be4093..2ea9fba 100644
+--- a/HTYStartMenu.desktop
++++ b/HTYStartMenu.desktop
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Name=开始菜单
+ Comment=Edit text files
+-Exec=/media/sonichy/job/HY/Linux/Qt/HTYStartMenu/HTYStartMenu
++Exec=HTYStartMenu
+ Icon=/media/sonichy/job/HY/Linux/Qt/HTYStartMenu/icon.png
+ Path=/media/sonichy/job/HY/Linux/Qt/HTYStartMenu
+ Terminal=false
+diff --git a/HTYStartMenu.pro b/HTYStartMenu.pro
+index 657e94e..32ce848 100644
+--- a/HTYStartMenu.pro
++++ b/HTYStartMenu.pro
+@@ -21,3 +21,12 @@ FORMS    += mainwindow.ui
+ 
+ RESOURCES += \
+     file.qrc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = HTYStartMenu.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+

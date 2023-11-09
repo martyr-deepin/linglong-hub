@@ -1,0 +1,20 @@
+package:
+  id: io.github.HTYStartMenu
+  name: HTYStartMenu
+  version: 0.0.1
+  kind: app
+  description: |
+    Linux systems are based on QT5's start menu and display all desktop files in directories such as/usr/share/applications, which can be searched and filtered. You can also shut down, log off, restart, lock, and so on.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/sonichy/HTYStartMenu.git
+  commit: 32421b40178cf7fe2d7dd267560cbd20d8df5c1e
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
