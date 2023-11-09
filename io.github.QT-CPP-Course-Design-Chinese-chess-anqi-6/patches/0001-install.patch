@@ -1,0 +1,45 @@
+From c9237840602f1de3bb1bcb622340f11017078adb Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Thu, 9 Nov 2023 08:30:54 +0800
+Subject: [install.patch_] install
+
+---
+ chess.desktop |  6 ++++++
+ chess.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 chess.desktop
+
+diff --git a/chess.desktop b/chess.desktop
+new file mode 100644
+index 0000000..1a9af58
+--- /dev/null
++++ b/chess.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=chess
++Exec=chess
++Terminal=false
+\ No newline at end of file
+diff --git a/chess.pro b/chess.pro
+index 804cf63..9d27568 100644
+--- a/chess.pro
++++ b/chess.pro
+@@ -42,3 +42,13 @@ HEADERS += \
+ 
+ FORMS += \
+     mainwindow.ui
++
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = chess.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+

@@ -1,0 +1,20 @@
+package:
+  id: io.github.QT-CPP-Course-Design-Chinese-chess-anqi-6
+  name: QT-CPP-Course-Design-Chinese-chess-anqi-6
+  version: 0.0.1
+  kind: app
+  description: |
+    Classic board game, come and play with your friends
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/RobinWitch/QT-CPP-Course-Design-Chinese-chess-anqi-6.git
+  commit: c186ec211d02602d891c58c3ff98fb7658b4337c
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
