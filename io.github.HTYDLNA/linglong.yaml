@@ -1,0 +1,20 @@
+package:
+  id: io.github.HTYDLNA
+  name: HTYDLNA
+  version: 0.0.1
+  kind: app
+  description: |
+    A mini DLNA sender, can not receive yet.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/sonichy/HTYDLNA.git
+  commit: 392c12555ff19ce12784db324230cac9c8ad6301
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

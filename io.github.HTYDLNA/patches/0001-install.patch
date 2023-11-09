@@ -1,0 +1,48 @@
+From 1a6a67895887792633f98059331195c54d1b7684 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Thu, 9 Nov 2023 08:59:44 +0800
+Subject: [install.patch_] install
+
+---
+ HTYDLNA.desktop |  6 ++++++
+ HTYDLNA.pro     | 11 ++++++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 HTYDLNA.desktop
+
+diff --git a/HTYDLNA.desktop b/HTYDLNA.desktop
+new file mode 100644
+index 0000000..7d64bb0
+--- /dev/null
++++ b/HTYDLNA.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=HTYDLNA
++Exec=HTYDLNA
++Terminal=false
+\ No newline at end of file
+diff --git a/HTYDLNA.pro b/HTYDLNA.pro
+index 9eecc73..a828304 100644
+--- a/HTYDLNA.pro
++++ b/HTYDLNA.pro
+@@ -20,4 +20,13 @@ FORMS += \
+         mainwindow.ui
+ 
+ RESOURCES += \
+-    res.qrc
+\ No newline at end of file
++    res.qrc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = HTYDLNA.desktop
++INSTALLS += unix_desktop
++}
+\ No newline at end of file
+-- 
+2.33.1
+
