@@ -1,0 +1,44 @@
+From 6e10f4f4216a4b4e4b63d9dd3ef880e9bda81bcc Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Thu, 9 Nov 2023 09:38:47 +0800
+Subject: [install.patch_] install
+
+---
+ HTYBoard.desktop |  2 +-
+ HTYBoard.pro     | 10 ++++++++++
+ 2 files changed, 11 insertions(+), 1 deletion(-)
+
+diff --git a/HTYBoard.desktop b/HTYBoard.desktop
+index 20004e7..37c504f 100644
+--- a/HTYBoard.desktop
++++ b/HTYBoard.desktop
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Name=HTYBoard
+ Comment=
+-Exec=/media/sonichy/job/HY/Linux/Qt/HTYBoard/HTYBoard
++Exec=HTYBoard
+ Icon=/media/sonichy/job/HY/Linux/Qt/HTYBoard/icon.png
+ Path=/media/sonichy/job/HY/Linux/Qt/HTYBoard
+ Terminal=false
+diff --git a/HTYBoard.pro b/HTYBoard.pro
+index a662a17..cd6d2a1 100644
+--- a/HTYBoard.pro
++++ b/HTYBoard.pro
+@@ -21,3 +21,13 @@ FORMS    += mainwindow.ui
+ 
+ RESOURCES += \
+     res.qrc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = HTYBoard.desktop
++INSTALLS += unix_desktop
++}
++
+-- 
+2.33.1
+
