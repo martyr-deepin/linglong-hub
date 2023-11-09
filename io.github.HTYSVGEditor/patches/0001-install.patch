@@ -1,0 +1,45 @@
+From afc92cdbe795e9883e315692dd33000ced6ba9bd Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Thu, 9 Nov 2023 09:09:19 +0800
+Subject: [install.patch_] install
+
+---
+ HTYSVGEditor.desktop |  3 +--
+ HTYSVGEditor.pro     | 10 ++++++++++
+ 2 files changed, 11 insertions(+), 2 deletions(-)
+
+diff --git a/HTYSVGEditor.desktop b/HTYSVGEditor.desktop
+index b4a3b77..a12ab55 100644
+--- a/HTYSVGEditor.desktop
++++ b/HTYSVGEditor.desktop
+@@ -1,7 +1,6 @@
+ [Desktop Entry]
+ Name=海天鹰SVG编辑器
+-Comment=
+-Exec=/media/sonichy/job/HY/Linux/Qt/HTYSVGEditor/HTYSVGEditor
++Exec=HTYSVGEditor
+ Icon=/media/sonichy/job/HY/Linux/Qt/HTYSVGEditor/icon.png
+ Path=/media/sonichy/job/HY/Linux/Qt/HTYSVGEditor
+ Terminal=false
+diff --git a/HTYSVGEditor.pro b/HTYSVGEditor.pro
+index dd05d3f..4b4e64d 100644
+--- a/HTYSVGEditor.pro
++++ b/HTYSVGEditor.pro
+@@ -35,3 +35,13 @@ FORMS += \
+ 
+ RESOURCES += \
+     res.qrc
++
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = HTYSVGEditor.desktop
++INSTALLS += unix_desktop
++}
+\ No newline at end of file
+-- 
+2.33.1
+

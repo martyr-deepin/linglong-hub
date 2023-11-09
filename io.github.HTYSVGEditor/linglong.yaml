@@ -1,0 +1,20 @@
+package:
+  id: io.github.HTYSVGEditor
+  name: HTYSVGEditor
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt-based Linux platform for the simplest SVG branch viewing, editing, saving program.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/sonichy/HTYSVGEditor.git
+  commit: bc902b6072f90284a4123e5a3d1cb40bcc337f15
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
