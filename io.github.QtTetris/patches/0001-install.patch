@@ -1,0 +1,44 @@
+From e288a0d9bb4e359a9c4284617ce9460e5c330bb2 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Thu, 9 Nov 2023 08:23:16 +0800
+Subject: [install.patch_] install
+
+---
+ QtTetris.desktop | 6 ++++++
+ QtTetris.pro     | 9 +++++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 QtTetris.desktop
+
+diff --git a/QtTetris.desktop b/QtTetris.desktop
+new file mode 100644
+index 0000000..d795748
+--- /dev/null
++++ b/QtTetris.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=QtTetris
++Exec=QtTetris
++Terminal=false
+\ No newline at end of file
+diff --git a/QtTetris.pro b/QtTetris.pro
+index c8ba1fe..742d7b4 100644
+--- a/QtTetris.pro
++++ b/QtTetris.pro
+@@ -31,3 +31,12 @@ FORMS    += mainwindow.ui \
+ 
+ DISTFILES += \
+     README.md
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = QtTetris.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+
