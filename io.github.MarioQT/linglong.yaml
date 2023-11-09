@@ -1,0 +1,20 @@
+package:
+  id: io.github.MarioQT
+  name: MarioQT
+  version: 0.0.1
+  kind: app
+  description: |
+    Ce logiciel s'inscrit dans la réalisation du projet DI4 de C++ QT
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/GuillaumeBchd/MarioQT.git
+  commit: 93297d9580d0a503fe0c0fe142b1dcf0cbc2456e
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

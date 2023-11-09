@@ -1,0 +1,55 @@
+From 253056e11a4d901a1a5dcc6621027c90268da6dc Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Thu, 9 Nov 2023 07:58:17 +0800
+Subject: [install.patch_] install
+
+---
+ Mario.desktop |  6 ++++++
+ Mario.pro     | 13 +++++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 Mario.desktop
+
+diff --git a/Mario.desktop b/Mario.desktop
+new file mode 100644
+index 0000000..da7db42
+--- /dev/null
++++ b/Mario.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=Mario
++Exec=Mario
++Terminal=false
+\ No newline at end of file
+diff --git a/Mario.pro b/Mario.pro
+index 63138d9..0b1ba95 100644
+--- a/Mario.pro
++++ b/Mario.pro
+@@ -119,6 +119,9 @@ HEADERS += \
+ 
+ FORMS +=
+ 
++TARGET = Mario
++TEMPLATE = app
++
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
+@@ -132,3 +135,13 @@ DISTFILES += \
+     readme_imgs/leveleditor.png \
+     readme_imgs/menu.png \
+     readme_imgs/option.png
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = Mario.desktop
++INSTALLS += unix_desktop
++}
++
+-- 
+2.33.1
+
