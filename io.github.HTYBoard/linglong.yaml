@@ -1,0 +1,20 @@
+package:
+  id: io.github.HTYBoard
+  name: HTYBoard
+  version: 0.0.1
+  kind: app
+  description: |
+     Linux platform Qt-based full-screen scrolling subtitles, you can customize images, text, background color.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/sonichy/HTYBoard.git
+  commit: 98fd1c5dca80c028345fed904be9d3ec6f7f4933
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
