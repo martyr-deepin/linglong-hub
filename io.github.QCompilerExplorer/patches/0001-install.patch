@@ -1,0 +1,46 @@
+From 2d0006b63379d98eef3759d1be48f2e3f9c7b960 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Thu, 9 Nov 2023 10:13:01 +0800
+Subject: [install.patch_] install
+
+---
+ qcompilerexplorer.desktop | 6 ++++++
+ qcompilerexplorer.pro     | 9 ++++++++-
+ 2 files changed, 14 insertions(+), 1 deletion(-)
+ create mode 100644 qcompilerexplorer.desktop
+
+diff --git a/qcompilerexplorer.desktop b/qcompilerexplorer.desktop
+new file mode 100644
+index 0000000..42edbd9
+--- /dev/null
++++ b/qcompilerexplorer.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=qcompilerexplorer
++Exec=qcompilerexplorer
++Terminal=false
+diff --git a/qcompilerexplorer.pro b/qcompilerexplorer.pro
+index 52a2fd8..a9058c2 100644
+--- a/qcompilerexplorer.pro
++++ b/qcompilerexplorer.pro
+@@ -52,7 +52,14 @@ FORMS += \
+     mainwindow.ui \
+     settingsdialog.ui
+ 
++TARGET = qcompilerexplorer
++TEMPLATE = app
++
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $${PREFIX}/bin
+ !isEmpty(target.path): INSTALLS += target
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = qcompilerexplorer.desktop
++INSTALLS += unix_desktop
++
+-- 
+2.33.1
+

@@ -1,0 +1,20 @@
+package:
+  id: io.github.QCompilerExplorer
+  name: QCompilerExplorer
+  version: 0.0.1
+  kind: app
+  description: |
+    Just made this as a fun project. It includes a local mini compiler explorer, which will show you the assembly generated for your C++ code using g++(if g++ is installed). 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/pbek/QCompilerExplorer.git
+  commit: eb5bd0a35715e81af61a43eff3f83921be2b0520
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
