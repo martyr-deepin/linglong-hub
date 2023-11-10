@@ -1,0 +1,49 @@
+From 092a333ae617edcb616277a71ff473a4e5b49de0 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Fri, 10 Nov 2023 14:35:45 +0800
+Subject: [install.patch_] install
+
+---
+ isometric_tiles.desktop |  6 ++++++
+ isometric_tiles.pro     | 14 ++++++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 isometric_tiles.desktop
+
+diff --git a/isometric_tiles.desktop b/isometric_tiles.desktop
+new file mode 100644
+index 0000000..841e3c7
+--- /dev/null
++++ b/isometric_tiles.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=isometric_tiles
++Exec=isometric_tiles
++Terminal=false
+\ No newline at end of file
+diff --git a/isometric_tiles.pro b/isometric_tiles.pro
+index 1ef8c52..74ece4b 100644
+--- a/isometric_tiles.pro
++++ b/isometric_tiles.pro
+@@ -17,3 +17,17 @@ HEADERS += \
+ 
+ RESOURCES += \
+     resource.qrc
++
++
++TARGET =isometric_tiles 
++TEMPLATE = app
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files =isometric_tiles.desktop
++INSTALLS += unix_desktop
++}
++
+-- 
+2.33.1
+
