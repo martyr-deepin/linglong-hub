@@ -1,0 +1,23 @@
+--- ../BlueMoon/blue_moon.pro	2023-11-07 21:34:19.035352000 +0800
++++ ../BlueMoon/blue_moon.pro	2023-11-07 21:37:06.329442628 +0800
+@@ -32,3 +32,20 @@
+ DISTFILES += \
+     UML.qmodel
+ 
++DESKTOP_FILE = ./blue_moon.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.2' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=BlueMoon' >> $$DESKTOP_FILE")
++system("echo 'Comment=BlueMoon.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$PREFIX/bin/blue_moon' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++

@@ -1,0 +1,30 @@
+package:
+  id: io.github.BlueMoon
+  name: BlueMoon
+  version: 2.0.0
+  kind: app
+  description: |
+    Bluetooth manager for LXQt desktop environment.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtconnectivity
+    version: 5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/marcusbritanicus/BlueMoon.git
+  commit: 941ac60c7085bd915910dfd2fe17f010fb85774a
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      qmake -makefile ${conf_args} ${extra_args} ./BlueMoon/blue_moon.pro
+
