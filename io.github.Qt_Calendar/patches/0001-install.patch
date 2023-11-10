@@ -1,0 +1,44 @@
+From be95aae03c84e7274419abba49d4cb839e37f357 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Fri, 10 Nov 2023 09:35:13 +0800
+Subject: [install.patch_] install
+
+---
+ NextDay/NextDay.pro | 9 +++++++++
+ Nextday.desktop     | 6 ++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 Nextday.desktop
+
+diff --git a/NextDay/NextDay.pro b/NextDay/NextDay.pro
+index a6a8afa..d38c489 100644
+--- a/NextDay/NextDay.pro
++++ b/NextDay/NextDay.pro
+@@ -27,3 +27,12 @@ OTHER_FILES += \
+     ICOX.rc
+ 
+ RC_FILE += ICOX.rc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = Nextday.desktop
++INSTALLS += unix_desktop
++}
+diff --git a/Nextday.desktop b/Nextday.desktop
+new file mode 100644
+index 0000000..1c78d6e
+--- /dev/null
++++ b/Nextday.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=Nextday
++Exec=Nextday
++Terminal=false
+\ No newline at end of file
+-- 
+2.33.1
+
