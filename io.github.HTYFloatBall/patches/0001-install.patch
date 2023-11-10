@@ -1,0 +1,45 @@
+From 11db3e8225a7d15f11032f6e1f6c8735b91642ef Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Wed, 8 Nov 2023 12:28:20 +0800
+Subject: [install.patch_] install
+
+---
+ HTYFB.desktop |  6 ++++++
+ HTYFB.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 HTYFB.desktop
+
+diff --git a/HTYFB.desktop b/HTYFB.desktop
+new file mode 100644
+index 0000000..8773c89
+--- /dev/null
++++ b/HTYFB.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=HTYFB
++Exec=HTYFB
++Terminal=false
+\ No newline at end of file
+diff --git a/HTYFB.pro b/HTYFB.pro
+index a05dfbb..ed27f33 100644
+--- a/HTYFB.pro
++++ b/HTYFB.pro
+@@ -15,3 +15,13 @@ HEADERS += \
+ 
+ RESOURCES += \
+     res.qrc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = HTYFB.desktop
++INSTALLS += unix_desktop
++}
++
+-- 
+2.33.1
+
