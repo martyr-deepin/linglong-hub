@@ -1,0 +1,18 @@
+diff --git a/log2log.pro b/log2log.pro
+index 94d9a00..74c848c 100644
+--- a/log2log.pro
++++ b/log2log.pro
+@@ -110,7 +110,9 @@ unix {
+     isEmpty(PREFIX) {
+         PREFIX = /usr
+     }
+-    binaries.path = $$PREFIX/bin
+-    binaries.files = $$TARGET
+-    INSTALLS += binaries
++    target.path = $$PREFIX/bin
++
++    desktop.path = $$PREFIX/share/applications
++    desktop.files += log2log.desktop
++    INSTALLS += desktop
+ }
+
