@@ -1,0 +1,22 @@
+package:
+  id: io.github.cyber-calculator
+  name: cyber-calculator
+  version: 1.0.0
+  kind: app
+  description: |
+    CyberOS Calculator.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Z-bin/cyber-calculator.git
+  commit: 95e55a49b31bdfe38f3bb28293aba3aa99aca618
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: cmake
+
