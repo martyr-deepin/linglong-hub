@@ -1,0 +1,28 @@
+package:
+  id: aspell
+  name: aspell
+  version: 0.60.8
+  kind: lib
+  description: |
+     This is the Git repository for GNU Aspell
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: automake/1.16.5
+  - id: libtool/2.4.2
+  - id: texinfo/6.8.1
+source:
+  kind: git
+  url: "https://github.com/GNUAspell/aspell.git"
+  commit: 875068a6bcff884d62b29c3215c2b3304ab4b774
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      ./autogen
+      autoreconf -ivf
+      ./configure ${conf_args} ${extra_args}
+

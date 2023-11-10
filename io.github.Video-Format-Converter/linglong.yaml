@@ -1,0 +1,24 @@
+package:
+  id: io.github.Video-Format-Converter
+  name: Video-Format-Converter
+  version: 1.0.0
+  kind: app
+  description: |
+    Video Converter is a simple, cross-platform graphical user interface (GUI) application built with Qt and FFmpeg. It allows users to easily convert video files from one format to another, making it a handy tool for video enthusiasts and professionals.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+
+source:
+  kind: git
+  url: "https://github.com/ailaa-jadoo/Video-Format-Converter.git"
+  commit: 3dcea34fa6a5ac797fbd8f0c1e41d6f2482ece1a
+  patch: 
+    - patches/0001-fix-install.patch
+
+
+build:
+  kind: qmake

@@ -1,0 +1,45 @@
+From d34f97ddcc980c61b1ecdd1f547c20d85a21fa2b Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sun, 29 Oct 2023 12:06:50 +0800
+Subject: [PATCH] fix-install
+
+---
+ qteletextmaker.desktop | 9 +++++++++
+ qteletextmaker.pro     | 8 ++++++--
+ 2 files changed, 15 insertions(+), 2 deletions(-)
+ create mode 100644 qteletextmaker.desktop
+
+diff --git a/qteletextmaker.desktop b/qteletextmaker.desktop
+new file mode 100644
+index 0000000..6f9baa4
+--- /dev/null
++++ b/qteletextmaker.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Name=qteletextmaker
++Categories=Game;Qt;
++Comment=teletext page editor
++Exec=qteletextmaker
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/qteletextmaker.pro b/qteletextmaker.pro
+index 476b1ed..beae8a7 100644
+--- a/qteletextmaker.pro
++++ b/qteletextmaker.pro
+@@ -43,5 +43,9 @@ SOURCES       = decode.cpp \
+ RESOURCES     = qteletextmaker.qrc
+ 
+ # install
+-target.path = /usr/local/bin
+-INSTALLS += target
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = qteletextmaker.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+

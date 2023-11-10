@@ -1,0 +1,19 @@
+package:
+  id: io.github.fdt-viewer
+  name: fdt-viewer
+  version: 0.8.1
+  kind: app
+  description: |
+    Flattened Device Tree Viewer written in Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dev-0x7C6/fdt-viewer.git
+  commit: 93f2a8d7d2d8e57df97d2009982b0a6008b61bd8
+
+build:
+  kind: cmake

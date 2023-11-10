@@ -1,0 +1,19 @@
+package:
+  id: extra-cmake-modules  
+  name: extra-cmake-modules  
+  version: 5.111.0
+  kind: lib
+  description: |
+    Extra CMake Modules , or ECM.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://invent.kde.org/frameworks/extra-cmake-modules.git"
+  commit: e9f771e006f26ad79efa2eee18c99bfd8b1b2aaf
+
+build:
+  kind: cmake

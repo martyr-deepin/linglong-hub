@@ -1,0 +1,19 @@
+package:
+  id: io.github.klatexformula
+  name: klatexformula
+  version: 4.1.0
+  kind: app
+  description: |
+    KLatexFormula is an easy-to-use graphical application for generating images.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/klatexformula/klatexformula.git
+  commit: fd1391bcd392bc12b26d77317ea56c3c0b5b1d23
+
+build:
+  kind: cmake

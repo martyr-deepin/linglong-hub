@@ -1,0 +1,20 @@
+package:
+  id: io.github.Advanced_Chess
+  name: Advanced_Chess
+  version: 1.2.6
+  kind: app
+  description: |
+     Graphical 2P chess built with Qt Quick QML and C++.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Mahdijamebozorg/Advanced_Chess.git"
+  commit: 7f34c70c1032780add987955907e399be99dcc5c
+  patch: patches/0001-fix-install.patch
+
+build:
+  kind: qmake

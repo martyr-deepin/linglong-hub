@@ -1,0 +1,20 @@
+package:
+  id: io.github.qmlevemon
+  name: qmlevemon
+  version: 0.4.1
+  kind: app
+  description: |
+     Qt5/QML based EVE Online character monitor
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/minlexx/qmlevemon.git"
+  commit: ed84ad6a084d9c2a0456f9ee47f20e2c7e6ad369
+  patch: patches/0001-fix-install.patch
+
+build:
+  kind: qmake

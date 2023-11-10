@@ -1,0 +1,13 @@
+diff --git a/MedianXLOfflineTools.desktop b/MedianXLOfflineTools.desktop
+new file mode 100644
+index 00000000..3f21270e
+--- /dev/null
++++ b/MedianXLOfflineTools.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Type=Application
++Name=Median XL Offline Tools
++Exec=MedianXLOfflineTools %f
++Icon=MedianXLOfflineTools
++Categories=Qt;
++GenericName=Character manager for Diablo 2 - Median XL mod.

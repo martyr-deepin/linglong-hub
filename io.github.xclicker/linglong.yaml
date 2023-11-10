@@ -1,0 +1,26 @@
+package:
+  id: io.github.xclicker
+  name: xcliker
+  version: 1.5.0
+  kind: app
+  description: |
+    XClicker is an open-source, easy to use, feature-rich, blazing fast Autoclicker for linux desktops using x11.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/robiot/xclicker.git
+  commit: e37c6092df2a0b179d02762413bd1abf62de02f9
+  patch: patches/fix-001.patch
+
+build:
+  kind: manual
+  manual:
+    configure: |
+    build: |
+      make release
+    install: |
+

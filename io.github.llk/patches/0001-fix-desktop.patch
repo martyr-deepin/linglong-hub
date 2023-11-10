@@ -1,0 +1,33 @@
+From b504a09a0f7cac08402726c9a549fc163c65b8ce Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Tue, 31 Oct 2023 23:07:23 +0800
+Subject: [PATCH] fix-desktop
+
+---
+ CMakeLists.txt | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 2ef6581..6db936e 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -60,3 +60,16 @@ install(TARGETS ${PROJECT_NAME}
+ if(QT_VERSION_MAJOR EQUAL 6)
+     	qt_finalize_executable(${PROJECT_NAME})
+ endif()
++
++
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=llk.desktop
++Exec=llk
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/llk.desktop "${DESKTOP_FILE_CONTENT}")
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/llk.desktop DESTINATION share/applications)
+-- 
+2.33.1
+

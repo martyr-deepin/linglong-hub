@@ -1,0 +1,53 @@
+From 83879f5c10534db933248e404ec077f2b7412a17 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Tue, 31 Oct 2023 12:14:01 +0800
+Subject: [PATCH] fix-install
+
+---
+ qmlevemon.desktop |  8 ++++++++
+ qmlevemon.pro     | 14 +++++++++++---
+ 2 files changed, 19 insertions(+), 3 deletions(-)
+ create mode 100644 qmlevemon.desktop
+
+diff --git a/qmlevemon.desktop b/qmlevemon.desktop
+new file mode 100644
+index 0000000..87758cc
+--- /dev/null
++++ b/qmlevemon.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=qmlevemon
++Name=qmlevemon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/qmlevemon.pro b/qmlevemon.pro
+index 1049b16..775b2a7 100644
+--- a/qmlevemon.pro
++++ b/qmlevemon.pro
+@@ -176,9 +176,17 @@ android: {
+ QML_IMPORT_PATH =
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
++#qnx: target.path = /tmp/$${TARGET}/bin
++#else: unix:!android: target.path = /opt/$${TARGET}/bin
++#!isEmpty(target.path): INSTALLS += target
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = qmlevemon.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+ 
+ ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android/src
+ contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
+-- 
+2.33.1
+

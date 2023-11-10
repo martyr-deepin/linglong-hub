@@ -1,0 +1,23 @@
+package:
+  id: io.github.QJsonify
+  name: QJsonify
+  version: 1.0.1
+  kind: app
+  description: |
+    Prettify and Minify your JSON files locally. Don't give out your precious information to online sources.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+ 
+source:
+  kind: git
+  url: "https://github.com/NucleaPeon/QJsonify.git"
+  commit: 73fe04a4b0fe2bea80838a8fe1daff52f8952158
+  patch: 
+    - patches/0001-fix-install.patch
+    
+build:
+  kind: qmake

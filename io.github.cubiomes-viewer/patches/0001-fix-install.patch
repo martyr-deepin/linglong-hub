@@ -1,0 +1,27 @@
+From 7dad57f08deae255bb141ba7ff8c6ce73c8965c6 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Fri, 27 Oct 2023 19:29:39 +0800
+Subject: [PATCH] fix-install
+
+---
+ cubiomes-viewer.pro | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/cubiomes-viewer.pro b/cubiomes-viewer.pro
+index c7664ce..5c39015 100644
+--- a/cubiomes-viewer.pro
++++ b/cubiomes-viewer.pro
+@@ -232,3 +232,9 @@ with_network: {
+ }
+ 
+ 
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = etc/com.github.cubitect.cubiomes-viewer.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

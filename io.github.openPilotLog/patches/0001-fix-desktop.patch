@@ -1,0 +1,36 @@
+From fadb88d11fc487e43c909ca99f67df7811560e9c Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Mon, 30 Oct 2023 14:28:41 +0800
+Subject: [PATCH] fix-desktop
+
+---
+ CMakeLists.txt | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 0b0b183..b205fc1 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -255,4 +255,19 @@ set_source_files_properties(${app_icon_macos} PROPERTIES MACOSX_PACKAGE_LOCATION
+ # target_link_libraries(openPilotLog PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Sql Qt${QT_VERSION_MAJOR}::Network OpenSSL::SSL)
+ target_link_libraries(openPilotLog PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Sql Qt${QT_VERSION_MAJOR}::Network)
+ 
++
+ install(TARGETS openPilotLog DESTINATION bin)
++
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=openPilotLog.desktop
++Exec=openPilotLog
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/openPilotLog.desktop "${DESKTOP_FILE_CONTENT}")
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/openPilotLog.desktop DESTINATION /opt/apps/io.github.openPilotLog/files/share/applications)
++
++#install(TARGETS duckstation-qt DESTINATION bin)
+-- 
+2.33.1
+

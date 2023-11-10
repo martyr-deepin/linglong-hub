@@ -1,0 +1,22 @@
+package:
+  id: io.github.qt-unit-converter
+  name: qt-unit-converter
+  version: 1.0.0
+  kind: app
+  description: |
+    A program for unit conversions made using the Qt framework.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/30vam/qt-unit-converter.git
+  commit: f77635d8f4e3a3623309a5e2e6625081b22eeeea
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,23 @@
+package:
+  id: io.github.zeal
+  name: zeal
+  version: 0.7.0
+  kind: app
+  description: |
+    Zeal is a simple offline documentation browser 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine
+    version: 5.15.7
+
+source:
+  kind: git
+  url: "https://github.com/zealdocs/zeal.git"
+  commit: 2cefcd45423e58283372a4c735609c284eded410
+
+build:
+  kind: cmake

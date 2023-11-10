@@ -1,0 +1,24 @@
+package:
+  id: cn.wps.wps-office
+  name: wps-office
+  version: 11.1.0.11705
+  kind: app
+  description: |
+    WPS Writer.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://atomgit.com/threedog/wps_binary.git"
+  commit: 06d5509854f692a93f9f3eee415bb78075fcb0ae
+
+build: 
+  kind: manual
+  manual:
+    build: |
+      echo skip build
+    install: |
+      bash install.sh

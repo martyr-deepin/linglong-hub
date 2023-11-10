@@ -1,0 +1,21 @@
+--- ../src/meson.build	2023-10-27 16:31:07.030467000 +0800
++++ ../src/meson.build	2023-10-30 14:12:38.362016777 +0800
+@@ -16,4 +16,18 @@
+     'utils.c',
+     xclicker_resources,
+     dependencies: deps,
++    install : true,
++    install_dir: '/opt/apps/io.github.xclicker/files/bin'
+ )
++
++desktop_contents = '''
++[Desktop Entry]
++Name=xclicker
++Exec=xclicker
++Icon=xclicker
++Type=Application
++Categories=Utility;
++'''
++
++configure_file(output: 'xclicker.desktop',  configuration: {'DESKTOP_CONTENTS': desktop_contents})
++install_data('/source/build/release/src/xclicker.desktop', install_dir: '/opt/apps/io.github.xclicker/files/share/applications' )

@@ -1,0 +1,21 @@
+--- ../src/meson.build	2021-02-11 11:16:10.000000000 +0800
++++ ../src/meson.build	2023-10-31 10:47:47.523862080 +0800
+@@ -22,4 +22,16 @@
+   dependencies: coinflip_deps,
+   include_directories : incdir,
+   install: true,
+-)
+\ 文件尾没有换行符
++  install_dir: '/opt/apps/io.github.coinflip-gtk/files/bin'
++)
++
++desktop_contents = '''
++[Desktop Entry]
++Name=coinflip
++Exec=coinflip
++Icon=coinflip
++Type=Application
++Categories=Utility;
++'''
++configure_file(output: 'coinflip.desktop',  configuration: {'DESKTOP_CONTENTS': desktop_contents})
++install_data('/source/build/src/coinflip.desktop', install_dir: '/opt/apps/io.github.coinflip-gtk/files/share/applications' )

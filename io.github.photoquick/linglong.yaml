@@ -1,0 +1,30 @@
+package:
+  id: io.github.photoquick
+  name: photoquick
+  version: 4.16.2
+  kind: app
+  description: |
+    A simple handy image viewer and editor with some useful features (Qt based).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/ksharindam/photoquick.git"
+  commit: be040f10c912006dfa81f7c9a93b5e65242fc039
+  patch: 
+    - patches/0001-fix-install.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src/
+      qmake  -makefile ${conf_args} ${extra_args}
+    build: |
+      make -j4
+    install: |
+      make install
