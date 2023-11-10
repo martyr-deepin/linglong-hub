@@ -1,0 +1,20 @@
+package:
+  id: io.github.CandyCrush
+  name: CandyCrush
+  version: 0.0.1
+  kind: app
+  description: |
+    This repository is going to implement a level of the classic game "Candy Crush" in C++ with Qt. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/yungshenglu/CandyCrush.git
+  commit: e907909f83f55ddab84de8831ec401066a62cd4c
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
