@@ -1,0 +1,45 @@
+From 2d8c5039d2aadc241ad1d93f2ce016bbfb5958f4 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Fri, 10 Nov 2023 11:26:06 +0800
+Subject: [install.patch_] install
+
+---
+ SimonGame.desktop | 6 ++++++
+ SimonGame.pro     | 9 +++++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 SimonGame.desktop
+
+diff --git a/SimonGame.desktop b/SimonGame.desktop
+new file mode 100644
+index 0000000..c576536
+--- /dev/null
++++ b/SimonGame.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=SimonGame
++Exec=SimonGame
++Terminal=false
+\ No newline at end of file
+diff --git a/SimonGame.pro b/SimonGame.pro
+index 62cbd3d..cc3e4a6 100644
+--- a/SimonGame.pro
++++ b/SimonGame.pro
+@@ -15,3 +15,12 @@ HEADERS += \
+ 
+ RESOURCES += \
+     resource.qrc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = SimonGame.desktop
++INSTALLS += unix_desktop
++}
+\ No newline at end of file
+-- 
+2.33.1
+
