@@ -1,0 +1,12 @@
+diff --git a/memtray.desktop b/memtray.desktop
+new file mode 100644
+index 0000000..3b47310
+--- /dev/null
++++ b/memtray.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=memtray
++Exec=memtray %f
++Icon=appicon
+

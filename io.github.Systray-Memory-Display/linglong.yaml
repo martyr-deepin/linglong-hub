@@ -1,0 +1,22 @@
+package:
+  id: io.github.Systray-Memory-Display
+  name: Systray-Memory-Display
+  version: 0.0.1
+  kind: app
+  description: |
+    The program shows a system tray icon which can monitoring your system memory usage.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/doublejim/Systray-Memory-Display.git"
+  commit: c97f9b499fb1d657a31cdad4f19e337b8d4e3d8b
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake

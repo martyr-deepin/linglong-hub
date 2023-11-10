@@ -1,0 +1,20 @@
+diff --git a/memtray.pro b/memtray.pro
+index a649c95..f8ca9dc 100644
+--- a/memtray.pro
++++ b/memtray.pro
+@@ -36,3 +36,14 @@ RESOURCES += \
+     resources.qrc
+ 
+ RC_FILE = appicon.rc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += memtray.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = appicon.png
++INSTALLS += icons
+\ No newline at end of file
