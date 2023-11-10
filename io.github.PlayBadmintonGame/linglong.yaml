@@ -1,0 +1,22 @@
+package:
+  id: io.github.PlayBadmintonGame
+  name: PlayBadmintonGame
+  version: 1.0.0
+  kind: app
+  description: |
+    BadmintonGame.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/hooray1998/PlayBadmintonGame
+  commit: 38ee1b157e2b2fb98c36d0cec970cb668ae5ee5b
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
