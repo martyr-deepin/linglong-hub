@@ -1,0 +1,14 @@
+--- ../CMakeLists.txt	2023-11-07 15:38:17.511756000 +0800
++++ ../CMakeLists.txt	2023-11-07 17:41:21.115235331 +0800
+@@ -66,8 +66,10 @@
+ 
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnon-virtual-dtor -Woverloaded-virtual -Wall -Wextra")
+ 
++
+ set(SG_LIBDIR "${CMAKE_INSTALL_LIBDIR}/screengrab")
+-set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${SG_LIBDIR}")
++# set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${SG_LIBDIR}")
++set(CMAKE_INSTALL_RPATH "${SG_LIBDIR}")
+ message(STATUS "Library path: ${CMAKE_INSTALL_RPATH}")
+ 
+ # Although the names, LXQtTranslateTs and LXQtTranslateDesktop, they don't

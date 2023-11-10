@@ -1,0 +1,25 @@
+package:
+  id: io.github.screengrab
+  name: screengrab
+  version: 2.0.0
+  kind: app
+  description: |
+    Crossplatform tool for fast making screenshots.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: kwindowsystem/5.54.0
+  - id: lxqt-build-tools/0.8.0
+
+
+source:
+  kind: git
+  url: https://github.com/lxqt/screengrab.git
+  commit: 5aee4069558a76b5d383ced0200ccc14022ab3ff
+  patch: patches/fix-001.patch
+
+build:
+  kind: cmake
