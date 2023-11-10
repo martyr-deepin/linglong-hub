@@ -1,0 +1,20 @@
+package:
+  id: io.github.QtFlappyBird
+  name: QtFlappyBird
+  version: 0.0.1
+  kind: app
+  description: |
+    Flappybird written by Qt
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/giarld/QtFlappyBird.git
+  commit: 30c821152e7bacaf3a70c1f77ce04482b6fe75a3
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

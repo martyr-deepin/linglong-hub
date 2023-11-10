@@ -1,0 +1,46 @@
+From 26494064359e7b21952ef067ff92d7d92f17ff74 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Fri, 10 Nov 2023 11:12:45 +0800
+Subject: [install.patch_] install
+
+---
+ FlappyBird.desktop |  6 ++++++
+ FlappyBird.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 FlappyBird.desktop
+
+diff --git a/FlappyBird.desktop b/FlappyBird.desktop
+new file mode 100644
+index 0000000..db955bb
+--- /dev/null
++++ b/FlappyBird.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=FlappyBird
++Exec=FlappyBird
++Terminal=false
+\ No newline at end of file
+diff --git a/FlappyBird.pro b/FlappyBird.pro
+index aa65704..086d73a 100644
+--- a/FlappyBird.pro
++++ b/FlappyBird.pro
+@@ -37,3 +37,13 @@ FORMS    +=
+ 
+ RESOURCES += \
+     flappy.qrc
++
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = FlappyBird.desktop
++INSTALLS += unix_desktop
++}
+\ No newline at end of file
+-- 
+2.33.1
+
