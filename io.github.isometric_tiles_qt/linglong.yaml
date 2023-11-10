@@ -1,0 +1,20 @@
+package:
+  id: io.github.isometric_tiles_qt
+  name: isometric_tiles_qt
+  version: 0.0.1
+  kind: app
+  description: |
+    A simple application for creating isometric tiles. Written in Qt/C++. It based on this repository.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Przemekkkth/isometric_tiles_qt.git
+  commit: 9c443e2f53f5f45c8c38e396fede9a65461af11e
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
