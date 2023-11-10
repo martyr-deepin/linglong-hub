@@ -1,0 +1,20 @@
+package:
+  id: io.github.SimonGame_Qt-Cpp
+  name: SimonGame_Qt-Cpp
+  version: 0.0.1
+  kind: app
+  description: |
+    Simon is an electronic game of short-term memory skill invented by Ralph H. Baer and Howard J. Morrison. Game is created in Qt/C++.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Przemekkkth/SimonGame_Qt-Cpp.git
+  commit: d4f32dd085c37d36428ea95aba06024578e8c876
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
