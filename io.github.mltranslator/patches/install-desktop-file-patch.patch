@@ -1,0 +1,33 @@
+diff --git a/mltranslator.pro b/mltranslator.pro
+index 5290ff3..0da6a98 100644
+--- a/mltranslator.pro
++++ b/mltranslator.pro
+@@ -46,15 +46,16 @@ RESOURCES += \
+     themes.qrc
+ 
+ unix {
+-    INSTALLS += target data icon desktopfile
+-
+-    target.files = $$TARGET
+-    target.path = /usr/bin
+-    data.files = db
+-    data.path = /usr/share/mltranslator
+-    icon.files = misc/mltranslator.png
+-    icon.path = /usr/share/icons
+-    desktopfile.files = misc/mltranslator.desktop
+-    desktopfile.path = /usr/share/applications
++    desktop.path = $$PREFIX/share/applications
++    desktop.files += mltranslator.desktop
++    INSTALLS += desktop
++
++    target.path = $$PREFIX/bin
++    INSTALLS += target   
++
++    icons.path = $${PREFIX}/share/icons
++    icons.files = icons/mltranslator.png
++    INSTALLS += icons
++    
+     QMAKE_CXXFLAGS += -DVISRULED_DATADIR=$$data.path
+-}
++ }
+

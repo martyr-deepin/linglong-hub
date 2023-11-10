@@ -1,0 +1,12 @@
+diff --git a/mltranslator.desktop b/mltranslator.desktop
+new file mode 100644
+index 0000000..fac64dd
+--- /dev/null
++++ b/mltranslator.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=ML translator
++Exec=mltranslator %f
++Icon=mltranslator
+
