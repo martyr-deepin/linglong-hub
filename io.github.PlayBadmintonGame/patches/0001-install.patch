@@ -1,0 +1,49 @@
+From f63b225e521e3e8e1d7559286b58a2cc1de07ac3 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Fri, 10 Nov 2023 15:12:40 +0800
+Subject: [install.patch_] install
+
+---
+ PlayBadmintonGame.desktop |  7 +++++++
+ badminton.pro             | 13 +++++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 PlayBadmintonGame.desktop
+
+diff --git a/PlayBadmintonGame.desktop b/PlayBadmintonGame.desktop
+new file mode 100644
+index 0000000..05fd11a
+--- /dev/null
++++ b/PlayBadmintonGame.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=badminton
++GenericName=PlayBadmintonGame
++Hidden=false
++Name=PlayBadmintonGame
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+diff --git a/badminton.pro b/badminton.pro
+index ba4985c..e7cfd38 100755
+--- a/badminton.pro
++++ b/badminton.pro
+@@ -44,3 +44,16 @@ RESOURCES += \
+     other.qrc
+ 
+ RC_FILE = myapp.rc
++
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = PlayBadmintonGame.desktop
++INSTALLS += unix_desktop
++
++
++}
+-- 
+2.33.1
+
