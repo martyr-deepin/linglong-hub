@@ -1,0 +1,27 @@
+package:
+  id: io.github.mltranslator  
+  name: mltranslator
+  version: 0.0.1
+  kind: app
+  description: |
+    Apertium Malayalam ui.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: icu
+    version: 63.1.0
+    type: runtime
+
+source:
+  kind: git
+  url: "https://github.com/tachyons/mltranslator.git"
+  commit: 21b31054d4c5208a0a2fed21e3f431bfdb45e04a
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake
