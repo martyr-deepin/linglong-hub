@@ -1,0 +1,10 @@
+diff --git a/smilla-enlarger.desktop b/smilla-enlarger.desktop
+new file mode 100644
+index 0000000..d120788
+--- /dev/null
++++ b/smilla-enlarger.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=smilla-enlarger
++Exec=smilla-enlarger %f
