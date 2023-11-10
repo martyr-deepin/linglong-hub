@@ -1,0 +1,12 @@
+diff --git a/log2log.desktop b/log2log.desktop
+new file mode 100644
+index 0000000..690d7bc
+--- /dev/null
++++ b/log2log.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=log2log
++Exec=log2log %f
++Icon=log2log
+
