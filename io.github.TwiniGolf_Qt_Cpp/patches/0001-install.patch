@@ -1,0 +1,47 @@
+From 9c3f7296ccb258feaf88f4472ff52ba7bda045a9 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Fri, 10 Nov 2023 09:11:48 +0800
+Subject: [install.patch_] install
+
+---
+ TwiniGolfQt.desktop |  6 ++++++
+ TwiniGolfQt.pro     | 12 ++++++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 TwiniGolfQt.desktop
+
+diff --git a/TwiniGolfQt.desktop b/TwiniGolfQt.desktop
+new file mode 100644
+index 0000000..5714256
+--- /dev/null
++++ b/TwiniGolfQt.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=TwiniGolfQt
++Exec=TwiniGolfQt
++Terminal=fals
+\ No newline at end of file
+diff --git a/TwiniGolfQt.pro b/TwiniGolfQt.pro
+index eb11a5f..7cab4cb 100644
+--- a/TwiniGolfQt.pro
++++ b/TwiniGolfQt.pro
+@@ -39,3 +39,15 @@ HEADERS += \
+ 
+ RESOURCES += \
+     resource.qrc
++
++TARGET = TwiniGolfQt
++TEMPLATE = app
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = TwiniGolfQt.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+
