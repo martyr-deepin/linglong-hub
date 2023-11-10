@@ -1,0 +1,48 @@
+From 033e75d978dc370010af8612bf26a0cdcc40f987 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Fri, 10 Nov 2023 11:42:38 +0800
+Subject: [install.patch_] install
+
+---
+ MemoryPuzzle.pro     | 13 +++++++++++++
+ Memorypuzzle.desktop |  6 ++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 Memorypuzzle.desktop
+
+diff --git a/MemoryPuzzle.pro b/MemoryPuzzle.pro
+index 4e1a85b..4ef996c 100644
+--- a/MemoryPuzzle.pro
++++ b/MemoryPuzzle.pro
+@@ -13,3 +13,16 @@ HEADERS += \
+ 
+ RESOURCES += \
+     resource.qrc
++
++TARGET = MemoryPuzzle
++TEMPLATE = app
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = MemoryPuzzle.desktop
++INSTALLS += unix_desktop
++}
++
+diff --git a/Memorypuzzle.desktop b/Memorypuzzle.desktop
+new file mode 100644
+index 0000000..3117b2b
+--- /dev/null
++++ b/Memorypuzzle.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=MemoryPuzzle
++Exec=MemoryPuzzle
++Terminal=false
+\ No newline at end of file
+-- 
+2.33.1
+
