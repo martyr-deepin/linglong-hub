@@ -1,0 +1,45 @@
+From a818d92c992a75730c7eb74803cf3e5b75a0c63c Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Thu, 9 Nov 2023 09:13:37 +0800
+Subject: [install.patch_] install
+
+---
+ HTYFTP.desktop |  6 ++++++
+ HTYFTP.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 HTYFTP.desktop
+
+diff --git a/HTYFTP.desktop b/HTYFTP.desktop
+new file mode 100644
+index 0000000..7a0575b
+--- /dev/null
++++ b/HTYFTP.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=HTYFTP
++Exec=HTYFTP
++Terminal=false
+\ No newline at end of file
+diff --git a/HTYFTP.pro b/HTYFTP.pro
+index 8d5aa21..d9991b0 100644
+--- a/HTYFTP.pro
++++ b/HTYFTP.pro
+@@ -19,3 +19,13 @@ FORMS += \
+ 
+ RESOURCES += \
+     res.qrc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = HTYFTP.desktop
++INSTALLS += unix_desktop
++}
++
+-- 
+2.33.1
+
