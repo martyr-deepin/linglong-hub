@@ -1,0 +1,22 @@
+package:
+  id: io.github.phototonic
+  name: phototonic
+  version: 0.98.0
+  kind: app
+  description: |
+    Image Viewer and organizer.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/oferkv/phototonic.git
+  commit: c8e00746165e972a742e11923eb847eba11eb0b2
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake

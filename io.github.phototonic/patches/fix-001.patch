@@ -1,0 +1,18 @@
+--- ../phototonic.pro	2023-11-07 15:23:43.458377000 +0800
++++ ../phototonic.pro	2023-11-07 15:25:27.883381078 +0800
+@@ -8,12 +8,12 @@
+ SOURCES += dialogs.cpp main.cpp mainwindow.cpp thumbview.cpp imageview.cpp global.cpp
+ RESOURCES += phototonic.qrc
+ 
+-target.path = /usr/bin/
++target.path = $$PREFIX/bin/
+ 
+ icon.files = images/phototonic.png
+-icon.path = /usr/share/pixmaps
++icon.path = $$PREFIX/share/pixmaps
+ 
+ desktop.files = phototonic.desktop
+-desktop.path = /usr/share/applications
++desktop.path = $$PREFIX/share/applications
+ 
+ INSTALLS += target icon desktop
