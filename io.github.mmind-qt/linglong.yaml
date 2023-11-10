@@ -1,0 +1,22 @@
+package:
+  id: io.github.mmind-qt
+  name: mmind-qt
+  version: 3.1.0
+  kind: app
+  description: |
+    Guess number.    
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/hjicks/mmind-qt.git
+  commit: 2600e391832d96baf7768329bbee257d5c94abf1
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
