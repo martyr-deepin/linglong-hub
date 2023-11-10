@@ -1,0 +1,23 @@
+--- ../LEDStripDesigner.pro	2023-11-09 20:46:07.471038000 +0800
++++ ../LEDStripDesigner.pro	2023-11-09 20:49:32.783655198 +0800
+@@ -33,3 +33,20 @@
+ 
+ RESOURCES += \
+     src/res.qrc
++
++DESKTOP_FILE = ./LEDStripDesigner.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=LEDStripDesigner' >> $$DESKTOP_FILE")
++system("echo 'Comment=LEDStripDesigner, a tool.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$PREFIX/bin/LEDStripDesigner' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
