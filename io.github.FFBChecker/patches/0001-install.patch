@@ -1,0 +1,51 @@
+From 9cf982fac3ec8cd8a921cef7e9a970a528890e5f Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Fri, 10 Nov 2023 09:58:03 +0800
+Subject: [install.patch_] install
+
+---
+ CMakeLists.txt     | 9 +++++++++
+ FFBChecker.desktop | 6 ++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 FFBChecker.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 44e4877..027c104 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -76,6 +76,12 @@ if (UNIX)
+         linuxffbconstanteffect.cpp
+         linuxffbconditioneffect.cpp
+         )
++   
++    
++
++
++
++
+ endif()
+ 
+ if (SDL2_FOUND)
+@@ -128,3 +134,6 @@ if (SDL2_FOUND)
+         target_link_libraries(FFBChecker PRIVATE SDL2)
+     endif ()
+ endif()
++
++install(PROGRAMS build_dir/FFBChecker DESTINATION bin)
++install(PROGRAMS FFBChecker.desktop DESTINATION share/applications)
+diff --git a/FFBChecker.desktop b/FFBChecker.desktop
+new file mode 100644
+index 0000000..09dc681
+--- /dev/null
++++ b/FFBChecker.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=FFBChecker
++Exec=FFBChecker
++Terminal=false
+\ No newline at end of file
+-- 
+2.33.1
+
