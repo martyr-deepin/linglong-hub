@@ -1,0 +1,18 @@
+diff --git a/QtChess.pro b/QtChess.pro
+index 7b4ae64..c9a1afd 100644
+--- a/QtChess.pro
++++ b/QtChess.pro
+@@ -29,8 +29,13 @@ QML_DESIGNER_IMPORT_PATH =
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
++target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += QtChess.desktop
++INSTALLS += desktop
++
+ HEADERS += \
+     bishop.h \
+     board.h \
