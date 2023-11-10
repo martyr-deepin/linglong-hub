@@ -1,0 +1,47 @@
+From 0a60b42801e161ec0cb5384a32d53c9150101fd7 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Fri, 10 Nov 2023 09:40:45 +0800
+Subject: [install.patch_] install
+
+---
+ compareFiles.desktop | 6 ++++++
+ compareFiles.pro     | 9 ++++++++-
+ 2 files changed, 14 insertions(+), 1 deletion(-)
+ create mode 100644 compareFiles.desktop
+
+diff --git a/compareFiles.desktop b/compareFiles.desktop
+new file mode 100644
+index 0000000..a9f8cf4
+--- /dev/null
++++ b/compareFiles.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=compareFiles
++Exec=compareFiles
++Terminal=false
+\ No newline at end of file
+diff --git a/compareFiles.pro b/compareFiles.pro
+index 0a785c5..855cf6f 100644
+--- a/compareFiles.pro
++++ b/compareFiles.pro
+@@ -27,7 +27,14 @@ HEADERS += \
+ FORMS += \
+     comparefile.ui
+ 
++TARGET = compareFiles
++TEMPLATE = app
++
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $${PREFIX}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = compareFiles.desktop
++INSTALLS += unix_desktop
+-- 
+2.33.1
+
