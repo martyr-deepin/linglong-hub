@@ -1,0 +1,20 @@
+package:
+  id: io.github.Text-Editor-With-Qt
+  name: Text-Editor-With-Qt
+  version: 0.0.1
+  kind: app
+  description: |
+    The project aims to design a simple text editor that can perform basic text processing with some advanced features.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/aspxcor/Text-Editor-With-Qt.git
+  commit: 10b5168d3123fd50d4636933655318ee907f264a
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

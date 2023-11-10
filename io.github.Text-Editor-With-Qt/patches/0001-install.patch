@@ -1,0 +1,45 @@
+From 080b1e6f022880e7f1597bbc5acaeebb197ad61e Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Fri, 10 Nov 2023 10:12:18 +0800
+Subject: [install.patch_] install
+
+---
+ Editor.desktop |  6 ++++++
+ Editor.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 Editor.desktop
+
+diff --git a/Editor.desktop b/Editor.desktop
+new file mode 100644
+index 0000000..506592f
+--- /dev/null
++++ b/Editor.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=Editor
++Exec=Editor
++Terminal=false
+\ No newline at end of file
+diff --git a/Editor.pro b/Editor.pro
+index c8f5e7f..d49385a 100644
+--- a/Editor.pro
++++ b/Editor.pro
+@@ -48,3 +48,13 @@ RESOURCES += \
+     myresorces.qrc
+ 
+ RC_FILE += rsc/Editor.rc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = Editor.desktop
++INSTALLS += unix_desktop
++}
++
+-- 
+2.33.1
+
