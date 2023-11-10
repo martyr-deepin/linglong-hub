@@ -1,0 +1,22 @@
+diff --git a/BatchResize/BatchResize.pro b/BatchResize/BatchResize.pro
+index 9355c62..049834c 100644
+--- a/BatchResize/BatchResize.pro
++++ b/BatchResize/BatchResize.pro
+@@ -48,7 +48,16 @@ win32:RC_ICONS += icon.ico
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
++target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += BatchResize.desktop
++INSTALLS += desktop
++
++icons.path = $${PREFIX}/share/icons
++icons.files = icon.ico
++INSTALLS += icons
++
+ RESOURCES += \
+     resources.qrc
+

@@ -1,0 +1,12 @@
+diff --git a/BatchResize/BatchResize.desktop b/BatchResize/BatchResize.desktop
+new file mode 100644
+index 0000000..808ef9e
+--- /dev/null
++++ b/BatchResize/BatchResize.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=Batch Resize
++Exec=BatchResize %f
++Icon=icon
+

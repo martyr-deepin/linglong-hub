@@ -1,0 +1,27 @@
+package:
+  id: io.github.BatchResize
+  name: BatchResize
+  version: 0.0.1
+  kind: app
+  description: |
+    BatchResize is a front end for Image Magick to resize images as fast as possible with no overheads.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/pierre-db/BatchResize.git"
+  commit: 6651ab152a549c5ffef3e08e098af39fddaf9082
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd BatchResize
+      qmake -makefile ${conf_args} ${extra_args}
+
