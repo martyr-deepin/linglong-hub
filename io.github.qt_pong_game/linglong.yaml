@@ -1,0 +1,22 @@
+package:
+  id: io.github.qt_pong_game
+  name: qt_pong_game
+  version: 1.0.0
+  kind: app
+  description: |
+    This is a simple pong built with Qt and the C++ programming language.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/kandersonko/qt_pong_game.git
+  commit: e01eb827a7289e4c7a053fdeeb005b9709c7f958
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
