@@ -1,0 +1,23 @@
+package:
+  id: io.github.DotaCardDuel2
+  name: DotaCardDuel2
+  version: 1.0.0
+  kind: app
+  description: |
+    DotaCard.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/abc881858/DotaCardDuel2.git
+  commit: a130ebd1abd0128900135d99e0ee89e45e519a29
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
