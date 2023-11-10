@@ -1,0 +1,23 @@
+--- ../QtMineSweep.pro	2023-11-10 17:29:47.795997000 +0800
++++ ../QtMineSweep.pro	2023-11-10 17:34:58.536810659 +0800
+@@ -23,3 +23,20 @@
+ 
+ RESOURCES += \
+     resource.qrc
++
++DESKTOP_FILE = ./QtMineSweep.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=QtMineSweep' >> $$DESKTOP_FILE")
++system("echo 'Comment=QtMineSweep, a tool.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$PREFIX/bin/QtMineSweep' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
