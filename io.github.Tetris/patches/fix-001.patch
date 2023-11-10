@@ -1,0 +1,23 @@
+--- ../Tetris.pro	2023-11-10 19:32:20.114857000 +0800
++++ ../Tetris.pro	2023-11-10 19:37:13.791456496 +0800
+@@ -28,3 +28,20 @@
+     user.h
+ 
+ DISTFILES +=
++
++DESKTOP_FILE = ./Tetris.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=Tetris' >> $$DESKTOP_FILE")
++system("echo 'Comment=Tetris, a tool.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$PREFIX/bin/Tetris' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
