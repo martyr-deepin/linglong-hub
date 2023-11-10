@@ -1,0 +1,42 @@
+diff --git a/olam.desktop b/olam.desktop
+new file mode 100644
+index 0000000..c2b9462
+--- /dev/null
++++ b/olam.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=olam
++Exec=olam %f
++Icon=olam
+diff --git a/olam.pro b/olam.pro
+index 82f84f3..1a26cca 100644
+--- a/olam.pro
++++ b/olam.pro
+@@ -65,19 +65,16 @@ linux {
+   isEmpty(DATADIR) {
+     DATADIR = $$PREFIX/share
+   }
++    target.path = $$PREFIX/bin
+     INSTALLS += target data icon desktopfile
+-    target.files = $$TARGET
+-    target.path = $$BINDIR
+ 
+-    data.files = src/db
+-    data.path = $$DATADIR/olam/data
++    desktop.path = $$PREFIX/share/applications
++    desktop.files += olam.desktop
++    INSTALLS += desktop
+ 
+-
+-    icon.files = misc/olam.png
+-    icon.path = $$DATADIR/icons
+-
+-    desktopfile.files = misc/olam.desktop
+-    desktopfile.path = $$DATADIR/applications
++    icons.path = $${PREFIX}/share/icons
++    icons.files = snap/gui/olam.png
++    INSTALLS += icons
+ 
+ 
+     QMAKE_CXXFLAGS += -DVISRULED_DATADIR=$$data.path
