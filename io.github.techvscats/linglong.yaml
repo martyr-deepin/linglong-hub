@@ -1,0 +1,22 @@
+package:
+  id: io.github.techvscats
+  name: techvscats
+  version: 1.0.0
+  kind: app
+  description: |
+    Tech vs Cats is a Tower Defense game.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/PGSStas/techvscats.git
+  commit: 6e4c195620ccc15aa716120da1d33d21b267bc58
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
