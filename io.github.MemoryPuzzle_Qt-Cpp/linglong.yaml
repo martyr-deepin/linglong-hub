@@ -1,0 +1,20 @@
+package:
+  id: io.github.MemoryPuzzle_Qt-Cpp
+  name: MemoryPuzzle_Qt-Cpp
+  version: 0.0.1
+  kind: app
+  description: |
+    Simple memory game.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Przemekkkth/MemoryPuzzle_Qt-Cpp.git
+  commit: fbeb33ea39c4f78f5eaa6b3bd96cb29fe4c10e46
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
