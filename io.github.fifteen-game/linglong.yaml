@@ -1,0 +1,20 @@
+package:
+  id: io.github.fifteen-game
+  name: fifteen-game
+  version: 0.0.1
+  kind: app
+  description: |
+     Игра "Пятнашки" на Qt. Минимальная версия Qt 5.10
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/AleksandrRybin/fifteen-game.git
+  commit: dfb9b696590e05c2b2ec3888b363aa70119774e4
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
