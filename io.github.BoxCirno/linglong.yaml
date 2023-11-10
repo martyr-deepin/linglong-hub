@@ -1,0 +1,20 @@
+package:
+  id: io.github.BoxCirno
+  name: BoxCirno
+  version: 1.1.1
+  kind: app
+  description: |
+    26d8ee4b923e80df22a83519924bb1fe06c5d96d
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/rensilin/BoxCirno.git
+  commit: 26d8ee4b923e80df22a83519924bb1fe06c5d96d
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

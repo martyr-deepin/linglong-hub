@@ -1,0 +1,53 @@
+From b72dc5050890133c3318198e7f1aabe415abe500 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Fri, 10 Nov 2023 18:50:57 +0800
+Subject: [install.patch_] install
+
+---
+ BoxCirno.desktop |  6 ++++++
+ BoxCirno.pro     | 11 +++++++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 BoxCirno.desktop
+
+diff --git a/BoxCirno.desktop b/BoxCirno.desktop
+new file mode 100644
+index 0000000..68a00a6
+--- /dev/null
++++ b/BoxCirno.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=BoxCirno
++Exec=BoxCirno
++Terminal=false
+\ No newline at end of file
+diff --git a/BoxCirno.pro b/BoxCirno.pro
+index 300f5df..4a029b8 100644
+--- a/BoxCirno.pro
++++ b/BoxCirno.pro
+@@ -6,6 +6,8 @@
+ 
+ QT       += core gui
+ 
++TARGET =BoxCirno
++
+ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+ 
+ TEMPLATE = app
+@@ -26,3 +28,12 @@ RESOURCES += \
+     sourse/sourse.qrc
+ 
+ RC_ICONS = sourse/icon/cirno.ico
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = BoxCirno.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+
