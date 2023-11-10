@@ -1,0 +1,46 @@
+From ca96b8883fc0c668aff5671cb63521d439a74fdf Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Fri, 10 Nov 2023 15:26:42 +0800
+Subject: [install.patch_] install
+
+---
+ CandyCrush.desktop |  6 ++++++
+ CandyCrush.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 CandyCrush.desktop
+
+diff --git a/CandyCrush.desktop b/CandyCrush.desktop
+new file mode 100644
+index 0000000..df23a13
+--- /dev/null
++++ b/CandyCrush.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=CandyCrush
++Exec=CandyCrush
++Terminal=false
+\ No newline at end of file
+diff --git a/CandyCrush.pro b/CandyCrush.pro
+index 617e72e..df77bda 100644
+--- a/CandyCrush.pro
++++ b/CandyCrush.pro
+@@ -45,3 +45,13 @@ DISTFILES += \
+     README.md
+ 
+ RESOURCES += resource.qrc
++
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files =CandyCrush.desktop
++INSTALLS += unix_desktop
++}
+\ No newline at end of file
+-- 
+2.33.1
+
