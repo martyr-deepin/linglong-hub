@@ -1,0 +1,53 @@
+From 6f53a1acbc0445a2064009f3413794dfaaa0e1f9 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Fri, 10 Nov 2023 20:17:34 +0800
+Subject: [install.patch_] install
+
+---
+ mastermind-qt.pro | 13 +++++++++++--
+ mmind.desktop     |  7 +++++++
+ 2 files changed, 18 insertions(+), 2 deletions(-)
+ create mode 100644 mmind.desktop
+
+diff --git a/mastermind-qt.pro b/mastermind-qt.pro
+index d041b09..e2dee3d 100644
+--- a/mastermind-qt.pro
++++ b/mastermind-qt.pro
+@@ -19,8 +19,17 @@ FORMS += \
+     mainwindow.ui
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++unix:!android: target.path = $${PREFIX}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RC_ICONS = guess.ico
++
++
++unix: {
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = mmind.desktop
++INSTALLS += unix_desktop
++
++
++}
+\ No newline at end of file
+diff --git a/mmind.desktop b/mmind.desktop
+new file mode 100644
+index 0000000..d7cfe75
+--- /dev/null
++++ b/mmind.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=mastermind-qt
++GenericName=mastermind-qt
++Hidden=false
++Name=mastermind-qt
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+-- 
+2.33.1
+
