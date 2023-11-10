@@ -1,0 +1,49 @@
+From 60592168415167ccb5bdc57592ab55941adbde31 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Fri, 10 Nov 2023 15:45:02 +0800
+Subject: [install.patch_] install
+
+---
+ PlayBadmintonGame.desktop |  7 +++++++
+ duel_client.pro           | 12 ++++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 PlayBadmintonGame.desktop
+
+diff --git a/PlayBadmintonGame.desktop b/PlayBadmintonGame.desktop
+new file mode 100644
+index 0000000..d328e82
+--- /dev/null
++++ b/DotaCard.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=DotaCard
++GenericName=DotaCard
++Hidden=false
++Name=DotaCard
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+diff --git a/duel_client.pro b/duel_client.pro
+index 8ba7536..5e6f141 100644
+--- a/duel_client.pro
++++ b/duel_client.pro
+@@ -87,3 +87,15 @@ HEADERS += \
+ 
+ RESOURCES += \
+     res.qrc
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = DotaCard.desktop
++INSTALLS += unix_desktop
++
++
++}
+\ No newline at end of file
+-- 
+2.33.1
+
