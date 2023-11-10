@@ -1,0 +1,22 @@
+package:
+  id: io.github.Snakes
+  name: Snakes
+  version: 1.0.0
+  kind: app
+  description: |
+    Snakes：贪吃蛇.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Z-bin/Snakes.git
+  commit: c8cfe9ddf7084460267d515eb1e2cbb210d0c3da
+  patch: 
+    - patches/fix-001.patch
+    - patches/fix-002.patch
+
+build:
+  kind: qmake
