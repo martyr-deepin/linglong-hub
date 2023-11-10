@@ -1,0 +1,49 @@
+From 125b67472146349cb2793393a811942974bf157d Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Fri, 10 Nov 2023 19:07:09 +0800
+Subject: [install.patch_] install
+
+---
+ lesson4.desktop |  7 +++++++
+ lesson4.pro     | 13 +++++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 lesson4.desktop
+
+diff --git a/lesson4.desktop b/lesson4.desktop
+new file mode 100644
+index 0000000..8ffd2fd
+--- /dev/null
++++ b/lesson4.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=lesson4
++GenericName=15-puzzleQt
++Hidden=false
++Name=15-puzzleQt
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+diff --git a/lesson4.pro b/lesson4.pro
+index 2242449..ff6ea56 100644
+--- a/lesson4.pro
++++ b/lesson4.pro
+@@ -33,3 +33,16 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ HEADERS += \
+     gameboard.h \
+     gamecontroller.h
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = lesson4.desktop
++INSTALLS += unix_desktop
++
++
++}
+-- 
+2.33.1
+
