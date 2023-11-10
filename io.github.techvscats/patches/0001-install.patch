@@ -1,0 +1,49 @@
+From e7906f2ac66011b3519b1c20c82582ba322a8f30 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Fri, 10 Nov 2023 10:20:02 +0800
+Subject: [install.patch_] install
+
+---
+ techvscats.desktop |  7 +++++++
+ techvscats.pro     | 12 ++++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 techvscats.desktop
+
+diff --git a/techvscats.desktop b/techvscats.desktop
+new file mode 100644
+index 0000000..82f0717
+--- /dev/null
++++ b/techvscats.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=techvscats
++GenericName=techvscats
++Hidden=false
++Name=techvscats
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+diff --git a/techvscats.pro b/techvscats.pro
+index a6cc77c..5b1b6b3 100644
+--- a/techvscats.pro
++++ b/techvscats.pro
+@@ -108,3 +108,15 @@ DISTFILES += \
+     android/res/values/libs.xml
+ 
+ ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = techvscats.desktop
++INSTALLS += unix_desktop
++
++
++}
+\ No newline at end of file
+-- 
+2.33.1
+
