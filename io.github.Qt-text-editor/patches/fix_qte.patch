@@ -1,0 +1,23 @@
+--- ../CMakeLists.txt	2023-11-10 20:41:44.021081000 +0800
++++ ../CMakeLists.txt	2023-11-10 20:39:51.310259000 +0800
+@@ -23,8 +23,20 @@
+ 
+ add_executable(editor ${SOURCE_FILES} resources.qrc)
+ 
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=editor
++Exec=editor
++Icon=/source/icon
++Categories=Utility;
++")
+ 
++file(WRITE ${CMAKE_BINARY_DIR}/editor.desktop "${DESKTOP_FILE_CONTENT}")
+ 
++install(PROGRAMS ${CMAKE_BINARY_DIR}/editor.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++
++install(TARGETS editor DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+ find_package( Qt5Core REQUIRED )
+ find_package( Qt5Widgets REQUIRED )
+ find_package( Qt5Gui REQUIRED )
