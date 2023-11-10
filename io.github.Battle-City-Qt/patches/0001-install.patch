@@ -1,0 +1,52 @@
+From 7434df09564568488acb82e8643c9c2d4f7b21fe Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Fri, 10 Nov 2023 15:02:56 +0800
+Subject: [install.patch_] install
+
+---
+ TanksGame.desktop |  6 ++++++
+ TanksGame.pro     | 12 +++++++++++-
+ 2 files changed, 17 insertions(+), 1 deletion(-)
+ create mode 100644 TanksGame.desktop
+
+diff --git a/TanksGame.desktop b/TanksGame.desktop
+new file mode 100644
+index 0000000..0f8ba81
+--- /dev/null
++++ b/TanksGame.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=TanksGame
++Exec=TanksGame
++Terminal=false
+\ No newline at end of file
+diff --git a/TanksGame.pro b/TanksGame.pro
+index 82fe0dd..d098217 100644
+--- a/TanksGame.pro
++++ b/TanksGame.pro
+@@ -1,5 +1,5 @@
+ TEMPLATE = app
+-
++TARGET = TanksGame
+ QT += qml quick
+ CONFIG += c++11
+ 
+@@ -60,3 +60,13 @@ HEADERS += \
+     factories/tankfactory.h \
+     entities/explosion.h \
+     factories/explosionfactory.h
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = TanksGame.desktop
++INSTALLS += unix_desktop
++}
++
+-- 
+2.33.1
+

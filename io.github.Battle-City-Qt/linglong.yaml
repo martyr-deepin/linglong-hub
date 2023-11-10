@@ -1,0 +1,20 @@
+package:
+  id: io.github.Battle-City-Qt
+  name: Battle-City-Qt
+  version: 0.0.1
+  kind: app
+  description: |
+     This is the Battle City game clone.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/PLUkraine/Battle-City-Qt.git
+  commit: 65eafe10cd86a79474a2dd1a2b3ea7d94450d59a
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
