@@ -1,0 +1,27 @@
+--- ../QtLianliankan.pro	2023-11-10 17:57:26.487106000 +0800
++++ ../QtLianliankan.pro	2023-11-10 18:05:18.931927799 +0800
+@@ -23,3 +23,24 @@
+ 
+ RESOURCES += \
+     res.qrc
++
++DESKTOP_FILE = ./QtLianliankan.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=QtLianliankan' >> $$DESKTOP_FILE")
++system("echo 'Comment=QtLianliankan, a tool.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$PREFIX/bin/QtLianliankan' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++folder.files += ./res/*
++folder.path = $$PREFIX/share/applications
++INSTALLS += folder
