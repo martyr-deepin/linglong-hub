@@ -1,0 +1,23 @@
+--- ../MySnake.pro	2023-11-08 22:28:53.505523000 +0800
++++ ../MySnake.pro	2023-11-08 22:30:54.617567381 +0800
+@@ -13,3 +13,20 @@
+ 
+ HEADERS += \
+     snake.h
++
++
++DESKTOP_FILE = ./MySnake.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=MySnake' >> $$DESKTOP_FILE")
++system("echo 'Comment=MySnake, a tool for calculate.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$PREFIX/bin/MySnake' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
