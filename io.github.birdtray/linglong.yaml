@@ -1,0 +1,19 @@
+package:
+  id: io.github.birdtray
+  name: birdtray
+  version: 1.11.4
+  kind: app
+  description: |
+    Birdtray is a free system tray notification for new mail for Thunderbird.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/gyunaev/birdtray.git"
+  commit: 62e17bce9b777895ab7d23497351e2409aa37a34
+
+build:
+  kind: cmake
