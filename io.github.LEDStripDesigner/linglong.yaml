@@ -1,0 +1,26 @@
+package:
+  id: io.github.LEDStripDesigner
+  name: LEDStripDesigner
+  version: 1.0.0
+  kind: app
+  description: |
+    A software to design a LED Strip with animations for an AVR Arduino ATMega328P.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtserialport
+    version: 5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/Tropby/LEDStripDesigner.git
+  commit: 0477c398517e707c06d503cf9c82fe185d012178
+  patch: patches/fix-001.patch
+
+build:
+  kind: qmake
+
