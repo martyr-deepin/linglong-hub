@@ -1,0 +1,45 @@
+From 077d17e2870aeeb1934ae5cedde33771e4b4d7f0 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Sat, 11 Nov 2023 16:46:01 +0800
+Subject: [install.patch_] install
+
+---
+ sanguosha.desktop |  6 ++++++
+ sanguosha.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 sanguosha.desktop
+
+diff --git a/sanguosha.desktop b/sanguosha.desktop
+new file mode 100644
+index 0000000..8e7dc21
+--- /dev/null
++++ b/sanguosha.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=sanguosha
++Exec=sanguosha
++Terminal=false
+\ No newline at end of file
+diff --git a/sanguosha.pro b/sanguosha.pro
+index 09daaf4..2f6d067 100755
+--- a/sanguosha.pro
++++ b/sanguosha.pro
+@@ -171,3 +171,13 @@ SOURCES += src/Axe.cpp \
+            src/Zone.cpp
+ RESOURCES += \
+     image.qrc
++
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = sanguosha.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+
