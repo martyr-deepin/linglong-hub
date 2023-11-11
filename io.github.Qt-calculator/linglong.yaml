@@ -1,0 +1,30 @@
+package:
+  id: io.github.Qt-calculator
+  name: Qt-calculator
+  version: 1.0.0
+  kind: app
+  description: |
+    A simple GUI calculator🧮 built using C++.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/Arsenic-ATG/Qt-calculator.git
+  commit: 92617a4fd49e6b4b5a5ec1719acb6c899acbbb44
+  patch: 
+    - patches/fix-001.patch
+    - patches/fix-002.patch
+    - patches/fix-003.patch
+    - patches/fix-004.patch
+
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      mkdir build_dir && cd build_dir
+      qmake -makefile ${conf_args} ${extra_args} ../Calculator
