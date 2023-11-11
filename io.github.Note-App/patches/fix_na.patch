@@ -1,0 +1,21 @@
+--- ../NoteApp.pro	2023-11-11 12:06:24.584790000 +0800
++++ ../NoteApp.pro	2023-11-11 12:04:58.729954000 +0800
+@@ -35,3 +35,18 @@
+ 
+ RESOURCES += \
+     resources.qrc
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++
++DESKTOP_FILE = ./NoteApp.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=NoteApp' >> $$DESKTOP_FILE")
++system("echo 'Comment=NoteApp.' >> $$DESKTOP_FILE")
++system("echo 'Exec=NoteApp' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
