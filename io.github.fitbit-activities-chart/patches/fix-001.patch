@@ -1,0 +1,25 @@
+--- ../FitbitActivitiesChart.pro	2023-11-09 17:06:28.319560000 +0800
++++ ../FitbitActivitiesChart.pro	2023-11-09 17:13:52.081143811 +0800
+@@ -18,3 +18,22 @@
+ 
+ RESOURCES += \
+     resource.qrc
++
++
++DESKTOP_FILE = ./FitbitActivitiesChart.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=FitbitActivitiesChart' >> $$DESKTOP_FILE")
++system("echo 'Comment=FitbitActivitiesChart, a tool.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$PREFIX/bin/FitbitActivitiesChart' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
