@@ -1,0 +1,21 @@
+--- ../CMakeLists.txt	2023-11-11 18:58:12.241164000 +0800
++++ ../CMakeLists.txt	2023-11-11 18:56:12.638029000 +0800
+@@ -29,7 +29,18 @@
+ if (MSVC)
+     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4")
+ endif ()
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=QFlappyBird
++Exec=QFlappyBird
++Categories=Utility;
++")
+ 
++file(WRITE ${CMAKE_BINARY_DIR}/QFlappyBird.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/QFlappyBird.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++
++install(TARGETS QFlappyBird DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+ include_directories(${QFlappyBird_SOURCE_DIR}/include)
+ find_package(Qt${QT_VERSION} COMPONENTS ${REQUIRED_LIBS} REQUIRED)
+ target_link_libraries(${PROJECT_NAME} ${REQUIRED_LIBS_QUALIFIED})

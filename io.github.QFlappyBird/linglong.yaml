@@ -1,0 +1,23 @@
+package:
+  id: io.github.QFlappyBird
+  name: QFlappyBird
+  version: 0.0.1
+  kind: app
+  description: |
+    Clone of flappy bird game made with qt widgets
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:	
+  kind: git
+  url: https://github.com/Ola-jed/QFlappyBird.git
+  commit: ef2a657367a5ca2e494727f7e95e80608a09be7c
+  patch: patches/fix_qfb.patch
+
+build:
+  kind: cmake
+
+
