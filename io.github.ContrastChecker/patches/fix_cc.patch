@@ -1,0 +1,19 @@
+--- ../CMakeLists.txt	2023-11-11 18:16:28.402419000 +0800
++++ ../CMakeLists.txt	2023-11-11 18:16:14.706543000 +0800
+@@ -71,3 +71,16 @@
+ if(QT_VERSION_MAJOR EQUAL 6)
+     qt_finalize_executable(ContrastChecker)
+ endif()
++
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=ContrastChecker
++Exec=ContrastChecker
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/ContrastChecker.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/ContrastChecker.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++
++install(TARGETS ContrastChecker DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
