@@ -1,0 +1,21 @@
+package:
+  id: io.github.ChatAPP
+  name: ChatAPP
+  version: 0.0.1
+  kind: app
+  description: |
+    GUI TCP Chat client software written in C++ with Qt framework.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0 
+
+source:
+  kind: git
+  url: https://github.com/NeumanShowcase/ChatAPP.git
+  commit: c1e0559a9d838ba98313936a2ef05bf5d3110b9c
+  patch: patches/fix_cmu.patch
+build:
+  kind: qmake
+
+
