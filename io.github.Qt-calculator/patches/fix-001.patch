@@ -1,0 +1,10 @@
+--- ../Calculator/equals_handler.h	2023-11-10 19:43:53.564287000 +0800
++++ ../Calculator/equals_handler.h	2023-11-10 19:49:03.540937463 +0800
+@@ -1,6 +1,7 @@
+ #ifndef EQUALS_HANDLER_H
+ #define EQUALS_HANDLER_H
+ #include<iostream>
++#include<cmath>
+ #include "ui_mainwindow.h"
+ 
+ class Equals_handler
