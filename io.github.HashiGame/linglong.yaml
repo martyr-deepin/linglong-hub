@@ -1,0 +1,24 @@
+package:
+  id: io.github.HashiGame
+  name: HashiGame
+  version: 0.0.1
+  kind: app
+  description: |
+    This is a version of the japanese game "Hashiwokakero" where you connect bridges.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/NeumanShowcase/HashiGame.git
+  commit: 6ba95ed399323b021080bc113a0f425e738f2cf2
+  patch: patches/fix_ho.patch
+build:
+  kind: qmake
+  manual :
+    configure: |
+      qmake -makefile ${conf_args} ${extra_args} ./hashiOktober.pro
+
+
