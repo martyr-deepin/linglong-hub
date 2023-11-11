@@ -1,0 +1,29 @@
+--- ../Speedtest.pro	2023-11-09 20:22:34.698687000 +0800
++++ ../Speedtest.pro	2023-11-09 20:31:18.208339885 +0800
+@@ -24,7 +24,7 @@
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $${PREFIX}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+@@ -33,3 +33,17 @@
+ RC_FILE = icon.rc
+ 
+ OTHER_FILES = icon.rc
++
++DESKTOP_FILE = ./Speedtest.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=0.9.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=Speedtest' >> $$DESKTOP_FILE")
++system("echo 'Comment=Speedtest, a tool.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$PREFIX/bin/Speedtest' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
