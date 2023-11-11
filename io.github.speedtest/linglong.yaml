@@ -1,0 +1,27 @@
+package:
+  id: io.github.speedtest
+  name: speedtest
+  version: 0.9.0
+  kind: app
+  description: |
+    Small program using QTCPSocket to do a speedtest with tele2 speedtest api.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtcharts
+    version: 5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/Tropby/speedtest.git
+  commit: 1f367c41a4221919b9b55aca4e6ccef1c5b49f3a
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+
