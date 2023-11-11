@@ -1,0 +1,23 @@
+package:
+  id: io.github.socket-spy
+  name: socket-spy
+  version: 1.0.0
+  kind: app
+  description: |
+    A Graphical desktop app to spy sockets.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/realbardia/socket-spy.git
+  commit: 0ff89df017a86504659452cde438b212e63d5076
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+

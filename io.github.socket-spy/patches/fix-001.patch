@@ -1,0 +1,24 @@
+--- ../SocketSpy.pro	2023-11-09 14:12:22.867091000 +0800
++++ ../SocketSpy.pro	2023-11-09 14:23:25.958053180 +0800
+@@ -24,3 +24,21 @@
+ 
+ RESOURCES += \
+     resource.qrc
++
++
++DESKTOP_FILE = ./SocketSpy.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=SocketSpy' >> $$DESKTOP_FILE")
++system("echo 'Comment=SocketSpy, a tool for calculate.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$PREFIX/bin/SocketSpy' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++qnx: target.path = /tmp/$${TARGET}/bin
++else: unix:!android: target.path = $${PREFIX}/bin
++!isEmpty(target.path): INSTALLS += target
