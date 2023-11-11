@@ -1,0 +1,22 @@
+package:
+  id: io.github.simsu
+  name: simsu
+  version: 1.3.9
+  kind: app
+  description: |
+    Simsu is a basic Sudoku game. You can switch between filling in notes(pencil mode), or filling in answers (pen mode).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/gottcode/simsu.git
+  commit: eaf92ec63e996090688f4e55e3055e6db0915389
+
+
+build:
+  kind: qmake
+
