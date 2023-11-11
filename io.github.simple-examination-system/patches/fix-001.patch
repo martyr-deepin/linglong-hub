@@ -1,0 +1,26 @@
+--- ../simple-examination-system.pro	2023-11-08 21:34:48.446427000 +0800
++++ ../simple-examination-system.pro	2023-11-08 21:45:26.230760241 +0800
+@@ -38,7 +38,22 @@
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++
++DESKTOP_FILE = ./simple-examination-system.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=simple-examination-system' >> $$DESKTOP_FILE")
++system("echo 'Comment=simple-examination-system, a tool.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$PREFIX/bin/simple-examination-system' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++
+ DISTFILES +=
