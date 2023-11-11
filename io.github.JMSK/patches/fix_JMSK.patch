@@ -1,0 +1,25 @@
+--- ../JMSK/JMSK.pro	2023-11-11 11:32:39.004119000 +0800
++++ ../JMSK/JMSK.pro	2023-11-11 11:31:11.212236000 +0800
+@@ -87,6 +87,22 @@
+ 
+ RESOURCES += \
+     jmsk.qrc
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++
++DESKTOP_FILE = ./JMSK.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=JMSK' >> $$DESKTOP_FILE")
++system("echo 'Comment=JMSK.' >> $$DESKTOP_FILE")
++system("echo 'Exec=JMSK' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
+ 
+ DISTFILES += \
+     LICENSE \
