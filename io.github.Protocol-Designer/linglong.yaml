@@ -1,0 +1,22 @@
+package:
+  id: io.github.Protocol-Designer
+  name: Protocol-Designer
+  version: 0.0.1
+  kind: app
+  description: |
+    simple Protocol Designer.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/samiavasil/Protocol-Designer.git
+  commit: 543ffe350910fb747397c605c7382f5994f6fe8c
+  patch: patches/fix_pd.patch
+build:
+  kind: qmake
+
+
