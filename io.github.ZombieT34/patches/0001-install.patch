@@ -1,0 +1,52 @@
+From cf442b1b6d929c2e91602455ce61da45f7ded8f5 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Sat, 11 Nov 2023 20:51:25 +0800
+Subject: [install.patch_] install
+
+---
+ ZombieT34.desktop |  6 ++++++
+ ZombieT34.pro     | 12 +++++++++++-
+ 2 files changed, 17 insertions(+), 1 deletion(-)
+ create mode 100644 ZombieT34.desktop
+
+diff --git a/ZombieT34.desktop b/ZombieT34.desktop
+new file mode 100644
+index 0000000..702a2f5
+--- /dev/null
++++ b/ZombieT34.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=ZombieT34
++Exec=ZombieT34
++Terminal=false
+\ No newline at end of file
+diff --git a/ZombieT34.pro b/ZombieT34.pro
+index bbbe6cc..20bea52 100644
+--- a/ZombieT34.pro
++++ b/ZombieT34.pro
+@@ -1,5 +1,5 @@
+ TEMPLATE = app
+-
++TARGET = ZombieT34
+ QT += qml quick widgets
+ 
+ SOURCES += main.cpp \
+@@ -20,3 +20,13 @@ DISTFILES += \
+ 
+ HEADERS += \
+     positionclass.h
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = ZombieT34.desktop
++INSTALLS += unix_desktop
++}
++
+-- 
+2.33.1
+

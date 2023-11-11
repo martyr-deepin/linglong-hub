@@ -1,0 +1,20 @@
+package:
+  id: io.github.ZombieT34
+  name: ZombieT34
+  version: 0.0.1
+  kind: app
+  description: |
+    It is a little game I wrote in C++ and QML in QT Creator 4.9.1 based on Qt 5.12.3. All graphics are from OpenGameArt.Org. Tank: 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/bandytaczasu/ZombieT34.git
+  commit: 3ee64c9436ddd24c460c28aeded646b92bc2f5ac
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
