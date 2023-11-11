@@ -1,0 +1,21 @@
+--- ../blue-glow.pro	2023-11-11 09:49:46.645337000 +0800
++++ ../blue-glow.pro	2023-11-11 09:47:28.417741000 +0800
+@@ -10,3 +10,18 @@
+ HEADERS += SettingsManager.hpp Backend.hpp GithubAPI.hpp
+ 
+ RESOURCES += resources/resources.qrc qml/qml.qrc
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++
++DESKTOP_FILE = ./BlueGlow.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=BlueGlow' >> $$DESKTOP_FILE")
++system("echo 'Comment=BlueGlow.' >> $$DESKTOP_FILE")
++system("echo 'Exec=BlueGlow' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop

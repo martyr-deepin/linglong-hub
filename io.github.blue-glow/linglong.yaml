@@ -1,0 +1,19 @@
+package:
+  id: io.github.blue-glow
+  name: blue-glow
+  version: 0.0.1
+  kind: app
+  description: |
+    A very simple system tray application which glows in blue when you have an unread github notification.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/antony-jr/blue-glow.git
+  commit: ad96b3864c2ccf010964e5e3c55a0daa5e7446f9
+  patch: patches/fix_bg.patch
+build:
+  kind: qmake
