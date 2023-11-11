@@ -1,0 +1,21 @@
+package:
+  id: io.github.QtToDoList
+  name: QtToDoList
+  version: 0.0.1
+  kind: app
+  description: |
+    A To Do list app made using C++/Qt
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/rohanrajpal/QtToDoList.git
+  commit: 5df2dcc1cc9c2dca622cdddaa8db48514afd6928
+  patch: patches/fix_tl.patch
+build:
+  kind: qmake
+
+
