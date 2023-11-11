@@ -1,0 +1,21 @@
+--- ../MySimpleAlarm.pro	2023-11-11 17:12:02.499070000 +0800
++++ ../MySimpleAlarm.pro	2023-11-11 17:16:54.276087000 +0800
+@@ -26,3 +26,18 @@
+ FORMS    += mainwindow.ui \
+     snooze.ui
+ CONFIG += precompile_header
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++
++DESKTOP_FILE = ./mysimplealarm.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=mysimplealarm' >> $$DESKTOP_FILE")
++system("echo 'Comment=mysimplealarm.' >> $$DESKTOP_FILE")
++system("echo 'Exec=mysimplealarm' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop

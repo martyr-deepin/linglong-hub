@@ -1,0 +1,21 @@
+package:
+  id: io.github.QT-Alarm-Clock-Application
+  name: QT-Alarm-Clock-Application
+  version: 0.0.1
+  kind: app
+  description: |
+    alarm clock application using C and C++
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/MSSugandini/QT-Alarm-Clock-Application.git
+  commit: 99c8c0a696d995db6d3bc0cebf8a0f555a6d9858
+  patch: patches/fix_msa.patch
+build:
+  kind: qmake
+
+
