@@ -1,0 +1,21 @@
+package:
+  id: io.github.QImageViewer
+  name: QImageViewer
+  version: 1.2.0
+  kind: app
+  description: |
+    An image viewer written in C++ with Qt
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Ola-jed/QImageViewer.git
+  commit: 16bcefbecb9c5f32433b17e2c8721e3440eb170f
+  patch: patches/fix_qiv.patch
+build:
+  kind: cmake
+
+
