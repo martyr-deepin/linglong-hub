@@ -1,0 +1,29 @@
+--- ../sudoku/sudoku.pro	2023-11-10 20:16:12.812738000 +0800
++++ ../sudoku/sudoku.pro	2023-11-20 22:00:12.507727503 +0800
+@@ -25,3 +25,26 @@
+ 
+ RESOURCES += \
+     res.qrc
++
++
++DESKTOP_FILE = ./sudoku.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=sudoku' >> $$DESKTOP_FILE")
++system("echo 'Comment=sudoku, a tool.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$PREFIX/bin/sudoku' >> $$DESKTOP_FILE")
++system("echo 'Icon=sudoku' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icon.files = $$PWD/sudoku/sudoku.png
++icon.path = $$PREFIX/share/icons/sudoku/
++INSTALLS += icon
