@@ -1,0 +1,26 @@
+--- ../todo-list2.pro	2023-11-11 17:33:16.203135000 +0800
++++ ../todo-list2.pro	2023-11-11 17:29:40.967897000 +0800
+@@ -27,9 +27,22 @@
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ HEADERS += \
+     todomodel.h \
+     todolist.h
++DESKTOP_FILE = ./todo-list2.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=todo-list2' >> $$DESKTOP_FILE")
++system("echo 'Comment=todo-list2.' >> $$DESKTOP_FILE")
++system("echo 'Exec=todo-list2' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
