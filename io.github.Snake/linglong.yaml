@@ -1,0 +1,22 @@
+package:
+  id: io.github.Snake
+  name: Snake
+  version: 1.0.0
+  kind: app
+  description: |
+    A snake game written in c++ with the qt framework
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Ola-jed/Snake.git
+  commit: b9b544b71cb91963239018844e0dd68aac15a46b
+  patch: patches/fix_Snake.patch
+
+build:
+  kind: cmake
+
+
