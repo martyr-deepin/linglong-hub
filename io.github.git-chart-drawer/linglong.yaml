@@ -1,0 +1,24 @@
+package:
+  id: io.github.git-chart-drawer
+  name: git-chart-drawer
+  version: 1.0.0
+  kind: app
+  description: |
+    Draw charts from your Git repository using Qt and QtCharts.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtcharts
+    version: 5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/realbardia/git-chart-drawer.git
+  commit: 14c5d911148e4dc3116448b091d3f728fe663274
+
+build:
+  kind: qmake
