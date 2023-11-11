@@ -1,0 +1,22 @@
+package:
+  id: io.github.cute-light-text-previewer
+  name: cute-light-text-previewer
+  version: 2.2.0
+  kind: app
+  description: |
+    A cross-platform application that opens and translates large text files instantly.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/enjoysoftware/cute-light-text-previewer.git
+  commit: f776d46488db667c9aada06129040c0e3221e5fe
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake

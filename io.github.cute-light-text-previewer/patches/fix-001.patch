@@ -1,0 +1,21 @@
+--- ../cute-light-text-previewer.pro	2023-11-09 19:17:58.396574000 +0800
++++ ../cute-light-text-previewer.pro	2023-11-09 19:28:59.974655740 +0800
+@@ -8,7 +8,7 @@
+ # any Qt feature that has been marked deprecated (the exact warnings
+ # depend on your compiler). Please consult the documentation of the
+ # deprecated API in order to know how to port your code away from it.
+-DEFINES += QT_DEPRECATED_WARNINGS WITH_DARKSTYLE
++DEFINES += QT_DEPRECATED_WARNINGS #WITH_DARKSTYLE
+ 
+ # You can also make your code fail to compile if it uses deprecated APIs.
+ # In order to do so, uncomment the following line.
+@@ -38,8 +38,7 @@
+ RESOURCES += \
+     files.qrc \
+     icons.qrc \
+-    theme.qrc \
+-    translations.qrc
++    translations.qrc  # theme.qrc \
+ TRANSLATIONS = \
+     translations/text-previewer_ja_JP.ts
+ #LUPDATE = $$[QT_INSTALL_BINS]/lupdate -locations absolute -no-obsolete
