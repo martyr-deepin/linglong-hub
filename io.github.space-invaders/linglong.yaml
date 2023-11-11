@@ -1,0 +1,24 @@
+package:
+  id:  io.github.space-invaders
+  name: space-invaders
+  version: 1.0.0
+  kind: app
+  description: |
+    Simple gui game of Space Invaders written with the Qt framework.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+
+source:
+  kind: git
+  url: https://github.com/davjd/space-invaders.git
+  commit: 875eebe10eaef908fa5cc621262f93e438f12c0e
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      

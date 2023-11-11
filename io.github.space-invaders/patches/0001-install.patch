@@ -1,0 +1,50 @@
+From fb1be727d8a506832d68598782fc80d9b5f02323 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Sat, 11 Nov 2023 14:39:52 +0800
+Subject: [install.patch_] install
+
+---
+ AlienInvaders.pro | 14 ++++++++++++++
+ space.desktop     |  7 +++++++
+ 2 files changed, 21 insertions(+)
+ create mode 100644 space.desktop
+
+diff --git a/AlienInvaders.pro b/AlienInvaders.pro
+index 1653a6c..f34d472 100644
+--- a/AlienInvaders.pro
++++ b/AlienInvaders.pro
+@@ -47,3 +47,17 @@ HEADERS  += \
+ 
+ RESOURCES += \
+     res.qrc
++
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = space.desktop
++INSTALLS += unix_desktop
++
++
++}
++
+diff --git a/space.desktop b/space.desktop
+new file mode 100644
+index 0000000..abb9c78
+--- /dev/null
++++ b/space.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=AlienInvaders
++GenericName=AlienInvaders
++Hidden=false
++Name=AlienInvaders
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+-- 
+2.33.1
+
