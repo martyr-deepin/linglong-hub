@@ -1,0 +1,22 @@
+package:
+  id: io.github.QSystemInfo
+  name: QSystemInfo
+  version: 1.0.0
+  kind: app
+  description: |
+    A simple system information tool
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Ola-jed/QSystemInfo.git
+  commit: 374466b19fa049059e1855d9783531f32910a801
+  patch: patches/fix_qsi.patch
+
+build:
+  kind: cmake
+
+
