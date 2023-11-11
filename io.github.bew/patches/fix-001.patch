@@ -1,0 +1,29 @@
+--- ../bew.pro	2023-11-09 14:36:15.396999000 +0800
++++ ../bew.pro	2023-11-09 14:41:03.797566683 +0800
+@@ -15,7 +15,7 @@
+     bewwebview.h
+ 
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /usr/bin
++else: unix:!android: target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ FORMS += \
+@@ -23,3 +23,17 @@
+ 
+ RESOURCES += \
+     resource.qrc
++
++DESKTOP_FILE = ./bew.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=bew' >> $$DESKTOP_FILE")
++system("echo 'Comment=bew, a tool.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$PREFIX/bin/bew' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
