@@ -1,0 +1,47 @@
+From 1106f486bc4674333b72ebb7493f273bebc72d25 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Sat, 11 Nov 2023 15:07:56 +0800
+Subject: [install.patch_] install
+
+---
+ Daedalus.desktop |  7 +++++++
+ Daedalus.pro     | 10 ++++++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 Daedalus.desktop
+
+diff --git a/Daedalus.desktop b/Daedalus.desktop
+new file mode 100644
+index 0000000..b5bef0e
+--- /dev/null
++++ b/Daedalus.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=Daedalus
++GenericName=Daedalus
++Hidden=false
++Name=Daedalus
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+diff --git a/Daedalus.pro b/Daedalus.pro
+index 279a06f..ceaef52 100644
+--- a/Daedalus.pro
++++ b/Daedalus.pro
+@@ -55,4 +55,14 @@ RESOURCES += \
+ STATECHARTS += \
+     CellStates.scxml
+ 
++unix: {
+ 
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = Daedalus.desktop
++INSTALLS += unix_desktop
++
++}
+-- 
+2.33.1
+
