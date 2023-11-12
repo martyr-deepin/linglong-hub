@@ -1,0 +1,56 @@
+From f5b6e76de5f24000026b083142391d17a8e2068b Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Sun, 12 Nov 2023 12:52:48 +0800
+Subject: [install.patch_] install
+
+---
+ minesweeper.desktop |  6 ++++++
+ minesweeper.pro     | 10 ++++++++--
+ 2 files changed, 14 insertions(+), 2 deletions(-)
+ create mode 100644 minesweeper.desktop
+
+diff --git a/minesweeper.desktop b/minesweeper.desktop
+new file mode 100644
+index 0000000..fbe098f
+--- /dev/null
++++ b/minesweeper.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=minesweeper
++Exec=minesweeper
++Terminal=false
+\ No newline at end of file
+diff --git a/minesweeper.pro b/minesweeper.pro
+index 8ad797b..14ccbf2 100644
+--- a/minesweeper.pro
++++ b/minesweeper.pro
+@@ -14,6 +14,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
+ # In order to do so, uncomment the following line.
+ # You can also select to disable deprecated APIs only up to a certain version of Qt.
+ #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
++TARGET = minesweeper
++TEMPLATE = app
+ 
+ SOURCES += \
+     MyHeader.cpp \
+@@ -31,9 +33,13 @@ TRANSLATIONS += \
+     minesweeper_hu_HU.ts
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++qnx: target.path =  $${PREFIX}/bin
++else: unix:!android: target.path = $${PREFIX}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     image.qrc
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = minesweeper.desktop
++INSTALLS += unix_desktop
+-- 
+2.33.1
+
