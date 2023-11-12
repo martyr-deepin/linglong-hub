@@ -1,0 +1,50 @@
+From 703a71657c9c39e29a2ed77a5cf7e9aae1f84d87 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Sun, 12 Nov 2023 15:22:34 +0800
+Subject: [install.patch_] install
+
+---
+ Five.desktop |  7 +++++++
+ Five.pro     | 14 ++++++++++++++
+ 2 files changed, 21 insertions(+)
+ create mode 100644 Five.desktop
+
+diff --git a/Five.desktop b/Five.desktop
+new file mode 100644
+index 0000000..d4cf829
+--- /dev/null
++++ b/Five.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=Five
++GenericName=Five
++Hidden=false
++Name=Five
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+diff --git a/Five.pro b/Five.pro
+index 9aa8044..c670483 100644
+--- a/Five.pro
++++ b/Five.pro
+@@ -18,3 +18,17 @@ SOURCES += Main.cpp\
+ HEADERS  += Five.h
+ 
+ FORMS    +=
++
++
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = Five.desktop
++INSTALLS += unix_desktop
++
++}
+-- 
+2.33.1
+
