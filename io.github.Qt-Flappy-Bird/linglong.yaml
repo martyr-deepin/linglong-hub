@@ -1,0 +1,22 @@
+package:
+  id: io.github.Qt-Flappy-Bird
+  name: Qt-Flappy-Bird
+  version: 1.0.0
+  kind: app
+  description: |
+    Using C++&Qt, a visual programming widget. Ideas from the famous game "Flappy Bird".  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/KKkai0315/Qt-Flappy-Bird.git
+  commit: 196340121f2aba9d9659b7b08ab61cb3f78afe2a
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
