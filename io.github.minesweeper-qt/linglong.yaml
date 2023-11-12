@@ -1,0 +1,20 @@
+package:
+  id: io.github.minesweeper-qt
+  name: minesweeper-qt
+  version: 0.0.1
+  kind: app
+  description: |
+    University project: minesweeper desktop application in QT
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/bartaliskrisztian/minesweeper-qt.git
+  commit: 767c835a11fd0a6ef0a9b8229e3b68b62960cdbe
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
