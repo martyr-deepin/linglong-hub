@@ -1,0 +1,22 @@
+package:
+  id: io.github.SchoolboyBattleQt
+  name: SchoolboyBattleQt
+  version: 1.0.0
+  kind: app
+  description: |
+    SchoolBoyBattle is a game made in Qt using the QGraphicsFramework. The goal of the game is to capture as much candy as possible in the school and in the yard and bring it back to St-Nicolas or Père Fouettard depending on the team you are in !.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Cod3lta/SchoolboyBattleQt.git
+  commit: 959d5fefb97b2fc6cab2d42fce246488c42e9e48
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      

@@ -1,0 +1,52 @@
+From b1ea03ec77eaaff921e86bfe251efd80fa4760e3 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Sun, 12 Nov 2023 13:42:28 +0800
+Subject: [install.patch_] install
+
+---
+ schoolBoyBattle/schoolBoyBattle.desktop |  7 +++++++
+ schoolBoyBattle/schoolBoyBattle.pro     | 12 +++++++++++-
+ 2 files changed, 18 insertions(+), 1 deletion(-)
+ create mode 100644 schoolBoyBattle/schoolBoyBattle.desktop
+
+diff --git a/schoolBoyBattle/schoolBoyBattle.desktop b/schoolBoyBattle/schoolBoyBattle.desktop
+new file mode 100644
+index 0000000..914ead6
+--- /dev/null
++++ b/schoolBoyBattle/schoolBoyBattle.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=schoolBoyBattle
++GenericName=schoolBoyBattle
++Hidden=false
++Name=schoolBoyBattle
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+diff --git a/schoolBoyBattle/schoolBoyBattle.pro b/schoolBoyBattle/schoolBoyBattle.pro
+index 4a6f682..181a2a3 100644
+--- a/schoolBoyBattle/schoolBoyBattle.pro
++++ b/schoolBoyBattle/schoolBoyBattle.pro
+@@ -47,8 +47,18 @@ HEADERS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $${PREFIX}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     resources.qrc
++
++unix: {
++
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = schoolBoyBattle.desktop
++INSTALLS += unix_desktop
++
++
++}
+-- 
+2.33.1
+
