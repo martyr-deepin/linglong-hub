@@ -1,0 +1,22 @@
+package:
+  id: io.github.Tankoop
+  name: Tankoop
+  version: 1.0.0
+  kind: app
+  description: |
+    Tankoop is a simple arcade game that is created using the QT Application Framework.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/zhongvei/Tankoop.git
+  commit: cb371c7ddf57b6ee4af9c5e391c84e9b6853d758
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
