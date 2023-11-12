@@ -1,0 +1,52 @@
+From eb1fbacbbb440e9255199f5524758bc9765a7e40 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Sun, 12 Nov 2023 15:15:01 +0800
+Subject: [install.patch_] install
+
+---
+ flappy.pro         | 12 +++++++++++-
+ flappybird.desktop |  7 +++++++
+ 2 files changed, 18 insertions(+), 1 deletion(-)
+ create mode 100644 flappybird.desktop
+
+diff --git a/flappy.pro b/flappy.pro
+index 11394a8..693fe70 100644
+--- a/flappy.pro
++++ b/flappy.pro
+@@ -35,8 +35,18 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $${PREFIX}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     pics/resourse.qrc
++
++unix: {
++
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files =  flappybird.desktop
++INSTALLS += unix_desktop
++
++
++}
+diff --git a/flappybird.desktop b/flappybird.desktop
+new file mode 100644
+index 0000000..ab2fc92
+--- /dev/null
++++ b/flappybird.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=flappy
++GenericName=flappy
++Hidden=false
++Name=flappy
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+-- 
+2.33.1
+
