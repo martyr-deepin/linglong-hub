@@ -1,0 +1,23 @@
+package:
+  id: io.github.Five
+  name: Five
+  version: 1.0.0
+  kind: app
+  description: |
+    A Qt five-in-a-row Game.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/pengsrc/Five.git
+  commit: 9b107fbd9ea8786e920e323c2728421fef649751
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
