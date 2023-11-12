@@ -1,0 +1,50 @@
+From 2eb3387575ad3e02baf40371067fc2f4d1a378d4 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sun, 12 Nov 2023 14:31:39 +0800
+Subject: [PATCH] fix-install
+
+---
+ MiPaint.desktop |  8 ++++++++
+ MiPaint.pro     | 13 ++++++++++---
+ 2 files changed, 18 insertions(+), 3 deletions(-)
+ create mode 100644 MiPaint.desktop
+
+diff --git a/MiPaint.desktop b/MiPaint.desktop
+new file mode 100644
+index 0000000..29af13e
+--- /dev/null
++++ b/MiPaint.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=MiPaint
++Name=MiPaint
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/MiPaint.pro b/MiPaint.pro
+index 7d847ff..b39b0ea 100644
+--- a/MiPaint.pro
++++ b/MiPaint.pro
+@@ -26,6 +26,13 @@ FORMS += \
+     principal.ui
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
++#qnx: target.path = /tmp/$${TARGET}/bin
++#!isEmpty(target.path): INSTALLS += target
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = MiPaint.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
