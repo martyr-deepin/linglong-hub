@@ -1,0 +1,19 @@
+package:
+  id: io.github.Qt-Traduccion
+  name: Qt-Traduccion
+  version: 0.0.1
+  kind: app
+  description: |
+     Ejemplo de una aplicaci¨®n con traducci¨®n a Franc¨¦s e Ingl¨¦s
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/rtufino/Qt-Traduccion.git
+  commit: c7f01d6ad72d345ee671273ba0511cf2c3cdfa5e
+  patch: patches/0001-fix-install.patch
+build:
+  kind: qmake
