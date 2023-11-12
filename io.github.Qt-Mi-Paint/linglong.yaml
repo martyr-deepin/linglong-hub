@@ -1,0 +1,21 @@
+package:
+  id: io.github.Qt-Mi-Paint
+  name: Qt-Mi-Paint
+  version: 0.0.1
+  kind: app
+  description: |
+     Aplicaci¨®n para graficar con el mouse
+
+depends:
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/rtufino/Qt-Mi-Paint.git
+  commit: cb7f7c7dd35d09459f423d93b3910127fc9e29c0
+  patch: patches/0001-fix-install.patch
+build:
+  kind: qmake
