@@ -1,0 +1,22 @@
+package:
+  id: io.github.glabels-qt
+  name: glabels-qt
+  version: 3.99.0
+  kind: app
+  description: |
+    gLabels Label Designer (Qt/C++)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/jimevins/glabels-qt.git
+  commit: 2da9b2d8565110dc02271d059a54b12b3d60b1ff
+
+build:
+  kind: cmake
+
+
+
