@@ -1,0 +1,45 @@
+From 6fc6aa216e62987b6a80b2950925bb227eeb6320 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sun, 12 Nov 2023 15:08:52 +0800
+Subject: [PATCH] fix-install
+
+---
+ src/Movie.desktop | 8 ++++++++
+ src/src.pro       | 8 ++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 src/Movie.desktop
+
+diff --git a/src/Movie.desktop b/src/Movie.desktop
+new file mode 100644
+index 0000000..9f50b26
+--- /dev/null
++++ b/src/Movie.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Movie
++Name=Movie
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/src/src.pro b/src/src.pro
+index 0f732c0..14b8647 100644
+--- a/src/src.pro
++++ b/src/src.pro
+@@ -33,3 +33,11 @@ HEADERS  += base.hpp \
+ FORMS    += acerca/acerca.ui \
+     dispositivos/dispositivos.ui \
+     movieplayer/movieplayer.ui
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = Movie.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

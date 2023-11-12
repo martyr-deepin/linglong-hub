@@ -1,0 +1,19 @@
+package:
+  id: io.github.MoviePlayer
+  name: MoviePlayer
+  version: 0.0.1
+  kind: app
+  description: |
+    Simple movie player and camera viewer in Qt5 for the subject Sistemas Operativos Avanzados at Universidad de La Laguna
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Madh93/Qt5-MoviePlayer.git
+  commit: 7146a1a65129659140b4d9cdae985a7c4c85a6d5
+  patch: patches/0001-fix-install.patch
+build:
+  kind: qmake
