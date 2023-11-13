@@ -1,0 +1,59 @@
+From 61d953cae6f9d057a84eaff33fb37792e49d0c4f Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Mon, 13 Nov 2023 14:07:21 +0800
+Subject: [install.patch_] install
+
+---
+ PigGame.pro     | 18 ++++++++++++++----
+ piggame.desktop |  7 +++++++
+ 2 files changed, 21 insertions(+), 4 deletions(-)
+ create mode 100644 piggame.desktop
+
+diff --git a/PigGame.pro b/PigGame.pro
+index a5890d7..2259ba6 100644
+--- a/PigGame.pro
++++ b/PigGame.pro
+@@ -35,12 +35,22 @@ FORMS += \
+     forms/gameView.ui \
+     forms/welcomedialog.ui
+ 
+-# Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     resources/myResource.qrc
+ 
+ DISTFILES +=
++
++
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = piggame.desktop
++INSTALLS += unix_desktop
++
++
++}
+diff --git a/piggame.desktop b/piggame.desktop
+new file mode 100644
+index 0000000..e4f516f
+--- /dev/null
++++ b/piggame.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=PigGame
++GenericName=PigGame
++Hidden=false
++Name=PigGame
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+-- 
+2.33.1
+
