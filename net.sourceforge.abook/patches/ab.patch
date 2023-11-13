@@ -1,0 +1,38 @@
+diff -Naur abook2/ab.desktop abook/ab.desktop
+--- abook2/ab.desktop	1970-01-01 08:00:00.000000000 +0800
++++ abook/ab.desktop	2023-11-13 13:44:24.894996399 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=abook
++Exec=Abook
++Type=Application
+diff -Naur abook2/Makefile.am abook/Makefile.am
+--- abook2/Makefile.am	2023-11-12 23:13:28.852349096 +0800
++++ abook/Makefile.am	2023-11-13 15:18:57.764000188 +0800
+@@ -20,19 +20,25 @@
+ 		$(vformat_SOURCE)
+ 
+ EXTRA_DIST = config.rpath  ANNOUNCE BUGS FAQ abook.1 abookrc.5 sample.abookrc \
+-		abook.spec contrib doc/HOWTO.translating_abook RELEASE_NOTES
++		abook.spec contrib doc/HOWTO.translating_abook RELEASE_NOTES \
++		ab.desktop
+ 
+ abook_LDADD = @LIBINTL@
+ 
++desktopdir = $PREFIX/share/applications
++desktop_DATA = ab.desktop
++
+ 
+ install-data-local:
+ 	$(mkinstalldirs) $(DESTDIR)$(mandir)/man1 $(DESTDIR)$(mandir)/man5
+ 	$(INSTALL_DATA) $(srcdir)/abook.1 $(DESTDIR)$(mandir)/man1/
+ 	$(INSTALL_DATA) $(srcdir)/abookrc.5 $(DESTDIR)$(mandir)/man5/
++	$(INSTALL_DATA) $(srcdir)/ab.desktop $(DESTDIR)$(desktopdir)
+ 
+ uninstall-local:
+ 	-rm -f $(DESTDIR)$(mandir)/man1/abook.1
+ 	-rm -f $(DESTDIR)$(mandir)/man5/abookrc.5
++	-rm -f $(DESTDIR)$(desktopdir)/ab.desktop
+ 
+ 
+ SUBDIRS = po
