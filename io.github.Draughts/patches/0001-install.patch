@@ -1,0 +1,49 @@
+From 9617aa116142ef7affe59b9d6d1da91ecb8d51d6 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Mon, 13 Nov 2023 18:56:54 +0800
+Subject: [install.patch_] install
+
+---
+ src/Draughts.desktop |  7 +++++++
+ src/Draughts.pro     | 13 +++++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 src/Draughts.desktop
+
+diff --git a/src/Draughts.desktop b/src/Draughts.desktop
+new file mode 100644
+index 0000000..65bacf5
+--- /dev/null
++++ b/src/Draughts.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=Draughts
++GenericName=Draughts
++Hidden=false
++Name=Draughts
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+diff --git a/src/Draughts.pro b/src/Draughts.pro
+index aa8e6ee..ae098d7 100644
+--- a/src/Draughts.pro
++++ b/src/Draughts.pro
+@@ -44,3 +44,16 @@ FORMS    += \
+ 
+ RESOURCES += \
+     Draughts.qrc
++
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = Draughts.desktop
++INSTALLS += unix_desktop
++
++
++}
+-- 
+2.33.1
+
