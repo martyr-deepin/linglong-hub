@@ -1,0 +1,59 @@
+From e8416d32d7cf0e65b019f4c3161cbecd08aed855 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Mon, 13 Nov 2023 18:46:45 +0800
+Subject: [install.patch_] install
+
+---
+ BoggleGame.desktop  |  7 +++++++
+ QBoggle/QBoggle.pro | 17 +++++++++++++----
+ 2 files changed, 20 insertions(+), 4 deletions(-)
+ create mode 100644 BoggleGame.desktop
+
+diff --git a/BoggleGame.desktop b/BoggleGame.desktop
+new file mode 100644
+index 0000000..795c9f5
+--- /dev/null
++++ b/BoggleGame.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=QBoggle
++GenericName=QBoggle
++Hidden=false
++Name=QBoggle
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+diff --git a/QBoggle/QBoggle.pro b/QBoggle/QBoggle.pro
+index cceaf85..130408e 100644
+--- a/QBoggle/QBoggle.pro
++++ b/QBoggle/QBoggle.pro
+@@ -45,13 +45,22 @@ HEADERS += \
+     lexicon.h \
+     clickedlabel.h
+ 
+-# Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
++
+ 
+ DISTFILES += \
+     EnglishWords.txt
+ 
+ RESOURCES += \
+     EnglishWords.qrc
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = ../BoggleGame.desktop
++INSTALLS += unix_desktop
++
++
++}
+-- 
+2.33.1
+

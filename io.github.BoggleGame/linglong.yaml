@@ -1,0 +1,25 @@
+package:
+  id: io.github.BoggleGame
+  name: BoggleGame
+  version: 1.0.0
+  kind: app
+  description: |
+    BoggleGame.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/iaGuoZhi/BoggleGame.git
+  commit: 82993710197044c890cb1e06ed4b2ad74c7c2e27
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd QBoggle
+      qmake -makefile ${conf_args} ${extra_args}
+      
