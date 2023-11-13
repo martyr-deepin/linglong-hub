@@ -1,0 +1,20 @@
+package:
+  id: io.github.dobutsushogi
+  name: dobutsushogi
+  version: 1.0.0
+  kind: app
+  description: |
+    Version compatible Windows de Yokai No Mori avec l'intelligence artificielle.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Tommy228/dobutsushogi.git
+  commit: e73f6d0839879548cfdee5dc8825da82e9418497
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

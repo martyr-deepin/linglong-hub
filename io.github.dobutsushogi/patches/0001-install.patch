@@ -1,0 +1,44 @@
+From 81e84c283da0dcd0c7a6de334cb4b8b171d53e2a Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Mon, 13 Nov 2023 18:45:57 +0800
+Subject: [install.patch_] install
+
+---
+ dobutsushogi.desktop | 6 ++++++
+ dobutsushogi.pro     | 9 +++++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 dobutsushogi.desktop
+
+diff --git a/dobutsushogi.desktop b/dobutsushogi.desktop
+new file mode 100644
+index 0000000..ab0569a
+--- /dev/null
++++ b/dobutsushogi.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=dobutsushogi
++Exec=dobutsushogi
++Terminal=false
+\ No newline at end of file
+diff --git a/dobutsushogi.pro b/dobutsushogi.pro
+index c90e54c..93cc406 100644
+--- a/dobutsushogi.pro
++++ b/dobutsushogi.pro
+@@ -66,3 +66,12 @@ RESOURCES += \
+ DISTFILES += \
+     dobutsushogi.pro.user \
+     README.md
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = dobutsushogi.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+
