@@ -1,0 +1,50 @@
+From ca40f5c2ccdce7d3b07643dc400c2aa99f7a5430 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Mon, 13 Nov 2023 14:18:39 +0800
+Subject: [install.patch_] install
+
+---
+ Memory.desktop |  7 +++++++
+ Memory.pro     | 13 +++++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 Memory.desktop
+
+diff --git a/Memory.desktop b/Memory.desktop
+new file mode 100644
+index 0000000..3b8730d
+--- /dev/null
++++ b/Memory.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=Memory
++GenericName=Memory
++Hidden=false
++Name=Memory
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+diff --git a/Memory.pro b/Memory.pro
+index 2d007c2..50edd82 100644
+--- a/Memory.pro
++++ b/Memory.pro
+@@ -55,3 +55,16 @@ RESOURCES += \
+     resources/fruits/fruits.qrc \
+     resources/cars/cars.qrc \
+     resources/animals/animals.qrc
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = Memory.desktop
++INSTALLS += unix_desktop
++
++
++}
+\ No newline at end of file
+-- 
+2.33.1
+
