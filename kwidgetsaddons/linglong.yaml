@@ -1,0 +1,19 @@
+package:
+  id: kwidgetsaddons
+  name: kwidgetsaddons
+  version: 5.90.0
+  kind: lib
+  description: |
+    Large set of desktop widgets.
+ 
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/KDE/kwidgetsaddons.git
+  commit: 80a53fca29a0cd238f3d174a48c375e5ea94a48e
+
+build:
+  kind: cmake
