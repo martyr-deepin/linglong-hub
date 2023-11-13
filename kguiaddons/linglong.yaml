@@ -1,0 +1,20 @@
+package:
+  id: kguiaddons
+  name: kguiaddons
+  version: 5.90.0
+  kind: lib
+  description: |
+    Utilities for graphical user interfaces
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/KDE/kguiaddons.git
+  commit: 8fb5545dbbfc947f8735010644cbb5423833e898
+
+
+build:
+  kind: cmake
