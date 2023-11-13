@@ -1,0 +1,22 @@
+package:
+  id: io.github.AIsnake
+  name: AIsnake
+  version: 1.0.0
+  kind: app
+  description: |
+    用QT完成一个能支持随机地形，多人对战，AI寻路等功能的贪吃蛇。  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/iaGuoZhi/AIsnake.git
+  commit: 6a2e2f17ed815ad5e1780a8732aa59b78d478b52
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
