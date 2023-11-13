@@ -1,0 +1,24 @@
+package:
+  id: io.github.QtMemoryGame
+  name: QtMemoryGame
+  version: 1.0.0
+  kind: app
+  description: |
+    also called pairs.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+
+source:
+  kind: git
+  url: https://github.com/Urbanov/QtMemoryGame.git
+  commit: aafaab580f059f87e9a0f01cd66c3940910b2212
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
