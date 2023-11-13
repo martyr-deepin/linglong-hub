@@ -1,0 +1,63 @@
+From 58bdd0a04d3abcaab2f95f05c1bf8682eeb2934e Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Mon, 13 Nov 2023 19:10:45 +0800
+Subject: [install.patch_] install
+
+---
+ pokemon.desktop |  7 +++++++
+ pokemon.pro     | 19 +++++++++++++++----
+ 2 files changed, 22 insertions(+), 4 deletions(-)
+ create mode 100644 pokemon.desktop
+
+diff --git a/pokemon.desktop b/pokemon.desktop
+new file mode 100644
+index 0000000..cf246ac
+--- /dev/null
++++ b/pokemon.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=pokemon
++GenericName=pokemon
++Hidden=false
++Name=pokemon
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+diff --git a/pokemon.pro b/pokemon.pro
+index 5c069e3..b727899 100644
+--- a/pokemon.pro
++++ b/pokemon.pro
+@@ -29,10 +29,7 @@ HEADERS += \
+ 
+ FORMS +=
+ 
+-# Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
++
+ 
+ DISTFILES += \
+     README.md \
+@@ -40,3 +37,17 @@ DISTFILES += \
+ 
+ RESOURCES += \
+     res.qrc
++
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = pokemon.desktop
++INSTALLS += unix_desktop
++
++
++}
+\ No newline at end of file
+-- 
+2.33.1
+
