@@ -1,0 +1,52 @@
+From a6481aee48c3d8d1532002aa8925106520fdd109 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Mon, 13 Nov 2023 18:22:45 +0800
+Subject: [install.patch_] install
+
+---
+ corewar2.desktop |  7 +++++++
+ corewar2.pro     | 15 +++++++++++++++
+ 2 files changed, 22 insertions(+)
+ create mode 100644 corewar2.desktop
+
+diff --git a/corewar2.desktop b/corewar2.desktop
+new file mode 100644
+index 0000000..beed36f
+--- /dev/null
++++ b/corewar2.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=corewar2
++GenericName=corewar2
++Hidden=false
++Name=corewar2
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+diff --git a/corewar2.pro b/corewar2.pro
+index 9065fe6..f2130eb 100644
+--- a/corewar2.pro
++++ b/corewar2.pro
+@@ -19,3 +19,18 @@ SOURCES += Corewar.cpp Program.cpp Field.cpp
+ 
+ TRANSLATIONS = corewar2_fr.ts
+ CODECFORTR = UTF-8
++
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = corewar2.desktop
++INSTALLS += unix_desktop
++
++
++
++}
+\ No newline at end of file
+-- 
+2.33.1
+

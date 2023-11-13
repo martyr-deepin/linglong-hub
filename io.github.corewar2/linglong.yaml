@@ -1,0 +1,22 @@
+package:
+  id: io.github.corewar2
+  name: corewar2
+  version: 0.0.1
+  kind: app
+  description: |
+    Corewar2 is a very simple Corewar clone, written in C++ with Qt. The language used was created by myself for this purpose and named CWA (for CoreWar Assembly). It's a simple assembly language, with 7 instructions.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/remram44/corewar2.git
+  commit: 9448c18901909c49d05ce7fdb56ef9dd58122709
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
