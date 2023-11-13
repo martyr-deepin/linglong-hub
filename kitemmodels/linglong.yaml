@@ -1,0 +1,19 @@
+package:
+  id: kitemmodels
+  name: kitemmodels
+  version: 5.90.0
+  kind: lib
+  description: |
+    Set of item models extending the Qt model-view framework.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/KDE/kitemmodels.git
+  commit: e5e9acc60d6377adaa4aee296f5acff15e590c6b
+
+build:
+  kind: cmake
