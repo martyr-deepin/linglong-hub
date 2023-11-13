@@ -1,0 +1,47 @@
+From 4d2d6219a0fe34c843eb65859f30bc93e95422ea Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Mon, 13 Nov 2023 15:24:45 +0800
+Subject: [install.patch_] install
+
+---
+ Spectrum.desktop |  7 +++++++
+ Spectrum.pro     | 11 +++++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 Spectrum.desktop
+
+diff --git a/Spectrum.desktop b/Spectrum.desktop
+new file mode 100644
+index 0000000..5418a1e
+--- /dev/null
++++ b/Spectrum.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=Spectrum
++GenericName=Spectrum
++Hidden=false
++Name=Spectrum
++StartupNotify=false
++Type=Application
+diff --git a/Spectrum.pro b/Spectrum.pro
+index e5ea528..a8601d2 100644
+--- a/Spectrum.pro
++++ b/Spectrum.pro
+@@ -82,3 +82,14 @@ RESOURCES += \
+ 
+ DISTFILES +=
+ 
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = Spectrum.desktop
++INSTALLS += unix_desktop
++
++
++}
+\ No newline at end of file
+-- 
+2.33.1
+
