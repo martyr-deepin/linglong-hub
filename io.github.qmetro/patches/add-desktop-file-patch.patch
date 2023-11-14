@@ -1,0 +1,10 @@
+diff --git a/qmetro.desktop b/qmetro.desktop
+new file mode 100644
+index 0000000..368c38f
+--- /dev/null
++++ b/qmetro.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=qmetro
++Exec=qmetro %f

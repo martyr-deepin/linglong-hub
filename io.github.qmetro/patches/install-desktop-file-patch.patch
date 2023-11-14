@@ -1,0 +1,15 @@
+diff --git a/qmetro.pro b/qmetro.pro
+index c05d986..2d3220f 100644
+--- a/qmetro.pro
++++ b/qmetro.pro
+@@ -24,3 +24,10 @@ HEADERS  += qmetro.h \
+     metronompuls.h
+ 
+ FORMS    += qmetro.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += qmetro.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
