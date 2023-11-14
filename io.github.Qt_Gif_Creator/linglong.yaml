@@ -1,0 +1,20 @@
+package:
+  id: io.github.Qt_Gif_Creator
+  name: Qt_Gif_Creator
+  version: 1.0.0
+  kind: app
+  description: |
+    基于Qt的屏幕gif录制工具
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/xiaoyanLG/Qt_Gif_Creator.git
+  commit: 3af53c4f79be019a9f14816fb9b56cc0a6d63ea2
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
