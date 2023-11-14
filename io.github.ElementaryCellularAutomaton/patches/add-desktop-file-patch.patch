@@ -1,0 +1,10 @@
+diff --git a/CellularAutomaton.desktop b/CellularAutomaton.desktop
+new file mode 100644
+index 0000000..79855bc
+--- /dev/null
++++ b/CellularAutomaton.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=Cellular Automaton
++Exec=CellularAutomaton %f
