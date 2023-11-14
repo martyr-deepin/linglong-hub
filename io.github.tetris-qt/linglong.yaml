@@ -1,0 +1,19 @@
+package:
+  id: io.github.tetris-qt
+  name: tetris-qt
+  version: 0.0.1
+  kind: app
+  description: |
+    Simple tetris game.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Gabriel-Syv/tetris-qt.git
+  commit: a3ee197dfaf7de9c7ad7b0219eb205f905728696
+  patch: patches/0001-fix-install.patch
+
+build:
+  kind: qmake
