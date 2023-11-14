@@ -1,0 +1,21 @@
+package:
+  id: io.github.KnightLegend
+  name: KnightLegend
+  version: 0.0.2
+  kind: app
+  description: |
+    A moblie Social Game.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Kreogist/KnightLegend.git"
+  commit: e770b54a2c6c755c7194cc452b03b35c0780010d
+  patch:
+    - patches/install.patch
+
+build:
+  kind: qmake

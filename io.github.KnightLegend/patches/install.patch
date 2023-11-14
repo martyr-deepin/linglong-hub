@@ -1,0 +1,33 @@
+diff --git a/KnightLegend.desktop b/KnightLegend.desktop
+new file mode 100644
+index 0000000..ba837f2
+--- /dev/null
++++ b/KnightLegend.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=Knight Legend
++Exec=KnightLegend %f
++Icon=KnightLegend80
+diff --git a/KnightLegend.pro b/KnightLegend.pro
+index 08fadd9..abff517 100644
+--- a/KnightLegend.pro
++++ b/KnightLegend.pro
+@@ -3,6 +3,17 @@ folder_01.source = qml/KnightLegend
+ folder_01.target = qml
+ DEPLOYMENTFOLDERS = folder_01
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += KnightLegend.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = KnightLegend80.png
++INSTALLS += icons
++
+ # Additional import path used to resolve QML modules in Creator's code model
+ QML_IMPORT_PATH =
+ QT+=widgets quick qml network
