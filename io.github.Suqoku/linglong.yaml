@@ -1,0 +1,21 @@
+package:
+  id: io.github.Suqoku
+  name: Suqoku
+  version: 0.0.1
+  kind: app
+  description: |
+    A sudoku game. It can open game files from other sudoku games and generate random games.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/OSSGames/GAME-QT-PUZZLE-Suqoku.git"
+  commit: 0ee5d184a261e187c0d1ee06633f730fab7ba652  
+  patch:
+    - patches/install.patch
+
+build:
+  kind: qmake

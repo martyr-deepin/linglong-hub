@@ -1,0 +1,31 @@
+diff --git a/Suqoku.desktop b/Suqoku.desktop
+new file mode 100644
+index 0000000..fba5c00
+--- /dev/null
++++ b/Suqoku.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=Suqoku
++Exec=Suqoku %f
++Icon=tripple
+diff --git a/Suqoku.pro b/Suqoku.pro
+index 28f4178..d41313c 100644
+--- a/Suqoku.pro
++++ b/Suqoku.pro
+@@ -55,3 +55,14 @@ SOURCES += Eingangspuffer.cpp \
+            Undo_element.cpp
+ RESOURCES += resourcen.qrc
+ TRANSLATIONS += Uebersetzung_de.ts
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += Suqoku.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = icons/tripple.png
++INSTALLS += icons
+\ No newline at end of file
