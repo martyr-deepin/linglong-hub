@@ -1,0 +1,50 @@
+diff --git a/QeoDart.desktop b/QeoDart.desktop
+index aa117a3..71cbdf6 100644
+--- a/QeoDart.desktop
++++ b/QeoDart.desktop
+@@ -3,7 +3,7 @@ Version=2.0-120629
+ Name=QeoDart
+ GenericName=Qt Geography Dart
+ GenericName[de]=Qt Geographie Dart
+-Exec=qeodart
++Exec=qeodart %f
+ Terminal=false
+ Type=Application
+ Icon=qeodart
+diff --git a/QeoDart.pro b/QeoDart.pro
+index 8d345df..95bf5e5 100644
+--- a/QeoDart.pro
++++ b/QeoDart.pro
+@@ -38,27 +38,18 @@ RESOURCES += \
+ RC_FILE = QeoDart.rc
+ 
+ TARGET = qeodart
+-target.path = /usr/bin
++target.path = $$PREFIX/bin
+ INSTALLS += target
+-langfiles.path += /usr/share/QeoDart/lang
++langfiles.path += $$PREFIX/usr/share/QeoDart/lang
+ langfiles.files += lang/*.qm
+-qcf.path += /usr/share/QeoDart/qcf
++qcf.path += $$PREFIX/usr/share/QeoDart/qcf
+ qcf.files += qcf/*
+-icon.path +=  /usr/share/icons/hicolor/scalable/apps
++icon.path +=  $${PREFIX}/share/icons
+ icon.files += icons/qeodart.svg
+-icon256.path +=  /usr/share/icons/hicolor/256x256/apps
+-icon256.files += icons/256x256/qeodart.png
+-icon48.path +=  /usr/share/icons/hicolor/48x48/apps
+-icon48.files += icons/48x48/qeodart.png
+-icon16.path +=  /usr/share/icons/hicolor/16x16/apps
+-icon16.files += icons/16x16/qeodart.png
+-desktop.path +=  /usr/share/applications
++desktop.path +=  $$PREFIX/share/applications
+ desktop.files += QeoDart.desktop
+ INSTALLS += langfiles
+ INSTALLS += qcf
+ INSTALLS += icon
+-INSTALLS += icon256
+-INSTALLS += icon48
+-INSTALLS += icon16
+ INSTALLS += desktop
+

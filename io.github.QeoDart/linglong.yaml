@@ -1,0 +1,21 @@
+package:
+  id: io.github.QeoDart
+  name: QeoDart
+  version: 0.0.2
+  kind: app
+  description: |
+    QeoDart (Qt Geography Darts) is a geography education game.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/gulp21/QeoDart.git"
+  commit: 1c0be290af42af1620d783a212e101ead1aaae0c
+  patch:
+    - patches/install.patch
+
+build:
+  kind: qmake
