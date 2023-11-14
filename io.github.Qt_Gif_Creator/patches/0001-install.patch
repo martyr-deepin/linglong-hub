@@ -1,0 +1,51 @@
+From ec51532e2ffb38aa75f32b30cf152986ea2189f1 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 8 Nov 2023 14:14:29 +0800
+Subject: [PATCH] install
+
+---
+ Qt_Gif_Creator.desktop | 8 ++++++++
+ Qt_Gif_Creator.pro     | 8 +++++++-
+ 2 files changed, 15 insertions(+), 1 deletion(-)
+ create mode 100644 Qt_Gif_Creator.desktop
+
+diff --git a/Qt_Gif_Creator.desktop b/Qt_Gif_Creator.desktop
+new file mode 100644
+index 0000000..00db1c8
+--- /dev/null
++++ b/Qt_Gif_Creator.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Qt_Gif_Creator
++Name=Qt_Gif_Creator
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Qt_Gif_Creator.pro b/Qt_Gif_Creator.pro
+index 17eb3fe..797fa4f 100644
+--- a/Qt_Gif_Creator.pro
++++ b/Qt_Gif_Creator.pro
+@@ -44,7 +44,7 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+@@ -58,3 +58,9 @@ greaterThan(QT_MAJOR_VERSION, 4): RC_FILE = ico.rc
+ } else {
+ LIBS += -lX11 -lXfixes
+ }
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Qt_Gif_Creator.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
