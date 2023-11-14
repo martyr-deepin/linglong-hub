@@ -1,0 +1,52 @@
+From a8e1ddc2e563e7f07ea5a2e62b234123a6cbb414 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 8 Nov 2023 14:20:27 +0800
+Subject: [PATCH] install
+
+---
+ ImageEditor.desktop | 8 ++++++++
+ ImageEditor.pro     | 9 ++++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 ImageEditor.desktop
+
+diff --git a/ImageEditor.desktop b/ImageEditor.desktop
+new file mode 100644
+index 0000000..92f046d
+--- /dev/null
++++ b/ImageEditor.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=ImageEditor
++Name=ImageEditor
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/ImageEditor.pro b/ImageEditor.pro
+index 721b33a..63c8df0 100644
+--- a/ImageEditor.pro
++++ b/ImageEditor.pro
+@@ -63,7 +63,7 @@ INCLUDEPATH += core
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+@@ -74,3 +74,10 @@ msvc {
+ greaterThan(QT_MAJOR_VERSION, 4): RC_FILE = app.rc
+ }
+ }
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =ImageEditor.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
