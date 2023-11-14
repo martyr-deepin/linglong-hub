@@ -1,0 +1,15 @@
+diff --git a/ImageToAscii.pro b/ImageToAscii.pro
+index 925c108..7688d87 100644
+--- a/ImageToAscii.pro
++++ b/ImageToAscii.pro
+@@ -24,3 +24,10 @@ HEADERS  += mainwindow.h \
+     converter.h
+ 
+ FORMS    += mainwindow.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += ImageToAscii.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target

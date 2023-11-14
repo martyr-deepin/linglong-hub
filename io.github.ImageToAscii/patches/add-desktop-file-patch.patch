@@ -1,0 +1,10 @@
+diff --git a/ImageToAscii.desktop b/ImageToAscii.desktop
+new file mode 100644
+index 0000000..f4f236f
+--- /dev/null
++++ b/ImageToAscii.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=Image To Ascii
++Exec=ImageToAscii %f

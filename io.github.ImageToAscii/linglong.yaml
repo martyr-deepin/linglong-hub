@@ -1,0 +1,22 @@
+package:
+  id: io.github.ImageToAscii
+  name: ImageToAscii
+  version: 0.0.1
+  kind: app
+  description: |
+    Convert images to ASCII text.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Theverat/ImageToAscii.git"
+  commit: b4ed1dde25cbfd96d24a2a3e4cc12c07a29d1081
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake
