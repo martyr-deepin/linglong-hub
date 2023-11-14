@@ -1,0 +1,11 @@
+diff --git a/SimpleTextEditor.desktop b/SimpleTextEditor.desktop
+new file mode 100644
+index 0000000..0ba29d6
+--- /dev/null
++++ b/SimpleTextEditor.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=Simple Text Editor
++Exec=SimpleTextEditor %f
+

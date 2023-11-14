@@ -1,0 +1,15 @@
+diff --git a/SimpleTextEditor.pro b/SimpleTextEditor.pro
+index 6ef41d4..e67dcc2 100644
+--- a/SimpleTextEditor.pro
++++ b/SimpleTextEditor.pro
+@@ -31,3 +31,10 @@ HEADERS  += maineditor.h \
+     opendocument.h
+ 
+ FORMS    += maineditor.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += SimpleTextEditor.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
