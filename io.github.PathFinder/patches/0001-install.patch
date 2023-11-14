@@ -1,0 +1,25 @@
+diff --git a/PathFinder.desktop b/PathFinder.desktop
+new file mode 100644
+index 0000000..ec44cdb
+--- /dev/null
++++ b/PathFinder.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=Path Finder
++Exec=PathFinder %f
+diff --git a/PathFinder.pro b/PathFinder.pro
+index 760ff3e..2676124 100644
+--- a/PathFinder.pro
++++ b/PathFinder.pro
+@@ -31,3 +31,10 @@ HEADERS  += mainwindow.h \
+     graph.h
+ 
+ FORMS    += mainwindow.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += PathFinder.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
