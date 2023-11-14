@@ -1,0 +1,20 @@
+package:
+  id: io.github.Calculate
+  name: Calculate
+  version: 1.0.0
+  kind: app
+  description: |
+    查找通过不同运算得到相同结果的数的组合！
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/xiaoyanLG/Calculate.git
+  commit: f76b73fca26f3f7279f6e079bb67062cea5ead56
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
