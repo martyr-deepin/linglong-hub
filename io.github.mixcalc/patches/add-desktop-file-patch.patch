@@ -1,0 +1,10 @@
+diff --git a/mixcalc.desktop b/mixcalc.desktop
+new file mode 100644
+index 0000000..be6072c
+--- /dev/null
++++ b/mixcalc.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=Mixcalc
++Exec=mixcalc %f
