@@ -1,0 +1,49 @@
+From 65bc8590efef17182f086cdcd435edaf0eb10088 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 8 Nov 2023 14:07:02 +0800
+Subject: [PATCH] install
+
+---
+ IconEditor.desktop |  8 ++++++++
+ IconEditor.pro     | 10 +++++++++-
+ 2 files changed, 17 insertions(+), 1 deletion(-)
+ create mode 100644 IconEditor.desktop
+
+diff --git a/IconEditor.desktop b/IconEditor.desktop
+new file mode 100644
+index 0000000..fbf5947
+--- /dev/null
++++ b/IconEditor.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=IconEditor
++Name=IconEditor
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/IconEditor.pro b/IconEditor.pro
+index a2f6100..f37deb3 100644
+--- a/IconEditor.pro
++++ b/IconEditor.pro
+@@ -28,5 +28,13 @@ RC_FILE = ico.rc
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =IconEditor.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
