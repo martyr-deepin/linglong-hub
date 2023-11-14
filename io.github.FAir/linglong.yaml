@@ -1,0 +1,21 @@
+package:
+  id: io.github.FAir
+  name: FAir
+  version: 0.0.1
+  kind: app
+  description: |
+    A cross-platform cloud synchronization software.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Kreogist/FAir.git"
+  commit: bc340b15a986d368136933b1d2f93bf48184502a
+  patch:
+    - patches/install.patch
+
+build:
+  kind: qmake

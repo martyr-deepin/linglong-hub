@@ -1,0 +1,30 @@
+diff --git a/FAir.desktop b/FAir.desktop
+new file mode 100644
+index 0000000..8c9b04d
+--- /dev/null
++++ b/FAir.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=FAir
++Exec=FAir %f
++Icon=FAir-Logo
+diff --git a/FAir.pro b/FAir.pro
+index f2a4b6f..e1d013e 100644
+--- a/FAir.pro
++++ b/FAir.pro
+@@ -23,3 +23,14 @@ HEADERS  += airbase.h \
+ 
+ FORMS    += airbase.ui \
+     Fregister.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += FAir.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = FAir-Logo.png
++INSTALLS += icons
