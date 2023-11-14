@@ -1,0 +1,44 @@
+From 5241ac3383029105c7de8fefd10709ec1f4f5570 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 8 Nov 2023 14:52:55 +0800
+Subject: [PATCH] install
+
+---
+ Calculate.desktop | 8 ++++++++
+ Calculate.pro     | 6 ++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 Calculate.desktop
+
+diff --git a/Calculate.desktop b/Calculate.desktop
+new file mode 100644
+index 0000000..7196aaf
+--- /dev/null
++++ b/Calculate.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Calculate
++Name=Calculate
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/Calculate.pro b/Calculate.pro
+index a482606..bdeb4a6 100644
+--- a/Calculate.pro
++++ b/Calculate.pro
+@@ -24,3 +24,9 @@ HEADERS  += mainwindow.h \
+ FORMS    += mainwindow.ui
+ 
+ RC_FILE = ico.rc
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Calculate.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
