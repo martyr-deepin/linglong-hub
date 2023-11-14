@@ -1,0 +1,31 @@
+diff --git a/Minefield.desktop b/Minefield.desktop
+new file mode 100644
+index 0000000..a688488
+--- /dev/null
++++ b/Minefield.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=Minefield
++Exec=Minefield %f
++Icon=icon
+diff --git a/Minefield.pro b/Minefield.pro
+index e5c003a..96fbfb6 100644
+--- a/Minefield.pro
++++ b/Minefield.pro
+@@ -35,3 +35,14 @@ SOURCES += Benutzerlevel.cpp \
+            Viewer.cpp
+ RESOURCES += resourcen.qrc
+ TRANSLATIONS += Uebersetzung_de.ts
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += Minefield.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = icon.ico
++INSTALLS += icons
+\ No newline at end of file

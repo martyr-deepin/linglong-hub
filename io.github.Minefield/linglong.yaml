@@ -1,0 +1,21 @@
+package:
+  id: io.github.Minefield
+  name: Minefield
+  version: 0.49.0
+  kind: app
+  description: |
+     A simple minesweeper application.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/OSSGames/GAME-QT-PUZZLE-Minefield.git"
+  commit: 86d195f9dca31b216058d24d754509bfb267f0e2
+  patch:
+    - patches/install.patch
+
+build:
+  kind: qmake
