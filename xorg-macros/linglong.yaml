@@ -1,0 +1,26 @@
+package:
+  id: xorg-macros
+  name: xorg-macros
+  version: 1.19.1
+  kind: lib
+  description: |
+    This is a set of autoconf macros used by the configure.ac scripts inother Xorg modular packages.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: automake
+    version: 1.16.5
+
+  - id: libtool
+    version: 2.4.2
+
+source:
+  kind: git
+  url: https://github.com/tech4me/xorg-macros.git
+  commit: 39f07f7db58ebbf3dcb64a2bf9098ed5cf3d1223
+
+build:
+  kind: autotools
