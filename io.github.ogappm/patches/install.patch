@@ -1,0 +1,40 @@
+diff --git a/OGapp.desktop b/OGapp.desktop
+index 65236f7..ce07aab 100644
+--- a/OGapp.desktop
++++ b/OGapp.desktop
+@@ -4,7 +4,7 @@
+ Version=1.0
+ Type=Application
+ Terminal=false
+-Exec=OGapp
++Exec=OGapp %f
+ Name=OGapp
+ Icon=OGapp
+ Name[it]=OGapp
+diff --git a/OGapp.pro b/OGapp.pro
+index 2847f26..bac5bf1 100644
+--- a/OGapp.pro
++++ b/OGapp.pro
+@@ -68,13 +68,17 @@ RC_FILE = gapp.rc
+ TRANSLATIONS += OGapp_it_IT.ts \
+     qt_it_IT.ts
+ 
+-target.path += /usr/bin
++desktop.path = $$PREFIX/share/applications
++desktop.files += OGapp.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
+ INSTALLS += target
+ 
+-iconfile.files += OGapp.png
+-iconfile.path = /usr/share/pixmaps/
+-INSTALLS += iconfile
++icons.path = $${PREFIX}/share/icons
++icons.files = OGapp.png
++INSTALLS += icons
+ 
+ launcher.files += OGapp.desktop
+-launcher.path = /usr/share/applications/
++launcher.path = $$PREFIX/usr/share/applications/
+ INSTALLS += launcher
