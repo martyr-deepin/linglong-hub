@@ -1,0 +1,16 @@
+diff --git a/CellularAutomaton.pro b/CellularAutomaton.pro
+index 8891090..7d9ecd6 100644
+--- a/CellularAutomaton.pro
++++ b/CellularAutomaton.pro
+@@ -22,3 +22,10 @@ HEADERS  += mainwindow.h \
+     eca.h
+ 
+ FORMS    += mainwindow.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += CellularAutomaton.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
+
