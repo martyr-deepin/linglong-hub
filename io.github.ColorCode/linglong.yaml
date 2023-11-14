@@ -1,0 +1,21 @@
+package:
+  id: io.github.ColorCode
+  name: ColorCode
+  version: 0.8.5
+  kind: app
+  description: |
+    ColorCode is a free advanced MasterMind clone with lots of different game variants, from the very easy up to really challenging ones.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/OSSGames/GAME-QT-STRATEGY-ColorCode.git"
+  commit: f394f4b04416c598526578d4898c931eb4995984
+  patch:
+    - patches/install.patch
+
+build:
+  kind: qmake
