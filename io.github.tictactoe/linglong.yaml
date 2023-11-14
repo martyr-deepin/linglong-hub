@@ -1,0 +1,22 @@
+package:
+  id: io.github.tictactoe
+  name: tictactoe
+  version: 1.0.0
+  kind: app
+  description: |
+    tictactoe.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/sarab97/tictactoe.git
+  commit: 5768b9ecafe3d6e450e66761551e4645a8be4644
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      

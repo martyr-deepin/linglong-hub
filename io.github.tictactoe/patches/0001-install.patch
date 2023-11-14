@@ -1,0 +1,50 @@
+From 8cd10949c9f17e37d97ec2f87e81ba53c8f8ea1b Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Tue, 14 Nov 2023 14:46:33 +0800
+Subject: [install.patch_] isntall
+
+---
+ tictactoe.desktop |  7 +++++++
+ tictactoe.pro     | 13 +++++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 tictactoe.desktop
+
+diff --git a/tictactoe.desktop b/tictactoe.desktop
+new file mode 100644
+index 0000000..730adc1
+--- /dev/null
++++ b/tictactoe.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=tictactoe
++GenericName=tictactoe
++Hidden=false
++Name=tictactoe
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+diff --git a/tictactoe.pro b/tictactoe.pro
+index e25f117..c68f95d 100644
+--- a/tictactoe.pro
++++ b/tictactoe.pro
+@@ -12,3 +12,16 @@ SOURCES += main.cpp\
+ HEADERS  += mainwindow.h
+ 
+ FORMS    += mainwindow.ui
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = tictactoe.desktop
++INSTALLS += unix_desktop
++
++
++
++}
+\ No newline at end of file
+-- 
+2.33.1
+
