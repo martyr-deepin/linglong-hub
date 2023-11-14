@@ -1,0 +1,45 @@
+From 971378304f8cea60b73b9641fe87f6432def441e Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Tue, 14 Nov 2023 21:00:14 +0800
+Subject: [PATCH] fix-install
+
+---
+ Tetris.pro        | 8 ++++++++
+ tetris-qt.desktop | 8 ++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 tetris-qt.desktop
+
+diff --git a/Tetris.pro b/Tetris.pro
+index 1c74591..8e7d256 100644
+--- a/Tetris.pro
++++ b/Tetris.pro
+@@ -16,3 +16,11 @@ INCLUDEPATH += .
+ HEADERS += logic.h mainwindow.h piece.h
+ FORMS += mainwindow.ui
+ SOURCES += logic.cpp main.cpp mainwindow.cpp
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = tetris-qt.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+diff --git a/tetris-qt.desktop b/tetris-qt.desktop
+new file mode 100644
+index 0000000..3072fc2
+--- /dev/null
++++ b/tetris-qt.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Tetris
++Name=Tetris
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+-- 
+2.33.1
+
