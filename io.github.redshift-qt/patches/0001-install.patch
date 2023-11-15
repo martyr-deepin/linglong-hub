@@ -1,0 +1,44 @@
+From d2bb36e7494e5edb28f3d49208780a1c6b6c20fa Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 14 Nov 2023 21:29:07 +0800
+Subject: [PATCH] install
+
+---
+ redshift-qt.desktop | 8 ++++++++
+ redshift-qt.pro     | 6 ++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 redshift-qt.desktop
+
+diff --git a/redshift-qt.desktop b/redshift-qt.desktop
+new file mode 100644
+index 0000000..2a1b048
+--- /dev/null
++++ b/redshift-qt.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=redshift-qt
++Name=redshift-qt
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/redshift-qt.pro b/redshift-qt.pro
+index 3562449..7ef3f33 100644
+--- a/redshift-qt.pro
++++ b/redshift-qt.pro
+@@ -25,3 +25,9 @@ RESOURCES += \
+ 
+ DISTFILES += \
+     .travis.yml
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =redshift-qt.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

@@ -1,0 +1,20 @@
+package:
+  id: io.github.redshift-qt
+  name: redshift-qt
+  version: 0.6.0
+  kind: app
+  description: |
+    Currently mimicks 1:1 redshift-gtk tray menu 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Chemrat/redshift-qt.git
+  commit: 6724a9fd67c4ccea91eee57fde19b482b18c0609
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
