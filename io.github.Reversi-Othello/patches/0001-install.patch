@@ -1,0 +1,52 @@
+From a750765d093833301a52cbbddfe7c4d73333cf7c Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 14 Nov 2023 20:20:43 +0800
+Subject: [PATCH] install
+
+---
+ QtReversi.desktop |  9 +++++++++
+ QtReversi.pro     | 10 +++++++++-
+ 2 files changed, 18 insertions(+), 1 deletion(-)
+ create mode 100644 QtReversi.desktop
+
+diff --git a/QtReversi.desktop b/QtReversi.desktop
+new file mode 100644
+index 0000000..a53129e
+--- /dev/null
++++ b/QtReversi.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QtReversi
++Name=QtReversi
++icon=icon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/QtReversi.pro b/QtReversi.pro
+index 209b88a..8127c66 100644
+--- a/QtReversi.pro
++++ b/QtReversi.pro
+@@ -38,8 +38,16 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     resources.qrc
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++icon.files =  icon.png
++icon.path = $$PREFIX/share/icons
++desktop.files =QtReversi.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop icon
+\ No newline at end of file
+-- 
+2.33.1
+
