@@ -1,0 +1,19 @@
+package:
+  id: io.github.firebird
+  name: firebird
+  version: 1.6.0 
+  kind: app
+  description: |
+    This project is currently the community TI-Nspire emulator, originally created by Goplat.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/nspire-emus/firebird.git
+  commit: 7b54e65057cf317aa845f620d3a88fb326203746
+
+build:
+  kind: qmake
