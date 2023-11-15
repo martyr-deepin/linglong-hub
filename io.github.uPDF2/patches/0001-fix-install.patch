@@ -1,0 +1,45 @@
+From 47549bc5b30a08166aa9a17845618bc95a1e04e1 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Wed, 15 Nov 2023 11:31:15 +0800
+Subject: [PATCH] fix-install
+
+---
+ uPDF2.desktop | 8 ++++++++
+ uPDF2.pro     | 8 ++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 uPDF2.desktop
+
+diff --git a/uPDF2.desktop b/uPDF2.desktop
+new file mode 100644
+index 0000000..2bf6a2b
+--- /dev/null
++++ b/uPDF2.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=tool;Qt;
++Exec=uPDF2
++Name=uPDF2
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/uPDF2.pro b/uPDF2.pro
+index 14ce647..40c9f52 100644
+--- a/uPDF2.pro
++++ b/uPDF2.pro
+@@ -101,3 +101,11 @@ unix|win32: LIBS += -lpoppler -llzo2
+ QT          += widgets
+ CONFIG      += plugin
+ #TEMPLATE    = lib
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = uPDF2.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
