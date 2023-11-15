@@ -1,0 +1,61 @@
+From 44eda11eacb6ac65c817ef17c719d65f11886622 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Wed, 15 Nov 2023 10:31:44 +0800
+Subject: [install.patch_] install
+
+---
+ klotski.desktop |  8 ++++++++
+ klotski.pro     | 23 +++++++++++++++++++++++
+ 2 files changed, 31 insertions(+)
+ create mode 100644 klotski.desktop
+
+diff --git a/klotski.desktop b/klotski.desktop
+new file mode 100644
+index 0000000..328c762
+--- /dev/null
++++ b/klotski.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Exec=klotski
++GenericName=klotski
++Hidden=false
++Name=klotski
++StartupNotify=false
++Type=Application
++Icon=klotski_32
+\ No newline at end of file
+diff --git a/klotski.pro b/klotski.pro
+index ab83ba2..2449395 100644
+--- a/klotski.pro
++++ b/klotski.pro
+@@ -45,3 +45,26 @@ SOURCES += common.cpp \
+ RESOURCES +=    resources.qrc
+ TRANSLATIONS += zh_CN.ts
+ RC_ICONS =      klotski.ico
++
++
++unix: {
++
++target.path = $${PREFIX}/bin
++target.files += "klotski"
++target.files += "extra resources/help"
++target.files += "extra resources/images"
++target.files += "extra resources/levels"
++target.files += "extra resources/solutions"
++INSTALLS += target
++
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = klotski.desktop
++INSTALLS += unix_desktop
++
++unix_icons.path = $${PREFIX}/share/icons
++unix_icons.files = application-icon/klotski_32.png
++INSTALLS += unix_icons
++
++
++}
+\ No newline at end of file
+-- 
+2.33.1
+

@@ -1,0 +1,22 @@
+package:
+  id: io.github.klotski
+  name: klotski
+  version: 0.2.0
+  kind: app
+  description: |
+    klotski is a puzzle game.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/linyinfeng/klotski.git
+  commit: df3c3d6ea58d936e059b31c614bdafebd88e70ec
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
