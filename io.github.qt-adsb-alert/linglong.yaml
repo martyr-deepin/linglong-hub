@@ -1,0 +1,20 @@
+package:
+  id: io.github.qt-adsb-alert
+  name: qt-adsb-alert
+  version: 1.1.0
+  kind: app
+  description: |
+    qt-adsb-alert fetches informations from ADS-B exchange website and sends a mail when interesting planes are near home.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/nefethael/qt-adsb-alert.git
+  commit: dfd4141c5590238f272f97946aa147849f9c0933
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

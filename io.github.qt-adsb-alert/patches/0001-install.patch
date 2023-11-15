@@ -1,0 +1,53 @@
+From 2fd08d37f605466ce439de54771bc7faf8e351bd Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 15 Nov 2023 18:54:20 +0800
+Subject: [PATCH] install
+
+---
+ qt-adsb-alert.desktop | 8 ++++++++
+ qt-adsb-alert.pro     | 9 +++++++--
+ 2 files changed, 15 insertions(+), 2 deletions(-)
+ create mode 100644 qt-adsb-alert.desktop
+
+diff --git a/qt-adsb-alert.desktop b/qt-adsb-alert.desktop
+new file mode 100644
+index 0000000..aced168
+--- /dev/null
++++ b/qt-adsb-alert.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=qt-adsb-alert
++Name=qt-adsb-alert
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/qt-adsb-alert.pro b/qt-adsb-alert.pro
+index 4903dc0..8e9b43d 100644
+--- a/qt-adsb-alert.pro
++++ b/qt-adsb-alert.pro
+@@ -53,7 +53,7 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ DISTFILES += \
+@@ -63,5 +63,10 @@ DISTFILES += \
+ 
+ RESOURCES += \
+     resource.qrc
+-
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =qt-adsb-alert.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+ 
+-- 
+2.33.1
+
