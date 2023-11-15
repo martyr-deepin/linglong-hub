@@ -1,0 +1,20 @@
+package:
+  id: io.github.FractalCryptGUI
+  name: FractalCryptGUI
+  version: 2.0.0
+  kind: app
+  description: |
+    Free cross-platform deniable encryption cryptoarchiver
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/zorggomat/FractalCryptGUI.git
+  commit: 839861da6a33c61ccb9bfb176016d4a8ed87f896
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
