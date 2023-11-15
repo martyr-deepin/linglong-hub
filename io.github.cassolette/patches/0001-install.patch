@@ -1,0 +1,47 @@
+From 1601f537736aa237c3fc31b4b34c3f502145a364 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 14 Nov 2023 19:32:43 +0800
+Subject: [PATCH] install
+
+---
+ cassolette.desktop | 8 ++++++++
+ cassolette.pro     | 7 ++++++-
+ 2 files changed, 14 insertions(+), 1 deletion(-)
+ create mode 100644 cassolette.desktop
+
+diff --git a/cassolette.desktop b/cassolette.desktop
+new file mode 100644
+index 0000000..2f1fd56
+--- /dev/null
++++ b/cassolette.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=cassolette
++Name=cassolette
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/cassolette.pro b/cassolette.pro
+index 7415812..feb3285 100644
+--- a/cassolette.pro
++++ b/cassolette.pro
+@@ -67,7 +67,12 @@ OTHER_FILES += \
+     deploy/windows/setup.iss \
+     $$QMAKE_SUBSTITUTES
+ 
+-
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =cassolette.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+ # Mozilla Universal Character Set Detector library
+ include(src/3rdparty/ucsd/ucsd.pri)
+ 
+-- 
+2.33.1
+
