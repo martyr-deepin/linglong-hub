@@ -1,0 +1,53 @@
+From ccfd71be34913bb70eb400e5e7e93e4d88cf055d Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 14 Nov 2023 20:15:00 +0800
+Subject: [PATCH] install
+
+---
+ FractalCrypt.desktop |  9 +++++++++
+ FractalCrypt.pro     | 10 +++++++++-
+ 2 files changed, 18 insertions(+), 1 deletion(-)
+ create mode 100644 FractalCrypt.desktop
+
+diff --git a/FractalCrypt.desktop b/FractalCrypt.desktop
+new file mode 100644
+index 0000000..b9fbecf
+--- /dev/null
++++ b/FractalCrypt.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=FractalCrypt
++Name=FractalCrypt
++StartupNotify=false
++Terminal=false
++icon=logo
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/FractalCrypt.pro b/FractalCrypt.pro
+index f0efd95..5114fe1 100644
+--- a/FractalCrypt.pro
++++ b/FractalCrypt.pro
+@@ -82,8 +82,16 @@ unix:LIBS += -ldl
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     resources.qrc
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =FractalCrypt.desktop
++desktop.path = $$DATADIR/applications/
++icon.path = $$PREFIX/share/icons
++icon.files =logo.ico
++INSTALLS += target desktop icon
+\ No newline at end of file
+-- 
+2.33.1
+
