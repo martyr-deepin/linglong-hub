@@ -1,0 +1,4 @@
+module QtQuick.Controls.Chameleon
+plugin qtquickcontrolschameleonstyleplugin
+classname QtQuickControls2ChameleonStylePlugin
+depends QtQuick.Controls 2.4

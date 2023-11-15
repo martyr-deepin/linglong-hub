@@ -1,0 +1,13 @@
+prefix=/runtime
+exec_prefix=${prefix}
+libdir=${prefix}/lib/x86_64-linux-gnu
+includedir=${prefix}/include/x86_64-linux-gnu/qt5
+
+
+Name: Qt5 3DExtras
+Description: Qt 3DExtras module
+Version: 5.15.7
+Libs: -lQt53DExtras 
+Cflags: -DQT_3DEXTRAS_LIB -I${includedir}/Qt3DExtras -I${includedir}
+Requires: Qt5Core Qt5Gui Qt53DCore Qt53DRender Qt53DInput Qt53DLogic
+

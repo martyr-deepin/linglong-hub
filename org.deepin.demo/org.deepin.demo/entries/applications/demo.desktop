@@ -1,0 +1,8 @@
+[Desktop Entry]
+Exec=ll-cli run org.deepin.demo --exec demo
+GenericName=Demo
+Hidden=false
+Name=QT Demo
+StartupNotify=false
+Type=Application
+X-linglong=org.deepin.demo

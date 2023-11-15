@@ -1,0 +1,14 @@
+{
+    "appid": "org.deepin.Runtime",
+    "arch": [
+        "x86_64"
+    ],
+    "base": "org.deepin.base/23.0.0/x86_64",
+    "description": "the runtime enviroment of deepin\n",
+    "kind": "runtime",
+    "module": "devel",
+    "name": "deepin-runtime",
+    "runtime": "org.deepin.basics/23.0.0/x86_64",
+    "size": 0,
+    "version": "23.0.0.19"
+}

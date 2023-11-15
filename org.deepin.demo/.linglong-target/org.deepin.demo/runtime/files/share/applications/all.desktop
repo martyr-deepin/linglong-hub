@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=linglong-all
+NoDisplay=true
+Exec=/usr/bin/xdg-open %U
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+MimeType=inode/directory;application/x-mimearchive;x-scheme-handler/http;x-scheme-handler/https;application/msword;application/vnd.openxmlformats-officedocument.wordprocessingml.document;application/vnd.ms-excel;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;application/vnd.ms-powerpoint;application/vnd.openxmlformats-officedocument.presentationml.presentation;application/x-gzip;application/zip;application/rar;application/x-tar;application/pdf;application/rtf;image/gif;image/jpeg;image/jp2;image/png;image/tiff;image/bmp;image/svg+xml;image/webp;image/x-icon;application/kswps;application/kset;application/ksdps;application/x-photoshop;application/x-coreldraw;application/x-shockwave-flash;text/plain;application/x-javascript;text/javascript;text/css;text/html;application/xhtml+xml;text/xml;text/x-vcard;application/x-httpd-php;application/java-archive;application/vnd.android.package-archive;application/octet-stream;application/x-x509-user-cert;audio/mpeg;audio/midi;audio/x-wav;audio/x-mpegurl;audio/x-m4a;audio/ogg;audio/x-realaudio;video/mp4;video/mpeg;video/quicktime;video/x-m4v;video/x-ms-wmv;video/x-msvideo;video/webm;video/x-flv;application/xhtml_xml;
+X-Deepin-Vendor=deepin

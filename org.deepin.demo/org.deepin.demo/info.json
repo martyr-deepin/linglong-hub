@@ -1,0 +1,14 @@
+{
+    "appid": "org.deepin.demo",
+    "arch": [
+        "x86_64"
+    ],
+    "base": "/latest/x86_64",
+    "description": "simple qt demo.\n",
+    "kind": "app",
+    "module": "runtime",
+    "name": "deepin-demo",
+    "runtime": "org.deepin.Runtime/23.0.0/x86_64",
+    "size": 70691920,
+    "version": "0.0.1"
+}
