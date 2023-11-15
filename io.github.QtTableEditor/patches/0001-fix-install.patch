@@ -1,0 +1,44 @@
+From 2fc843b963f47129008d3540f467597c8b8d920e Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Wed, 15 Nov 2023 12:33:15 +0800
+Subject: [PATCH] fix-install
+
+---
+ QtTableEditor.desktop | 8 ++++++++
+ QtTableEditor.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 QtTableEditor.desktop
+
+diff --git a/QtTableEditor.desktop b/QtTableEditor.desktop
+new file mode 100644
+index 0000000..dd1d6f0
+--- /dev/null
++++ b/QtTableEditor.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=tool;Qt;
++Exec=QtTableEditor
++Name=QtTableEditor
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/QtTableEditor.pro b/QtTableEditor.pro
+index faaa9c7..96a1200 100644
+--- a/QtTableEditor.pro
++++ b/QtTableEditor.pro
+@@ -40,3 +40,10 @@ HEADERS  += mainwindow.h \
+ 
+ RESOURCES += \
+     icons.qrc
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = QtTableEditor.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
