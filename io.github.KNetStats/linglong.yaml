@@ -1,0 +1,23 @@
+package:
+  id: io.github.KNetStats
+  name: KNetStats
+  version: 2.0.0
+  kind: app
+  description: |
+    A simple network interface and statistics viewer for Linux.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: kwidgetsaddons
+    version: 5.90.0
+
+source:
+  kind: git
+  url: https://github.com/telans/KNetStats.git
+  commit: 3818748bb012275d699fd43614c3294fecf801c4
+
+build:
+  kind: cmake
