@@ -1,0 +1,20 @@
+package:
+  id: io.github.PremiereSubtitle
+  name: PremiereSubtitle
+  version: 1.0.0
+  kind: app
+  description: |
+    Premiere subtitles generator | Pr 字幕批量生成器
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/taseikyo/PremiereSubtitle.git
+  commit: b783b68be74473e6fad0b4010e7754792e7b632a
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

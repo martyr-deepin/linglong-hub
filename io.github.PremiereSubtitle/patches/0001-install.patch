@@ -1,0 +1,46 @@
+From c340e0436c3b0fa7a3fb143ace12dff14777d499 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 14 Nov 2023 21:47:01 +0800
+Subject: [PATCH] install
+
+---
+ PrSubtitle.desktop | 9 +++++++++
+ PrSubtitle.pro     | 8 ++++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 PrSubtitle.desktop
+
+diff --git a/PrSubtitle.desktop b/PrSubtitle.desktop
+new file mode 100644
+index 0000000..8d566b3
+--- /dev/null
++++ b/PrSubtitle.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=PrSubtitle
++Name=PrSubtitle
++icon=app
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/PrSubtitle.pro b/PrSubtitle.pro
+index e5eb7b0..474d3df 100644
+--- a/PrSubtitle.pro
++++ b/PrSubtitle.pro
+@@ -34,3 +34,11 @@ RC_FILE = app.rc
+ 
+ RESOURCES += \
+     res.qrc
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =PrSubtitle.desktop
++desktop.path = $$DATADIR/applications/
++icon.files = app.ico
++icon.path = $$PREFIX/share/icons
++INSTALLS += target desktop icon
+-- 
+2.33.1
+
