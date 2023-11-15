@@ -1,0 +1,45 @@
+From 91c326e1ab0e6c53c930b14e26a41e23c6dc5230 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 14 Nov 2023 13:06:16 +0800
+Subject: [PATCH] install
+
+---
+ FiveGame.desktop | 8 ++++++++
+ FiveGame.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 FiveGame.desktop
+
+diff --git a/FiveGame.desktop b/FiveGame.desktop
+new file mode 100644
+index 0000000..c58b406
+--- /dev/null
++++ b/FiveGame.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=FiveGame
++Name=FiveGame
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/FiveGame.pro b/FiveGame.pro
+index 9db3620..3f5409c 100644
+--- a/FiveGame.pro
++++ b/FiveGame.pro
+@@ -30,3 +30,10 @@ FORMS    += MainWindow.ui
+ 
+ RESOURCES += \
+     FiveGame.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =FiveGame.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
