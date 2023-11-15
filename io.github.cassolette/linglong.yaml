@@ -1,0 +1,20 @@
+package:
+  id: io.github.cassolette
+  name: cassolette
+  version: 1.0.0
+  kind: app
+  description: |
+    Cassolette is a free and multi-platform utility software to help analysing and converting the encoding of text files.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/fougue/cassolette.git
+  commit: 0aa8449f5a675f7ce3c897318c4872ed104e2835
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
