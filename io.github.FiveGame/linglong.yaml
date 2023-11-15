@@ -1,0 +1,20 @@
+package:
+  id: io.github.FiveGame
+  name: FiveGame
+  version: 1.0.0
+  kind: app
+  description: |
+    局域网五子棋对战
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/windywater/FiveGame.git
+  commit: b332a98f9b5385b62e5ad57b9482e259cb4dd4e5
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
