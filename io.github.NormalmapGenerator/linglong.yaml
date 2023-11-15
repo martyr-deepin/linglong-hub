@@ -1,0 +1,22 @@
+package:
+  id: io.github.NormalmapGenerator
+  name: NormalmapGenerator
+  version: 0.0.1
+  kind: app
+  description: |
+    A simple program that converts images into normal maps.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Theverat/NormalmapGenerator.git"
+  commit: a03b89279e0e035069b4609dce3d324f4c411e1b
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake
