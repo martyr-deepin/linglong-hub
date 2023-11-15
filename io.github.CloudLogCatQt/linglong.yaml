@@ -1,0 +1,20 @@
+package:
+  id: io.github.CloudLogCatQt
+  name: CloudLogCatQt
+  version: 1.0.0
+  kind: app
+  description: |
+    Qt app that can be compiled on Linux, Windows or Mac for providing CAT support for Cloudlog
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/myzinsky/CloudLogCatQt.git
+  commit: 7f954a1f717c7e0ffd8e5b882c54e25981df1d4a
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

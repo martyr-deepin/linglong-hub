@@ -1,0 +1,47 @@
+From 8361ff10d396c2b7edaad37df70c2522a746466f Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 15 Nov 2023 12:27:14 +0800
+Subject: [PATCH] install
+
+---
+ CloudLogCatQt.desktop | 8 ++++++++
+ CloudLogCatQt.pro     | 9 ++++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 CloudLogCatQt.desktop
+
+diff --git a/CloudLogCatQt.desktop b/CloudLogCatQt.desktop
+new file mode 100644
+index 0000000..01460dd
+--- /dev/null
++++ b/CloudLogCatQt.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=CloudLogCatQt
++Name=CloudLogCatQt
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/CloudLogCatQt.pro b/CloudLogCatQt.pro
+index 189ff53..25cbf58 100644
+--- a/CloudLogCatQt.pro
++++ b/CloudLogCatQt.pro
+@@ -56,5 +56,12 @@ FORMS += cloudlogcatqt.ui
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =CloudLogCatQt.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
