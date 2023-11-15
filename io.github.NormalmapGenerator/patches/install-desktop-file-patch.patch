@@ -1,0 +1,19 @@
+diff --git a/NormalmapGenerator.pro b/NormalmapGenerator.pro
+index 10c42fe..6d992c3 100644
+--- a/NormalmapGenerator.pro
++++ b/NormalmapGenerator.pro
+@@ -67,5 +67,13 @@ win32:RC_FILE = resources.rc
+ RESOURCES += \
+     stylesheets.qrc
+ 
+-target.path = /usr/local/bin
++desktop.path = $$PREFIX/share/applications
++desktop.files += NormalmapGenerator.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
+ INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = resources/logo.ico
++INSTALLS += icons
