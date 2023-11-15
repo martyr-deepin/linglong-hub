@@ -1,0 +1,21 @@
+package:
+  id: io.github.SoundGenerator
+  name: SoundGenerator
+  version: 0.0.6
+  kind: app
+  description: |
+    Sound Generator with nodal interface in Qt to create sounds from scratch.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/BenPyton/SoundGenerator.git
+  commit: d3a057e15b73dfa3391d7940e1d4e0e20d93da1f
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+ 
