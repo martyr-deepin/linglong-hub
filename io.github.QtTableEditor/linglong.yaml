@@ -1,0 +1,19 @@
+package:
+  id: io.github.QtTableEditor
+  name: QtTableEditor
+  version: 0.0.1
+  kind: app
+  description: |
+    Desktop application for creating and editing spreadsheets based on C++ Qt Toolkit
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/MaxGavr/QtTableEditor.git
+  commit: 3f714c72883aac741836b62b0d8bcadbaaf0a80b
+  patch: patches/0001-fix-install.patch 
+
+build:
+  kind: qmake
