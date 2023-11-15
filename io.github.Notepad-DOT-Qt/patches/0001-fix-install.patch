@@ -1,0 +1,52 @@
+From 2945af3fc951daac95c552a2bb603291f7e1ac96 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Wed, 15 Nov 2023 12:10:53 +0800
+Subject: [PATCH] fix-install
+
+---
+ Notepad-DOT-Qt.desktop |  8 ++++++++
+ Notepad-DOT-Qt.pro     | 13 ++++++++++---
+ 2 files changed, 18 insertions(+), 3 deletions(-)
+ create mode 100644 Notepad-DOT-Qt.desktop
+
+diff --git a/Notepad-DOT-Qt.desktop b/Notepad-DOT-Qt.desktop
+new file mode 100644
+index 0000000..44519b1
+--- /dev/null
++++ b/Notepad-DOT-Qt.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=tool;Qt;
++Exec=Notepad-DOT-Qt
++Name=Notepad-DOT-Qt
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Notepad-DOT-Qt.pro b/Notepad-DOT-Qt.pro
+index b0a8ae2..2428429 100644
+--- a/Notepad-DOT-Qt.pro
++++ b/Notepad-DOT-Qt.pro
+@@ -26,9 +26,16 @@ FORMS += \
+     mainwindow.ui
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
++#qnx: target.path = /tmp/$${TARGET}/bin
++#else: unix:!android: target.path = /opt/$${TARGET}/bin
++#!isEmpty(target.path): INSTALLS += target
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = Notepad-DOT-Qt.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+ 
+ RESOURCES += \
+     resource.qrc
+-- 
+2.33.1
+
