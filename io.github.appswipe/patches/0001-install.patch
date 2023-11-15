@@ -1,0 +1,49 @@
+From e3606edb2ae0618075235bf33ba5ff443822dd78 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 14 Nov 2023 13:31:29 +0800
+Subject: [PATCH] install
+
+---
+ AppSwipe.pro     | 9 ++++++++-
+ appswipe.desktop | 4 ++--
+ 2 files changed, 10 insertions(+), 3 deletions(-)
+
+diff --git a/AppSwipe.pro b/AppSwipe.pro
+index c376295..7fda3cc 100644
+--- a/AppSwipe.pro
++++ b/AppSwipe.pro
+@@ -51,8 +51,15 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =appswipe.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+ RESOURCES += \
+     resources.qrc
+diff --git a/appswipe.desktop b/appswipe.desktop
+index c084e3c..7061c5a 100644
+--- a/appswipe.desktop
++++ b/appswipe.desktop
+@@ -1,8 +1,8 @@
+ [Desktop Entry]
+ Version=1.0
+-Name=App Swipe
++Name=AppSwipe
+ GenericName=App Swipe
+-Exec=appswipe
++Exec=AppSwipe
+ Icon=appswipe
+ Terminal=false
+ Type=Application
+-- 
+2.33.1
+
