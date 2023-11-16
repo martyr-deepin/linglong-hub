@@ -1,0 +1,10 @@
+diff --git a/qup.desktop b/qup.desktop
+new file mode 100644
+index 0000000..9cfa749
+--- /dev/null
++++ b/qup.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=Q U P
++Exec=Qup %f

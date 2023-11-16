@@ -1,0 +1,15 @@
+diff --git a/qup.pro b/qup.pro
+index bcc7bbe..7a206cf 100644
+--- a/qup.pro
++++ b/qup.pro
+@@ -125,3 +125,10 @@ SOURCES     += source/qup.cc \
+ TARGET      = Qup
+ TEMPLATE    = app
+ UI_DIR      = temp/ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += qup.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
