@@ -1,0 +1,25 @@
+diff --git a/gcalc.desktop b/gcalc.desktop
+new file mode 100644
+index 0000000..7d2efe6
+--- /dev/null
++++ b/gcalc.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=gcalc
++Exec=gcalc %f
+diff --git a/gcalc2017.pro b/gcalc2017.pro
+index b13c700..8410ed7 100644
+--- a/gcalc2017.pro
++++ b/gcalc2017.pro
+@@ -62,3 +62,10 @@ SOURCES += main.cpp \
+            widgets/PrimitivesWidget.cpp \
+            widgets/StoreWidget.cpp \
+            widgets/WorkspaceWidget.cpp
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += gcalc.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
