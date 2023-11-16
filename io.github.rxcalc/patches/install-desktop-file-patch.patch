@@ -1,0 +1,28 @@
+diff --git a/rxcalc.pro b/rxcalc.pro
+index 806de5b..a0e38cb 100644
+--- a/rxcalc.pro
++++ b/rxcalc.pro
+@@ -54,7 +54,7 @@ OTHER_FILES +=  README.md \
+ unix {
+     #TODO - add icon for .rxcp files
+ 
+-    target.path = /usr/bin
++    target.path = $$PREFIX/bin
+ 
+     menu.path = /usr/share/applications
+     menu.files = linux/rxcalc.desktop
+@@ -99,3 +99,13 @@ win32 {
+         $$PWD\\windows\\replace.bat     .\\rxcalc.tmp               \"{INPUTDIR}\"  \"$$PWD\"       > .\\rxcalc.iss && \
+         DEL .\\rxcalc.tmp && DEL .\\release\\*.o && DEL .\\release\\*.cpp && iscc.exe rxcalc.iss
+ }
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += rxcalc.desktop
++INSTALLS += desktop
++
++icons.path = $${PREFIX}/share/icons
++icons.files = resources/rxcalc.ico
++INSTALLS += icons
++
++
+
