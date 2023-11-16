@@ -1,0 +1,22 @@
+package:
+  id: io.github.rxcalc
+  name: rxcalc
+  version: 0.0.1
+  kind: app
+  description: |
+    RxCalc is a calculator for the analysis of multi-stage receiver.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/arhiv6/rxcalc.git"
+  commit: ff112239d3454783ceedbb098d35d7a0161984c6
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake
