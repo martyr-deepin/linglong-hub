@@ -1,0 +1,34 @@
+--- /dev/null
++++ b/snapcraft-qt/snapcraft-gui.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=snapcraft-gui
++Exec=snapcraft-gui %f
++Icon=Snapcraft-gui
+diff --git a/snapcraft-qt/snapcraft-qt.pro b/snapcraft-qt/snapcraft-qt.pro
+index d558b96..10ce842 100644
+--- a/snapcraft-qt/snapcraft-qt.pro
++++ b/snapcraft-qt/snapcraft-qt.pro
+@@ -20,7 +20,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+ TARGET = snapcraft-gui
+ TEMPLATE = app
+ 
+-target.path = /opt/snapcraft-gui/
++target.path = $$PREFIX/bin
+ INSTALLS += target
+ 
+ SOURCES += main.cpp\
+@@ -53,3 +53,11 @@ RESOURCES += \
+ DISTFILES += \
+     contrib.txt \
+     yaml_rules.txt
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += snapcraft-gui.desktop
++INSTALLS += desktop
++
++icons.path = $${PREFIX}/share/icons
++icons.files = setup/gui/Snapcraft-gui.png
++INSTALLS += icons
+
