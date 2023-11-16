@@ -1,0 +1,19 @@
+package:
+  id: io.github.Clevit
+  name: Clevit
+  version: 0.0.1
+  kind: app
+  description: |
+    The only smart text editor in this galaxy!
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/ZeroDot1/Clevit.git"
+  commit: fc9570dc1ef9523cc5b24c199c830322b69dde2f
+
+build:
+  kind: qmake
