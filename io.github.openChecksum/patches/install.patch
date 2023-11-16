@@ -1,0 +1,30 @@
+diff --git a/Md5Checker.desktop b/Md5Checker.desktop
+new file mode 100644
+index 0000000..daec229
+--- /dev/null
++++ b/Md5Checker.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=Md5 Checker
++Exec=Md5Checker %f
++Icon=appIcon
+diff --git a/openChecksum.pro b/openChecksum.pro
+index 5ad0496..b6a52e2 100644
+--- a/openChecksum.pro
++++ b/openChecksum.pro
+@@ -48,3 +48,14 @@ TRANSLATIONS += \
+ 
+ DISTFILES += \
+     openChecksum.rc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += Md5Checker.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = icons/48x48/appIcon.png
++INSTALLS += icons
