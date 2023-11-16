@@ -1,0 +1,22 @@
+package:
+  id: io.github.luckybackup
+  name: luckybackup
+  version: 0.4.9
+  kind: app
+  description: |
+    he main goal of luckyBackup, as its name states, is the creation of backups of your data.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/mazbrili/luckybackup.git"
+  commit: db3ce5ab784cd2416f7d0feae424049ef784ecb2
+  patch:
+    - patches/add-desktop.patch
+    - patches/install-desktop.patch
+
+build:
+  kind: qmake
