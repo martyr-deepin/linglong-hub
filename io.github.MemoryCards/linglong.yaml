@@ -1,0 +1,21 @@
+package:
+  id: io.github.MemoryCards
+  name: MemoryCards
+  version: 0.0.1
+  kind: app
+  description: |
+    OOP Memory cards game written in C++ & Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/icevin/MemoryCards.git"
+  commit: f9e79671dcf51c203204891f379c42d7219aaedf
+  patch:
+    - patches/install.patch
+
+build:
+  kind: qmake
