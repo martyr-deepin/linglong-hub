@@ -1,0 +1,21 @@
+package:
+  id: io.github.agiler
+  name: agiler
+  version: 0.0.1
+  kind: app
+  description: |
+    Agile ER design tool.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/antoniomenezes/agiler.git"
+  commit: ae10147f6b7747d1105c020963e1920f84f01b48
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake

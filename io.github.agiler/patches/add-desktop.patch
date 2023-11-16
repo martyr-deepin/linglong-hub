@@ -1,0 +1,26 @@
+diff --git a/agiler.desktop b/agiler.desktop
+new file mode 100644
+index 0000000..dc07383
+--- /dev/null
++++ b/agiler.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=agiler
++Exec=agiler %f
+\ No newline at end of file
+diff --git a/agiler.pro b/agiler.pro
+index 194e104..e64a035 100644
+--- a/agiler.pro
++++ b/agiler.pro
+@@ -46,3 +46,10 @@ FORMS    += mainwindow.ui \
+ 
+ RESOURCES += \
+     resources.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += agiler.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
