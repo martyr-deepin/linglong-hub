@@ -1,0 +1,25 @@
+diff --git a/Orion.desktop b/Orion.desktop
+new file mode 100644
+index 0000000..e36676c
+--- /dev/null
++++ b/Orion.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=Orion
++Exec=Orion %f
+diff --git a/Orion.pro b/Orion.pro
+index d5ede77..ba7059f 100644
+--- a/Orion.pro
++++ b/Orion.pro
+@@ -22,3 +22,10 @@ HEADERS  += mainwindow.hpp
+ INCLUDEPATH += 3rdparty/qtmvt
+ 
+ FORMS    += mainwindow.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += Orion.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
