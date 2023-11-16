@@ -1,0 +1,61 @@
+diff --git a/luckybackup.pro b/luckybackup.pro
+index 3a758f7..ed874a0 100644
+--- a/luckybackup.pro
++++ b/luckybackup.pro
+@@ -14,28 +14,36 @@ QMAKE_STRIP = echo
+ 
+ VERSION = 0.4.9
+ 
+-target.path = /usr/bin
++target.path = $$PREFIX/bin
+ TARGET = luckybackup
+ 
+-menu.path = /usr/share/applications
++desktop.path = $$PREFIX/share/applications
++desktop.files += luckybackup.desktop
++INSTALLS += desktop
++
++icons.path = $${PREFIX}/share/icons
++icons.files = menu/luckybackup.png
++INSTALLS += icons
++
++menu.path = $$PREFIX/usr/share/applications
+ menu.files = menu/luckybackup.desktop menu/luckybackup-kde-su.desktop menu/luckybackup-gnome-su.desktop
+
+-debianmenu.path = /usr/share/menu
++debianmenu.path = $$PREFIX/usr/share/menu
+ debianmenu.files = menu/luckybackup
+ 
+-pixmap.path = /usr/share/pixmaps
++pixmap.path = $$PREFIX/usr/share/pixmaps
+ pixmap.files = menu/luckybackup.xpm menu/luckybackup.png
+ 
+-documentation.path = /usr/share/doc/luckybackup
++documentation.path = $$PREFIX/usr/share/doc/luckybackup
+ documentation.files = manual
+ 
+-manpage.path = /usr/share/man/man8
++manpage.path = $$PREFIX/usr/share/man/man8
+ manpage.files = manpage/luckybackup.8.gz
+ 
+-translations.path = /usr/share/luckybackup
++translations.path = $$PREFIX/usr/share/luckybackup
+ translations.files = translations
+ 
+-license.path = /usr/share/doc/luckybackup
++license.path = $$PREFIX/usr/share/doc/luckybackup
+ license.files = license
+ 
+ INSTALLS += target menu debianmenu pixmap documentation manpage translations license
+@@ -64,8 +72,8 @@ ISNOTDEB = $$find(APTGETOP, "command not found")
+ exists( /etc/SuSE-release ) {
+     message( "You are running suse" )
+     message( "Altering the documentation default install directory..." )
+-    license.path = /usr/share/doc/packages/luckybackup
+-    documentation.path = /usr/share/doc/packages/luckybackup
++    license.path = $$PREFIX/usr/share/doc/packages/luckybackup
++    documentation.path = $$PREFIX/usr/share/doc/packages/luckybackup
+  }
+ !isEmpty ( ISUBUNTU ) {
+     message( "You are running ubuntu" )
+
