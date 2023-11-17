@@ -1,0 +1,30 @@
+diff --git a/r49.desktop b/r49.desktop
+new file mode 100644
+index 0000000..ee1c2a6
+--- /dev/null
++++ b/r49.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=Qr49
++Exec=Qr49 %f
++Icon=toxic
+diff --git a/r49.pro b/r49.pro
+index 07e4b52..5042533 100644
+--- a/r49.pro
++++ b/r49.pro
+@@ -22,3 +22,14 @@
+ TEMPLATE = subdirs
+ SUBDIRS = libtoxic cr49 Qr49
+ CONFIG += ordered
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += r49.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = Qr49/icons/toxic.png
++INSTALLS += icons
