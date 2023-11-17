@@ -1,0 +1,21 @@
+package:
+  id: io.github.biblref
+  name: biblref
+  version: 1.1.5
+  kind: app
+  description: |
+    Создание библиографических ссылок.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/pa23/biblref.git
+  commit: 6c6014e3496c5df78d4e926eda5e996e37196d28
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake

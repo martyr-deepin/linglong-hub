@@ -1,0 +1,32 @@
+diff --git a/biblref.desktop b/biblref.desktop
+new file mode 100644
+index 0000000..a5fa17d
+--- /dev/null
++++ b/biblref.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=biblref
++Exec=biblref %f
++Icon=biblref
+diff --git a/biblref.pro b/biblref.pro
+index 8f1a3db..c8194e8 100644
+--- a/biblref.pro
++++ b/biblref.pro
+@@ -71,8 +71,16 @@ unix: {
+     else {
+         OBJECTS_DIR = build/unix/release
+     }
++    desktop.path = $$PREFIX/share/applications
++    desktop.files += biblref.desktop
++    INSTALLS += desktop
++
+     target.path = $$PREFIX/bin
+     INSTALLS += target
++
++    icons.path = $${PREFIX}/share/icons
++    icons.files = icons/biblref.png
++    INSTALLS += icons
+ }
+ 
+ win32: {
