@@ -1,0 +1,32 @@
+diff --git a/diecat.desktop b/diecat.desktop
+new file mode 100644
+index 0000000..fdfc2ca
+--- /dev/null
++++ b/diecat.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=diecat
++Exec=diecat %f
++Icon=diecat
+diff --git a/diecat.pro b/diecat.pro
+index bf0f88c..2fb2a1b 100644
+--- a/diecat.pro
++++ b/diecat.pro
+@@ -56,8 +56,16 @@ unix: {
+     else {
+         OBJECTS_DIR = build/unix/release
+     }
++    desktop.path = $$PREFIX/share/applications
++    desktop.files += diecat.desktop
++    INSTALLS += desktop
++
+     target.path = $$PREFIX/bin
+     INSTALLS += target
++
++    icons.path = $${PREFIX}/share/icons
++    icons.files = icons/diecat.png
++    INSTALLS += icons
+ }
+ 
+ win32: {

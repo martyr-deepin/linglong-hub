@@ -1,0 +1,21 @@
+package:
+  id: io.github.diecat
+  name: diecat
+  version: 0.3.3.1
+  kind: app
+  description: |
+    A2L/HEX file reader.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/pa23/diecat.git
+  commit: 4fd630e61617339b6c8e7f40a6c26cfa035227f7
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
