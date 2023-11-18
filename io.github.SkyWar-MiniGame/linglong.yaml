@@ -1,0 +1,22 @@
+package:
+  id: io.github.SkyWar-MiniGame
+  name: SkyWar-MiniGame
+  version: 1.0.0
+  kind: app
+  description: |
+    SkyWar.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/reachea/SkyWar-MiniGame.git
+  commit: 8ddbe2af5cabd3758a73a153ccb901fa31999b1f
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
