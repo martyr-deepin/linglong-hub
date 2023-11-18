@@ -1,0 +1,37 @@
+diff -Naur a/aoeui.desktop b/aoeui.desktop
+--- a/aoeui.desktop	1970-01-01 08:00:00.000000000 +0800
++++ b/aoeui.desktop	2023-11-15 21:29:13.093034765 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=aoeui
++Exec=Aoeui
++Type=Application
+diff -Naur a/Makefile b/Makefile
+--- a/Makefile	2023-11-15 21:23:06.670708471 +0800
++++ b/Makefile	2023-11-15 21:32:00.222410722 +0800
+@@ -8,7 +8,8 @@
+ 	window.h util.h clip.h macro.h mem.h die.h types.h rgba.h
+ RELS = $(SRCS:.c=.o)
+ LIBS = -lutil
+-INST_DIR = $(DESTDIR)/usr
++INST_DIR = $(PREFIX)
++DESKTOP_FILE = aoeui.desktop
+ CFLAGS = -Wall -Wno-parentheses \
+ -Wpointer-arith -Wcast-align -Wwrite-strings -Wstrict-prototypes \
+ -Wmissing-prototypes -Wmissing-declarations
+@@ -64,12 +65,15 @@
+ 	install -d $(INST_DIR)/bin
+ 	install -d $(INST_DIR)/share/aoeui
+ 	install -d $(INST_DIR)/share/man/man1
++	install -d $(INST_DIR)/share/applications
+ 	install aoeui $(INST_DIR)/bin
+ 	ln -nf $(INST_DIR)/bin/aoeui $(INST_DIR)/bin/asdfg
+ 	install *.txt $(INST_DIR)/share/aoeui
+ 	install *.1.gz $(INST_DIR)/share/man/man1
++	install $(DESKTOP_FILE) $(INST_DIR)/share/applications
+ clean:
+ 	rm -f *.o *.help core gmon.out screenlog.*
++	rm -f $(INST_DIR)/share/applications
+ clobber: clean
+ 	rm -f aoeui display-test unicode TAGS *.1 *.1.gz *.1.html
+ spotless: clobber

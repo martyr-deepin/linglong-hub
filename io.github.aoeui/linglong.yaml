@@ -1,0 +1,29 @@
+package:
+  id: io.github.aoeui
+  name: aoeui
+  version: 1.7
+  kind: app
+  description: |
+    a lightweight and unobtrusive text editing program that is optimized for fast editing by users of the Dvorak keyboard layout.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://salsa.debian.org/debian/aoeui.git"
+  commit: dea7a5445df8399b3aa51c92d79ac4f3699e2bdd
+  patch: 
+    #- patches/ao.patch
+    - patches/fix-install.patch
+
+build:
+  kind: manual
+  manual:
+    configure: |
+      export CC=gcc
+    build: |
+      make 
+    install: |
+      make install
