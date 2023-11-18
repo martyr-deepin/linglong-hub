@@ -1,0 +1,51 @@
+From 66a3bcf49358ced2c43ded41e6c0d7339d255e41 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Sat, 18 Nov 2023 17:24:20 +0800
+Subject: [install.patch_] install
+
+---
+ SkyWar.desktop |  7 +++++++
+ SkyWar.pro     | 15 +++++++++++++++
+ 2 files changed, 22 insertions(+)
+ create mode 100644 SkyWar.desktop
+
+diff --git a/SkyWar.desktop b/SkyWar.desktop
+new file mode 100644
+index 0000000..a26619d
+--- /dev/null
++++ b/SkyWar.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=SkyWar
++GenericName=SkyWar
++Hidden=false
++Name=SkyWar
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+diff --git a/SkyWar.pro b/SkyWar.pro
+index 2493fc6..881bf19 100644
+--- a/SkyWar.pro
++++ b/SkyWar.pro
+@@ -40,3 +40,18 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ 
+ RESOURCES += \
+     res.qrc
++
++
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = SkyWar.desktop
++INSTALLS += unix_desktop
++
++
++}
++
+-- 
+2.33.1
+
