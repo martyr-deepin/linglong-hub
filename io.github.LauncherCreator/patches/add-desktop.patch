@@ -1,0 +1,30 @@
+diff --git a/LauncherGenerator/LauncherGenerator.desktop b/LauncherGenerator/LauncherGenerator.desktop
+new file mode 100644
+index 0000000..302689c
+--- /dev/null
++++ b/LauncherGenerator/LauncherGenerator.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=Launcher Generator
++Exec=LauncherGenerator %f
++Icon=rocket
+diff --git a/LauncherGenerator/LauncherGenerator.pro b/LauncherGenerator/LauncherGenerator.pro
+index 19809e9..ee6f281 100644
+--- a/LauncherGenerator/LauncherGenerator.pro
++++ b/LauncherGenerator/LauncherGenerator.pro
+@@ -6,3 +6,14 @@ HEADERS   += $$files("*.h",   false)
+ FORMS     += $$files("*.ui",  false)
+ RESOURCES += $$files("*.qrc", false)
+ LIBS      += -L$$PWD/lib/*
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += LauncherGenerator.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = rocket.ico
++INSTALLS += icons

@@ -1,0 +1,25 @@
+package:
+  id: io.github.LauncherCreator
+  name: LauncherCreator
+  version: 0.0.1
+  kind: app
+  description: |
+    Un sencillo programa para crear facil y profesionalmente launchers para nuestras aplicaciones y programas en Debian/Ubuntu o cualquier Distribución basada en Debian.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/bunyamintamar/LauncherCreator.git"
+  commit: 425ed30fbdbf721b0d326dd2897a013bbde5b2b5
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd LauncherGenerator
+      qmake -makefile ${conf_args} ${extra_args}
