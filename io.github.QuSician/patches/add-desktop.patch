@@ -1,0 +1,25 @@
+diff --git a/src/QuSician.desktop b/src/QuSician.desktop
+new file mode 100644
+index 0000000..3233aae
+--- /dev/null
++++ b/src/QuSician.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=QuSician
++Exec=QuSician %f
+diff --git a/src/QuSician.pro b/src/QuSician.pro
+index 68fccea..e185bdc 100644
+--- a/src/QuSician.pro
++++ b/src/QuSician.pro
+@@ -142,3 +142,10 @@ unix{
+ }
+ 
+ DISTFILES +=
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += QuSician.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target

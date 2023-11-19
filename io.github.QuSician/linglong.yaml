@@ -1,0 +1,25 @@
+package:
+  id: io.github.QuSician
+  name: QuSician
+  version: 0.0.1
+  kind: app
+  description: |
+    A Synthesia clone made with Qt C++ and RtMidi.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/FuSoftware/QuSician.git"
+  commit: 7183c5343b4e1ba713a47cf9372277d371b55240
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}
