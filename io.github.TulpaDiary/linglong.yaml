@@ -1,0 +1,25 @@
+package:
+  id: io.github.TulpaDiary
+  name: TulpaDiary
+  version: 0.0.1
+  kind: app
+  description: |
+    A Tulpa and Forcing session manager in Qt C++.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/FuSoftware/TulpaDiary.git"
+  commit: 4c7f679d52fd9deefe3a68da5b47bd240d2a211a
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}

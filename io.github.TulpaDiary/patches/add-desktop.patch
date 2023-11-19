@@ -1,0 +1,25 @@
+diff --git a/src/TulpaDiary.desktop b/src/TulpaDiary.desktop
+new file mode 100644
+index 0000000..dc9a5f4
+--- /dev/null
++++ b/src/TulpaDiary.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=TulpaDiary
++Exec=TulpaDiary %f
+diff --git a/src/TulpaDiary.pro b/src/TulpaDiary.pro
+index cd551f3..e5d8e42 100644
+--- a/src/TulpaDiary.pro
++++ b/src/TulpaDiary.pro
+@@ -77,3 +77,10 @@ HEADERS  += \
+ 
+ DISTFILES += \
+     json/sconscript
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += TulpaDiary.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
