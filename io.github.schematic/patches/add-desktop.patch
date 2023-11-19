@@ -1,0 +1,24 @@
+diff --git a/schematic.desktop b/schematic.desktop
+new file mode 100644
+index 0000000..3d9770a
+--- /dev/null
++++ b/schematic.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=schematic
++Exec=schematic %f
+diff --git a/schematic.pro b/schematic.pro
+index d406354..30cce07 100644
+--- a/schematic.pro
++++ b/schematic.pro
+@@ -23,4 +23,9 @@ FORMS += \
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
++target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += schematic.desktop
++INSTALLS += desktop

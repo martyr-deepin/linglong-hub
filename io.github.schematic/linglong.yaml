@@ -1,0 +1,21 @@
+package:
+  id: io.github.schematic
+  name: schematic
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt Schematic Editor.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/johnrscott/schematic.git"
+  commit: 4cb26034434105736128e695ea4b92507a438345
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
