@@ -1,0 +1,18 @@
+package:
+  id: com.gitee.RedPanda-CPP
+  name: RedPanda-CPP
+  version: 2.7
+  kind: app
+  description: |
+    Red Panda C++ is an fast ,lightweight, open source, and cross platform C/C++/GNU Assembly IDE.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/royqh1979/RedPanda-CPP.git"
+  commit: 1c23010
+build:
+  kind: qmake
