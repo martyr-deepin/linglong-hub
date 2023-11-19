@@ -1,0 +1,24 @@
+package:
+  id: io.github.birdtray
+  name: birdtray
+  version: 1.9.0
+  kind: app
+  description: |
+    Birdtray provides systray notifications for Thunderbird. It displays the count of unread mail, hides the Thunderbird window when not in use, and restores it on clicking the tray icon. It also provides a context menu with commands such as starting composing a new mail.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: icu
+    version: 63.1
+    type: runtime
+
+source:
+  kind: git
+  url: "https://github.com/gyunaev/birdtray.git"
+  commit: 62e17bc
+
+build:
+  kind: cmake
