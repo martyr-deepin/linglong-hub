@@ -1,0 +1,30 @@
+diff --git a/src/CCR-Plus.desktop b/src/CCR-Plus.desktop
+new file mode 100644
+index 0000000..bee8dfa
+--- /dev/null
++++ b/src/CCR-Plus.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=CCR-Plus
++Exec=CCR-Plus %f
++Icon=logo
+diff --git a/src/CCR-Plus.pro b/src/CCR-Plus.pro
+index 020075e..1ab7ebe 100644
+--- a/src/CCR-Plus.pro
++++ b/src/CCR-Plus.pro
+@@ -71,3 +71,14 @@ RESOURCES = ../resources/image.qrc \
+ RC_FILE = ../resources/icon.rc
+ 
+ win32: LIBS += -lpsapi
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += CCR-Plus.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = ../resources/logo.png
++INSTALLS += icons

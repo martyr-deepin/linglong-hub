@@ -1,0 +1,21 @@
+package:
+  id: io.github.CCR-Plus
+  name: CCR-Plus
+  version: 1.1.0.1
+  kind: app
+  description: |
+    A simple judging environment for Olympiad in Informatics.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/sxyzccr/CCR-Plus.git"
+  commit: 62596240d28d22fd14e03745a639c94e7274442a
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
