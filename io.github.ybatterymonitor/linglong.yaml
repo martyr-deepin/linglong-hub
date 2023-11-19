@@ -1,0 +1,21 @@
+package:
+  id: io.github.ybatterymonitor
+  name: ybatterymonitor
+  version: 0.0.1
+  kind: app
+  description: |
+    ybatterymonitor is a battery monitor.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/YuGiOhJCJ/ybatterymonitor.git"
+  commit: ce2f769393ce178846121d4680c6d3d00931d384
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,30 @@
+diff --git a/ybatterymonitor.desktop b/ybatterymonitor.desktop
+new file mode 100644
+index 0000000..c57b0df
+--- /dev/null
++++ b/ybatterymonitor.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=ybatterymonitor
++Exec=ybatterymonitor %f
++Icon=ybatterymonitor
+diff --git a/ybatterymonitor.pro b/ybatterymonitor.pro
+index f6ee91c..d4faca5 100644
+--- a/ybatterymonitor.pro
++++ b/ybatterymonitor.pro
+@@ -11,3 +11,14 @@ SOURCES += BatteryMonitor.cpp main.cpp
+ QT += widgets
+ CONFIG += link_pkgconfig
+ PKGCONFIG += sdl2
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += ybatterymonitor.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = ybatterymonitor.png
++INSTALLS += icons
