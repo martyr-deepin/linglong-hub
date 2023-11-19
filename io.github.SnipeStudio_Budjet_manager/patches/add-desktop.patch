@@ -1,0 +1,31 @@
+diff --git a/SSBM.pro b/SSBM.pro
+index 796b529..d95e9dd 100644
+--- a/SSBM.pro
++++ b/SSBM.pro
+@@ -68,4 +68,14 @@ DISTFILES += \
+     build.sh \
+     .build \
+     prepareSource.sh
+-ICON = ico.ico
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += ssbm.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = ico.png
++INSTALLS += icons
+diff --git a/ssbm.desktop b/ssbm.desktop
+new file mode 100644
+index 0000000..fe5348e
+--- /dev/null
++++ b/ssbm.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=SSBM
++Exec=ssbm %f
++Icon=ico

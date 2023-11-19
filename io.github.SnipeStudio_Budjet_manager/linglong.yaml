@@ -1,0 +1,21 @@
+package:
+  id: io.github.SnipeStudio_Budjet_manager
+  name: SnipeStudio_Budjet_manager
+  version: 0.0.3
+  kind: app
+  description: |
+    Simple Budget Manager for you by Snipe Studio.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/SnipeStudio/SnipeStudio_Budjet_manager.git"
+  commit: ff6c660b3043cf64d14d274a08d4fa1ab2efcfc5
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
