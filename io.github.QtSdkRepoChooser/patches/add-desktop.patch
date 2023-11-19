@@ -1,0 +1,26 @@
+diff --git a/src/QtSdkRepoChooser.desktop b/src/QtSdkRepoChooser.desktop
+new file mode 100644
+index 0000000..3cebf66
+--- /dev/null
++++ b/src/QtSdkRepoChooser.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=Qt Sdk Repo Chooser
++Exec=QtSdkRepoChooser %f
+diff --git a/src/QtSdkRepoChooser.pro b/src/QtSdkRepoChooser.pro
+index dfe1437..91a6b39 100644
+--- a/src/QtSdkRepoChooser.pro
++++ b/src/QtSdkRepoChooser.pro
+@@ -19,3 +19,10 @@ HEADERS += gui.h \
+     downloader.h
+ 
+ FORMS   += gui.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += QtSdkRepoChooser.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
+

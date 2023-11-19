@@ -1,0 +1,25 @@
+package:
+  id: io.github.QtSdkRepoChooser
+  name: QtSdkRepoChooser
+  version: 1.1.0
+  kind: app
+  description: |
+    If you are using the online Qt 5 SDK but downloads are slow and/or you frequently get disconnected, this tool might help.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/JKSH/QtSdkRepoChooser.git"
+  commit: c11b93870325dcd5321cd865aa4f9d44e991e016
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}
