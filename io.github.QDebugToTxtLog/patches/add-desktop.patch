@@ -1,0 +1,26 @@
+diff --git a/qDebugToTxtLog.desktop b/qDebugToTxtLog.desktop
+new file mode 100644
+index 0000000..85726ba
+--- /dev/null
++++ b/qDebugToTxtLog.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=qDebug To Txt Log
++Exec=qDebugToTxtLog %f
+diff --git a/qDebugToTxtLog.pro b/qDebugToTxtLog.pro
+index c02c71d..1eec086 100644
+--- a/qDebugToTxtLog.pro
++++ b/qDebugToTxtLog.pro
+@@ -40,3 +40,10 @@ HEADERS += \
+ 
+ DISTFILES += \
+     QDeToTxtlog.pri
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += qDebugToTxtLog.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
+

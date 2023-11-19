@@ -1,0 +1,21 @@
+package:
+  id: io.github.QDebugToTxtLog
+  name: QDebugToTxtLog
+  version: 0.0.1
+  kind: app
+  description: |
+    convert QDebug message to txt format log file.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/liulangx/QDebugToTxtLog.git"
+  commit: 56aadc2bd14fa8a1de4cd1f69b1fac8b99226661
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
