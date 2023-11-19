@@ -1,0 +1,25 @@
+package:
+  id: io.github.spending-control
+  name: spending-control
+  version: 0.2.0.1
+  kind: app
+  description: |
+    Advanced funds management system with the complete information about incomes and outcomes, detailed statistics, fully customizable interface, planning system and much more.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/eugene-melnik/spending-control.git"
+  commit: 1f958e670a0d991839dfe44dcabec37505a0b22f
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}

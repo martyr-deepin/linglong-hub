@@ -1,0 +1,26 @@
+diff --git a/src/spending-control.desktop b/src/spending-control.desktop
+new file mode 100644
+index 0000000..82c2a76
+--- /dev/null
++++ b/src/spending-control.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=spending-control
++Exec=spending-control %f
+diff --git a/src/src.pro b/src/src.pro
+index ecda19e..2e79061 100644
+--- a/src/src.pro
++++ b/src/src.pro
+@@ -128,6 +128,9 @@ DESTDIR = ./
+ 
+     # Installation setup #
+ 
+-target.path = /usr/bin/
++desktop.path = $$PREFIX/share/applications
++desktop.files += spending-control.desktop
++INSTALLS += desktop
+ 
+-INSTALLS = target
++target.path = $$PREFIX/bin
++INSTALLS += target
