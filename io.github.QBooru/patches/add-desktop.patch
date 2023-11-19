@@ -1,0 +1,30 @@
+diff --git a/src/v2/QBooru.desktop b/src/v2/QBooru.desktop
+new file mode 100644
+index 0000000..49c00d6
+--- /dev/null
++++ b/src/v2/QBooru.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=QBooru
++Exec=QBooru %f
++Icon=empty
+diff --git a/src/v2/QBooru.pro b/src/v2/QBooru.pro
+index 7d75582..c0bbd83 100644
+--- a/src/v2/QBooru.pro
++++ b/src/v2/QBooru.pro
+@@ -90,3 +90,14 @@ macx { # Mac OS
+     CONFIG += c++11
+     CONFIG -= app_bundle
+ }
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += QBooru.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = empty.png
++INSTALLS += icons
