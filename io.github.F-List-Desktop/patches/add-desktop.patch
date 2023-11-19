@@ -1,0 +1,26 @@
+diff --git a/src/F_List_Desktop.desktop b/src/F_List_Desktop.desktop
+new file mode 100644
+index 0000000..cd9d9cf
+--- /dev/null
++++ b/src/F_List_Desktop.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=F_List_Desktop
++Exec=F_List_Desktop %f
+diff --git a/src/F_List_Desktop.pro b/src/F_List_Desktop.pro
+index bd01f54..8f7e004 100644
+--- a/src/F_List_Desktop.pro
++++ b/src/F_List_Desktop.pro
+@@ -72,3 +72,10 @@ HEADERS += \
+     commands/commands.h \
+     ui/fmessengerwidget.h \
+     controller/fmessenger.h
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += F_List_Desktop.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
+
