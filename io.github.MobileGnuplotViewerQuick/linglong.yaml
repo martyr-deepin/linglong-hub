@@ -1,0 +1,21 @@
+package:
+  id: io.github.MobileGnuplotViewerQuick
+  name: MobileGnuplotViewerQuick
+  version: 2.0.13
+  kind: app
+  description: |
+    The Mobile Gnuplot Viewer (Quick) is a frontend for the gnuplot program (which is a scientific plot program).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/mneuroth/MobileGnuplotViewerQuick.git"
+  commit: 06a6328ab22257a42512dafa528f1d7ac59b7ffb
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
