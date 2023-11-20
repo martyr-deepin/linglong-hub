@@ -1,0 +1,25 @@
+package:
+  id: io.github.Three-men-s-morris-game
+  name: Three-men-s-morris-game
+  version: 1.0.0
+  kind: app
+  description: |
+    Three men's morris game created in Qt creator framework. Simple 2d game. Also include all resources files.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/zaidrao/Three-men-s-morris-game.git
+  commit: a9b73c76425e1cf715e9c49d023b48e3252c4ca3
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd ThreeMenMoris
+      qmake -makefile ${conf_args} ${extra_args}
+      
