@@ -1,0 +1,20 @@
+package:
+  id: io.github.CardGame
+  name: CardGame
+  version: 0.0.1
+  kind: app
+  description: |
+    Classic board game
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/mwangxx0129/CardGame.git
+  commit: bc42b2a38eecc8c031e68887c242da88d38d26a7
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,47 @@
+From 6b6eab69344b5d690b17cfbeb3f6bdc842247292 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Fri, 10 Nov 2023 19:29:38 +0800
+Subject: [install.patch_] install
+
+---
+ pacman.desktop |  6 ++++++
+ pacman.pro     | 12 ++++++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 pacman.desktop
+
+diff --git a/pacman.desktop b/pacman.desktop
+new file mode 100644
+index 0000000..d58914d
+--- /dev/null
++++ b/pacman.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=pacman
++Exec=pacman
++Terminal=false
+\ No newline at end of file
+diff --git a/pacman.pro b/pacman.pro
+index 197db58..d108e14 100644
+--- a/pacman.pro
++++ b/pacman.pro
+@@ -73,3 +73,15 @@ RESOURCES += \
+         imgresources.qrc \
+         audioresources.qrc \
+         fontresources.qrc
++
++
++TARGET = pacman
++TEMPLATE = app
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = pacman.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+

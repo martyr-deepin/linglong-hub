@@ -1,0 +1,20 @@
+package:
+  id: io.github.pacman
+  name: pacman
+  version: 0.0.1
+  kind: app
+  description: |
+    In 1980, Namco created a character that was small, round and yellow. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/angelortizv/pacman.git
+  commit: 3b434e6e83af6205507c8273197ad9d93cba9d65
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

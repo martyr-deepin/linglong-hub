@@ -1,0 +1,44 @@
+From 93bb9a4c63d7da976bad2f44c7da124eb3963680 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Fri, 10 Nov 2023 18:55:57 +0800
+Subject: [install.patch_] install
+
+---
+ CardGame.desktop | 6 ++++++
+ CardGame.pro     | 9 +++++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 CardGame.desktop
+
+diff --git a/CardGame.desktop b/CardGame.desktop
+new file mode 100644
+index 0000000..4940387
+--- /dev/null
++++ b/CardGame.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=CardGame
++Exec=CardGame
++Terminal=false
+\ No newline at end of file
+diff --git a/CardGame.pro b/CardGame.pro
+index f839d9d..fc51a47 100644
+--- a/CardGame.pro
++++ b/CardGame.pro
+@@ -57,3 +57,12 @@ FORMS    += gameboard.ui \
+ 
+ RESOURCES += \
+     cardimages.qrc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = CardGame.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+
