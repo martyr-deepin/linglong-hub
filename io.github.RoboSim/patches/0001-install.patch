@@ -1,0 +1,61 @@
+From ff63d14d6a9224d31820ab354e576d42fe5366ac Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Mon, 20 Nov 2023 20:13:18 +0800
+Subject: [install.patch_] install
+
+---
+ RoboSim.desktop |  8 ++++++++
+ ZBR_proj1.pro   | 21 +++++++++++++++++----
+ 2 files changed, 25 insertions(+), 4 deletions(-)
+ create mode 100644 RoboSim.desktop
+
+diff --git a/RoboSim.desktop b/RoboSim.desktop
+new file mode 100644
+index 0000000..0145126
+--- /dev/null
++++ b/RoboSim.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Exec=ZBR_proj1
++GenericName=ZBR_proj1
++Hidden=false
++Name=ZBR_proj1
++StartupNotify=false
++Type=Application
++Icon=icon
+\ No newline at end of file
+diff --git a/ZBR_proj1.pro b/ZBR_proj1.pro
+index 4b13f07..023d2a9 100644
+--- a/ZBR_proj1.pro
++++ b/ZBR_proj1.pro
+@@ -37,10 +37,23 @@ HEADERS += \
+ FORMS += \
+         mainwindow.ui
+ 
+-# Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
++
+ 
+ RESOURCES += \
+     data.qrc
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = RoboSim.desktop
++INSTALLS += unix_desktop
++
++unix_icons.path = $${PREFIX}/share/icons
++unix_icons.files = icon.png
++INSTALLS += unix_icons
++
++
++}
+-- 
+2.33.1
+
