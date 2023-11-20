@@ -1,0 +1,25 @@
+package:
+  id: org.xfce.gigolo
+  name: gigolo
+  version: 0.5.3
+  kind: app
+  description: |
+    Gigolo is a frontend to easily manage connections to local and remote.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+   - id: automake/1.16.5
+
+source:
+  kind: git
+  url: https://salsa.debian.org/xfce-team/apps/gigolo.git
+  commit: 7110a3c0b96fb0139a1a84609f81405fb86a66fc
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      ./configure ${conf_args} ${extra_args}
+ 
