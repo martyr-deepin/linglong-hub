@@ -1,0 +1,28 @@
+package:
+  id: net.sourceforge.diffuse 
+  name: diffuse
+  version: 0.8.2
+  kind: app
+  description: |
+    a graphical tool for merging and comparing text files.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://salsa.debian.org/debian/diffuse.git"
+  commit: d89f0b6c02830e34a4b037c376645db9ad698fa1
+  patch: patches/ab.patch
+
+build:
+  kind: manual
+  manual:
+    configure: |
+      export HOME=$PWD
+      meson setup build --prefix=$PREFIX
+    build: |
+      meson compile -C build
+    install: |
+      meson install -C build
