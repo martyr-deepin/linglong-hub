@@ -1,0 +1,23 @@
+package:
+  id: io.github.qtupdater
+  name: qtupdater
+  version: 0.0.1
+  kind: app
+  description: |Crossplatform and easy to use Qt based update component for your software. 
+    simple Qt demo.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+ 
+source:
+  kind: git
+  url: "git@github.com:derlih/qtupdater.git"
+  commit: bbc8baa
+
+build:
+  kind: qmake
+
+
