@@ -1,0 +1,20 @@
+package:
+  id: SDL_image
+  name: SDL_image
+  version: 2.6.3
+  kind: lib
+  description: |
+    This is a simple library to load images of various formats as SDL surfaces.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/libsdl-org/SDL_image.git
+  commit: c5a1df27aaac935b0bd671bd8f75371cbc5a8b70
+
+build:
+  kind: cmake
+  
