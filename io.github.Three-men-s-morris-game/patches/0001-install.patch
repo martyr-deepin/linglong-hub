@@ -1,0 +1,63 @@
+From ddcf2aa16337dc1233dec5b378006a48fdcbb262 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Mon, 20 Nov 2023 22:39:45 +0800
+Subject: [install.patch_] install
+
+---
+ ThreeMenMoris/ThreeMenMoris.pro | 22 ++++++++++++++++++----
+ ThreeMenMoris/threeMen.desktop  |  8 ++++++++
+ 2 files changed, 26 insertions(+), 4 deletions(-)
+ create mode 100644 ThreeMenMoris/threeMen.desktop
+
+diff --git a/ThreeMenMoris/ThreeMenMoris.pro b/ThreeMenMoris/ThreeMenMoris.pro
+index c139e86..b0cf1ce 100644
+--- a/ThreeMenMoris/ThreeMenMoris.pro
++++ b/ThreeMenMoris/ThreeMenMoris.pro
+@@ -23,10 +23,24 @@ HEADERS += \
+     nutralBead.h \
+     playerBead.h
+ 
+-# Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
++
+ 
+ RESOURCES += \
+     res.qrc
++
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = threeMen.desktop
++INSTALLS += unix_desktop
++
++unix_icons.path = $${PREFIX}/share/icons/
++unix_icons.files = play.png
++INSTALLS += unix_icons
++
++
++}
+\ No newline at end of file
+diff --git a/ThreeMenMoris/threeMen.desktop b/ThreeMenMoris/threeMen.desktop
+new file mode 100644
+index 0000000..66b3bbd
+--- /dev/null
++++ b/ThreeMenMoris/threeMen.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Exec=ThreeMenMoris
++GenericName=ThreeMenMoris
++Hidden=false
++Name=ThreeMenMoris
++StartupNotify=false
++Type=Application
++Icon=play
+\ No newline at end of file
+-- 
+2.33.1
+
