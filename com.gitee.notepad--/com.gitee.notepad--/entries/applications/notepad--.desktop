@@ -1,6 +1,0 @@
-[Desktop Entry]
-Exec=ll-cli run com.gitee.notepad-- --exec NotePad--
-Icon=notepad--.png
-Name=notepad--
-Type=Application
-X-linglong=com.gitee.notepad--
