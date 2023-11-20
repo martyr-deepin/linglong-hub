@@ -30,4 +30,4 @@ diff -Naur b/notepad--.desktop a/notepad--.desktop
 +Name=notepad--
 +Exec=NotePad--
 +Type=Application
-+Icon=notepad--
++Icon=notepad--.png
