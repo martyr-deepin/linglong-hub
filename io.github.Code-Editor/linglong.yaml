@@ -1,0 +1,25 @@
+package:
+  id: io.github.Code-Editor
+  name: Code-Editor
+  version: 0.9.1
+  kind: app
+  description: |
+    It is a simple text editor with multiple tab. It is free and easy to use. It includes syntax highlighter Still only support c and c++ syntax for highlighting. It also includes my c++ auto beautifier which can remove and add indentation automatically just in one click. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/zaidrao/Code-Editor.git
+  commit: bfe40291c2cdebccd7b0b2cfea85d10679b1b212
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd CodeEditor
+      qmake -makefile ${conf_args} ${extra_args}
+      
