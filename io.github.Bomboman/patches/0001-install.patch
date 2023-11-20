@@ -1,0 +1,81 @@
+From 0bc6d875582ff4dbe82d3b081d6395a247c7ac31 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Mon, 20 Nov 2023 21:38:50 +0800
+Subject: [install.patch_] install
+
+---
+ Bomboman.desktop |  8 ++++++++
+ Bomboman.pro     | 27 +++++++++++++++++++++++----
+ Bomboman.sh      |  3 +++
+ 3 files changed, 34 insertions(+), 4 deletions(-)
+ create mode 100644 Bomboman.desktop
+ create mode 100755 Bomboman.sh
+
+diff --git a/Bomboman.desktop b/Bomboman.desktop
+new file mode 100644
+index 0000000..630ebd9
+--- /dev/null
++++ b/Bomboman.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Exec=Bomboman.sh
++GenericName=Bomboman
++Hidden=false
++Name=Bomboman
++StartupNotify=false
++Type=Application
++Icon=bomb
+\ No newline at end of file
+diff --git a/Bomboman.pro b/Bomboman.pro
+index 4391752..6fa6334 100644
+--- a/Bomboman.pro
++++ b/Bomboman.pro
+@@ -47,12 +47,31 @@ FORMS += \
+ TRANSLATIONS += \
+     Bomboman_en_150.ts
+ 
+-# Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
++
+ 
+ RESOURCES += \
+     data.qrc
+ 
+ UI_DIR = $$PWD
++
++unix: {
++
++target.path = $${PREFIX}/bin
++target.files += Bomboman.sh
++INSTALLS += target
++
++unix_lib.path = $${PREFIX}/lib/Bomboman
++unix_lib.files += bomboman.txt
++unix_lib.files += Bomboman
++INSTALLS += unix_lib
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = Bomboman.desktop
++INSTALLS += unix_desktop
++
++unix_icons.path = $${PREFIX}/share/icons/
++unix_icons.files = bomboman_data/bomb.png
++INSTALLS += unix_icons
++
++
++}
+\ No newline at end of file
+diff --git a/Bomboman.sh b/Bomboman.sh
+new file mode 100755
+index 0000000..b254216
+--- /dev/null
++++ b/Bomboman.sh
+@@ -0,0 +1,3 @@
++#!/bin/bash
++
++cd /opt/apps/io.github.Bomboman/files/lib/Bomboman && ./Bomboman $@
+-- 
+2.33.1
+
