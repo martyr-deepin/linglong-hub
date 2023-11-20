@@ -1,0 +1,63 @@
+From 65636b43a8dd27a4bb1af021e31f95e7cdeab661 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Mon, 20 Nov 2023 22:17:29 +0800
+Subject: [install.patch_] install
+
+---
+ CodeEditor/CodeEditor.desktop |  8 ++++++++
+ CodeEditor/CodeEditor.pro     | 22 ++++++++++++++++++----
+ 2 files changed, 26 insertions(+), 4 deletions(-)
+ create mode 100644 CodeEditor/CodeEditor.desktop
+
+diff --git a/CodeEditor/CodeEditor.desktop b/CodeEditor/CodeEditor.desktop
+new file mode 100644
+index 0000000..485fd9f
+--- /dev/null
++++ b/CodeEditor/CodeEditor.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Exec=CodeEditor
++GenericName=CodeEditor
++Hidden=false
++Name=CodeEditor
++StartupNotify=false
++Type=Application
++Icon=appic
+\ No newline at end of file
+diff --git a/CodeEditor/CodeEditor.pro b/CodeEditor/CodeEditor.pro
+index 653fa80..e2d43ce 100644
+--- a/CodeEditor/CodeEditor.pro
++++ b/CodeEditor/CodeEditor.pro
+@@ -32,10 +32,24 @@ FORMS += \
+     MainWindow.ui \
+     about.ui
+ 
+-# Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
++
+ 
+ RESOURCES += \
+     res.qrc
++
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = CodeEditor.desktop
++INSTALLS += unix_desktop
++
++unix_icons.path = $${PREFIX}/share/icons/
++unix_icons.files = appic.ico
++INSTALLS += unix_icons
++
++x
++}
+\ No newline at end of file
+-- 
+2.33.1
+
