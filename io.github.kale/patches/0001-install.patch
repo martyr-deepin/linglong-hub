@@ -1,0 +1,45 @@
+From d5fbbf2d93c09e7416fc57a14829d1a1a1c9f916 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Mon, 20 Nov 2023 20:12:06 +0800
+Subject: [install.patch_] install
+
+---
+ kale.desktop |  6 ++++++
+ kale.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 kale.desktop
+
+diff --git a/kale.desktop b/kale.desktop
+new file mode 100644
+index 0000000..a5587cb
+--- /dev/null
++++ b/kale.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=kale
++Exec=kale
++Terminal=false
+\ No newline at end of file
+diff --git a/kale.pro b/kale.pro
+index 0d1ff32..96802ca 100644
+--- a/kale.pro
++++ b/kale.pro
+@@ -106,3 +106,13 @@ OTHER_FILES += \
+     TODO.txt \
+     CHANGES.txt \
+     README.md
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = kale.desktop
++INSTALLS += unix_desktop
++}
++
+-- 
+2.33.1
+
