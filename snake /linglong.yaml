@@ -1,0 +1,20 @@
+package:
+  id: com.snake
+  name: snake
+  version: 0.0.1
+  kind: app
+  description: |
+     QT5 wrote a very simple greedy snake
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/wwhai/snake-qt5.git"
+  commit: 5f61be1d1129b99fba18b4aa879fee0fdad8fe59
+  patch: patches/0001-install.patch
+  
+build:
+  kind: qmake

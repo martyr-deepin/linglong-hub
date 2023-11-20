@@ -1,0 +1,53 @@
+From d0633a1f1ba8cc6fd369a2728bb4307a479480f5 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Mon, 20 Nov 2023 21:07:20 +0800
+Subject: [install.patch_] install
+
+---
+ Snake.desktop     |  6 ++++++
+ SnakeGameTest.pro | 11 ++++++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 Snake.desktop
+
+diff --git a/Snake.desktop b/Snake.desktop
+new file mode 100644
+index 0000000..e437ec5
+--- /dev/null
++++ b/Snake.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=Snake
++Exec=Snake
++Terminal=false
+\ No newline at end of file
+diff --git a/SnakeGameTest.pro b/SnakeGameTest.pro
+index 4878fe3..c77fe75 100644
+--- a/SnakeGameTest.pro
++++ b/SnakeGameTest.pro
+@@ -8,7 +8,7 @@ QT       += core gui
+ 
+ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+ 
+-TARGET = SnakeGameTest
++TARGET = Snake
+ TEMPLATE = app
+ 
+ # The following define makes your compiler emit warnings if you use
+@@ -32,3 +32,12 @@ HEADERS += \
+ 
+ FORMS += \
+         mainwindow.ui
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = Snake.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+
