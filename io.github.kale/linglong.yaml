@@ -1,0 +1,20 @@
+package:
+  id: io.github.kale
+  name: kale
+  version: 0.92.0
+  kind: app
+  description: |
+     KALE is a level editor for the NES game Kirby's Adventure. It supports all known versions of the ROM and supports most level editing functionality.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/devinacker/kale.git"
+  commit: a4e1819c568c3925cd7e94a8b06608e1c233ebf9
+  patch: patches/0001-install.patch
+  
+build:
+  kind: qmake
