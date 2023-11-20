@@ -1,0 +1,20 @@
+package:
+  id: io.github.Black-and-White-QT
+  name: Black-and-White-QT
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt written Qt small game
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/AndersonZhangyq/Black-and-White-QT.git
+  commit: 89dfffca78154e1e38436bcfff5c5d37665d490d
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
