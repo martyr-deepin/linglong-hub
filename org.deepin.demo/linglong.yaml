@@ -4,7 +4,7 @@ package:
   version: 0.0.1
   kind: app
   description: |
-    simple qt demo.
+    simple Qt demo.
 
 runtime:
   id: org.deepin.Runtime
@@ -12,13 +12,14 @@ runtime:
 
 depends:
   - id: icu
-    version: 63.1
+    version: 63.1.0
     type: runtime
 
 source:
   kind: git
-  url: "https://github.com/linuxdeepin/linglong-builder-demo.git"
+  url: "git@github.com:linuxdeepin/linglong-builder-demo.git"
   commit: a3b89c3aa34c1aff8d7f823f0f4a87d5da8d4dc0
 
 build:
   kind: qmake
+
