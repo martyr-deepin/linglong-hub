@@ -1,0 +1,45 @@
+From b007861b47866c4669bb2964ae5eb92e14187789 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 14 Nov 2023 21:35:07 +0800
+Subject: [PATCH] install
+ 
+---
+ ytbtocue.desktop | 8 ++++++++
+ ytbtocue.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 ytbtocue.desktop
+
+diff --git a/ytbtocue.desktop b/ytbtocue.desktop
+new file mode 100644
+index 0000000..3295a80
+--- /dev/null
++++ b/ytbtocue.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=ytbtocue
++Name=ytbtocue
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/ytbtocue.pro b/ytbtocue.pro
+index 73d23c2..a373eb5 100644
+--- a/ytbtocue.pro
++++ b/ytbtocue.pro
+@@ -57,3 +57,10 @@ TEMPLATE = subdirs
+ SUBDIRS += src
+ 
+ include(ytbtocue.pri)
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =ytbtocue.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
