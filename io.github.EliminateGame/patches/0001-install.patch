@@ -1,0 +1,49 @@
+From 8a7a620ef3a3d4088a49295cc5f2ccee1cbaebe1 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Mon, 20 Nov 2023 21:58:41 +0800
+Subject: [install.patch_] install
+
+---
+ EliminateGame.desktop |  7 +++++++
+ untitled.pro          | 13 +++++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 EliminateGame.desktop
+
+diff --git a/EliminateGame.desktop b/EliminateGame.desktop
+new file mode 100644
+index 0000000..b1460ba
+--- /dev/null
++++ b/EliminateGame.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=untitled
++GenericName=EliminateGame
++Hidden=false
++Name=EliminateGame
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+diff --git a/untitled.pro b/untitled.pro
+index 7ff6bf6..7ad107f 100644
+--- a/untitled.pro
++++ b/untitled.pro
+@@ -35,3 +35,16 @@ FORMS    += mainwindow.ui \
+ 
+ RESOURCES += \
+     picture.qrc
++
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = EliminateGame.desktop
++INSTALLS += unix_desktop
++
++
++}
+-- 
+2.33.1
+
