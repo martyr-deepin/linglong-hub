@@ -1,0 +1,47 @@
+From c869d8419ead01b23ebf88790cfbbb07e3e5cdb3 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Mon, 20 Nov 2023 22:15:39 +0800
+Subject: [install.patch_] install
+
+---
+ QJsonModel.desktop | 6 ++++++
+ QJsonModel.pro     | 9 +++++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 QJsonModel.desktop
+
+diff --git a/QJsonModel.desktop b/QJsonModel.desktop
+new file mode 100644
+index 0000000..470cc91
+--- /dev/null
++++ b/QJsonModel.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=QJsonModel
++Exec=QJsonModel
++Terminal=false
+\ No newline at end of file
+diff --git a/QJsonModel.pro b/QJsonModel.pro
+index d9fbd50..389cd9f 100644
+--- a/QJsonModel.pro
++++ b/QJsonModel.pro
+@@ -18,6 +18,15 @@ SOURCES += \
+ HEADERS += \
+     qjsonmodel.h
+ 
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = QJsonModel.desktop
++INSTALLS += unix_desktop
++}
++
+ 
+ 
+ 
+-- 
+2.33.1
+

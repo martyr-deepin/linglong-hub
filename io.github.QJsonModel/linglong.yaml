@@ -1,0 +1,20 @@
+package:
+  id: io.github.QJsonModel
+  name: QJsonModel
+  version: 0.0.1
+  kind: app
+  description: |
+    QJsonModel is a json tree model class for Qt5/C++11/Python based on QAbstractItemModel. QJsonModel is under MIT License.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dridk/QJsonModel.git
+  commit: ede66dd1ecd90e8bb59ae050b7c1ac6b4f566633
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
