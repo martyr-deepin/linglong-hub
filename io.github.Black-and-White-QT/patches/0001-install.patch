@@ -1,0 +1,44 @@
+From 67300830b98815d5d608015aa7db6151930fee76 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Sat, 11 Nov 2023 20:55:46 +0800
+Subject: [install.patch_] install
+
+---
+ blackandwhite.desktop | 6 ++++++
+ blackandwhite.pro     | 9 +++++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 blackandwhite.desktop
+
+diff --git a/blackandwhite.desktop b/blackandwhite.desktop
+new file mode 100644
+index 0000000..7a59ebc
+--- /dev/null
++++ b/blackandwhite.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=blackandwhite
++Exec=blackandwhite
++Terminal=false
+\ No newline at end of file
+diff --git a/blackandwhite.pro b/blackandwhite.pro
+index cbf26cc..d2eb0eb 100644
+--- a/blackandwhite.pro
++++ b/blackandwhite.pro
+@@ -24,3 +24,12 @@ HEADERS  += widget.h \
+ FORMS    += widget.ui
+ 
+ RC_FILE += qt.rc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = blackandwhite.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+
