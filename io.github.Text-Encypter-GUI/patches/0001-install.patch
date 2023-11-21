@@ -1,0 +1,47 @@
+From 412ebba1b6426922d141ac794f67f5904f7b2078 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 21 Nov 2023 10:51:34 +0800
+Subject: [PATCH 12/12] install
+
+---
+ Encrypter/Encrypter.desktop | 8 ++++++++
+ Encrypter/Encrypter.pro     | 8 +++++++-
+ 2 files changed, 15 insertions(+), 1 deletion(-)
+ create mode 100644 Encrypter/Encrypter.desktop
+
+diff --git a/Encrypter/Encrypter.desktop b/Encrypter/Encrypter.desktop
+new file mode 100644
+index 0000000..fea1d0d
+--- /dev/null
++++ b/Encrypter/Encrypter.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Encrypter
++Name=Encrypter
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/Encrypter/Encrypter.pro b/Encrypter/Encrypter.pro
+index d01e364..4f26cbb 100644
+--- a/Encrypter/Encrypter.pro
++++ b/Encrypter/Encrypter.pro
+@@ -20,5 +20,11 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Encrypter.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

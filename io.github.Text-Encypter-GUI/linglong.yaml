@@ -1,0 +1,25 @@
+package:
+  id: io.github.Text-Encypter-GUI
+  name: Text-Encypter-GUI
+  version: 0.2.1
+  kind: app
+  description: |
+    A program that uses XOR encryption that allows you to input any key for the XOR encryption. Has linux and windows builds.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/BOB450/Text-Encypter-GUI.git
+  commit: e3d0eeb4f63a9a97c49eab6d3a72f35140d97df4 
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd Encrypter
+      qmake -makefile  ${conf_args} ${extra_args}
+
