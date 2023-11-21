@@ -1,0 +1,43 @@
+From f0b2cc0ff29d34f682465941696e2065d09710e3 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 21 Nov 2023 10:39:37 +0800
+Subject: [PATCH] install
+
+---
+ UsbCan.desktop | 8 ++++++++
+ UsbCan.pro     | 6 ++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 UsbCan.desktop
+
+diff --git a/UsbCan.desktop b/UsbCan.desktop
+new file mode 100644
+index 0000000..cec5c5c
+--- /dev/null
++++ b/UsbCan.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=UsbCan
++Name=UsbCan
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/UsbCan.pro b/UsbCan.pro
+index 56b053a..b0cf9a4 100644
+--- a/UsbCan.pro
++++ b/UsbCan.pro
+@@ -39,3 +39,9 @@ HEADERS += \
+ 
+ FORMS += \
+         mainwindow.ui
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =UsbCan.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

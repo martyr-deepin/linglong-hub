@@ -1,0 +1,25 @@
+package:
+  id: io.github.USBCAN-GUI
+  name: USBCAN-GUI
+  version: 1.0.0
+  kind: app
+  description: |
+    This is a Linux-based GUI (shown below) to interact with the USB-CAN analyzer in order to send and receive packets over a CAN bus.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtserialport
+    type: runtime
+    version: 5.15.7
+
+source:
+  kind: git
+  url: https://github.com/langroodi/USBCAN-GUI.git
+  commit: 54eb2c46f395cbaa5c10fd9282e1185dfee19124
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
