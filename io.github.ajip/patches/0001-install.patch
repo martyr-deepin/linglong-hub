@@ -1,0 +1,58 @@
+From 3607378ac31d81668150da878a8c4d200b74a920 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 5 Nov 2023 09:59:00 +0800
+Subject: [PATCH] install
+ 
+---
+ ajip.desktop |  4 ++--
+ ajip.pro     | 17 ++++++++++++-----
+ 2 files changed, 14 insertions(+), 7 deletions(-)
+
+diff --git a/ajip.desktop b/ajip.desktop
+index 9ee2985..916587b 100644
+--- a/ajip.desktop
++++ b/ajip.desktop
+@@ -6,7 +6,7 @@ Type=Application
+ Comment=Automatic Java Installer Project.
+ Comment[tr]=Otomatik Java Yükleme Projesi
+ Terminal=false
+-Exec=/usr/bin/ajip
+-Icon=/usr/share/ajip/logo.png
++Exec=ajip
++Icon=logo.png
+ Categories=Qt;Utility;
+ GenericName=
+diff --git a/ajip.pro b/ajip.pro
+index f502ec3..c9f70ad 100644
+--- a/ajip.pro
++++ b/ajip.pro
+@@ -14,13 +14,20 @@ HEADERS  += src/ajip.h
+ 
+ FORMS    += src/ajip.ui
+ 
+-target.path = /usr/bin/
++#target.path = /usr/bin/
+ 
+ icon.files = logo.png
+-icon.commands = mkdir -p /usr/share/ajip
+-icon.path = /usr/share/ajip/
++icon.commands = mkdir -p $$PREFIX/share/ajip
++icon.path = $$PREFIX/share/ajip/
+ 
+-desktop_file.files = ajip.desktop
+-desktop_file.path = /usr/share/applications/
++#desktop_file.files = ajip.desktop
++#desktop_file.path = /usr/share/applications/
+ 
+ INSTALLS += target icon desktop_file
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =ajip.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

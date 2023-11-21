@@ -1,0 +1,20 @@
+package:
+  id: io.github.ajip
+  name: ajip
+  version: 0.4.0.1
+  kind: app
+  description: |
+    Automatic Java Installer Project 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/yunusem/ajip.git
+  commit: 2fce5b2943d9a24b25030f84f00c66aac0e5d20e
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
