@@ -1,0 +1,59 @@
+From 7c681a2a3ae3b0451870333eca69eb0211d44fca Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Tue, 21 Nov 2023 09:55:46 +0800
+Subject: [install.patch_] install
+
+---
+ BacklogManager.desktop |  7 +++++++
+ BacklogManager.pro     | 15 ++++++++++++++-
+ 2 files changed, 21 insertions(+), 1 deletion(-)
+ create mode 100644 BacklogManager.desktop
+
+diff --git a/BacklogManager.desktop b/BacklogManager.desktop
+new file mode 100644
+index 0000000..6a8a420
+--- /dev/null
++++ b/BacklogManager.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=BacklogManager
++GenericName=Backlog Manager
++Hidden=false
++Name=Backlog Manager
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+diff --git a/BacklogManager.pro b/BacklogManager.pro
+index 6baa539..4329b2b 100644
+--- a/BacklogManager.pro
++++ b/BacklogManager.pro
+@@ -8,7 +8,7 @@ QT       += core gui sql
+ 
+ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+ 
+-TARGET = "Backlog Manager"
++TARGET = "BacklogManager"
+ TEMPLATE = app
+ CONFIG += c++11
+ win32:UI_DIR = Source/UI/GeneratedFiles
+@@ -64,3 +64,16 @@ FORMS += \
+     Source/UI/GameForm.ui \
+     Source/UI/GameStats.ui \
+     Source/UI/AddGame.ui
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = BacklogManager.desktop
++INSTALLS += unix_desktop
++
++
++}
+\ No newline at end of file
+-- 
+2.33.1
+
