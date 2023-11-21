@@ -1,0 +1,44 @@
+From 7ad8e476538dfa1dd36d498250628a5462d61fbc Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 5 Nov 2023 13:35:10 +0800
+Subject: [PATCH] install
+ 
+---
+ MRichTextEdit.desktop | 8 ++++++++
+ MRichTextEditor.pro   | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 MRichTextEdit.desktop
+
+diff --git a/MRichTextEdit.desktop b/MRichTextEdit.desktop
+new file mode 100644
+index 0000000..7f3a124
+--- /dev/null
++++ b/MRichTextEdit.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=MRichTextEdit
++Name=MRichTextEdit
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/MRichTextEditor.pro b/MRichTextEditor.pro
+index 6b93bda..108a92d 100644
+--- a/MRichTextEditor.pro
++++ b/MRichTextEditor.pro
+@@ -13,3 +13,10 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+ HEADERS += mrichtextedit.h mtextedit.h
+ FORMS += mrichtextedit.ui
+ SOURCES += mrichtextedit.cpp mtextedit.cpp test.cpp
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =MRichTextEdit.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
