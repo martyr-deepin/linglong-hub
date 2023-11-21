@@ -1,0 +1,50 @@
+From 255bfc803554e15616ede498310610890c72ce85 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 21 Nov 2023 10:58:47 +0800
+Subject: [PATCH] install
+
+---
+ ToDoList/ToDoList.desktop | 8 ++++++++
+ ToDoList/ToDoList.pro     | 8 +++++++-
+ 2 files changed, 15 insertions(+), 1 deletion(-)
+ create mode 100644 ToDoList/ToDoList.desktop
+
+diff --git a/ToDoList/ToDoList.desktop b/ToDoList/ToDoList.desktop
+new file mode 100644
+index 0000000..378abfc
+--- /dev/null
++++ b/ToDoList/ToDoList.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=ToDoList
++Name=ToDoList
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/ToDoList/ToDoList.pro b/ToDoList/ToDoList.pro
+index 6613465..4cc0f0d 100644
+--- a/ToDoList/ToDoList.pro
++++ b/ToDoList/ToDoList.pro
+@@ -21,8 +21,14 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     resource.qrc
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =ToDoList.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
