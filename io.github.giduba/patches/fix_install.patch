@@ -1,0 +1,13 @@
+diff --git a/Giduba.pro b/Giduba.pro
+index d7dfbc9..4997dd2 100644
+--- a/Giduba.pro
++++ b/Giduba.pro
+@@ -20,3 +20,8 @@ QMAKE_CXXFLAGS_RELEASE -= -O3
+ QMAKE_CXXFLAGS_RELEASE *= -s -Os -flto
+ QMAKE_LFLAGS += -s -flto
+
++target.path = $$PREFIX/bin
++desktop.path = $$PREFIX/share/applications
++desktop.files += scripts/packaging/com.ncravino.giduba.desktop
++
++INSTALLS += target desktop
