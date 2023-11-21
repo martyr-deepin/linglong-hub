@@ -1,0 +1,43 @@
+From 6f084fb267a77d8294ee153046abdc7501a89ada Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 3 Nov 2023 20:48:42 +0800
+Subject: [PATCH] install
+ 
+---
+ Euclase.desktop | 8 ++++++++
+ Euclase.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 Euclase.desktop
+
+diff --git a/Euclase.desktop b/Euclase.desktop
+new file mode 100644
+index 0000000..ad3dd09
+--- /dev/null
++++ b/Euclase.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Euclase
++Name=Euclase
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Euclase.pro b/Euclase.pro
+index 042095e..c53d0c1 100644
+--- a/Euclase.pro
++++ b/Euclase.pro
+@@ -129,3 +129,10 @@ RESOURCES += \
+ 	resources.qrc
+ 
+ DISTFILES += libEuclaseCUDA/libeuclasecuda.cu
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = Euclase.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
