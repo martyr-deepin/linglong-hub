@@ -1,0 +1,21 @@
+package:
+  id: io.github.giduba
+  name: giduba
+  version: 1.0.0
+  kind: app
+  description: |
+    A lean, small, and simple Text Editor / Notepad Alternative for Linux.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/ncravino/giduba.git
+  commit: 2d7962b6720fa4fd03ad05295ccaefb522400543
+  patch:
+    - patches/fix_install.patch
+
+build:
+  kind: qmake
