@@ -1,0 +1,21 @@
+package:
+  id: io.github.NetSimulyzer
+  name: NetSimulyzer
+  version: 1.0.9
+  kind: app
+  description: |
+    A flexible 3D visualizer for displaying, debugging, presenting, and understanding ns-3 scenarios.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/usnistgov/NetSimulyzer.git
+  commit: 263453eced839df5de017b66b90e7f70d6fbe8dc
+  patch:
+    - patches/fix_install.patch
+
+build:
+  kind: cmake
