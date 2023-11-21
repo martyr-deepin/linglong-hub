@@ -1,0 +1,48 @@
+From 4009c95a04b3c50c20272483c7c77a618ccac686 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Tue, 21 Nov 2023 10:05:24 +0800
+Subject: [install.patch_] install
+
+---
+ Music-Player.desktop |  7 +++++++
+ music.pro            | 12 ++++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 Music-Player.desktop
+
+diff --git a/Music-Player.desktop b/Music-Player.desktop
+new file mode 100644
+index 0000000..ad168bd
+--- /dev/null
++++ b/Music-Player.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=music
++GenericName=music
++Hidden=false
++Name=music
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+diff --git a/music.pro b/music.pro
+index 46cc5b1..0fec9cb 100644
+--- a/music.pro
++++ b/music.pro
+@@ -29,3 +29,15 @@ FORMS    +=
+ CONFIG += mobility
+ MOBILITY = 
+ 
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = Music-Player.desktop
++INSTALLS += unix_desktop
++
++
++}
+-- 
+2.33.1
+
