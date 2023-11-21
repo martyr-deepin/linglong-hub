@@ -1,0 +1,30 @@
+diff --git a/Analizer.pro b/Analizer.pro
+index 16946f2..84cad65 100644
+--- a/Analizer.pro
++++ b/Analizer.pro
+@@ -43,6 +43,11 @@ FORMS += \
+     mainwindow.ui
+
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++# qnx: target.path = /tmp/$${TARGET}/bin
++# else: unix:!android: target.path = /opt/$${TARGET}/bin
++
++target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
++desktop.path = $$PREFIX/share/applications
++desktop.files += Analizer.desktop
++INSTALLS += desktop
+
+diff --git a/Analizer.desktop b/Analizer.desktop
+new file mode 100644
+index 0000000..428314a
+--- /dev/null
++++ b/Analizer.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Name=Analizer
++Comment=Potentiostat GUI in Qt for biological analysis
++Exec=Analizer %F
++Type=Application

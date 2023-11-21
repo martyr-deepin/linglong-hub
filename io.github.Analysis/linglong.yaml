@@ -1,0 +1,25 @@
+package:
+  id: io.github.Analysis
+  name: Analysis
+  version: 1.0.0
+  kind: app
+  description: |
+    Potentiostat GUI in Qt for biological analysis.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtserialport/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/pvesouza/Analysis.git
+  commit: 732fc9689ff3f2020afeda80b2135c1d346d0f0f
+  patch:
+    - patches/fix_install.patch
+
+build:
+  kind: qmake
