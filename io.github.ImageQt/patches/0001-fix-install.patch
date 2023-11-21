@@ -1,0 +1,44 @@
+From 5b0dc5156ebd55e977a7f41e24967e1cb982389d Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Tue, 21 Nov 2023 12:40:09 +0800
+Subject: [PATCH] fix-install
+
+---
+ src/imViewer.desktop | 7 +++++++
+ src/src.pro          | 8 ++++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 src/imViewer.desktop
+
+diff --git a/src/imViewer.desktop b/src/imViewer.desktop
+new file mode 100644
+index 0000000..42b7558
+--- /dev/null
++++ b/src/imViewer.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=imViewer
++Name=imViewer
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/src/src.pro b/src/src.pro
+index 63d2bb9..d4264b1 100644
+--- a/src/src.pro
++++ b/src/src.pro
+@@ -59,3 +59,11 @@ RESOURCES += \
+     res/default.qrc
+ 
+ TRANSLATIONS += res/cn.ts
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = imViewer.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

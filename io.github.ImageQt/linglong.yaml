@@ -1,0 +1,19 @@
+package:
+  id: io.github.ImageQt
+  name: ImageQt
+  version: 1.0.0
+  kind: app
+  description: |
+   Image viewer powered by Qt 5.8.0
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+ 
+source:
+  kind: git
+  url: https://github.com/my3rs/ImageQt.git
+  commit: d6b9cdc215c2f7bb178944c58d73ffe2e3f60a8e
+  patch: patches/0001-fix-install.patch
+
+build:
+  kind: qmake
