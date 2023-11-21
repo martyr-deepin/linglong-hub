@@ -1,0 +1,20 @@
+package:
+  id: io.github.Euclase
+  name: Euclase
+  version: 1.0.0.1
+  kind: app
+  description: |
+    A palette for the users.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/soramimi/Euclase.git
+  commit: 80051cf1b8a45a1936e1b9be800d4618d4d75881
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
