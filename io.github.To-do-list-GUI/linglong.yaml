@@ -1,0 +1,24 @@
+package:
+  id: io.github.To-do-list-GUI
+  name: To-do-list-GUI
+  version: 0.0.1
+  kind: app
+  description: |
+    A GUI application for Linux and windows that saves a list that you can check off
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/BOB450/To-do-list-GUI.git
+  commit: 082db3895c8e486fd982e018cd5b212da21fe91d
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd ToDoList
+      qmake -makefile  ${conf_args} ${extra_args}
