@@ -1,0 +1,47 @@
+From 029e85dd15b9b030e852dfe28ba8963633bfb0fc Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 3 Nov 2023 16:51:45 +0800
+Subject: [PATCH] install
+ 
+---
+ pawxel.desktop | 8 ++++++++
+ pawxel.pro     | 8 +++++++-
+ 2 files changed, 15 insertions(+), 1 deletion(-)
+ create mode 100644 pawxel.desktop
+
+diff --git a/pawxel.desktop b/pawxel.desktop
+new file mode 100644
+index 0000000..470857f
+--- /dev/null
++++ b/pawxel.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=pawxel
++Name=pawxel
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/pawxel.pro b/pawxel.pro
+index ca2ebb7..43823d4 100644
+--- a/pawxel.pro
++++ b/pawxel.pro
+@@ -57,4 +57,10 @@ include(modules/resizer-item/resizer/resizer-item.pri)
+ include(modules/FHNotifier/FHNotifier.pri)
+ 
+ RESOURCES += \
+-    resources.qrc
+\ No newline at end of file
++    resources.qrc
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =pawxel.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
