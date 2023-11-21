@@ -1,7 +1,7 @@
 package:
   id: io.github.pawxel
   name: pawxel
-  version: 0.1.3
+  version: 0.1.3.1
   kind: app
   description: |
     Pawxel is a free and open-source screenshot tool heavily inspired by Shottr with a focus on design and simplicity
