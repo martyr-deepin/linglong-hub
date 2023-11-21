@@ -1,0 +1,21 @@
+package:
+  id: io.github.Birthday-App
+  name: Birthday-App
+  version: 1.0.0
+  kind: app
+  description: |
+    This project for a user-friendly desktop application designed to help users keep track of birthdays and never miss an important celebration =).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/SerhiyTo/Birthday-App.git
+  commit: a04b02abf1626d30a59208c801a7c36fe86862e8
+  patch:
+    - patches/fix_install.patch
+
+build:
+  kind: cmake
