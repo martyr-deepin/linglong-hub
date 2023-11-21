@@ -1,7 +1,11 @@
 package:
   id: com.gitee.notepad--
   name: notepad--
+<<<<<<< HEAD
   version: 2.10.0
+=======
+  version: 2.10
+>>>>>>> 746601f (build: add NotePad--)
   kind: app
   description: |
     notepad--是一个国产跨平台、轻量级的文本编辑器，是替换notepad++的一种选择。其内置强大的代码对比功能，让你丢掉付费的beyond compare。
@@ -16,7 +20,11 @@ source:
   patch: ab.patch
 
 variables:
+<<<<<<< HEAD
  extra_args: |
+=======
+ extra_arg: |
+>>>>>>> 746601f (build: add NotePad--)
    -DCMAKE_BUILD_TYPE=Release
 
 build:
