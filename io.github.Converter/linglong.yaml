@@ -1,0 +1,22 @@
+package:
+  id: io.github.Converter
+  name: Converter
+  version: 0.0.1
+  kind: app
+  description: |
+    Simple, fast, and powerful: convert your strings with SConverter.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/tim-gromeyer/Converter.git
+  commit: b29137e3e847331f3e1b86f128fe11187acf206f
+
+
+build:
+  kind: cmake
+
+      
