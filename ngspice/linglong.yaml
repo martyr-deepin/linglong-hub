@@ -1,0 +1,31 @@
+package:
+  id: ngspice
+  name: ngspice
+  version: 2.7.0.1
+  kind: lib
+  description: |
+    Ngspice is a mixed-level/mixed-signal circuit simulator.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+depends:
+  - id: automake/1.16.5
+  - id: libxaw/1.0.13
+  - id: libxmu/1.1.2
+  - id: libtool/2.4.2
+source:
+  kind: git
+  url: https://github.com/imr/ngspice.git
+  commit: 0735b8d0a5f570c0515b5a0c41cf6626d6dd35d2
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      autoreconf -ivf
+      ./configure ${conf_args} ${extra_args} X_CFLAGS="-I/${PREFIX}/include" --with-ngshared --enable-xspice --disable-debug --enable-cider --enable-osdi --enable-openmp 
+    build: |
+      make ${jobs} 2>&1 | tee make.log
+    install: |
+      make DESTDIR=${dest_dir} install
