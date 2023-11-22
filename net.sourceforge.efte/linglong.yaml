@@ -1,0 +1,19 @@
+package:
+  id: net.sourceforge.efte
+  name: efte
+  version: 1.1-4
+  kind: app
+  description: |
+    一款高级的轻量级可配置式编辑器
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://salsa.debian.org/debian/efte.git"
+  commit: c34b3e762e0dcc5d286768546e0d0b3b82951a0b
+
+build:
+  kind: cmake
