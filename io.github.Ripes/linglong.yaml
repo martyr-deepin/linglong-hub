@@ -1,0 +1,19 @@
+package:
+  id: io.github.Ripes
+  name: Ripes
+  version: 2.2.4
+  kind: app
+  description: |
+    A graphical processor simulator and assembly editor for the RISC-V ISA.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/mortbopet/Ripes.git
+  commit: 8bfe67333684b89a0c4df5b85b0acd0a436a3887
+
+build:
+  kind: cmake
