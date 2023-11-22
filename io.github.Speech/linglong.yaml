@@ -1,0 +1,22 @@
+package:
+  id: io.github.Speech
+  name: Speech
+  version: 1.0.0
+  kind: app
+  description: |
+    Speech, as the name suggests, is a simple program for converting text to speech.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/tim-gromeyer/Speech.git
+  commit: 9ccc8e531984e95511263795b5d07a7c6e33d08d
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
+
+      

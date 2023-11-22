@@ -1,0 +1,38 @@
+From d00b1816d0fd0913ff4d70438e57d18722e4f15f Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Wed, 22 Nov 2023 16:54:07 +0800
+Subject: [install.patch_] install
+
+---
+ CMakeLists.txt | 1 +
+ Speech.desktop | 7 +++++++
+ 2 files changed, 8 insertions(+)
+ create mode 100644 Speech.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 369eb4c..8956e08 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -96,4 +96,5 @@ endif()
+ if (LINUX)
+     include(GNUInstallDirs)
+     install(TARGETS speech DESTINATION ${CMAKE_INSTALL_BINDIR})
++    install(FILES Speech.desktop DESTINATION share/applications)
+ endif()
+diff --git a/Speech.desktop b/Speech.desktop
+new file mode 100644
+index 0000000..d2322d2
+--- /dev/null
++++ b/Speech.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=speech
++GenericName=speech
++Hidden=false
++Name=speech
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+-- 
+2.33.1
+
