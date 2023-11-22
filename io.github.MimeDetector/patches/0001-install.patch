@@ -1,0 +1,39 @@
+From 5026b9dce1973e067dc4b66319ef307ee882bf5c Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Wed, 22 Nov 2023 17:22:57 +0800
+Subject: [install.patch_] install
+
+---
+ CMakeLists.txt       | 3 +++
+ MimeDetector.desktop | 7 +++++++
+ 2 files changed, 10 insertions(+)
+ create mode 100644 MimeDetector.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 6201369..194cb03 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -79,3 +79,6 @@ set_target_properties(mimedetector PROPERTIES
+ if(QT_VERSION_MAJOR EQUAL 6)
+     qt_finalize_executable(mimedetector)
+ endif()
++
++install(TARGETS mimedetector DESTINATION bin)
++install(FILES MimeDetector.desktop DESTINATION share/applications)
+diff --git a/MimeDetector.desktop b/MimeDetector.desktop
+new file mode 100644
+index 0000000..190b938
+--- /dev/null
++++ b/MimeDetector.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=mimedetector
++GenericName=mimedetector
++Hidden=false
++Name=mimedetector
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+-- 
+2.33.1
+
