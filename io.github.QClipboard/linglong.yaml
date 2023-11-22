@@ -1,0 +1,24 @@
+package:
+  id: io.github.QClipboard
+  name: QClipboard
+  version: 1.0.4
+  kind: app
+  description: |
+    A cross-platform clipboard tool.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: cmake/3.28.0
+
+source:
+  kind: git
+  url: https://github.com/L-Super/QClipboard.git
+  commit: 106482f1132421a504f95e7c503751b59289e86a
+  patch:
+    - patches/fix_install.patch
+
+build:
+  kind: cmake

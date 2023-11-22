@@ -1,0 +1,28 @@
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 979b326..3955c62 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -76,4 +76,8 @@ if (WIN32)
+             #        --no-translations --no-compiler-runtime
+             $<TARGET_FILE:${PROJECT_NAME}>
+     )
+-endif ()
+\ No newline at end of file
++endif ()
++
++install(TARGETS QClipboard DESTINATION bin/)
++install(FILES QClipboard.desktop DESTINATION share/applications/)
++install(FILES resources/images/clipboard2.svg DESTINATION share/icons/ RENAME QClipboard.svg)
+diff --git a/src/QClipboard.desktop b/src/QClipboard.desktop
+new file mode 100644
+index 0000000..6ce0ecd
+--- /dev/null
++++ b/src/QClipboard.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Name=QClipboard
++Comment=A cross-platform clipboard tool.
++Exec=QClipboard %F
++Icon=QClipboard
++Type=Application
++
