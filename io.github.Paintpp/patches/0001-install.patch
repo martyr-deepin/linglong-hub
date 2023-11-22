@@ -1,0 +1,68 @@
+From 15e53d7a62e63e1ab84af3e9522ec97770d5929a Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Wed, 22 Nov 2023 15:41:54 +0800
+Subject: [install.patch_] install
+
+---
+ Paint++.pro     | 23 +++++++++++++++++++----
+ Paintpp.desktop |  8 ++++++++
+ 2 files changed, 27 insertions(+), 4 deletions(-)
+ create mode 100644 Paintpp.desktop
+
+diff --git a/Paint++.pro b/Paint++.pro
+index 03c6d84..573b994 100644
+--- a/Paint++.pro
++++ b/Paint++.pro
+@@ -49,10 +49,7 @@ QMAKE_TARGET_COMPANY = "Software-made-easy"
+ QMAKE_TARGET_PRODUCT="Paint"
+ QMAKE_TARGET_DESCRIPTION="Paint is a simple tool for draw images."
+ 
+-# Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
++
+ 
+ RESOURCES +=
+ 
+@@ -70,3 +67,21 @@ DISTFILES += \
+     android/res/values/libs.xml
+ 
+ ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
++
++
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = Paintpp.desktop
++INSTALLS += unix_desktop
++
++unix_icons.path = $${PREFIX}/share/icons/
++unix_icons.files = Paint.png
++INSTALLS += unix_icons
++
++
++}
+\ No newline at end of file
+diff --git a/Paintpp.desktop b/Paintpp.desktop
+new file mode 100644
+index 0000000..bb10f36
+--- /dev/null
++++ b/Paintpp.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Exec=Paint++
++GenericName=Paint++
++Hidden=false
++Name=Paint++
++StartupNotify=false
++Type=Application
++Icon=Paint
+\ No newline at end of file
+-- 
+2.33.1
+
