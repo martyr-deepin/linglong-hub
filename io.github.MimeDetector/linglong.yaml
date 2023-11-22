@@ -1,0 +1,22 @@
+package:
+  id: io.github.MimeDetector
+  name: MimeDetector
+  version: 1.0.0
+  kind: app
+  description: |
+    As the name suggests, MimeDetector is a simple program for recognizing the MIME type of files.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/tim-gromeyer/MimeDetector.git
+  commit: 45e93b49750428f4fdfd69b9e7b5d0ab0c6ba374
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
+
+      
