@@ -1,0 +1,31 @@
+package:
+  id: libxaw
+  name: libxaw
+  version: 1.0.13
+  kind: lib
+  description: |
+    Xaw is the X Athena Widget Set.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+depends:
+  - id: automake1.15.0/1.15.0
+  - id: xorg-macros/1.19.1
+  - id: libxmu/1.1.2
+  - id: libtool/2.4.2
+  - id: pkgconf/2.0.3
+source:
+  kind: git
+  url: https://github.com/deepin-community/libxaw.git
+  commit: dba4033b5eb81e78e92700886a7f53745dcce6c5
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      ./configure ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
