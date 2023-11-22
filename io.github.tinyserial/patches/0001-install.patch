@@ -1,0 +1,45 @@
+From ad2284afe8de66b35879b3ae5c036f699b58257f Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Wed, 22 Nov 2023 14:27:24 +0800
+Subject: [install.patch_] install
+
+---
+ SerialPort.pro     | 10 ++++++++++
+ tinyserial.desktop |  6 ++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 tinyserial.desktop
+
+diff --git a/SerialPort.pro b/SerialPort.pro
+index b0b1867..06c5381 100644
+--- a/SerialPort.pro
++++ b/SerialPort.pro
+@@ -39,3 +39,13 @@ FORMS    += serialport.ui \
+ 
+ RESOURCES += \
+     resource/resource.qrc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = tinyserial.desktop
++INSTALLS += unix_desktop
++}
++
+diff --git a/tinyserial.desktop b/tinyserial.desktop
+new file mode 100644
+index 0000000..5091e3a
+--- /dev/null
++++ b/tinyserial.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=tinyserial
++Exec=tinyserial
++Terminal=false
+\ No newline at end of file
+-- 
+2.33.1
+

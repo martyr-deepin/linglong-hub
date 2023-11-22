@@ -1,0 +1,20 @@
+package:
+  id: io.github.tinyserial
+  name: tinyserial
+  version: 1.4.0
+  kind: app
+  description: |
+    Welcome to use the Tiny Serial that is a GUI serial debug tool for Linux/Unix(Ubuntu Mac etc) . 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/carloscn/tinyserial.git
+  commit: 73e69333a0fc759cd29e51fd8ef9389f6c0363be
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
