@@ -1,0 +1,19 @@
+package:
+  id: glm
+  name: glm
+  version: 0.9.9.8
+  kind: lib
+  description: |
+    OpenGL Mathematics (GLM) is a header only C++ mathematics library for graphics software based on the OpenGL Shading Language (GLSL) specifications.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/g-truc/glm.git
+  commit: 586a402397dd35d66d7a079049856d1e2cbab300
+
+build:
+  kind: cmake
