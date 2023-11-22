@@ -1,0 +1,23 @@
+package:
+  id: io.github.LibrePCB
+  name: LibrePCB
+  version: 1.0.0
+  kind: app
+  description: |
+    A powerful, innovative and intuitive EDA suite for everyone!
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/LibrePCB/LibrePCB.git
+  commit: 9edb6ede393e5b48785f95252f81a027db4b718a
+
+variables:
+  extra_args: |
+    -DUSE_OPENCASCADE=0
+
+build:
+  kind: cmake
