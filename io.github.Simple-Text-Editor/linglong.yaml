@@ -1,0 +1,22 @@
+package:
+  id: io.github.Simple-Text-Editor
+  name: Simple-Text-Editor
+  version: 0.1.0
+  kind: app
+  description: |
+    Simple-Text-Editor, as the name suggests, is a simple text editor made with the Qt framework.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/tim-gromeyer/Simple-Text-Editor.git
+  commit: 404663fe1961306c4c88d460c95cd3b2c71e611f
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      

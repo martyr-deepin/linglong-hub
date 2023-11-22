@@ -1,0 +1,55 @@
+From bfebd2b0f1d8e97d798ae21a7bce3ee6902f98eb Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Wed, 22 Nov 2023 16:40:28 +0800
+Subject: [install.patch_] install
+
+---
+ Simple-Text-Editor.pro | 18 ++++++++++++++++++
+ TextEditor.desktop     |  8 ++++++++
+ 2 files changed, 26 insertions(+)
+ create mode 100644 TextEditor.desktop
+
+diff --git a/Simple-Text-Editor.pro b/Simple-Text-Editor.pro
+index d93ac53..bb40eeb 100644
+--- a/Simple-Text-Editor.pro
++++ b/Simple-Text-Editor.pro
+@@ -47,3 +47,21 @@ DISTFILES += \
+ 
+ ANDROID_PACKAGE_SOURCE_DIR = \
+         $$PWD/android
++
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = TextEditor.desktop
++INSTALLS += unix_desktop
++
++unix_icons.path = $${PREFIX}/share/icons/
++unix_icons.files = Icon.png
++INSTALLS += unix_icons
++
++
++}
+diff --git a/TextEditor.desktop b/TextEditor.desktop
+new file mode 100644
+index 0000000..49e2786
+--- /dev/null
++++ b/TextEditor.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Exec=Simple-Text-Editor
++GenericName=Simple-Text-Editor
++Hidden=false
++Name=Simple-Text-Editor
++StartupNotify=false
++Type=Application
++Icon=Icon
+\ No newline at end of file
+-- 
+2.33.1
+
