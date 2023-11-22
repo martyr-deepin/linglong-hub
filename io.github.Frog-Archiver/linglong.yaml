@@ -1,0 +1,21 @@
+package:
+  id: io.github.Frog-Archiver
+  name: Frog-Archiver
+  version: 1.1.0
+  kind: app
+  description: |
+    Frog Archiver is compression tools for any files you have.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/berv-uni-project/Frog-Archiver.git
+  commit: 6a90758955fd59fc351e0aff7f277022f2d1d9ed
+  patch:
+    - patches/fix_install.patch
+
+build:
+  kind: cmake

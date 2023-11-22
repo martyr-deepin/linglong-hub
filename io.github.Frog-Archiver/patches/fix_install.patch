@@ -1,0 +1,26 @@
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 6a55bdd..632ea46 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -56,6 +56,8 @@ if(APPLE)
+ elseif(UNIX AND NOT APPLE)
+     install(TARGETS frogarchiver RUNTIME DESTINATION bin)
+     install(FILES ${PROJECT_SOURCE_DIR}/LICENSE DESTINATION share/licenses/frogarchive/)
++    install(FILES frogarchiver.desktop DESTINATION share/applications/)
++    install(FILES ../assets/frog_mac_archigraphs.png DESTINATION share/icons/ RENAME frogarchiver.png)
+ elseif(WIN32)
+     install(TARGETS frogarchiver RUNTIME DESTINATION .)
+     install(FILES ${PROJECT_SOURCE_DIR}/LICENSE DESTINATION .)
+diff --git a/src/frogarchiver.desktop b/src/frogarchiver.desktop
+new file mode 100644
+index 0000000..ec5fabf
+--- /dev/null
++++ b/src/frogarchiver.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Name=frogarchiver
++Comment=Frog Archiver is compression tools for any files you have.
++Exec=frogarchiver %F
++Icon=frogarchiver
++Type=Application
+
