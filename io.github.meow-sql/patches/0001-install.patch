@@ -1,0 +1,30 @@
+From c1e127143b03784d14e545906ddbd0b348350071 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Wed, 22 Nov 2023 14:04:18 +0800
+Subject: [install.patch_] install
+
+---
+ meowsql.pro | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/meowsql.pro b/meowsql.pro
+index 8811efa..7707435 100644
+--- a/meowsql.pro
++++ b/meowsql.pro
+@@ -847,3 +847,13 @@ RESOURCES += \
+     translations.qrc
+ 
+ win32:RC_ICONS += meowsqlico.ico
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = meowsql.desktop
++INSTALLS += unix_desktop
++}
++
+-- 
+2.33.1
+
