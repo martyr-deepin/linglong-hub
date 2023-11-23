@@ -1,0 +1,22 @@
+package:
+  id: io.github.sirikali
+  name: sirikali
+  version: 1.5.1
+  kind: app
+  description: |
+    A Qt/C++ GUI front end to sshfs, ecryptfs-simple, cryfs, gocryptfs, securefs, fscrypt and encfs.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/mhogomchungu/sirikali.git
+  commit: c68f343788960ce58f792596a31415178549922b
+
+build:
+  kind: cmake
+
+
+
