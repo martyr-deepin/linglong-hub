@@ -1,0 +1,22 @@
+package:
+  id: io.github.qCheckGMail
+  name: qCheckGMail
+  version: 2.2.0
+  kind: app
+  description: |
+    qCheckGmail is a Qt/C++ multiple gmail account checker.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/mhogomchungu/qCheckGMail.git
+  commit: d41ab59ad284c2c6a56db9f58ad96d670c51a380
+
+build:
+  kind: cmake
+
+
+
