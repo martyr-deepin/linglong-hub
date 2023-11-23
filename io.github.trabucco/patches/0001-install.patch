@@ -1,0 +1,70 @@
+From 030dd9e481e6d53cb3b171618042691db190bf4d Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 22 Nov 2023 20:35:55 +0800
+Subject: [PATCH] install
+
+---
+ trabucco.desktop |  9 +++++++++
+ trabucco.pro     | 17 ++++++++++++-----
+ 2 files changed, 21 insertions(+), 5 deletions(-)
+ create mode 100644 trabucco.desktop
+
+diff --git a/trabucco.desktop b/trabucco.desktop
+new file mode 100644
+index 0000000..f39b90c
+--- /dev/null
++++ b/trabucco.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=trabucco
++Name=trabucco
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
++
+diff --git a/trabucco.pro b/trabucco.pro
+index 8431bbc..24660c5 100644
+--- a/trabucco.pro
++++ b/trabucco.pro
+@@ -71,24 +71,31 @@ isEmpty(target.path) {
+ }
+ INSTALLS += target
+ 
+-searchproviders.path = $${DESTDIR}/usr/share/kservices5/searchproviders/
++searchproviders.path = $$PREFIX/share/kservices5/searchproviders/
+ searchproviders.files = searchproviders/*
+ INSTALLS += searchproviders
+ 
+-launcher.path = $${DESTDIR}/usr/share/applications/
++launcher.path = $$PREFIX/usr/share/applications/
+ launcher.files = extras/trabucco.desktop
+ INSTALLS += launcher
+ 
+-manpage.path = $${DESTDIR}/usr/share/man/man1/
++manpage.path = $$PREFIX/usr/share/man/man1/
+ manpage.files = extras/trabucco.1
+ INSTALLS += manpage
+ 
+-icon.path = $${DESTDIR}/usr/share/icons/hicolor/512x512/apps
++icon.path = $$PREFIX/usr/share/icons/hicolor/512x512/apps
+ icon.files = extras/trabucco.png
+ INSTALLS += icon
+ 
+-appstream.path = $${DESTDIR}/usr/share/metainfo/
++appstream.path = $$PREFIX/usr/share/metainfo/
+ appstream.files = extras/trabucco.metainfo.xml
+ INSTALLS += appstream
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =trabucco.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+ export(INSTALLS)
+-- 
+2.33.1
+

@@ -1,0 +1,20 @@
+package:
+  id: io.github.trabucco
+  name: trabucco
+  version: 1.4.0
+  kind: app
+  description: |
+    Can launch your 90kg applications for 300m (It's a launcher, like katapult, but better).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/ltworf/trabucco.git
+  commit: 7836a8187648a63557a1bccd26ab35bd00e9f505
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
