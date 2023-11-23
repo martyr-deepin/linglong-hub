@@ -1,7 +1,7 @@
 package:
   id: poppler-data
   name: poppler-data
-  version: 0.4.12
+  version: 0.4.12.0
   kind: lib
   description: |
     Data files for poppler to support uncommon encodings without xpdfrc.
@@ -19,4 +19,4 @@ build:
   kind: manual
   manual:
     install: |
-      make install prefix=${PREFIX} DESTDIR=${dest_dir}
+      make install prefix=${PREFIX} DESTDIR=${dest_dir} datadir=${PREFIX}/lib/${TRIPLET} pkgdatadir=${PREFIX}/share/poppler
