@@ -1,0 +1,22 @@
+package:
+  id: io.github.Coreavor
+  name: Coreavor
+  version: 0.1.1
+  kind: app
+  description: |
+    A simple cross-platform image viewer written in C++ QT.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Mithil467/Coreavor.git
+  commit: 4347f430a18de23ef1764e3a243284e5e223ef3b
+  patch: patches/fix_coreavor.patch
+build:
+  kind: qmake
+
+
+

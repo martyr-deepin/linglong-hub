@@ -1,0 +1,35 @@
+--- ../Coreavor.pro	2023-11-23 10:00:03.520131000 +0800
++++ ../Coreavor.pro	2023-11-23 11:16:53.426378000 +0800
+@@ -19,16 +19,26 @@
+     forms/mainwindow.ui
+ 
+ ICON = icon.ico
+-
+-install.commands += (cp ./logo/icon.png /usr/share/icons/coreavor.png)
++logo.files = ./logo/icon.png
++logo.path = $$PREFIX/share/icons/
++INSTALLS += logo
++install.commands += (cp ./logo/icon.png $$PREFIX/share/icons/coreavor.png)
+ QMAKE_EXTRA_TARGETS += install
+ uninstall.commands += (rm -f /usr/share/icons/coreavor.png)
+ QMAKE_EXTRA_TARGETS += uninstall
+ clang-format.commands += find . -regex \'.*\\.\\(cpp\\|hpp\\|cu\\|c\\|h\\)\' -exec clang-format -style=file -i {} \;
+ QMAKE_EXTRA_TARGETS += clang-format
+-
+-target.path = /usr/local/bin
+-desktop.path = /usr/share/applications
+-desktop.files += coreavor.desktop
++DESKTOP_FILE = ./Coreavor.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=Coreavor' >> $$DESKTOP_FILE")
++system("echo 'Comment=A simple Image Viewer.' >> $$DESKTOP_FILE")
++system("echo 'Exec=Coreavor' >> $$DESKTOP_FILE")
++system("echo 'Icon=coreavor.png' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++target.path = $$PREFIX/bin
++desktop.path = $$PREFIX/share/applications
++desktop.files += $$DESKTOP_FILE
+ 
+ INSTALLS += target desktop
