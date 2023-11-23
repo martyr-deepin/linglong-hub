@@ -1,0 +1,21 @@
+--- ../src/compositor-switcher.pro	2023-11-23 11:29:25.724283000 +0800
++++ ../src/compositor-switcher.pro	2023-11-23 11:28:42.836110000 +0800
+@@ -32,3 +32,18 @@
+ 
+ FORMS += \
+         mainwindow.ui
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++
++DESKTOP_FILE = ./compositor-switcher.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=compositor-switcher' >> $$DESKTOP_FILE")
++system("echo 'Comment=compositor-switcher.' >> $$DESKTOP_FILE")
++system("echo 'Exec=compositor-switcher' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop

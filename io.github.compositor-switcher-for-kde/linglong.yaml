@@ -1,0 +1,27 @@
+package:
+  id: io.github.compositor-switcher-for-kde
+  name: compositor-switcher-for-kde
+  version: 1.1.0
+  kind: app
+  description: |
+    Compositor Switcher for KDE.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/murat-cileli/compositor-switcher-for-kde.git
+  commit: 895bc011a3a3c6510f5a0782a172393e29ca1d22
+  patch: patches/fix_cs.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args} ./compositor-switcher.pro
+
+
+
