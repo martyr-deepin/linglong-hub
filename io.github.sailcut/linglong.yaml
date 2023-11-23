@@ -1,0 +1,21 @@
+package:
+  id: io.github.sailcut
+  name: sailcut
+  version: 1.4.1
+  kind: app
+  description: |
+    Sail design and plotting software
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:	
+  kind: git
+  url: https://github.com/jlaine/sailcut.git
+  commit: e76476c2ec24811b6884b35fa8c5ebdd6497d43c
+  patch: patches/fix_src.patch
+build:
+  kind: qmake
+
+

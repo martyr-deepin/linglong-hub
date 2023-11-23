@@ -1,0 +1,21 @@
+--- ../src/src.pro	2023-11-22 20:00:25.322085000 +0800
++++ ../src/src.pro	2023-11-12 13:39:36.887278000 +0800
+@@ -159,6 +159,18 @@
+     translations.path = $$PREFIX/share
+     INSTALLS += target translations
+ 
++    DESKTOP_FILE = ./sailcut.desktop
++    system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++    system("echo 'Type=Application' >> $$DESKTOP_FILE")
++    system("echo 'Name=sailcut' >> $$DESKTOP_FILE")
++    system("echo 'Comment=sailcut.' >> $$DESKTOP_FILE")
++    system("echo 'Exec=sailcut' >> $$DESKTOP_FILE")
++    system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++    system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++    desktop.files += $$DESKTOP_FILE
++    desktop.path = $$PREFIX/share/applications
++    INSTALLS += desktop
+     # Generating documentation requires some extra tools
+     system(which fig2dev && which xsltproc) {
+         docs.commands = $$SAILCUT_SOURCE_TREE/doc/makedocs $$BUILD_DOC_PATH
