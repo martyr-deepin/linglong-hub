@@ -1,0 +1,22 @@
+package:
+  id: poppler-data
+  name: poppler-data
+  version: 0.4.12
+  kind: lib
+  description: |
+    Data files for poppler to support uncommon encodings without xpdfrc.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://gitlab.freedesktop.org/poppler/poppler-data.git
+  commit: af9f452b427d5ce8abe81ff98cc40c5f39fad90b
+
+build:
+  kind: manual
+  manual:
+    install: |
+      make install prefix=${PREFIX} DESTDIR=${dest_dir}
