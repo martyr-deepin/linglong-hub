@@ -1,0 +1,48 @@
+diff -Naur b/how_build/CMakeLists.txt a/how_build/CMakeLists.txt
+--- b/how_build/CMakeLists.txt	2023-11-16 19:30:54.434904540 +0800
++++ a/how_build/CMakeLists.txt	2023-11-23 20:55:54.960217808 +0800
+@@ -65,17 +65,22 @@
+         DESTINATION "bin"
+     )
+ 
+-    install(DIRECTORY  ${PROJECT_SOURCE_DIR}/src/linux/usr
+-            DESTINATION "/")
++    install(DIRECTORY  ${PROJECT_SOURCE_DIR}/src/linux/usr/
++	    DESTINATION ${CMAKE_INSTALL_PREFIX}
++	    FILES_MATCHING PATTERN "*"
++	    )
+ 
+     include(${PROJECT_SOURCE_DIR}/cmake/deb_package_config.cmake) 
+     include(CPack)
+ elseif(CMAKE_HOST_WIN32)
+     install(TARGETS ${PROJECT_NAME}
+-            DESTINATION "/")
++	    DESTINATION ${CMAKE_INSTALL_PREFIX}
++	    )
+ 
+     install(DIRECTORY  ${PROJECT_SOURCE_DIR}/build/bin/
+-            DESTINATION "/")
++	    DESTINATION ${CMAKE_INSTALL_PREFIX}
++	    FILES_MATCHING PATTERN "*"
++	    )
+     # 设置软件版本
+     set(CPACK_PACKAGE_NAME "NotePad--")
+     set(CPACK_PACKAGE_DESCRIPTION "NotePad--")
+@@ -83,7 +88,7 @@
+     set(CPACK_PACKAGE_VERSION "1.22.0")
+     set(CPACK_PACKAGE_VERSION_MAJOR "1")
+     set(CPACK_PACKAGE_VERSION_MINOR "22")
+-    set(CPACK_PACKAGE_VERSION_PATCH "0")
++    set(CPACK_PACKAGE_VERSION_PATCH "0") 
+ 
+     include(${PROJECT_SOURCE_DIR}/cmake/nsis_package_config.cmake) 
+     include(CPack)
+diff -Naur b/notepad--.desktop a/notepad--.desktop
+--- b/notepad--.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/notepad--.desktop	2023-11-20 17:13:28.447271554 +0800
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Name=notepad--
++Exec=NotePad--
++Type=Application
++Icon=notepad--
