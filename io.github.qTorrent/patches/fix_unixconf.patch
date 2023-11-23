@@ -1,0 +1,21 @@
+--- ../unixconf.pri	2023-11-23 09:19:27.968751000 +0800
++++ ../unixconf.pri	2023-11-23 09:16:31.359533000 +0800
+@@ -1,15 +1,15 @@
+ # Install binary
+-target.path = /usr/bin
++target.path = $$PREFIX/bin
+ INSTALLS += target
+ 
+ # Menu icon
+ menuicon.files = ../res/qTorrent.desktop
+-menuicon.path = /usr/share/applications
++menuicon.path = $$PREFIX/share/applications
+ INSTALLS += menuicon
+ 
+ # Pixmap files
+ pixmap.files = ../res/icons/qTorrent/qtorrent.png
+-pixmap.path = /usr/share/pixmaps
++pixmap.path = $$PREFIX/share/icons
+ INSTALLS += pixmap
+ 
+ # Install manpages
