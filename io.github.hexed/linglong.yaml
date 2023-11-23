@@ -1,0 +1,28 @@
+package:
+  id: io.github.hexed
+  name: hexed
+  version: 0.0.1
+  kind: app
+  description: |
+    An open-source, cross-platform binary file hex editor written in C++ with Qt5.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtscript
+    version: 5.15.7
+    type: runtime
+source:
+  kind: git
+  url: https://github.com/pgeorgiev98/hexed.git
+  commit: dfe9e3e69b7c0d642b3a9b4b1a51f764d8339199
+  patch: patches/fix_app.patch
+build:
+  kind: qmake
+
+
+
+
+
