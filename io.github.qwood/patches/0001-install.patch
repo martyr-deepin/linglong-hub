@@ -1,0 +1,44 @@
+From 0d2afcafcd32d462f4e6179e144d170847c51edf Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 22 Nov 2023 19:53:38 +0800
+Subject: [PATCH] install
+
+---
+ QWood.desktop | 8 ++++++++
+ QWood.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 QWood.desktop
+
+diff --git a/QWood.desktop b/QWood.desktop
+new file mode 100644
+index 0000000..723d7af
+--- /dev/null
++++ b/QWood.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QWood
++Name=QWood
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/QWood.pro b/QWood.pro
+index 78dd09c..f9eeb58 100755
+--- a/QWood.pro
++++ b/QWood.pro
+@@ -58,3 +58,10 @@ FORMS += qdialogabrir.ui \
+     qdialoghash.ui \
+     qdialogarvorebplus.ui \
+     configdialogpageestruturas.ui
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =QWood.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
