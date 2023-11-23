@@ -1,0 +1,28 @@
+package:
+  id: io.github.Geist
+  name: Geist
+  version: 0.0.1
+  kind: app
+  description: |
+    A free text/code editor made with C++ and Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/jubal-R/Geist.git
+  commit: cad89246b911a3e542f104f926869bb2e2800669
+  patch: patches/fix_geist.patch 
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args} ./Geist.pro
+
+
+
+
