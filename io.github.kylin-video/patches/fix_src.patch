@@ -1,0 +1,14 @@
+--- ../src/src.pro	2023-11-22 20:37:46.842431000 +0800
++++ ../src/src.pro	2023-11-22 20:36:33.578978000 +0800
+@@ -20,9 +20,9 @@
+ inst1.files += res/kylin-video.png
+ inst1.path = /usr/share/pixmaps
+ inst2.files += ../kylin-video.desktop
+-inst2.path = /usr/share/applications
++inst2.path = $$PREFIX/share/applications
+ target.source  += $$TARGET
+-target.path = /usr/bin
++target.path = $$PREFIX/bin
+ INSTALLS += inst1 \
+     inst2 \
+     qm_files \

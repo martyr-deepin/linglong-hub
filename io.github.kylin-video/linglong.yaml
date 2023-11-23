@@ -1,0 +1,23 @@
+package:
+  id: io.github.kylin-video
+  name: kylin-video
+  version: 2.1.1.1
+  kind: app
+  description: |
+    Kylin Video utilizes MPV and MPlayer as background play engine (use MPV by default). Its GUI front end is written by Qt5. .
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/UbuntuKylin/kylin-video.git
+  commit: 39ccf8cf4b6b5d8abaa359c3328a026bfe375fbe
+  patch: patches/fix_src.patch
+
+build:
+  kind: qmake
+
+
+
