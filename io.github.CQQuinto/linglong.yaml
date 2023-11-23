@@ -1,0 +1,26 @@
+package:
+  id: io.github.CQQuinto
+  name: CQQuinto
+  version: 0.0.1
+  kind: app
+  description: |
+    Quinto Board Game.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0 
+
+source:
+  kind: git
+  url: https://github.com/colinw7/CQQuinto.git
+  commit: c9ad0615af5bb99fc569065aff6c1702d1a82f1b
+  patch: patches/fix_cqq.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args} ./CQQuinto.pro
+
+

@@ -1,0 +1,23 @@
+--- ../src/CQQuinto.pro	2023-11-23 16:01:26.169657000 +0800
++++ ../src/CQQuinto.pro	2023-11-23 15:55:08.025686000 +0800
+@@ -26,6 +26,20 @@
+ INCLUDEPATH += \
+ ../include \
+ .
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
+ 
++DESKTOP_FILE = ./CQQuinto.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=CQQuinto' >> $$DESKTOP_FILE")
++system("echo 'Comment=CQQuinto.' >> $$DESKTOP_FILE")
++system("echo 'Exec=CQQuinto' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
+ unix:LIBS += \
+ -L$$LIB_DIR \
