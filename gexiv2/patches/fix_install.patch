@@ -1,0 +1,13 @@
+diff --git a/meson.build b/meson.build
+index eeb0bee..ef60c92 100644
+--- a/meson.build
++++ b/meson.build
+@@ -17,7 +17,7 @@ project_url = 'https://wiki.gnome.org/Projects/gexiv2'
+ gnome = import('gnome')
+ pkg = import('pkgconfig')
+
+-exiv2 = dependency('exiv2', version : '>= 0.26')
++exiv2 = dependency('exiv2', version : '>= 0.26', modules: ['Exiv2::exiv2lib'])
+
+ # when building for 0.26 or 0.27 and with clang's libc++, reenable std::auto_ptr
+ # and remove deprecation warnings for that
