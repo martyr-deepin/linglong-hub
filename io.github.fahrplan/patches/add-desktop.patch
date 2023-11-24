@@ -1,0 +1,30 @@
+diff --git a/fahrplan2.desktop b/fahrplan2.desktop
+new file mode 100644
+index 0000000..05b2ada
+--- /dev/null
++++ b/fahrplan2.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=fahrplan2
++Exec=fahrplan2 %f
++Icon=fahrplan2-square_256
+diff --git a/fahrplan2.pro b/fahrplan2.pro
+index 1bf931a..15ac014 100644
+--- a/fahrplan2.pro
++++ b/fahrplan2.pro
+@@ -488,3 +488,13 @@ translations.CONFIG = no_link
+ QMAKE_EXTRA_COMPILERS += translations
+ PRE_TARGETDEPS += compiler_translations_make_all
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += fahrplan2.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = data/fahrplan2-square_256.png
++INSTALLS += icons
+
