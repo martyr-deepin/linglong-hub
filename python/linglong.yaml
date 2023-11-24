@@ -1,0 +1,26 @@
+package:
+  id: python
+  name: python
+  version: 3.10.13.0
+  kind: lib
+  description: |
+    The Python programming language.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/python/cpython.git
+  version: 3.10
+  commit: 49965601d6afedafe47cc85556d99b7a24981051
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      rm /usr/include/x86_64-linux-gnu/openblas_config.h
+      rm /usr/include/x86_64-linux-gnu/cblas.h
+      rm /usr/include/x86_64-linux-gnu/cblas-openblas.h
+      ./configure --prefix=${PREFIX} --enable-shared
