@@ -1,0 +1,45 @@
+diff --git a/linlogbook.desktop b/linlogbook.desktop
+new file mode 100644
+index 0000000..c6f911e
+--- /dev/null
++++ b/linlogbook.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=linlogbook
++Exec=linlogbook %f
++Icon=linlogbook
+diff --git a/linlogbook.pro b/linlogbook.pro
+index c7b6a66..8211494 100644
+--- a/linlogbook.pro
++++ b/linlogbook.pro
+@@ -11,7 +11,7 @@ UI_DIR= ./.tmp/ui_tmp
+ MOC_DIR= ./.tmp
+ 
+ TEMPLATE = app
+-target.path = /usr/local/bin
++target.path = $$PREFIX/bin
+ DEPENDPATH += . src src/gui
+ INCLUDEPATH += . src
+ 
+@@ -64,13 +64,14 @@ SOURCES += src/createdatabasefields.cpp \
+     src/statisticstotal.cpp \
+     src/operatorsetup.cpp
+ RESOURCES += src/application.qrc
+-desktop.path=/usr/share/applications
+-desktop.files=data/linlogbook.desktop
+-images.path=/usr/share/pixmaps
+-images.files=images/linlogbook.png
++desktop.path= $$PREFIX/share/applications
++desktop.files= linlogbook.desktop
++
++icons.path = $${PREFIX}/share/icons
++icons.files = images/linlogbook.png
+ 
+ INSTALLS +=desktop
+-INSTALLS +=images
++INSTALLS +=icons
+ INSTALLS +=target
+ 
+ DISTFILES += \
+
