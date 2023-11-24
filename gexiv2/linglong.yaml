@@ -1,0 +1,40 @@
+package:
+  id: gexiv2
+  name: gexiv2
+  version: 0.14.2
+  kind: lib
+  description: |
+    GObject-based wrapper around the Exiv2 library.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+depends:
+  - id: exiv2/0.28.1
+  - id: inih/0.0.57
+
+source:
+  kind: git
+  url: https://gitlab.gnome.org/GNOME/gexiv2.git
+  commit: dd7fe2f9899d7f914946a20d8bf224248196725c
+  patch:
+    - patches/fix_install.patch
+
+variables:
+  extra_args: |
+    -Dvapi=false
+    -Dpython3=false
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      export HOME="/root"
+      ln -s /usr/lib/x86_64-linux-gnu/gobject-introspection/giscanner/_giscanner.cpython-310-x86_64-linux-gnu.so /usr/lib/x86_64-linux-gnu/gobject-introspection/giscanner/_giscanner.so
+      meson ${conf_args} ${extra_args} ${build_dir}
+    build: |
+      cd ${build_dir}
+      ninja ${jobs}
+    install: |
+      env DESTDIR=${dest_dir} ninja install
