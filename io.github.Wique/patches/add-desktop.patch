@@ -1,0 +1,26 @@
+diff --git a/src/Wique.desktop b/src/Wique.desktop
+new file mode 100644
+index 0000000..4206b25
+--- /dev/null
++++ b/src/Wique.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=Wique
++Exec=Wique %f
+diff --git a/src/wique.pro b/src/wique.pro
+index a868e44..db0be25 100644
+--- a/src/wique.pro
++++ b/src/wique.pro
+@@ -20,3 +20,10 @@ HEADERS += \
+ 
+ FORMS += \
+     gui/databaseui.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += Wique.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
+
