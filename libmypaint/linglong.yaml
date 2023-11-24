@@ -1,0 +1,25 @@
+package:
+  id: libmypaint
+  name: libmypaint
+  version: 1.6.1
+  kind: lib
+  description: |
+    Library for making brushstrokes which is used by MyPaint and other projects.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/mypaint/libmypaint.git
+  commit: 2768251dacce3939136c839aeca413f4aa4241d0
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      ln -s /usr/lib/x86_64-linux-gnu/gobject-introspection/giscanner/_giscanner.cpython-310-x86_64-linux-gnu.so /usr/lib/x86_64-linux-gnu/gobject-introspection/giscanner/_giscanner.so
+      ./autogen.sh
+      ./configure ${conf_args} ${extra_args}
+
