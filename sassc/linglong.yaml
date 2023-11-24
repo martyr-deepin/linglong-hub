@@ -1,0 +1,28 @@
+package:
+  id: sassc
+  name: sassc
+  version: 3.6.2
+  kind: lib
+  description: |
+    A libsass command line driver.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+depends:
+  - id: libtool/2.4.2
+  - id: automake/1.16.5
+  - id: libsass/3.6.5
+
+source:
+  kind: git
+  url: https://github.com/sass/sassc.git
+  commit: 66f0ef37e7f0ad3a65d2f481eff09d09408f42d0
+
+variables:
+  extra_args: |
+    --with-libsass-include=${PREFIX}/include
+
+build:
+  kind: autotools
