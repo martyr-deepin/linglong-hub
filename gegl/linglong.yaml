@@ -1,0 +1,38 @@
+package:
+  id: gegl
+  name: gegl
+  version: 0.4.46
+  kind: lib
+  description: |
+    Graph based image processing framework.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+depends:
+  - id: babl/0.1.106
+  - id: json-glib/1.6.6
+
+source:
+  kind: git
+  url: https://gitlab.gnome.org/GNOME/gegl.git
+  commit: e6cb97763e422d8853fc95c665f8b0c73f025dd8
+
+variables:
+  extra_args: |
+    -Dlibrsvg=disabled
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      export HOME="/root"
+      export XDG_DATA_DIRS="${PREFIX}/share:$XDG_DATA_DIRS"
+      ln -s /usr/lib/x86_64-linux-gnu/gobject-introspection/giscanner/_giscanner.cpython-310-x86_64-linux-gnu.so /usr/lib/x86_64-linux-gnu/gobject-introspection/giscanner/_giscanner.so
+      meson ${conf_args} ${extra_args} ${build_dir}
+    build: |
+      cd ${build_dir}
+      ninja ${jobs}
+    install: |
+      env DESTDIR=${dest_dir} ninja install
