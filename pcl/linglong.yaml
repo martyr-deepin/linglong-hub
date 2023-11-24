@@ -1,0 +1,23 @@
+package:
+  id: pcl
+  name: pcl
+  version: 1.13.1.99
+  kind: lib
+  description: |
+    Point Cloud Library (PCL)
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+depends:
+  - id: boost-defaults                
+    version: 1.74.0.3
+
+source:
+  kind: git
+  url: https://github.com/PointCloudLibrary/pcl.git
+  commit: 0d123a41deb8721db1e5195ca92c6065754b83f2
+
+build:
+  kind: cmake
