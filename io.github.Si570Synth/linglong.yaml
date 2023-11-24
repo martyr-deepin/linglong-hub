@@ -1,0 +1,21 @@
+package:
+  id: io.github.Si570Synth
+  name: Si570Synth
+  version: 0.0.1
+  kind: app
+  description: |
+    Linux program to control a Si570 Synthesizer with firmware by DG8SAQ.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/dl1ksv/Si570Synth.git"
+  commit: 47df64bec23c24beedd47a23bc3653ba9d0cf68a
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
