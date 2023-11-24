@@ -1,0 +1,19 @@
+package:
+  id: io.github.GPXSee
+  name: GPXSee
+  version: 0.0.1
+  kind: app
+  description: |
+    GPS log file viewer and analyzer with support for GPX, TCX, KML, FIT, IGC, NMEA, SLF, SML, LOC, GPI, GeoJSON and OziExplorer files.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/tumic0/GPXSee.git"
+  commit: 0a5d5315c0c03e4ceca6545f1b094e99668f2d9c
+
+build:
+  kind: qmake
