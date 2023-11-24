@@ -1,0 +1,30 @@
+diff --git a/src/FuChan.desktop b/src/FuChan.desktop
+new file mode 100644
+index 0000000..cfbff99
+--- /dev/null
++++ b/src/FuChan.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=Fu Chan
++Exec=FuChan %f
++Icon=logo
+diff --git a/src/FuChan.pro b/src/FuChan.pro
+index 4c651df..51cfef3 100644
+--- a/src/FuChan.pro
++++ b/src/FuChan.pro
+@@ -94,3 +94,14 @@ LIBS += "F:/Qt/Qt5.5.0/5.5/mingw492_32/lib/libcurldll.a"
+ linux:{
+ LIBS += -L/lib -lcurl
+ }
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += FuChan.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = ../builds/latest/conf/logo.png
++INSTALLS += icons

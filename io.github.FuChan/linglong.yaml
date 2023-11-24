@@ -1,0 +1,25 @@
+package:
+  id: io.github.FuChan
+  name: FuChan
+  version: 0.17.0
+  kind: app
+  description: |
+    FuChan is a cross-platform lightweight app to browse 4chan coded with Qt in C++.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/FuSoftware/FuChan.git"
+  commit: 84c6228a03760ac9708d811bafbfc348e2e84e53
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}
