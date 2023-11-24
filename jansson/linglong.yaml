@@ -1,0 +1,20 @@
+package:
+  id: jansson
+  name: jansson
+  version: 2.14.0
+  kind: lib
+  description: |
+    a C library for encoding, decoding and manipulating JSON data.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/akheron/jansson.git"
+  commit: 60097f0096f337393b42d0ad13d403294ff4e782
+  patch: patches/ab.patch
+
+build:
+  kind: cmake
