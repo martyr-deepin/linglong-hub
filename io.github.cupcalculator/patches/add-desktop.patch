@@ -1,0 +1,20 @@
+index 2fa5032..5d77c0b 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -114,3 +114,5 @@ set(ci
+ 
+ add_custom_target(CI SOURCES ${ci})
+ 
++install(FILES CupCalculator.desktop DESTINATION share/applications)
++install(FILES data/images/control.png DESTINATION share/icons/ RENAME CupCalculator.png)
+diff --git a/CupCalculator.desktop b/CupCalculator.desktop
+new file mode 100644
+index 0000000..7cef66c
+--- /dev/null
++++ b/CupCalculator.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=CupCalculator
++Exec=CupCalculator %f
++Icon=CupCalculator
