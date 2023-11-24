@@ -1,0 +1,29 @@
+package:
+  id: graphene
+  name: graphene
+  version: 1.10.8
+  kind: lib
+  description: |
+    A thin layer of types for graphic libraries.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/ebassi/graphene.git
+  commit: 4e2578450809c2099400cf85caf18eafcd7100aa
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      export HOME="/root"
+      ln -s /usr/lib/x86_64-linux-gnu/gobject-introspection/giscanner/_giscanner.cpython-310-x86_64-linux-gnu.so /usr/lib/x86_64-linux-gnu/gobject-introspection/giscanner/_giscanner.so
+      meson ${conf_args} ${extra_args} ${build_dir}
+    build: |
+      cd ${build_dir}
+      ninja ${jobs}
+    install: |
+      env DESTDIR=${dest_dir} ninja install
