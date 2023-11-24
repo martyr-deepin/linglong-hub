@@ -1,0 +1,29 @@
+package:
+  id: babl
+  name: babl
+  version: 0.1.106
+  kind: lib
+  description: |
+    Dynamic, any to any, pixel format conversion library.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://gitlab.gnome.org/GNOME/babl.git
+  commit: 150294d22e9f151ebe0ca7ac1c3a72135d2e850e
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      export HOME="/root"
+      ln -s /usr/lib/x86_64-linux-gnu/gobject-introspection/giscanner/_giscanner.cpython-310-x86_64-linux-gnu.so /usr/lib/x86_64-linux-gnu/gobject-introspection/giscanner/_giscanner.so
+      meson ${conf_args} ${extra_args} ${build_dir}
+    build: |
+      cd ${build_dir}
+      ninja ${jobs}
+    install: |
+      env DESTDIR=${dest_dir} ninja install
