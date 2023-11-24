@@ -1,0 +1,19 @@
+package:
+  id: SDL
+  name: SDL
+  version: 2.28.5
+  kind: lib
+  description: |
+    Simple Directmedia Layer
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/libsdl-org/SDL.git
+  commit: 6ba90f77752ab0350f28fb228c5dde550244904e
+
+build:
+  kind: cmake
