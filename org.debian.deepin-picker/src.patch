@@ -1,0 +1,42 @@
+diff -Naur b/deepin-picker.pro a/deepin-picker.pro
+--- b/deepin-picker.pro	2023-11-22 21:32:21.238057951 +0800
++++ a/deepin-picker.pro	2023-11-24 20:23:39.637307067 +0800
+@@ -44,11 +44,11 @@
+     PREFIX = /usr
+ }
+ 
+-isEmpty(BINDIR):BINDIR=/usr/bin
+-isEmpty(ICONDIR):ICONDIR=/usr/share/icons/hicolor/scalable/apps
+-isEmpty(APPDIR):APPDIR=/usr/share/applications
+-isEmpty(DSRDIR):DSRDIR=/usr/share/deepin-picker
+-isEmpty(DOCDIR):DOCDIR=/usr/share/dman/deepin-picker
++isEmpty(BINDIR):BINDIR=$$PREFIX/bin
++isEmpty(ICONDIR):ICONDIR=$$PREFIX/share/icons/hicolor/scalable/apps
++isEmpty(APPDIR):APPDIR=$$PREFIX/share/applications
++isEmpty(DSRDIR):DSRDIR=$$PREFIX/share/deepin-picker
++isEmpty(DOCDIR):DOCDIR=$$PREFIX/share/dman/deepin-picker
+ 
+ target.path = $$INSTROOT$$BINDIR
+ icon.path = $$INSTROOT$$ICONDIR
+diff -Naur b/src/animation.cpp a/src/animation.cpp
+--- b/src/animation.cpp	2023-11-22 21:32:21.238057951 +0800
++++ a/src/animation.cpp	2023-11-22 21:34:01.710167837 +0800
+@@ -26,6 +26,7 @@
+ #include <QApplication>
+ #include <QColor>
+ #include <QPainter>
++#include <QPainterPath>
+ #include <QDebug>
+ 
+ Animation::Animation(int x, int y, QPixmap pixmap, QColor color, QWidget *parent) : QWidget(parent)
+diff -Naur b/src/picker.cpp a/src/picker.cpp
+--- b/src/picker.cpp	2023-11-22 21:32:21.238057951 +0800
++++ a/src/picker.cpp	2023-11-22 21:34:48.992207914 +0800
+@@ -27,6 +27,7 @@
+ #include "utils.h"
+ #include "colormenu.h"
+ #include <QPainter>
++#include <QPainterPath>
+ #include <QBitmap>
+ #include <QPixmap>
+ #include <QMenu>
