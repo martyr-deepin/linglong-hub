@@ -1,0 +1,28 @@
+package:
+  id: Phoenix
+  name: Phoenix
+  version: 4.2.1.1
+  kind: lib
+  description: |
+    Phoenix is the improved next-generation wxPython.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:  
+  kind: git
+  url: https://github.com/wxWidgets/Phoenix.git
+  commit: 172e732a0c96601d1b050e07fbd571818e5ebe7d
+
+build:
+  kind: manual
+  manual:
+    build: |
+      python3 ./build.py build_wx --prefix=${PREFIX} 
+    install: |
+      python3 ./build.py install_wx --destdir=${dest_dir} --no_magic 
+
+
+   
