@@ -1,0 +1,26 @@
+package:
+  id: VTK
+  name: VTK
+  version: 9.0.0
+  kind: lib
+  description: |
+    VTK is an open-source software system for image processing, 3D graphics, volume rendering and visualization.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+variables:
+  build_dir: build_dir
+  conf_args: |
+    -DCMAKE_INSTALL_PREFIX=${PREFIX}
+    -DCMAKE_INSTALL_LIBDIR=lib/${TRIPLET}
+
+source:
+  kind: git
+  url: https://github.com/Kitware/VTK.git
+  commit: ab278e87b181e3a02082bea7361fbaa3ddafb3ad
+  patch: patches/0001-fix-include.patch
+build:
+  kind: cmake
+  
+
