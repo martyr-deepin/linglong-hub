@@ -1,0 +1,20 @@
+package:
+  id: io.github.Text-Editor-With-Qt
+  name: Text-Editor-With-Qt
+  version: 0.0.1
+  kind: app
+  description: |
+    基于Qt5的简易文本编辑器。A simple text editor based on Qt5. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/aspxcor/Text-Editor-With-Qt.git"
+  commit: 10b5168
+  patch: patches/ab.patch
+build:
+  kind: qmake

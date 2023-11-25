@@ -1,0 +1,33 @@
+diff -Naur b/Editor.pro a/Editor.pro
+--- b/Editor.pro	2023-11-24 20:43:22.171522130 +0800
++++ a/Editor.pro	2023-11-24 23:04:20.378270770 +0800
+@@ -40,11 +40,19 @@
+         texteditor.ui
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++# qnx: target.path = /tmp/$${TARGET}/bin
++# else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     myresorces.qrc
+ 
+ RC_FILE += rsc/Editor.rc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = Text-Editor-With-Qt.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+diff -Naur b/Text-Editor-With-Qt.desktop a/Text-Editor-With-Qt.desktop
+--- b/Text-Editor-With-Qt.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/Text-Editor-With-Qt.desktop	2023-11-24 20:46:11.387796918 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=Text-Editor-With-Qt
++Exec=Editor
++Type=Application
