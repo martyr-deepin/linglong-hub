@@ -1,0 +1,38 @@
+package:
+  id: appstream-glib
+  name: appstream-glib
+  version: 0.8.2
+  kind: lib
+  description: |
+    Provides GObjects and helper methods to read and write AppStream metadata.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+depends:
+  - id: json-glib/1.6.6
+  - id: libyaml/0.2.2.1
+
+source:
+  kind: git
+  url: https://github.com/hughsie/appstream-glib.git
+  commit: 02c8ad3b66075d9b2c9094dff816cd44839a4b45
+
+variables:
+  extra_args: |
+    -Drpm=false
+    -Dstemmer=false
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      export HOME="/root"
+      ln -s /usr/lib/x86_64-linux-gnu/gobject-introspection/giscanner/_giscanner.cpython-310-x86_64-linux-gnu.so /usr/lib/x86_64-linux-gnu/gobject-introspection/giscanner/_giscanner.so
+      meson ${conf_args} ${extra_args} ${build_dir}
+    build: |
+      cd ${build_dir}
+      ninja ${jobs}
+    install: |
+      env DESTDIR=${dest_dir} ninja install
