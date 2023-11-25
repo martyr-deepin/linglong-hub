@@ -1,0 +1,25 @@
+From 8a7e235c189fef965ea1c02cdb70edc77ff1b7b4 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sat, 25 Nov 2023 14:52:52 +0800
+Subject: [PATCH] fix-include
+
+---
+ src/Draw/Draw_Window.cxx | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/Draw/Draw_Window.cxx b/src/Draw/Draw_Window.cxx
+index 5b111edfe7..d4d26ef634 100644
+--- a/src/Draw/Draw_Window.cxx
++++ b/src/Draw/Draw_Window.cxx
+@@ -65,7 +65,7 @@
+   extern "C" void Tk_GeometryRequest (Tk_Window tkwin, int reqWidth, int reqHeight);
+ 
+ #else
+-  #include <tk.h>
++
+ #endif
+ #endif
+ 
+-- 
+2.33.1
+

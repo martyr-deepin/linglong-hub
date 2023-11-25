@@ -1,0 +1,28 @@
+package:
+  id: OCCT
+  name: OCCT
+  version: 7.7.2
+  kind: lib
+  description: |
+    This directory contains sources of Open CASCADE Technology (OCCT).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+depends:
+  - id: VTK/9.0.0
+  - id: doxygen/1.9.8
+
+variables:
+  conf_args: |
+    -DCMAKE_INSTALL_PREFIX=${PREFIX} \
+    -DCMAKE_INSTALL_LIBDIR=${PREFIX}/lib/${TRIPLET} \
+    -D3RDPARTY_TK_INCLUDE_DIR=${PREFIX}/include
+source:  
+  kind: git
+  url: https://github.com/Open-Cascade-SAS/OCCT.git
+  commit: b079fb9877ef64d4a8158a60fa157f59b096debb
+  patch: patches/0001-fix-include.patch
+
+build:
+  kind: cmake
