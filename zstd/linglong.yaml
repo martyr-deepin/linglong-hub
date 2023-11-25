@@ -1,0 +1,30 @@
+package:
+  id: zstd
+  name: zstd
+  version: 1.5.5
+  kind: lib
+  description: |
+    zstd fast compression library.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/facebook/zstd.git
+  commit: 63779c798237346c2b245c546c40b72a5a5913fe
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      export HOME="/root"
+      cd build/meson
+      ln -s /usr/lib/x86_64-linux-gnu/gobject-introspection/giscanner/_giscanner.cpython-310-x86_64-linux-gnu.so /usr/lib/x86_64-linux-gnu/gobject-introspection/giscanner/_giscanner.so
+      meson ${conf_args} ${extra_args} ${build_dir}
+    build: |
+      cd ${build_dir}
+      ninja ${jobs}
+    install: |
+      env DESTDIR=${dest_dir} ninja install
