@@ -1,0 +1,53 @@
+package:
+  id: io.gitlab.gimp
+  name: gimp
+  version: 2.10.34.1
+  kind: app
+  description: |
+    The GNU Image Manipulation Program.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: libxslt/1.1.32.3
+  - id: poppler/0.71.0.2
+  - id: poppler-data/0.4.12.0
+  - id: inih/0.0.57
+    type: runtime
+  - id: babl/0.1.106
+    type: runtime
+  - id: gegl/0.4.46
+    type: runtime
+  - id: json-glib/1.6.6
+    type: runtime
+  - id: gexiv2/0.14.2
+    type: runtime
+  - id: exiv2/0.28.1
+    type: runtime
+  - id: libmypaint/1.6.1
+    type: runtime
+  - id: mypaint-brushes/1.3.1.0
+    type: runtime
+  - id: gtk2/2.24.33
+    type: runtime
+
+source:
+  kind: archive
+  url: https://gitlab.gnome.org/GNOME/gimp/-/archive/GIMP_2_10_34/gimp-GIMP_2_10_34.tar.gz
+  digest: 79e1f491500084a6d1cf8653034eb4c0a9fa0214cabf966d89d4c3b27e84f277
+  patch:
+    - patches/fix_desktop.patch
+
+variables:
+  extra_args: |
+    -disable-python
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      cd gimp-GIMP_2_10_34
+      NOCONFIGURE=1 ./autogen.sh ${extra_args} --disable-gtk-doc
+      ./configure ${conf_args} ${extra_args}

@@ -1,0 +1,13 @@
+diff --git a/gimp-GIMP_2_10_34/desktop/gimp.desktop.in.in b/gimp-GIMP_2_10_34/desktop/gimp.desktop.in.in
+index c0a98e9c6cd..ee3eba07d70 100644
+--- a/gimp-GIMP_2_10_34/desktop/gimp.desktop.in.in
++++ b/gimp-GIMP_2_10_34/desktop/gimp.desktop.in.in
+@@ -6,7 +6,7 @@ _GenericName=Image Editor
+ _Comment=Create images and edit photographs
+ # Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+ _Keywords=GIMP;graphic;design;illustration;painting;
+-Exec=@GIMP_COMMAND@ %U
++Exec=env BABL_PATH=/opt/apps/io.gitlab.gimp/files/lib/x86_64-linux-gnu/babl-0.1 GEGL_PATH=/opt/apps/io.gitlab.gimp/files/lib/x86_64-linux-gnu/gegl-0.4 @GIMP_COMMAND@ %U
+ TryExec=gimp-@GIMP_APP_VERSION@
+ Icon=gimp
+ Terminal=false
