@@ -1,0 +1,19 @@
+package:
+  id: exiv2
+  name: exiv2
+  version: 0.22.0
+  kind: lib
+  description: |
+    Image metadata library and tools
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Exiv2/exiv2.git
+  commit: 2299730d124628a047773c55799c2dd519e63738
+
+build:
+  kind: cmake
