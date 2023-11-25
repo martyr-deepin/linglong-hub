@@ -1,0 +1,21 @@
+package:
+  id: doxygen
+  name: doxygen
+  version: 1.9.8
+  kind: lib
+  description: |
+    Doxygen is the de facto standard tool for generating documentation from annotated C++ sources
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/doxygen/doxygen.git
+  commit: 8c18970202d8a968088705ac65a1e21c96533050
+
+build:
+  kind: cmake
+  
+
