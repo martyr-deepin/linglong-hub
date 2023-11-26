@@ -1,0 +1,20 @@
+package:
+  id: gsl
+  name: gsl
+  version: 2.7.0
+  kind: lib
+  description: |
+   GNU Scientific Library with CMake build support and AMPL bindings
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/ampl/gsl.git
+  commit: 995de64a35bc3ca1feef77fb0469f0488e0c3632
+
+
+build:
+  kind: cmake
