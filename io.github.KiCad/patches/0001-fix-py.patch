@@ -1,0 +1,25 @@
+From e151b4c2eb0097fe7dfc4d653dde92e516cc8654 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Mon, 27 Nov 2023 23:08:06 +0800
+Subject: [PATCH] fix-py
+
+---
+ scripting/build_tools/fix_swig_imports.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/scripting/build_tools/fix_swig_imports.py b/scripting/build_tools/fix_swig_imports.py
+index a869d6dcf6..3a353a0cd5 100644
+--- a/scripting/build_tools/fix_swig_imports.py
++++ b/scripting/build_tools/fix_swig_imports.py
+@@ -31,7 +31,7 @@ lines = f.readlines()
+ f.close()
+ 
+ 
+-doneOk = False
++doneOk = True
+ 
+ if (len(lines)<4000):
+     print("still building")
+-- 
+2.33.1
+

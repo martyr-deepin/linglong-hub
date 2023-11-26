@@ -1,0 +1,77 @@
+package:
+  id: io.github.KiCad
+  name: KiCad
+  version: 6.0.6.3
+  kind: app
+  description: |
+    This is an active mirror of the KiCad development branch, which is hosted at GitLab (updated every time something is pushed).
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+variables:
+  extra_args: |
+    -DCMAKE_INSTALL_LIBDIR=${PREFIX}/lib/${TRIPLET}
+    -DPYTHON_INCLUDE_DIR=$(python3-config --prefix)/include/python3
+    -DOCC_INCLUDE_DIR=/runtime/include/opencascade
+    -DCMAKE_INSTALL_PREFIX=${PREFIX} 
+    -DCMAKE_BUILD_TYPE=RelWithDebInfo
+    -DGLEW_LIBRARY_RELEASE:FILEPATH=/runtime/lib/x86_64-linux-gnu/libglew-shared.so
+    -DZLIB_INCLUDE_DIR:PATH=/runtime/include
+    -DZLIB_LIBRARY_RELEASE:FILEPATH=/runtime/lib/x86_64-linux-gnu/libz.so
+    -DPIXMAN_INCLUDE_DIR:PATH=/runtime/include/pixman-1
+    -DPIXMAN_LIBRARY:FILEPATH=/runtime/lib/x86_64-linux-gnu/libpixman-1.so
+depends:
+  - id: libxcb/1.14.1
+  - id: glew-cmake/2.2.0.3
+    type: runtime
+  - id: pixman/0.42.0
+  - id: atk/2.38.1
+  - id: gdk-pixbuf/2.41.10
+  - id: zlib/1.2.12.4
+  - id: cairo/1.18.0
+  - id: harfbuzz/2.8.0
+  - id: glib/2.7.8
+  - id: pango/1.50.14
+  - id: gtk/3.0.0 
+    type: runtime
+  - id: doxygen/1.9.8
+  - id: cmake/3.28.0
+  - id: Phoenix/4.2.1.1
+    type: runtime
+  - id: python/3.10.13.0
+  - id: swig/8.3.0
+  - id: OCCT/7.7.2
+  - id: libgit2/1.7.1
+  - id: boost-defaults/1.74.0.3
+  - id: glm/0.9.9.8
+  - id: ngspice/2.7.0.1
+  - id: pkgconf/2.0.3
+
+
+
+source:
+  kind: git
+  url: https://github.com/KiCad/kicad-source-mirror.git
+  commit: 59091ec2636b35ed079395adb0d38738a0d665b9
+  patch: 
+    - patches/0001-fix-25.patch
+    - patches/0001-fix-py.patch
+build:
+  kind: cmake
+  manual :
+    configure: |
+      cp -r /runtime/include/python3.10/* /runtime/include/
+      cp -r /runtime/include/atk-1.0/* /runtime/include/
+      cp -r /runtime/include/gdk-pixbuf-2.0/* /runtime/include/
+      cp -r /runtime/include/harfbuzz/* /runtime/include/
+      cp -r /runtime/include/pango-1.0/* /runtime/include/
+      cp -r /runtime/include/gtk-3.0/* /runtime/include/
+      cp -r /runtime/include/glib-2.0/* /runtime/include/
+      cp /runtime/lib/x86_64-linux-gnu/glib-2.0/include/glibconfig.h /runtime/include/
+      cp -r /runtime/lib/wx /runtime/lib/python3.10/
+      cp /runtime/lib/python3.10/config-3.10-x86_64-linux-gnu/libpython3.10.a /runtime/lib/
+      cmake -B ${build_dir} ${conf_args} ${extra_args}
+    build: |
+      cmake --build ${build_dir} -- ${jobs}
+    install: |
+      env DESTDIR=${dest_dir} cmake --build ${build_dir} --target install

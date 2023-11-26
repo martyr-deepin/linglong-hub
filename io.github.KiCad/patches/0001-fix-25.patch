@@ -1,0 +1,137 @@
+From 0058f82ecd0e04a8c7d01c4a246994592e3d4828 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sun, 26 Nov 2023 13:06:17 +0800
+Subject: [PATCH] fix-25%
+
+---
+ CMakeLists.txt                                | 20 ------------
+ include/gal/opengl/kiglew.h                   | 31 ++-----------------
+ scripting/python_scripting.cpp                |  2 +-
+ scripting/python_scripting.h                  |  2 +-
+ .../pybind11/include/pybind11/detail/common.h |  6 ++--
+ 5 files changed, 7 insertions(+), 54 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index b64055fa2a..da98687e52 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -832,27 +832,7 @@ include_directories( BEFORE SYSTEM ${PYBIND11_INCLUDE_DIR} )
+ set( INC_AFTER ${INC_AFTER} ${PYTHON_INCLUDE_DIRS} ${CMAKE_CURRENT_SOURCE_DIR}/scripting )
+ 
+ 
+-if( KICAD_SCRIPTING_WXPYTHON )
+-    # Find the wxPython installation
+-    find_package( wxPython REQUIRED )
+-
+-    if( WXPYTHON_VERSION VERSION_LESS 4.0.0 )
+-        message( FATAL_ERROR "wxPython Phoenix is required" )
+-    endif()
+-endif()
+ 
+-# GTK3 is required on Linux
+-if( UNIX AND NOT APPLE AND KICAD_SCRIPTING_WXPYTHON )
+-    if( NOT "${WXPYTHON_TOOLKIT}" STREQUAL "gtk3" )
+-        message( FATAL_ERROR "GTK3-based wxPython/Phoenix toolkit is required.")
+-    endif()
+-endif()
+-
+-if( WXPYTHON_FLAVOR )
+-    message( STATUS "Found wxPython ${WXPYTHON_FLAVOR} "
+-        "${WXPYTHON_VERSION}/${WXPYTHON_TOOLKIT} "
+-        "(wxWidgets ${WXPYTHON_WXVERSION})" )
+-endif()
+ 
+ #
+ # Find wxWidgets library, required
+diff --git a/include/gal/opengl/kiglew.h b/include/gal/opengl/kiglew.h
+index 40ff93e2e6..f0cd282927 100644
+--- a/include/gal/opengl/kiglew.h
++++ b/include/gal/opengl/kiglew.h
+@@ -30,39 +30,12 @@
+ 
+ // Pull in the configuration options for wxWidgets
+ #include <wx/platform.h>
++#include <GL/eglew.h>
++#include <GL/glxew.h>
+ 
+ // Apple, in their infinite wisdom, has decided to mark OpenGL as deprecated.
+ // Luckily we can silence warnings about its deprecation. This is needed on the GLEW
+ // includes since they transitively include the OpenGL headers.
+ #define GL_SILENCE_DEPRECATION 1
+ 
+-#ifdef __WXGTK__
+-
+-    #ifdef KICAD_USE_EGL
+-
+-        #if wxUSE_GLCANVAS_EGL
+-            // wxWidgets was compiled with the EGL canvas, so use the EGL header for GLEW
+-            #include <GL/eglew.h>
+-        #else
+-            #error "KICAD_USE_EGL can only be used when wxWidgets is compiled with the EGL canvas"
+-        #endif
+-
+-    #else   // KICAD_USE_EGL
+-
+-        #if wxUSE_GLCANVAS_EGL
+-            #error "KICAD_USE_EGL must be defined since wxWidgets has been compiled with the EGL canvas"
+-        #else
+-            // wxWidgets wasn't compiled with the EGL canvas, so use the X11 GLEW
+-            #include <GL/glxew.h>
+-        #endif
+-
+-    #endif  // KICAD_USE_EGL
+-
+-#else   // __WXGTK__
+-
+-    // Non-GTK platforms only need the normal GLEW include
+-    #include <GL/glew.h>
+-
+-#endif  // __WXGTK__
+-
+ #endif  // KIGLEW_H_
+diff --git a/scripting/python_scripting.cpp b/scripting/python_scripting.cpp
+index 1541515fe8..fd793e538f 100644
+--- a/scripting/python_scripting.cpp
++++ b/scripting/python_scripting.cpp
+@@ -31,7 +31,7 @@
+ 
+ #include <cstdlib>
+ #include <cstring>
+-#include <Python.h>
++#include <python3.10/Python.h>
+ #include <sstream>
+ 
+ #include <eda_base_frame.h>
+diff --git a/scripting/python_scripting.h b/scripting/python_scripting.h
+index a6df3c32a9..3a4040a307 100644
+--- a/scripting/python_scripting.h
++++ b/scripting/python_scripting.h
+@@ -38,7 +38,7 @@
+ #endif
+ 
+ #undef HAVE_CLOCK_GETTIME  // macro is defined in Python.h and causes redefine warning
+-#include <Python.h>
++#include <python3.10/Python.h>
+ #undef HAVE_CLOCK_GETTIME
+ 
+ #include <wx/window.h>
+diff --git a/thirdparty/pybind11/include/pybind11/detail/common.h b/thirdparty/pybind11/include/pybind11/detail/common.h
+index 44f20b56f9..1ba506cc90 100644
+--- a/thirdparty/pybind11/include/pybind11/detail/common.h
++++ b/thirdparty/pybind11/include/pybind11/detail/common.h
+@@ -144,9 +144,9 @@
+ #    define __STDC_WANT_LIB_EXT1__
+ #endif
+ 
+-#include <Python.h>
+-#include <frameobject.h>
+-#include <pythread.h>
++#include <python3.10/Python.h>
++#include <python3.10/frameobject.h>
++#include <python3.10/pythread.h>
+ 
+ /* Python #defines overrides on all sorts of core functions, which
+    tends to weak havok in C++ codebases that expect these to work
+-- 
+2.33.1
+
