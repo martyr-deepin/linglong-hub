@@ -1,7 +1,7 @@
 package:
   id: pixman
   name: pixman
-  version: 0.30.0
+  version: 0.42.0
   kind: lib
   description: |
     This is HarfBuzz, a text shaping library.
@@ -17,8 +17,8 @@ depends:
 
 source:
   kind: git
-  url: https://github.com/Distrotech/pixman.git
-  commit: b000d472943df95a062d6a64fbfef735f9423b54
+  url: https://gitlab.freedesktop.org/pixman/pixman.git
+  commit: 8d6d7f44f44744ab43ca4f775b59c618b414033d
 
 
 build:
