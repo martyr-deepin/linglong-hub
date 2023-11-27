@@ -1,0 +1,20 @@
+package:
+  id: pystring
+  name: pystring
+  version: 1.1.4.1
+  kind: lib
+  description: |
+    C++ functions matching the interface and behavior of python string methods with std::string
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/imageworks/pystring.git
+  commit: 76a2024e132bcc83bec1ecfebeacd5d20d490bfe
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
