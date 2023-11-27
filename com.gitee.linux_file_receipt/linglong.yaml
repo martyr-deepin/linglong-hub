@@ -1,0 +1,22 @@
+package:
+  id: com.gitee.linux_file_receipt
+  name: linux_file_receipt
+  version: 0.0.1
+  kind: app
+  description: |
+    QT-based Linux under the file transfer, server and client in one
+    Server: Listen on port, wait for file transfer
+    Client: transfer files to the server
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/KinderRiven/linux_file_receipt.git"
+  commit: 691c71f30a9fb0fef77a0f9e88ce05c2391e1e95
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

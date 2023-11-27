@@ -1,0 +1,48 @@
+From 3bdf409040ec448e4c301d9733e14b9806662f7b Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Mon, 27 Nov 2023 14:08:54 +0800
+Subject: [install.patch_] install
+
+---
+ SendServer.desktop |  6 ++++++
+ SendServer.pro     | 12 ++++++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 SendServer.desktop
+
+diff --git a/SendServer.desktop b/SendServer.desktop
+new file mode 100644
+index 0000000..4ca6172
+--- /dev/null
++++ b/SendServer.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=SendServer
++Exec=SendServer
++Terminal=false
+\ No newline at end of file
+diff --git a/SendServer.pro b/SendServer.pro
+index 910b30d..a320cc7 100644
+--- a/SendServer.pro
++++ b/SendServer.pro
+@@ -37,3 +37,15 @@ FORMS    += mainwindow.ui \
+     sendfilewindow.ui \
+     messagebox.ui \
+     settingwindow.ui
++
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = SendServer.desktop
++INSTALLS += unix_desktop
++
++}
+\ No newline at end of file
+-- 
+2.33.1
+
