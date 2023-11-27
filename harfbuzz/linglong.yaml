@@ -1,0 +1,31 @@
+package:
+  id: harfbuzz
+  name: harfbuzz
+  version: 2.8.0
+  kind: lib
+  description: |
+    This is HarfBuzz, a text shaping library.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://gitlab.gnome.org/chpe/harfbuzz.git
+  commit: 9ed5f04a7092c76744076ba65673b250aee22dcd
+
+
+build:
+  kind: manual
+  manual:
+    configure: |
+      ln -s /usr/lib/x86_64-linux-gnu/gobject-introspection/giscanner/_giscanner.cpython-310-x86_64-linux-gnu.so /usr/lib/x86_64-linux-gnu/gobject-introspection/giscanner/_giscanner.so
+      echo "tempuser:x:$(id -u):$(id -g):,,,:${HOME}:/bin/bash" >> /etc/passwd
+      echo "tempuser:x:$(id -G | cut -d' ' -f 2)" >> /etc/group
+      meson setup _build --prefix=${PREFIX} --libdir=${PREFIX}/lib/${TRIPLET}
+    build: |
+      meson compile -C _build  
+    install: |
+      meson install -C _build 
