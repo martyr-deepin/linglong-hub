@@ -12,6 +12,5 @@ source:
   kind: git
   url: https://github.com/Perlmint/glew-cmake.git
   commit: b9f61b43b2fd045a38dd50d2fd34a6f7abf4a32c
-  patch: patches/0001-fix-lib.patch
 build:
   kind: cmake
