@@ -1,0 +1,31 @@
+package:
+  id: gdk-pixbuf
+  name: gdk-pixbuf
+  version: 2.41.10
+  kind: lib
+  description: |
+   GdkPixbuf is a library that loads image data in various formats and stores it as linear buffers in memory.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://gitlab.gnome.org/GNOME/gdk-pixbuf.git
+  commit: dda3da188c0f8800ad6bf6cd2d039737f1aeb576
+
+
+build:
+  kind: manual
+  manual:
+    configure: |
+      ln -s /usr/lib/x86_64-linux-gnu/gobject-introspection/giscanner/_giscanner.cpython-310-x86_64-linux-gnu.so /usr/lib/x86_64-linux-gnu/gobject-introspection/giscanner/_giscanner.so
+      echo "tempuser:x:$(id -u):$(id -g):,,,:${HOME}:/bin/bash" >> /etc/passwd
+      echo "tempuser:x:$(id -G | cut -d' ' -f 2)" >> /etc/group
+      meson setup _build --prefix=${PREFIX} --libdir=${PREFIX}/lib/${TRIPLET}
+    build: |
+      meson compile -C _build  
+    install: |
+      meson install -C _build 
