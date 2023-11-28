@@ -2,7 +2,7 @@ From f94f70fe62adf1508214833299afcad3f83d1268 Mon Sep 17 00:00:00 2001
 From: wjyrich <1071633242@qq.com>
 Date: Tue, 31 Oct 2023 12:13:32 +0800
 Subject: [PATCH] install
- 
+  
 ---
  HiDPI-Fixer.pro | 7 +++++++
  1 file changed, 7 insertions(+)
