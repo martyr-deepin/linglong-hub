@@ -1,0 +1,25 @@
+From b6bb31859a2e215ff00eabe729de9f58de4b9422 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 28 Nov 2023 12:24:32 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 0ed720e..9e868f0 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -684,7 +684,7 @@ set(INSTALL_CMAKE_DIR "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}"
+ set(INSTALL_PKGCONFIG_DIR "${CMAKE_INSTALL_LIBDIR}/pkgconfig"
+     CACHE PATH "Installation directory for pkgconfig (.pc) files")
+ 
+-add_library(${PROJECT_NAME} ${MINIZIP_SRC} ${MINIZIP_HDR})
++add_library(${PROJECT_NAME} SHARED ${MINIZIP_SRC} ${MINIZIP_HDR})
+ 
+ set_target_properties(${PROJECT_NAME} PROPERTIES
+                       VERSION ${VERSION}
+-- 
+2.33.1
+
