@@ -1,0 +1,28 @@
+From f94f70fe62adf1508214833299afcad3f83d1268 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 31 Oct 2023 12:13:32 +0800
+Subject: [PATCH] install
+ 
+---
+ HiDPI-Fixer.pro | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/HiDPI-Fixer.pro b/HiDPI-Fixer.pro
+index d569f50..f351e39 100644
+--- a/HiDPI-Fixer.pro
++++ b/HiDPI-Fixer.pro
+@@ -88,3 +88,10 @@ FORMS += \
+ 
+ RESOURCES += \
+     $$PWD/images/images.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =deploy/linux/hidpi-fixer.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
