@@ -1,0 +1,20 @@
+package:
+  id: libdeflate
+  name: libdeflate
+  version: 1.19.0
+  kind: lib
+  description: |
+    Heavily optimized library for DEFLATE/zlib/gzip compression and decompression
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/ebiggers/libdeflate.git
+  commit: d4539a6aa7344d708b09d6d7d690973ddc5d3ad9
+
+
+build:
+  kind: cmake
