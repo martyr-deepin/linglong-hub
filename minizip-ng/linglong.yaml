@@ -1,0 +1,19 @@
+package:
+  id: minizip-ng
+  name: minizip-ng
+  version: 3.0.7.1
+  kind: lib
+  description: |
+    Fork of the popular zip manipulation library found in the zlib distribution.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/zlib-ng/minizip-ng.git
+  commit: 241428886216f0f0efd6926efcaaaa13794e51bd
+  patch: patches/0001-install.patch
+build:
+  kind: cmake
