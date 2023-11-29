@@ -1,0 +1,43 @@
+From f1b5fc2f5b7f8a0eb20773d078d37cd9949ea229 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 23 Nov 2023 11:49:28 +0800
+Subject: [PATCH] install
+
+---
+ ExeQt/TrayIcon.desktop | 8 ++++++++
+ ExeQt/TrayIcon.pro     | 6 ++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 ExeQt/TrayIcon.desktop
+
+diff --git a/ExeQt/TrayIcon.desktop b/ExeQt/TrayIcon.desktop
+new file mode 100644
+index 0000000..429a0bc
+--- /dev/null
++++ b/ExeQt/TrayIcon.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=TrayIcon
++Name=TrayIcon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/ExeQt/TrayIcon.pro b/ExeQt/TrayIcon.pro
+index aea5be8..e9e75ec 100644
+--- a/ExeQt/TrayIcon.pro
++++ b/ExeQt/TrayIcon.pro
+@@ -144,3 +144,9 @@ DISTFILES += \
+ #ifdef Q_WS_WIN
+ RC_ICONS = $$PWD/assets/images/app-icon.ico
+ #endif
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =TrayIcon.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
