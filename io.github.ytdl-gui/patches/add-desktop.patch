@@ -1,0 +1,24 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8c41e64..af9ab18 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -108,5 +108,6 @@ install(FILES icons/512x512.png
+     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/512x512/apps
+     RENAME youtubedl-gui.png)
+ 
+-install(FILES resources/youtubedl-gui.desktop
+-    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
++install(TARGETS youtubedl-gui DESTINATION bin/)
++install(FILES youtubedl-gui.desktop DESTINATION share/applications/)
++install(FILES icons/512x512.png DESTINATION share/icons/ RENAME youtubedl-gui.svg)
+diff --git a/youtubedl-gui.desktop b/youtubedl-gui.desktop
+new file mode 100644
+index 0000000..690ebca
+--- /dev/null
++++ b/youtubedl-gui.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Name=youtubedl-gui
++Exec=youtubedl-gui %F
++Icon=512x512
++Type=Application
