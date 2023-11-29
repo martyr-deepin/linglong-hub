@@ -1,0 +1,34 @@
+From 55c7f2a079b71d3357ef5be3ee6632b20860d8d9 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 29 Nov 2023 10:40:02 +0800
+Subject: [PATCH] fix
+
+---
+ plugins/impex/raw/3rdparty/libkdcraw/src/kdcraw_p.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/plugins/impex/raw/3rdparty/libkdcraw/src/kdcraw_p.h b/plugins/impex/raw/3rdparty/libkdcraw/src/kdcraw_p.h
+index f639ca4..791d87b 100644
+--- a/plugins/impex/raw/3rdparty/libkdcraw/src/kdcraw_p.h
++++ b/plugins/impex/raw/3rdparty/libkdcraw/src/kdcraw_p.h
+@@ -31,7 +31,7 @@
+ #include <QByteArray>
+ 
+ // Pragma directives to reduce warnings from LibRaw header files.
+-#if not defined(__APPLE__) && defined(__GNUC__)
++#if  !defined(__APPLE__) && defined(__GNUC__)
+ #pragma GCC diagnostic push
+ #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+ #endif
+@@ -46,7 +46,7 @@
+ #include <libraw.h>
+ 
+ // Restore warnings
+-#if not defined(__APPLE__) && defined(__GNUC__)
++#if  !defined(__APPLE__) && defined(__GNUC__)
+ #pragma GCC diagnostic pop
+ #endif
+ 
+-- 
+2.33.1
+

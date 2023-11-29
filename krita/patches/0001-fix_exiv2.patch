@@ -1,0 +1,55 @@
+From 66f70f6f3f51311848ebfff34738d7c9652cdac5 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 28 Nov 2023 21:19:10 +0800
+Subject: [PATCH] fix_exiv2
+
+---
+ libs/ui/kisexiv2/kis_exiv2.cpp  | 2 +-
+ libs/ui/kisexiv2/kis_xmp_io.cpp | 4 ++--
+ plugins/impex/CMakeLists.txt    | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/libs/ui/kisexiv2/kis_exiv2.cpp b/libs/ui/kisexiv2/kis_exiv2.cpp
+index 98bb847..543048f 100644
+--- a/libs/ui/kisexiv2/kis_exiv2.cpp
++++ b/libs/ui/kisexiv2/kis_exiv2.cpp
+@@ -19,7 +19,7 @@
+ #include "kis_exiv2.h"
+ 
+ #include <QDateTime>
+-
++#include <exiv2/exiv2.hpp>
+ #include "kis_iptc_io.h"
+ #include "kis_exif_io.h"
+ #include "kis_xmp_io.h"
+diff --git a/libs/ui/kisexiv2/kis_xmp_io.cpp b/libs/ui/kisexiv2/kis_xmp_io.cpp
+index 49c620e..d73776e 100644
+--- a/libs/ui/kisexiv2/kis_xmp_io.cpp
++++ b/libs/ui/kisexiv2/kis_xmp_io.cpp
+@@ -17,8 +17,8 @@
+ #include "kis_xmp_io.h"
+ 
+ #include <string>
+-#include <exiv2/xmp.hpp>
+-
++#include <exiv2/value.hpp>
++#include <exiv2/exiv2.hpp>
+ #include "kis_exiv2.h"
+ 
+ #include <metadata/kis_meta_data_store.h>
+diff --git a/plugins/impex/CMakeLists.txt b/plugins/impex/CMakeLists.txt
+index 501ea8c..aaedc06 100644
+--- a/plugins/impex/CMakeLists.txt
++++ b/plugins/impex/CMakeLists.txt
+@@ -5,7 +5,7 @@ if(CMAKE_SIZEOF_VOID_P EQUAL 4)
+ endif()
+ 
+ if(JPEG_FOUND AND HAVE_LCMS2)
+-	add_subdirectory(jpeg)
++	#add_subdirectory(jpeg)
+ endif()
+ 
+ if(TIFF_FOUND)
+-- 
+2.33.1
+

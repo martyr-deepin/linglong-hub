@@ -1,0 +1,25 @@
+From a8a496447d7a585fe18c9520d0d2e9d45fcb0b26 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 24 Nov 2023 12:50:48 +0800
+Subject: [PATCH] install
+
+---
+ plugins/dockers/defaultdockers/kis_layer_box.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/plugins/dockers/defaultdockers/kis_layer_box.h b/plugins/dockers/defaultdockers/kis_layer_box.h
+index 6928e48..7a81c81 100644
+--- a/plugins/dockers/defaultdockers/kis_layer_box.h
++++ b/plugins/dockers/defaultdockers/kis_layer_box.h
+@@ -55,7 +55,7 @@ class Ui_WdgLayerBox;
+ class KisNodeJugglerCompressed;
+ class KisColorLabelSelectorWidget;
+ class QWidgetAction;
+-
++class KisLayerBox;
+ /**
+  * A widget that shows a visualization of the layer structure.
+  * 
+-- 
+2.33.1
+

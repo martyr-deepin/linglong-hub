@@ -1,0 +1,39 @@
+From e6f71a7395316fd29c675d7645b0dd880ca1a106 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 29 Nov 2023 11:57:21 +0800
+Subject: [PATCH] fix_vec4
+
+---
+ krita/data/shaders/highq_downscale.frag       | 2 +-
+ krita/data/shaders/simple_texture_legacy.frag | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/krita/data/shaders/highq_downscale.frag b/krita/data/shaders/highq_downscale.frag
+index c34dde3..3548c99 100644
+--- a/krita/data/shaders/highq_downscale.frag
++++ b/krita/data/shaders/highq_downscale.frag
+@@ -78,7 +78,7 @@ vec4 filterPureLinear8(sampler2D texture, vec2 texcoord)
+ #endif /* HIGHQ_SCALING */
+ 
+ void main() {
+-    vec4 col;
++   highp vec4 col;
+ 
+ #if defined HIGHQ_SCALING || defined DIRECT_LOD_FETCH
+ 
+diff --git a/krita/data/shaders/simple_texture_legacy.frag b/krita/data/shaders/simple_texture_legacy.frag
+index 1b9a3ad..f9bb07d 100644
+--- a/krita/data/shaders/simple_texture_legacy.frag
++++ b/krita/data/shaders/simple_texture_legacy.frag
+@@ -11,7 +11,7 @@ uniform sampler3D texture1;
+ 
+ 
+ void main() {
+-    vec4 col = texture2D(texture0, v_textureCoordinate.st);
++   highp vec4 col = texture2D(texture0, v_textureCoordinate.st);
+ 
+ 
+ #ifdef USE_OCIO
+-- 
+2.33.1
+

@@ -1,0 +1,100 @@
+package:
+  id: io.github.krita
+  name: krita
+  version: 3.0.0
+  kind: app
+  description: |
+    Krita is a free and open source cross-platform application that offers an end-to-end solution for creating digital art files from scratch built on the KDE and Qt frameworks.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+variables:
+  extra_args: |
+    -DCMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
+    -DDEFINE_NO_DEPRECATED=1 \
+    -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+    -DPACKAGERS_BUILD=1 \
+    -DBUILD_TESTING=FALSE \
+    -DKDE4_BUILD_TESTS=FALSE \
+    -DHAVE_MEMORY_LEAK_TRACKER=FALSE
+
+depends:
+  - id: cmake
+    version: 3.28.0
+  
+  - id: boost-defaults
+    version: 1.74.0.3
+
+  - id: karchive
+    version: 5.54.0
+
+  - id: kconfig
+    version: 5.90.0
+
+  - id: kcoreaddons
+    version: 5.90.0
+
+  - id: ki18n
+    version: 5.90.0
+
+  - id: zug
+    version: 0.1.1
+
+  - id: kwindowsystem
+    version: 5.90.0
+   
+  - id: kcompletion
+    version: 5.90.0
+
+  - id: immer
+    version: 0.8.1
+
+  - id: lager
+    version: 0.1.1
+
+  - id: poppler
+    version: 0.71.0.2
+
+  - id: kcrash
+    version: 5.90.0
+
+  - id: kwidgetsaddons
+    version: 5.90.0
+
+  - id: kitemviews
+    version: 5.90.0
+
+  - id: kitemmodels
+    version: 5.90.0
+
+  - id: kguiaddons
+    version: 5.90.0
+
+  - id: openexr
+    version: 3.2.1
+
+  - id: exiv2
+    type: runtime
+    version: 0.22.0
+
+  - id: gsl
+    type: runtime
+    version: 2.7.0
+
+source:
+  kind: git
+  url: https://github.com/KDE/krita.git
+  commit: f0cbffcb6bdd1a80e5b0975fd0b80909c1235a81
+  patch:  
+    - patches/0001-fix_install.patch
+    - patches/0002-install.patch
+    - patches/0003-install.patch
+    - patches/0004-install.patch
+    - patches/0001-fix.patch
+    - patches/0002-fix.patch
+    - patches/0001-fix_exiv2.patch
+    - patches/0001-fix_vec4.patch
+build:
+  kind: cmake 
