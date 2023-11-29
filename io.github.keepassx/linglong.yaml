@@ -1,0 +1,19 @@
+package:
+  id: io.github.keepassx
+  name: keepassx
+  version: 2.0.3.0
+  kind: app
+  description: |
+    KeePassX is a cross platform port of the windows application “Keepass Password Safe”.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/keepassx/keepassx.git"
+  commit: 1682ab90243ef93449a981eb7b8046b629720488
+
+build:
+  kind: cmake
