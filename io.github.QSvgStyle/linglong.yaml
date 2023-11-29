@@ -1,0 +1,19 @@
+package:
+  id: io.github.QSvgStyle
+  name: QSvgStyle
+  version: 0.0.1
+  kind: app
+  description: |
+    QSvgStyle is a themeable SVG style for Qt5 applications.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/DexterMagnific/QSvgStyle.git"
+  commit: 6303e468ba64713bd16cbaa616290a3c8e571fa1
+
+build:
+  kind: qmake
