@@ -1,0 +1,54 @@
+From 95d5396f8a81c570f69dbddf2978600eef0bc98c Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Thu, 30 Nov 2023 01:01:08 +0800
+Subject: [install.patch_] install
+
+---
+ gapMea.desktop |  8 ++++++++
+ gapmea.pro     | 15 +++++++++++++++
+ 2 files changed, 23 insertions(+)
+ create mode 100644 gapMea.desktop
+
+diff --git a/gapMea.desktop b/gapMea.desktop
+new file mode 100644
+index 0000000..7f1e821
+--- /dev/null
++++ b/gapMea.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Exec=gapmea
++GenericName=gapmea
++Hidden=false
++Name=gapmea
++StartupNotify=false
++Type=Application
++Icon=gapQBE
+\ No newline at end of file
+diff --git a/gapmea.pro b/gapmea.pro
+index 215da40..0a1b42c 100644
+--- a/gapmea.pro
++++ b/gapmea.pro
+@@ -48,4 +48,19 @@ RESOURCES += \
+ TRANSLATIONS += gapMea_fr_FR.ts\
+             gapMea_es.ts
+ 
++
++unix: {
++
++target.path = $${PREFIX}/bin
+ INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files =  gapMea.desktop 
++INSTALLS += unix_desktop
++
++unix_icons.path = $${PREFIX}/share/icons/
++unix_icons.files = gapQBE.png
++INSTALLS += unix_icons
++
++
++}
+\ No newline at end of file
+-- 
+2.33.1
+
