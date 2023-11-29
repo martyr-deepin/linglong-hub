@@ -1,0 +1,53 @@
+From ee550cd3eaf32d1d5af4302c9b193f5737b75886 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Wed, 29 Nov 2023 22:36:44 +0800
+Subject: [install.patch_] install
+
+---
+ QtMusic.desktop |  8 ++++++++
+ QtMusic.pro     | 16 ++++++++++++++++
+ 2 files changed, 24 insertions(+)
+ create mode 100644 QtMusic.desktop
+
+diff --git a/QtMusic.desktop b/QtMusic.desktop
+new file mode 100644
+index 0000000..6794d43
+--- /dev/null
++++ b/QtMusic.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Exec=QtMusic
++GenericName=QtMusic
++Hidden=false
++Name=QtMusic
++StartupNotify=false
++Type=Application
++Icon=app
+\ No newline at end of file
+diff --git a/QtMusic.pro b/QtMusic.pro
+index 8d67aab..9805abf 100644
+--- a/QtMusic.pro
++++ b/QtMusic.pro
+@@ -75,3 +75,19 @@ HEADERS += \
+     Model/MusicInfo/MusicLyricsListModel.h \
+     Model/MusicInfo/MusicLyricsModel.h \
+     Infrastructure/utils/LyricsParse.h
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = QtMusic.desktop
++INSTALLS += unix_desktop
++
++unix_icons.path = $${PREFIX}/share/icons/
++unix_icons.files = app.ico
++INSTALLS += unix_icons
++
++
++}
+-- 
+2.33.1
+

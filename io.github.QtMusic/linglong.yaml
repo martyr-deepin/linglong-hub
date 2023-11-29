@@ -1,0 +1,22 @@
+package:
+  id: io.github.QtMusic
+  name: QtMusic
+  version: 1.0.0
+  kind: app
+  description: |
+    QtMusic.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/aeagean/QtMusic.git
+  commit: cbf9a6176c05808e1577de1190775b7ad15cf77e
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
