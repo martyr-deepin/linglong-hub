@@ -1,0 +1,35 @@
+From 06eabe4d8d8ab8f24c6a20c4c9b468b82da7c700 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 29 Nov 2023 19:49:52 +0800
+Subject: [PATCH] install
+
+---
+ partkeeprTools.pro | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/partkeeprTools.pro b/partkeeprTools.pro
+index 590e515..c1526d7 100644
+--- a/partkeeprTools.pro
++++ b/partkeeprTools.pro
+@@ -28,7 +28,7 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+@@ -42,3 +42,9 @@ export(first.depends)
+ export(copydata.commands)
+ QMAKE_EXTRA_TARGETS += first copydata
+ }
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =partkeeprTools.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
