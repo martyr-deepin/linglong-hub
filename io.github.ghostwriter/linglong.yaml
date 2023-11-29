@@ -1,0 +1,27 @@
+package:
+  id: io.github.ghostwriter
+  name: ghostwriter
+  version: 1.8.1
+  kind: app
+  description: |
+    ghostwriter is a Windows and Linux text editor for Markdown, which is a plain text markup format created by John Gruber.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine
+    version: 5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/refaqtor/ghostwriter.git
+  commit: d23a71b912429719ebbb873d0d8cd64e11b39fe9
+
+
+build:
+  kind: qmake
+
+      
