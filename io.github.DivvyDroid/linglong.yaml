@@ -1,0 +1,19 @@
+package:
+  id: io.github.DivvyDroid
+  name: DivvyDroid
+  version: 1.1.1
+  kind: app
+  description: |
+    Qt/C++ Application to screencast and remote control Android devices.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/maxrd2/DivvyDroid.git"
+  commit: 6d8d2f8faf941c948134375da0acdf9c238809da
+
+build:
+  kind: cmake
