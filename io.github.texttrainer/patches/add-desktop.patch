@@ -1,0 +1,21 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 913cb13..a708e7a 100755
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -37,3 +37,5 @@ add_executable(texttrainer
+ target_link_libraries(texttrainer Qt5::Widgets)
+ install(TARGETS texttrainer RUNTIME DESTINATION bin)
+ 
++install(FILES texttrainer.desktop DESTINATION share/applications/)
++install(FILES resources/view_icon.png DESTINATION share/icons/ RENAME texttrainer.png)
+diff --git a/texttrainer.desktop b/texttrainer.desktop
+new file mode 100644
+index 0000000..a00d1f8
+--- /dev/null
++++ b/texttrainer.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Name=texttrainer
++Exec=texttrainer %F
++Icon=QClipboard
++Type=view_icon
