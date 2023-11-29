@@ -1,0 +1,25 @@
+package:
+  id: io.github.qSdrSwr
+  name: qSdrSwr
+  version: 1.0.5
+  kind: app
+  description: |
+    Qt SWR analyser using an SDR and soapy_power
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtcharts
+    type: runtime
+    version: 5.15.7
+
+source:
+  kind: git
+  url: https://github.com/PTDreamer/qSdrSwr.git
+  commit: 3dd1f3e57017d86669977ce0e6970daa788f6892
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
