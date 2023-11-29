@@ -1,0 +1,29 @@
+package:
+  id: io.github.yunServerSoftware
+  name: yunServerSoftware
+  version: 1.0.0
+  kind: app
+  description: |
+    This is the software to be run for Soccer-bots.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Saint-Francis-Robotics-Team2367/yunServerSoftware.git
+  commit: a46410cd83ef4b05e4878380a46ac38401544608
+  patch: patches/0001-install.patch
+
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

@@ -1,0 +1,43 @@
+From 9c2fbdd70615f9bd090b5cc74992987cb2e3843a Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 22 Nov 2023 21:11:30 +0800
+Subject: [PATCH] install
+
+---
+ src/soccerBotSoftware.desktop | 8 ++++++++
+ src/soccerBotSoftware.pro     | 6 ++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 src/soccerBotSoftware.desktop
+
+diff --git a/src/soccerBotSoftware.desktop b/src/soccerBotSoftware.desktop
+new file mode 100644
+index 0000000..756883c
+--- /dev/null
++++ b/src/soccerBotSoftware.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=soccerBotSoftware
++Name=soccerBotSoftware
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/src/soccerBotSoftware.pro b/src/soccerBotSoftware.pro
+index 31bdeae..5a9303d 100644
+--- a/src/soccerBotSoftware.pro
++++ b/src/soccerBotSoftware.pro
+@@ -33,3 +33,9 @@ FORMS    += mainwindow.ui
+ 
+ QT += network
+ win32: LIBS += -lXinput
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =soccerBotSoftware.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
