@@ -1,0 +1,54 @@
+From 8b22608455b05a44b6199f609cdf155824c7d613 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Thu, 30 Nov 2023 00:45:22 +0800
+Subject: [install.patch_] install
+
+---
+ src/propelleride/IDE.desktop      |  8 ++++++++
+ src/propelleride/propelleride.pro | 16 ++++++++++++++++
+ 2 files changed, 24 insertions(+)
+ create mode 100644 src/propelleride/IDE.desktop
+
+diff --git a/src/propelleride/IDE.desktop b/src/propelleride/IDE.desktop
+new file mode 100644
+index 0000000..1ae106f
+--- /dev/null
++++ b/src/propelleride/IDE.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Exec=propelleride
++GenericName=propelleride
++Hidden=false
++Name=propelleride
++StartupNotify=false
++Type=Application
++Icon=icon-new
+\ No newline at end of file
+diff --git a/src/propelleride/propelleride.pro b/src/propelleride/propelleride.pro
+index 67e4841..cbcedb1 100644
+--- a/src/propelleride/propelleride.pro
++++ b/src/propelleride/propelleride.pro
+@@ -112,3 +112,19 @@ TRANSLATIONS += \
+     translations/propelleride_zn.ts \
+     translations/propelleride_fake.ts \
+ 
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = IDE.desktop
++INSTALLS += unix_desktop
++
++
++unix_icons.path = $${PREFIX}/share/icons/
++unix_icons.files = /source/icons/icon-new.png
++INSTALLS += unix_icons
++
++}
+\ No newline at end of file
+-- 
+2.33.1
+
