@@ -1,0 +1,22 @@
+package:
+  id: libglu
+  name: libglu 
+  version: 0.0.1
+  kind: lib
+  description: |
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: automake/1.16.5
+  - id: pkgconf/2.0.3
+  - id: libtool/2.4.2
+source:
+  kind: git
+  url: https://github.com/deepin-community/libglu.git
+  commit: ed0b323ce93869d091cb2aeb41542e25418f2787
+  #patch: patches/0001-fix-install.patch
+build:
+  kind: autotools
