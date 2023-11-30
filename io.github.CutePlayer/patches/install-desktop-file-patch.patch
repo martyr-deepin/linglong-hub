@@ -1,0 +1,19 @@
+diff --git a/videoplayer.pro b/videoplayer.pro
+index 32089ba..a2e0921 100644
+--- a/videoplayer.pro
++++ b/videoplayer.pro
+@@ -21,3 +21,14 @@ FORMS    += mainwindow.ui
+ 
+ RESOURCES += \
+     resources.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += videoplayer.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++ INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = icons/app.png
++INSTALLS += icons

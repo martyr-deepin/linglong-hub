@@ -1,0 +1,11 @@
+diff --git a/videoplayer.desktop b/videoplayer.desktop
+new file mode 100644
+index 0000000..83e7fd5
+--- /dev/null
++++ b/videoplayer.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=videoplayer
++Exec=videoplayer %f
++Icon=logo
