@@ -1,0 +1,33 @@
+diff --git a/qtchan.desktop b/qtchan.desktop
+new file mode 100644
+index 0000000..69ef1b8
+--- /dev/null
++++ b/qtchan.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=qtchan
++Exec=qtchan %f
++Icon=icon_64x64
+diff --git a/qtchan.pro b/qtchan.pro
+index bb223f8..2744082 100644
+--- a/qtchan.pro
++++ b/qtchan.pro
+@@ -6,6 +6,17 @@ TEMPLATE = app
+ 
+ QMAKE_CXXFLAGS_RELEASE += -O3
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += qtchan.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = icons/icon_64x64.png
++INSTALLS += icons
++
+ SOURCES += main.cpp \
+        mainwindow.cpp \
+        threadformcontext.cpp \

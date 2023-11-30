@@ -1,0 +1,21 @@
+package:
+  id: io.github.qtchan 
+  name: qtchan
+  version: 1.0.1
+  kind: app
+  description: |
+    qtchan is a 4chan browser written with qt5.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/siavash119/qtchan.git" 
+  commit: de0e3ec110c45387319e3c6132c82a68174b1da4
+  patch:
+    - patches/install-desktop.patch
+
+build:
+  kind: qmake
