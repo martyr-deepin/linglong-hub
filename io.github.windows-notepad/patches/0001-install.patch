@@ -1,0 +1,49 @@
+From 8186b89044ca6f8511d1fa0657b61be82798d747 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 30 Nov 2023 11:23:54 +0800
+Subject: [PATCH] install
+
+---
+ notepad.desktop |  9 +++++++++
+ notepad.pro     | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 notepad.desktop
+
+diff --git a/notepad.desktop b/notepad.desktop
+new file mode 100644
+index 0000000..24fce20
+--- /dev/null
++++ b/notepad.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=notepad
++Name=notepad
++icon=app
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/notepad.pro b/notepad.pro
+index 22caadd..4adc21f 100644
+--- a/notepad.pro
++++ b/notepad.pro
+@@ -50,3 +50,13 @@ RC_FILE = app.rc
+ RESOURCES += \
+     images.qrc \
+     qm.qrc
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =notepad.desktop
++desktop.path = $$DATADIR/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = app.ico
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
