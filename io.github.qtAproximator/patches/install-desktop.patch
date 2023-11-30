@@ -1,0 +1,25 @@
+diff --git a/qtAproximator.desktop b/qtAproximator.desktop
+new file mode 100644
+index 0000000..59a10de
+--- /dev/null
++++ b/qtAproximator.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=qtAproximator
++Exec=qtAproximator %f
+diff --git a/qtAproximator.pro b/qtAproximator.pro
+index 02581c8..4d7af26 100644
+--- a/qtAproximator.pro
++++ b/qtAproximator.pro
+@@ -55,3 +55,10 @@ MOBILITY =
+ OTHER_FILES += \
+     android-sources/AndroidManifest.xml
+ ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android-sources
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += qtAproximator.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
