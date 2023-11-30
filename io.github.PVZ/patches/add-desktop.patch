@@ -1,0 +1,30 @@
+diff --git a/PVZ.desktop b/PVZ.desktop
+new file mode 100644
+index 0000000..dd64f3c
+--- /dev/null
++++ b/PVZ.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=PVZ
++Exec=PVZ %f
++Icon=WallNut
+diff --git a/PVZ.pro b/PVZ.pro
+index 6156ae7..58c3e00 100644
+--- a/PVZ.pro
++++ b/PVZ.pro
+@@ -88,3 +88,14 @@ RESOURCES += \
+ 
+ RC_ICONS += \
+     PVZ.ico
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += PVZ.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = images/WallNut.png
++INSTALLS += icons
