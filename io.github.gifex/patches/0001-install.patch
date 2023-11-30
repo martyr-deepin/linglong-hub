@@ -1,0 +1,51 @@
+From 33db203b43130c9d0771ae8f06b2df99bfe66cd1 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Tue, 21 Nov 2023 20:03:20 +0800
+Subject: [install.patch_] install
+
+---
+ gifex.desktop |  7 +++++++
+ src/gifex.pro | 10 +++++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 gifex.desktop
+
+diff --git a/gifex.desktop b/gifex.desktop
+new file mode 100644
+index 0000000..d0479e7
+--- /dev/null
++++ b/gifex.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Version=2.4
++Type=Application
++Name=gifex
++Exec=gifex
++Terminal=false
++Icon=icon
+\ No newline at end of file
+diff --git a/src/gifex.pro b/src/gifex.pro
+index b8161d6..82cb078 100644
+--- a/src/gifex.pro
++++ b/src/gifex.pro
+@@ -58,9 +58,17 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $${PREFIX}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = gifex.desktop
++INSTALLS += unix_desktop
++
++unix_icons.path = $${PREFIX}/share/icons
++unix_icons.files = snap/gui/icon.png
++INSTALLS += unix_icons
++
+ RESOURCES += \
+     icons.qrc \
+     qbreeze.qrc
+-- 
+2.33.1
+
