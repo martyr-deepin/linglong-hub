@@ -1,0 +1,25 @@
+package:
+  id: io.github.OmegaRPG
+  name: OmegaRPG
+  version: 0.5.4
+  kind: app
+  description: |
+    OmegaRPG is a free, open-source Virtual Game Tabletop application inspired by OpenRPG. It is licensed under the GNU General Public License Version 3.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/R-Rudolph/OmegaRPG.git"
+  commit: 60450f1aa6163bb85c5839cef647867b3215ae93
+  patch:
+    - patches/install-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd OmegaRPG
+      qmake -makefile ${conf_args} ${extra_args}

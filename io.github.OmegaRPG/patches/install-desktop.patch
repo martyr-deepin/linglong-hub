@@ -1,0 +1,31 @@
+diff --git a/OmegaRPG/OmegaRPG.desktop b/OmegaRPG/OmegaRPG.desktop
+new file mode 100644
+index 0000000..7e1c6b0
+--- /dev/null
++++ b/OmegaRPG/OmegaRPG.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=OmegaRPG
++Exec=OmegaRPG %f
++Icon=omegarpg
+diff --git a/OmegaRPG/OmegaRPG.pro b/OmegaRPG/OmegaRPG.pro
+index 8e787ec..1f8d105 100755
+--- a/OmegaRPG/OmegaRPG.pro
++++ b/OmegaRPG/OmegaRPG.pro
+@@ -104,4 +104,15 @@ include(../3rdParty/QtUtils/QNetworkProxyWidget.pri)
+ DISTFILES += \
+     QmlImports.qml
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += OmegaRPG.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = ../icons/omegarpg.png
++INSTALLS += icons
++
+
