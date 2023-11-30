@@ -1,0 +1,25 @@
+diff --git a/QtPhilosophers.desktop b/QtPhilosophers.desktop
+new file mode 100644
+index 0000000..dbbfe40
+--- /dev/null
++++ b/QtPhilosophers.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=QtPhilosophers
++Exec=QtPhilosophers %f
+diff --git a/QtPhilosophers.pro b/QtPhilosophers.pro
+index 7848934..11c532b 100644
+--- a/QtPhilosophers.pro
++++ b/QtPhilosophers.pro
+@@ -44,3 +44,10 @@ HEADERS += \
+     qttricks/qqmlvariantlistmodel.h \
+     qttricks/qqmlvariantlistmodel_p.h \
+     $$PWD/src/resourcemanager.h
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += QtPhilosophers.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
