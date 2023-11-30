@@ -1,0 +1,15 @@
+diff --git a/NTP_test.pro b/NTP_test.pro
+index d43860e..f3a912e 100644
+--- a/NTP_test.pro
++++ b/NTP_test.pro
+@@ -21,3 +21,10 @@ HEADERS  += mainwindow.h \
+     version.h
+ 
+ FORMS    += mainwindow.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += NTP_test.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++ INSTALLS += target

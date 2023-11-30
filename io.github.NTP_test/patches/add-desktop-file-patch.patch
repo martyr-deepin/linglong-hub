@@ -1,0 +1,11 @@
+diff --git a/NTP_test.desktop b/NTP_test.desktop
+new file mode 100644
+index 0000000..e5b2c86
+--- /dev/null
++++ b/NTP_test.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=NTP_test
++Exec=NTP_test %f
++Icon=logo
