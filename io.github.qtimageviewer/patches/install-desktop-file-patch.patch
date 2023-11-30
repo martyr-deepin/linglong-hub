@@ -1,0 +1,19 @@
+diff --git a/imageviewer.pro b/imageviewer.pro
+index 66405a1..babe814 100644
+--- a/imageviewer.pro
++++ b/imageviewer.pro
+@@ -41,3 +41,14 @@ FORMS += \
+ 
+ RESOURCES += \
+     imageviewer.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += imageviewer.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++ INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = imageviewer.ico
++INSTALLS += icons
