@@ -1,0 +1,15 @@
+diff --git a/TextPad.pro b/TextPad.pro
+index 9d69d26..037da68 100644
+--- a/TextPad.pro
++++ b/TextPad.pro
+@@ -32,3 +32,10 @@ TRANSLATIONS += \
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += TextPad.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++ INSTALLS += target
