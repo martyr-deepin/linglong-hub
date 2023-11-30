@@ -1,0 +1,25 @@
+package:
+  id: ogg
+  name: ogg  
+  version: 1.3.5
+  kind: lib
+  description: |
+    Ogg project codecs use the Ogg bitstream format to arrange the raw.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+variables:
+  conf_args: |
+    -DCMAKE_INSTALL_PREFIX=${PREFIX}
+    -DCMAKE_INSTALL_LIBDIR=${PREFIX}/lib/${TRIPLET} 
+    -DBUILD_SHARED_LIBS=1
+
+source:
+  kind: git
+  url: https://github.com/xiph/ogg.git
+  commit: db5c7a49ce7ebda47b15b78471e78fb7f2483e22
+
+build:
+  kind: cmake
