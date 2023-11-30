@@ -1,0 +1,19 @@
+diff --git a/QtScrcpy/QtScrcpy.pro b/QtScrcpy/QtScrcpy.pro
+index 05ad9d7..f5be7f3 100644
+--- a/QtScrcpy/QtScrcpy.pro
++++ b/QtScrcpy/QtScrcpy.pro
+@@ -157,3 +157,14 @@ linux {
+ RESOURCES += \
+     res/res.qrc
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += ../output/linux/release/QtScrcpy.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++ INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = ../backup/logo.png
++INSTALLS += icons
++
