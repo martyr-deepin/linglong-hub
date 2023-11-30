@@ -1,0 +1,52 @@
+From cdf7024c06c3ae4cbc0d2ba4c6613af09ffca896 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Tue, 21 Nov 2023 20:34:38 +0800
+Subject: [install.patch_] install
+
+---
+ src/pixelFx.pro     | 11 +++++------
+ src/pixelfx.desktop |  1 +
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/src/pixelFx.pro b/src/pixelFx.pro
+index 64770ce..8ed32b4 100644
+--- a/src/pixelFx.pro
++++ b/src/pixelFx.pro
+@@ -86,10 +86,7 @@ FORMS += \
+         mainwindow.ui \
+         savedialog.ui
+ 
+-# Default rules for deployment.
+-isEmpty(PREFIX){
+- PREFIX = /usr
+-}
++
+ 
+ BINDIR  = $$PREFIX/bin
+ DATADIR = $$PREFIX/share
+@@ -97,9 +94,11 @@ DATADIR = $$PREFIX/share
+ target.path = $$BINDIR
+ 
+ icon.files = icons/$$TARGET.png
+-icon.path = $$DATADIR/icons/hicolor/512x512/apps/
++icon.path = $${PREFIX}/share/icons
++
++
+ 
+-desktop.files = $$TARGET.desktop
++desktop.files = pixelfx.desktop
+ desktop.path = $$DATADIR/applications/
+ 
+ INSTALLS += target icon desktop
+diff --git a/src/pixelfx.desktop b/src/pixelfx.desktop
+index a32bc0d..4ecec29 100644
+--- a/src/pixelfx.desktop
++++ b/src/pixelfx.desktop
+@@ -11,3 +11,4 @@ Exec=pixelfx %F
+ Categories=Graphics;Photography;Qt;
+ Terminal=false
+ StartupNotify=false
++Exec= pixelfx
+-- 
+2.33.1
+

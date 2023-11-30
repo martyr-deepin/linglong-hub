@@ -1,0 +1,24 @@
+package:
+  id: io.github.PixelFx
+  name: PixelFx
+  version: 0.0.1
+  kind: app
+  description: |
+    Little utility that let you touch up and enhance images quickly with various filters and image processing operations.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/keshavbhatt/PixelFx.git
+  commit: 568c142c044377dadee0ef0bd8feb123952d286e
+  patch: patches/0001-install.patch
+
+variables:
+  extra_args: |
+     src
+
+build:
+  kind: qmake
