@@ -1,0 +1,11 @@
+diff --git a/test/test.desktop b/test/test.desktop
+new file mode 100644
+index 0000000..95e384f
+--- /dev/null
++++ b/test/test.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=QHeatMap
++Exec=test %f
++Icon=logo
