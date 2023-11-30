@@ -1,0 +1,21 @@
+package:
+  id: io.github.kakuro
+  name: kakuro
+  version: 0.0.1
+  kind: app
+  description: |
+    Kakuro application with a Qt GUI to play, solve, and generate Kakuro puzzles.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/ChrisMoutsos/kakuro.git"
+  commit: 214ff54ecd9c77d1328dd6e51602021eb28291e4
+  patch:
+    - patches/install-desktop.patch
+
+build:
+  kind: qmake
