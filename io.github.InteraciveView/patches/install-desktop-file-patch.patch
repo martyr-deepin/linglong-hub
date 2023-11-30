@@ -1,0 +1,15 @@
+diff --git a/interactiveview.pro b/interactiveview.pro
+index 4cc6bbc..8ff6752 100644
+--- a/interactiveview.pro
++++ b/interactiveview.pro
+@@ -34,3 +34,10 @@ HEADERS += \
+ 
+ FORMS += \
+         mainwindow.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += interactiveview.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++ INSTALLS += target
