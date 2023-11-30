@@ -1,0 +1,39 @@
+From 997e22a0d3a0f42bb56527825de6341231ff5acb Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Sun, 12 Nov 2023 12:25:12 +0800
+Subject: [install.patch_] install
+
+---
+ CMakeLists.txt  | 3 +++
+ freedom.desktop | 7 +++++++
+ 2 files changed, 10 insertions(+)
+ create mode 100644 freedom.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index ea85416..bd5f04c 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -70,3 +70,6 @@ endif ()
+ 
+ find_package(Qt${QT_VERSION} COMPONENTS ${REQUIRED_LIBS} REQUIRED)
+ target_link_libraries(${PROJECT_NAME} ${REQUIRED_LIBS_QUALIFIED})
++
++install(TARGETS Freedom DESTINATION bin)
++install(PROGRAMS freedom.desktop DESTINATION share/applications)
+diff --git a/freedom.desktop b/freedom.desktop
+new file mode 100644
+index 0000000..8bef649
+--- /dev/null
++++ b/freedom.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=Freedom
++GenericName=Freedom
++Hidden=false
++Name=Freedom
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+-- 
+2.33.1
+
