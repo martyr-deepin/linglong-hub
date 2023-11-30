@@ -1,0 +1,12 @@
+diff --git a/dmsnavigation.pro b/dmsnavigation.pro
+index 5f26dc7..ceb7ad4 100644
+--- a/dmsnavigation.pro
++++ b/dmsnavigation.pro
+@@ -11,3 +11,7 @@ INCLUDEPATH += .
+ # Input
+ HEADERS += src/DMSNavigation.h
+ SOURCES += src/DMSNavigation.cpp src/main.cpp
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += dms.desktop
++INSTALLS += desktop
