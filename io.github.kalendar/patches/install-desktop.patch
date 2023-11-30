@@ -1,0 +1,31 @@
+diff --git a/src/Kalendar.desktop b/src/Kalendar.desktop
+new file mode 100644
+index 0000000..8516387
+--- /dev/null
++++ b/src/Kalendar.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=Kalendar
++Exec=Kalendar %f
++Icon=kalendar
+diff --git a/src/Kalendar.pro b/src/Kalendar.pro
+index 5dfefed..7b7c6da 100755
+--- a/src/Kalendar.pro
++++ b/src/Kalendar.pro
+@@ -69,3 +69,14 @@ QMAKE_CXXFLAGS += -std=c++11
+ 
+ #For DEBUG purpose
+ #QMAKE_CXXFLAGS += -g
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += Kalendar.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = ../icon/kalendar.png
++INSTALLS += icons
+
