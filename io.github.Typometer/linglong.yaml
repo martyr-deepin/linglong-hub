@@ -1,0 +1,26 @@
+package:
+  id: io.github.Typometer
+  name: Typometer
+  version: 0.0.1
+  kind: app
+  description: |
+    A cross platform application built on QT for measuring typing speed.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/himanshukumar660/Typometer.git"
+  commit: 42373530e4779868d8d342eb84c2e35337ae11e0
+  patch:
+    - patches/install-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd TypeIt
+      qmake -makefile ${conf_args} ${extra_args}
+
