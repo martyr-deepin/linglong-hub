@@ -1,0 +1,15 @@
+diff --git a/LS_ENDEcryption.pro b/LS_ENDEcryption.pro
+index 317174e..cbedc0a 100644
+--- a/LS_ENDEcryption.pro
++++ b/LS_ENDEcryption.pro
+@@ -20,3 +20,10 @@ HEADERS  += mainwindow.h \
+     des.h
+ 
+ FORMS    += mainwindow.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += LS_ENDEcryption.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++ INSTALLS += target
