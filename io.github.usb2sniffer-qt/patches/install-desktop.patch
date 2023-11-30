@@ -1,0 +1,29 @@
+diff --git a/lcsniff.desktop b/lcsniff.desktop
+new file mode 100644
+index 0000000..ad4b5bb
+--- /dev/null
++++ b/lcsniff.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=lcsniff
++Exec=lcsniff %f
++Icon=logo-alpha-small
+diff --git a/lcsniff.pro b/lcsniff.pro
+index f1f212a..ba18cba 100644
+--- a/lcsniff.pro
++++ b/lcsniff.pro
+@@ -106,6 +106,13 @@ isEmpty(PREFIX) {
+        target.path = $$PREFIX/bin
+        INSTALLS += target
+ }
++desktop.path = $$PREFIX/share/applications
++desktop.files += lcsniff.desktop
++INSTALLS += desktop
++
++icons.path = $${PREFIX}/share/icons
++icons.files = icons/logo-alpha-small.png
++INSTALLS += icons
+ 
+ RESOURCES += \
+     resources.qrc
