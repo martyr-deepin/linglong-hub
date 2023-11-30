@@ -1,0 +1,22 @@
+package:
+  id: io.github.qt_open_icon
+  name: qt_open_icon
+  version: 0.0.1
+  kind: app
+  description: |
+    让你在QT开发中从繁琐的图片维护中解放出来.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/wyyrepo/qt_open_icon.git"
+  commit: c8fcea3c65178c81d0a4e684a139c3adfd8e3c77
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake
