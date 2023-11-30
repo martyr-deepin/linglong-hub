@@ -1,0 +1,21 @@
+package:
+  id: io.github.softprojector
+  name: softprojector
+  version: 2.2.0
+  kind: app
+  description: |
+    Church media presentation software.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/SoftProjector/softprojector.git"
+  commit: 33c9ffc0bb0b9ae1d3281ac2e231fe38e3546315
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
