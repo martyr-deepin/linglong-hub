@@ -1,0 +1,49 @@
+From 317fbd5492296ae7ab3f07ac0d8a70a80df15be9 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Tue, 21 Nov 2023 20:49:29 +0800
+Subject: [install.patch_] install
+
+---
+ src/plumber.desktop |  2 +-
+ src/plumber.pro     | 10 +++++++++-
+ 2 files changed, 10 insertions(+), 2 deletions(-)
+
+diff --git a/src/plumber.desktop b/src/plumber.desktop
+index 79f9719..99d37a8 100644
+--- a/src/plumber.desktop
++++ b/src/plumber.desktop
+@@ -6,7 +6,7 @@ Name=Plumber
+ Type=Application
+ Icon=plumber
+ Keywords=Clip;Video;Downloader;Gif
+-Exec=plumber %F
++Exec=plumber
+ Categories=AudioVideo;Utility;Qt;
+ Terminal=false
+ Name[en_US]=plumber
+diff --git a/src/plumber.pro b/src/plumber.pro
+index dbae6fb..248eb6d 100644
+--- a/src/plumber.pro
++++ b/src/plumber.pro
+@@ -76,9 +76,17 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $${PREFIX}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = src/plumber.desktop
++INSTALLS += unix_desktop
++
++unix_icons.path = $${PREFIX}/share/icons
++unix_icons.files = plumber/snap/gui/icon.png
++INSTALLS += unix_icons
++
+ RESOURCES += \
+     icons.qrc \
+     qbreeze.qrc
+-- 
+2.33.1
+
