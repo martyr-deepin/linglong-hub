@@ -1,0 +1,11 @@
+diff --git a/LS_ENDEcryption.desktop b/LS_ENDEcryption.desktop
+new file mode 100644
+index 0000000..59b6fbf
+--- /dev/null
++++ b/LS_ENDEcryption.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=LS_ENDEcryption
++Exec=LS_ENDEcryption %f
++Icon=logo
