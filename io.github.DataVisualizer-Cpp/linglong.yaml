@@ -1,0 +1,26 @@
+package:
+  id: io.github.DataVisualizer-Cpp
+  name: DataVisualizer-Cpp
+  version: 0.0.1
+  kind: app
+  description: |
+    Data visualizer is a QT/C++ based application designed to give a visual representation of various data structures, currently, stack, queue, and binary min heap.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/FOSSLGYS/DataVisualizer-Cpp.git"
+  commit: c8d58105820aaded2aad5f4bdbd90f73b4a9d0dc
+  patch:
+    - patches/install-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd DataVisualizer
+      qmake -makefile ${conf_args} ${extra_args}
+   

@@ -1,0 +1,30 @@
+diff --git a/DataVisualizer/DataVisualizer.desktop b/DataVisualizer/DataVisualizer.desktop
+new file mode 100644
+index 0000000..91fa89b
+--- /dev/null
++++ b/DataVisualizer/DataVisualizer.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=DataVisualizer
++Exec=DataVisualizer %f
++Icon=bckgnd
+diff --git a/DataVisualizer/DataVisualizer.pro b/DataVisualizer/DataVisualizer.pro
+index 770eac9..8d91b85 100644
+--- a/DataVisualizer/DataVisualizer.pro
++++ b/DataVisualizer/DataVisualizer.pro
+@@ -40,3 +40,14 @@ OTHER_FILES +=
+ 
+ RESOURCES += \
+     Res.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += DataVisualizer.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = images/bckgnd.png
++INSTALLS += icons
