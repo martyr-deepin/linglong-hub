@@ -1,0 +1,30 @@
+diff --git a/APA_Assistant.desktop b/APA_Assistant.desktop
+new file mode 100644
+index 0000000..ee9f186
+--- /dev/null
++++ b/APA_Assistant.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=APA_Assistant
++Exec=APA_Assistant %f
++Icon=active_car
+diff --git a/APA_Assistant.pro b/APA_Assistant.pro
+index e24350e..1d11fe6 100644
+--- a/APA_Assistant.pro
++++ b/APA_Assistant.pro
+@@ -173,3 +173,14 @@ RESOURCES += \
+     icon.qrc
+ 
+ DISTFILES +=
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += APA_Assistant.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = Icon/active_car.png 
++INSTALLS += icons
