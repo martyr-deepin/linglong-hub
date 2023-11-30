@@ -1,0 +1,22 @@
+package:
+  id: io.github.QtScrcpy
+  name: QtScrcpy
+  version: 1.0.3
+  kind: app
+  description: |
+    Android实时投屏控制软件
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/wyyrepo/QtScrcpy.git"
+  commit: a135c28b99000b15e9f2ac94c218fcd06b17dfef
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake
