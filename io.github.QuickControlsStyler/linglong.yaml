@@ -1,0 +1,25 @@
+package:
+  id: io.github.QuickControlsStyler
+  name: QuickControlsStyler
+  version: 0.0.1
+  kind: app
+  description: |
+    A simple tool to create and edit styles for Qt Quick Controls with live preview.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/trollixx/QuickControlsStyler.git"
+  commit: 7634342e9a73ebc04e53d562ac74b0fe3a2ef215
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}

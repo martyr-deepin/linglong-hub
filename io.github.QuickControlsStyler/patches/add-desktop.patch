@@ -1,0 +1,25 @@
+diff --git a/src/qcstyler.desktop b/src/qcstyler.desktop
+new file mode 100644
+index 0000000..521b862
+--- /dev/null
++++ b/src/qcstyler.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=qcstyler
++Exec=qcstyler %f
+diff --git a/src/src.pro b/src/src.pro
+index 7d7f4df..a56018b 100644
+--- a/src/src.pro
++++ b/src/src.pro
+@@ -24,3 +24,10 @@ FORMS += \
+     newstyledialog.ui
+ 
+ RESOURCES += qml/qml.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += qcstyler.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
