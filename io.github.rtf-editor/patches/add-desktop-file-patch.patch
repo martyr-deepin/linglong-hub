@@ -1,0 +1,11 @@
+diff --git a/rtf-experimental.desktop b/rtf-experimental.desktop
+new file mode 100644
+index 0000000..c9dc265
+--- /dev/null
++++ b/rtf-experimental.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=rtf-experimental
++Exec=rtf-experimental %f
++Icon=logo
