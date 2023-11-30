@@ -1,0 +1,30 @@
+diff --git a/timekeeper.desktop b/timekeeper.desktop
+new file mode 100644
+index 0000000..8a57ffa
+--- /dev/null
++++ b/timekeeper.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=timekeeper
++Exec=timekeeper %f
++Icon=icon128x32
+diff --git a/timekeeper.pro b/timekeeper.pro
+index 517defe..6554f58 100644
+--- a/timekeeper.pro
++++ b/timekeeper.pro
+@@ -37,3 +37,14 @@ isEqual(QT_MAJOR_VERSION, 5) {
+ }
+ RESOURCES += timekeeper.qrc
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += timekeeper.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = images/icon128x32.png
++INSTALLS += icons
++
