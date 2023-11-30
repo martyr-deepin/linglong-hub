@@ -1,0 +1,11 @@
+diff --git a/imageviewer.desktop b/imageviewer.desktop
+new file mode 100644
+index 0000000..11ce650
+--- /dev/null
++++ b/imageviewer.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=imageviewer
++Exec=imageviewer %f
++Icon=logo
