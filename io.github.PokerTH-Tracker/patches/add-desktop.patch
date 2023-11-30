@@ -1,0 +1,52 @@
+diff --git a/PokerTH_tracker.desktop b/PokerTH_tracker.desktop
+index 62d2f14..e8c271e 100644
+--- a/PokerTH_tracker.desktop
++++ b/PokerTH_tracker.desktop
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Type=Application
+-Exec=PokerTH_tracker %u
+-Icon=/usr/share/PokerTH_tracker/PokerTH_Tracker.png
++Exec=PokerTH_tracker %f
++Icon=PokerTH_Tracker.png
+ Name=PokerTH Tracker
+ Comment=A simple statistics tool to analyse PokerTH logs.
+ Categories=Qt;Game;CardGame;
+\ No newline at end of file
+diff --git a/PokerTH_tracker.pro b/PokerTH_tracker.pro
+index dbd8108..882a032 100644
+--- a/PokerTH_tracker.pro
++++ b/PokerTH_tracker.pro
+@@ -8,8 +8,9 @@ QT       += core gui sql xml
+ 
+ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+ 
+-iconset.path = /usr/local/share/PokerTH_tracker
+-iconset.files = Icons/PokerTH_Tracker.png
++icons.path = $${PREFIX}/share/icons
++icons.files = Icons/PokerTH_Tracker.png
++INSTALLS += icons
+ 
+ TARGET = PokerTH_tracker
+ TEMPLATE = app
+@@ -23,7 +24,7 @@ linux {
+ RESOURCES += Icons.qrc Trans_qmake.qrc
+ RC_ICONS = Icons/PokerTH_Tracker.ico
+ 
+-target.path = /usr/local/bin
++target.path = $$PREFIX/bin
+ 
+ SOURCES += src/main.cpp\
+         src/global.cpp\
+@@ -49,7 +50,7 @@ system("lrelease PokerTH_tracker.pro")
+ GIT_COMMIT = $$system("git log -1 --format=%H")
+ system("sed -e \"s/@GIT_COMMIT@/$$GIT_COMMIT/g\" misc/version.hpp.in > version.hpp")
+ 
+-desktop.path = /usr/share/applications
++desktop.path = $$PREFIX/share/applications
+ desktop.files += PokerTH_tracker.desktop
+ 
+-INSTALLS += target iconset desktop
+\ No newline at end of file
++INSTALLS += target icon desktop
+\ No newline at end of file
