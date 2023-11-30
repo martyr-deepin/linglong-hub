@@ -1,0 +1,15 @@
+diff --git a/rtf-experimental.pro b/rtf-experimental.pro
+index 14103f7..7d2f2c8 100644
+--- a/rtf-experimental.pro
++++ b/rtf-experimental.pro
+@@ -25,3 +25,10 @@ FORMS += \
+ 
+ RESOURCES += \
+     resources.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += rtf-experimental.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++ INSTALLS += target
