@@ -1,0 +1,24 @@
+package:
+  id: io.github.glate
+  name: glate
+  version: 3.1.0
+  kind: app
+  description: |
+    Website for "The Glate App" - The Google translator and TTS app for Desktop Linux.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/keshavbhatt/glate.git
+  commit: ad03cfd1b98d537de381121af00ff573990d627a
+  patch: patches/0001-install.patch
+
+variables:
+  extra_args: |
+     src
+
+build:
+  kind: qmake

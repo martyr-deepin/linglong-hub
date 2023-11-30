@@ -1,0 +1,37 @@
+From 88a8b30264c8f652939cdf19e53e656bbac9bef3 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Tue, 21 Nov 2023 20:13:48 +0800
+Subject: [install.patch_] install
+
+---
+ src/glate.pro | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/src/glate.pro b/src/glate.pro
+index 73907bd..e855d3c 100644
+--- a/src/glate.pro
++++ b/src/glate.pro
+@@ -74,7 +74,7 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ isEmpty(PREFIX){
+- PREFIX = /usr
++ PREFIX = /opt
+ }
+ 
+ BINDIR  = $$PREFIX/bin
+@@ -83,9 +83,9 @@ DATADIR = $$PREFIX/share
+ target.path = $$BINDIR
+ 
+ icon.files = icons/linguist.png
+-icon.path = $$DATADIR/icons/hicolor/512x512/apps/
++icon.path = $${PREFIX}/share/icons
+ 
+-desktop.files = linguist.desktop
++desktop.files = glate.desktop
+ desktop.path = $$DATADIR/applications/
+ 
+ INSTALLS += target icon desktop
+-- 
+2.33.1
+
