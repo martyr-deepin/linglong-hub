@@ -1,0 +1,22 @@
+package:
+  id: io.github.CutePlayer
+  name: CutePlayer
+  version: 0.0.1
+  kind: app
+  description: |
+    Play your videos with CutePlayer.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/sagrd/CutePlayer.git"
+  commit: 7050fcb1aeb9c0661afbd4c0aeff34938ee79d01
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake
