@@ -1,0 +1,29 @@
+package:
+  id: io.github.BTree-Visualization
+  name: BTree-Visualization
+  version: 0.0.1.1
+  kind: app
+  description: |
+     a B-Tree Visualization GUI application using Qt C++.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/nganngants/BTree-Visualization.git"
+  commit: bf4712e14be73c2e065ad183bc7644f1017c6637
+  patch:
+    - patches/install-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd B-TreeVisualization
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

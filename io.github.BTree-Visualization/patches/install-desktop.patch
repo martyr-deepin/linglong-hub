@@ -1,0 +1,27 @@
+diff --git a/B-TreeVisualization/B-TreeVisualization.desktop b/B-TreeVisualization/B-TreeVisualization.desktop
+new file mode 100644
+index 0000000..38846ff
+--- /dev/null
++++ b/B-TreeVisualization/B-TreeVisualization.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=B-TreeVisualization
++Exec=B-TreeVisualization %f
+diff --git a/B-TreeVisualization/B-TreeVisualization.pro b/B-TreeVisualization/B-TreeVisualization.pro
+index 4c3dcb0..79c2dc6 100644
+--- a/B-TreeVisualization/B-TreeVisualization.pro
++++ b/B-TreeVisualization/B-TreeVisualization.pro
+@@ -25,6 +25,10 @@ FORMS += \
+     mainwindow.ui
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++qnx: target.path = $$PREFIX/bin
++else: unix:!android: target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += B-TreeVisualization.desktop
++INSTALLS += desktop
