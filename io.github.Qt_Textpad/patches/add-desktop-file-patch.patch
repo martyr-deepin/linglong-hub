@@ -1,0 +1,11 @@
+diff --git a/TextPad.desktop b/TextPad.desktop
+new file mode 100644
+index 0000000..6aee768
+--- /dev/null
++++ b/TextPad.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=TextPad
++Exec=TextPad %f
++Icon=logo
