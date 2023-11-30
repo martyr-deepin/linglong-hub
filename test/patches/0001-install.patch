@@ -1,0 +1,44 @@
+From 0a32f05bbfa72a44487900ce4844b71e9c0267db Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Thu, 30 Nov 2023 13:25:03 +0800
+Subject: [install.patch_] install
+
+---
+ Sources/AwesomeBump.desktop | 6 ++++++
+ Sources/Sources.pro         | 8 ++++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 Sources/AwesomeBump.desktop
+
+diff --git a/Sources/AwesomeBump.desktop b/Sources/AwesomeBump.desktop
+new file mode 100644
+index 0000000..b3adc4a
+--- /dev/null
++++ b/Sources/AwesomeBump.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=AwesomeBump
++Exec=AwesomeBump
++Terminal=false
+\ No newline at end of file
+diff --git a/Sources/Sources.pro b/Sources/Sources.pro
+index dbdcace..ed2d2c2 100644
+--- a/Sources/Sources.pro
++++ b/Sources/Sources.pro
+@@ -196,3 +196,11 @@ exists("utils/fervor/Fervor.pri") {
+         FV_APP_VERSION = $$VERSION_FULL
+         include("utils/fervor/Fervor.pri")
+ }
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = AwesomeBump.desktop
++INSTALLS += unix_desktop
++}
+\ No newline at end of file
+-- 
+2.33.1
+

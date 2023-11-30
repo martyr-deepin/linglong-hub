@@ -1,0 +1,20 @@
+package:
+  id: io.github.AwesomeBump
+  name: AwesomeBump
+  version: 0.0.1
+  kind: app
+  description: |
+    
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/kmkolasinski/AwesomeBump.git
+  commit: f9fad16e066e366636dad05cb4c53c9e0aa2d729
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
