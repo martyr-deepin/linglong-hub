@@ -1,0 +1,11 @@
+diff --git a/qt_open_icon.desktop b/qt_open_icon.desktop
+new file mode 100644
+index 0000000..3c7c475
+--- /dev/null
++++ b/qt_open_icon.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=qt_open_icon
++Exec=qt_open_icon %f
++Icon=logo
