@@ -1,0 +1,30 @@
+diff --git a/TORQUEView.desktop b/TORQUEView.desktop
+new file mode 100644
+index 0000000..af17839
+--- /dev/null
++++ b/TORQUEView.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=TORQUEView
++Exec=TORQUEView %f
++Icon=ConnectToIcon
+diff --git a/TORQUEView.pro b/TORQUEView.pro
+index 7fcab33..e8ed1c8 100644
+--- a/TORQUEView.pro
++++ b/TORQUEView.pro
+@@ -75,3 +75,14 @@ FORMS    += mainwindow.ui \
+ 
+ RESOURCES += \
+     TORQUEView.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += TORQUEView.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = images/ConnectToIcon.png
++INSTALLS += icons
