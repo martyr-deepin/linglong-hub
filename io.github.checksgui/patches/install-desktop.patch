@@ -1,0 +1,21 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index ccffd3d..686380b 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -56,3 +56,5 @@ install(TARGETS checksgui
+ if(QT_VERSION_MAJOR EQUAL 6)
+     qt_finalize_executable(checksgui)
+ endif()
++
++install(FILES checksgui.desktop DESTINATION share/applications/)
+diff --git a/checksgui.desktop b/checksgui.desktop
+new file mode 100644
+index 0000000..b0c1420
+--- /dev/null
++++ b/checksgui.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=checksgui
++Exec=checksgui %f
+
