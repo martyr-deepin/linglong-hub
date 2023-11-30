@@ -1,0 +1,22 @@
+package:
+  id: io.gituhb.dmsnavigation
+  name: dmsnavigation
+  version: 0.0.1
+  kind: app
+  description: |
+    The DMS Navigation widget implements a beautiful tab widget alternative for Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/wyyrepo/dmsnavigation.git"
+  commit: bdf9646f86bdb5b57eb029782565ad5a49e5d702
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake
