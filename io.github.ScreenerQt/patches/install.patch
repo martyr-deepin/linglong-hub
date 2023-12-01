@@ -1,0 +1,33 @@
+diff --git a/gui/screenerqt.desktop b/gui/screenerqt.desktop
+index 24fce14..5d68bd6 100644
+--- a/gui/screenerqt.desktop
++++ b/gui/screenerqt.desktop
+@@ -4,8 +4,8 @@ Name=ScreenerQt
+ GenericName=ScreenerQt
+ Comment=ScreenerQt open source gui for console application Screeener.
+ Keywords=utils
+-Exec=screenerqt
+-Icon=${SNAP}/images/screenerqt.png
++Exec=screenerQt %f
++Icon=screenerQt
+ Terminal=false
+ Type=Application
+ Categories=Utility;
+diff --git a/screenerQt/screenerQt.pro b/screenerQt/screenerQt.pro
+index ae8ce46..849effe 100644
+--- a/screenerQt/screenerQt.pro
++++ b/screenerQt/screenerQt.pro
+@@ -39,3 +39,12 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ 
+ RESOURCES += \
+     data/resources.qrc
++
++target.path = $$PREFIX/bin
++desktop.path = $$PREFIX/share/applications
++desktop.files += screenerqt.desktop
++INSTALLS += desktop
++
++icons.path = $${PREFIX}/share/icons
++icons.files = data/logo.png
++INSTALLS += icons
+

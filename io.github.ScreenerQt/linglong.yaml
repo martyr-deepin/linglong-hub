@@ -1,0 +1,29 @@
+package:
+  id: io.github.ScreenerQt
+  name: ScreenerQt
+  version: 0.0.1
+  kind: app
+  description: |
+    Linux app for easy screenshot.Cloud Vision (select text from screenshot).Cloud Translate (translate select text from screenshot).Save image in imgur.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/keygenqt/ScreenerQt.git"
+  commit: e858fa82a2f94a283b5be831a03eb6bff10ef7d
+  patch:
+    - patches/install.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd screenerQt
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
