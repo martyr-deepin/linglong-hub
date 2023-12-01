@@ -1,0 +1,32 @@
+From 3f79d08c2787a9b2c300d96812db43c0ca190417 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Mon, 20 Nov 2023 22:00:07 +0800
+Subject: [install.patch_] install
+
+---
+ QTjsonDiff.pro | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/QTjsonDiff.pro b/QTjsonDiff.pro
+index c72484b..d2af03d 100644
+--- a/QTjsonDiff.pro
++++ b/QTjsonDiff.pro
+@@ -53,11 +53,12 @@ RESOURCES += \
+     qjsontreeview.qrc
+ 
+ binary.files += $$TARGET
+-binary.path = /usr/bin
++binary.path = $${PREFIX}/bin
+ translations.files += $$files(.qm/*.qm,true)
+ translations.path = /usr/share/$$TARGET
+ icon.files +=diff.png
+-icon.path += /usr/share/icons
++icon.path += $${PREFIX}/share/icons
+ desktop.files += qtjsondiff.desktop
+-desktop.path += /usr/share/applications/
++desktop.path += $${PREFIX}/share/applications
+ INSTALLS += binary translations icon desktop
++
+-- 
+2.33.1
+

@@ -1,10 +1,10 @@
 package:
   id: io.github.qtjsondiff
   name: qtjsondiff
-  version: 0.6.3
+  version: 0.63.0
   kind: app
   description: |
-    Some kind of json diff widget that consists of two json viewer widgets with highlighting of json
+    Some kind of diff viewer for Json (based on tree like json container/viewer widget).
 
 runtime:
   id: org.deepin.Runtime
@@ -12,8 +12,9 @@ runtime:
 
 source:
   kind: git
-  url: "https://github.com/coozoo/qtjsondiff.git"
+  url: https://github.com/coozoo/qtjsondiff.git
   commit: 35114244d36a1380f3ebcd12afe65d2fef691823
+  patch: patches/0001-install.patch
 
 build:
   kind: qmake
