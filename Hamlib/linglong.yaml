@@ -1,0 +1,32 @@
+package:
+  id: Hamlib
+  name: Hamlib
+  version: 4.5.5
+  kind: lib
+  description: |
+    The purpose of this project is to provide stable, flexible, shared libraries that enable quicker development of Amateur Radio Equipment Control Applications.
+
+
+depends:
+  - id: automake/1.16.5
+  - id: libtool
+    version: 2.4.2
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/Hamlib/Hamlib.git
+  commit: f255f6f8d8412c423a2fffb4864e11200f45491f
+
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      ./bootstrap
+      ./configure ${conf_args} ${extra_args}
