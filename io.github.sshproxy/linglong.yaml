@@ -1,0 +1,21 @@
+package:
+  id: io.github.sshproxy
+  name: sshproxy
+  version: 0.0.1
+  kind: app
+  description: |
+    SSH/SOCKS5 proxy application with a Qt GUI interfacea.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/glacjay/sshproxy.git"
+  commit: 37b933eba1a5230bf3513e2f70ceef860aa7de9d
+  patch:
+    - patches/install.patch
+
+build:
+  kind: qmake
