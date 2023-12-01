@@ -1,0 +1,47 @@
+From 92b2ad148c1c4aa1203aa08f10bacab850cf019c Mon Sep 17 00:00:00 2001
+From: wanbing <2665668384@qq.com>
+Date: Fri, 1 Dec 2023 12:48:42 +0800
+Subject: [PATCH] install
+
+---
+ ZTimer.desktop | 8 ++++++++
+ ztimer.pro     | 8 +++++++-
+ 2 files changed, 15 insertions(+), 1 deletion(-)
+ create mode 100644 ZTimer.desktop
+
+diff --git a/ZTimer.desktop b/ZTimer.desktop
+new file mode 100644
+index 0000000..a776933
+--- /dev/null
++++ b/ZTimer.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=ztimer
++Name=ztimer
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-customsss
+\ No newline at end of file
+diff --git a/ztimer.pro b/ztimer.pro
+index efb4159..20bd168 100644
+--- a/ztimer.pro
++++ b/ztimer.pro
+@@ -10,5 +10,11 @@ RESOURCES += qml.qrc \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android:# target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =ZTimer.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.34.1
+
