@@ -1,0 +1,31 @@
+diff --git a/cuteAndroidBackup.desktop b/cuteAndroidBackup.desktop
+new file mode 100644
+index 0000000..8e2b3ff
+--- /dev/null
++++ b/cuteAndroidBackup.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=cuteAndroidBackup
++Exec=cuteAndroidBackup %f
++Icon=icon
+diff --git a/cuteAndroidBackup.pro b/cuteAndroidBackup.pro
+index ba7e0a5..b4cb63b 100644
+--- a/cuteAndroidBackup.pro
++++ b/cuteAndroidBackup.pro
+@@ -21,3 +21,14 @@ FORMS    += mainwindow.ui
+ 
+ RESOURCES += \
+     resources.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += cuteAndroidBackup.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = images/icon.png
++INSTALLS += icons
+
