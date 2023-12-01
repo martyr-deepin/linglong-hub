@@ -1,0 +1,19 @@
+package:
+  id: io.github.e2designer
+  name: e2designer
+  version: 0.2.0
+  kind: app
+  description: |
+    Skin editor for enigma2 written in C++/Qt5 framework..
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/technic/e2designer.git
+  commit: 77248ec950cb16c8d42288fa2f5ac3f38f65ef74
+
+build:
+  kind: cmake
