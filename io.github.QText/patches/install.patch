@@ -1,0 +1,29 @@
+diff --git a/src/QText.pro b/src/QText.pro
+index 681a01e..99d7e98 100644
+--- a/src/QText.pro
++++ b/src/QText.pro
+@@ -199,3 +199,12 @@ test {
+     TEMPLATE = app
+     TARGET = qtext
+ }
++
++target.path = $$PREFIX/bin
++desktop.path = $$PREFIX/share/applications
++desktop.files += qtext.desktop
++INSTALLS += desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = icons/app.ico
++INSTALLS += icons
++
+diff --git a/src/qtext.desktop b/src/qtext.desktop
+new file mode 100644
+index 0000000..abba970
+--- /dev/null
++++ b/src/qtext.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=qtext
++Exec=qtext %f
++Icon=app
+

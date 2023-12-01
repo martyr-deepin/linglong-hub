@@ -1,0 +1,30 @@
+package:
+  id: io.github.QText
+  name: QText
+  version: 4.99.28
+  kind: app
+  description: |
+    Simple note taking program with multi-folder support and auto-save.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/medo64/QText.git"
+  commit: bf2a034ecb191657bde6226a8958189ab23a2649
+  patch:
+    - patches/install.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
+
