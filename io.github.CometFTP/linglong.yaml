@@ -1,0 +1,22 @@
+package:
+  id: io.github.CometFTP
+  name: CometFTP
+  version: 0.0.1
+  kind: app
+  description: |
+    Multiplatform SFTP Application Written in Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Shazib/CometFTP.git"
+  commit: 8423a6c1e8cea679107ffe80e62e7e37a0a6c76e
+  patch:
+    - patches/install.patch
+
+build:
+  kind: qmake
+
