@@ -1,0 +1,56 @@
+diff --git a/resources/ultracopier.desktop b/resources/ultracopier.desktop
+index bc68cb44..82107823 100644
+--- a/resources/ultracopier.desktop
++++ b/resources/ultracopier.desktop
+@@ -1,20 +1,29 @@
+ [Desktop Entry]
+-Categories=Qt;Utility;
++
+ Comment[en_US]=Copy/Move files with lot of options
+ Comment=Copy/Move files with lot of options
+-Exec=ultracopier %u
++
+ GenericName[en_US]=Advanced copier
+ GenericName=Advanced copier
+ Icon=ultracopier.png
+ MimeType=
+ Name[en_US]=Ultracopier
+-Name=Ultracopier
++
+ Path=
+-StartupNotify=true
+-Terminal=false
++
++
+ TerminalOptions=
+-Type=Application
++
+ X-DBUS-ServiceName=
+ X-DBUS-StartupType=
+ X-KDE-SubstituteUID=false
+ X-KDE-Username=
++
++
++Categories=Game;Qt;
++Exec=ultracopier 
++Name=ultracopier
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/ultracopier.pro b/ultracopier.pro
+index 05cff0a3..4ca60410 100755
+--- a/ultracopier.pro
++++ b/ultracopier.pro
+@@ -146,3 +146,10 @@ win32 {
+ #temp
+ HEADERS += $$PWD/plugins/CopyEngine/Ultracopier-Spec/async/TransferThreadAsync.h
+ SOURCES += $$PWD/plugins/CopyEngine/Ultracopier-Spec/async/TransferThreadAsync.cpp
++
++BINDIR = $$PREFIX/bin 
++DATADIR = $$PREFIX/share 
++target.path = $$BINDIR 
++desktop.files =resources/ultracopier.desktop 
++desktop.path = $$DATADIR/applications/ 
++INSTALLS += target desktop 
+

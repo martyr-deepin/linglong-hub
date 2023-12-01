@@ -1,0 +1,22 @@
+package:
+  id: io.github.Ultracopier
+  name: Ultracopier
+  version: 2.0.2.0
+  kind: app
+  description: |
+    Ultracopier is free and open source software licensed under GPLv3 that acts as a replacement for files copy dialogs.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/alphaonex86/Ultracopier.git"
+  commit: 877de47db3913a692821b30aa130c09653f895a6
+  patch:
+    - patches/install.patch
+
+build:
+  kind: qmake
+
