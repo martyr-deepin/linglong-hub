@@ -1,0 +1,35 @@
+diff --git a/sshproxy.desktop b/sshproxy.desktop
+new file mode 100644
+index 0000000..10484b0
+--- /dev/null
++++ b/sshproxy.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=sshproxy
++Name=sshproxy
++Icon=icon-connected
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/sshproxy.pro b/sshproxy.pro
+index 7b0113f..823b1ab 100644
+--- a/sshproxy.pro
++++ b/sshproxy.pro
+@@ -16,3 +16,14 @@ SOURCES += \
+ 
+ RESOURCES += \
+     sshproxy.qrc \
++
++BINDIR = $$PREFIX/bin 
++DATADIR = $$PREFIX/share 
++target.path = $$BINDIR 
++desktop.files =sshproxy.desktop 
++desktop.path = $$DATADIR/applications/ 
++INSTALLS += target desktop 
++
++icons.path = $${PREFIX}/share/icons
++icons.files = icon-connected.png
++INSTALLS += icons
+
