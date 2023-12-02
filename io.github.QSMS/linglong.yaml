@@ -1,0 +1,30 @@
+package:
+  id: io.github.QSMS
+  name: QSMS
+  version: 0.0.1
+  kind: app
+  description: |
+    A sms app using JNI to access sms database build by Qt for Android.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/JerryJJian/QSMS.git"
+  commit: defea43bccec2b7afe51541b690ebd0fccdd6414
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
+
