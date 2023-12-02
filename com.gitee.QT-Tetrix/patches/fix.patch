@@ -1,0 +1,32 @@
+diff -Naur Qt-Tetrix-o/tetrix.desktop Qt-Tetrix/tetrix.desktop
+--- Qt-Tetrix-o/tetrix.desktop	1970-01-01 08:00:00.000000000 +0800
++++ Qt-Tetrix/tetrix.desktop	2023-12-02 20:08:01.498076691 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=tetrix
++Exec=tetrix
++Type=Application
+diff -Naur Qt-Tetrix-o/tetrix.pro Qt-Tetrix/tetrix.pro
+--- Qt-Tetrix-o/tetrix.pro	2023-12-02 20:05:14.657408000 +0800
++++ Qt-Tetrix/tetrix.pro	2023-12-02 20:09:20.511664086 +0800
+@@ -1,5 +1,8 @@
+ QT += widgets
+ 
++TARGET = tetrix
++TEMPLATE = app
++
+ HEADERS       = \
+     tetrixpiece.h \
+     tetrixboard.h \
+@@ -12,3 +15,11 @@
+ # install
+ target.path = $$[QT_INSTALL_EXAMPLES]/widgets/widgets/tetrix
+ INSTALLS += target
++
++desktop.files += tetrix.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop
++
++
