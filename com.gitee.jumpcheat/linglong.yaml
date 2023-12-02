@@ -1,0 +1,20 @@
+package:
+  id: com.gitee.jumpcheat
+  name: jumpcheat
+  version: 0.0.1
+  kind: app
+  description: |
+    微信小程序自动跳跃
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/ghostcode/TiaoYiTiaoFuZhuqtBan.git"
+  commit: 61f0656
+  patch: patches/fix.patch
+
+build:
+  kind: qmake
