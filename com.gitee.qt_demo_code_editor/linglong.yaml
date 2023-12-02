@@ -1,0 +1,18 @@
+package:
+  id: com.gitee.qt_demo_code_editor
+  name: qt_demo_code_editor
+  version: 1.0.0
+  kind: app
+  description: |
+    使用Qt编写的一个代码编辑器
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/tkzc00/qt_demo_code_editor.git"
+  commit: 686c862
+  patch: patches/ab.patch
+build:
+  kind: qmake

@@ -1,0 +1,41 @@
+diff -Naur b/demo_code_editor.pro a/demo_code_editor.pro
+--- b/demo_code_editor.pro	2023-12-02 13:27:41.638736508 +0800
++++ a/demo_code_editor.pro	2023-12-02 13:32:27.941992755 +0800
+@@ -10,6 +10,9 @@
+ # In order to do so, uncomment the following line.
+ #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+ 
++TARGET = qt_demo_code_editor
++TEMPLATE = app
++
+ SOURCES += \
+     main.cpp \
+     mainwindow.cpp \
+@@ -30,8 +33,8 @@
+     mytextedit.ui
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++#qnx: target.path = /tmp/$${TARGET}/bin
++#else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+@@ -39,3 +42,8 @@
+     images.qrc
+ 
+ RC_ICONS = images/logo.ico
++desktop.files += qt_demo_code_editor.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
++
++INSTALLS += target desktop
+diff -Naur b/qt_demo_code_editor.desktop a/qt_demo_code_editor.desktop
+--- b/qt_demo_code_editor.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/qt_demo_code_editor.desktop	2023-12-02 13:29:24.622654509 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=qt_demo_code_editor
++Exec=qt_demo_code_editor
++Type=Application
