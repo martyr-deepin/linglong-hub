@@ -1,0 +1,29 @@
+package:
+  id: io.github.StringSearch
+  name: StringSearch
+  version: 1.0.0
+  kind: app
+  description: |
+    Created a multi-threaded analogue of GREP and directory indexing tools with UI for finding string occurences in the selected folder.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/ShSamariddin/StringSearch.git"
+  commit: 0ced7575da94cad4b70dc6ca19022a50b13e9b25
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

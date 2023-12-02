@@ -1,0 +1,43 @@
+From 601aeffcd5d13debfd9028a3c08bf6d7895a398c Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Sat, 2 Dec 2023 21:34:26 +0800
+Subject: [PATCH] 1
+
+---
+ src/StringSearch.desktop | 8 ++++++++
+ src/StringSearch.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 src/StringSearch.desktop
+
+diff --git a/src/StringSearch.desktop b/src/StringSearch.desktop
+new file mode 100644
+index 0000000..243ee99
+--- /dev/null
++++ b/src/StringSearch.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=StringSearch
++Name=StringSearch
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/src/StringSearch.pro b/src/StringSearch.pro
+index 5ef038e..cd75590 100644
+--- a/src/StringSearch.pro
++++ b/src/StringSearch.pro
+@@ -45,3 +45,10 @@ FORMS += \
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =StringSearch.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
