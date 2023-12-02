@@ -1,0 +1,18 @@
+package:
+  id: com.gitee.NotePad
+  name: NotePad
+  version: 1.0.0
+  kind: app
+  description: |
+   Qt学习文本编辑器项目
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/apphao/note-pad.git"
+  commit: 3eaaffc
+  patch: patches/ab.patch
+build:
+  kind: qmake

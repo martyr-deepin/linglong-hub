@@ -1,0 +1,20 @@
+diff -Naur b/NotePad.desktop a/NotePad.desktop
+--- b/NotePad.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/NotePad.desktop	2023-12-02 21:18:16.159629938 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=NotePad
++Exec=Notepad
++Type=Application
+diff -Naur b/Notepad.pro a/Notepad.pro
+--- b/Notepad.pro	2023-12-02 21:16:04.820082750 +0800
++++ a/Notepad.pro	2023-12-02 21:18:06.379365647 +0800
+@@ -43,3 +43,8 @@
+ 
+ RESOURCES += \
+     res.qrc
++desktop.files += NotePad.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
++
++INSTALLS += target desktop
