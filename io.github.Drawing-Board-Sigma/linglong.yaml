@@ -1,0 +1,21 @@
+package:
+  id: io.github.Drawing-Board-Sigma
+  name: Drawing-Board-Sigma
+  version: 0.7.0
+  kind: app
+  description: 
+    Qt GUI application.It supports plugin.It can draw rectangle, circle, ellipse, straight line ,triangle and ... scribble model, and you can move them to suitable position.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Lw-Cui/Drawing-Board-Sigma.git"
+  commit: ad3c34dc40ef95e18f336aeb2ab86751023c0111
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
