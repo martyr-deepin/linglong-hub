@@ -1,0 +1,30 @@
+diff --git a/NWeather.desktop b/NWeather.desktop
+new file mode 100644
+index 0000000..573f3d8
+--- /dev/null
++++ b/NWeather.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=NWeather
++Name=NWeather
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/NWeather.pro b/NWeather.pro
+index efca453..872840c 100644
+--- a/NWeather.pro
++++ b/NWeather.pro
+@@ -43,3 +43,10 @@ FORMS    += mainwindow.ui
+ 
+ RESOURCES += \
+     weather.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =NWeather.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+

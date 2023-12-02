@@ -1,0 +1,21 @@
+package:
+  id: io.github.Weather-Bee
+  name: Weather-Bee
+  version: 0.0.1
+  kind: app
+  description: |
+    QT C++ NOAA Weather, Radar, and Forecast desktop application.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/jcd1982/Weather-Bee.git"
+  commit: f2e24c400172d1da6cd36983f2679081ccb8012b
+  patch:
+    - patches/install.patch
+
+build:
+  kind: qmake
