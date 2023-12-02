@@ -1,0 +1,21 @@
+package:
+  id: io.github.music-player-qt
+  name: music-player-qt
+  version: 0.0.1
+  kind: app
+  description: |
+    Music player written in C++ with QT as an academic project
+
+runtime: 
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/hjnowakowski/music-player.git"
+  commit: a73ca3fcdedf8c4530e7ce6af9ad2141872151f8
+  patch:
+    - patches/0001-install.patch
+
+build:
+  kind: qmake

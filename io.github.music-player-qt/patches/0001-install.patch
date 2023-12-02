@@ -1,0 +1,44 @@
+From d750576cf5c031bfce8561e7b8639d0ef09ab5c1 Mon Sep 17 00:00:00 2001
+From: wanbing <2665668384@qq.com>
+Date: Sat, 2 Dec 2023 15:36:44 +0800
+Subject: [PATCH] install
+
+---
+ projekt1_rozgrzewka1.desktop | 8 ++++++++
+ projekt1_rozgrzewka1.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 projekt1_rozgrzewka1.desktop
+
+diff --git a/projekt1_rozgrzewka1.desktop b/projekt1_rozgrzewka1.desktop
+new file mode 100644
+index 0000000..cd1eed5
+--- /dev/null
++++ b/projekt1_rozgrzewka1.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=projekt1_rozgrzewka1
++Name=projekt1_rozgrzewka1
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/projekt1_rozgrzewka1.pro b/projekt1_rozgrzewka1.pro
+index a9d4e76..4edf59d 100644
+--- a/projekt1_rozgrzewka1.pro
++++ b/projekt1_rozgrzewka1.pro
+@@ -38,3 +38,10 @@ FORMS    += \
+     forms/sign_window.ui \
+     forms/log_window.ui \
+     forms/player_window.ui
++
++BINDIR = $$PREFIX/bin 
++DATADIR = $$PREFIX/share 
++target.path = $$BINDIR 
++desktop.files =projekt1_rozgrzewka1.desktop 
++desktop.path = $$DATADIR/applications/ 
++INSTALLS += target desktop 
+\ No newline at end of file
+-- 
+2.34.1
+
