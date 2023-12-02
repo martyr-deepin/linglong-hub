@@ -1,0 +1,18 @@
+package:
+  id: com.gitee.snake-game
+  name: snake-game
+  version: 1.0.0
+  kind: app
+  description: |
+   A snake game based on Qt.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/shiver/snake-game.git"
+  commit: 5e5bd27
+  patch: patches/ab.patch
+build:
+  kind: qmake

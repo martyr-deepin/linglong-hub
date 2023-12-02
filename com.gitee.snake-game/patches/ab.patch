@@ -1,0 +1,21 @@
+diff -Naur b/snake-game.desktop a/snake-game.desktop
+--- b/snake-game.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/snake-game.desktop	2023-12-02 21:01:01.531949946 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=snake-game
++Exec=snake
++Type=Application
+diff -Naur b/snake.pro a/snake.pro
+--- b/snake.pro	2023-12-02 20:59:27.673496192 +0800
++++ a/snake.pro	2023-12-02 21:03:14.743458872 +0800
+@@ -28,4 +28,9 @@
+ 
+ RESOURCES += \
+     res.qrc
++desktop.files += snake-game.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
++
++INSTALLS += target desktop
+ 
