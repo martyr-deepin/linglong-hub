@@ -1,0 +1,18 @@
+package:
+  id: com.gitee.Qt360-10.0
+  name: Qt360-10.0
+  version: 1.0.0
+  kind: app
+  description: |
+    使用Qt4模拟360 10.0界面
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/zhjun5337/Qt360-10.0.git"
+  commit: 855a22c
+  patch: patches/ab.patch
+build:
+  kind: qmake

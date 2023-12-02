@@ -1,0 +1,20 @@
+diff -Naur b/new360.pro a/new360.pro
+--- b/new360.pro	2023-12-02 20:24:17.293484053 +0800
++++ a/new360.pro	2023-12-02 20:27:00.325345367 +0800
+@@ -133,3 +133,8 @@
+         !exists($$dist_file):system($$COPY $$orig_file $$dist)
+     }
+ }
++desktop.files += Qt360-10.0.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
++
++INSTALLS += target desktop
+diff -Naur b/Qt360-10.0.desktop a/Qt360-10.0.desktop
+--- b/Qt360-10.0.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/Qt360-10.0.desktop	2023-12-02 20:26:01.256752415 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=Qt360-10.0
++Exec=new360
++Type=Application
