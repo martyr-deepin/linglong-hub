@@ -1,0 +1,21 @@
+package:
+  id: io.github.qt_approximation 
+  name: qt_approximation
+  version: 0.0.1
+  kind: app
+  description: |
+    用来显示函数图像的应用,可用于显示分布函数图像。
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/LesikovAlexey/qt_approximation.git"
+  commit: 2bb51cd121c0d1f06217989ff00748e5f1eabba1
+  patch:
+    - patches/install.patch
+
+build:
+  kind: qmake

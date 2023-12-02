@@ -1,0 +1,29 @@
+diff --git a/basic_graph.desktop b/basic_graph.desktop
+new file mode 100644
+index 0000000..00164a2
+--- /dev/null
++++ b/basic_graph.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=basic_graph
++Name=basic_graph
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/basic_graph.pro b/basic_graph.pro
+index 1a716c5..ec7dffe 100644
+--- a/basic_graph.pro
++++ b/basic_graph.pro
+@@ -8,3 +8,10 @@ HEADERS += method1_init.h
+ HEADERS += method2_init.h
+ SOURCES += method2_init.cpp 
+ QT += widgets
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =basic_graph.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
