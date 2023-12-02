@@ -1,0 +1,20 @@
+package:
+  id: com.gitee.MyTranslater
+  name: MyTranslater
+  version: 0.0.1
+  kind: app
+  description: |
+    借助百度翻译API实现一个在线翻译工具（英汉互译、汉译韩、汉译日、白话文与文言文互译）
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/xiaohui_hubei/MyTranslater.git"
+  commit: 50566e5
+  patch: patches/fix.patch
+
+build:
+  kind: qmake
