@@ -1,0 +1,49 @@
+From f4f0fe6851bcf7ae99266658ab3699dfd6aae8a5 Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Sat, 2 Dec 2023 18:28:47 +0800
+Subject: [PATCH] 1
+
+---
+ MapTilesDownloader/MapDownloader.desktop  |  9 +++++++++
+ MapTilesDownloader/MapTilesDownloader.pro | 11 +++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 MapTilesDownloader/MapDownloader.desktop
+
+diff --git a/MapTilesDownloader/MapDownloader.desktop b/MapTilesDownloader/MapDownloader.desktop
+new file mode 100644
+index 0000000..f8485d0
+--- /dev/null
++++ b/MapTilesDownloader/MapDownloader.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=MapDownloader
++Name=MapDownloader
++Icon=9835-200
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/MapTilesDownloader/MapTilesDownloader.pro b/MapTilesDownloader/MapTilesDownloader.pro
+index b61750d..16c79df 100644
+--- a/MapTilesDownloader/MapTilesDownloader.pro
++++ b/MapTilesDownloader/MapTilesDownloader.pro
+@@ -30,3 +30,14 @@ FORMS    += View/mainview.ui
+ 
+ RESOURCES += \
+     resources.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =MapDownloader.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
++icons.path = $${PREFIX}/share/icons
++icons.files = 9835-200.ico
++INSTALLS += icons
+\ No newline at end of file
+-- 
+2.33.1
+

@@ -1,0 +1,31 @@
+package:
+  id: io.github.MapDownloader
+  name: MapDownloader
+  version: 0.0.1
+  kind: app
+  description: |
+   This is a Cross Platform Windows/Linux/MacOS application developed in Qt Widget which can be used for downloading tiles from openstreetmap.org or other webservers which support a request like [url]/zoom/tileX/tileY.png
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/mcorovei/MapDownloader.git" 
+  commit: ba01c01ca79fd3f0f164036daa1fe93136850a64
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd MapTilesDownloader
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
+
+
