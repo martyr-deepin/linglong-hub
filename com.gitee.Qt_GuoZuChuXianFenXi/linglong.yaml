@@ -1,0 +1,18 @@
+package:
+  id: com.gitee.Qt_GuoZuChuXianFenXi
+  name: Qt_GuoZuChuXianFenXi
+  version: 1.0.0
+  kind: app
+  description: |
+    利用QT实现中国男足国家队在2017年9月进行的“世亚预”小组赛的出线条件，得到符合条件的各个球队间的比分。
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/git-lz/QT_GuoZuChuXianFenXi.git"
+  commit: 91f8aca
+  patch: patches/ab.patch
+build:
+  kind: qmake

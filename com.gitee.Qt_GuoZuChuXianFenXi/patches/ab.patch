@@ -1,0 +1,20 @@
+diff -Naur b/GuoZu.pro a/GuoZu.pro
+--- b/GuoZu.pro	2023-12-02 21:43:03.982335005 +0800
++++ a/GuoZu.pro	2023-12-02 21:46:03.187654750 +0800
+@@ -20,3 +20,8 @@
+     team.h
+ 
+ FORMS    += widget.ui
++desktop.files += Qt_GuoZuChuXianFenXi.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
++
++INSTALLS += target desktop
+diff -Naur b/Qt_GuoZuChuXianFenXi.desktop a/Qt_GuoZuChuXianFenXi.desktop
+--- b/Qt_GuoZuChuXianFenXi.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/Qt_GuoZuChuXianFenXi.desktop	2023-12-02 21:44:48.234156204 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=Qt_GuoZuChuXianFenXi
++Exec=GuoZu
++Type=Application
