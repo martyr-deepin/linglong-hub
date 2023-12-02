@@ -1,0 +1,18 @@
+package:
+  id: com.gitee.Qt-DrawingTool
+  name: Qt-DrawingTool
+  version: 1.0.0
+  kind: app
+  description: |
+    A drawing tool based on Qt's Diagram-Scene-Example
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/npc1993/Qt-DrawingTool.git"
+  commit: f601897
+  patch: patches/ab.patch
+build:
+  kind: qmake
