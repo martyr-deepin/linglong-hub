@@ -1,0 +1,21 @@
+diff -Naur game2048withAI-o/2048.desktop game2048withAI/2048.desktop
+--- game2048withAI-o/2048.desktop	1970-01-01 08:00:00.000000000 +0800
++++ game2048withAI/2048.desktop	2023-12-02 21:04:54.858081649 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=2048
++Exec=2048
++Type=Application
+diff -Naur game2048withAI-o/2048.pro game2048withAI/2048.pro
+--- game2048withAI-o/2048.pro	2023-12-02 21:02:34.870956000 +0800
++++ game2048withAI/2048.pro	2023-12-02 21:03:49.362474332 +0800
+@@ -25,3 +25,9 @@
+ 
+ RESOURCES += \
+     src.qrc
++
++desktop.files += 2048.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop

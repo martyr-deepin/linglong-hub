@@ -1,0 +1,20 @@
+package:
+  id: com.gitee.game2048withAI
+  name: game2048withAI
+  version: 0.0.1
+  kind: app
+  description: |
+    windows下写的2048，纯C++，界面Qt实现（所以理论上是跨平台的） AI算法为minimax搜索
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/zhao02/game2048withAI.git"
+  commit: 3c3b451
+  patch: patches/fix.patch
+
+build:
+  kind: qmake
