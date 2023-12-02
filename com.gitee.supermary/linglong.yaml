@@ -1,0 +1,20 @@
+package:
+  id: com.gitee.supermary
+  name: supermary
+  version: 0.0.1
+  kind: app
+  description: |
+    这是一个基于QT,使用c++编写的简单的超级玛丽游戏
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/wenyanghe/supermary.git"
+  commit: 29b4944
+  patch: patches/fix.patch
+
+build:
+  kind: qmake
