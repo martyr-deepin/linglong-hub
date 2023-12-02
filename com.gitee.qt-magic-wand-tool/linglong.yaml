@@ -1,0 +1,19 @@
+package:
+  id: com.gitee.qt-magic-wand-tool
+  name: qt-magic-wand-tool
+  version: 1.0.0
+  kind: app
+  description: |
+    Qt-based Magic Wand Tool (Image Editing Program)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/tripolskypetr/qt-magic-wand-tool.git"
+  commit: 40430c8
+  patch: patches/ab.patch
+build:
+  kind: qmake
