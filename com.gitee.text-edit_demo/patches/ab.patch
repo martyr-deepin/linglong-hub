@@ -1,0 +1,40 @@
+diff -Naur b/MyTextEdit.pro a/MyTextEdit.pro
+--- b/MyTextEdit.pro	2023-12-02 10:59:23.731158906 +0800
++++ a/MyTextEdit.pro	2023-12-02 12:06:33.419926002 +0800
+@@ -8,6 +8,9 @@
+ # In order to do so, uncomment the following line.
+ #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+ 
++TARGET = text-edit_demo
++TEMPLATE = app
++
+ SOURCES += \
+     main.cpp \
+     mainwindow.cpp
+@@ -19,9 +22,15 @@
+     mainwindow.ui
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++#qnx: target.path = /tmp/$${TARGET}/bin
++#else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     res.qrc
++
++desktop.files += text-edit_demo.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
++
++INSTALLS += target desktop
+\ 文件尾没有换行符
+diff -Naur b/text-edit_demo.desktop a/text-edit_demo.desktop
+--- b/text-edit_demo.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/text-edit_demo.desktop	2023-12-02 11:17:36.009922744 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=text-edit_demo
++Exec=text-edit_demo
++Type=Application

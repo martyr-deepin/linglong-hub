@@ -1,0 +1,19 @@
+package:
+  id: com.gitee.text-edit_demo
+  name: text-edit_demo
+  version: 1.0.0
+  kind: app
+  description: |
+   qt开发，仿wps，可在windows，linux下使用
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/starlxy123/text-edit_demo.git"
+  commit: 9b23b24
+  patch: patches/ab.patch
+
+build:
+  kind: qmake
