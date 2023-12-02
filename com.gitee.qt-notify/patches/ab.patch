@@ -1,0 +1,23 @@
+diff -Naur b/qt-notify.desktop a/qt-notify.desktop
+--- b/qt-notify.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/qt-notify.desktop	2023-12-02 15:09:23.044047726 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=qt-notify
++Exec=qtnotify
++Type=Application
+diff -Naur b/qtnotify.pro a/qtnotify.pro
+--- b/qtnotify.pro	2023-12-02 15:00:53.589605898 +0800
++++ a/qtnotify.pro	2023-12-02 15:05:27.231436488 +0800
+@@ -21,6 +21,11 @@
+ 
+ RESOURCES += \
+     res.qrc
++desktop.files += qt-notify.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
++
++INSTALLS += target desktop
+ 
+ 
+ 
