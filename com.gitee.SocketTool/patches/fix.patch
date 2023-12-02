@@ -1,0 +1,21 @@
+diff -Naur SocketTool-o/SocketTool.desktop SocketTool/SocketTool.desktop
+--- SocketTool-o/SocketTool.desktop	1970-01-01 08:00:00.000000000 +0800
++++ SocketTool/SocketTool.desktop	2023-12-02 18:04:18.535731990 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=SocketTool
++Exec=SocketTool
++Type=Application
+diff -Naur SocketTool-o/SocketTool.pro SocketTool/SocketTool.pro
+--- SocketTool-o/SocketTool.pro	2023-12-02 18:01:42.345071000 +0800
++++ SocketTool/SocketTool.pro	2023-12-02 18:02:41.122896869 +0800
+@@ -40,3 +40,9 @@
+     tcpserveroperatewidget.ui \
+     tcpsocketwidget.ui \
+     tcpsocketoperatewidget.ui
++
++desktop.files += SocketTool.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop

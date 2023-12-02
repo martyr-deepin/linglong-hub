@@ -1,0 +1,20 @@
+package:
+  id: com.gitee.SocketTool
+  name: SocketTool
+  version: 0.5.0
+  kind: app
+  description: |
+    TCP/UDP Socket 调试工具，基于Qt & C++ 开发。
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/chengjianxi/SocketTool.git"
+  commit: 1136db9
+  patch: patches/fix.patch
+
+build:
+  kind: qmake
