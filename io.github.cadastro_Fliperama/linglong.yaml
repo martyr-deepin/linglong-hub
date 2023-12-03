@@ -1,0 +1,21 @@
+package:
+  id: io.github.cadastro_Fliperama
+  name: cadastro_Fliperama
+  version: 0.0.1
+  kind: app
+  description: |
+    Projeto da disciplina: Programação Estruturada 2019.2 , interface gráfica criada utilizando o framework Qt SDK.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/pdr-tuche/cadastro_Fliperama.git
+  commit: 994fea70d4836e6c1f24b6593f219f647d2deac4
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
