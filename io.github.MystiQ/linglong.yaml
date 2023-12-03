@@ -1,0 +1,20 @@
+package:
+  id: io.github.MystiQ
+  name: MystiQ
+  version: 20.03.23
+  kind: app
+  description: |
+    Qt5/C++ FFmpeg Media Converter
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "git@github.com:swl-x/MystiQ.git"
+  commit: d3494c2
+  patch: patches/fix.patch
+
+build:
+  kind: qmake
