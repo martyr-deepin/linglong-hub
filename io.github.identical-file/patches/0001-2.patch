@@ -1,0 +1,43 @@
+From 9fad954703ea3b23c4314f5685e6b6105b2c55d3 Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Sun, 3 Dec 2023 13:26:25 +0800
+Subject: [PATCH] 2
+
+---
+ src/identical-file.desktop | 8 ++++++++
+ src/identical-file.pro     | 6 ++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 src/identical-file.desktop
+
+diff --git a/src/identical-file.desktop b/src/identical-file.desktop
+new file mode 100644
+index 0000000..94cda30
+--- /dev/null
++++ b/src/identical-file.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=identical-file
++Name=identical-file
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/src/identical-file.pro b/src/identical-file.pro
+index 0be5bc5..7707428 100644
+--- a/src/identical-file.pro
++++ b/src/identical-file.pro
+@@ -34,3 +34,9 @@ HEADERS += \
+ FORMS += \
+         mainwindow.ui
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =identical-file.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
