@@ -1,0 +1,25 @@
+package:
+  id: io.github.GoMoKuGame
+  name: GoMoKuGame
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt-based GoMoku game
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: icu
+    version: 63.1
+    type: runtime
+
+source:
+  kind: git
+  url: "https://github.com/lutayev1/GoMokuGame.git"
+  commit: 3b6e990
+  patch: patches/ab.patch
+
+build:
+  kind: qmake
