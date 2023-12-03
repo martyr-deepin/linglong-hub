@@ -1,0 +1,44 @@
+From 2aef339fbc412ec9dbf1f11b56ea91d1b929f50e Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Sun, 3 Dec 2023 14:22:14 +0800
+Subject: [PATCH] 1
+
+---
+ StringCalculator.desktop | 8 ++++++++
+ StringCalculator.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 StringCalculator.desktop
+
+diff --git a/StringCalculator.desktop b/StringCalculator.desktop
+new file mode 100644
+index 0000000..5746020
+--- /dev/null
++++ b/StringCalculator.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=StringCalculator
++Name=StringCalculator
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/StringCalculator.pro b/StringCalculator.pro
+index d1928ab..c3ae0f0 100644
+--- a/StringCalculator.pro
++++ b/StringCalculator.pro
+@@ -53,3 +53,10 @@ HEADERS += \
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =StringCalculator.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
