@@ -1,0 +1,29 @@
+diff --git a/source/GrpEditor.desktop b/source/GrpEditor.desktop
+new file mode 100644
+index 0000000..fdc5887
+--- /dev/null
++++ b/source/GrpEditor.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=GrpEditor
++Name=GrpEditor
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/source/GrpEditor.pro b/source/GrpEditor.pro
+index 34811ab..2a030da 100644
+--- a/source/GrpEditor.pro
++++ b/source/GrpEditor.pro
+@@ -57,3 +57,10 @@ first.depends = $(first) copydata
+ export(first.depends)
+ export(copydata.commands)
+ QMAKE_EXTRA_TARGETS += first copydata
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =GrpEditor.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop

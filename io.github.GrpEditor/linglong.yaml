@@ -1,0 +1,29 @@
+package:
+  id: io.github.GrpEditor 
+  name: GrpEditor
+  version: 1.0.0
+  kind: app
+  description: |
+    基于QT框架构建的星际争霸图形文件（*.grp）编辑器.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/mighty1231/GrpEditor.git"
+  commit: a25e75b88d584c33236e09371df1017363f21a9c
+  patch:
+    - patches/install.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd source
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
