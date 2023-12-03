@@ -1,0 +1,24 @@
+package:
+  id: com.gitee.qt-notify
+  name: qt-notify
+  version: 1.0.0
+  kind: app
+  description: |
+    借鉴WEB前端开发中图标使用字体库的方式生成，把这种方法也运用到QT开发中， 摒弃传统的贴图方式，让你在QT开发中从繁琐的图片维护中解放出来。 再开发各种常用的漂亮组件.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: icu
+    version: 63.1
+    type: runtime
+
+source:
+  kind: git
+  url: "https://gitee.com/coffeeLVeris/qt_open_icon.git"
+  commit: c542d7a4054c37f918fe1856639de4508ab72fdf
+
+build:
+  kind: qmake
