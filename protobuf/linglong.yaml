@@ -1,0 +1,19 @@
+package:
+  id: protobuf
+  name: protobuf
+  version: 25.1.0
+  kind: lib
+  description: |
+    Protocol Buffers - Google's data interchange format
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/protocolbuffers/protobuf.git
+  commit: c05b320d9c18173bfce36c4bef22f9953d340ff9
+
+build:
+  kind: cmake
