@@ -1,0 +1,27 @@
+diff -Naur b/QuteSQL.pro a/QuteSQL.pro
+--- b/QuteSQL.pro	2023-12-03 17:04:48.641895416 +0800
++++ a/QuteSQL.pro	2023-12-03 17:12:51.554545232 +0800
+@@ -75,12 +75,18 @@
+     Tools/SQLSplitterDialog.ui \
+     Tools/ImportDatabaseDialog.ui
+ 
+-target.path = /usr/bin
++#target.path = /usr/bin
+ 
+-desktop.path = /usr/share/applications/
+-desktop.files += $${TARGET}.desktop
++#desktop.path = /usr/share/applications/
++#desktop.files += $${TARGET}.desktop
+ 
+-INSTALLS += target desktop
++#INSTALLS += target desktop
+ 
+ OTHER_FILES += \
+     README.md
++
++desktop.files += qutesql.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop
+\ 文件尾没有换行符
