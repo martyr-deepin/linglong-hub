@@ -1,0 +1,21 @@
+package:
+  id: io.github.BMI_Calc
+  name: BMI_Calc
+  version: 0.0.1
+  kind: app
+  description: |
+    BMICalculator is a desktop application, which calculates BMI from given height(cm) and weight(kg).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Mregussek/BMI_Calc.git
+  commit: bfebbc7245d48167e2d3e65ff233ec179797cb71
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake

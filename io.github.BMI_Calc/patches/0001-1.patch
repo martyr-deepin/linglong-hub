@@ -1,0 +1,44 @@
+From a0a1c017fe0e70f4800e78e072dfbf3440a1beb5 Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Sun, 3 Dec 2023 14:46:42 +0800
+Subject: [PATCH] 1
+
+---
+ BMICalculator.desktop | 8 ++++++++
+ BMICalculator.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 BMICalculator.desktop
+
+diff --git a/BMICalculator.desktop b/BMICalculator.desktop
+new file mode 100644
+index 0000000..42b528f
+--- /dev/null
++++ b/BMICalculator.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=BMICalculator
++Name=BMICalculator
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/BMICalculator.pro b/BMICalculator.pro
+index fcb9123..8d83b7f 100644
+--- a/BMICalculator.pro
++++ b/BMICalculator.pro
+@@ -32,3 +32,10 @@ HEADERS += \
+ 
+ FORMS += \
+         bmicalc.ui
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =BMICalculator.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
