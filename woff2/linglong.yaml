@@ -1,0 +1,18 @@
+package:
+  id: woff2
+  name: woff2
+  version: 1.0.2
+  kind: lib
+  description: |
+    The primary purpose of the WOFF2 format is to efficiently package fonts linked to Web documents by means of CSS @font-face rules. 
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/google/woff2.git
+  commit: 0f4d304faa1c62994536dc73510305c7357da8d4
+
+build:
+  kind: cmake
