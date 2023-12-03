@@ -1,0 +1,23 @@
+diff -Naur b/othello.desktop a/othello.desktop
+--- b/othello.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/othello.desktop	2023-12-03 20:17:05.490444666 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=othello
++Exec=othello
++Type=Application
+\ 文件尾没有换行符
+diff -Naur b/othello.pro a/othello.pro
+--- b/othello.pro	2023-12-03 20:14:27.730620727 +0800
++++ a/othello.pro	2023-12-03 20:16:44.462468231 +0800
+@@ -38,3 +38,9 @@
+         gamelogic/gameengine.h
+ 
+ FORMS    += main/mainwindow.ui
++
++desktop.files += othello.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop
+\ 文件尾没有换行符
