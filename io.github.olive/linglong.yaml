@@ -1,0 +1,24 @@
+package:
+  id: io.github.olive
+  name: olive
+  version: 0.1.2
+  kind: app
+  description: |
+    Free open-source non-linear video editor.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: lapack/3.8.0.1
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/olive-editor/olive.git
+  commit: 67bfa9d46503c464167c26e6a5a0a7ae7096e757
+  version: 0.1.x
+
+build:
+  kind: cmake
