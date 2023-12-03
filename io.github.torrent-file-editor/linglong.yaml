@@ -1,0 +1,25 @@
+package:
+  id: io.github.torrent-file-editor
+  name: torrent-file-editor
+  version: 0.3.18
+  kind: app
+  description: |
+    Qt based GUI tool designed to create and edit .torrent files
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "git@github.com:torrent-file-editor/torrent-file-editor.git"
+  commit: bc37d12
+
+build:
+  kind: cmake
+  build: |
+    mkdir build && cd build
+    cmake -DCMAKE_BUILD_TYPE=Release -DQT5_BUILD=ON ..
+    make
+  install: |
+    make install  
