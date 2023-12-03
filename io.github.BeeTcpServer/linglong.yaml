@@ -1,0 +1,19 @@
+package:
+  id: io.github.BeeTcpServer
+  name: BeeTcpServer
+  version: 0.0.1
+  kind: app
+  description: |
+    multiThread Tcpserver using qt5 QTcpServer
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/ligiggy/BeeTcpServer.git
+  commit: 4a9db287ff9120850db2ee9bd4629073f45dd3fc
+  patch: patches/0001-fix-install.patch
+build:
+  kind: qmake

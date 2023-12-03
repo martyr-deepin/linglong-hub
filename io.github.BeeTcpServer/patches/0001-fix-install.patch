@@ -1,0 +1,49 @@
+From 4bcca264b3228c4d78c8dd174db98b69246cc6e4 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sun, 3 Dec 2023 21:55:57 +0800
+Subject: [PATCH] fix-install
+
+---
+ TcpServer.desktop |  7 +++++++
+ TcpServer.pro     | 14 +++++++++++---
+ 2 files changed, 18 insertions(+), 3 deletions(-)
+ create mode 100644 TcpServer.desktop
+
+diff --git a/TcpServer.desktop b/TcpServer.desktop
+new file mode 100644
+index 0000000..d5edec4
+--- /dev/null
++++ b/TcpServer.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=TcpServer
++Name=TcpServer
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/TcpServer.pro b/TcpServer.pro
+index 8c4afcc..5bf7449 100644
+--- a/TcpServer.pro
++++ b/TcpServer.pro
+@@ -34,6 +34,14 @@ SOURCES += \
+         main.cpp
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
++#qnx: target.path = /tmp/$${TARGET}/bin
++#else: unix:!android: target.path = /opt/$${TARGET}/bin
++#!isEmpty(target.path): INSTALLS += target
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = TcpServer.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
