@@ -1,0 +1,33 @@
+package:
+  id: io.github.softprojector
+  name: softprojector
+  version: 2.2.0.1
+  kind: app
+  description: |
+    Church media presentation software.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends: 
+  - id: QtSql
+    version: 0.0.1
+    type: runtime
+    source:
+      kind: git
+      url: https://github.com/aeagean/QtSql.git
+      version: master
+      commit: 8bf1d44796c6d058efb3f320856385f432d71f05
+    build:
+      kind: qmake
+
+source:
+  kind: git
+  url: "https://github.com/SoftProjector/softprojector.git"
+  commit: 33c9ffc0bb0b9ae1d3281ac2e231fe38e3546315
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake

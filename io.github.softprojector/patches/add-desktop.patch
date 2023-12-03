@@ -1,0 +1,30 @@
+diff --git a/SoftProjector.desktop b/SoftProjector.desktop
+new file mode 100644
+index 0000000..9da6410
+--- /dev/null
++++ b/SoftProjector.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=SoftProjector
++Exec=SoftProjector %f
++Icon=softprojector
+diff --git a/softProjector.pro b/softProjector.pro
+index 3d2129f..efde511 100644
+--- a/softProjector.pro
++++ b/softProjector.pro
+@@ -170,3 +170,14 @@ RESOURCES += softprojector.qrc
+ win32 {
+     RC_FILE = softprojector.rc
+ }
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += SoftProjector.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = icons/softprojector.png
++INSTALLS += icons
