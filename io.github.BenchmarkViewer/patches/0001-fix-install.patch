@@ -1,0 +1,32 @@
+From dac184bf4c02630f806770e9aa4efeee57099cc9 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sun, 3 Dec 2023 21:33:41 +0800
+Subject: [PATCH] fix-install
+
+---
+ CMakeLists.txt | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 6dbb322..ee5078e 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -47,3 +47,15 @@ endif()
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+ 
+ add_subdirectory(app)
++
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=BenchmarkViewer.desktop
++Exec=BenchmarkViewer
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/BenchmarkViewer.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/BenchmarkViewer.desktop DESTINATION share/applications)
++install(TARGETS BenchmarkViewer DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+-- 
+2.33.1
+
