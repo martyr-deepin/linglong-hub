@@ -1,0 +1,29 @@
+package:
+  id: io.github.pbp-manager
+  name: pbp-manager
+  version: 0.0.1
+  kind: app
+  description: |
+    A GUI built in Qt to make using PrBoom+ easier.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/StrangestMan/pbp-manager.git
+  commit: f1eda456acbe8b6ce968d4878de96c5bb65a5f30
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

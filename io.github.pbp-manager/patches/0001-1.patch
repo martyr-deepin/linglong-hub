@@ -1,0 +1,44 @@
+From 073cbc2779ddb808f215cdafcf08913229a42d8d Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Sun, 3 Dec 2023 16:27:03 +0800
+Subject: [PATCH] 1
+
+---
+ src/pbp-manager.desktop | 8 ++++++++
+ src/pbp-manager.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 src/pbp-manager.desktop
+
+diff --git a/src/pbp-manager.desktop b/src/pbp-manager.desktop
+new file mode 100644
+index 0000000..e696988
+--- /dev/null
++++ b/src/pbp-manager.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=pbp-manager
++Name=pbp-manager
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/src/pbp-manager.pro b/src/pbp-manager.pro
+index ee68e09..b7ca9a5 100644
+--- a/src/pbp-manager.pro
++++ b/src/pbp-manager.pro
+@@ -26,3 +26,10 @@ CONFIG += lrelease
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =pbp-manager.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
