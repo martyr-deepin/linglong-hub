@@ -1,0 +1,30 @@
+diff -Naur b/Calculator.pro a/Calculator.pro
+--- b/Calculator.pro	2023-12-03 16:16:09.609635094 +0800
++++ a/Calculator.pro	2023-12-03 16:21:15.466202173 +0800
+@@ -15,6 +15,9 @@
+ # You can also select to disable deprecated APIs only up to a certain version of Qt.
+ #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+ 
++TARGET = qt-calculator
++TEMPLATE = app
++
+ SOURCES += \
+     calculate.cpp \
+     main.cpp \
+@@ -34,3 +37,8 @@
+ 
+ RESOURCES += \
+     res.qrc
++desktop.files += qt-calculator.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
++
++INSTALLS += target desktop
+diff -Naur b/qt-calculator.desktop a/qt-calculator.desktop
+--- b/qt-calculator.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/qt-calculator.desktop	2023-12-03 16:20:16.183766366 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=qt-calculator
++Exec=qt-calculator
++Type=Application
