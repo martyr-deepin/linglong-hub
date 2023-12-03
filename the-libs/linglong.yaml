@@ -1,0 +1,19 @@
+package:
+  id: the-libs
+  name: the-libs
+  version: 5.1.0
+  kind: lib
+  description: |
+    Common libraries for the* apps
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/vicr123/the-libs.git
+  commit: 8bdd90379081cb26898bb353f5fb59c0138418c1
+
+build:
+  kind: qmake
