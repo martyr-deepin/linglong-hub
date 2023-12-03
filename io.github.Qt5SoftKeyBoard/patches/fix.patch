@@ -1,0 +1,21 @@
+diff -Naur Qt5SoftKeyBoard-o/SoftKeyBoard.desktop Qt5SoftKeyBoard/SoftKeyBoard.desktop
+--- Qt5SoftKeyBoard-o/SoftKeyBoard.desktop	1970-01-01 08:00:00.000000000 +0800
++++ Qt5SoftKeyBoard/SoftKeyBoard.desktop	2023-12-03 17:33:31.561525478 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=SoftKeyBoard
++Exec=SoftKeyBoard
++Type=Application
+diff -Naur Qt5SoftKeyBoard-o/SoftKeyBoard.pro Qt5SoftKeyBoard/SoftKeyBoard.pro
+--- Qt5SoftKeyBoard-o/SoftKeyBoard.pro	2023-12-03 17:30:42.302771000 +0800
++++ Qt5SoftKeyBoard/SoftKeyBoard.pro	2023-12-03 17:34:34.222334996 +0800
+@@ -24,3 +24,9 @@
+ 
+ RESOURCES += \
+     resource.qrc
++
++desktop.files += SoftKeyBoard.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop
