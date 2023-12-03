@@ -1,0 +1,43 @@
+From dd38884a4df5a645b2767287e803f8d6e2cf3e0b Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Sun, 3 Dec 2023 16:00:17 +0800
+Subject: [PATCH] 1
+
+---
+ QtGastas.desktop | 8 ++++++++
+ qmake.pro        | 6 ++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 QtGastas.desktop
+
+diff --git a/QtGastas.desktop b/QtGastas.desktop
+new file mode 100644
+index 0000000..12a07ce
+--- /dev/null
++++ b/QtGastas.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QtGastas
++Name=QtGastas
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/qmake.pro b/qmake.pro
+index 67e3740..8974368 100644
+--- a/qmake.pro
++++ b/qmake.pro
+@@ -33,3 +33,9 @@ FORMS += src/mainwindow.ui \
+     src/editarmovimientos.ui \
+     src/editarcategorias.ui
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =QtGastas.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

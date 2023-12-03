@@ -1,0 +1,21 @@
+package:
+  id: io.github.QTGastas
+  name: QTGastas
+  version: 0.0.1
+  kind: app
+  description: |
+    Aplicación para gestionar los ingresos y gastos de un usuario.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/frodrd00/QTGastas.git
+  commit: 6337dc794ec48428f8a6bab8d63b4882f8f00f4e
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
