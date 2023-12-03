@@ -1,0 +1,22 @@
+diff -Naur b/saolei.desktop a/saolei.desktop
+--- b/saolei.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/saolei.desktop	2023-12-03 18:18:42.895732983 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=saolei
++Exec=saolei
++Type=Application
+diff -Naur b/saolei.pro a/saolei.pro
+--- b/saolei.pro	2023-12-03 18:15:46.642951728 +0800
++++ a/saolei.pro	2023-12-03 18:19:29.583918902 +0800
+@@ -31,3 +31,10 @@
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++desktop.files += saolei.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop
++ 
