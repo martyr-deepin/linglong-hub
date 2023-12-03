@@ -1,0 +1,21 @@
+package:
+  id: io.github.mini-floating-timer
+  name: mini-floating-timer
+  version: 0.0.1
+  kind: app
+  description: |
+    qt library botan
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/pjincz/mini-floating-timer.git
+  commit: f29ce93860c20a614d3903d7f375b513e0832dbf
+  patch: patch/0001-fix-install.patch
+
+build:
+  kind: qmake

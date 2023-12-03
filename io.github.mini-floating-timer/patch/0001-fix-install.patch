@@ -1,0 +1,44 @@
+From 07ac1e3c79513e3002fcafc344aa877716e07a31 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sun, 3 Dec 2023 22:13:35 +0800
+Subject: [PATCH] fix-install
+
+---
+ timer.desktop | 7 +++++++
+ timer.pro     | 8 ++++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 timer.desktop
+
+diff --git a/timer.desktop b/timer.desktop
+new file mode 100644
+index 0000000..f4229a3
+--- /dev/null
++++ b/timer.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=timer
++Name=timer
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/timer.pro b/timer.pro
+index 7323a06..f72fa9c 100644
+--- a/timer.pro
++++ b/timer.pro
+@@ -43,3 +43,11 @@ win32:RC_ICONS += timer.ico
+ 
+ RESOURCES += \
+         qrc.qrc
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = timer.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
