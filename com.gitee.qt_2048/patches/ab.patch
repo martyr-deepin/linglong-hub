@@ -1,0 +1,35 @@
+diff -Naur b/2048.pro a/2048.pro
+--- b/2048.pro	2023-12-03 17:06:52.784626783 +0800
++++ a/2048.pro	2023-12-03 17:15:09.404930648 +0800
+@@ -15,6 +15,9 @@
+ # You can also select to disable deprecated APIs only up to a certain version of Qt.
+ #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+ 
++TARGET = qt_2048
++TEMPLATE = app
++
+ SOURCES += \
+     main.cpp \
+     mainwindow.cpp
+@@ -26,6 +29,11 @@
+     mainwindow.ui
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++#qnx: target.path = /tmp/$${TARGET}/bin
++#else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++desktop.files += qt_2048.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
++
++INSTALLS += target desktop
+diff -Naur b/qt_2048.desktop a/qt_2048.desktop
+--- b/qt_2048.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/qt_2048.desktop	2023-12-03 17:13:46.520038213 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=qt_2048
++Exec=qt_2048
++Type=Application
