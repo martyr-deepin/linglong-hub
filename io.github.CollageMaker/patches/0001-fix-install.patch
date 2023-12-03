@@ -1,0 +1,49 @@
+From 0cf085e6dc20b456615b7f0a8a45ff52ddf16bb9 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sun, 3 Dec 2023 19:53:34 +0800
+Subject: [PATCH] fix-install
+
+---
+ src/CollageMaker.pro     | 14 +++++++++++---
+ src/collagemaker.desktop |  7 +++++++
+ 2 files changed, 18 insertions(+), 3 deletions(-)
+ create mode 100644 src/collagemaker.desktop
+
+diff --git a/src/CollageMaker.pro b/src/CollageMaker.pro
+index bc137eb..ed1c740 100644
+--- a/src/CollageMaker.pro
++++ b/src/CollageMaker.pro
+@@ -128,6 +128,14 @@ CONFIG += lrelease
+ CONFIG += embed_translations
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
++#qnx: target.path = /tmp/$${TARGET}/bin
++#else: unix:!android: target.path = /opt/$${TARGET}/bin
++#!isEmpty(target.path): INSTALLS += target
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = collagemaker.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+diff --git a/src/collagemaker.desktop b/src/collagemaker.desktop
+new file mode 100644
+index 0000000..fc5605e
+--- /dev/null
++++ b/src/collagemaker.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=collagemaker
++Name=collagemaker
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+-- 
+2.33.1
+
