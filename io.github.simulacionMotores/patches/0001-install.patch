@@ -1,0 +1,44 @@
+From cb09f3477de084cbba5b557ddefbfb802bcadf23 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 30 Nov 2023 17:08:12 +0800
+Subject: [PATCH] install
+
+---
+ SimulacionMotores.desktop | 8 ++++++++
+ SimulacionMotores.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 SimulacionMotores.desktop
+
+diff --git a/SimulacionMotores.desktop b/SimulacionMotores.desktop
+new file mode 100644
+index 0000000..4cc8c16
+--- /dev/null
++++ b/SimulacionMotores.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=SimulacionMotores
++Name=SimulacionMotores
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/SimulacionMotores.pro b/SimulacionMotores.pro
+index 1e267c0..d906ea9 100755
+--- a/SimulacionMotores.pro
++++ b/SimulacionMotores.pro
+@@ -50,3 +50,10 @@ HEADERS  += mainwindow.h \
+ 
+ FORMS    += mainwindow.ui \
+     graficador.ui
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =SimulacionMotores.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+

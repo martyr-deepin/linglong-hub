@@ -1,0 +1,20 @@
+package:
+  id: io.github.simulacionMotores
+  name: simulacionMotores
+  version: 1.0.0
+  kind: app
+  description: |
+    In this repository we simulate some basic behaviors of electrical motors, stationary and dinamical states
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/alvarohurtadobo/simulacionMotores.git
+  commit: 634b3aa57dc5bc37388e3d44110281f27c7de01d
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
