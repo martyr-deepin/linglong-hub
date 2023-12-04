@@ -1,0 +1,43 @@
+From b858cf2b7104dc5df4def246f79129b1f4558499 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 2 Dec 2023 13:18:32 +0800
+Subject: [PATCH] install
+
+---
+ schwarm.desktop | 8 ++++++++
+ schwarm.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 schwarm.desktop
+
+diff --git a/schwarm.desktop b/schwarm.desktop
+new file mode 100644
+index 0000000..07fe468
+--- /dev/null
++++ b/schwarm.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=schwarm
++Name=schwarm
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/schwarm.pro b/schwarm.pro
+index 9f79e00..45bd62f 100644
+--- a/schwarm.pro
++++ b/schwarm.pro
+@@ -48,3 +48,10 @@ DISTFILES += \
+     gravity.txt \
+     recherche.txt \
+     sound.txt
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =schwarm.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+

@@ -1,0 +1,23 @@
+package:
+  id: io.github.swarmsimu
+  name: swarmsimu
+  version: 0.0.1
+  kind: app
+  description: |
+    Visual swarm simulation with unique audio effects programmed with C++ and Qt
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dualword/swarmsimu.git
+  commit: 89ab6de56b404667fe65f49ac33c029f7c63dd68
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+
+
