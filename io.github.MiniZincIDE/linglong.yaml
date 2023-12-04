@@ -1,0 +1,20 @@
+package:
+  id: io.github.MiniZincIDE
+  name: MiniZincIDE
+  version: 2.8.0
+  kind: app
+  description: |
+    Integrated development environment for the high-level constraint modelling language MiniZinc.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/MiniZinc/MiniZincIDE.git
+  commit: f2b8092c81d97dba3579a5c5a3402b554e6ada74
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

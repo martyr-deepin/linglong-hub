@@ -1,0 +1,47 @@
+From 8267bfcba8ac2dbc307e0b22b23219b65de4c108 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 23 Nov 2023 12:54:28 +0800
+Subject: [PATCH] install
+
+---
+ MiniZincIDE.pro                 | 9 +++++++++
+ MiniZincIDE/MiniZincIDE.desktop | 9 +++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 MiniZincIDE/MiniZincIDE.desktop
+
+diff --git a/MiniZincIDE.pro b/MiniZincIDE.pro
+index 452c640..c68e33b 100644
+--- a/MiniZincIDE.pro
++++ b/MiniZincIDE.pro
+@@ -8,3 +8,12 @@ libminizinc {
+   SUBDIRS += libminizinc
+   MiniZincIDE.depends = libminizinc
+ }
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =MiniZincIDE/MiniZincIDE.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = MiniZincIDE/images/mznicon.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+diff --git a/MiniZincIDE/MiniZincIDE.desktop b/MiniZincIDE/MiniZincIDE.desktop
+new file mode 100644
+index 0000000..90f39e0
+--- /dev/null
++++ b/MiniZincIDE/MiniZincIDE.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=MiniZincIDE
++Name=MiniZincIDE
++StartupNotify=false
++Terminal=false
++Type=Application
++icon=mznicon
++X-Deepin-Vendor=user-custom
+-- 
+2.33.1
+
