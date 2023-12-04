@@ -1,0 +1,20 @@
+package:
+  id: io.github.GetScreenGeometry
+  name: GetScreenGeometry
+  version: 1.0.0
+  kind: app
+  description: |
+    Qt实现的获取屏幕分辨率小工具，支持Win/Linux---Get screen resolution widget realized by Qt,Support Win/Linux.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/SantaJiang/GetScreenGeometry.git
+  commit: 8e3134a1e8662a72b97fd65a93bd47212b5ba1bf
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

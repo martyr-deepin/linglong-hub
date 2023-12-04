@@ -1,0 +1,46 @@
+From c113f219ad1e61f3c5270fb3a83f601657c2ee5b Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 30 Nov 2023 16:44:35 +0800
+Subject: [PATCH] install
+
+---
+ GetScreenGeometry.desktop | 9 +++++++++
+ GetScreenGeometry.pro     | 9 +++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 GetScreenGeometry.desktop
+
+diff --git a/GetScreenGeometry.desktop b/GetScreenGeometry.desktop
+new file mode 100644
+index 0000000..5449898
+--- /dev/null
++++ b/GetScreenGeometry.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=GetScreenGeometry
++Name=GetScreenGeometry
++icons=logo.ico
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/GetScreenGeometry.pro b/GetScreenGeometry.pro
+index 429ffd4..89a53a7 100644
+--- a/GetScreenGeometry.pro
++++ b/GetScreenGeometry.pro
+@@ -25,3 +25,12 @@ RC_ICONS = logo.ico
+ 
+ RESOURCES += \
+     root.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =GetScreenGeometry.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = logo.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
