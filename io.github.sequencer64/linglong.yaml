@@ -1,0 +1,22 @@
+package:
+  id: io.github.sequencer64
+  name: sequencer64
+  version: 0.97.0.4
+  kind: app
+  description: |
+    Sequencer64 is a live MIDI looper with a song-creation layout window. Sequencer64 is a reboot of seq24, extending it greatly over the last six years. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/ahlstromcj/sequencer64.git"
+  commit: 064c83cd13f35089f186d0a0b592254d504e97a3
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
+

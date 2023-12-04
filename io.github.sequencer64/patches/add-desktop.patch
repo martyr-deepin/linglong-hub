@@ -1,0 +1,33 @@
+diff --git a/Seq64qt5/Seq64qt5.pro b/Seq64qt5/Seq64qt5.pro
+index 5101f9d0..4431984d 100644
+--- a/Seq64qt5/Seq64qt5.pro
++++ b/Seq64qt5/Seq64qt5.pro
+@@ -97,6 +97,17 @@ unix:!macx: LIBS += \
+ 
+ windows: LIBS += -lwinmm
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += qpseq64.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = ../resources/icons/sequencer64.png
++INSTALLS += icons
++
+ #******************************************************************************
+ # Seq64qt5.pro (Seq64qt5)
+ #------------------------------------------------------------------------------
+diff --git a/Seq64qt5/qpseq64.desktop b/Seq64qt5/qpseq64.desktop
+new file mode 100644
+index 00000000..63bdd36a
+--- /dev/null
++++ b/Seq64qt5/qpseq64.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=qpseq64
++Exec=qpseq64 %f
++Icon=sequencer64
