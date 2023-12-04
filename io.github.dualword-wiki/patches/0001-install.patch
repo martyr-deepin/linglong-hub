@@ -1,0 +1,43 @@
+From 7a6156ee9085c3d437ca01109dbdbc70e73c0b99 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 1 Dec 2023 11:20:32 +0800
+Subject: [PATCH] install
+
+---
+ src/dualword-wiki.desktop | 8 ++++++++
+ src/src.pro               | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 src/dualword-wiki.desktop
+
+diff --git a/src/dualword-wiki.desktop b/src/dualword-wiki.desktop
+new file mode 100644
+index 0000000..90c94c5
+--- /dev/null
++++ b/src/dualword-wiki.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=dualword-wiki
++Name=dualword-wiki
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/src/src.pro b/src/src.pro
+index e8bb092..3e86334 100644
+--- a/src/src.pro
++++ b/src/src.pro
+@@ -50,3 +50,10 @@ OBJECTS_DIR = .build/obj
+ MOC_DIR     = .build/moc
+ RCC_DIR     = .build/rcc
+ UI_DIR      = .build/ui
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =dualword-wiki.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+

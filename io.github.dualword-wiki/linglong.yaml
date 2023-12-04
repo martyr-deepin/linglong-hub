@@ -1,0 +1,26 @@
+package:
+  id: io.github.dualword-wiki
+  name: dualword-wiki
+  version: 1.1.0
+  kind: app
+  description: |
+    
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine/5.15.7
+    type: runtime
+  - id: qtxmlpatterns/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/dualword/dualword-wiki.git
+  commit: 0f80791776d994fca034e42299d1b927f4d3c219
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
