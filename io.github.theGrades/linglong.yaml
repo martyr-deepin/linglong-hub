@@ -1,0 +1,32 @@
+package:
+  id: io.github.theGrades
+  name: theGrades
+  version: 1.0.0
+  kind: app
+  description: |
+    3rd party theSuite app for grade logging and GPA calculation
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: the-libs
+    type: runtime
+    version: 2.2.1
+    source:
+      kind: git
+      url: https://github.com/ZoomTen/the-libs.git
+      version: master
+      commit: e791eb034018ba98e1cabe776c76434cd4bbde34
+    build:
+      kind: qmake
+
+source:
+  kind: git
+  url: https://github.com/ZoomTen/theGrades.git
+  commit: bdcb34f61611c72b76ac5d05e53d3d6c958ed562
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
