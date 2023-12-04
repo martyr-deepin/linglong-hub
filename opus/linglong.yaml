@@ -1,0 +1,19 @@
+package:
+  id: opus
+  name: opus 
+  version: 1.4.0
+  kind: lib
+  description: |
+     Opus is a codec for interactive speech and audio transmission over the Internet.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/xiph/opus.git
+  commit: c85499757c148fede8604cffa12454206b6138ba
+
+build:
+  kind: cmake
