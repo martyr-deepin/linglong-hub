@@ -1,0 +1,61 @@
+From db4988ef14cd2d117dab5a6b58d5406de0d4ab32 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 30 Nov 2023 13:10:36 +0800
+Subject: [PATCH] install
+
+---
+ gapQBE.desktop | 9 +++++++++
+ gapQBE.pro     | 9 +++++++++
+ mainwindow.h   | 2 +-
+ 3 files changed, 19 insertions(+), 1 deletion(-)
+ create mode 100644 gapQBE.desktop
+
+diff --git a/gapQBE.desktop b/gapQBE.desktop
+new file mode 100644
+index 0000000..7d2f8f7
+--- /dev/null
++++ b/gapQBE.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=gapQBE
++Name=gapQBE
++icon=gapQBE
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/gapQBE.pro b/gapQBE.pro
+index 63e6f52..51e530d 100644
+--- a/gapQBE.pro
++++ b/gapQBE.pro
+@@ -36,3 +36,12 @@ RESOURCES += gapQBE.qrc
+ TRANSLATIONS = gapQBE_fr.ts
+ CODECFORSRC = UTF-8
+ CODECFORTR = UTF-8
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++icons.files = gapQBE.png
++icons.path = $$PREFIX/share/icons
++desktop.files =gapQBE.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop icons
+\ No newline at end of file
+diff --git a/mainwindow.h b/mainwindow.h
+index 757e58a..18afa86 100644
+--- a/mainwindow.h
++++ b/mainwindow.h
+@@ -1,7 +1,7 @@
+ #ifndef MAINWINDOW_H
+ #define MAINWINDOW_H
+ 
+-#include <QtGui/QMainWindow>
++#include <QtWidgets/QMainWindow>
+ 
+ #include <QListWidgetItem>
+ // #include "champ.h"
+-- 
+2.33.1
+
