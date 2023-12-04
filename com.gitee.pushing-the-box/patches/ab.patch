@@ -1,0 +1,20 @@
+diff -Naur b/pushBox.pro a/pushBox.pro
+--- b/pushBox.pro	2023-12-04 19:07:30.542622615 +0800
++++ a/pushBox.pro	2023-12-04 19:10:33.793517583 +0800
+@@ -39,3 +39,8 @@
+     res.qrc
+ 
+ CONFIG+=c++11
++desktop.files += pushing-the-box.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
++
++INSTALLS += target desktop
+diff -Naur b/pushing-the-box.desktop a/pushing-the-box.desktop
+--- b/pushing-the-box.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/pushing-the-box.desktop	2023-12-04 19:09:47.730044721 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=pushing-the-box
++Exec=pushBox
++Type=Application
