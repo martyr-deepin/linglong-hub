@@ -1,0 +1,28 @@
+package:
+  id: SDL_mixer
+  name: SDL_mixer 
+  version: 2.6.3
+  kind: lib
+  description: |
+     SDL_mixer 2.0
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+variables:
+  conf_args: |
+    -DCMAKE_INSTALL_PREFIX=${PREFIX} 
+    -DCMAKE_INSTALL_LIBDIR=${PREFIX}/lib/${TRIPLET}
+    -Dopusfile_INCLUDE_PATH:PATH=${PREFIX}/include/
+
+depends:
+  - id: opusfile/0.12.0
+  - id: libxmp/4.6.0
+  - id: opus/1.4.0
+source:
+  kind: git
+  url: https://github.com/libsdl-org/SDL_mixer.git
+  commit: a215726afd1204ea279680cf746f516f70600a2e
+
+build:
+  kind: cmake
