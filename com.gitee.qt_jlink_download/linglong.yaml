@@ -1,0 +1,18 @@
+package:
+  id: com.gitee.qt_jlink_download
+  name: qt_jlink_download
+  version: 1.0.0
+  kind: app
+  description: |
+    基于QT的jlink上位机软件
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/mingjinghe/qt_jlink_download.git"
+  commit: 22c6bbc
+  patch: patches/ab.patch
+build:
+  kind: qmake
