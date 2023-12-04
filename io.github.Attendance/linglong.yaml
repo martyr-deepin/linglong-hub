@@ -1,0 +1,20 @@
+package:
+  id: io.github.Attendance
+  name: Attendance
+  version: 2.0.3
+  kind: app
+  description: |
+    In order to ensure that members of the team actively do work on the team, an attendance program is necessary to keep track of when team members enter and leave the robotics lab.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Saint-Francis-Robotics-Team2367/Attendance.git
+  commit: 92754c47d4b311298f779ee27a77cc5ebe37ee48
+
+build:
+  kind: qmake
+
