@@ -1,0 +1,23 @@
+diff -Naur b/Pacman.desktop a/Pacman.desktop
+--- b/Pacman.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/Pacman.desktop	2023-12-04 21:02:06.438544132 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=Pacman
++Exec=Pacman
++Type=Application
+\ 文件尾没有换行符
+diff -Naur b/Pacman.pro a/Pacman.pro
+--- b/Pacman.pro	2023-12-04 20:59:51.271869793 +0800
++++ a/Pacman.pro	2023-12-04 21:01:47.993633311 +0800
+@@ -49,3 +49,9 @@
+ 
+ RESOURCES += \
+ 	resources.qrc
++
++desktop.files += Pacman.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop
+\ 文件尾没有换行符
