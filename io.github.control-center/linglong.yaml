@@ -1,0 +1,21 @@
+package:
+  id: io.github.control-center
+  name: control-center
+  version: 7.3.12
+  kind: app
+  description: |
+    Subutai Control Center is a desktop application for owners and administrators of Subutai Peers and Environments.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/subutai-io/control-center.git
+  commit: 50e70715360ec6fa8fffab4992232cdde488e321
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,49 @@
+From 45fbb294042fc4d22b7e52174a0b4083df7937f6 Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Mon, 4 Dec 2023 19:59:19 +0800
+Subject: [PATCH] 1
+
+---
+ SubutaiControlCenter.desktop |  9 +++++++++
+ SubutaiControlCenter.pro     | 11 +++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 SubutaiControlCenter.desktop
+
+diff --git a/SubutaiControlCenter.desktop b/SubutaiControlCenter.desktop
+new file mode 100644
+index 00000000..2bdd7da9
+--- /dev/null
++++ b/SubutaiControlCenter.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=SubutaiControlCenter
++Name=SubutaiControlCenter
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
++Icon=cc_icon_resized
+diff --git a/SubutaiControlCenter.pro b/SubutaiControlCenter.pro
+index f6c00f42..878a6737 100644
+--- a/SubutaiControlCenter.pro
++++ b/SubutaiControlCenter.pro
+@@ -302,3 +302,14 @@ tests {
+ } else {
+     message(Normal build)
+ }
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =SubutaiControlCenter.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
++icons.path = $${PREFIX}/share/icons
++icons.files = resources/cc_icon_resized.png
++INSTALLS += icons
+\ No newline at end of file
+-- 
+2.33.1
+
