@@ -1,0 +1,20 @@
+package:
+  id: io.github.Qronometer
+  name: Qronometer
+  version: 1.0.0
+  kind: app
+  description: |
+    A simple Chronometer based on Qt that supports exporting data to csv and json formats
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/glaumar/Qronometer.git
+  commit: 8ce99b2d8690049aa15ebaa1225e3b3d48c9bb79
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

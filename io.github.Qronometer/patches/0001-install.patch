@@ -1,0 +1,46 @@
+From 68003b7cc9ea1dda3bda47147faa8432f6cbea12 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 30 Nov 2023 15:27:07 +0800
+Subject: [PATCH] install
+
+---
+ Qronometer.desktop | 8 ++++++++
+ Qronometer.pro     | 9 ++++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 Qronometer.desktop
+
+diff --git a/Qronometer.desktop b/Qronometer.desktop
+new file mode 100644
+index 0000000..edc03db
+--- /dev/null
++++ b/Qronometer.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Qronometer
++Name=Qronometer
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Qronometer.pro b/Qronometer.pro
+index eb99572..24578ad 100644
+--- a/Qronometer.pro
++++ b/Qronometer.pro
+@@ -32,5 +32,12 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Qronometer.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
