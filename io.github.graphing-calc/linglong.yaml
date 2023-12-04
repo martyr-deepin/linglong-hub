@@ -1,0 +1,28 @@
+package:
+  id: io.github.graphing-calc
+  name: graphing-calc
+  version: 1.0.0
+  kind: app
+  description: |
+    a simple graphing calculator app written in c++/Qt
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dualword/graphing-calc.git
+  commit: 4127af7efaae49cfba74d94c98c975e69c92f1f6
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile graphing-calc.pro  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

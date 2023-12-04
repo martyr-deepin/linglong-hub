@@ -1,0 +1,48 @@
+From 3e9b0dcc49b5927ca6d01d63a2714eeff9fda903 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 1 Dec 2023 15:47:10 +0800
+Subject: [PATCH] install
+
+---
+ src/graphing-calc.desktop | 8 ++++++++
+ src/graphing-calc.pro     | 9 ++++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 src/graphing-calc.desktop
+
+diff --git a/src/graphing-calc.desktop b/src/graphing-calc.desktop
+new file mode 100644
+index 0000000..14d2fcc
+--- /dev/null
++++ b/src/graphing-calc.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=graphing-calc
++Name=graphing-calc
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/src/graphing-calc.pro b/src/graphing-calc.pro
+index cd89e52..e0fc82a 100644
+--- a/src/graphing-calc.pro
++++ b/src/graphing-calc.pro
+@@ -46,5 +46,12 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =graphing-calc.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
