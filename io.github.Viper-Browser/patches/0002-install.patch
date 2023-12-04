@@ -1,0 +1,39 @@
+From 8ff7985c35b7016c01eb36a4ba9fabf57a54cd01 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 4 Dec 2023 19:21:40 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt                  | 2 ++
+ build_dir/viper-browser.desktop | 8 ++++++++
+ 2 files changed, 10 insertions(+)
+ create mode 100644 build_dir/viper-browser.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 1dd16a0..42984b7 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -86,3 +86,5 @@ if (ENABLE_TESTING)
+     enable_testing(true)
+     add_subdirectory(tests)
+ endif()
++install(PROGRAMS ${CMAKE_BINARY_DIR}/viper-browser.desktop DESTINATION share/applications)
++install(TARGETS  DESTINATION bin)
+\ No newline at end of file
+diff --git a/build_dir/viper-browser.desktop b/build_dir/viper-browser.desktop
+new file mode 100644
+index 0000000..126ca37
+--- /dev/null
++++ b/build_dir/viper-browser.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=viper-browser
++Name=viper-browser
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+-- 
+2.33.1
+
