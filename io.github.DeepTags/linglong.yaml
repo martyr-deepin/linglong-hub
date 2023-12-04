@@ -1,0 +1,20 @@
+package:
+  id: io.github.DeepTags
+  name: DeepTags
+  version: 0.7.0
+  kind: app
+  description: |
+    DeepTags is a markdown notes manager with support for nested tags
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dualword/DeepTags.git
+  commit: 7641a94b00d589552ba057abbbdf2a730f3d759e
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
