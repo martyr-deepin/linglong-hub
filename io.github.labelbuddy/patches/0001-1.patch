@@ -1,0 +1,32 @@
+From 204ec87ca4d9c1f6f88b350c2e5da1769298744e Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Mon, 4 Dec 2023 19:01:48 +0800
+Subject: [PATCH] 1
+
+---
+ labelbuddy.pro | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+diff --git a/labelbuddy.pro b/labelbuddy.pro
+index d1bbda6..4dcb319 100644
+--- a/labelbuddy.pro
++++ b/labelbuddy.pro
+@@ -115,3 +115,14 @@ else {
+ TEMPLATE = app
+ TARGET = labelbuddy
+ }
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =data/labelbuddy.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
++icons.path = $${PREFIX}/share/icons
++icons.files = data/icons/labelbuddy.png
++INSTALLS += icons
+\ No newline at end of file
+-- 
+2.33.1
+
