@@ -1,0 +1,43 @@
+From 1ed7e7cbeb3e827aee9c6cffc0639dd6ee361b04 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 3 Dec 2023 11:17:16 +0800
+Subject: [PATCH] install
+
+---
+ app/app.pro | 18 ++++++++++--------
+ 1 file changed, 10 insertions(+), 8 deletions(-)
+
+diff --git a/app/app.pro b/app/app.pro
+index ff218a3..3bace06 100644
+--- a/app/app.pro
++++ b/app/app.pro
+@@ -57,16 +57,18 @@ FORMS += \
+     options/qualwidget.ui
+ 
+ unix {
+-    target.path = /usr/bin/
+ 
+-    defaults.files = defaults.conf
+-    defaults.path = /etc/theGrades/
+-
+-    desktop.path = /usr/share/applications
+-    desktop.files = com.zumid.theGrades.desktop
+ 
+-    icon.path = /usr/share/icons/hicolor/scalable/apps/
+-    icon.files = icons/thegrades.svg
++    defaults.files = defaults.conf
++    defaults.path = $$PREFIX/etc/theGrades/
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =com.zumid.theGrades.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = icons/thegrades.svg
++icons.path = $$PREFIX/share/icons
+ 
+     INSTALLS += target desktop icon defaults
+ }
+-- 
+2.33.1
+
