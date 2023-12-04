@@ -1,0 +1,31 @@
+package:
+  id: io.github.seer
+  name: seer
+  version: 1.14.0
+  kind: app
+  description: |
+    Seer - a gui frontend to gdb for Linux
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtcharts/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/dualword/seer.git
+  commit: d7242cabfebda606a71dd8cb56860fd319dfa82d
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
+  manual:
+    configure: |
+      cd src
+      cmake -B ${build_dir} ${conf_args} ${extra_args}
+
+
+

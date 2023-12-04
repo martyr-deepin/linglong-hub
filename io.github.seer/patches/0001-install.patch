@@ -1,0 +1,40 @@
+From 77c68bbc76ca4c469f9004cb6f253abd78a822aa Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 2 Dec 2023 12:18:10 +0800
+Subject: [PATCH] install
+
+---
+ src/CMakeLists.txt            | 2 ++
+ src/build_dir/seergdb.desktop | 9 +++++++++
+ 2 files changed, 11 insertions(+)
+ create mode 100644 src/build_dir/seergdb.desktop
+
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 001d8ab..64d89d8 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -214,3 +214,5 @@ install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
+ 
+ target_link_libraries(${PROJECT_NAME} Qt5::Widgets Qt5::Gui Qt5::Core Qt5::PrintSupport Qt5::Charts)
+ 
++install(PROGRAMS ${CMAKE_BINARY_DIR}/seergdb.desktop DESTINATION share/applications)
++install(TARGETS  DESTINATION bin)
+diff --git a/src/build_dir/seergdb.desktop b/src/build_dir/seergdb.desktop
+new file mode 100644
+index 0000000..3b25b96
+--- /dev/null
++++ b/src/build_dir/seergdb.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=seergdb
++Name=seergdb
++icon=seergdb_32x32
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+-- 
+2.33.1
+
