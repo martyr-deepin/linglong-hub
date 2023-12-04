@@ -1,0 +1,40 @@
+From 9da75356b0df67db86377904c94bd7bc3ecf43c3 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 4 Dec 2023 10:25:03 +0800
+Subject: [PATCH] install
+
+---
+ plotjuggler_plugins/ParserProtobuf/CMakeLists.txt | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/plotjuggler_plugins/ParserProtobuf/CMakeLists.txt b/plotjuggler_plugins/ParserProtobuf/CMakeLists.txt
+index 084c93cb..932c07a1 100644
+--- a/plotjuggler_plugins/ParserProtobuf/CMakeLists.txt
++++ b/plotjuggler_plugins/ParserProtobuf/CMakeLists.txt
+@@ -4,6 +4,15 @@ include_directories( ../ )
+ add_definitions(${QT_DEFINITIONS})
+ add_definitions(-DQT_PLUGIN)
+ 
++# 寻找并加载指定的库
++find_package(PkgConfig REQUIRED)
++pkg_search_module(PROTOBUF REQUIRED protobuf)
++
++# 将找到的库添加到项目中
++include_directories(${PROTOBUF_INCLUDE_DIRS})
++link_directories(${PROTOBUF_LIBRARY_DIRS})
++
++
+ find_package(Protobuf QUIET)
+ 
+ if( Protobuf_FOUND)
+@@ -25,6 +34,7 @@ if( Protobuf_FOUND)
+         ${Qt5Widgets_LIBRARIES}
+         ${Qt5Xml_LIBRARIES}
+         ${Protobuf_LIBRARIES}
++        ${PROTOBUF_LIBRARIES}
+         plotjuggler_base
+         plotjuggler_qwt)
+ 
+-- 
+2.33.1
+

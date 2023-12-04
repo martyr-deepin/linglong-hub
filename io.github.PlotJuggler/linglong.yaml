@@ -1,0 +1,19 @@
+package:
+  id: io.github.PlotJuggler
+  name: PlotJuggler
+  version: 2.8.4
+  kind: app
+  description: |
+    The Time Series Visualization Tool that you deserve.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/facontidavide/PlotJuggler.git
+  commit: eeed1258ae4ec81ef8d0a1445cd944eaf84e9a62
+
+build:
+  kind: cmake
