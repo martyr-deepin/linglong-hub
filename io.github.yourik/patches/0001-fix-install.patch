@@ -1,0 +1,27 @@
+From ef61b7a0b69bb18eb674c037de6d0f3eab70fd87 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Mon, 4 Dec 2023 21:43:59 +0800
+Subject: [PATCH] fix-install
+
+---
+ yourik.pro | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/yourik.pro b/yourik.pro
+index e210cb0..0bf0209 100644
+--- a/yourik.pro
++++ b/yourik.pro
+@@ -84,8 +84,8 @@ win32:{
+ unix: {
+        PKGCONFIG += SDL2 \
+                     SDL2_mixer
+-
+-
++ 
++       INCLUDEPATH += ${PREFIX}/include/
+        LIBS += -lSDL2
+        LIBS += -lSDL2_mixer
+ 
+-- 
+2.33.1
+

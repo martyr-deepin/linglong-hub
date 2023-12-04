@@ -1,0 +1,26 @@
+package:
+  id: io.github.yourik
+  name: yourik
+  version: 2.1.2
+  kind: app
+  description: |
+    Yourik The Intergalactic Rabbit is the animal rights-themed arcade game. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: SDL_mixer/2.6.3
+    type: runtime
+  - id: libsdl2/2.0.16.1
+    type: runtime
+
+
+source:
+  kind: git
+  url: https://github.com/psemiletov/yourik-qt5.git
+  commit: dbd5ea27c07638329a7e76f4e9b13fb5ce742cd9
+  patch: patches/0001-fix-install.patch
+build:
+  kind: qmake
