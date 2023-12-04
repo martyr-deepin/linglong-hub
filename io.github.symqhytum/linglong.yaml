@@ -1,0 +1,22 @@
+package:
+  id: io.github.symqhytum
+  name: symqhytum
+  version: 2.6.0
+  kind: app
+  description: |
+    Symqhytum Personal Database Software
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/giowck/symphytum.git
+  commit: 1b7cbdc969c0ad3b4ce3f40aafa5eb811a72bfc9
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+
