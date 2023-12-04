@@ -1,0 +1,19 @@
+package:
+  id: io.github.cutechess-qt
+  name: cutechess-qt
+  version: 1.2.0
+  kind: app
+  description: |
+    Cute Chess is a graphical user app, command-line interface and use to playing chess. Cute Chess is written in C++ using the Qt framework.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dualword/cutechess-qt.git
+  commit: 1071d84cf272bd7deca0964336bf02e367e2b22b
+
+build:
+  kind: cmake
