@@ -1,0 +1,22 @@
+diff -Naur b/1024game.desktop a/1024game.desktop
+--- b/1024game.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/1024game.desktop	2023-12-04 20:02:51.522074869 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=1024game
++Exec=1024game
++Type=Application
+diff -Naur b/1024game.pro a/1024game.pro
+--- b/1024game.pro	2023-12-04 20:00:02.312964276 +0800
++++ a/1024game.pro	2023-12-04 20:01:09.882513122 +0800
+@@ -35,3 +35,9 @@
+ FORMS += \
+     gui/interface.ui \
+     gui/main.ui
++
++desktop.files += 1024game.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop
+\ 文件尾没有换行符
