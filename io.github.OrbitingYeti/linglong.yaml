@@ -1,0 +1,20 @@
+package:
+  id: io.github.OrbitingYeti
+  name: OrbitingYeti
+  version: 1.0.0
+  kind: app
+  description: |
+    OrbitingYeti is a tool to write Nassi-Schneidermann diagrams.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/NaoPross/OrbitingYeti.git
+  commit: 85f547d585552fb0f87acd08722aabccb229e2a5
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,43 @@
+From bdab81201460340d5bfb45af58e1956d5e7ff0b1 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 30 Nov 2023 15:34:00 +0800
+Subject: [PATCH] install
+
+---
+ OrbitingYeti.desktop | 8 ++++++++
+ OrbitingYeti.pro     | 6 ++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 OrbitingYeti.desktop
+
+diff --git a/OrbitingYeti.desktop b/OrbitingYeti.desktop
+new file mode 100644
+index 0000000..f0cc0b8
+--- /dev/null
++++ b/OrbitingYeti.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=OrbitingYeti
++Name=OrbitingYeti
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/OrbitingYeti.pro b/OrbitingYeti.pro
+index 8ac911b..71ccc23 100644
+--- a/OrbitingYeti.pro
++++ b/OrbitingYeti.pro
+@@ -61,3 +61,9 @@ FORMS += \
+     forms/mainwindow.ui \
+     forms/metadatadialog.ui \
+     forms/statementdialog.ui
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =OrbitingYeti.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
