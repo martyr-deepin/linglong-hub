@@ -1,0 +1,23 @@
+diff -Naur b/checkers_final.desktop a/checkers_final.desktop
+--- b/checkers_final.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/checkers_final.desktop	2023-12-04 20:15:39.564931498 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=checkers_final
++Exec=checkers_final
++Type=Application
+\ 文件尾没有换行符
+diff -Naur b/checkers_final.pro a/checkers_final.pro
+--- b/checkers_final.pro	2023-12-04 20:14:24.049173261 +0800
++++ a/checkers_final.pro	2023-12-04 20:16:18.400877436 +0800
+@@ -40,3 +40,9 @@
+     settingsdialog.ui
+ RESOURCES += icons.qrc \
+     icons.qrc
++
++desktop.files += checkers_final.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop
+\ 文件尾没有换行符
