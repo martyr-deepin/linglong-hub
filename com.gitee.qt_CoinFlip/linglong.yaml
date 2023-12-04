@@ -1,6 +1,6 @@
 package:
-  id: org.deepin.demo
-  name: deepin-demo
+  id: com.gitee.qt_CoinFlip.git
+  name: qt_CoinFlip.git
   version: 0.0.1
   kind: app
   description: |
@@ -18,5 +18,8 @@ source:
   kind: git
   url: "https://gitee.com/Aatzy/qt_CoinFlip.git"
   commit: 741eb5c7a676bdb4b6cd539abc1c25500f264e91
+  patch:
+    - patches/ab.patch
+
 build:
   kind: qmake
