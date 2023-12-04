@@ -1,0 +1,20 @@
+package:
+  id: io.github.game-map-editor
+  name: game-map-editor
+  version: 1.0.0
+  kind: app
+  description: |
+    This is a general purpose map editor for 2D games. It can be used to create game levels using texture tiles.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dualword/game-map-editor.git
+  commit: 7aa202e7d9d74fc3b91976dfca3aa849461ce913
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

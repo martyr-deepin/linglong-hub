@@ -1,0 +1,48 @@
+From 2a13f0aa4420ef52d0b233ef80d15ac1aa5ef033 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 1 Dec 2023 15:17:46 +0800
+Subject: [PATCH] install
+
+---
+ MapEditor.desktop |  9 +++++++++
+ MapEditor.pro     | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 MapEditor.desktop
+
+diff --git a/MapEditor.desktop b/MapEditor.desktop
+new file mode 100644
+index 0000000..ce2b72a
+--- /dev/null
++++ b/MapEditor.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=MapEditor
++Name=MapEditor
++icon=AppIcon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/MapEditor.pro b/MapEditor.pro
+index 588621d..e78684d 100644
+--- a/MapEditor.pro
++++ b/MapEditor.pro
+@@ -50,3 +50,13 @@ RC_FILE = mapeditor.rc
+ 
+ DISTFILES += \
+     mapeditor.rc
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =MapEditor.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = AppIcon.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
