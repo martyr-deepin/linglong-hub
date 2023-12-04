@@ -1,0 +1,27 @@
+package:
+  id: io.github.ragingmidi
+  name: ragingmidi
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt-based cross-platform MIDI editor.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dualword/ragingmidi.git
+  commit: 7153bf68667fba7540541dddcd3ae5e5a02572f9
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+
+
+
