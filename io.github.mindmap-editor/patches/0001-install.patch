@@ -1,0 +1,49 @@
+From 7c2606020389f2f4f04bcb58b25cc4a481cf5661 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 2 Dec 2023 09:34:35 +0800
+Subject: [PATCH] install
+
+---
+ mindmap-editor.desktop | 8 ++++++++
+ mindmap-editor.pro     | 9 ++++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 mindmap-editor.desktop
+
+diff --git a/mindmap-editor.desktop b/mindmap-editor.desktop
+new file mode 100644
+index 0000000..05598cc
+--- /dev/null
++++ b/mindmap-editor.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=mindmap-editor
++Name=mindmap-editor
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/mindmap-editor.pro b/mindmap-editor.pro
+index 909f55a..38090fe 100644
+--- a/mindmap-editor.pro
++++ b/mindmap-editor.pro
+@@ -47,8 +47,15 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     icons.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =mindmap-editor.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+

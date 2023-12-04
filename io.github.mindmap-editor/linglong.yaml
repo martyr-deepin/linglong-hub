@@ -1,0 +1,20 @@
+package:
+  id: io.github.mindmap-editor
+  name: mindmap-editor
+  version: 1.0.0
+  kind: app
+  description: |
+    Simple Mind-Mapping tool using C++ and Qt
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dualword/mindmap-editor.git
+  commit: b0eaa76bb203d160739ea9ce0ad88d6fe607c00e
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
