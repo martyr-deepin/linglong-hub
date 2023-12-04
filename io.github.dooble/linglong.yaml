@@ -1,0 +1,29 @@
+package:
+  id: io.github.dooble
+  name: dooble
+  version: 2021.08.1
+  kind: app
+  description: |
+    Dooble is a scientific browser. Minimal, cute, unusually stable, and available almost everywhere. Completed.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine/5.15.7
+    type: runtime
+  - id: qtcharts/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/dualword/dooble.git
+  commit: 2eebbcefb87b12ae580b940f0d0b01976da04b87
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      qmake -makefile dooble.pro ${conf_args} ${extra_args}

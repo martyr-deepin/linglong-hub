@@ -1,0 +1,43 @@
+From d10c6f2015a7c6ee08245ba9b2ee2ddc6e939703 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 1 Dec 2023 14:43:32 +0800
+Subject: [PATCH] install
+
+---
+ dooble.desktop | 2 +-
+ dooble.pro     | 8 ++++++++
+ 2 files changed, 9 insertions(+), 1 deletion(-)
+
+diff --git a/dooble.desktop b/dooble.desktop
+index cac685d4..515d2d9e 100644
+--- a/dooble.desktop
++++ b/dooble.desktop
+@@ -3,7 +3,7 @@
+ [Desktop Entry]
+ Categories=Network;WebBrowser;
+ Comment=Dooble Web Browser
+-Exec=/usr/bin/dooble
++Exec=Dooble
+ GenericName=Dooble Web Browser
+ Icon=dooble
+ Name=Dooble Web Browser
+diff --git a/dooble.pro b/dooble.pro
+index 2691e662..783c9e97 100644
+--- a/dooble.pro
++++ b/dooble.pro
+@@ -698,3 +698,11 @@ binary_dict_files.files += $${DICTIONARIES_DIR}/$${base_name}.bdic
+ binary_dict_files.path = Contents/Resources/$$DICTIONARIES_DIR
+ QMAKE_BUNDLE_DATA += binary_dict_files
+ }
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =dooble.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = Icons/dooble.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
