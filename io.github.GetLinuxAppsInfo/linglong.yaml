@@ -1,0 +1,20 @@
+package:
+  id: io.github.GetLinuxAppsInfo
+  name: GetLinuxAppsInfo
+  version: 1.0.0
+  kind: app
+  description: |
+   扫描Linux上所有已安装软件，基于Qt实现---Scan all installed software on Linux, based on Qt implementation.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/SantaJiang/GetLinuxAppsInfo.git
+  commit: 06695e076fd47bf21a56ac8b227049d8491f7ace
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
