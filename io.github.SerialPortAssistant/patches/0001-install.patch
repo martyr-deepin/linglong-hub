@@ -1,0 +1,44 @@
+From f06f5eaa575961b833d8205541945f34c6455bfd Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 3 Dec 2023 10:22:09 +0800
+Subject: [PATCH] install
+
+---
+ SerialPortAssistant.desktop | 8 ++++++++
+ SerialPortAssistant.pro     | 8 ++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 SerialPortAssistant.desktop
+
+diff --git a/SerialPortAssistant.desktop b/SerialPortAssistant.desktop
+new file mode 100644
+index 0000000..298e16b
+--- /dev/null
++++ b/SerialPortAssistant.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=SerialPortAssistant
++Name=SerialPortAssistant
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/SerialPortAssistant.pro b/SerialPortAssistant.pro
+index 86d3dce..46db386 100644
+--- a/SerialPortAssistant.pro
++++ b/SerialPortAssistant.pro
+@@ -25,3 +25,11 @@ CONFIG += c++11
+ 
+ RESOURCES += \
+     resource/resource.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =SerialPortAssistant.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+-- 
+2.33.1
+
