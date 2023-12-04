@@ -1,0 +1,19 @@
+package:
+  id: libxmp
+  name: libxmp 
+  version: 4.6.0
+  kind: lib
+  description: |
+     Libxmp is a library that renders module files to PCM data.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/libxmp/libxmp.git
+  commit: ebc86c24131c9d3aaf4d04329c668b974a58616f
+
+build:
+  kind: cmake
