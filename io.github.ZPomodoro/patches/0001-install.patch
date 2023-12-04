@@ -1,0 +1,49 @@
+From 7961f9aab95ee860309a352c7a65e9493f7da34a Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 1 Dec 2023 12:28:00 +0800
+Subject: [PATCH] install
+
+---
+ ZPomodoro.desktop |  8 ++++++++
+ ZPomodoro.pro     | 10 +++++++++-
+ 2 files changed, 17 insertions(+), 1 deletion(-)
+ create mode 100644 ZPomodoro.desktop
+
+diff --git a/ZPomodoro.desktop b/ZPomodoro.desktop
+new file mode 100644
+index 0000000..90e2556
+--- /dev/null
++++ b/ZPomodoro.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=ZPomodoro
++Name=ZPomodoro
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/ZPomodoro.pro b/ZPomodoro.pro
+index 4637c92..104882b 100644
+--- a/ZPomodoro.pro
++++ b/ZPomodoro.pro
+@@ -30,5 +30,13 @@ HEADERS += \
+ RESOURCES += zpomodoro.qrc
+ 
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =ZPomodoro.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
