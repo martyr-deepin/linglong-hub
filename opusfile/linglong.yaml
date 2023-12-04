@@ -1,0 +1,21 @@
+package:
+  id: opusfile
+  name: opusfile 
+  version: 0.12.0
+  kind: lib
+  description: |
+     The opusfile and opusurl libraries provide a high-level API for decoding and seeking within .opus files on disk or over http(s).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+depends:
+  - id: doxygen/1.9.8
+
+source:
+  kind: git
+  url: https://github.com/xiph/opusfile.git
+  commit: 9d718345ce03b2fad5d7d28e0bcd1cc69ab2b166
+  #patch: patches/0001-fix-install.patch
+build:
+  kind: cmake
