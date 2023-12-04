@@ -1,0 +1,28 @@
+package:
+  id: io.github.parolottero
+  name: parolottero
+  version: 2.0.0
+  kind: app
+  description: |
+    Word game similar to Boggle and Ruzzle
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/ltworf/parolottero.git
+  commit: 2347f9a134aa8e64a4f3b8e42056855e5dd39afb
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

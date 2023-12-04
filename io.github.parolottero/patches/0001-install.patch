@@ -1,0 +1,61 @@
+From 5bcb470b5c13b81b330ffd44061cea305f65e689 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 22 Nov 2023 20:46:20 +0800
+Subject: [PATCH] install
+
+---
+ src/parolottero.desktop |  8 ++++++++
+ src/parolottero.pro     | 13 ++++++++++---
+ 2 files changed, 18 insertions(+), 3 deletions(-)
+ create mode 100644 src/parolottero.desktop
+
+diff --git a/src/parolottero.desktop b/src/parolottero.desktop
+new file mode 100644
+index 0000000..669c782
+--- /dev/null
++++ b/src/parolottero.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=parolottero
++Name=parolottero
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/src/parolottero.pro b/src/parolottero.pro
+index ba1ec0f..d3f236d 100644
+--- a/src/parolottero.pro
++++ b/src/parolottero.pro
+@@ -59,17 +59,24 @@ isEmpty(target.path) {
+ INSTALLS += target
+ 
+ launcher.files = extras/parolottero.desktop
+-launcher.path = $${DESTDIR}/usr/share/applications/
++launcher.path = $$PREFIX/share/applications/
+ INSTALLS += launcher
+ 
+ icon.files = extras/parolottero.svg
+-icon.path = $${DESTDIR}/usr/share/icons/hicolor/48x48/apps/
++icon.path = $$PREFIX/share/icons/hicolor/48x48/apps/
+ INSTALLS += icon
+ 
+ manpage.files = extras/parolottero.6
+-manpage.path = $${DESTDIR}/usr/share/man/man6/
++manpage.path = $$PREFIX/usr/share/man/man6/
+ INSTALLS += manpage
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =parolottero.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+ export(INSTALLS)
+ 
+ DISTFILES += \
+-- 
+2.33.1
+
