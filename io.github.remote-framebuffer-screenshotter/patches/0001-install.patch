@@ -1,0 +1,44 @@
+From 15f48802ae6633b11d5d132a31cb82a5dc8dc511 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 30 Nov 2023 15:43:40 +0800
+Subject: [PATCH] install
+
+---
+ RFBSS.desktop | 8 ++++++++
+ RFBSS.pro     | 7 ++++++-
+ 2 files changed, 14 insertions(+), 1 deletion(-)
+ create mode 100644 RFBSS.desktop
+
+diff --git a/RFBSS.desktop b/RFBSS.desktop
+new file mode 100644
+index 0000000..9ead8e9
+--- /dev/null
++++ b/RFBSS.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=RFBSS
++Name=RFBSS
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/RFBSS.pro b/RFBSS.pro
+index c53b198..d39704c 100644
+--- a/RFBSS.pro
++++ b/RFBSS.pro
+@@ -57,5 +57,10 @@ else:unix:CONFIG(debug, debug|release) LIBS += -L"/usr/local/lib" -lssh
+ #else:win32:CONFIG(debug, debug|release) LIBS += $$quote(C:/Program Files (x86)/Microsoft SDKs/Windows/v7.1A/Lib/WS2_32.lib)
+ 
+ 
+-
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =RFBSS.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+ 
+-- 
+2.33.1
+

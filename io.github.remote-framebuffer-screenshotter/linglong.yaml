@@ -1,0 +1,20 @@
+package:
+  id: io.github.remote-framebuffer-screenshotter
+  name: remote-framebuffer-screenshotter
+  version: 1.0.0
+  kind: app
+  description: |
+    It captures framebuffer's screenshots from remote devices and save them in many image formats.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/lucadesogus/remote-framebuffer-screenshotter.git
+  commit: eacf2751fc460fae15ded1142a665a2ff51c9e1a
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
