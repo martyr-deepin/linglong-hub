@@ -1,0 +1,46 @@
+From be2827153de22f26d820ef90de32c7b48eabd064 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 2 Dec 2023 13:28:23 +0800
+Subject: [PATCH] install
+
+---
+ src/UBFG.desktop | 8 ++++++++
+ src/font.pro     | 8 ++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 src/UBFG.desktop
+
+diff --git a/src/UBFG.desktop b/src/UBFG.desktop
+new file mode 100644
+index 0000000..bc50ee4
+--- /dev/null
++++ b/src/UBFG.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=UBFG
++Name=UBFG
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/src/font.pro b/src/font.pro
+index ce46638..bd08a29 100755
+--- a/src/font.pro
++++ b/src/font.pro
+@@ -31,3 +31,11 @@ HEADERS += mainwindow.h \
+ FORMS += mainwindow.ui
+ QMAKE_CXXFLAGS -= -fopenmp
+ QMAKE_LDFLAGS += -fopenmp
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =UBFG.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
