@@ -1,0 +1,39 @@
+From 92a7bb6d5fddfa22d20b0f704a8320320344a26d Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 3 Dec 2023 17:26:53 +0800
+Subject: [PATCH] install
+
+---
+ pixel/pixel.pro | 13 +++++++------
+ 1 file changed, 7 insertions(+), 6 deletions(-)
+
+diff --git a/pixel/pixel.pro b/pixel/pixel.pro
+index 75c2748..e462899 100644
+--- a/pixel/pixel.pro
++++ b/pixel/pixel.pro
+@@ -43,15 +43,16 @@ DISTFILES += \
+ 
+ unix {
+     QMAKE_STRIP = echo
+-    target.path = /usr/bin
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =thepixel.desktop
++desktop.path = $$DATADIR/applications/
+ 
+-    appentry.path = /usr/share/applications
+-    appentry.files = thepixel.desktop
+-
+-    icon.path = /usr/share/icons/hicolor/scalable/apps/
++    icons.path = $$PREFIX/share/icons
+     icon.files = thepixel.svg
+ 
+-    INSTALLS += target appentry icon
++    INSTALLS += target desktop icon
+ }
+ 
+ RESOURCES += \
+-- 
+2.33.1
+
