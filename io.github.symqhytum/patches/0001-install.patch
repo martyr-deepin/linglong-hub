@@ -1,0 +1,48 @@
+From 34f1e5e27c0e6b757c0344453866dd3ba8d7f457 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 3 Dec 2023 20:56:39 +0800
+Subject: [PATCH] install
+
+---
+ Symphytum.pro     | 9 +++++++++
+ symphytum.desktop | 9 +++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 symphytum.desktop
+
+diff --git a/Symphytum.pro b/Symphytum.pro
+index 98a1c43..23b629f 100644
+--- a/Symphytum.pro
++++ b/Symphytum.pro
+@@ -229,3 +229,12 @@ TRANSLATIONS = stuff/translations/symphytum_de.ts \
+ 
+ ICON = resources/images/icons/symphytum.icns # for mac
+ RC_FILE = resources/symphytum.rc # for windows
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =symphytum.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = resources/images/icons/symphytum.icns
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+diff --git a/symphytum.desktop b/symphytum.desktop
+new file mode 100644
+index 0000000..bb3e7ba
+--- /dev/null
++++ b/symphytum.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=symphytum
++Name=symphytum
++icon=symphytum
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+-- 
+2.33.1
+
