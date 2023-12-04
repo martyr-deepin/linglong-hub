@@ -1,0 +1,51 @@
+From ccf65841de8e80aca33762ffd6bf76425081cd3a Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 1 Dec 2023 10:18:48 +0800
+Subject: [PATCH] install
+
+---
+ src/ProcDepMonitor.pro     | 12 +++++++++++-
+ src/procdepmonitor.desktop |  9 +++++++++
+ 2 files changed, 20 insertions(+), 1 deletion(-)
+ create mode 100644 src/procdepmonitor.desktop
+
+diff --git a/src/ProcDepMonitor.pro b/src/ProcDepMonitor.pro
+index f0acbc8..cb7ce00 100644
+--- a/src/ProcDepMonitor.pro
++++ b/src/ProcDepMonitor.pro
+@@ -143,5 +143,15 @@ CONFIG(debug, debug|release) {
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =procdepmonitor.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = logo.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+diff --git a/src/procdepmonitor.desktop b/src/procdepmonitor.desktop
+new file mode 100644
+index 0000000..22f2d0c
+--- /dev/null
++++ b/src/procdepmonitor.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=procdepmonitor
++Name=procdepmonitor
++icons=logo.ico
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+-- 
+2.33.1
+
