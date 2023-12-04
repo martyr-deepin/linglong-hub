@@ -1,0 +1,47 @@
+From 4398ae9c6a6cca0470f53a94f7ab38e19f965aa5 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 30 Nov 2023 15:09:46 +0800
+Subject: [PATCH] install
+
+---
+ src/AutoFiller.desktop |  9 +++++++++
+ src/AutoFiller.pro     | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 src/AutoFiller.desktop
+
+diff --git a/src/AutoFiller.desktop b/src/AutoFiller.desktop
+new file mode 100644
+index 0000000..49333ab
+--- /dev/null
++++ b/src/AutoFiller.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=AutoFiller
++Name=AutoFiller
++icon=myappico
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/src/AutoFiller.pro b/src/AutoFiller.pro
+index e715213..4b9fc25 100644
+--- a/src/AutoFiller.pro
++++ b/src/AutoFiller.pro
+@@ -43,3 +43,13 @@ LIBS    += -luser32
+ FORMS   += mainwindow.ui
+ 
+ RC_ICONS = myappico.ico
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =AutoFiller.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = myappico.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
++
+-- 
+2.33.1
+

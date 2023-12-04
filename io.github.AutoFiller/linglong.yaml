@@ -1,0 +1,25 @@
+package:
+  id: io.github.AutoFiller
+  name: AutoFiller
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt based program to assist in tedious form filling.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/jakeson21/AutoFiller.git
+  commit: 90a0d725dd77798b9307fc0440e04afadb1429fd
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+  
