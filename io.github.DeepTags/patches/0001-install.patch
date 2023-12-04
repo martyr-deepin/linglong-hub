@@ -1,0 +1,51 @@
+From 10547d373d294d3d86bb85edb7ebffa76b00f73e Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 1 Dec 2023 12:20:01 +0800
+Subject: [PATCH] install
+
+---
+ deeptags.desktop |  9 +++++++++
+ deeptags.pro     | 11 ++++++++++-
+ 2 files changed, 19 insertions(+), 1 deletion(-)
+ create mode 100644 deeptags.desktop
+
+diff --git a/deeptags.desktop b/deeptags.desktop
+new file mode 100644
+index 0000000..b38eaa2
+--- /dev/null
++++ b/deeptags.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=deeptags
++Name=deeptags
++icon=deeptags
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/deeptags.pro b/deeptags.pro
+index be246c3..6ccc8e6 100644
+--- a/deeptags.pro
++++ b/deeptags.pro
+@@ -103,6 +103,15 @@ exists(3rdParty/SingleApplication/singleapplication.pri) {
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$$TARGET/bin
+-else: unix:!android: target.path = /opt/$$TARGET/bin
++else: unix:!android: #target.path = /opt/$$TARGET/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =deeptags.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = deeptags.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
++
+-- 
+2.33.1
+
