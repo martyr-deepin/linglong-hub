@@ -1,0 +1,54 @@
+From 2fd6817faa26d15035225f6d36b553bf172d4fee Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 1 Dec 2023 15:38:41 +0800
+Subject: [PATCH] install
+
+---
+ GraphBuilder.desktop |  9 +++++++++
+ GraphBuilder.pro     | 10 +++++++++-
+ 2 files changed, 18 insertions(+), 1 deletion(-)
+ create mode 100644 GraphBuilder.desktop
+
+diff --git a/GraphBuilder.desktop b/GraphBuilder.desktop
+new file mode 100644
+index 0000000..9cc8689
+--- /dev/null
++++ b/GraphBuilder.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=GraphBuilder
++Name=GraphBuilder
++icon=APP
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/GraphBuilder.pro b/GraphBuilder.pro
+index 0059c22..70e6c56 100644
+--- a/GraphBuilder.pro
++++ b/GraphBuilder.pro
+@@ -4,7 +4,7 @@ RC_FILE = app.rc
+ 
+ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+ 
+-TARGET = "Graph Builder"
++TARGET = "GraphBuilder"
+ VERSION = 1.0
+ TEMPLATE = app
+ 
+@@ -52,3 +52,11 @@ FORMS    += mainwindow.ui \
+ RESOURCES += Resourses/resourses.qrc \
+              qdarkstyle/style.qrc
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =GraphBuilder.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = APP.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+

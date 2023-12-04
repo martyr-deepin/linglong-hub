@@ -1,0 +1,20 @@
+package:
+  id: io.github.Graph_Visualiser
+  name: Graph_Visualiser
+  version: 0.0.1
+  kind: app
+  description: |
+    Desktop App built with Qt to visualize graph Algorithms.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dualword/Graph_Visualiser.git
+  commit: e262041f7c32435eee0ddaa7975378113d599309
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
