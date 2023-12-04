@@ -1,0 +1,40 @@
+diff --git a/Seq64qt5/Seq64qt5.pro b/Seq64qt5/Seq64qt5.pro
+index 5101f9d0..2040f1f7 100644
+--- a/Seq64qt5/Seq64qt5.pro
++++ b/Seq64qt5/Seq64qt5.pro
+@@ -97,6 +97,18 @@ unix:!macx: LIBS += \
+ 
+ windows: LIBS += -lwinmm
+ 
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += ../debian/sequencer64.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = ../resources/icons/sequencer64.png
++INSTALLS += icons
++
+ #******************************************************************************
+ # Seq64qt5.pro (Seq64qt5)
+ #------------------------------------------------------------------------------
+diff --git a/debian/sequencer64.desktop b/debian/sequencer64.desktop
+index 991692bd..d4ea1b76 100644
+--- a/debian/sequencer64.desktop
++++ b/debian/sequencer64.desktop
+@@ -3,10 +3,10 @@ Name=Sequencer64
+ GenericName=Sequencer64
+ Comment=MIDI Loop Sequencer derived from seq24
+ Comment[fr]=Séquenceur de boucle MIDI dérivé de seq24
+-Icon=/usr/share/pixmaps/sequencer64.xpm
++Icon=sequencer64.png
+ 
+ Type=Application
+ Categories=AudioVideo;Audio;
+ 
+-Exec=seq64
++Exec=qpseq64
+ Terminal=false
