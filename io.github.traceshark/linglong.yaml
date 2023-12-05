@@ -1,0 +1,20 @@
+package:
+  id: io.github.traceshark
+  name: traceshark
+  version: 0.9.14
+  kind: app
+  description: |
+    This is a tool for Linux kernel ftrace and perf events visualization
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/cunctator/traceshark.git
+  commit: 1d035593db2b7e88dec8a73c19890d29bec8e37c
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
