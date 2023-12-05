@@ -1,10 +1,10 @@
 package:
-  id: com.gitee.qt_CoinFlip.git
-  name: qt_CoinFlip.git
+  id: com.gitee.tinnu-simple-qt-calculator
+  name: tinnu-simple-qt-calculator
   version: 0.0.1
   kind: app
   description: |
-   翻金币小游戏.
+   计算器.
 
 runtime:
   id: org.deepin.Runtime
