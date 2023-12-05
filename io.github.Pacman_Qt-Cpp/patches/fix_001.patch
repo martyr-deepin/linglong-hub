@@ -1,0 +1,21 @@
+--- ../Pacman.pro	2023-12-05 11:53:32.375359000 +0800
++++ ../Pacman.pro	2023-12-05 11:53:05.371388000 +0800
+@@ -29,3 +29,18 @@
+ 
+ RESOURCES += \
+     resources.qrc
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++
++DESKTOP_FILE = ./Pacman.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=Pacman' >> $$DESKTOP_FILE")
++system("echo 'Comment=Pacman.' >> $$DESKTOP_FILE")
++system("echo 'Exec=Pacman' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop

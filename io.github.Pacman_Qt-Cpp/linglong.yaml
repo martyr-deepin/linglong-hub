@@ -1,0 +1,22 @@
+package:
+  id: io.github.Pacman_Qt-Cpp
+  name: Pacman_Qt-Cpp
+  version: 0.0.1
+  kind: app
+  description: |
+    Pac-Man, originally called Puck Man in Japan, is a 1980 maze action video game developed and released by Namco for arcades. Game is created in Qt/C++.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/Przemekkkth/Pacman_Qt-Cpp.git
+  commit: 357b69b7d5a204d5c3464fc0beb9b2457ab1a5d6
+  patch:
+    - patches/fix_001.patch
+    - patches/fix_002.patch
+build:
+  kind: qmake

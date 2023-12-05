@@ -1,0 +1,11 @@
+--- ../src/gamescene.cpp	2023-12-05 11:57:04.139419000 +0800
++++ ../src/gamescene.cpp	2023-12-05 11:21:53.325806000 +0800
+@@ -7,7 +7,7 @@
+ #include <QPainter>
+ #include <QDir>
+ #include <QFontDatabase>
+-
++#include <cmath>
+ GameScene::GameScene(QObject *parent)
+     : QGraphicsScene{parent},
+       m_prizeCanGenerated(true), m_deltaTime(0.0f),
