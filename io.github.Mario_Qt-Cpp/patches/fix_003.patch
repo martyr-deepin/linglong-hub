@@ -1,0 +1,26 @@
+--- ../src/entities/mario.cpp	2023-12-05 14:53:34.852885000 +0800
++++ ../src/entities/mario.cpp	2023-12-05 09:22:57.758247000 +0800
+@@ -162,12 +162,12 @@
+ void Mario::chooseAnimation()
+ {
+     setFliped();
+-    if(m_onGround && std::fabs(m_velocityX) > 1.f)
++    if(m_onGround && std::labs(m_velocityX) > 1.f)
+     {
+         setAnimatationState("run");
+ 
+     }
+-    if(m_onGround && std::fabs(m_velocityX) < 0.5f)
++    if(m_onGround && std::labs(m_velocityX) < 0.5f)
+     {
+         if(m_crouchning)
+         {
+@@ -195,7 +195,7 @@
+     {
+         m_velocityX += -DRAG_VALUE * m_velocityX * elapsedTime;
+ 
+-        if (std::fabs(m_velocityX) < 0.01f)
++        if (std::labs(m_velocityX) < 0.01f)
+         {
+             m_velocityX = 0.0f;
+         }

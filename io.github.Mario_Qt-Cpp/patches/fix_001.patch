@@ -1,0 +1,12 @@
+--- ../src/utils/mapmanager.cpp	2023-12-05 14:45:52.048526168 +0800
++++ ../src/utils/mapmanager.cpp	2023-12-05 09:26:31.340561000 +0800
+@@ -4,7 +4,8 @@
+ #include "../entities/block.h"
+ #include "../entities/questionblock.h"
+ #include "../entities/enemy.h"
+-
++#include <QtCore/qdebug.h>
++#include <cmath>
+ const QMap<QRgb, QPoint> MapManager::colorToPointOfSpriteMap={
+     {qRgb(146, 219, 0  ), QPoint(5 , 0 )},
+     {qRgb(146, 146, 0  ), QPoint(4 , 0 )},

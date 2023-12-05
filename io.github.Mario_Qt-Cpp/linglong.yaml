@@ -1,0 +1,25 @@
+package:
+  id: io.github.Mario_Qt-Cpp
+  name: Mario_Qt-Cpp
+  version: 0.0.1
+  kind: app
+  description: |
+    Remake of the original Super Mario Bros game written in Qt/C++.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/Przemekkkth/Mario_Qt-Cpp.git
+  commit: cd1693e5fc1121e2c38b63f82cb50eb2e0a34e1b
+  patch: 
+    - patches/fix_001.patch
+    - patches/fix_002.patch
+    - patches/fix_003.patch
+    - patches/fix_004.patch
+ 
+build:
+  kind: qmake

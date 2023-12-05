@@ -1,0 +1,11 @@
+--- ../src/entities/goomba.cpp	2023-12-05 14:56:53.275315035 +0800
++++ ../src/entities/goomba.cpp	2023-12-05 09:23:30.163552000 +0800
+@@ -32,7 +32,7 @@
+     checkCollisionWithBlocks();
+     checkCollisonWithEnemies();
+     setPosition(position().x() + m_velocityX, position().y() + m_velocityY);
+-    if(m_velocityX > std::fabs(0.1f))
++    if(m_velocityX > std::labs(0.1f))
+     {
+         setAnimation("running");
+     }

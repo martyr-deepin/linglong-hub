@@ -1,0 +1,21 @@
+--- ../MarioQt.pro	2023-12-05 14:43:32.895193916 +0800
++++ ../MarioQt.pro	2023-12-05 14:46:37.872962000 +0800
+@@ -34,3 +34,18 @@
+ 
+ RESOURCES += \
+     resources.qrc
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++
++DESKTOP_FILE = ./MarioQt.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=MarioQt' >> $$DESKTOP_FILE")
++system("echo 'Comment=MarioQt.' >> $$DESKTOP_FILE")
++system("echo 'Exec=MarioQt' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
