@@ -1,0 +1,19 @@
+package:
+  id: hidapi
+  name: hidapi
+  version: 0.14.0
+  kind: lib
+  description: |
+    A Simple cross-platform library for communicating with HID devices
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/libusb/hidapi.git
+  commit: 7011fa98af2dde00c298105735e470de800288c7
+
+build:
+  kind: cmake
