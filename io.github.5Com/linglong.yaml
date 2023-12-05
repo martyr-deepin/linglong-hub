@@ -1,0 +1,20 @@
+package:
+  id: io.github.5Com
+  name: 5Com
+  version: 0.5.1
+  kind: app
+  description: |
+    Serial port access application
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/pgeorgiev98/5Com.git
+  commit: 58af10f3f9d7d7dd90b9c571b135fff9557e9df3
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

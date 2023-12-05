@@ -1,0 +1,46 @@
+From ca27f42d0518f91fba422d91b246975632006221 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 5 Dec 2023 11:12:03 +0800
+Subject: [PATCH] install
+
+---
+ app/5Com.desktop | 9 +++++++++
+ app/app.pro      | 8 ++++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 app/5Com.desktop
+
+diff --git a/app/5Com.desktop b/app/5Com.desktop
+new file mode 100644
+index 0000000..fdbec80
+--- /dev/null
++++ b/app/5Com.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=5Com
++Name=5Com
++icon=5Com
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/app/app.pro b/app/app.pro
+index b41aed6..3638608 100644
+--- a/app/app.pro
++++ b/app/app.pro
+@@ -72,3 +72,11 @@ win32:QMAKE_LFLAGS_RELEASE += -static-libstdc++ -static-libgcc -static -lpthread
+ win32:RC_ICONS = res/5Com.ico
+ 
+ unix:!macx: include(unixconf.pri)
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =5Com.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = res/5Com.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
