@@ -1,0 +1,32 @@
+package:
+  id: io.github.OpenRGB
+  name: OpenRGB
+  version: 0.9.0
+  kind: app
+  description: |
+    Open source RGB lighting control that doesn't depend on manufacturer software. Supports Windows, Linux, MacOS. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: hidapi
+    type: runtime
+    version: 0.14.0
+    source:
+      kind: git
+      url: https://github.com/libusb/hidapi.git
+      version: master
+      commit: 7011fa98af2dde00c298105735e470de800288c7
+    build:
+      kind: cmake
+
+source:
+  kind: git
+  url: https://github.com/CalcProgrammer1/OpenRGB.git
+  commit: 308bb6f9b8169c8e1c5123f9499373509f140268
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
