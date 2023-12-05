@@ -1,0 +1,20 @@
+package:
+  id: io.github.unsplash4deepin-qt
+  name: unsplash4deepin-qt
+  version: 1.6.0
+  kind: app
+  description: |
+    适配deepin20、win10和mac的unsplash壁纸下载器
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/shansb/unsplash4deepin-qt.git
+  commit: e80a8121134191a3b7639514d67431665011fa84
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

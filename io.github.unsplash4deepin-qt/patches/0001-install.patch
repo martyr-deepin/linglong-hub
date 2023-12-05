@@ -1,0 +1,45 @@
+From 9b934698caf2386bdc426194c489553f7328120c Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Tue, 5 Dec 2023 10:27:21 +0800
+Subject: [install.patch_] install
+
+---
+ unsplash4deepin.desktop |  6 ++++++
+ unsplash4deepin.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 unsplash4deepin.desktop
+
+diff --git a/unsplash4deepin.desktop b/unsplash4deepin.desktop
+new file mode 100644
+index 0000000..1119061
+--- /dev/null
++++ b/unsplash4deepin.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=unsplash4deepin
++Exec=unsplash4deepin
++Terminal=false
+\ No newline at end of file
+diff --git a/unsplash4deepin.pro b/unsplash4deepin.pro
+index 7b1ed12..14ddafd 100644
+--- a/unsplash4deepin.pro
++++ b/unsplash4deepin.pro
+@@ -48,3 +48,13 @@ TRANSLATIONS += \
+ 
+ DISTFILES += \
+     res.rc
++
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = unsplash4deepin.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+
