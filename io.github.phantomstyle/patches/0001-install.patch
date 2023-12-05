@@ -1,0 +1,44 @@
+From 48ac84c65df146016fbe347e319cef96849ba44e Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 4 Dec 2023 19:30:59 +0800
+Subject: [PATCH] install
+
+---
+ funhouse/funhouse.desktop | 8 ++++++++
+ funhouse/funhouse.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 funhouse/funhouse.desktop
+
+diff --git a/funhouse/funhouse.desktop b/funhouse/funhouse.desktop
+new file mode 100644
+index 0000000..e9a07c7
+--- /dev/null
++++ b/funhouse/funhouse.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=funhouse
++Name=funhouse
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/funhouse/funhouse.pro b/funhouse/funhouse.pro
+index 557e245..13b17cc 100644
+--- a/funhouse/funhouse.pro
++++ b/funhouse/funhouse.pro
+@@ -82,3 +82,10 @@ msvc {
+         }
+     }
+ }
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =funhouse.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+-- 
+2.33.1
+

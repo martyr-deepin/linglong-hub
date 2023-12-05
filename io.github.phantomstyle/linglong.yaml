@@ -1,0 +1,29 @@
+package:
+  id: io.github.phantomstyle
+  name: phantomstyle
+  version: 0.0.1
+  kind: app
+  description: |
+    Cross-platform QStyle for traditionalists
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/randrew/phantomstyle.git
+  commit: 309c97a955f6cdfb1987d1dd04c34d667e4bfce1
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd funhouse
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
+
