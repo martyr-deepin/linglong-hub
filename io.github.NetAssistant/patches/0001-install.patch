@@ -1,0 +1,46 @@
+From ff0f5fe7a28797a5e44b4230de4400ca141783aa Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 4 Dec 2023 19:27:00 +0800
+Subject: [PATCH] install
+
+---
+ NetAssistant.desktop | 9 +++++++++
+ NetAssistant.pro     | 8 ++++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 NetAssistant.desktop
+
+diff --git a/NetAssistant.desktop b/NetAssistant.desktop
+new file mode 100644
+index 0000000..33e5b09
+--- /dev/null
++++ b/NetAssistant.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=NetAssistant
++Name=NetAssistant
++icon=NetAssistant
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/NetAssistant.pro b/NetAssistant.pro
+index 55ff35b..0cd06a0 100644
+--- a/NetAssistant.pro
++++ b/NetAssistant.pro
+@@ -41,3 +41,11 @@ TRANSLATIONS += language/English.ts \
+                 language/Chinese.ts
+ 
+ ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =NetAssistant.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = NetAssistant.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+

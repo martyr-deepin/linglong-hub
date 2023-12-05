@@ -1,0 +1,20 @@
+package:
+  id: io.github.NetAssistant
+  name: NetAssistant
+  version: 1.0.0
+  kind: app
+  description: |
+    A UDP/TCP Assistant. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/busyluo/NetAssistant.git
+  commit: e6bca9a79558e74c6fb9b3370818e6224f60800b
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
