@@ -1,0 +1,21 @@
+--- ../SudokuQt.pro	2023-12-05 10:58:55.570625000 +0800
++++ ../SudokuQt.pro	2023-12-05 10:57:47.614424000 +0800
+@@ -29,3 +29,18 @@
+ 
+ RESOURCES += \
+     resource.qrc
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++
++DESKTOP_FILE = ./SudokuQt.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=SudokuQt' >> $$DESKTOP_FILE")
++system("echo 'Comment=SudokuQt.' >> $$DESKTOP_FILE")
++system("echo 'Exec=SudokuQt' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop

@@ -1,0 +1,20 @@
+package:
+  id: io.github.Sudoku_Qt-Cpp
+  name: Sudoku_Qt-Cpp
+  version: 0.0.1
+  kind: app
+  description: |
+    Sudoku is a logic-based, combinatorial number-placement puzzle. In classic Sudoku, the objective is to fill a 9 × 9 grid with digits so that each column, each row, and each of the nine 3 × 3 subgrids that compose the grid contain all of the digits from 1 to 9.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Przemekkkth/Sudoku_Qt-Cpp.git
+  commit: 271f560ab560c9f3d069f644e0d66467ac0482a6
+  patch: patches/fix_sudo.patch
+
+build:
+  kind: qmake
