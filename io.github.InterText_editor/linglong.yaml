@@ -1,0 +1,22 @@
+package:
+  id: io.github.InterText_editor
+  name: InterText_editor
+  version: 1.6.3
+  kind: app
+  description: |
+    InterText is an editor for aligned parallel texts. It has been developed for the project InterCorp to edit and manage alignments of multiple parallel language versions of texts at the level of sentences.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/czcorpus/InterText_editor.git
+  commit: 5a345ac93b6b5eff5148f0d40e75cf6eb4201f7b
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
+
