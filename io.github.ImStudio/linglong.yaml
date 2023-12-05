@@ -1,0 +1,23 @@
+package:
+  id: io.github.ImStudio
+  name: ImStudio
+  version: 0.9.5
+  kind: app
+  description: |
+    Real-time GUI layout designer for Dear ImGui
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: glfw/3.3.8
+
+source:
+  kind: git
+  url: https://github.com/Raais/ImStudio.git
+  commit: 5520fde91b6118200a27e3394822934f53c6838d
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
