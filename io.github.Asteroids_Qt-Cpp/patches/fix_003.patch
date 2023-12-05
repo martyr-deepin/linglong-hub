@@ -1,0 +1,21 @@
+--- ../Asteroids.pro	2023-12-05 13:38:20.570255000 +0800
++++ ../Asteroids.pro	2023-12-05 13:37:54.922160000 +0800
+@@ -23,3 +23,18 @@
+ 
+ RESOURCES += \
+     resource.qrc
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++
++DESKTOP_FILE = ./Asteroids.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=Asteroids' >> $$DESKTOP_FILE")
++system("echo 'Comment=Asteroids.' >> $$DESKTOP_FILE")
++system("echo 'Exec=Asteroids' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop

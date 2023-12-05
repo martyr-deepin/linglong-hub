@@ -1,0 +1,11 @@
+--- ../entity.cpp	2023-12-05 13:38:36.250319000 +0800
++++ ../entity.cpp	2023-12-05 09:46:14.753431000 +0800
+@@ -1,7 +1,7 @@
+ #include "entity.h"
+ #include <QGraphicsScene>
+ #include <QGraphicsEllipseItem>
+-
++#include <QtCore/qdebug.h>
+ Entity::Entity()
+ {
+     m_life = true;

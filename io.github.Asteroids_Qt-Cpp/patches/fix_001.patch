@@ -1,0 +1,9 @@
+--- ../animation.cpp	2023-12-05 13:38:29.242290000 +0800
++++ ../animation.cpp	2023-12-05 09:46:44.327962000 +0800
+@@ -1,5 +1,5 @@
+ #include "animation.h"
+-
++#include <QtCore/qdebug.h>
+ Animation::Animation()
+ {
+ 
