@@ -1,0 +1,22 @@
+diff -Naur B/QtInputMethod_GooglePinyin.desktop A/QtInputMethod_GooglePinyin.desktop
+--- B/QtInputMethod_GooglePinyin.desktop	1970-01-01 08:00:00.000000000 +0800
++++ A/QtInputMethod_GooglePinyin.desktop	2023-12-05 16:05:10.053411773 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Exec=tgtsmlInputContextPlugin
++Name=tgtsmlInputContextPlugin
++Type=Application
+diff -Naur B/tgtsmlInputContextPlugin.pro A/tgtsmlInputContextPlugin.pro
+--- B/tgtsmlInputContextPlugin.pro	2023-12-05 16:00:12.106970095 +0800
++++ A/tgtsmlInputContextPlugin.pro	2023-12-05 16:12:20.777907763 +0800
+@@ -7,3 +7,10 @@
+ 
+ plugin.depends  = googlepinyin
+ demo.depends = plugin
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = tgtsmlInputContextPlugin.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
