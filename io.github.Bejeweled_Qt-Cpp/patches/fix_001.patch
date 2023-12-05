@@ -1,0 +1,9 @@
+--- ../game.cpp	2023-12-05 13:25:28.352567000 +0800
++++ ../game.cpp	2023-12-05 09:53:07.645171000 +0800
+@@ -1,5 +1,5 @@
+ #include "game.h"
+-
++#include <QString>
+ const QSize Game::RESOLUTION = QSize(740, 480);
+ const QPoint Game::OFFSET = QPoint(48,24);
+ const int Game::TILE_SIZE = 54;

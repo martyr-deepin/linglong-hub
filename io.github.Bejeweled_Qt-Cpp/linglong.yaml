@@ -1,0 +1,24 @@
+package:
+  id: io.github.Bejeweled_Qt-Cpp
+  name: Bejeweled_Qt-Cpp
+  version: 0.0.1
+  kind: app
+  description: |
+    Bejeweled (also referred as Bejeweled Deluxe in some releases) is a tile-matching puzzle video game by PopCap Games, developed for browsers in 2001. The first game developed by PopCap under their current name, Bejeweled, involves lining up three or more multi-colored gems to clear them from the game board, with chain reactions potentially follow….
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/Przemekkkth/Bejeweled_Qt-Cpp.git
+  commit: 68d91f96e1d0113e00bd48cf0af7c8205c82e26e
+  patch: 
+    - patches/fix_001.patch
+    - patches/fix_002.patch
+    - patches/fix_003.patch
+
+build:
+  kind: qmake
