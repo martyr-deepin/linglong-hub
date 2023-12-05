@@ -1,0 +1,20 @@
+package:
+  id: io.github.QSubber
+  name: QSubber
+  version: 1.0.0
+  kind: app
+  description: |
+    About OpenSubtitles.org Qt5 download client,supporting search by hash, detailed search, download, and other features.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/vaurelios/QSubber.git
+  commit: 1fa5a5429b176229090f1a515ec73749ba38d969
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

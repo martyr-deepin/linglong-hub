@@ -1,0 +1,27 @@
+From 240771a7b629219a308ab56c57abf9014b707f87 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 5 Dec 2023 12:13:23 +0800
+Subject: [PATCH] install
+
+---
+ qsubber.pro | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/qsubber.pro b/qsubber.pro
+index 2544e79..0708682 100644
+--- a/qsubber.pro
++++ b/qsubber.pro
+@@ -34,3 +34,10 @@ RCC_DIR = build/.rcc
+ UI_DIR = build/.ui
+ 
+ TARGET = qsubber
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =data/qsubber.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
