@@ -1,0 +1,20 @@
+package:
+  id: io.github.ProHex
+  name: ProHex
+  version: 1.1.0
+  kind: app
+  description: |
+    ProHex is a crossplatform multilanguage modular HEX editor written in C++ and Qt5.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/PROPHESSOR/ProHex.git
+  commit: c18906313bee932e77ed058fb100329c94f8beae
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

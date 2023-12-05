@@ -1,0 +1,46 @@
+From ef19d52c956784e38e0406bd67e444734c31a3be Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 5 Dec 2023 12:03:22 +0800
+Subject: [PATCH] install
+
+---
+ _ProHex_.desktop | 9 +++++++++
+ _ProHex_.pro     | 8 ++++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 _ProHex_.desktop
+
+diff --git a/_ProHex_.desktop b/_ProHex_.desktop
+new file mode 100644
+index 0000000..8e82cd9
+--- /dev/null
++++ b/_ProHex_.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=_ProHex_
++Name=_ProHex_
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
++
+diff --git a/_ProHex_.pro b/_ProHex_.pro
+index 9dd2507..badff55 100644
+--- a/_ProHex_.pro
++++ b/_ProHex_.pro
+@@ -86,4 +86,12 @@ first.depends = $(first) copydata
+ export(first.depends)
+ export(copydata.commands)
+ QMAKE_EXTRA_TARGETS += first copydata
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =_ProHex_.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+ # //
+-- 
+2.33.1
+
