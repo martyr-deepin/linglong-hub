@@ -1,0 +1,20 @@
+package:
+  id: io.github.Drawly
+  name: Drawly
+  version: 1.0.0
+  kind: app
+  description: |
+    Drawing application
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/stamich/Drawly.git
+  commit: f7fa8a2a6933e700dc529c22cabbf33e11e1ac82
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
