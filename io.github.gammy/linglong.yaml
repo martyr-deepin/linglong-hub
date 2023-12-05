@@ -1,0 +1,19 @@
+package:
+  id: io.github.gammy
+  name: gammy
+  version: 0.9.64
+  kind: app
+  description: |
+    Adaptive screen brightness/temperature for Windows, Linux, FreeBSD
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Fushko/gammy.git
+  commit: 8ad32ab1a206e5ed2b5a67e0e4f91e652031f2de
+
+build:
+  kind: qmake

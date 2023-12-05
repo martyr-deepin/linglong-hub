@@ -1,0 +1,39 @@
+From fa244c61d6b18d16e843682799da6bd78469c1d1 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 4 Dec 2023 20:34:18 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt               | 2 ++
+ build_dir/gpsbabelfe.desktop | 8 ++++++++
+ 2 files changed, 10 insertions(+)
+ create mode 100644 build_dir/gpsbabelfe.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index da33def6..9f978002 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -506,3 +506,5 @@ if((CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR) AND NOT _isMultiConfig)
+ else()
+   message(WARNING "Document generation is only supported for in-source builds with single configuration generators.")
+ endif()
++install(PROGRAMS gui/gpsbabel.desktop DESTINATION share/applications)
++install(TARGETS ${CMAKE_CACHEFILE_DIR}/gui/GPSBabelFE/gpsbabelfe DESTINATION bin)
+diff --git a/build_dir/gpsbabelfe.desktop b/build_dir/gpsbabelfe.desktop
+new file mode 100644
+index 00000000..4aa2b358
+--- /dev/null
++++ b/build_dir/gpsbabelfe.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=gpsbabelfe
++Name=gpsbabelfe
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+-- 
+2.33.1
+
