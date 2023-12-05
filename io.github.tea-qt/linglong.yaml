@@ -1,0 +1,20 @@
+package:
+  id: io.github.tea-qt
+  name: tea-qt
+  version: 62.1.1
+  kind: app
+  description: |
+    TEA text editor
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/psemiletov/tea-qt.git
+  commit: d2cc8e0345e841842f452e7919a1d82905015c35
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
