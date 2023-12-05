@@ -1,0 +1,11 @@
+--- ../src/gamescene.cpp	2023-12-05 14:03:25.467174000 +0800
++++ ../src/gamescene.cpp	2023-12-05 09:37:05.555121000 +0800
+@@ -4,7 +4,7 @@
+ #include <QDir>
+ #include <QPainter>
+ #include <QGraphicsRectItem>
+-
++#include <QtCore/qdebug.h>
+ GameScene::GameScene(QObject *parent)
+     : QGraphicsScene{parent}, m_spaceship(),
+       m_leftArrowPressed(false), m_rightArrowPressed(false), m_spacebarPressed(false), m_loopTime(0.0f),

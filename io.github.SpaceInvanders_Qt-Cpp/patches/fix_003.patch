@@ -1,0 +1,11 @@
+--- ../src/level.cpp	2023-12-05 14:03:32.675237000 +0800
++++ ../src/level.cpp	2023-12-05 09:39:39.595820000 +0800
+@@ -5,7 +5,7 @@
+ #include "gamescene.h"
+ #include "enemy.h"
+ #include "ufo.h"
+-
++#include <QtCore/qdebug.h>
+ Level::Level(QGraphicsScene *scene)
+     : m_currentLevel(0)
+ {

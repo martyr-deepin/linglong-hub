@@ -1,0 +1,21 @@
+--- ../SpaceInvaders.pro	2023-12-05 14:03:47.783369000 +0800
++++ ../SpaceInvaders.pro	2023-12-05 14:07:08.137092000 +0800
+@@ -28,3 +28,18 @@
+ 
+ RESOURCES += \
+     resource.qrc
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++
++DESKTOP_FILE = ./SpaceInvaders.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=SpaceInvaders' >> $$DESKTOP_FILE")
++system("echo 'Comment=SpaceInvaders.' >> $$DESKTOP_FILE")
++system("echo 'Exec=SpaceInvaders' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop

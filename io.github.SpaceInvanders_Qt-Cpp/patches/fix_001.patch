@@ -1,0 +1,10 @@
+--- ../src/animation.cpp	2023-12-05 14:03:06.419008000 +0800
++++ ../src/animation.cpp	2023-12-05 09:39:40.267862000 +0800
+@@ -1,6 +1,6 @@
+ #include "animation.h"
+ #include <QGraphicsScene>
+-
++#include <QtCore/qdebug.h>
+ Animation::Animation(const QPixmap &pixmap, QSize tileSize, int countOfFrames, int timeOfFrame)
+     : m_currentFrame(0)
+ {

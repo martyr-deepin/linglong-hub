@@ -1,0 +1,25 @@
+package:
+  id: io.github.SpaceInvanders_Qt-Cpp
+  name: SpaceInvanders_Qt-Cpp
+  version: 0.0.1
+  kind: app
+  description: |
+    Space Invaders is a 1978 shoot 'em up arcade game developed by Tomohiro Nishikado. This is clone with new addons.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/Przemekkkth/SpaceInvanders_Qt-Cpp.git
+  commit: be6ee86f194f6b6bb0acce26a4c626bebe30dbd4
+  patch:
+    - patches/fix_001.patch
+    - patches/fix_002.patch
+    - patches/fix_003.patch
+    - patches/fix_004.patch
+    - patches/fix_005.patch
+build:
+  kind: qmake
