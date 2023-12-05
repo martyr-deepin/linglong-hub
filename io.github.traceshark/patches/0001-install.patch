@@ -1,0 +1,76 @@
+From 737ee0b757c4f0fd7143f8033286c07d588b6d07 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Tue, 5 Dec 2023 10:00:56 +0800
+Subject: [install.patch_] install
+
+---
+ traceshark.desktop |  8 +++-----
+ traceshark.pro     | 14 +++++++++-----
+ 2 files changed, 12 insertions(+), 10 deletions(-)
+
+diff --git a/traceshark.desktop b/traceshark.desktop
+index ed6110c..686a7d2 100644
+--- a/traceshark.desktop
++++ b/traceshark.desktop
+@@ -1,10 +1,8 @@
+ [Desktop Entry]
+-Version=0.9.15-beta
++Version=0.9.15
+ Type=Application
+ Name=traceshark
+ GenericName=traceshark
+-Comment=
+-Exec=/usr/bin/traceshark
+-Icon=/usr/share/icons/traceshark/shark64x64.png
+-Categories=System;
++Exec=traceshark
++Icon=shark64x64
+ Terminal=false
+diff --git a/traceshark.pro b/traceshark.pro
+index 8705bd2..af0d708 100644
+--- a/traceshark.pro
++++ b/traceshark.pro
+@@ -335,6 +335,8 @@
+ # USE_DEBUG_FLAG = -g
+ 
+ # Uncomment this for debug symbols and without optimization:
++
++
+ # USE_DEBUG_FLAG = -g -O0
+ # USE_DEBUG_FLAG = -g -Og
+ 
+@@ -698,24 +700,26 @@ RESOURCES     = traceshark.qrc
+ ###############################################################################
+ # Installation
+ #
++TARGET = traceshark
++TEMPLATE = app
+ 
+ isEmpty (CUSTOM_INSTALL_PREFIX) {
+-INSTALL_PREFIX = /usr
++INSTALL_PREFIX = $${PREFIX}
+ } else {
+ INSTALL_PREFIX = $${CUSTOM_INSTALL_PREFIX}
+ }
+ 
+-documentation.path = $${INSTALL_PREFIX}/share/man/man1
++documentation.path = $${PREFIX}/share/man/man1
+ documentation.files = doc/traceshark.1
+ 
+-target.path = $${INSTALL_PREFIX}/bin
++target.path = $${PREFIX}/bin
+ target.files = traceshark
+ 
+-icons.path = $${INSTALL_PREFIX}/share/icons/traceshark
++icons.path = $${PREFIX}/share/icons
+ icons.files = images/shark64x64.png
+ icons.files += images/shark128x128.png
+ 
+-desktopfile.path = $${INSTALL_PREFIX}/share/applications
++desktopfile.path = $${PREFIX}/share/applications
+ desktopfile.files = traceshark.desktop
+ 
+ INSTALLS += documentation
+-- 
+2.33.1
+
