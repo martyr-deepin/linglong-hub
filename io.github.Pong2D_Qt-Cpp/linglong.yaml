@@ -1,0 +1,22 @@
+package:
+  id: io.github.Pong2D_Qt-Cpp
+  name: Pong2D_Qt-Cpp
+  version: 0.0.1
+  kind: app
+  description: |
+    Pong is one of the first computer games that ever created, this simple "tennis like" game features two paddles and a ball.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/Przemekkkth/Pong2D_Qt-Cpp.git
+  commit: 7a57714baeefbec6fb1f60d265ca08c32c9ffb92
+  patch: 
+    - patches/fix_001.patch
+    - patches/fix_002.patch
+build:
+  kind: qmake
