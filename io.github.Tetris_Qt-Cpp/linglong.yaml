@@ -1,0 +1,24 @@
+package:
+  id: io.github.Tetris_Qt-Cpp
+  name: Tetris_Qt-Cpp
+  version: 0.0.1
+  kind: app
+  description: |
+    Game Tetris which is created by using Qt/C++
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/Przemekkkth/Tetris_Qt-Cpp.git
+  commit: 40d3c2ced21de18e675853cd885368f6c1c9ea8a
+  patch: 
+    - patches/fix_001.patch
+    - patches/fix_002.patch
+    - patches/fix_003.patch
+
+build:
+  kind: qmake

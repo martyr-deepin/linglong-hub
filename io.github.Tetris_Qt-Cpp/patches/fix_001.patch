@@ -1,0 +1,25 @@
+--- ../gamescene.cpp	2023-12-05 11:27:28.103068000 +0800
++++ ../gamescene.cpp	2023-12-05 10:25:29.338605000 +0800
+@@ -165,17 +165,17 @@
+     }
+     else if(scoreText.length() == 2) // 10 - 99
+     {
+-        unityPartVal = scoreText.last(1).toInt();
+-        decimalPartValue = scoreText.first(1).toInt();
++        unityPartVal = scoreText.at(scoreText.length() - 1).digitValue();
++        decimalPartValue = scoreText.at(0).digitValue();
+         hendredthPartValue = 0;
+     }
+     else if(scoreText.length() == 3) // 100 - 999
+     {
+-        unityPartVal = scoreText.last(1).toInt();
+-        hendredthPartValue = scoreText.first(1).toInt();
++        unityPartVal = scoreText.at(scoreText.length() - 1).digitValue();
++        hendredthPartValue = scoreText.at(0).digitValue();
+         QString copyVal = scoreText;
+         copyVal.chop(1);
+-        decimalPartValue = copyVal.last(1).toInt();
++        decimalPartValue = copyVal.at(scoreText.length() - 1).digitValue();
+     }
+ 
+     QGraphicsPixmapItem* unityPartScoreItem = new QGraphicsPixmapItem(game.m_numbersPixmap.copy(unityPartVal*32, 0, 32, 32));

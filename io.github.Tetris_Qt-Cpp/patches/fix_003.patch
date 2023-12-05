@@ -1,0 +1,11 @@
+--- ../menuscene.cpp	2023-12-05 11:37:26.998712000 +0800
++++ ../menuscene.cpp	2023-12-05 10:24:04.860405000 +0800
+@@ -4,7 +4,7 @@
+ #include <QKeyEvent>
+ #include <QDir>
+ #include <QPainter>
+-
++#include <QtCore/qdebug.h>
+ MenuScene::MenuScene(QObject *parent)
+     : QGraphicsScene{parent}
+ {
