@@ -1,0 +1,21 @@
+--- ../Reversi.pro	2023-12-05 11:10:59.655796000 +0800
++++ ../Reversi.pro	2023-12-05 11:11:38.891478000 +0800
+@@ -17,3 +17,18 @@
+ 
+ RESOURCES += \
+     resource.qrc
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++
++DESKTOP_FILE = ./Reversi.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=Reversi' >> $$DESKTOP_FILE")
++system("echo 'Comment=Reversi.' >> $$DESKTOP_FILE")
++system("echo 'Exec=Reversi' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop

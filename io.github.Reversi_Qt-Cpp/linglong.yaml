@@ -1,0 +1,19 @@
+package:
+  id: io.github.Reversi_Qt-Cpp
+  name: Reversi_Qt-Cpp
+  version: 0.0.1
+  kind: app
+  description: |
+    Reversi is a strategy board game for two players, played on an 8×8 uncheckered board.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Przemekkkth/Reversi_Qt-Cpp.git
+  commit: 17e50b429ebe17e7bbda190271ad83918824a00b
+  patch: patches/fix_reversi.patch
+build:
+  kind: qmake
