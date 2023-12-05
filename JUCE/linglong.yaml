@@ -1,0 +1,22 @@
+package:
+  id: JUCE
+  name: JUCE
+  version: 7.0.9
+  kind: lib
+  description: |
+    JUCE is an open-source cross-platform C++ application framework for desktop and mobile applications, including VST, VST3, AU, AUv3, LV2 and AAX audio
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: cmake/3.28.0
+
+source:
+  kind: git
+  url: https://github.com/juce-framework/JUCE.git
+  commit: d054f0d14dcac387aebda44ce5d792b5e7a625b3
+
+build:
+  kind: cmake
