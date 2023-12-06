@@ -1,0 +1,12 @@
+diff --git a/scrite.pro b/scrite.pro
+index c89eeda2..ce441a86 100644
+--- a/scrite.pro
++++ b/scrite.pro
+@@ -362,3 +362,7 @@ win32 {
+     QMAKE_POST_LINK = '/bin/bash -c "touch $$PWD/src/core/application_build_timestamp.cpp"'
+ }
+ 
++target.path = $$PREFIX/bin
++desktop.path = $$PREFIX/share/applications
++desktop.files += packaging/linux/Scrite.desktop
++INSTALLS += desktop target

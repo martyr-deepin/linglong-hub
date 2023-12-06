@@ -1,0 +1,24 @@
+package:
+  id: io.github.scrite
+  name: scrite
+  version: 0.9.4
+  kind: app
+  description: |
+    Crossplatform Screenwriting Software.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine/5.15.7
+
+source:
+  kind: git
+  url: https://github.com/teriflix/scrite.git
+  commit: 51bb3a1c668b52037f3521f357bb375cb3ea3bb9
+  patch:
+    - patches/fix_install.patch
+
+build:
+  kind: qmake
