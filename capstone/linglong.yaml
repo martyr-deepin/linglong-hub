@@ -1,7 +1,7 @@
 package:
   id: capstone
   name: capstone
-  version: 5.0.1
+  version: 5.0.1.1
   kind: lib
   description: |
     Capstone disassembly framework for ARM,ARM64...
@@ -12,7 +12,12 @@ runtime:
 
 source:
   kind: git
-  url: "https://github.com/capstone-engine/capstone"
-  commit: 5fb8a423d4455cade99b12912142fd3a0c10d957
+  url: https://github.com/capstone-engine/capstone.git
+  commit: 097c04d9413c59a58b00d4d1c8d5dc0ac158ffaa
+
+variables:
+  extra_args: |
+    -DBUILD_SHARED_LIBS=ON
+
 build:
   kind: cmake
