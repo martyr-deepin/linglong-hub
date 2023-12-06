@@ -1,0 +1,21 @@
+package:
+  id: io.github.QtGame 
+  name: QtGame
+  version: 0.0.1
+  kind: app
+  description: |
+    一款躲避障碍物的小游戏.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/AdrianWeglicki/QtGame.git"
+  commit: 75bfeab4a3b762354766fe94593fe1002189aa9f
+  patch:
+    - patches/install.patch
+
+build:
+  kind: qmake

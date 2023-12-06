@@ -1,0 +1,29 @@
+diff --git a/QtGame.desktop b/QtGame.desktop
+new file mode 100644
+index 0000000..28cf705
+--- /dev/null
++++ b/QtGame.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QtGame
++Name=QtGame
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/QtGame.pro b/QtGame.pro
+index 63b070b..3ba49bd 100644
+--- a/QtGame.pro
++++ b/QtGame.pro
+@@ -37,3 +37,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ 
+ RESOURCES += \
+     resource.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =QtGame.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
