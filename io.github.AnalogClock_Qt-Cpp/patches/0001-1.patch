@@ -1,0 +1,43 @@
+From 8755d761283f954f531db1842406e44ad3ee1cb4 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Wed, 6 Dec 2023 20:20:02 +0800
+Subject: [PATCH] 1
+
+---
+ AnalogClockQt.desktop | 8 ++++++++
+ AnalogClockQt.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 AnalogClockQt.desktop
+
+diff --git a/AnalogClockQt.desktop b/AnalogClockQt.desktop
+new file mode 100644
+index 0000000..4a0ae44
+--- /dev/null
++++ b/AnalogClockQt.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=AnalogClockQt
++Name=AnalogClockQt
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/AnalogClockQt.pro b/AnalogClockQt.pro
+index 19c3c25..408385e 100644
+--- a/AnalogClockQt.pro
++++ b/AnalogClockQt.pro
+@@ -2,3 +2,10 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+ 
+ SOURCES += \
+     main.cpp
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =AnalogClockQt.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+

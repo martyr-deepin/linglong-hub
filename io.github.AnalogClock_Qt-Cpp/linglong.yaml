@@ -1,0 +1,22 @@
+package:
+  id: io.github.AnalogClock_Qt-Cpp 
+  name: AnalogClock_Qt-Cpp
+  version: 0.0.1
+  kind: app
+  description: |
+    A Qt app which shows an analog clock.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/Przemekkkth/AnalogClock_Qt-Cpp.git"
+  commit: c9a4f7981c0a039f350ab76da62ea975668dc571
+  patch:
+     - patches/0001-1.patch
+
+build:
+  kind: qmake
