@@ -1,0 +1,29 @@
+diff --git a/QtApp/QStock/QStock/QStock.desktop b/QtApp/QStock/QStock/QStock.desktop
+new file mode 100644
+index 0000000..eebfebd
+--- /dev/null
++++ b/QtApp/QStock/QStock/QStock.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QStock
++Name=QStock
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/QtApp/QStock/QStock/QStock.pro b/QtApp/QStock/QStock/QStock.pro
+index ce27675..f5ede2d 100644
+--- a/QtApp/QStock/QStock/QStock.pro
++++ b/QtApp/QStock/QStock/QStock.pro
+@@ -75,3 +75,10 @@ FORMS    += QStockMainWindows.ui \
+ 
+ RESOURCES += \
+     resources/iconRes.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =QStock.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
