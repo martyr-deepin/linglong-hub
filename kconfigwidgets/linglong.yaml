@@ -1,0 +1,27 @@
+package:
+  id: kconfigwidgets
+  name: kconfigwidgets 
+  version: 5.90.0
+  kind: lib
+  description: |
+     Widgets for configuration dialogs.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: kcodecs/5.90.0
+  - id: kwidgetsaddons/5.90.0
+  - id: ki18n/5.90.0
+  - id: kguiaddons/5.90.0
+  - id: kauth/5.90.0
+  - id: kconfig/5.90.0
+  - id: kcoreaddons/5.90.0
+source:
+  kind: git
+  url: https://github.com/KDE/kconfigwidgets.git
+  commit: dd3c94ed82a7523955faee93562c60fd7eddc9de
+
+build:
+  kind: cmake
