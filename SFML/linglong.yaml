@@ -1,0 +1,22 @@
+package:
+  id: SFML
+  name: SFML
+  version: 2.6.1
+  kind: lib
+  description: |
+    Simple and Fast Multimedia Library
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: cmake/3.28.0
+
+source:
+  kind: git
+  url: https://github.com/SFML/SFML.git
+  commit: 4e2f6ae655e224b67e4721b99fd52d7f16f49442
+
+build:
+  kind: cmake
