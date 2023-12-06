@@ -1,0 +1,23 @@
+package:
+  id: kauth
+  name: kauth 
+  version: 5.90.0
+  kind: lib
+  description: |
+     Execute actions as privileged user.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: kcoreaddons/5.90.0
+  
+
+source:
+  kind: git
+  url: https://github.com/KDE/kauth.git
+  commit: cee67414a3f5aa758f61ccc4ed7997ef9b8eee15
+
+build:
+  kind: cmake
