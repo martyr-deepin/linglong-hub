@@ -1,0 +1,27 @@
+package:
+  id: io.github.edb-debugger
+  name: edb-debugger
+  version: 1.4.0
+  kind: app
+  description: |
+    edb is a cross-platform AArch32/x86/x86-64 debugger.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: capstone/5.0.1.1
+    type: runtime
+  - id: double-conversion/3.1.0.3
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/eteran/edb-debugger.git
+  commit: 887b217aa575a4bb7f3cda61c5310d2945e32baa
+  patch:
+    - patches/fix_install.patch
+
+build:
+  kind: cmake
