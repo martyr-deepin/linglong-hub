@@ -1,0 +1,21 @@
+package:
+  id: boost
+  name: boost
+  version: 1.84.0
+  kind: lib
+  description: |
+    Super-project for modularized Boost
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/boostorg/boost.git
+  commit: 5ccd4a2d9704e812614ffeba13a8a4b4fc869110
+
+build:
+  kind: cmake
+
+
