@@ -1,0 +1,19 @@
+package:
+  id: io.github.jmbde-QT
+  name: jmbde-QT
+  version: 0.5.4
+  kind: app
+  description: |
+    A program to collect the resources of a company in a database. These are computers, printers, phones and more.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/jmuelbert/jmbde-QT.git
+  commit: 74a95660fcf2d5dd402e8a15f268c02a69bebafc
+
+build:
+  kind: cmake
