@@ -1,0 +1,29 @@
+diff --git a/src/Sorts.desktop b/src/Sorts.desktop
+new file mode 100644
+index 0000000..308f410
+--- /dev/null
++++ b/src/Sorts.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Sorts
++Name=Sorts
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/src/Sorts.pro b/src/Sorts.pro
+index c12c7f9..a0721e8 100644
+--- a/src/Sorts.pro
++++ b/src/Sorts.pro
+@@ -19,3 +19,10 @@ HEADERS += \
+     window.h \
+     sorter.h \
+     xslider.h
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Sorts.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop

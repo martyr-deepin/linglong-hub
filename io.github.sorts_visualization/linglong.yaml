@@ -1,0 +1,31 @@
+package:
+  id: io.github.sorts_visualization 
+  name: sorts_visualization
+  version: 1.1.0
+  kind: app
+  description: |
+    An app built with Qt to visualize a few dozen implemented sorting algorithms.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/Vanille-N/sorts_visualization.git"
+  commit: 507597b7f6036f77caa657c3b7b18d2718ebebbf
+  patch:
+    - patches/install.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
+
