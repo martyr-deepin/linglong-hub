@@ -1,0 +1,19 @@
+package:
+  id: karchive
+  name: karchive 
+  version: 5.90.0
+  kind: lib
+  description: |
+     KArchive provides classes for easy reading, creation and manipulation of "archive" formats like ZIP and TAR.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/KDE/karchive.git
+  commit: 5b872ceefe1b6ad298cbd9c32ce7419665c52041
+
+build:
+  kind: cmake
