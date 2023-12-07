@@ -1,0 +1,33 @@
+package:
+  id: ktextwidgets
+  name: ktextwidgets 
+  version: 5.90.0
+  kind: lib
+  description: |
+    Text editing widgets.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: kguiaddons/5.90.0
+  - id: sonnet/5.90.0
+  - id: kcodecs/5.90.0
+  - id: kcoreaddons/5.90.0
+  - id: kauth/5.90.0
+  - id: kcompletion/5.90.0
+  - id: kconfig/5.90.0
+  - id: kconfigwidgets/5.90.0
+  - id: ki18n/5.90.0
+  - id: kwidgetsaddons/5.90.0
+
+
+
+source:
+  kind: git
+  url: https://github.com/KDE/ktextwidgets.git
+  commit: d079a9b107a9e3e130d5c5b4d4e36434a09c05bd
+
+build:
+  kind: cmake
