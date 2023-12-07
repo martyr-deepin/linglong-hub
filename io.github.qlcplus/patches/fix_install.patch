@@ -1,0 +1,12 @@
+diff --git a/variables.pri b/variables.pri
+index 0fc725800..440c6e5fc 100644
+--- a/variables.pri
++++ b/variables.pri
+@@ -76,7 +76,7 @@ win32:QMAKE_LFLAGS += -Wl,--enable-auto-import
+ # Install root
+ win32:INSTALLROOT       = $$(SystemDrive)/qlcplus
+ macx:INSTALLROOT        = ~/QLC+.app/Contents
+-unix:!macx:INSTALLROOT += /usr
++unix:!macx:INSTALLROOT += $$PREFIX
+ android:INSTALLROOT     = /
+ ios:INSTALLROOT         = /
