@@ -1,0 +1,30 @@
+diff -Naur b/game.pro a/game.pro
+--- b/game.pro	2023-12-07 19:55:26.602385579 +0800
++++ a/game.pro	2023-12-07 20:31:14.764233098 +0800
+@@ -55,9 +55,15 @@
+ FORMS +=
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++#qnx: target.path = /tmp/$${TARGET}/bin
++#else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     res.qrc
++
++desktop.files += QT_Flight_game.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop
+\ 文件尾没有换行符
+diff -Naur b/QT_Flight_game.desktop a/QT_Flight_game.desktop
+--- b/QT_Flight_game.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/QT_Flight_game.desktop	2023-12-07 20:36:11.633079760 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=QT_Flight_game
++Exec=game
++Type=Application
