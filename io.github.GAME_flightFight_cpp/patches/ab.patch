@@ -1,0 +1,21 @@
+diff -Naur b/GAME_flightFight_cpp.desktop a/GAME_flightFight_cpp.desktop
+--- b/GAME_flightFight_cpp.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/GAME_flightFight_cpp.desktop	2023-12-07 22:13:38.780136820 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=GAME_flightFight_cpp
++Exec=GAME_flightFight_cpp
++Type=Application
+\ 文件尾没有换行符
+diff -Naur b/GAME_flightFight_cpp.pro a/GAME_flightFight_cpp.pro
+--- b/GAME_flightFight_cpp.pro	2023-12-07 21:46:19.953653133 +0800
++++ a/GAME_flightFight_cpp.pro	2023-12-07 21:47:24.671853170 +0800
+@@ -54,4 +54,8 @@
+ RESOURCES += \
+     res.qrc
+ 
++desktop.files += GAME_flightFight_cpp.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
+ 
++INSTALLS += target desktop

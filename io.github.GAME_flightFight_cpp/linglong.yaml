@@ -1,0 +1,20 @@
+package:
+  id: io.github.GAME_flightFight_cpp 
+  name: GAME_flightFight_cpp 
+  version: 0.0.1
+  kind: app
+  description: |
+     A flight fight game based on QT
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Cookie-YY/GAME_flightFight_cpp.git"
+  commit: d1c8143
+  patch: patches/ab.patch
+
+build:
+  kind: qmake
