@@ -1,0 +1,47 @@
+From 2689465ca08b754a412a63c3b9290b098aa66cd0 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Fri, 10 Nov 2023 19:19:14 +0800
+Subject: [install.patch_] install
+
+---
+ Qt-Tic-Tac-Toe.desktop | 6 ++++++
+ Qt-Tic-Tac-Toe.pro     | 7 +++++--
+ 2 files changed, 11 insertions(+), 2 deletions(-)
+ create mode 100644 Qt-Tic-Tac-Toe.desktop
+
+diff --git a/Qt-Tic-Tac-Toe.desktop b/Qt-Tic-Tac-Toe.desktop
+new file mode 100644
+index 0000000..b80ad32
+--- /dev/null
++++ b/Qt-Tic-Tac-Toe.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=Qt-Tic-Tac-Toe
++Exec=Qt-Tic-Tac-Toe
++Terminal=false
+\ No newline at end of file
+diff --git a/Qt-Tic-Tac-Toe.pro b/Qt-Tic-Tac-Toe.pro
+index d869d84..df065ab 100644
+--- a/Qt-Tic-Tac-Toe.pro
++++ b/Qt-Tic-Tac-Toe.pro
+@@ -55,10 +55,13 @@ FORMS += \
+ 
+ RC_ICONS = images/icon.ico
+ 
++
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $${PREFIX}/bin
+ !isEmpty(target.path): INSTALLS += target
+-
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = Qt-Tic-Tac-Toe.desktop
++INSTALLS += unix_desktop
+ RESOURCES += \
+     resources.qrc
+-- 
+2.33.1
+

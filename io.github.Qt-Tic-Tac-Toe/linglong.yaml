@@ -1,0 +1,20 @@
+package:
+  id: io.github.Qt-Tic-Tac-Toe
+  name: Qt-Tic-Tac-Toe
+  version: 1.10.0
+  kind: app
+  description: |
+    A Qt project using C++ implementing a GUI game of Tic Tac Toe.
+    
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/aosama16/Qt-Tic-Tac-Toe.git
+  commit: 2fb2d1feb8b2d9127eba9677612ceae3c8d5c23d
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
