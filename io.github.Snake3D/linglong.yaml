@@ -1,0 +1,21 @@
+package:
+  id: io.github.Snake3D
+  name: Snake3D
+  version: 0.0.1
+  kind: app
+  description: |
+    Snake game based on Qt 3D libraries in Qt environment 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/fakeprogrammerprojects/Snake3D.git"
+  commit: 4650548
+  patch: patches/ab.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,23 @@
+diff -Naur b/Snake3D.desktop a/Snake3D.desktop
+--- b/Snake3D.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/Snake3D.desktop	2023-12-07 22:28:21.318308288 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=Snake3D
++Exec=Snake3D
++Type=Application
+\ 文件尾没有换行符
+diff -Naur b/Snake3D.pro a/Snake3D.pro
+--- b/Snake3D.pro	2023-12-07 22:26:21.032271554 +0800
++++ a/Snake3D.pro	2023-12-07 22:27:23.845321263 +0800
+@@ -44,3 +44,9 @@
+ 
+ DISTFILES += \
+     resources\stylesheet.css
++
++desktop.files += Snake3D.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop
+\ 文件尾没有换行符
