@@ -1,0 +1,23 @@
+package:
+  id: libconfuse
+  name: libconfuse
+  version: 3.3.0
+  kind: lib
+  description: |
+    Small configuration file parser library for C.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+depends:
+  - id: libtool/2.4.2
+  - id: automake/1.16.5
+
+source:
+  kind: git
+  url: https://github.com/libconfuse/libconfuse.git
+  commit: a42aebf13db33afd575da6e63f55163d371f776d
+
+build:
+  kind: autotools
