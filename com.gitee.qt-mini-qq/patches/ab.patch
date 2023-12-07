@@ -1,0 +1,38 @@
+diff -Naur b/miniQQ.pro a/miniQQ.pro
+--- b/miniQQ.pro	2023-12-07 21:12:40.357605920 +0800
++++ a/miniQQ.pro	2023-12-07 21:15:01.916966629 +0800
+@@ -15,6 +15,9 @@
+ # You can also select to disable deprecated APIs only up to a certain version of Qt.
+ #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+ 
++TARGET = qt-mini-qq
++TEMPLATE = app
++
+ SOURCES += \
+     dialoglist.cpp \
+     main.cpp \
+@@ -29,9 +32,14 @@
+     widget.ui
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++#qnx: target.path = /tmp/$${TARGET}/bin
++#else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     image.qrc
++desktop.files += qt-mini-qq.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
++
++INSTALLS += target desktop
+diff -Naur b/qt-mini-qq.desktop a/qt-mini-qq.desktop
+--- b/qt-mini-qq.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/qt-mini-qq.desktop	2023-12-07 21:17:14.632292304 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=qt-mini-qq
++Exec=qt-mini-qq
++Type=Application

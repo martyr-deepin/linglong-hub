@@ -1,0 +1,18 @@
+package:
+  id: com.gitee.qt-mini-qq
+  name: qt-mini-qq
+  version: 1.0.0
+  kind: app
+  description: |
+    一个Qt的聊天室软件
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/mawen123456/qt-mini-qq.git"
+  commit: a7b2246
+  patch: patches/ab.patch
+build:
+  kind: qmake
