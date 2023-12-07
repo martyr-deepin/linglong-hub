@@ -1,0 +1,23 @@
+package:
+  id: ftgl
+  name: ftgl
+  version: 2.3.1.1
+  kind: lib
+  description: |
+    FTGL is a free open source library to enable developers to use arbitrary fonts in their OpenGL (www.opengl.org) applications.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+depends:
+  - id: libtool/2.4.2
+  - id: automake/1.16.5
+
+source:
+  kind: git
+  url: https://github.com/frankheckenbach/ftgl.git
+  commit: 3c0fdf367824b6381f29df3d8b4590240db62ab7
+
+build:
+  kind: autotools
