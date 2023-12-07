@@ -1,0 +1,25 @@
+package:
+  id: flex
+  name: flex 
+  version: 2.6.4
+  kind: lib
+  description: |
+    flex is a tool for generating scanners: programs which recognize lexical patterns in text.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: help2man/1.14.5
+  - id: texinfo/6.8.1
+  - id: automake/1.16.5
+  - id: libtool/2.4.2
+
+source:
+  kind: git
+  url: https://github.com/westes/flex.git
+  commit: 94579697864e4c33f28b8d7e97b5c599a0ca3903
+
+build:
+  kind: autotools
