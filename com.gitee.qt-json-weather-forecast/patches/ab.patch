@@ -1,0 +1,38 @@
+diff -Naur b/qt-json-weather-forecast.desktop a/qt-json-weather-forecast.desktop
+--- b/qt-json-weather-forecast.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/qt-json-weather-forecast.desktop	2023-12-07 19:54:01.517139427 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=qt-json-weather-forecast
++Exec=qt-json-weather-forecast
++Type=Application
+diff -Naur b/weather.pro a/weather.pro
+--- b/weather.pro	2023-12-07 19:51:54.731491047 +0800
++++ a/weather.pro	2023-12-07 19:55:30.269276594 +0800
+@@ -8,6 +8,9 @@
+ # In order to do so, uncomment the following line.
+ #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+ 
++TARGET = qt-json-weather-forecast
++TEMPLATE = app
++
+ SOURCES += \
+     main.cpp \
+     widget.cpp
+@@ -20,9 +23,14 @@
+     widget.ui
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++#qnx: target.path = /tmp/$${TARGET}/bin
++#else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     weather_rsc.qrc
++desktop.files += qt-json-weather-forecast.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
++
++INSTALLS += target desktop
