@@ -1,0 +1,20 @@
+package:
+  id: io.github.marksentence
+  name: marksentence
+  version: 0.0.1
+  kind: app
+  description: |
+    111
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "git@github.com:leihui6/marksentence.git"
+  commit: 559760e
+  patch: patches/fix.patch
+
+build:
+  kind: qmake
