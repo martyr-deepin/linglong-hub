@@ -1,0 +1,23 @@
+package:
+  id: tagparser
+  name: tagparser
+  version: 12.1.0
+  kind: lib
+  description: |
+    C++ library for reading and writing MP4/M4A/AAC (iTunes), ID3, Vorbis, Opus, FLAC and Matroska tags.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+depends:
+  - id: cpp-utilities/5.23.0
+
+source:
+  kind: git
+  url: https://github.com/Martchus/tagparser.git
+  commit: 0827002183d5b33931c9be2770ed7d81554f355c
+
+build:
+  kind: cmake
+
