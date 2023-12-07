@@ -1,0 +1,19 @@
+package:
+  id: io.github.kolorfill
+  name: kolorfill
+  version: 0.0.1
+  kind: app
+  description: |
+     Simple flood fill game.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/KDE/kolorfill.git
+  commit: cd18d692609de1ad2f83d28a4ed50d93e6a5ef1c
+
+build:
+  kind: cmake
