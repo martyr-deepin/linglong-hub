@@ -1,0 +1,19 @@
+package:
+  id: cpp-utilities
+  name: cpp-utilities
+  version: 5.23.0
+  kind: lib
+  description: |
+    Common C++ classes and routines used by my applications such as argument parser, IO and conversion utilities.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Martchus/cpp-utilities.git
+  commit: 66b6fff0f2eb3aea07048ff7749b4280f9cb6c54
+
+build:
+  kind: cmake
