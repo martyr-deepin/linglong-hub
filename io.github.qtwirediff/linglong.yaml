@@ -1,0 +1,20 @@
+package:
+  id: io.github.qtwirediff
+  name: qtwirediff
+  version: 0.0.1
+  kind: app
+  description: |
+    Debugging tool to diff network traces via wireshark.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/aaptel/qtwirediff.git"
+  commit: 0b182351c2758ba4f2daa77fba65e5255746eb71
+  patch:
+    - patches/0001-install.patch
+build:
+  kind: qmake

@@ -1,0 +1,44 @@
+From 559895e0ecd65be5c832d760209209ad627e587b Mon Sep 17 00:00:00 2001
+From: xiaowanzzhh <1665811029@qq.com>
+Date: Sat, 2 Dec 2023 20:34:16 +0800
+Subject: [PATCH] install
+
+---
+ qtwirediff.desktop | 8 ++++++++
+ qtwirediff.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 qtwirediff.desktop
+
+diff --git a/qtwirediff.desktop b/qtwirediff.desktop
+new file mode 100644
+index 0000000..199d87e
+--- /dev/null
++++ b/qtwirediff.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=qtwirediff
++Name=qtwirediff
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/qtwirediff.pro b/qtwirediff.pro
+index 47fde77..bd283eb 100644
+--- a/qtwirediff.pro
++++ b/qtwirediff.pro
+@@ -58,3 +58,10 @@ HEADERS += \
+ FORMS += \
+         mainwindow.ui \
+     traceview.ui
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =qtwirediff.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
