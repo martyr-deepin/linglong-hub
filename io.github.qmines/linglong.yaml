@@ -1,7 +1,7 @@
 package:
   id: io.github.qmines
   name: qmines
-  version: 0.0.1
+  version: 0.0.1.1
   kind: app
   description: |
     A simple Qt mine sweeping mini program.
