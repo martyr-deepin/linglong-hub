@@ -1,0 +1,22 @@
+package:
+  id: passwordfile
+  name: passwordfile
+  version: 5.0.0
+  kind: lib
+  description: |
+    C++ library to read/write passwords from/to encrypted files.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+depends:
+  - id: cpp-utilities/5.23.0
+
+source:
+  kind: git
+  url: https://github.com/Martchus/passwordfile.git
+  commit: a3d104cf8b6a0ec845519f6156812f95b6df1178
+
+build:
+  kind: cmake
