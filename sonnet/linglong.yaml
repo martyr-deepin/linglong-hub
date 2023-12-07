@@ -1,0 +1,20 @@
+package:
+  id: sonnet
+  name: sonnet 
+  version: 5.90.0
+  kind: lib
+  description: |
+    Multi-language spell checker
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/KDE/sonnet.git
+  commit: 18bf0eb811f9c11d0b8af892ba27639e4e8ff2dc
+
+build:
+  kind: cmake
