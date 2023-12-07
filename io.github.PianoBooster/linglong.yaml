@@ -1,0 +1,32 @@
+package:
+  id: io.github.PianoBooster
+  name: PianoBooster
+  version: 1.0.0
+  kind: app
+  description: |
+    A MIDI file player/game that displays the musical notes and teaches you how to play the piano.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: ftgl/2.3.1.1
+    type: runtime
+  - id: rtmidi/4.0.0
+    type: runtime
+  - id: fluidsynth/2.3.4
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/Martchus/PianoBooster.git
+  commit: 6dafdcbdfc5d35d12cecb051c30632d0f5be5806
+
+build:
+  kind: cmake
+  manual:
+    configure: |
+      sed -i "s/rtmidi\/RtMidi.h/RtMidi.h/g" src/MidiDeviceRt.h
+      sed -i "s/rtmidi\/RtMidi.h/RtMidi.h/g" src/GuiKeyboardSetupDialog.cpp
+      cmake -B ${build_dir} ${conf_args} ${extra_args}
