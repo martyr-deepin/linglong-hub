@@ -1,0 +1,23 @@
+package:
+  id: io.github.IconThemeBrowser
+  name: IconThemeBrowser
+  version: 1.1.0
+  kind: app
+  description: |
+    A small application to browse Qt icon themes.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Skycoder42/IconThemeBrowser.git
+  commit: 58693aefdddd5c31d5d32a897f570dc00caee9ed
+  patch: patches/fix_itb.patch
+
+build:
+  kind: qmake
+
+
+

@@ -1,0 +1,20 @@
+package:
+  id: io.github.ecalc
+  name: ecalc
+  version: 0.0.1
+  kind: app
+  description: |
+    This is a collection of handy calculators for electronics engineers.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/luqasz/ecalc.git"
+  commit: c4c1d6bc979149046fc703bc7876d386a3f04263
+  patch: patches/install.patch
+
+build:
+  kind: cmake

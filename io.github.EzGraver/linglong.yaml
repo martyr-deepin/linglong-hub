@@ -1,0 +1,22 @@
+package:
+  id: io.github.EzGraver
+  name: EzGraver
+  version: 4.0.0.1
+  kind: app
+  description: |
+     EzGraver is an open source software allowing users to use with laser engravers by NEJE. 
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/camrein/EzGraver.git
+  commit: 062696fcd2515ae49032fd2b6e623ade28862cc8
+  patch: patches/0001-fix-all.patch
+build:
+  kind: qmake
+
+    

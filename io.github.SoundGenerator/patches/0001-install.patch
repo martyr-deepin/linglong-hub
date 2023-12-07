@@ -1,0 +1,51 @@
+From cd2ff2c201d239f75cb96244509d44fc25251775 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 14 Nov 2023 21:05:19 +0800
+Subject: [PATCH] install
+
+---
+ SoundGenerator.desktop | 8 ++++++++
+ SoundGenerator.pro     | 9 ++++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 SoundGenerator.desktop
+
+diff --git a/SoundGenerator.desktop b/SoundGenerator.desktop
+new file mode 100644
+index 0000000..c354466
+--- /dev/null
++++ b/SoundGenerator.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=SoundGenerator
++Name=SoundGenerator
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/SoundGenerator.pro b/SoundGenerator.pro
+index b35cbe8..cea48f4 100644
+--- a/SoundGenerator.pro
++++ b/SoundGenerator.pro
+@@ -131,8 +131,15 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++
+ RESOURCES += \
+     resources.qrc
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =SoundGenerator.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

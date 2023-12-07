@@ -1,0 +1,22 @@
+package:
+  id: io.github.mirasol
+  name: mirasol
+  version: 0.0.1
+  kind: app
+  description: |
+    Mirasol is a program for teaching numbers.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/phma/mirasol.git"
+  commit: 15489f3efe1fe6be10cddf45424ea720f20a2b30
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: cmake

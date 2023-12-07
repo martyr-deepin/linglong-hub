@@ -1,0 +1,20 @@
+package:
+  id: io.github.Heimdall
+  name: Heimdall
+  version: 2.0.2
+  kind: app
+  description: |
+    Heimdall is a cross-platform open-source tool suite used to flash firmware (aka ROMs) onto Samsung Galaxy devices.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/gfgit/Heimdall.git
+  commit: 02b577ec774f2ce66bcb4cf96cf15d8d3d4c7720
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake

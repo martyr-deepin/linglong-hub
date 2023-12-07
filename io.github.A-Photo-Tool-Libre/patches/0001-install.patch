@@ -1,0 +1,44 @@
+From 6edc10733f3cf40c29d1019231a1302d7d222c3f Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Sun, 5 Nov 2023 12:44:38 +0800
+Subject: [PATCH] update
+
+---
+ src/src.pro | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/src/src.pro b/src/src.pro
+index 0f02798..5f6af27 100644
+--- a/src/src.pro
++++ b/src/src.pro
+@@ -116,22 +116,22 @@ RESOURCES += \
+ 
+ unix: {
+ 
+-target.path = /usr/bin/
++target.path = $${PREFIX}/bin/
+ INSTALLS += target
+ 
+-unix_man.path = /usr/share/man/man1
++unix_man.path = $${PREFIX}/share/man/man1
+ unix_man.files = ../debian/aphototoollibre.1.gz
+ INSTALLS += unix_man
+ 
+-unix_desktop.path = /usr/share/applications
++unix_desktop.path = $${PREFIX}/share/applications
+ unix_desktop.files = ../desktop/aphototoollibre.desktop
+ INSTALLS += unix_desktop
+ 
+-unix_icons.path = /usr/share/icons/hicolor/scalable/apps
++unix_icons.path = $${PREFIX}/share/icons/hicolor/scalable/apps
+ unix_icons.files = ../desktop/aphototoollibre.svg
+ INSTALLS += unix_icons
+ 
+-unix_metainfo.path = /usr/share/metainfo
++unix_metainfo.path = $${PREFIX}/share/metainfo
+ unix_metainfo.files = ../desktop/aphototoollibre.metainfo.xml
+ INSTALLS += unix_metainfo
+ 
+-- 
+2.33.1
+

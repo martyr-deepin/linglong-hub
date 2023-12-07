@@ -1,0 +1,30 @@
+--- ../CMakeLists.txt	2023-11-01 21:07:10.209694000 +0800
++++ ../CMakeLists.txt	2023-11-02 08:30:43.601432401 +0800
+@@ -17,7 +17,19 @@
+ find_package(Qt5Widgets QUIET)
+ 
+ add_executable(gencolormap cmdline.cpp colormap.hpp colormap.cpp)
+-install(TARGETS gencolormap RUNTIME DESTINATION bin)
++
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=gencolormap-gui
++Exec=gencolormap-gui
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/gencolormap-gui.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/gencolormap-gui.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++
++install(TARGETS gencolormap DESTINATION bin)
+ 
+ if(Qt5Widgets_FOUND)
+         qt5_add_resources(GUI_RESOURCES gui.qrc)
+@@ -26,5 +38,5 @@
+                 testwidget.hpp testwidget.cpp
+ 		colormap.hpp colormap.cpp ${GUI_RESOURCES})
+ 	target_link_libraries(gencolormap-gui Qt5::Widgets)
+-	install(TARGETS gencolormap-gui RUNTIME DESTINATION bin)
++	install(TARGETS gencolormap-gui RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+ endif()

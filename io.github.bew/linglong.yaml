@@ -1,0 +1,26 @@
+package:
+  id: io.github.bew
+  name: bew
+  version: 1.0.0
+  kind: app
+  description: |
+    Bew help you to convert Web apps to Desktop web apps (bew) using a graphical User interface.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine
+    version: 5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/realbardia/bew.git
+  commit: f6bbc01f002065fc2c19e67d5e45efe4f092a347
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake

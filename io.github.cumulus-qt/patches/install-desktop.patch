@@ -1,0 +1,30 @@
+diff --git a/Cumulus.desktop b/Cumulus.desktop
+new file mode 100644
+index 0000000..b1ce40c
+--- /dev/null
++++ b/Cumulus.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=Cumulus
++Exec=Cumulus %f
++Icon=wund_logo
+diff --git a/Cumulus.pro b/Cumulus.pro
+index c77a8b2..b51487b 100644
+--- a/Cumulus.pro
++++ b/Cumulus.pro
+@@ -157,3 +157,14 @@ OBJECTS_DIR = .obj
+ ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+ 
+ TRANSLATIONS = translations/tempestas_ro.po
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += Cumulus.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = assets/icons/wund_logo.png
++INSTALLS += icons

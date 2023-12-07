@@ -1,0 +1,20 @@
+package:
+  id: io.github.Disass
+  name: Disass
+  version: 0.0.7
+  kind: app
+  description: |
+    It's mainly made for disassembly in mind, but if you found it comfortable to use for normal debugging purposes then go ahead!
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Satharus/Disass.git
+  commit: 793470906afaa4811cdb8b89e585ee68e9830e44
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

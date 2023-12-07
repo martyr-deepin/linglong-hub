@@ -1,0 +1,22 @@
+package:
+  id: io.github.YAWYSIWYGEE
+  name: YAWYSIWYGEE
+  version: 0.0.1
+  kind: app
+  description: |
+    Yet Another What-you-see-is-what-you-get Equation Editor
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/ArsMasiuk/YAWYSIWYGEE.git"
+  commit: 2a7a00975af87cfedc7fece49ca11abaee290005
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake

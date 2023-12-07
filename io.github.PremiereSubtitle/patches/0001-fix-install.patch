@@ -1,0 +1,44 @@
+From eb25980e2ccfe1b382b097d9c1f79c9529a1c833 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Wed, 1 Nov 2023 11:26:43 +0800
+Subject: [PATCH] fix-install
+
+---
+ PrSubtitle.desktop | 8 ++++++++
+ PrSubtitle.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 PrSubtitle.desktop
+
+diff --git a/PrSubtitle.desktop b/PrSubtitle.desktop
+new file mode 100644
+index 0000000..780e026
+--- /dev/null
++++ b/PrSubtitle.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Tool;Qt;
++Exec=PrSubtitle
++Name=PrSubtitle
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/PrSubtitle.pro b/PrSubtitle.pro
+index e5eb7b0..b8a08a2 100644
+--- a/PrSubtitle.pro
++++ b/PrSubtitle.pro
+@@ -34,3 +34,10 @@ RC_FILE = app.rc
+ 
+ RESOURCES += \
+     res.qrc
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = PrSubtitle.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

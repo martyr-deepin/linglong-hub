@@ -1,0 +1,31 @@
+diff --git a/Si570Synth.desktop b/Si570Synth.desktop
+new file mode 100644
+index 0000000..36c27c1
+--- /dev/null
++++ b/Si570Synth.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=Si570Synth
++Exec=Si570Synth %f
++Icon=red
+diff --git a/Si570Synth.pro b/Si570Synth.pro
+index 6531f1c..35228d7 100644
+--- a/Si570Synth.pro
++++ b/Si570Synth.pro
+@@ -10,3 +10,14 @@ FORMS += gui/si570synth.ui
+ SOURCES += src/main.cpp \
+            src/si570synth.cpp
+ RESOURCES += resources/si570synth.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += Si570Synth.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = resources/red.png
++INSTALLS += icons
+

@@ -1,0 +1,23 @@
+package:
+  id: io.github.kroketgraph
+  name: kroketgraph
+  version: 1.0.0
+  kind: app
+  description: |
+     graphical graph visualization viewer with qt gui and subgraph folding feature
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/gml4gtk/kroketgraph.git"
+  commit: c3b4c40f42271eb43c0446c3fce9f35296069ec2
+  patch: patches/0001-fix-install.patch
+
+build:
+  kind: qmake
+  

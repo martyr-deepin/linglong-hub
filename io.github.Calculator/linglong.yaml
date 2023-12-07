@@ -1,0 +1,25 @@
+package:
+  id: io.github.Calculator
+  name: Calculator
+  version: 0.0.1
+  kind: app
+  description: |
+    C++ GUI Calculator app.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0 
+
+source:
+  kind: git
+  url: https://github.com/kunalyelne/Calculator-using-QT.git
+  commit: f6b5c9891fa4455557abdf6b07ac67ed7bc77080
+  patch: patches/fix_calc.patch
+build:
+  kind: qmake
+  manual: 
+    configure: |
+      cd Calc
+      qmake -makefile ${conf_args} ${extra_args} ./Calc.pro
+
+

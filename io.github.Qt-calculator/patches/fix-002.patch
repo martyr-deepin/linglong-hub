@@ -1,0 +1,10 @@
+--- ../Calculator/unary_operation_handler.h	2023-11-10 19:43:53.568287000 +0800
++++ ../Calculator/unary_operation_handler.h	2023-11-10 19:48:32.924873072 +0800
+@@ -6,6 +6,7 @@
+ #define GRAD 63.661977237
+ #include<string>
+ #include<QString>
++#include<cmath>
+ #include "ui_mainwindow.h"
+ class Unary_operation_handler
+ {

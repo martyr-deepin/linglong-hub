@@ -1,0 +1,22 @@
+package:
+  id: io.github.pokemon-qt
+  name: pokemon-qt
+  version: 1.0.0
+  kind: app
+  description: |
+    Creating a Pokémon 2D game in C++ with Qt library.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/corkymaigre/pokemon-qt.git
+  commit: eb25998958ccd27d201dd342430bbef94d4dc1a9
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      

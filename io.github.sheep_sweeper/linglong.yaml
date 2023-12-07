@@ -1,0 +1,23 @@
+package:
+  id: io.github.sheep_sweeper
+  name: sheep_sweeper
+  version: 1.0.0
+  kind: app
+  description: |
+    Minesweeper game done with Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/katecpp/sheep_sweeper.git
+  commit: aa2fa8262f09460fc4b5ceb45174fec315fd6460
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+ 

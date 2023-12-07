@@ -1,0 +1,20 @@
+package:
+  id: io.github.qawno
+  name: qawno
+  version: 1.0.0
+  kind: app
+  description: |
+    Qawno is a simple cross-platform Pawn editor with syntax highlighting and script compilation support.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Zeex/qawno.git"
+  commit: 46f3f5c07f3e459ef1c2cfe0d43e3b3045343cdc
+  patch: patches/install.patch
+  
+build:
+  kind: cmake

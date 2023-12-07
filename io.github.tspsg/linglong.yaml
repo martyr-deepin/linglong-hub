@@ -1,0 +1,19 @@
+package:
+  id: io.github.tspsg
+  name: tspsg
+  version: 0.0.1
+  kind: app
+  description: |
+    TSP Solver and Generator is intended to generate and solve Travelling Salesman Problem (TSP) tasks.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/leppa/tspsg.git"
+  commit: 468fa8e7e59a74d907a76301d4523474e4cffce4
+
+build:
+  kind: qmake

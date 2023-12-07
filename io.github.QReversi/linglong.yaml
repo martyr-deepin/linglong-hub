@@ -1,0 +1,23 @@
+package:
+  id: io.github.QReversi
+  name: QReversi
+  version: 0.1.0
+  kind: app
+  description: |
+     A Qt-based reversi game
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/X1aomu/QReversi.git
+  commit: 6ec1ce0e767461f74f2ad5f52fa1de4d78ea2c2f
+  patch: patches/0001-fix-install.patch
+build:
+  kind: cmake
+
+    

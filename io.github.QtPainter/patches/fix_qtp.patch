@@ -1,0 +1,21 @@
+--- ../CMakeLists.txt	2023-11-12 11:52:56.948264000 +0800
++++ ../CMakeLists.txt	2023-11-12 11:50:36.279267000 +0800
+@@ -53,7 +53,18 @@
+     ${TS_FILES}
+   )
+ endif()
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=Painter
++Exec=Painter
++Categories=Utility;
++")
+ 
++file(WRITE ${CMAKE_BINARY_DIR}/Painter.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/Painter.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++
++install(TARGETS Painter DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+ 
+ target_link_libraries(Painter PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::PrintSupport  )
+ 

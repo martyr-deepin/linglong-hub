@@ -1,0 +1,50 @@
+From 15bcf353e22052601660641e512c2c6bb5563bee Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Wed, 1 Nov 2023 18:19:27 +0800
+Subject: [PATCH] fix-install
+
+---
+ Inventory-Management.desktop |  8 ++++++++
+ Inventory-Management.pro     | 13 ++++++++++---
+ 2 files changed, 18 insertions(+), 3 deletions(-)
+ create mode 100644 Inventory-Management.desktop
+
+diff --git a/Inventory-Management.desktop b/Inventory-Management.desktop
+new file mode 100644
+index 0000000..d4ce723
+--- /dev/null
++++ b/Inventory-Management.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=tool;Qt;
++Exec=Inventory-Management
++Name=Inventory-Management
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Inventory-Management.pro b/Inventory-Management.pro
+index e784969..8e4f27c 100644
+--- a/Inventory-Management.pro
++++ b/Inventory-Management.pro
+@@ -51,6 +51,13 @@ FORMS += \
+     outboundwidget.ui \
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
++#qnx: target.path = /tmp/$${TARGET}/bin
++#else: unix:!android: target.path = /opt/$${TARGET}/bin
++#!isEmpty(target.path): INSTALLS += target
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = Inventory-Management.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

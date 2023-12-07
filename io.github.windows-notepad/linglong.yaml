@@ -1,0 +1,20 @@
+package:
+  id: io.github.windows-notepad
+  name: windows-notepad
+  version: 1.0.1
+  kind: app
+  description: |
+    通过Qt实现windows下记事本下的所有功能，是用户在linux等平台上获得一致的操作体验
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/llf137224350/notepad.git
+  commit: 73e2cbb502b7a7fc6243c70930ce7b0004f54e43
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

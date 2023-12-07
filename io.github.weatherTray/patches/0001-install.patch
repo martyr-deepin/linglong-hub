@@ -1,0 +1,48 @@
+From a027cf3cbc12ca7fc6a200f0175a2bc87182ff64 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Wed, 8 Nov 2023 13:11:08 +0800
+Subject: [install.patch_] install
+
+---
+ weatherTray.desktop |  6 ++++++
+ weatherTray.pro     | 12 +++++++++++-
+ 2 files changed, 17 insertions(+), 1 deletion(-)
+ create mode 100644 weatherTray.desktop
+
+diff --git a/weatherTray.desktop b/weatherTray.desktop
+new file mode 100644
+index 0000000..228165f
+--- /dev/null
++++ b/weatherTray.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=weatherTray
++Exec=weatherTray
++Terminal=false
+\ No newline at end of file
+diff --git a/weatherTray.pro b/weatherTray.pro
+index bdc0796..4571aa7 100644
+--- a/weatherTray.pro
++++ b/weatherTray.pro
+@@ -11,4 +11,14 @@ SOURCES += main.cpp\
+ HEADERS  += mainwindow.h
+ 
+ RESOURCES += \
+-    res.qrc
+\ No newline at end of file
++    res.qrc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = weatherTray.desktop
++INSTALLS += unix_desktop
++}
++
+-- 
+2.33.1
+

@@ -1,0 +1,22 @@
+package:
+  id: io.github.rtf-editor
+  name: rtf-editor
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt-based text editor for everyone who want to understand the meaning of the Universe.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/wyyrepo/rtf-editor.git"
+  commit: 5c2a9b91cff5b05614bd4f35f97da519930c6bc5
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake

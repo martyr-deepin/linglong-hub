@@ -1,0 +1,20 @@
+package:
+  id: swig
+  name: swig
+  version: 8.3.0
+  kind: lib
+  description: |
+    SWIG (Simplified Wrapper and Interface Generator)
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:  
+  kind: git
+  url: https://github.com/swig/swig.git
+  commit: 8d17973f0868488d4b376b1d1983d38a019d5391
+
+build:
+  kind: cmake

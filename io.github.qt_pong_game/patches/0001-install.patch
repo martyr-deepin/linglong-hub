@@ -1,0 +1,51 @@
+From c6a95af81a127bb4c36295a570b6852538487354 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Fri, 10 Nov 2023 16:43:04 +0800
+Subject: [install.patch_] install
+
+---
+ Pong.desktop |  7 +++++++
+ Pong.pro     | 15 +++++++++++++++
+ 2 files changed, 22 insertions(+)
+ create mode 100644 Pong.desktop
+
+diff --git a/Pong.desktop b/Pong.desktop
+new file mode 100644
+index 0000000..9354c71
+--- /dev/null
++++ b/Pong.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=Pong
++GenericName=Pong
++Hidden=false
++Name=Pong
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+diff --git a/Pong.pro b/Pong.pro
+index 056d46d..5682540 100644
+--- a/Pong.pro
++++ b/Pong.pro
+@@ -42,3 +42,18 @@ FORMS += \
+ 
+ DISTFILES += \
+     README.md
++
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = Pong.desktop
++INSTALLS += unix_desktop
++
++
++
++}
+-- 
+2.33.1
+

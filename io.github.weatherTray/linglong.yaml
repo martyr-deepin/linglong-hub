@@ -1,0 +1,20 @@
+package:
+  id: io.github.weatherTray
+  name: weatherTray
+  version: 0.0.1
+  kind: app
+  description: |
+    Tray weather forecast, every 30 minutes to refresh once, click on the tray display real-time weather, weather forecast window 15 days.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/sonichy/weatherTray.git"
+  commit: e5d132f241ee3016de2342eac153a12659c7a61e
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,20 @@
+package:
+  id: io.github.QtLianliankan
+  name: QtLianliankan
+  version: 1.0.0
+  kind: app
+  description: |
+    一个Qt写的连连看小游戏.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/tashaxing/QtLianliankan.git
+  commit: de7d8448a2d83a165e158d6fea3d3dec9119ece3
+  patch: patches/fix-001.patch
+
+build:
+  kind: qmake

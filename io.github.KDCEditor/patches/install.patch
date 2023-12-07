@@ -1,0 +1,30 @@
+diff --git a/KDCEditor.desktop b/KDCEditor.desktop
+new file mode 100644
+index 0000000..662e593
+--- /dev/null
++++ b/KDCEditor.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=KDCEditor
++Exec=KDCEditor
++Terminal=false
+diff --git a/KDCEditor.pro b/KDCEditor.pro
+index 0b37ea6..cb3a72e 100644
+--- a/KDCEditor.pro
++++ b/KDCEditor.pro
+@@ -87,3 +87,12 @@ OTHER_FILES += \
+     src/TODO.txt \
+     src/coursefiles.txt \
+     src/windows.rc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = KDCEditor.desktop
++INSTALLS += unix_desktop
++}
+\ No newline at end of file

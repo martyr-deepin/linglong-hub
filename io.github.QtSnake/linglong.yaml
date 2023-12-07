@@ -1,0 +1,27 @@
+package:
+  id: io.github.QtSnake
+  name: QtSnake
+  version: 1.0.0
+  kind: app
+  description: |
+    A snake game written in Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/tashaxing/QtSnake.git
+  commit: ecf19065f1c650b7d867537e19e93f0e9f5a6740
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      mkdir build && cd build
+      qmake  -makefile ${conf_args} ${extra_args} ../QtSnake/QtSnake.pro
+

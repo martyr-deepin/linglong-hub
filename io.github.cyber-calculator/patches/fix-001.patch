@@ -1,0 +1,15 @@
+--- ../CMakeLists.txt	2023-11-08 22:00:50.724698643 +0800
++++ ../CMakeLists.txt	2023-11-08 22:01:04.956825546 +0800
+@@ -34,10 +34,10 @@
+         Qt5::QuickControls2
+ )
+ 
+-install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION /usr/bin)
++install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+ 
+ install(FILES
+     cyber-calculator.desktop
+-    DESTINATION /usr/share/applications/
++    DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications/
+     COMPONENT Runtime
+ )

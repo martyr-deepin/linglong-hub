@@ -1,0 +1,19 @@
+package:
+  id: io.github.simple-image-filter
+  name: simple-image-filter
+  version: 1.1.2
+  kind: app
+  description: |
+    At present, simple-image-filter is a QT software that can handle image rotation, clipping, basic beauty, filter and other functions ImageProcess，using Qt,filter
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dependon/simple-image-filter.git
+  commit: 32a9a63a72e557009cd0eef2365377edf3d73556
+
+build:
+  kind: qmake

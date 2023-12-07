@@ -1,0 +1,25 @@
+package:
+  id: unzip
+  name: unzip
+  version: 6.0.0
+  kind: lib
+  description: |
+    unzipper for pkzip-compressed files.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/LuaDist/unzip.git
+  commit: b2592fd6ac2dbf800130be3c64332317aff17f12
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+    build: |
+      make ${jobs} -f unix/Makefile generic_gcc
+    install: |
+      make ${jobs} prefix=${PREFIX} -f unix/Makefile install

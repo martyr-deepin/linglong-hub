@@ -1,0 +1,20 @@
+package:
+  id: io.github.QT_yanglegeyang_game
+  name: QT_yanglegeyang_game
+  version: 0.0.1
+  kind: app
+  description: |
+    The most popular game on wechat applet implemented by QTS
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/weiweiwwww/QT_yanglegeyang_game.git"
+  commit: 4419054e9029edf4efade7ed507c864219e84dba
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

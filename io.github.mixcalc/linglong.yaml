@@ -1,0 +1,22 @@
+package:
+  id: io.github.mixcalc
+  name: mixcalc
+  version: 0.0.1
+  kind: app
+  description: |
+    MixCalc is a calculator for the analysis of mixers. The software can calculate mixer spurious and frequency plan.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/arhiv6/mixcalc.git"
+  commit: 68290304cb40cdfd2a2befae3c6f730c6116739e
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake

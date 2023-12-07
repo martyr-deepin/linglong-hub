@@ -1,0 +1,15 @@
+diff --git a/ImageEnlarger.pro b/ImageEnlarger.pro
+index 87780c5..215385c 100644
+--- a/ImageEnlarger.pro
++++ b/ImageEnlarger.pro
+@@ -82,3 +82,10 @@ FORMS += src/enlargerdialog.ui \
+     src/preferences.ui
+ RESOURCES += ressources.qrc
+ CONFIG += console
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += smilla-enlarger.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target

@@ -1,0 +1,19 @@
+package:
+  id: io.github.qt5-action-editor
+  name: qt5-action-editor
+  version: 0.0.1
+  kind: app
+  description: |
+    A port of qq14-actioneditor from Qt Quarterly to Qt5
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/eteran/qt5-action-editor.git
+  commit: ebc37abeadf4cd96d96f5a7cf0a690bff0e4e331
+  patch: patches/0001-fix-install.patch 
+
+build:
+  kind: cmake

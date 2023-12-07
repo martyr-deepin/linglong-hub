@@ -1,0 +1,44 @@
+From d4d51a961e47e4b20425c5ba024cfe00b4895835 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Wed, 1 Nov 2023 00:15:59 +0800
+Subject: [PATCH] fix-install
+
+---
+ src/src.desktop | 8 ++++++++
+ src/src.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 src/src.desktop
+
+diff --git a/src/src.desktop b/src/src.desktop
+new file mode 100644
+index 0000000..0636357
+--- /dev/null
++++ b/src/src.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=src
++Name=src
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/src/src.pro b/src/src.pro
+index 25f37c5..210d523 100644
+--- a/src/src.pro
++++ b/src/src.pro
+@@ -85,3 +85,10 @@ DISTFILES += \
+     highscores/Bahrain.score \
+     highscores/Silverstone.score
+ 
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = src.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

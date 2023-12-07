@@ -1,0 +1,20 @@
+package:
+  id: io.github.KDCEditor
+  name: KDCEditor
+  version: 1.13.0
+  kind: app
+  description: |
+    Here it is, warts and all. After many more months of hard work and laziness than there ever should have been, it's done. For now, anyway.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/devinacker/kdceditor.git"
+  commit: 52069434e7945bf5651bdd497b78aa08ab168778
+  patch: patches/install.patch
+
+build:
+  kind: qmake

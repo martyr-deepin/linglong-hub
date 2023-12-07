@@ -1,0 +1,26 @@
+package:
+  id: io.github.Draughts
+  name: Draughts
+  version: 1.0.0
+  kind: app
+  description: |
+    Online Draughts game implemented with Qt 5.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/shizhouxing/Draughts.git
+  commit: e1b10171885dd4064f9031bfcf25350840341c60
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}
+      

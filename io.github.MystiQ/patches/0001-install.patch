@@ -1,0 +1,47 @@
+From 27c3d0139be3c1f28f36cb026d6b539d683f8003 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 5 Nov 2023 10:13:06 +0800
+Subject: [PATCH] install
+
+---
+ mystiq.pro | 18 +++++++++++-------
+ 1 file changed, 11 insertions(+), 7 deletions(-)
+
+diff --git a/mystiq.pro b/mystiq.pro
+index 5b0f76e..f2dd9db 100644
+--- a/mystiq.pro
++++ b/mystiq.pro
+@@ -166,19 +166,23 @@ unix {
+     SOURCES -= services/powermanagement-dummy.cpp
+     SOURCES += services/powermanagement-linux.cpp
+     # Install
+-    target.path = /usr/bin/
+-    icon.path = /usr/share/icons/hicolor/scalable/apps/
++    icon.path = $$PREFIX/share/icons/hicolor/scalable/apps/
+     icon.files += icons/mystiq.svg
+     
+-    man.path = /usr/share/man/man1
++    man.path = $$PREFIX/share/man/man1
+     man.files += man/mystiq.1.gz
+     
+-    appdata.path = /usr/share/metainfo
++    appdata.path = $$PREFIX/share/metainfo
+     appdata.files += metainfo/mystiq.appdata.xml
+     
+-    desktop.path = /usr/share/applications/
+-    desktop.files += mystiq.desktop
+-    
++   # desktop.path = /usr/share/applications/
++   # desktop.files += mystiq.desktop
++    BINDIR = $$PREFIX/bin
++    DATADIR = $$PREFIX/share
++    target.path = $$BINDIR
++    desktop.files =mystiq.desktop
++    desktop.path = $$DATADIR/applications/
++
+     INSTALLS += target icon desktop man appdata
+ }
+ 
+-- 
+2.33.1
+

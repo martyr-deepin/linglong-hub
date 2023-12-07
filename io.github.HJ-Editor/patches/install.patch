@@ -1,0 +1,31 @@
+diff --git a/HJ-Editor.desktop b/HJ-Editor.desktop
+new file mode 100644
+index 0000000..c0f812b
+--- /dev/null
++++ b/HJ-Editor.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=HJ-Editor 
++Exec=HJ-Editor 
++Terminal=false
+\ No newline at end of file
+diff --git a/HJ-Editor.pro b/HJ-Editor.pro
+index d3189ea..4e3f851 100644
+--- a/HJ-Editor.pro
++++ b/HJ-Editor.pro
+@@ -45,3 +45,13 @@ RESOURCES += \
+     image.qrc
+ 
+ ICON = icon.icns
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = HJ-Editor.desktop
++INSTALLS += unix_desktop
++}
++

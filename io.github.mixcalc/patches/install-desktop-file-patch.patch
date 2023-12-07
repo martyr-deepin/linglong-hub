@@ -1,0 +1,15 @@
+diff --git a/mixcalc.pro b/mixcalc.pro
+index 2b7a798..0eb4431 100644
+--- a/mixcalc.pro
++++ b/mixcalc.pro
+@@ -44,3 +44,10 @@ OTHER_FILES +=  README.md \
+                 LICENSE
+ 
+ QMAKE_CFLAGS += -std=c++11
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += mixcalc.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target

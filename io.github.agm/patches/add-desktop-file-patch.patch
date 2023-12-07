@@ -1,0 +1,11 @@
+diff --git a/agm.desktop b/agm.desktop
+new file mode 100644
+index 0000000..2e28332
+--- /dev/null
++++ b/agm.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=agm
++Type=Application
++Exec=agm %f
+

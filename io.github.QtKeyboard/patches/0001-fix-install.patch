@@ -1,0 +1,45 @@
+From 5722a5dd189302a2f9c2b4969cc1c7e9ffc5b6cf Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sun, 12 Nov 2023 14:54:38 +0800
+Subject: [PATCH] fix-install
+
+---
+ QtKeyboard.desktop | 8 ++++++++
+ QtKeyboard.pro     | 8 ++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 QtKeyboard.desktop
+
+diff --git a/QtKeyboard.desktop b/QtKeyboard.desktop
+new file mode 100644
+index 0000000..e75510c
+--- /dev/null
++++ b/QtKeyboard.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Qt;
++Exec=QtKeyboard
++Name=QtKeyboard
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/QtKeyboard.pro b/QtKeyboard.pro
+index d3034a7..6beb1e1 100644
+--- a/QtKeyboard.pro
++++ b/QtKeyboard.pro
+@@ -35,3 +35,11 @@ HEADERS  += \
+ 
+ RESOURCES += \
+     Resources/Resources.qrc
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = QtKeyboard.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

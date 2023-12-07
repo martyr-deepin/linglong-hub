@@ -1,0 +1,23 @@
+package:
+  id: io.github.qt_monkey
+  name: qt_monkey
+  version: 1.0.0
+  kind: app
+  description: |
+    Qt Monkey is a tool to automate testing of Qt-based applications (widgets only). It automates creation/modification and running of the tests. Tests are written in Javascript (Qt supported dialect). 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/Dushistov/qt_monkey.git
+  commit: f51e35cd9d38a18d7f331f0114fc23d88b630c28
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
+
+      

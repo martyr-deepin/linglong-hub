@@ -1,0 +1,21 @@
+--- ../CMakeLists.txt	2023-11-11 18:41:22.390491000 +0800
++++ ../CMakeLists.txt	2023-11-11 18:37:05.003501000 +0800
+@@ -22,7 +22,18 @@
+     message(WARNING "CMAKE_PREFIX_PATH is not defined, you may need to set it "
+             "(-DCMAKE_PREFIX_PATH=\"path/to/Qt/lib/cmake\" or -DCMAKE_PREFIX_PATH=/usr/include/{host}/qt{version}/ on Ubuntu)")
+ endif ()
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=Snake
++Exec=Snake
++Categories=Utility;
++")
+ 
++file(WRITE ${CMAKE_BINARY_DIR}/Snake.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/Snake.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++
++install(TARGETS Snake DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+ if ( CMAKE_COMPILER_IS_GNUCC )
+     set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic -Wunused")
+ endif()

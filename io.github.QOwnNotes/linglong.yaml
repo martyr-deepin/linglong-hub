@@ -1,0 +1,24 @@
+package:
+  id: io.github.QOwnNotes
+  name: QOwnNotes
+  version: 22.11.8
+  kind: app
+  description: |
+    QOwnNotes is the open source notepad with markdown support and todo list manager for GNU/Linux, macOS and Windows, that works together with Nextcloud Notes and ownCloud Notes.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/tim-gromeyer/QOwnNotes.git
+  commit: b5bbabfb4223322108b10112d841fd97e2e8bb43
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}
+      

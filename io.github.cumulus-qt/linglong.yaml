@@ -1,0 +1,21 @@
+package:
+  id: io.github.cumulus-qt 
+  name: cumulus-qt
+  version: 4.2.1
+  kind: app
+  description: |
+    Cross platform and open source weather application for GNU/Linux and Android built with Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/vadrian89/cumulus-qt.git"
+  commit: 46ca6468a1fb3936af7e9e5d837b6bee23c8c622
+  patch:
+    - patches/install-desktop.patch
+
+build:
+  kind: qmake

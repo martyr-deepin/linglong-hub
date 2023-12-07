@@ -1,0 +1,21 @@
+package:
+  id: io.github.APA_QT
+  name: APA_QT
+  version: 1.0.0
+  kind: app
+  description: |
+    项目主要验证APA的规划和控制算法，主要涉及车辆信息的解码与车辆控制、超声波的车位检测和障碍物定位、泊车轨迹规划和轨迹跟踪迹.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/zgh551/APA_QT.git"
+  commit: bb45b5e90ab4fded1157b6a83f9d285e887f60c0
+  patch:
+    - patches/install-desktop.patch
+
+build:
+  kind: qmake

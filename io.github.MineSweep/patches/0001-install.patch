@@ -1,0 +1,55 @@
+From f7ae07e4873f96dd6a657881c7571ec593941634 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 7 Nov 2023 13:06:21 +0800
+Subject: [PATCH] install
+
+---
+ MineSweep.desktop |  8 ++++++++
+ MineSweep.pro     | 11 ++++++++---
+ 2 files changed, 16 insertions(+), 3 deletions(-)
+ create mode 100644 MineSweep.desktop
+
+diff --git a/MineSweep.desktop b/MineSweep.desktop
+new file mode 100644
+index 0000000..bdb293a
+--- /dev/null
++++ b/MineSweep.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=MineSweep
++Name=MineSweep
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/MineSweep.pro b/MineSweep.pro
+index b465fd0..e2bfd63 100755
+--- a/MineSweep.pro
++++ b/MineSweep.pro
+@@ -42,13 +42,18 @@ CONFIG(release, debug|release) {
+ APPSHAREDIR = /usr/share/$$TARGET
+ unix:!android: target.path = /usr/bin
+ 
+-desktop.path = /usr/share/applications/
+-desktop.files = $$PWD/install/MineSweep.desktop
+ 
+ translations.path = $$APPSHAREDIR/translations
+ translations.files = $$PWD/translations/*.qm
+ 
+-icon.path =/usr/share/icons
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =MineSweep.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
++icon.path =$$PREFIX/share/icons
+ icon.files=$$PWD/install/MineSweep.png
+ 
+ !isEmpty(target.path): INSTALLS += target icon desktop translations
+-- 
+2.33.1
+

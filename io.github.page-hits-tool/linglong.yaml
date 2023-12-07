@@ -1,0 +1,24 @@
+package:
+  id: io.github.page-hits-tool
+  name: page-hits-tool
+  version: 1.0.0
+  kind: app
+  description: |
+    刷网页点击量工具
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine
+    version: 5.15.7
+
+source:
+  kind: git
+  url: https://github.com/dependon/Page-hits-tool.git
+  commit: 2ca84f85677bb677be26746de8352013e583b1df
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

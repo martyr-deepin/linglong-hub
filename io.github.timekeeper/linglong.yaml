@@ -1,0 +1,21 @@
+package:
+  id: io.github.timekeeper
+  name: timekeeper
+  version: 0.0.1
+  kind: app
+  description: |
+    A Qt Application for Time Tracking.Edit the list of tasks you might work on.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/gilmoskowitz/timekeeper.git"
+  commit: 98f7c268fc0b5f52274fb57aa7cf1821330c714a
+  patch:
+    - patches/install-desktop.patch
+
+build:
+  kind: qmake

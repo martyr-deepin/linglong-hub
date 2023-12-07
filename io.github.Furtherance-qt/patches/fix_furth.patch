@@ -1,0 +1,22 @@
+--- ../Furtherance.pro	2023-11-03 10:08:05.945320000 +0800
++++ ../Furtherance.pro	2023-11-03 10:10:55.116934600 +0800
+@@ -17,5 +17,18 @@
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $${PREFIX}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++DESKTOP_FILE = ./Furtherance.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application'>> $$DESKTOP_FILE")
++system("echo 'Name=Furtherance' >> $$DESKTOP_FILE")
++system("echo 'Comment=Furtherance' >> $$DESKTOP_FILE")
++system("echo 'Exec=Furtherance' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $${PREFIX}/share/applications
++INSTALLS += desktop

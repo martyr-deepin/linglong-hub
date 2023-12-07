@@ -1,0 +1,25 @@
+--- ../dbManagerApp.pro	2023-11-11 11:11:28.933726000 +0800
++++ ../dbManagerApp.pro	2023-11-11 11:10:12.117854000 +0800
+@@ -51,8 +51,21 @@
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     images.qrc
++
++DESKTOP_FILE = ./dbManagerApp.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=dbManagerApp' >> $$DESKTOP_FILE")
++system("echo 'Comment=dbManagerApp.' >> $$DESKTOP_FILE")
++system("echo 'Exec=dbManagerApp' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop

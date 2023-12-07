@@ -1,0 +1,15 @@
+diff --git a/test/test.pro b/test/test.pro
+index 6d63729..c3efef0 100644
+--- a/test/test.pro
++++ b/test/test.pro
+@@ -18,3 +18,10 @@ unix: {
+ # Input
+ HEADERS += mainwindow.h ../include/heatmapper.h ../include/gradientpalette.h
+ SOURCES += main.cpp mainwindow.cpp ../lib/heatmapper.cpp ../lib/gradientpalette.cpp
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += test.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++ INSTALLS += target

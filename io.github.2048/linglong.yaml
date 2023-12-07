@@ -1,0 +1,23 @@
+package:
+  id: io.github.2048
+  name: 2048
+  version: 1.0.1
+  kind: app
+  description: |
+    A C++/Qt clone of the popular 2048 game.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/jvaelen/2048.git
+  commit: d0bdb9cd2a043c95279f9695c008dd975440e9e0
+  patch: patches/fix-001.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      qmake -makefile ${conf_args} ${extra_args} ./ExpGame.pro 

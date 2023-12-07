@@ -1,0 +1,19 @@
+package:
+  id: io.github.GreedySnake
+  name: GreedySnake
+  version: 1.2.0
+  kind: app
+  description: |
+    Simple GreedySnake game.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/zhengzangw/GreedySnake.git
+  commit: 98d06d49b1c6c2e06356448b6e4eea57fe6638a4
+  patch: patches/0001-fix-install.patch
+
+build:
+  kind: qmake

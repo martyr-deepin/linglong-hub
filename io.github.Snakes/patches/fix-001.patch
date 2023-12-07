@@ -1,0 +1,11 @@
+--- ../snake.cpp	2023-11-08 22:32:55.181686202 +0800
++++ ../snake.cpp	2023-11-08 22:26:19.009608000 +0800
+@@ -6,7 +6,7 @@
+ #include <QPixmap>
+ #include <QMainWindow>
+ #include <QLabel>
+-#include <Windows.h>
++// #include <Windows.h>
+ #include <QStyle>
+ #include <QtDebug>
+ #include <QMessageBox>

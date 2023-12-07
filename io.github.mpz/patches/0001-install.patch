@@ -1,0 +1,41 @@
+From 7b1d698044e6bcc1afbac4e984f2e4c373e110e3 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 3 Nov 2023 17:08:54 +0800
+Subject: [PATCH] install
+ 
+---
+ app/app.pro | 2 +-
+ mpz.pro     | 6 ++++++
+ 2 files changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/app/app.pro b/app/app.pro
+index 4e801795..b1e115b6 100644
+--- a/app/app.pro
++++ b/app/app.pro
+@@ -205,7 +205,7 @@ RESOURCES += \
+   ../resources.qrc
+ 
+ # make install
+-target.path = /usr/bin/
++target.path = $$PREFIX/bin/
+ INSTALLS += target
+ 
+ TRANSLATIONS += \
+diff --git a/mpz.pro b/mpz.pro
+index 8da8dbb1..b8fc7b40 100644
+--- a/mpz.pro
++++ b/mpz.pro
+@@ -42,3 +42,9 @@ icon16.path = /usr/share/icons/hicolor/16x16/apps/
+ icon16.files += app/resources/icons/16x16/mpz.png
+ 
+ INSTALLS += desktop icon512 icon256 icon192 icon128 icon96 icon72 icon64 icon48 icon32 icon24 icon22 icon16
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = mpz.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

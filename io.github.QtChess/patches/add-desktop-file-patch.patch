@@ -1,0 +1,10 @@
+diff --git a/QtChess.desktop b/QtChess.desktop
+new file mode 100644
+index 0000000..373f5b8
+--- /dev/null
++++ b/QtChess.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=Qt Chess
++Exec=QtChess %f

@@ -1,0 +1,21 @@
+package:
+  id: io.github.QtPainter
+  name: QtPainter
+  version: 0.0.1
+  kind: app
+  description: |
+    Simple Painting app written in c++ and Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/m-trinacty/QtPainter.git
+  commit: 28c77705e1b7386e3d693ec4665efbe9fe723ef4
+  patch: patches/fix_qtp.patch
+build:
+  kind: cmake
+
+

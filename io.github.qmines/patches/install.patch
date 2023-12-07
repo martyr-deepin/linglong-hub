@@ -1,0 +1,30 @@
+diff --git a/QMines.desktop b/QMines.desktop
+new file mode 100644
+index 0000000..06634e4
+--- /dev/null
++++ b/QMines.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=QMines
++Exec=QMines %f
++Icon=qmines
+diff --git a/QMines.pro b/QMines.pro
+index 5e3708f..a34cfbb 100644
+--- a/QMines.pro
++++ b/QMines.pro
+@@ -36,3 +36,14 @@ RESOURCES += \
+     main.qrc
+ 
+ RC_FILE = main.rc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += QMines.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = images/qmines.png
++INSTALLS += icons

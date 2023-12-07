@@ -1,0 +1,20 @@
+package:
+  id: Imath
+  name: Imath
+  version: 3.1.9
+  kind: lib
+  description: |
+    Imath is a C++ and python library of 2D and 3D vector, matrix, and math operations for computer graphics
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/AcademySoftwareFoundation/Imath.git
+  commit: 490be7e74e713b119895547a9d78a616ed479ceb
+
+
+build:
+  kind: cmake

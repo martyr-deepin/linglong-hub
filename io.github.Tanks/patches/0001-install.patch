@@ -1,0 +1,38 @@
+From da055efcd6a91de9879849b0ea4e08a981357ae8 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Tue, 7 Nov 2023 09:14:18 +0800
+Subject: [install.patch_] install
+
+---
+ CMakeLists.txt | 3 +++
+ Tanks.desktop  | 6 ++++++
+ 2 files changed, 9 insertions(+)
+ create mode 100644 Tanks.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index dfb9022..e1abbc2 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -37,3 +37,6 @@ set(SOURCES main.cpp
+ qt5_add_big_resources(RESOURCES resources/resources.qrc)
+ add_executable(${PROJECT_NAME} ${SOURCES} ${RESOURCES})
+ target_link_libraries(${PROJECT_NAME} ${REQUIRED_LIBS_QUALIFIED})
++
++install(TARGETS Tanks DESTINATION bin)
++install(PROGRAMS Tanks.desktop DESTINATION share/applications)
+diff --git a/Tanks.desktop b/Tanks.desktop
+new file mode 100644
+index 0000000..26b0add
+--- /dev/null
++++ b/Tanks.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=Tanks
++Exec=Tanks
++Terminal=false
+\ No newline at end of file
+-- 
+2.33.1
+

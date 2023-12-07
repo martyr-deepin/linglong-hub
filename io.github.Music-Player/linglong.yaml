@@ -1,0 +1,23 @@
+package:
+  id: io.github.Music-Player
+  name: Music-Player
+  version: 1.0.0
+  kind: app
+  description: |
+    Music-Player.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/ajinkyadatalkar1/Music-Player.git
+  commit: b210bc2dfdf059a367f010f8f1686d4940ce8d28
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      

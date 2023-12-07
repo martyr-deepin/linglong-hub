@@ -1,0 +1,50 @@
+From d16916416a3b855aa8b00133fca5658ff63c6f49 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Sun, 12 Nov 2023 15:26:19 +0800
+Subject: [install.patch_] install
+
+---
+ Five.desktop |  7 +++++++
+ Tankoop.pro  | 14 ++++++++++++++
+ 2 files changed, 21 insertions(+)
+ create mode 100644 Tankoop.desktop
+
+diff --git a/Tankoop.desktop b/Tankoop.desktop
+new file mode 100644
+index 0000000..04e35c0
+--- /dev/null
++++ b/Tankoop.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=Tankoop
++GenericName=Tankoop
++Hidden=false
++Name=Tankoop
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+diff --git a/Tankoop.pro b/Tankoop.pro
+index 82c8fea..b14b4e4 100644
+--- a/Tankoop.pro
++++ b/Tankoop.pro
+@@ -58,3 +58,17 @@ FORMS += \
+ RESOURCES += \
+     Resources.qrc
+ 
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = Tankoop.desktop
++INSTALLS += unix_desktop
++
++
++}
++
++
+-- 
+2.33.1
+

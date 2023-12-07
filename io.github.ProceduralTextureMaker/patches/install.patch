@@ -1,0 +1,27 @@
+diff --git a/ProceduralTextureMaker.desktop b/ProceduralTextureMaker.desktop
+new file mode 100644
+index 0000000..8cd1174
+--- /dev/null
++++ b/ProceduralTextureMaker.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=ProceduralTextureMaker
++Exec=ProceduralTextureMaker %f
++Icon=ProceduralTextureMaker
+diff --git a/ProceduralTextureMaker.pro b/ProceduralTextureMaker.pro
+index 459e776..b3fb444 100644
+--- a/ProceduralTextureMaker.pro
++++ b/ProceduralTextureMaker.pro
+@@ -171,3 +171,10 @@ RESOURCES += \
+ 
+ RC_ICONS += images/mainicon.ico
+ ICON += images/mainicon.icns
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += ProceduralTextureMaker.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
+

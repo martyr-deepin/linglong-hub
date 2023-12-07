@@ -1,0 +1,55 @@
+From 227e5af89a3924d682068910bafa11a1dd9977de Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Tue, 14 Nov 2023 21:54:34 +0800
+Subject: [PATCH] fix-install
+
+---
+ FreeCellQt_V1.desktop |  9 +++++++++
+ FreeCellQt_V1.pro     | 10 +++++++++-
+ 2 files changed, 18 insertions(+), 1 deletion(-)
+ create mode 100644 FreeCellQt_V1.desktop
+
+diff --git a/FreeCellQt_V1.desktop b/FreeCellQt_V1.desktop
+new file mode 100644
+index 0000000..01c6bd2
+--- /dev/null
++++ b/FreeCellQt_V1.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=FreeCellQt_V1
++Name=FreeCellQt_V1
++Icon=icon.ico
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/FreeCellQt_V1.pro b/FreeCellQt_V1.pro
+index 8ee0586..8bbf38b 100644
+--- a/FreeCellQt_V1.pro
++++ b/FreeCellQt_V1.pro
+@@ -9,7 +9,7 @@ QT       += sql
+ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+ 
+ INCLUDEPATH += $$quote(C:\Program Files\MySQL\MySQL Connector C 6.1\include)
+-LIBS += -L$$"C:\Program Files\MySQL\MySQL Connector C 6.1\lib"
++
+ 
+ TARGET = FreeCellQt_V1
+ TEMPLATE = app
+@@ -51,3 +51,11 @@ FORMS += \
+     gameresultdlg.ui
+ 
+ RC_FILE += icoconfig.rc
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = FreeCellQt_V1.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

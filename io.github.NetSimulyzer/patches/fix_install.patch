@@ -1,0 +1,47 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 600db6e..062f824 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -137,3 +137,8 @@ if(ENABLE_DOXYGEN)
+             VERBATIM
+             )
+ endif()
++
++install(TARGETS netsimulyzer DESTINATION bin/)
++install(DIRECTORY resources DESTINATION share/)
++install(FILES netsimulyzer.desktop DESTINATION share/applications/)
++install(FILES application.png DESTINATION share/icons/ RENAME netsimulyzer.png)
+
+diff --git a/netsimulyzer.desktop b/netsimulyzer.desktop
+new file mode 100644
+index 0000000..f57507a
+--- /dev/null
++++ b/netsimulyzer.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Name=netsimulyzer
++Comment=A flexible 3D visualizer for displaying, debugging, presenting, and understanding ns-3 scenarios.
++Exec=netsimulyzer %F
++Icon=netsimulyzer
++Type=Application
++
+
+diff --git a/main.cpp b/main.cpp
+index e8113b2..18f523a 100644
+--- a/main.cpp
++++ b/main.cpp
+@@ -157,11 +157,12 @@ std::optional<QFileInfo> autodetectResourceDir() {
+     return d.absolutePath();
+   };
+
+-  std::array<QString, 4> checkPaths{
++  std::array<QString, 5> checkPaths{
+       QCoreApplication::applicationDirPath(),
+       addOneUp(QCoreApplication::applicationDirPath()),
+       QDir::currentPath(),
+-      addOneUp(QDir::currentPath())
++      addOneUp(QDir::currentPath()),
++      QCoreApplication::applicationDirPath() + "/../share"
+   };
+
+   QDir dir{"", "resources"};

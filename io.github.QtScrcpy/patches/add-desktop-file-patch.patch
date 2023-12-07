@@ -1,0 +1,11 @@
+diff --git a/output/linux/release/QtScrcpy.desktop b/output/linux/release/QtScrcpy.desktop
+new file mode 100644
+index 0000000..024695d
+--- /dev/null
++++ b/output/linux/release/QtScrcpy.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=QtScrcpy
++Exec=QtScrcpy %f
++Icon=logo

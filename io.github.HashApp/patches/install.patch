@@ -1,0 +1,28 @@
+diff --git a/HashApp.desktop b/HashApp.desktop
+new file mode 100644
+index 0000000..04c1a05
+--- /dev/null
++++ b/HashApp.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Type=Application
++Name=Hash App
++Exec=HashApp %f
++Icon=HashApp
++
+diff --git a/HashApp.pro b/HashApp.pro
+index 6406323..523126b 100644
+--- a/HashApp.pro
++++ b/HashApp.pro
+@@ -25,3 +25,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ 
+ RESOURCES += \
+     resource.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += HashApp.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
+

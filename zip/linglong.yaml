@@ -1,0 +1,25 @@
+package:
+  id: zip
+  name: zip
+  version: 3.0.0.0
+  kind: lib
+  description: |
+    Info ZIP (encryption support).
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/LuaDist/zip.git
+  commit: f6cfe48f6bc5bf2d505a0e0eb265ce4cb238db89
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+    build: |
+      make ${jobs} -f unix/Makefile generic_gcc
+    install: |
+      make ${jobs} prefix=${PREFIX} -f unix/Makefile install

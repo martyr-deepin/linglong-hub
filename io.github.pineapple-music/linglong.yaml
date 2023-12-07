@@ -1,0 +1,22 @@
+package:
+  id: io.github.pineapple-music
+  name: pineapple-music
+  version: 0.1.0
+  kind: app
+  description: |
+    A homebrew music player.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: taglib/1.12.0
+
+source:
+  kind: git
+  url: https://github.com/BLumia/pineapple-music.git
+  commit: 6dc64d1b07a1bf1db2698d62b48f6e9d2f06b980
+
+build:
+  kind: cmake

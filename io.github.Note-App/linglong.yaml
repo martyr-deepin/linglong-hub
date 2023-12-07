@@ -1,0 +1,25 @@
+package:
+  id: io.github.Note-App
+  name: Note-App
+  version: 0.0.1
+  kind: app
+  description: |
+    Note Sample app is created in C++ using QT Framework
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: libxcb
+    version: 1.14.1 
+
+source:
+  kind: git
+  url: https://github.com/yehiahd/Note-App.git
+  commit: c8b9f58030e333cda78042383e3aab0a75310a30
+  patch: patches/fix_na.patch
+build:
+  kind: qmake
+
+

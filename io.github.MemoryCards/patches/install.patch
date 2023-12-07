@@ -1,0 +1,27 @@
+diff --git a/MemoryCards.desktop b/MemoryCards.desktop
+new file mode 100644
+index 0000000..3a88ea1
+--- /dev/null
++++ b/MemoryCards.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=Memory Cards
++Exec=MemoryCards %f
++Icon=MemoryCards
+diff --git a/MemoryCards.pro b/MemoryCards.pro
+index a07170f..0407f52 100644
+--- a/MemoryCards.pro
++++ b/MemoryCards.pro
+@@ -41,3 +41,10 @@ HEADERS += \
+ 
+ FORMS += \
+         mainwindow.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += MemoryCards.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
+

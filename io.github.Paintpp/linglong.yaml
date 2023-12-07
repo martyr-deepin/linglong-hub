@@ -1,0 +1,22 @@
+package:
+  id: io.github.Paintpp
+  name: Paintpp
+  version: 0.1.1
+  kind: app
+  description: |
+    A simple bitmap painting program built with Qt.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/tim-gromeyer/Paintpp.git
+  commit: 3b0fb55e95c134d2940cf025d2f56c60ecaa16d0
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      

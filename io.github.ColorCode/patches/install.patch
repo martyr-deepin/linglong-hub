@@ -1,0 +1,32 @@
+diff --git a/colorcode.desktop b/colorcode.desktop
+new file mode 100644
+index 0000000..012792f
+--- /dev/null
++++ b/colorcode.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=Color Code
++Exec=colorcode %f
++Icon=cc64
+diff --git a/colorcode.pro b/colorcode.pro
+index 098fb6d..1d4353a 100644
+--- a/colorcode.pro
++++ b/colorcode.pro
+@@ -83,3 +83,15 @@ TRANSLATIONS += trans_de.ts \
+     trans_es.ts
+ CODECFORTR = UTF-8
+ CODECFORSRC = UTF-8
++
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += colorcode.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = img/cc64.png
++INSTALLS += icons
+

@@ -1,0 +1,20 @@
+package:
+  id: io.github.SmartCode
+  name: SmartCode
+  version: 1.0.0
+  kind: app
+  description: |
+    Official IDE for LegoLang
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/shotInLeg/SmartCode.git"
+  commit: 9cbe556996ae033f98d7459c4cf260e3d7155e21
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,20 @@
+package:
+  id: io.github.FFBChecker
+  name: FFBChecker
+  version: 0.0.1
+  kind: app
+  description: |
+    This tool of a very unimaginative name is mainly intended to test implementation of Force Feedback on Linux systems.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/MadCatX/FFBChecker.git
+  commit: 815d7d44fca0483dd222841b15bcf99d0bc1d2f2
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake

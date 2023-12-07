@@ -1,0 +1,45 @@
+From fb048bcd611aa6ce0b5fc389092bcf05beddda3d Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Tue, 14 Nov 2023 21:35:00 +0800
+Subject: [PATCH] fix-install
+
+---
+ GreedySnake.desktop | 9 +++++++++
+ GreedySnake.pro     | 8 ++++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 GreedySnake.desktop
+
+diff --git a/GreedySnake.desktop b/GreedySnake.desktop
+new file mode 100644
+index 0000000..c6cec4e
+--- /dev/null
++++ b/GreedySnake.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Icon=icon.ico
++Exec=GreedySnake
++Name=GreedySnake
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/GreedySnake.pro b/GreedySnake.pro
+index e356cb1..87d6e2e 100644
+--- a/GreedySnake.pro
++++ b/GreedySnake.pro
+@@ -47,3 +47,11 @@ RESOURCES += \
+ 
+ ICON = icon.icns
+ RC_FILE = icon.rc
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = GreedySnake.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+

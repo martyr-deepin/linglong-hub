@@ -1,0 +1,20 @@
+package:
+  id: io.github.HTYAudioRecorder
+  name: HTYAudioRecorder
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt5-based recording software.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/sonichy/HTYAudioRecorder.git"
+  commit: a782c97eec2cc20503750939f880f2333e450b66
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

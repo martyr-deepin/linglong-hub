@@ -1,0 +1,20 @@
+package:
+  id: io.github.HTYPaint_Qt
+  name: HTYPaint_Qt
+  version: 0.0.1
+  kind: app
+  description: |
+    Baton is a code editor for C++ Design document:
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/sonichy/HTYPaint_Qt.git"
+  commit: 52aebc300465478fea5449266af77b44729dc5a5
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

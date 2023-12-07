@@ -1,0 +1,21 @@
+package:
+  id: io.github.litetran
+  name: litetran
+  version: 1.0.0
+  kind: app
+  description: |
+    Tiny text translator.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/yurijmikhalevich/litetran.git
+  commit: 84cecf3e8d28d90175e47a407045c141bd63830a
+
+build:
+  kind: cmake
+
+

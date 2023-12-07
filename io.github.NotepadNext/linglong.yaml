@@ -1,0 +1,23 @@
+package:
+  id: io.github.NotepadNext
+  name: NotepadNext
+  version: 0.6.4
+  kind: app
+  description: |
+    Notepad Next is yet another text and source code editor.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/dail8859/NotepadNext.git"
+  commit: ccbd3484862ec1f833af428a8050260fd1511566
+
+variables:
+  extra_args: |
+     src
+
+build:
+  kind: qmake

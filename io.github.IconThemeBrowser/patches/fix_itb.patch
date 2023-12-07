@@ -1,0 +1,21 @@
+--- ../IconThemeBrowser.pro	2023-11-22 21:15:20.471413000 +0800
++++ ../IconThemeBrowser.pro	2023-11-22 21:13:44.175365000 +0800
+@@ -27,5 +27,17 @@
+ 	editpathsdialog.ui \
+ 	previewdialog.ui
+ 
+-target.path = $$[QT_INSTALL_BINS]
++target.path = $$PREFIX/bin
+ INSTALLS += target
++DESKTOP_FILE = ./iconthemebrowser.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=iconthemebrowser' >> $$DESKTOP_FILE")
++system("echo 'Comment=iconthemebrowser.' >> $$DESKTOP_FILE")
++system("echo 'Exec=iconthemebrowser' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop

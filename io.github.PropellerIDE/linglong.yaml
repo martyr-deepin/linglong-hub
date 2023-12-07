@@ -1,0 +1,24 @@
+package:
+  id: io.github.PropellerIDE
+  name: PropellerIDE
+  version: 0.38.5
+  kind: app
+  description: |
+    PropellerIDE is a fun, easy, beautiful editor for the Propeller microcontroller.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+
+source:
+  kind: git
+  url: https://github.com/refaqtor/PropellerIDE.git
+  commit: 23c674277a9fa03468e24d4852399615391edd0c
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      

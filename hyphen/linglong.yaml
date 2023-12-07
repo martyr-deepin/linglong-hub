@@ -1,0 +1,21 @@
+package:
+  id: hyphen
+  name: hyphen
+  version: 2.8.8
+  kind: lib
+  description: |
+    Hyphen - hyphenation library to use converted TeX hyphenation patterns 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+depends:
+  - id: automake/1.16.5
+  - id: libtool/2.4.2
+source:
+  kind: git
+  url: "https://github.com/hunspell/hyphen.git"
+  commit: 73dd2967c8e1e4f6d7334ee9e539a323d6e66cbd
+build:
+  kind: autotools
+ 

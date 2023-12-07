@@ -1,0 +1,30 @@
+--- ../UEFITool/uefitool.pro	2023-11-24 20:59:52.642734000 +0800
++++ ../UEFITool/uefitool.pro	2023-11-24 21:18:03.424310094 +0800
+@@ -163,3 +163,27 @@
+ ICON = icons/uefitool.icns
+ QMAKE_BUNDLE_DATA += ICONFILE
+ QMAKE_INFO_PLIST = Info.plist
++
++DESKTOP_FILE = ./UEFITool.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=6.7.1' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=UEFITool' >> $$DESKTOP_FILE")
++system("echo 'Comment=UEFITool.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$PREFIX/bin/UEFITool' >> $$DESKTOP_FILE")
++system("echo 'Icon=uefitool.ico' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icon.files = $$PWD/UEFITool/icons/uefitool.ico
++icon.path = $$PREFIX/share/icons/UEFITool/
++INSTALLS += icon
++
++

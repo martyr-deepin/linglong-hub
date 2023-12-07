@@ -1,0 +1,21 @@
+package:
+  id: io.github.dbManagerApp
+  name: dbManagerApp
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt C++ app for database management.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0 
+
+source:
+  kind: git
+  url: https://github.com/LouisVraie/dbManagerApp.git
+  commit: bde82915a340e038da8396ff45933624c5bbfea6
+  patch: patches/fix_dma.patch
+build:
+  kind: qmake
+
+

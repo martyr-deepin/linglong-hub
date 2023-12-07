@@ -1,0 +1,26 @@
+diff --git a/Binaly.desktop b/Binaly.desktop
+new file mode 100644
+index 0000000..63c9a44
+--- /dev/null
++++ b/Binaly.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Name=Binaly
++Exec=Binaly %F
++Icon=Binaly
++Type=Application
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 0bb2fac..38579a6 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -34,6 +34,6 @@ else(${Qt5Widgets_FOUND})
+   target_link_libraries(${PROJECT_NAME} ${QT_LIBRARIES})
+ endif(${Qt5Widgets_FOUND})
+ 
+-install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
+-install(FILES ${TRANS_BIN} DESTINATION share/Binaly)
+-install(FILES icon/Binaly.png DESTINATION share/Binaly)
+\ No newline at end of file
++install(TARGETS Binaly DESTINATION bin/)
++install(FILES Binaly.desktop DESTINATION share/applications/)
++install(FILES icon/Binaly.png DESTINATION share/icons/)

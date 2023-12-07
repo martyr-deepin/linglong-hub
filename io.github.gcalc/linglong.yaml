@@ -1,0 +1,21 @@
+package:
+  id: io.github.gcalc
+  name: gcalc
+  version: 0.0.1
+  kind: app
+  description: |
+    The very old graphic calculus project,resurrected ;-)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/grame-cncm/gcalc.git
+  commit: 992c9cd4e09b06115241070fadc763ff4553f8d3
+  patch:
+    - patches/install.patch
+
+build:
+  kind: qmake

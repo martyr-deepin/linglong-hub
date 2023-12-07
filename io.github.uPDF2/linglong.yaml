@@ -1,0 +1,20 @@
+package:
+  id: io.github.uPDF2
+  name: uPDF2
+  version: 2.3.0
+  kind: app
+  description: |
+    This software is licensed under Gnu General Public License Version 3. Please look at the COPYING file for further details.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/turgu1/uPDF2.git
+  commit: caf000d3949674d7ea0844b45282f578c1ffdaa8
+  patch: patches/0001-fix-install.patch 
+
+build:
+  kind: qmake
+

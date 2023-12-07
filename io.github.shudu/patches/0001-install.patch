@@ -1,0 +1,44 @@
+From 516e4a3a810d22f1645cb36e13e3be588d64cb3d Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Wed, 8 Nov 2023 10:03:46 +0800
+Subject: [install.patch_] install
+
+---
+ SudoKu.desktop | 6 ++++++
+ SudoKu.pro     | 9 +++++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 SudoKu.desktop
+
+diff --git a/SudoKu.desktop b/SudoKu.desktop
+new file mode 100644
+index 0000000..e2b3a9d
+--- /dev/null
++++ b/SudoKu.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=SudoKu
++Exec=SudoKu
++Terminal=false
+\ No newline at end of file
+diff --git a/SudoKu.pro b/SudoKu.pro
+index 0d5b3bb..b9ebd6c 100644
+--- a/SudoKu.pro
++++ b/SudoKu.pro
+@@ -33,3 +33,12 @@ HEADERS  += mainwindow.h \
+     sudoku.h
+ 
+ FORMS    += mainwindow.ui
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = SudoKu.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+

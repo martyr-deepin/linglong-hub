@@ -1,0 +1,20 @@
+package:
+  id: io.github.rgbtest
+  name: rgbtest
+  version: 4.1.0
+  kind: app
+  description: |
+    rgbtest - LCD Monitor Dead Pixel Test
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/chipmunk-sm/rgbtest.git
+  commit: 98b2808b74450b94fe4ddce28d56bb5358b6534d
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

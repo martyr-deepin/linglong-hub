@@ -1,0 +1,21 @@
+--- ../CAN_BUS.pro	2023-11-11 14:46:48.801724000 +0800
++++ ../CAN_BUS.pro	2023-11-11 14:44:57.017363000 +0800
+@@ -33,3 +33,18 @@
+     RemoveEcuIcon.qrc \
+     saveIcon.qrc \
+     loadIcon.qrc
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++
++DESKTOP_FILE = ./CAN_BUS.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=CAN_BUS' >> $$DESKTOP_FILE")
++system("echo 'Comment=CAN_BUS.' >> $$DESKTOP_FILE")
++system("echo 'Exec=CAN_BUS' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop

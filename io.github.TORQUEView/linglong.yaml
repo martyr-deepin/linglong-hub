@@ -1,0 +1,21 @@
+package:
+  id: io.github.TORQUEView
+  name: TORQUEView
+  version: 1.0.6
+  kind: app
+  description: |
+    TORQUEView - A Qt-based GUI application that lets users investigate and control TORQUE systems.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/davidivanmarsh/TORQUEView.git"
+  commit: 76a2c7f7f675a501adaee84f5e3b405622028d24
+  patch:
+    - patches/install-desktop.patch
+
+build:
+  kind: qmake

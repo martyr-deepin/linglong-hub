@@ -1,0 +1,22 @@
+package:
+  id: io.github.DDCToolbox
+  name: DDCToolbox
+  version: 2.0.1
+  kind: app
+  description: |
+    DDCToolbox.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/ThePBone/DDCToolbox.git
+  commit: 1988c7b00c57f890975e8f50460646bda6e21dd9
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      

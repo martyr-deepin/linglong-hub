@@ -1,0 +1,26 @@
+package:
+  id: io.github.StatisticAnalyzer-CPP-Qt 
+  name: StatisticAnalyzer-CPP-Qt
+  version: 0.0.1
+  kind: app
+  description: |
+    An application for analyzing statistics, takes as input a file with a sample, analyzes it, and allows, by dividing the sample into intervals, to construct a graph.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/tonitaga/StatisticAnalyzer-CPP-Qt.git"
+  commit: f9099e30d57534ab7ac7f3376baf60e4a2c4f0db
+  patch:
+    - patches/install-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src/View
+      qmake -makefile ${conf_args} ${extra_args}
+

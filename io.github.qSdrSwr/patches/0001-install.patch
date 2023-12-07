@@ -1,0 +1,43 @@
+From 8ebf19a2c8eb743f37fb28047515c8a12836a7bc Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 22 Nov 2023 21:21:19 +0800
+Subject: [PATCH] install
+
+---
+ sdrSwr.desktop | 8 ++++++++
+ sdrSwr.pro     | 6 ++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 sdrSwr.desktop
+
+diff --git a/sdrSwr.desktop b/sdrSwr.desktop
+new file mode 100644
+index 0000000..af73bc0
+--- /dev/null
++++ b/sdrSwr.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=sdrSwr
++Name=sdrSwr
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/sdrSwr.pro b/sdrSwr.pro
+index 4a8f2e8..6bb5f5e 100644
+--- a/sdrSwr.pro
++++ b/sdrSwr.pro
+@@ -43,4 +43,10 @@ FORMS    += mainwindow.ui \
+ 
+ RESOURCES += \
+     resources.qrc
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =sdrSwr.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+ 
+-- 
+2.33.1
+

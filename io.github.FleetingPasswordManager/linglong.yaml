@@ -1,0 +1,23 @@
+package:
+  id: io.github.FleetingPasswordManager
+  name: FleetingPasswordManager
+  version: 2.9.0
+  kind: app
+  description: |
+    Fleeting Password Manager is a simple program that generates pseudo-random passwords from the given master password and login details. The same input data will always result in the same password.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/juzzlin/FleetingPasswordManager.git
+  commit: 035d427f3f4dd40d857e12b4aaab4bc7f5291ae9
+  patch: patches/fix_fpm.patch
+build:
+  kind: cmake
+
+
+
+

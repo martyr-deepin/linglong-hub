@@ -1,0 +1,24 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index e792894..c043813 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -57,3 +57,6 @@ add_executable(baton ${HEADERS} ${SOURCES})
+ target_link_libraries(baton
+         Qt5::Core
+         Qt5::Widgets)
++
++install(TARGETS baton DESTINATION bin)
++install(PROGRAMS baton.desktop DESTINATION share/applications)
+diff --git a/baton.desktop b/baton.desktop
+new file mode 100644
+index 0000000..6e7dcf7
+--- /dev/null
++++ b/baton.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=baton
++Exec=baton
++Terminal=false
+\ No newline at end of file

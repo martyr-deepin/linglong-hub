@@ -1,0 +1,24 @@
+diff --git a/qt-todo.pro b/qt-todo.pro
+index c206b3a..99b46c0 100644
+--- a/qt-todo.pro
++++ b/qt-todo.pro
+@@ -30,8 +30,8 @@ contains("test", 1) {
+ greaterThan(QT_MAJOR_VERSION, 4) {
+     QT += widgets
+     unix {
+-        target.path = /usr/bin
+-        target.files = build/qt-todo
++        target.path = $$PREFIX/bin
++        target.files = build/qt-todo
+         INSTALLS += target
+     }
+ }
+@@ -58,3 +58,7 @@ FORMS += ui/*.ui
+ SOURCES += src/*.cpp
+ HEADERS += headers/*.h
+ RESOURCES = resources.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += qt-todo.desktop
++INSTALLS += desktop
+

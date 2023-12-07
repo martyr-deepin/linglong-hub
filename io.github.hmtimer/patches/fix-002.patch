@@ -1,0 +1,31 @@
+--- ../src/src.pro	2023-11-01 14:38:29.445005000 +0800
++++ ../src/src.pro	2023-11-01 14:57:29.403727718 +0800
+@@ -53,23 +53,23 @@
+ 
+ install_bin.files=hmtimer
+ CONFIG(flatpak):install_bin.path=/app/bin
+-else:install_bin.path=/usr/bin
++else:install_bin.path=$$PREFIX/bin
+ 
+ install_translation.files=language/hmtimer_*.qm
+ CONFIG(flatpak):install_translation.path=/app/share/hmtimer
+-else:install_translation.path=/usr/share/hmtimer
++else:install_translation.path=$$PREFIX/share/hmtimer
+ 
+ install_icon128.files=icon/128x128/io.github.cges30901.hmtimer.png
+ CONFIG(flatpak):install_icon128.path=/app/share/icons/hicolor/128x128/apps
+-else:install_icon128.path=/usr/share/icons/hicolor/128x128/apps
++else:install_icon128.path=$$PREFIX/share/icons/hicolor/128x128/apps
+ 
+ install_icon64.files=icon/64x64/io.github.cges30901.hmtimer.png
+ CONFIG(flatpak):install_icon64.path=/app/share/icons/hicolor/64x64/apps
+-else:install_icon64.path=/usr/share/icons/hicolor/64x64/apps
++else:install_icon64.path=$$PREFIX/share/icons/hicolor/64x64/apps
+ 
+ install_icon48.files=icon/48x48/io.github.cges30901.hmtimer.png
+ CONFIG(flatpak):install_icon48.path=/app/share/icons/hicolor/48x48/apps
+-else:install_icon48.path=/usr/share/icons/hicolor/48x48/apps
++else:install_icon48.path=$$PREFIX/share/icons/hicolor/48x48/apps
+ 
+ INSTALLS+=install_bin install_translation install_icon128 install_icon64 install_icon48
+ 

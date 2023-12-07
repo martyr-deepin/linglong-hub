@@ -1,0 +1,20 @@
+package:
+  id: io.github.color_picker
+  name: color_picker
+  version: 1.0.0
+  kind: app
+  description: |
+    基于Qt实现的强大取色器.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/llf137224350/color_picker.git
+  commit: e5f43eb8198ad8454973b7bde96a43cd97ae04fc
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,33 @@
+From d64fee136198bca4672ea8ebe76da56637018ef5 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Wed, 15 Nov 2023 12:44:05 +0800
+Subject: [PATCH] fix-install
+
+---
+ CMakeLists.txt | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index e64961e..53c186c 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -23,3 +23,16 @@ target_link_libraries(qt5-action-editor
+ 	Qt5::Gui
+ 	Qt5::PrintSupport
+ )
++
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=qt5-action-editor.desktop
++Exec=qt5-action-editor
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/qt5-action-editor.desktop "${DESKTOP_FILE_CONTENT}")
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/qt5-action-editor.desktop DESTINATION share/applications)
++install(TARGETS qt5-action-editor DESTINATION bin)
+-- 
+2.33.1
+

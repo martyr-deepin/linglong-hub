@@ -1,0 +1,36 @@
+package:
+  id: OCIO
+  name: OCIO
+  version: 2.3.0
+  kind: lib
+  description: |
+    A color management framework for visual effects and animation.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+ 
+depends: 
+  - id: python/3.10.
+  - id: pkgconf/2.0.3
+  - id: yaml-cpp/0.8.0
+  - id: Imath/3.1.9
+  - id: openexr/3.2.1
+  - id: pystring/1.1.4.1
+  - id: zstd/1.5.5
+  - id: minizip-ng/3.0.7.1
+  - id: pybind11/2.11.1
+  - id: zlib/1.2.12.4
+  - id: libdeflate/1.19.0
+
+source:
+  kind: git
+  url: https://github.com/AcademySoftwareFoundation/OpenColorIO.git
+  commit: 41441bb2e6090094990c677cb3a09ee65d5a1f79
+
+variables:
+  extra_args: |
+    -Dminizip-ng_LIBRARY:FILEPATH=/runtime/lib/x86_64-linux-gnu/libminizip.so
+
+build:
+  kind: cmake

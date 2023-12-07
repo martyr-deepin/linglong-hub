@@ -1,0 +1,22 @@
+package:
+  id: io.github.Jerry-Rig
+  name: Jerry-Rig
+  version: 2.2.0
+  kind: app
+  description: |
+    A GUI wrapper for both FFMPEG and LibAv to help my friend Jerry compress videos. Its basically like handbrake, except the output isn't garbage.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/CountMurphy/Jerry-Rig.git
+  commit: 1558d16e3134bf9c028f02a19a868599d2176fb1
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      

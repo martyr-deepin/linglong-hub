@@ -1,0 +1,11 @@
+--- ../Calculator/unary_operation_handler.cpp	2023-11-10 19:43:53.568287000 +0800
++++ ../Calculator/unary_operation_handler.cpp	2023-11-10 19:49:37.545009016 +0800
+@@ -81,7 +81,7 @@
+         return 1;
+     }
+     else if(labelnumber>=FACTORIAL_INFINITY){
+-        return INFINITY;
++        return Q_INFINITY;
+     }
+     else {
+         labelnumber-=1;

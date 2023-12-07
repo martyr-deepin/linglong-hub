@@ -1,0 +1,27 @@
+package:
+  id: io.github.WordFun
+  name: WordFun
+  version: 1.0.0
+  kind: app
+  description: |
+    QT based C++ simple word search game.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/AyeshJayasekara/WordFun.git
+  commit: 47957227e0eb6eefe132bc996054157a9967598e
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd WordFun
+      qmake -makefile ${conf_args} ${extra_args}
+
+      

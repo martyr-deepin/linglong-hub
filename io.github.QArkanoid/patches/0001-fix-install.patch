@@ -1,0 +1,55 @@
+From 39382785824baa5397f34d1da5cdd5a29b516b08 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Wed, 1 Nov 2023 12:33:57 +0800
+Subject: [PATCH] fix-install
+
+---
+ QArkanoid.desktop |  8 ++++++++
+ QArkanoid.pro     | 15 ++++++++++++---
+ 2 files changed, 20 insertions(+), 3 deletions(-)
+ create mode 100644 QArkanoid.desktop
+
+diff --git a/QArkanoid.desktop b/QArkanoid.desktop
+new file mode 100644
+index 0000000..a31ca75
+--- /dev/null
++++ b/QArkanoid.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QArkanoid
++Name=QArkanoid
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/QArkanoid.pro b/QArkanoid.pro
+index 00ebdb5..426bdd2 100644
+--- a/QArkanoid.pro
++++ b/QArkanoid.pro
+@@ -26,9 +26,18 @@ HEADERS += \
+ FORMS +=
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
++#qnx: target.path = /tmp/$${TARGET}/bin
++#else: unix:!android: target.path = /opt/$${TARGET}/bin
++#!isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     resources.qrc
++
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = QArkanoid.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

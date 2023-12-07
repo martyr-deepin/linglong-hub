@@ -1,0 +1,11 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index d64bb36..b539d4e 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -78,3 +78,5 @@ set(CPACK_PACKAGE_VERSION_MINOR ${MIRASOL_MINOR_VERSION})
+ set(CPACK_PACKAGE_VERSION_PATCH ${MIRASOL_PATCH_VERSION})
+ set(CPACK_SOURCE_IGNORE_FILES /\\\\.git;.*~)
+ include(CPack)
++
++install(FILES mirasol.desktop DESTINATION share/applications)
+

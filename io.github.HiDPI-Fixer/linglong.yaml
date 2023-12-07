@@ -1,0 +1,20 @@
+package:
+  id: io.github.HiDPI-Fixer
+  name: HiDPI-Fixer
+  version: 1.4.0.1
+  kind: app
+  description: |
+    This application allows you to create a script that acomplishes 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/alex-spataru/HiDPI-Fixer.git
+  commit: 83a5359b3e94b658577e5a2deac01205c554255b
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,24 @@
+package:
+  id: io.github.QT-PigGame
+  name: QT-PigGame
+  version: 1.0.0
+  kind: app
+  description: |
+    Dice game written in Qt using Qt Creator. This is my first Qt MacOS Desktop App, to grasp the basic concepts and get comfortable with the software.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+
+source:
+  kind: git
+  url: https://github.com/valentina-di-vincenzo/QT-PigGame.git
+  commit: 2b730162f4f9b48bfc58a878a9de15a0effa28e5
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      

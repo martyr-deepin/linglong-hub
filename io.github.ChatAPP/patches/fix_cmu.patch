@@ -1,0 +1,21 @@
+--- ../ChatMeUp.pro	2023-11-11 15:54:47.479648000 +0800
++++ ../ChatMeUp.pro	2023-11-11 15:56:39.513108000 +0800
+@@ -40,3 +40,18 @@
+         resources.qrc
+ 
+ RC_FILE = chatapp.rc
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++DESKTOP_FILE = ./ChatMeUp.desktop
++
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=ChatMeUp' >> $$DESKTOP_FILE")
++system("echo 'Comment=ChatMeUp.' >> $$DESKTOP_FILE")
++system("echo 'Exec=ChatMeUp' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop

@@ -1,0 +1,45 @@
+From 13d4c79508c417469bdda04fc747dc694678c883 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Thu, 9 Nov 2023 09:30:05 +0800
+Subject: [install.patch_] install
+
+---
+ HTYClock.desktop | 6 ++++++
+ HTYClock.pro     | 9 +++++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 HTYClock.desktop
+
+diff --git a/HTYClock.desktop b/HTYClock.desktop
+new file mode 100644
+index 0000000..0ecb976
+--- /dev/null
++++ b/HTYClock.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=HTYClock
++Exec=HTYClock
++Terminal=false
+\ No newline at end of file
+diff --git a/HTYClock.pro b/HTYClock.pro
+index fcdeabc..e98cc44 100644
+--- a/HTYClock.pro
++++ b/HTYClock.pro
+@@ -11,3 +11,12 @@ SOURCES += \
+ 
+ HEADERS += \
+         mainwindow.h
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = HTYClock.desktop
++INSTALLS += unix_desktop
++}
+\ No newline at end of file
+-- 
+2.33.1
+

@@ -1,0 +1,20 @@
+package:
+  id: io.github.Chess
+  name: Chess
+  version: 0.0.1
+  kind: app
+  description: |
+    This is a simple chess game that using a minimax algorithm with alpha-beta prunning for searching best position.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/AlexanderAkhtyrtsev/chess-qt.git"
+  commit: dc42f719bceac533c21244008f038e894a9078f5
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

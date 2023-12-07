@@ -1,0 +1,50 @@
+From 790cf70a2a3c3501d6a39dd7b84683d2d77d4627 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Sat, 18 Nov 2023 17:04:08 +0800
+Subject: [install.patch_] install
+
+---
+ WordFun/WordFun.desktop |  7 +++++++
+ WordFun/WordFun.pro     | 13 +++++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 WordFun/WordFun.desktop
+
+diff --git a/WordFun/WordFun.desktop b/WordFun/WordFun.desktop
+new file mode 100644
+index 0000000..bf634a4
+--- /dev/null
++++ b/WordFun/WordFun.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=WordFun
++GenericName=WordFun
++Hidden=false
++Name=WordFun
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+diff --git a/WordFun/WordFun.pro b/WordFun/WordFun.pro
+index 4f0b72c..50717fa 100755
+--- a/WordFun/WordFun.pro
++++ b/WordFun/WordFun.pro
+@@ -24,3 +24,16 @@ letters.h\
+ checker.h
+ 
+ FORMS    += wordfun.ui
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = WordFun.desktop
++INSTALLS += unix_desktop
++
++
++}
+\ No newline at end of file
+-- 
+2.33.1
+

@@ -1,7 +1,7 @@
 package:
   id: io.github.mpz
   name: mpz
-  version: 1.0.23
+  version: 1.0.23.1
   kind: app
   description: |
     Music player for big local collections

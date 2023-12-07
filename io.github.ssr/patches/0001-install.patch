@@ -1,0 +1,75 @@
+From 9c8637ef3cc4c8864454c754620f21f5e9405383 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Mon, 6 Nov 2023 09:35:37 +0800
+Subject: [install.patch_] install
+
+---
+ CMakeLists.txt     |  2 +-
+ src/CMakeLists.txt | 24 ++++++++++++------------
+ 2 files changed, 13 insertions(+), 13 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index d2b2937..6a0a77e 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -24,7 +24,7 @@ option(WITH_V4L2 "Build with V4L2 support." TRUE)
+ option(WITH_ALSA "Build with ALSA support." TRUE)
+ option(WITH_PULSEAUDIO "Build with PulseAudio support." TRUE)
+ option(WITH_JACK "Build with JACK support." TRUE)
+-option(WITH_QT5 "Build with Qt5 (instead of Qt4)." FALSE)
++option(WITH_QT5 "Build with Qt5 (instead of Qt4)." TRUE)
+ option(WITH_SIMPLESCREENRECORDER "Build the 'simplescreenrecorder' executable." TRUE)
+ option(WITH_GLINJECT "Build the 'libssr-glinject' library. Required for OpenGL recording." TRUE)
+ 
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 4d856fd..33ec8c8 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -22,11 +22,11 @@ if(WITH_JACK)
+ 	find_package(Jack REQUIRED)
+ endif()
+ 
+-if(WITH_QT5)
+-	find_package(Qt5 5.7 COMPONENTS Core Gui Widgets X11Extras REQUIRED)
+-else()
+-	find_package(Qt4 4.8 COMPONENTS QtGui REQUIRED)
+-endif()
++#if(WITH_QT5)
++	find_package(Qt5 5.15.7 COMPONENTS Core Gui Widgets X11Extras REQUIRED)
++#else()
++#	find_package(Qt4 4.8 COMPONENTS QtGui REQUIRED)
++#endif()
+ 
+ set(sources
+ 	AV/Input/ALSAInput.cpp
+@@ -162,7 +162,7 @@ set(res_input
+ 	../data/resources/resources.qrc
+ )
+ 
+-if(WITH_QT5)
++#if(WITH_QT5)
+ 	qt5_add_resources(res_output ${res_input})
+ 	set(QT_LIBS
+ 		Qt5::Core
+@@ -170,12 +170,12 @@ if(WITH_QT5)
+ 		Qt5::Widgets
+ 		Qt5::X11Extras
+ 	)
+-else()
+-	qt4_add_resources(res_output ${res_input})
+-	set(QT_LIBS
+-		Qt4::QtGui
+-	)
+-endif()
++#else()
++#	qt4_add_resources(res_output ${res_input})
++#	set(QT_LIBS
++#		Qt4::QtGui
++#	)
++#endif()
+ 
+ set_property(SOURCE ${res_output} PROPERTY SKIP_AUTOMOC ON)
+ 
+-- 
+2.33.1
+

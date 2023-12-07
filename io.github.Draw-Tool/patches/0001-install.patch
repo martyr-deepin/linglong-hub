@@ -1,0 +1,43 @@
+From dd59b4013eaa3ece296bf20c9197ba145c8282e7 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 7 Nov 2023 18:37:37 +0800
+Subject: [PATCH] install
+
+---
+ XYDrawTool.desktop | 8 ++++++++
+ XYDrawTool.pro     | 6 ++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 XYDrawTool.desktop
+
+diff --git a/XYDrawTool.desktop b/XYDrawTool.desktop
+new file mode 100644
+index 0000000..01ff2d7
+--- /dev/null
++++ b/XYDrawTool.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=XYDrawTool
++Name=XYDrawTool
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/XYDrawTool.pro b/XYDrawTool.pro
+index 5e51e0d..32305a1 100644
+--- a/XYDrawTool.pro
++++ b/XYDrawTool.pro
+@@ -54,3 +54,9 @@ RESOURCES += \
+     images/images.qrc
+ 
+ RC_FILE = ico.rc
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =XYDrawTool.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

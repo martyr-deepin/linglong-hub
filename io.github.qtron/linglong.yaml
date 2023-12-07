@@ -1,0 +1,22 @@
+package:
+  id: io.github.qtron
+  name: qtron
+  version: 1.0.0
+  kind: app
+  description: |
+    A very original game written in C++ at Qt.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/scott-linder/qtron.git
+  commit: 369a5740bd222d99dfee0fc7194412feca569a45
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      

@@ -1,0 +1,20 @@
+package:
+  id: io.github.shudu
+  name: shudu
+  version: 0.1.0
+  kind: app
+  description: |
+    A simple Sudoku game, very interesting, to try it
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/zj0395/sudoku.git"
+  commit: f1e2741a574994e69483edda6b74c32a86a605c7
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

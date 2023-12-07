@@ -1,0 +1,47 @@
+From 7735b724b73ee7419c3663fd97d198a0e67e1f9d Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Tue, 14 Nov 2023 22:12:57 +0800
+Subject: [PATCH] fix-install
+
+---
+ main.desktop |  8 ++++++++
+ main.pro     | 11 +++++++----
+ 2 files changed, 15 insertions(+), 4 deletions(-)
+ create mode 100644 main.desktop
+
+diff --git a/main.desktop b/main.desktop
+new file mode 100644
+index 0000000..1dcccc0
+--- /dev/null
++++ b/main.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=tool;Qt;
++Exec=main
++Name=main
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/main.pro b/main.pro
+index ec18ca6..636c93e 100644
+--- a/main.pro
++++ b/main.pro
+@@ -16,7 +16,10 @@ SOURCES += \
+ HEADERS += \
+     Widget.h
+ 
+-# Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = main.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+

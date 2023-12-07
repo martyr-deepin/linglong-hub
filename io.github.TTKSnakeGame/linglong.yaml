@@ -1,0 +1,20 @@
+package:
+  id: io.github.TTKSnakeGame
+  name: TTKSnakeGame
+  version: 0.0.1
+  kind: app
+  description: |
+    TTKSnakeGame is free software licensed under the term of Licence GPL v3.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/TTKProject/TTKSnakeGame.git"
+  commit: 6e45de27571e8b9a1576aec22ae79d6db8fe1d9c
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

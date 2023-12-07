@@ -1,0 +1,23 @@
+--- ../src/Geist.pro	2023-11-22 21:29:55.146178000 +0800
++++ ../src/Geist.pro	2023-11-22 21:27:59.850438000 +0800
+@@ -33,3 +33,20 @@
+ FORMS    += mainwindow.ui
+ 
+ OTHER_FILES +=
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++
++DESKTOP_FILE = ./Geist.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=Geist' >> $$DESKTOP_FILE")
++system("echo 'Comment=Geist.' >> $$DESKTOP_FILE")
++system("echo 'Exec=Geist' >> $$DESKTOP_FILE")
++system("echo 'Icon=geist' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++

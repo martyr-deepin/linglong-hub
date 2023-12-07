@@ -1,0 +1,23 @@
+package:
+  id: io.github.RoboSim
+  name: RoboSim
+  version: 1.0.0
+  kind: app
+  description: |
+    Robotic Arm 3D move simulator.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/Crashtein/RoboSim.git
+  commit: 1e036da6fd266507c4f87440c6767c62d8511b30
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      

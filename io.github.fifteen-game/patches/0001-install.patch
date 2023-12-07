@@ -1,0 +1,44 @@
+From 4d2e8173ab3e134e2e7dfb68645a0d79ae8eaebe Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Fri, 10 Nov 2023 09:21:50 +0800
+Subject: [install.patch_] install
+
+---
+ Fifteen.desktop | 6 ++++++
+ Fifteen.pro     | 9 +++++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 Fifteen.desktop
+
+diff --git a/Fifteen.desktop b/Fifteen.desktop
+new file mode 100644
+index 0000000..606fa6a
+--- /dev/null
++++ b/Fifteen.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=Fifteen
++Exec=Fifteen
++Terminal=false
+\ No newline at end of file
+diff --git a/Fifteen.pro b/Fifteen.pro
+index 4ffaf3f..71bbc2c 100644
+--- a/Fifteen.pro
++++ b/Fifteen.pro
+@@ -50,3 +50,12 @@ RESOURCES += \
+ 
+ DISTFILES += \
+     style.qss
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = Fifteen.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+

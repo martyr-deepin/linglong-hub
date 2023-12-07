@@ -1,0 +1,24 @@
+package:
+  id: io.github.freedom
+  name: freedom
+  version: 1.0.0
+  kind: app
+  description: |
+    Freedom is the game developed in C++ with the help of Qt framework. The main goal of the project is to master skills of teamwork, project development and programming in C++/Qt. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+
+source:
+  kind: git
+  url: https://github.com/gosha-krovsh/freedom.git
+  commit: 9330a81d277590a6a3d0f606a8f6a985742d80db
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
+
+      

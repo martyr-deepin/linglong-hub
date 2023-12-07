@@ -1,0 +1,21 @@
+package:
+  id: io.github.fahrplan
+  name: fahrplan
+  version: 2.0.31.1
+  kind: app
+  description: |
+    A journey planner and timetable application written in C++ using Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/smurfy/fahrplan.git"
+  commit: ae11f30e4833250425a0233b4e331d9ccaf42e45
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake

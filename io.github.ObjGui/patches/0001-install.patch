@@ -1,0 +1,44 @@
+From 1c1f41c229ec2cf2dacfbe9130b61756b65cb9c2 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 3 Nov 2023 18:53:42 +0800
+Subject: [PATCH] install
+
+---
+ src/ObjGui.desktop | 8 ++++++++
+ src/ObjGui.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 src/ObjGui.desktop
+
+diff --git a/src/ObjGui.desktop b/src/ObjGui.desktop
+new file mode 100644
+index 0000000..e8f7dd9
+--- /dev/null
++++ b/src/ObjGui.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=ObjGui
++Name=ObjGui
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/src/ObjGui.pro b/src/ObjGui.pro
+index 1e95091..ee6daad 100644
+--- a/src/ObjGui.pro
++++ b/src/ObjGui.pro
+@@ -48,3 +48,10 @@ DISTFILES += \
+     fonts/Anonymous Pro B.ttf \
+     fonts/Anonymous Pro BI.ttf \
+     fonts/Anonymous Pro I.ttf
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =ObjGui.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

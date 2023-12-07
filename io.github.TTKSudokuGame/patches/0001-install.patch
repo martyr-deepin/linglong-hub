@@ -1,0 +1,44 @@
+From 63f4dede49fc761b56a53675135fa2bd7de74321 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Tue, 7 Nov 2023 12:06:04 +0800
+Subject: [install.patch_] install
+
+---
+ TTKSudokuGame.desktop |  6 ++++++
+ TTKSudokuGame.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 TTKSudokuGame.desktop
+
+diff --git a/TTKSudokuGame.desktop b/TTKSudokuGame.desktop
+new file mode 100644
+index 0000000..8ad01a2
+--- /dev/null
++++ b/TTKSudokuGame.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=TTKSudokuGame
++Exec=TTKSudokuGame
++Terminal=false
+diff --git a/TTKSudokuGame.pro b/TTKSudokuGame.pro
+index 214fbcf..d90e106 100644
+--- a/TTKSudokuGame.pro
++++ b/TTKSudokuGame.pro
+@@ -44,3 +44,13 @@ HEADERS += \
+ 
+ RESOURCES += \
+         TTKSudokuGame.qrc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = TTKSudokuGame.desktop
++INSTALLS += unix_desktop
++}
++
+-- 
+2.33.1
+

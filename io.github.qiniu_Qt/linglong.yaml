@@ -1,0 +1,20 @@
+package:
+  id: io.github.qiniu_Qt
+  name: qiniu_Qt
+  version: 0.0.1
+  kind: app
+  description: |
+    The use of cloud and map bed can greatly simplify the chain of access to the process, the picture or file drag and drop to the“Cloud and map bed” can be triggered!
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/xuxincode/qiniu_Qt.git"
+  commit: 054222a41ec735b6f756d88867a731f8d11f95a7
+  patch: patches/install.patch
+
+build:
+  kind: qmake

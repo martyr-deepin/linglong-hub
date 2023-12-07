@@ -1,0 +1,23 @@
+package:
+  id: io.github.QalculaTor
+  name: QalculaTor
+  version: 1.2.0
+  kind: app
+  description: |
+    Simple Calc app made in C++ and Qt Libraries.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/cichy1173/QalculaTor.git
+  commit: dcac6a19b3bd0174ad5c2ebca009c51e3956d136
+  patch: patches/fix-desktop.patch
+
+
+build:
+  kind: qmake
+

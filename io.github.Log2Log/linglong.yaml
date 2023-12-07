@@ -1,0 +1,22 @@
+package:
+  id: io.github.Log2Log
+  name: Log2Log
+  version: 0.0.1
+  kind: app
+  description: |
+    Log2Log Chat Log Converter is a desktop and console client that converts chat logs to another format.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Deltik/Log2Log.git"
+  commit: ff026606cf5592b102686ad350b559312d5fbfd4
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake

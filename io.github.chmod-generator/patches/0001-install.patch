@@ -1,0 +1,44 @@
+From d206ea85e917981268d25f3b63472e52334f1bf4 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 15 Nov 2023 18:23:22 +0800
+Subject: [PATCH] install
+
+---
+ CHMOD.desktop | 8 ++++++++
+ CHMOD.pro     | 6 ++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 CHMOD.desktop
+
+diff --git a/CHMOD.desktop b/CHMOD.desktop
+new file mode 100644
+index 0000000..83ba2fe
+--- /dev/null
++++ b/CHMOD.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=CHMOD
++Name=CHMOD
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/CHMOD.pro b/CHMOD.pro
+index 07a927a..94d7bb1 100644
+--- a/CHMOD.pro
++++ b/CHMOD.pro
+@@ -28,3 +28,9 @@ HEADERS  += dialog.h \
+ 
+ FORMS    += dialog.ui \
+     symbolic.ui
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =CHMOD.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

@@ -1,0 +1,24 @@
+package:
+  id: io.github.gifex
+  name: gifex
+  version: 1.0.0
+  kind: app
+  description: |
+    Gifex is fast and record selected area on your desktop as GIF Image.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/keshavbhatt/gifex.git
+  commit: 80d076a97048b873b058c89c3ef0818f4a54801f
+  patch: patches/0001-install.patch
+
+variables:
+  extra_args: |
+     src
+
+build:
+  kind: qmake

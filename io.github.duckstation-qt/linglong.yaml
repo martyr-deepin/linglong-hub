@@ -1,0 +1,19 @@
+package:
+  id: io.github.duckstation
+  name: duckstation
+  version: 0.1.0
+  kind: app
+  description: |
+    Fast PlayStation 1 emulator for x86-64/AArch32/AArch64/RV64.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/stenzek/duckstation.git
+  commit: 82965f741e81e4d2f7e1b2abdc011e1f266bfe7f
+  patch: patches/fix_duck.patch
+build:
+  kind: cmake

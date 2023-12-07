@@ -1,0 +1,20 @@
+package:
+  id: io.github.Reversi-Othello
+  name: Reversi-Othello
+  version: 1.0.0
+  kind: app
+  description: |
+    This is a cross-platform implementation of the reversi game. You can play against a human, a bot, or watch bots play with each other.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/zorggomat/Reversi-Othello.git
+  commit: 032e629ad894a078239c5d7b88dad7a56d8bcf2d
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

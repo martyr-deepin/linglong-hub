@@ -1,0 +1,43 @@
+From a3795b401de6f3c98b7c99d14a2eb87953d9e334 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Wed, 8 Nov 2023 12:51:01 +0800
+Subject: [install.patch_] install
+
+---
+ HTYColorPicker.desktop | 2 +-
+ HTYColorPicker.pro     | 9 +++++++++
+ 2 files changed, 10 insertions(+), 1 deletion(-)
+
+diff --git a/HTYColorPicker.desktop b/HTYColorPicker.desktop
+index a490ad0..3377df8 100644
+--- a/HTYColorPicker.desktop
++++ b/HTYColorPicker.desktop
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Name=海天鹰颜色拾取器
+ Comment=海天鹰颜色拾取器
+-Exec=/media/sonichy/job/HY/Linux/Qt/HTYColorPicker/HTYColorPicker
++Exec=HTYColorPicker
+ Icon=/media/sonichy/job/HY/Linux/Qt/HTYColorPicker/HTYColorPicker.png
+ Path=/media/sonichy/job/HY/Linux/Qt/HTYColorPicker
+ Terminal=false
+diff --git a/HTYColorPicker.pro b/HTYColorPicker.pro
+index b6e5164..948fdfd 100644
+--- a/HTYColorPicker.pro
++++ b/HTYColorPicker.pro
+@@ -21,3 +21,12 @@ FORMS    += mainwindow.ui
+ 
+ RESOURCES += \
+     res.qrc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = HTYColorPicker.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+

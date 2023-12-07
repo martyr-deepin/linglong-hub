@@ -4,7 +4,9 @@ package:
   version: 20.03.23
   kind: app
   description: |
+  
     Qt5/C++ FFmpeg Media Converter
+
 
 runtime:
   id: org.deepin.Runtime
@@ -12,6 +14,7 @@ runtime:
 
 source:
   kind: git
+
   url: "git@github.com:swl-x/MystiQ.git"
   commit: d3494c2
   patch: patches/fix.patch

@@ -1,0 +1,23 @@
+package:
+  id: io.github.ssr
+  name: ssr
+  version: 0.4.4
+  kind: app
+  description: |
+    SimpleScreenRecorder is a screen recorder for Linux.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/MaartenBaert/ssr.git
+  commit: c092f3ee358e6662fb43f68becde3088abcb64f0
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
+
+      

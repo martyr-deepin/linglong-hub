@@ -1,0 +1,20 @@
+package:
+  id: io.github.HTYDeskPet
+  name: HTYDeskPet
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt-based desktop pet animation, left click to eat once, 1 minute to eat once
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/sonichy/HTYDeskPet.git"
+  commit: 0a6e772610051d1e6eb89f52d16fd7b4a3b94a50
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,20 @@
+package:
+  id: io.github.meow-sql
+  name: meow-sql
+  version: 0.4.18
+  kind: app
+  description: |
+    MeowSQL is an attempt to port a very useful GUI database client HeidiSQL to C++/Qt (with aim to be run natively at least on Linux)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/ragnar-lodbrok/meow-sql.git
+  commit: 28789df819348de6b9a622bdd4f456f2a0e8f27c
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

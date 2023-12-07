@@ -1,0 +1,26 @@
+--- ../CMakeLists.txt	2023-11-28 16:04:08.745616000 +0800
++++ ../CMakeLists.txt	2023-11-28 16:08:55.190408010 +0800
+@@ -143,13 +143,13 @@
+ endif()
+ 
+ install(TARGETS drfinance)
+-install(PROGRAMS pkg-info/com.darhon.drfinance.desktop  DESTINATION /app/share/applications)
+-install(FILES pkg-info/com.darhon.drfinance.metainfo.xml DESTINATION /app/share/metainfo)
+-install(FILES pkg-info/com.darhon.drfinance_16.png DESTINATION /app/share/icons/hicolor/16x16/apps RENAME com.darhon.drfinance.png)
+-install(FILES pkg-info/com.darhon.drfinance_24.png DESTINATION /app/share/icons/hicolor/24x24/apps RENAME com.darhon.drfinance.png)
+-install(FILES pkg-info/com.darhon.drfinance_32.png DESTINATION /app/share/icons/hicolor/32x32/apps RENAME com.darhon.drfinance.png)
+-install(FILES pkg-info/com.darhon.drfinance_48.png DESTINATION /app/share/icons/hicolor/48x48/apps RENAME com.darhon.drfinance.png)
+-install(FILES pkg-info/com.darhon.drfinance_64.png DESTINATION /app/share/icons/hicolor/64x64/apps RENAME com.darhon.drfinance.png)
+-install(FILES pkg-info/com.darhon.drfinance_128.png DESTINATION /app/share/icons/hicolor/128x128/apps RENAME com.darhon.drfinance.png)
+-install(FILES pkg-info/com.darhon.drfinance_256.png DESTINATION /app/share/icons/hicolor/256x256/apps RENAME com.darhon.drfinance.png)
+-install(FILES pkg-info/com.darhon.drfinance_512.png DESTINATION /app/share/icons/hicolor/512x512/apps RENAME com.darhon.drfinance.png)
++install(PROGRAMS pkg-info/com.darhon.drfinance.desktop  DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++install(FILES pkg-info/com.darhon.drfinance.metainfo.xml DESTINATION ${CMAKE_INSTALL_PREFIX}/share/metainfo)
++install(FILES pkg-info/com.darhon.drfinance_16.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/16x16/apps RENAME com.darhon.drfinance.png)
++install(FILES pkg-info/com.darhon.drfinance_24.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/24x24/apps RENAME com.darhon.drfinance.png)
++install(FILES pkg-info/com.darhon.drfinance_32.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/32x32/apps RENAME com.darhon.drfinance.png)
++install(FILES pkg-info/com.darhon.drfinance_48.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/48x48/apps RENAME com.darhon.drfinance.png)
++install(FILES pkg-info/com.darhon.drfinance_64.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/64x64/apps RENAME com.darhon.drfinance.png)
++install(FILES pkg-info/com.darhon.drfinance_128.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/128x128/apps RENAME com.darhon.drfinance.png)
++install(FILES pkg-info/com.darhon.drfinance_256.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/256x256/apps RENAME com.darhon.drfinance.png)
++install(FILES pkg-info/com.darhon.drfinance_512.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/512x512/apps RENAME com.darhon.drfinance.png)

@@ -1,0 +1,20 @@
+package:
+  id: io.github.HTYVideoSpliter
+  name: HTYVideoSpliter
+  version: 0.0.1
+  kind: app
+  description: |
+    Video and audio segmentation software based on Qt and FFmpeg.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/sonichy/HTYVideoSpliter.git
+  commit: a96bedc7f590b7f54a7f5d333e111ca64ceb43f0
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

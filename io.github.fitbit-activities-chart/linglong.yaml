@@ -1,0 +1,25 @@
+package:
+  id: io.github.fitbit-activities-chart
+  name: fitbit-activities-chart
+  version: 1.0.0
+  kind: app
+  description: |
+    Fitbit Activities Chart.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtcharts
+    version: 5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/realbardia/fitbit-activities-chart.git
+  commit: 0d281810b0c7607853706cd2829c5d20943b9f99
+  patch: patches/fix-001.patch
+
+build:
+  kind: qmake

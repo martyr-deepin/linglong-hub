@@ -1,0 +1,22 @@
+--- ../Audio_Player.pro	2023-11-11 15:31:19.058946000 +0800
++++ ../Audio_Player.pro	2023-11-11 15:15:55.653917000 +0800
+@@ -24,5 +24,18 @@
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
++
++DESKTOP_FILE = ./Audio_Player.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=Audio_Player' >> $$DESKTOP_FILE")
++system("echo 'Comment=Audio_Player.' >> $$DESKTOP_FILE")
++system("echo 'Exec=Audio_Player' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop

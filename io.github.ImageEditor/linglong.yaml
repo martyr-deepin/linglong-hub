@@ -1,0 +1,20 @@
+package:
+  id: io.github.ImageEditor
+  name: ImageEditor
+  version: 1.0.0
+  kind: app
+  description: |
+    图片编辑浏览器
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/xiaoyanLG/ImageEditor.git
+  commit: 416f26a9129826d0f225755a9c34da6ad47a8d17
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

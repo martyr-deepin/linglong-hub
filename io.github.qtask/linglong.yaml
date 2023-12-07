@@ -1,0 +1,19 @@
+package:
+  id: io.github.qtask
+  name: qtask
+  version: 1.0.0
+  kind: app
+  description: |
+    QTask is an open-source Qt-based graphical user interface for managing tasks. It is based on Taskwarrior, a popular command-line organizer.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/jubnzv/qtask.git
+  commit: f67c7034ff9576c123b885acbb942638bf85de48
+
+build:
+  kind: cmake
+ 

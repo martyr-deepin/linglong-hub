@@ -1,0 +1,23 @@
+package:
+  id: io.github.Bomboman
+  name: Bomboman
+  version: 1.0.0
+  kind: app
+  description: |
+    Bomboman.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/Crashtein/Bomboman.git
+  commit: 11d90839cb7f9e740e9605d19e8be7890f9c97b3
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      

@@ -1,0 +1,22 @@
+package:
+  id: io.github.QHeatMap
+  name: QHeatMap
+  version: 0.0.1
+  kind: app
+  description: |
+    Generate Heat map in Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/wyyrepo/QHeatMap.git"
+  commit: bf1a661ffc85d9e0885c1d63e6734f493f52c182
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake

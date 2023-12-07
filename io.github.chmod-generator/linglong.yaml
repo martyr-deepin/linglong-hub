@@ -1,0 +1,20 @@
+package:
+  id: io.github.chmod-generator
+  name: chmod-generator
+  version: 1.0.0
+  kind: app
+  description: |
+    This is a GUI for chmod and chown that I made when I was younger, while learning C++ and Qt
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/CodingKoopa/chmod-generator.git
+  commit: 198613e52b7a0f7a78adca79aa9dcfd0e9748f99
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

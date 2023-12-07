@@ -1,0 +1,19 @@
+package:
+  id: io.github.Notepad-DOT-Qt
+  name: Notepad-DOT-Qt
+  version: 1.1.0
+  kind: app
+  description: |
+    Notepad DOT Qt is an open source, cross-platform and highly customizable text editor. It has all the essential notepad features with more handy stuff. It is suitable for everyday use, from beginners to advanced users.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/ncyxie/Notepad-DOT-Qt.git
+  commit: e2782a7b218af13ff1c06447ec9773e00de0fb07
+  patch: patches/0001-fix-install.patch 
+
+build:
+  kind: qmake

@@ -1,0 +1,35 @@
+--- ../CMakeLists.txt	2023-11-23 15:35:35.652287000 +0800
++++ ../CMakeLists.txt	2023-11-23 15:34:58.184147000 +0800
+@@ -65,7 +65,8 @@
+             ${CMAKE_BINARY_DIR}/fleetingpm.desktop
+     DEPENDS ${BINARY_NAME})
+ endif()
+-
++message(${DesktopFileSourcePath})
++message(${CMAKE_BINARY_DIR}/fleetingpm.desktop)
+ # Resource compilation for MinGW
+ if(MINGW)
+     add_custom_command(
+@@ -110,9 +111,20 @@
+         
+     else()
+ 
+-        install(PROGRAMS ${BINARY_NAME} DESTINATION .)
+-        install(FILES AUTHORS CHANGELOG COPYING README DESTINATION .)
++        #install(PROGRAMS ${BINARY_NAME} DESTINATION ${BIN_PATH})
++        install(FILES AUTHORS CHANGELOG COPYING README DESTINATION ${DOC_PATH})
++        set(DESKTOP_FILE_CONTENT "
++        [Desktop Entry]
++        Type=Application
++        Name=fleetingpm
++        Exec=fleetingpm
++        Categories=Utility;
++        ")
++
++        file(WRITE ${CMAKE_BINARY_DIR}/fleetingpm.desktop "${DESKTOP_FILE_CONTENT}")
++        install(PROGRAMS ${CMAKE_BINARY_DIR}/fleetingpm.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
+ 
++        install(TARGETS fleetingpm DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+         # CPack config to create e.g. self-extracting packages
+         set(CPACK_BINARY_STGZ "ON")
+         set(CPACK_BINARY_TGZ "ON")

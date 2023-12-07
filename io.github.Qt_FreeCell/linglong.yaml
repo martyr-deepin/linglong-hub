@@ -1,0 +1,19 @@
+package:
+  id: io.github.Qt_FreeCell
+  name: Qt_FreeCell
+  version: 0.0.1
+  kind: app
+  description: |
+    空当接龙
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/SeanLiaoy/Qt_FreeCell.git
+  commit: ac42ff58ffc64b358599e61eb146d78b0d3f0c26
+  patch: patches/0001-fix-install.patch
+
+build:
+  kind: qmake

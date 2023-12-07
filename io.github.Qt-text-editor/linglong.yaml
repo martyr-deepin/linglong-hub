@@ -1,0 +1,22 @@
+package:
+  id: io.github.Qt-text-editor
+  name: Qt-text-editor
+  version: 0.0.1
+  kind: app
+  description: |
+    Simple text editor with support of syntax highlight
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/Bychin/Qt-text-editor.git
+  commit: 808fdcb558443adfc81b5ac1bd22a492c69f867b
+  patch: patches/fix_qte.patch
+build:
+  kind: cmake
+
+

@@ -1,0 +1,21 @@
+package:
+  id: io.github.qmines
+  name: qmines
+  version: 0.0.1.1
+  kind: app
+  description: |
+    A simple Qt mine sweeping mini program.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/pavelrangelov/qmines.git"
+  commit: 056e2e3722b52f2f3f60d2b2416eb5223602127b
+  patch:
+    - patches/install.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,26 @@
+--- ../NP.pro	2023-11-11 15:03:34.020504000 +0800
++++ ../NP.pro	2023-11-11 15:00:58.966197000 +0800
+@@ -25,8 +25,22 @@
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     Resources.qrc
++
++DESKTOP_FILE = ./NP.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=NP' >> $$DESKTOP_FILE")
++system("echo 'Comment=NP.' >> $$DESKTOP_FILE")
++system("echo 'Exec=NP' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++# 将 .desktop 文件复制到构建目录中
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop

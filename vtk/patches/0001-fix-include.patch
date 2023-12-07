@@ -1,0 +1,82 @@
+From 30ac2c1dc06d1445f154dbd9b38addee8b26d6b6 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Fri, 24 Nov 2023 20:44:02 +0800
+Subject: [PATCH] fix-include
+
+---
+ Common/Core/vtkGenericDataArray.h             |  2 +-
+ Common/Core/vtkGenericDataArrayLookupHelper.h |  2 +-
+ Common/DataModel/vtkPiecewiseFunction.h       |  2 +-
+ Filters/HyperTree/vtkHyperTreeGridThreshold.h |  2 +-
+ Rendering/Core/vtkColorTransferFunction.h     |  2 +-
+ 5 files changed, 5 insertions(+), 5 deletions(-)
+ create mode 100644 Common/Color/vtkCommonColorModule.h
+
+diff --git a/Common/Core/vtkGenericDataArray.h b/Common/Core/vtkGenericDataArray.h
+index 0f23a9ab4b..fc7c482074 100644
+--- a/Common/Core/vtkGenericDataArray.h
++++ b/Common/Core/vtkGenericDataArray.h
+@@ -74,7 +74,7 @@
+ #include "vtkTypeTraits.h"
+ 
+ #include <cassert>
+-
++#include <limits>
+ template <class DerivedT, class ValueTypeT>
+ class vtkGenericDataArray : public vtkDataArray
+ {
+diff --git a/Common/Core/vtkGenericDataArrayLookupHelper.h b/Common/Core/vtkGenericDataArrayLookupHelper.h
+index f278e27c0f..65b7dba738 100644
+--- a/Common/Core/vtkGenericDataArrayLookupHelper.h
++++ b/Common/Core/vtkGenericDataArrayLookupHelper.h
+@@ -21,7 +21,7 @@
+ 
+ #ifndef vtkGenericDataArrayLookupHelper_h
+ #define vtkGenericDataArrayLookupHelper_h
+-
++#include <limits>
+ #include "vtkIdList.h"
+ #include <algorithm>
+ #include <cmath>
+diff --git a/Common/DataModel/vtkPiecewiseFunction.h b/Common/DataModel/vtkPiecewiseFunction.h
+index bd84f70e16..071ab17176 100644
+--- a/Common/DataModel/vtkPiecewiseFunction.h
++++ b/Common/DataModel/vtkPiecewiseFunction.h
+@@ -36,7 +36,7 @@
+ 
+ #ifndef vtkPiecewiseFunction_h
+ #define vtkPiecewiseFunction_h
+-
++#include <limits>
+ #include "vtkCommonDataModelModule.h" // For export macro
+ #include "vtkDataObject.h"
+ 
+diff --git a/Filters/HyperTree/vtkHyperTreeGridThreshold.h b/Filters/HyperTree/vtkHyperTreeGridThreshold.h
+index 8f9b50f5ac..5e2aea39c4 100644
+--- a/Filters/HyperTree/vtkHyperTreeGridThreshold.h
++++ b/Filters/HyperTree/vtkHyperTreeGridThreshold.h
+@@ -39,7 +39,7 @@
+ 
+ #ifndef vtkHyperTreeGridThreshold_h
+ #define vtkHyperTreeGridThreshold_h
+-
++#include <limits>
+ #include "vtkFiltersHyperTreeModule.h" // For export macro
+ #include "vtkHyperTreeGridAlgorithm.h"
+ 
+diff --git a/Rendering/Core/vtkColorTransferFunction.h b/Rendering/Core/vtkColorTransferFunction.h
+index b8c1435f92..b0189fe53a 100644
+--- a/Rendering/Core/vtkColorTransferFunction.h
++++ b/Rendering/Core/vtkColorTransferFunction.h
+@@ -35,7 +35,7 @@
+ 
+ #ifndef vtkColorTransferFunction_h
+ #define vtkColorTransferFunction_h
+-
++#include <limits>
+ #include "vtkRenderingCoreModule.h" // For export macro
+ #include "vtkScalarsToColors.h"
+ 
+-- 
+2.33.1
+

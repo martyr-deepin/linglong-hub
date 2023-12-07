@@ -1,0 +1,23 @@
+package:
+  id: io.github.Dwarf-Therapist
+  name: Dwarf-Therapist
+  version: 37.0.1
+  kind: app
+  description: |
+    Dwarf-Therapist.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git 
+  url: "https://github.com/splintermind/Dwarf-Therapist.git"
+  commit: 63910f74dceea92bffb2265e1f771ba06b006481
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      

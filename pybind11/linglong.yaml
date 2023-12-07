@@ -1,0 +1,26 @@
+package:
+  id: pybind11
+  name: pybind11
+  version: 2.11.1
+  kind: lib
+  description: |
+   Seamless operability between C++11 and Python
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+depends: 
+  - id: python/3.10.13
+
+source:
+  kind: git
+  url: https://github.com/pybind/pybind11.git
+  commit: dc9b39596d986aeb061bd3debe52d30e2467dc48
+
+build:
+  kind: cmake
+
+variables:
+  extra_args: |
+    -DPYTHON_EXECUTABLE:FILEPATH="${PREFIX}/bin/python3" 
+    -DPYTHON_LIBRARY:FILEPATH=${PREFIX}/lib/python3.10

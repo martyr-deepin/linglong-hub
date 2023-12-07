@@ -1,0 +1,35 @@
+diff --git a/src/View/QuiView.desktop b/src/View/QuiView.desktop
+new file mode 100644
+index 0000000..07ab929
+--- /dev/null
++++ b/src/View/QuiView.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=QuiView
++Exec=QuiView %f
++Icon=icon
+diff --git a/src/View/QuiView.pro b/src/View/QuiView.pro
+index e524d0c..9394c47 100644
+--- a/src/View/QuiView.pro
++++ b/src/View/QuiView.pro
+@@ -27,9 +27,17 @@ FORMS += \
+ win32:RC_FILE = icon.rc
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++qnx: target.path = target.path = $$PREFIX/bin
++else: unix:!android: target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += QuiView.desktop
++INSTALLS += desktop
++
++icons.path = $${PREFIX}/share/icons
++icons.files = icon.png
++INSTALLS += icons
++
+ RESOURCES += \
+     icon.qrc

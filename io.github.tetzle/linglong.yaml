@@ -1,0 +1,20 @@
+package:
+  id: io.github.tetzle
+  name: tetzle
+  version: 2.1.6
+  kind: app
+  description: |
+    Tetzle is a jigsaw puzzle game that uses tetrominoes for the pieces.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/gottcode/tetzle.git
+  commit: 852c4139a17d6436a51796f3db1bcc7c965b14b4
+
+build:
+  kind: qmake
+

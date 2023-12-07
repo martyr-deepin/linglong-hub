@@ -1,0 +1,20 @@
+package:
+  id: io.github.HTYFTP
+  name: HTYFTP
+  version: 0.0.1
+  kind: app
+  description: |
+    A simple FTP client based on Qt
+    
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/sonichy/HTYFTP.git
+  commit: bbd707361270810dfab19cbf9578458299cb1575
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,26 @@
+diff --git a/Birthday-App.desktop b/Birthday-App.desktop
+new file mode 100644
+index 0000000..c37ee1a
+--- /dev/null
++++ b/Birthday-App.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Name=Birthday-App
++Comment=This project for a user-friendly desktop application designed to help users keep track of birthdays and never miss an important celebration =)
++Exec=Birthday\ Reminder %F
++Icon=Birthday-App
++Type=Application
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 4e11bd0..671ba28 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -66,6 +66,9 @@ install(TARGETS B-App
+     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+ )
+
++install(FILES Birthday-App.desktop DESTINATION share/applications/)
++install(FILES Brithday-App/graphics/birthday-cake.ico DESTINATION share/icons/ RENAME Birthday-App.ico)
++
+ if(QT_VERSION_MAJOR EQUAL 6)
+     qt_finalize_executable(B-App)
+ endif()

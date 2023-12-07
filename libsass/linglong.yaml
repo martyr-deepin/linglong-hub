@@ -1,0 +1,23 @@
+package:
+  id: libsass
+  name: libsass
+  version: 3.6.5
+  kind: lib
+  description: |
+    A libsass command line driver.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+depends:
+  - id: libtool/2.4.2
+  - id: automake/1.16.5
+
+source:
+  kind: git
+  url: https://github.com/sass/libsass.git
+  commit: f6afdbb9288d20d1257122e71d88e53348a53af3
+
+build:
+  kind: autotools

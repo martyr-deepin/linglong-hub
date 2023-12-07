@@ -1,0 +1,30 @@
+package:
+  id: libxmu
+  name: libxmu
+  version: 1.1.2
+  kind: lib
+  description: |
+    This library contains miscellaneous utilities and is not part of the Xlib standard.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+depends:
+  - id: automake1.14.0/1.14.0
+  - id: xorg-macros/1.19.1
+  - id: libtool/2.4.2
+  - id: pkgconf/2.0.3
+source:
+  kind: git
+  url: https://github.com/deepin-community/libxmu.git
+  commit: 07cbfd05e3f22df8abe7699df810490e863b93f4
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      ./configure ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

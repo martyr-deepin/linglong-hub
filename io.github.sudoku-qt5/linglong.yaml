@@ -1,0 +1,26 @@
+package:
+  id: io.github.sudoku-qt5
+  name: sudoku-qt5
+  version: 1.0.1
+  kind: app
+  description: |
+    Sudoku game with qt5.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/Trinkle23897/sudoku-qt5.git
+  commit: fe615dac0ce0a44f493a0c1a2ae57a42e40a941e
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      mkdir build_dir && cd build_dir
+      qmake -makefile ${conf_args} ${extra_args} ../sudoku

@@ -1,0 +1,21 @@
+--- ../hashiOktober.pro	2023-11-11 16:58:35.306718000 +0800
++++ ../hashiOktober.pro	2023-11-11 16:56:30.074279000 +0800
+@@ -55,3 +55,18 @@
+ RESOURCES += \
+ hashiGameResources.qrc
+ RC_FILE = appdata.rc
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++
++DESKTOP_FILE = ./Hashlife.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=Hashlife' >> $$DESKTOP_FILE")
++system("echo 'Comment=Hashlife.' >> $$DESKTOP_FILE")
++system("echo 'Exec=Hashlife' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop

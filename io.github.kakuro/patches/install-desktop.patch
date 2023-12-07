@@ -1,0 +1,25 @@
+diff --git a/kakuro.desktop b/kakuro.desktop
+new file mode 100644
+index 0000000..aef4d9b
+--- /dev/null
++++ b/kakuro.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=kakuro
++Exec=kakuro %f
+diff --git a/kakuro.pro b/kakuro.pro
+index 4656b00..5b2e373 100644
+--- a/kakuro.pro
++++ b/kakuro.pro
+@@ -23,3 +23,10 @@ RESOURCES += \
+     resources.qrc
+ 
+ CONFIG += c++11
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += kakuro.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target

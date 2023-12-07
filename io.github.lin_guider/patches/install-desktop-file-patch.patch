@@ -1,0 +1,19 @@
+diff --git a/lin_guider/lin_guider.pro b/lin_guider/lin_guider.pro
+index 6eea783..e5ad52c 100644
+--- a/lin_guider/lin_guider.pro
++++ b/lin_guider/lin_guider.pro
+@@ -159,3 +159,13 @@ LIBS += -lusb-1.0 \
+     greaterThan(CXXVer, 7):QMAKE_CXXFLAGS += -Wformat-truncation=0
+ }
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += lin_guider.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = rc/lin_guider.png
++INSTALLS += icons
+\ No newline at end of file

@@ -1,0 +1,59 @@
+From 8470560a77ecf89ab5d1eaacd8e6a04e18c4babb Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Sun, 5 Nov 2023 15:37:01 +0800
+Subject: [install.patch_] install
+
+---
+ MusicBoard.pro     | 17 +++++++++++++++--
+ musicboard.desktop |  7 +++++++
+ 2 files changed, 22 insertions(+), 2 deletions(-)
+ create mode 100644 musicboard.desktop
+
+diff --git a/MusicBoard.pro b/MusicBoard.pro
+index b82b4c2..c44f34b 100644
+--- a/MusicBoard.pro
++++ b/MusicBoard.pro
+@@ -44,8 +44,7 @@ FORMS    += musicboard.ui \
+     preferencesform.ui \
+     audiorecorder.ui
+ 
+-target.path = $$[QT_INSTALL_EXAMPLES]/multimedia/audiorecorder
+-INSTALLS += target
++
+ 
+ RESOURCES += \
+     res.qrc
+@@ -53,3 +52,17 @@ RESOURCES += \
+ DISTFILES += \
+     FilesForm.ui.qml \
+     Files.qml
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = musicboard.desktop 
++INSTALLS += unix_desktop
++
++
++
++}
+diff --git a/musicboard.desktop b/musicboard.desktop
+new file mode 100644
+index 0000000..975f05b
+--- /dev/null
++++ b/musicboard.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=MusicBoard
++GenericName=MusicBoard
++Hidden=false
++Name=MusicBoard
++StartupNotify=false
++Type=Application
+-- 
+2.33.1
+

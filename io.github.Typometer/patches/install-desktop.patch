@@ -1,0 +1,31 @@
+diff --git a/TypeIt/TypeIt.desktop b/TypeIt/TypeIt.desktop
+new file mode 100644
+index 0000000..413af94
+--- /dev/null
++++ b/TypeIt/TypeIt.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=TypeIt
++Exec=TypeIt %f
++Icon=logo
+diff --git a/TypeIt/TypeIt.pro b/TypeIt/TypeIt.pro
+index e5aabd3..dddbcb2 100644
+--- a/TypeIt/TypeIt.pro
++++ b/TypeIt/TypeIt.pro
+@@ -11,3 +11,15 @@ HEADERS += about_me.h result.h type_it.h
+ FORMS += about_me.ui result.ui type_it.ui
+ SOURCES += about_me.cpp main.cpp result.cpp type_it.cpp
+ RESOURCES += res/res.qrc
++
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += TypeIt.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = res/logo.png 
++INSTALLS += icons

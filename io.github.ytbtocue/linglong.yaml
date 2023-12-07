@@ -1,0 +1,20 @@
+package:
+  id: io.github.ytbtocue
+  name: ytbtocue
+  version: 0.5.0.1
+  kind: app
+  description: |
+    This program is intended to download audio albums from YouTube
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/trialuser02/ytbtocue.git
+  commit: f1f90d81ef2d3029002df6ff46a29e515a4c701b
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
