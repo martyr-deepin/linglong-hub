@@ -1,0 +1,56 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 5aecafc..ee81fdd 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -159,7 +159,7 @@ set(exec_prefix ${CMAKE_INSTALL_PREFIX}/bin)
+ set(includedir  ${CMAKE_INSTALL_PREFIX}/include/${PROJECT_NAME})
+ 
+ if(${UNIX})
+-   set(libdir      ${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX})
++       set(libdir      ${CMAKE_INSTALL_LIBDIR})
+ endif(${UNIX})
+ if(${WIN32})
+    set(libdir      ${CMAKE_INSTALL_PREFIX}/bin)
+@@ -168,7 +168,7 @@ endif(${WIN32})
+ configure_file(${CMAKE_SOURCE_DIR}/libftdi1.pc.in ${CMAKE_BINARY_DIR}/libftdi1.pc @ONLY)
+ configure_file(${CMAKE_SOURCE_DIR}/libftdipp1.pc.in ${CMAKE_BINARY_DIR}/libftdipp1.pc @ONLY)
+ install(FILES ${CMAKE_BINARY_DIR}/libftdi1.pc ${CMAKE_BINARY_DIR}/libftdipp1.pc
+-        DESTINATION lib${LIB_SUFFIX}/pkgconfig)
++        DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
+ 
+ if (UNIX OR MINGW)
+   configure_file ( libftdi1-config.in ${CMAKE_CURRENT_BINARY_DIR}/libftdi1-config @ONLY )
+@@ -178,7 +178,7 @@ endif ()
+ 
+ # config script install path
+ if ( NOT DEFINED LIBFTDI_CMAKE_CONFIG_DIR )
+-  set ( LIBFTDI_CMAKE_CONFIG_DIR lib${LIB_SUFFIX}/cmake/libftdi1 )
++  set ( LIBFTDI_CMAKE_CONFIG_DIR ${CMAKE_INSTALL_LIBDIR}/cmake/libftdi1 )
+ endif ()
+ 
+ set ( LIBFTDI_INCLUDE_DIR ${includedir} )
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 17b3617..4294733 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -34,8 +34,8 @@ target_link_libraries(ftdi1 ${LIBUSB_LIBRARIES})
+ 
+ install ( TARGETS ftdi1
+           RUNTIME DESTINATION bin
+-          LIBRARY DESTINATION lib${LIB_SUFFIX}
+-          ARCHIVE DESTINATION lib${LIB_SUFFIX}
++          LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
++          ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+         )
+ 
+ if ( STATICLIBS )
+@@ -44,7 +44,7 @@ if ( STATICLIBS )
+   set_target_properties(ftdi1-static PROPERTIES OUTPUT_NAME "ftdi1")
+   set_target_properties(ftdi1-static PROPERTIES CLEAN_DIRECT_OUTPUT 1)
+   install ( TARGETS ftdi1-static
+-            ARCHIVE DESTINATION lib${LIB_SUFFIX}
++            ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+             COMPONENT staticlibs
+           )
+ endif ()
+
