@@ -1,0 +1,21 @@
+package:
+  id: io.github.QMednafen
+  name: QMednafen
+  version: 0.1.0
+  kind: app
+  description: |
+    QMednafen is a Qt 5 GUI interface for Mednafen, the multi-platform and multi-console emulator.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Tuxman88/QMednafen.git"
+  commit: 2b0f1a0d1e16a40935d37becb303df91763e83a3
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
