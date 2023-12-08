@@ -1,0 +1,25 @@
+diff --git a/Denoising.desktop b/Denoising.desktop
+new file mode 100644
+index 0000000..9ea3616
+--- /dev/null
++++ b/Denoising.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=Denoising
++Exec=Denoising %f
+diff --git a/Denoising.pro b/Denoising.pro
+index 9be14ed..65551a7 100644
+--- a/Denoising.pro
++++ b/Denoising.pro
+@@ -41,3 +41,10 @@ OBJECTS_DIR += ./release/objects
+ UI_DIR +=./release/objects
+ 
+ #LIBS += -L"$$_PRO_FILE_PWD_/fftw3/.libs/" -lfftw3
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += Denoising.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target

@@ -1,0 +1,21 @@
+package:
+  id: io.github.Image-denoising
+  name: Image-denoising
+  version: 0.0.1
+  kind: app
+  description: |
+    Cross-platform tool for removing noise from the images with Neighborhood , Non-local means , Non-local means fast (expensive precomputing methodics used),Non-local means fast (FFT accelerated) methods.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/shadowfury/Image-denoising.git"
+  commit: 55ac753dbcb9059fec097da755285aa3c0f9197e
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
