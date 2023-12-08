@@ -1,0 +1,46 @@
+From e556438f9e377645abfd73c670cf160d6051ec60 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Fri, 8 Dec 2023 12:36:39 +0800
+Subject: [install.patch_] install
+
+---
+ apkstudio.pro | 15 +++++++++------
+ 1 file changed, 9 insertions(+), 6 deletions(-)
+
+diff --git a/apkstudio.pro b/apkstudio.pro
+index b8e303d..cec11e5 100644
+--- a/apkstudio.pro
++++ b/apkstudio.pro
+@@ -71,20 +71,23 @@ OTHER_FILES += \
+ mac:ICON = resources/icon.icns
+ 
+ unix {
+-    isEmpty(PREFIX) {
+-        PREFIX = /usr/local
+-    }
+ 
+     target.path = $$PREFIX/bin
+ 
+-    icons.files += resources/icon.png
+-    icons.path = $$PREFIX/share/pixmaps/
+-
+     shortcut.files = resources/apkstudio.desktop
+     shortcut.path = $$PREFIX/share/applications/
+ 
++    icons.files += resources/icon.png
++    icons.path = $$PREFIX/share/icons
++
+     INSTALLS += target icons shortcut
+     TARGET = apkstudio
++
++     
++     INSTALLS += target
++
++     
++
+ }
+ 
+ win32:RC_ICONS += resources/icon.ico
+-- 
+2.33.1
+
