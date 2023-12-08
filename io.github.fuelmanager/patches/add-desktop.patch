@@ -1,0 +1,29 @@
+diff --git a/fuelmanager.desktop b/fuelmanager.desktop
+index 1d3e2db..67d7f54 100644
+--- a/fuelmanager.desktop
++++ b/fuelmanager.desktop
+@@ -2,7 +2,7 @@
+ Name=fuelmanager
+ GenericName=Fuel Manager
+ Comment=Fuel Mileage tracker
+-Exec=fuelmanager
++Exec=fuelmanager %f
+ Icon=fuelmanager
+ Terminal=false
+ Type=Application
+diff --git a/fuelmanager.pro b/fuelmanager.pro
+index 50a267e..d281e1f 100644
+--- a/fuelmanager.pro
++++ b/fuelmanager.pro
+@@ -77,3 +77,11 @@ lessThan(QT_MAJOR_VERSION,5): CONFIG += help
+ greaterThan(QT_MAJOR_VERSION, 4): QT += help
+ 
+ RESOURCES = resources.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += fuelmanager.desktop
++INSTALLS += desktop
++
++icons.path = $${PREFIX}/share/icons
++icons.files = fuelmanager.svg
++INSTALLS += icons

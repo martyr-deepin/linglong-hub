@@ -1,0 +1,21 @@
+package:
+  id: io.github.fuelmanager
+  name: fuelmanager
+  version: 0.0.1
+  kind: app
+  description: |
+    This is a handy fuel manager application. Keeps track of miles, gallons, cost to give you mpgs.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/kc8hfi/fuelmanager.git"
+  commit: 65d61b871ac934b5e7c81e089a2f8e8744f19e9e
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
