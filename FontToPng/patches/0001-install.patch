@@ -1,0 +1,53 @@
+From 1e1ba835f2b3bca00e048e8cf5a112512645df87 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Fri, 8 Dec 2023 13:14:59 +0800
+Subject: [install.patch_] install
+
+---
+ FontToPng.desktop           |  6 ++++++
+ src/FontToPng/FontToPng.pro | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 FontToPng.desktop
+
+diff --git a/FontToPng.desktop b/FontToPng.desktop
+new file mode 100644
+index 0000000..d59ac38
+--- /dev/null
++++ b/FontToPng.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=FontToPng
++Exec=FontToPng
++Terminal=false
+\ No newline at end of file
+diff --git a/src/FontToPng/FontToPng.pro b/src/FontToPng/FontToPng.pro
+index d4e730b..101f983 100644
+--- a/src/FontToPng/FontToPng.pro
++++ b/src/FontToPng/FontToPng.pro
+@@ -3,6 +3,7 @@ QT       += core gui svg
+ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+ 
+ TEMPLATE = app
++TARGET = FontToPng
+ 
+ CONFIG += c++11
+ 
+@@ -28,3 +29,12 @@ win32{
+ RESOURCES += \
+     MaterialUI/MaterialUI.qrc \
+     Font/Font.qrc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = FontToPng.desktop
++INSTALLS += unix_desktop
++}
+\ No newline at end of file
+-- 
+2.33.1
+

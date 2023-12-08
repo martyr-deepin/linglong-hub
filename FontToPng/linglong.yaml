@@ -1,0 +1,25 @@
+package:
+  id: io.github.FontToPng
+  name: FontToPng
+  version: 3.1.0
+  kind: app
+  description: |
+    将ttf字体或者svg字体，转换为PNG的小工具
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/188080501/FontToPng.git
+  commit: 87d7f15e372bdca5e3b081c784a10e978cb46bed
+  patch: patches/0001-install.patch
+
+variables:
+  extra_args: |
+     src/FontToPng
+
+
+build:
+  kind: qmake
