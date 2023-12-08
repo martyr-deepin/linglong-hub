@@ -1,0 +1,23 @@
+diff -Naur b/applink.pro a/applink.pro
+--- b/applink.pro	2023-12-08 20:07:26.601340317 +0800
++++ a/applink.pro	2023-12-08 20:10:18.125285269 +0800
+@@ -36,3 +36,9 @@
+     user.h \
+     appendices.h \
+     start.h
++
++desktop.files += SOFT0129-Applink.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop
+\ 文件尾没有换行符
+diff -Naur b/SOFT0129-Applink.desktop a/SOFT0129-Applink.desktop
+--- b/SOFT0129-Applink.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/SOFT0129-Applink.desktop	2023-12-08 20:08:52.805430156 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=applink
++Exec=applink
++Type=Application
+\ 文件尾没有换行符

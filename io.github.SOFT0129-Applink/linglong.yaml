@@ -1,0 +1,20 @@
+package:
+  id: io.github.SOFT0129-Applink 
+  name: SOFT0129-Applink 
+  version: 0.0.1
+  kind: app
+  description: |
+    A game based on Qt and C++ 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/NestDream/SOFT0129-Applink.git"
+  commit: ee8466b
+  patch: patches/ab.patch
+build:
+  kind: qmake
