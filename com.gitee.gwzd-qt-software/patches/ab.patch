@@ -1,0 +1,41 @@
+diff -Naur b/gwzd-qt-software.desktop a/gwzd-qt-software.desktop
+--- b/gwzd-qt-software.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/gwzd-qt-software.desktop	2023-12-07 22:27:37.292630291 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=gwzd-qt-software
++Exec=gwzd-qt-software
++Type=Application
+diff -Naur b/qianWindow.pro a/qianWindow.pro
+--- b/qianWindow.pro	2023-12-07 22:26:15.391494568 +0800
++++ a/qianWindow.pro	2023-12-07 22:29:58.670103044 +0800
+@@ -14,6 +14,9 @@
+ # You can also select to disable deprecated APIs only up to a certain version of Qt.
+ #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+ 
++TARGET = gwzd-qt-software
++TEMPLATE = app
++
+ SOURCES += \
+     Control/EnvParaController.cpp \
+     Control/GasParaController.cpp \
+@@ -54,8 +57,8 @@
+ QML_DESIGNER_IMPORT_PATH =
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++#qnx: target.path = /tmp/$${TARGET}/bin
++#else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+@@ -91,4 +94,8 @@
+     android/gradle.properties \
+     android/gradlew \
+     android/gradlew.bat
++desktop.files += gwzd-qt-software.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
+ 
++INSTALLS += target desktop
