@@ -1,0 +1,22 @@
+package:
+  id: io.github.Macroinvertebrates 
+  name: Macroinvertebrates
+  version: 2.21.0
+  kind: app
+  description: |
+    Search by stream name to discover what is living in each stream, then tap through animals to learn more.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/Vermont-EPSCoR/Macroinvertebrates.git"
+  commit: e6bd9646cfc328075967c600f47b6893e6ed2f20
+  patch:
+     - patches/0001-1.patch
+
+build:
+  kind: qmake

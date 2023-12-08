@@ -1,0 +1,48 @@
+From d76c6b2d12d024ac7670e747c12cc72946f4fb79 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Wed, 6 Dec 2023 20:12:46 +0800
+Subject: [PATCH] 1
+
+---
+ MacroinvertebrateV3.pro    | 11 +++++++++++
+ Macroinvertebrates.desktop |  9 +++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 Macroinvertebrates.desktop
+
+diff --git a/MacroinvertebrateV3.pro b/MacroinvertebrateV3.pro
+index 7172496..7691ed1 100644
+--- a/MacroinvertebrateV3.pro
++++ b/MacroinvertebrateV3.pro
+@@ -285,3 +285,14 @@ android {
+ }
+ 
+ include(../android_openssl/openssl.pri)
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Macroinvertebrates.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = resources/media/logo.png
++INSTALLS += icons
++
+diff --git a/Macroinvertebrates.desktop b/Macroinvertebrates.desktop
+new file mode 100644
+index 0000000..7065488
+--- /dev/null
++++ b/Macroinvertebrates.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Macroinvertebrates
++Name=Macroinvertebrates
++StartupNotify=false
++Icon=logo
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+-- 
+2.33.1
+
