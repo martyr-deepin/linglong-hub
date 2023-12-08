@@ -1,0 +1,53 @@
+From 77cf46e9a856917db293ab4268c8c7993091596a Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Fri, 8 Dec 2023 12:53:20 +0800
+Subject: [install.patch_] install
+
+---
+ A-Maze-n-Gen.desktop | 6 ++++++
+ A-Maze-n-Gen.pro     | 9 +++++++--
+ 2 files changed, 13 insertions(+), 2 deletions(-)
+ create mode 100644 A-Maze-n-Gen.desktop
+
+diff --git a/A-Maze-n-Gen.desktop b/A-Maze-n-Gen.desktop
+new file mode 100644
+index 0000000..6f32de4
+--- /dev/null
++++ b/A-Maze-n-Gen.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=A-Maze-n-Gen
++Exec=A-Maze-n-Gen
++Terminal=false
+\ No newline at end of file
+diff --git a/A-Maze-n-Gen.pro b/A-Maze-n-Gen.pro
+index 7d3ff4f..9e99272 100644
+--- a/A-Maze-n-Gen.pro
++++ b/A-Maze-n-Gen.pro
+@@ -6,7 +6,8 @@ CONFIG += c++11
+ 
+ INCLUDEPATH += include \
+                src
+-
++TARGET = A-Maze-n-Gen
++TEMPLATE = app
+ SOURCES += \
+     src/main.cpp \
+     src/cell.cpp \
+@@ -36,5 +37,9 @@ RC_FILE = resources/resources.rc
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $${PREFIX}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = A-Maze-n-Gen.desktop 
++INSTALLS += unix_desktop
+\ No newline at end of file
+-- 
+2.33.1
+

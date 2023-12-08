@@ -1,0 +1,20 @@
+package:
+  id: io.github.a-maze-n-gen
+  name: a-maze-n-gen
+  version: 3.1.0
+  kind: app
+  description: |
+    C++/Qt Maze Generator
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/shaturnuy/a-maze-n-gen.git
+  commit: 4c27e1525c4159b61fc5b495f515242dd99fbf8f
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
