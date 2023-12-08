@@ -1,0 +1,23 @@
+diff -Naur b/Tic-tac-toe.desktop a/Tic-tac-toe.desktop
+--- b/Tic-tac-toe.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/Tic-tac-toe.desktop	2023-12-08 20:46:12.393161893 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=Tic-tac-toe
++Exec=Tic-tac-toe
++Type=Application
+\ 文件尾没有换行符
+diff -Naur b/Tic-tac-toe.pro a/Tic-tac-toe.pro
+--- b/Tic-tac-toe.pro	2023-12-08 20:43:39.506100223 +0800
++++ a/Tic-tac-toe.pro	2023-12-08 20:45:50.301058679 +0800
+@@ -40,3 +40,9 @@
+ 
+ RESOURCES += \
+     images.qrc
++
++desktop.files += Tic-tac-toe.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop
+\ 文件尾没有换行符
