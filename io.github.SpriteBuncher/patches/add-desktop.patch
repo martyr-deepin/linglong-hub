@@ -1,0 +1,30 @@
+diff --git a/SpriteBuncher.desktop b/SpriteBuncher.desktop
+new file mode 100644
+index 0000000..687e5fe
+--- /dev/null
++++ b/SpriteBuncher.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=SpriteBuncher
++Exec=SpriteBuncher %f
++Icon=icon-full
+diff --git a/buncher.pro b/buncher.pro
+index 6ff5970..597f0c8 100644
+--- a/buncher.pro
++++ b/buncher.pro
+@@ -52,3 +52,14 @@ RESOURCES += \
+ #    formats.path = Contents/MacOS/
+ #    QMAKE_BUNDLE_DATA += formats
+ #}
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += SpriteBuncher.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = images/icon-full.png
++INSTALLS += icons
