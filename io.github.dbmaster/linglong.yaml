@@ -1,0 +1,19 @@
+package:
+  id: io.github.dbmaster
+  name: dbmaster
+  version: 0.0.1
+  kind: app
+  description: |
+    DbMaster is an open-source database management & querying tool. Under heavy development, it targets SQL developers & students. It aims at providing a free (Apache) alternative to propriatary software like AnySQL.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/FrenchDilettante/dbmaster.git"
+  commit: 1d0e9e7e496238051b238bfc4ae08fac37d67169
+
+build:
+  kind: qmake
