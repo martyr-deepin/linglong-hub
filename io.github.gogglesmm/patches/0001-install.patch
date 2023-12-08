@@ -1,0 +1,25 @@
+From b3d0c2ca9eb2d702f905280a7595f873e84e1310 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 5 Dec 2023 22:12:23 +0800
+Subject: [PATCH] install
+
+---
+ rapidcopy_main.pro | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/rapidcopy_main.pro b/rapidcopy_main.pro
+index 8c342ad..f7dbe9e 100644
+--- a/rapidcopy_main.pro
++++ b/rapidcopy_main.pro
+@@ -18,7 +18,7 @@ QMAKE_CXXFLAGS += -std=c++11
+ TARGET = RapidCopy
+ DEFINES += _GNU_SOURCE
+ TRANSLATIONS += RapidCopy_ja_JP.ts
+-
++  INCLUDEPATH += ${PREFIX}/include
+ if(CentOS7){
+ 	LIBS += /usr/lib64/libacl.so /usr/lib64/libbsd.so
+ 	DEFINES += _CENTOS7
+-- 
+2.33.1
+
