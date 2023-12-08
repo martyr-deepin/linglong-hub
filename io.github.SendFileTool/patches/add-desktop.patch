@@ -1,0 +1,25 @@
+diff --git a/Wohlnet_SendFile.pro b/Wohlnet_SendFile.pro
+index fd25678..bdb42b1 100644
+--- a/Wohlnet_SendFile.pro
++++ b/Wohlnet_SendFile.pro
+@@ -20,3 +20,10 @@ HEADERS  += \
+     defines.h
+ 
+ FORMS    += wohlnet_sendfile_window.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += Wohlnet_SendFile_oneday_Qt.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
+diff --git a/Wohlnet_SendFile_oneday_Qt.desktop b/Wohlnet_SendFile_oneday_Qt.desktop
+new file mode 100644
+index 0000000..d69f646
+--- /dev/null
++++ b/Wohlnet_SendFile_oneday_Qt.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=Wohlnet_SendFile_oneday_Qt
++Exec=Wohlnet_SendFile_oneday_Qt %f
