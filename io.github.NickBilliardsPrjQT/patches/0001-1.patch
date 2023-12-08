@@ -1,0 +1,47 @@
+From 0a266889162193a1437d47652724224ccb45f4f4 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Fri, 8 Dec 2023 15:44:55 +0800
+Subject: [PATCH] 1
+
+---
+ NickBilliards.desktop  |  9 +++++++++
+ NickBilliardsPrjQT.pro | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 NickBilliards.desktop
+
+diff --git a/NickBilliards.desktop b/NickBilliards.desktop
+new file mode 100644
+index 0000000..98fb855
+--- /dev/null
++++ b/NickBilliards.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=NickBilliards
++Name=NickBilliards
++StartupNotify=false
++Terminal=false
++Icon=info
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/NickBilliardsPrjQT.pro b/NickBilliardsPrjQT.pro
+index 9d9d813..5dc3047 100644
+--- a/NickBilliardsPrjQT.pro
++++ b/NickBilliardsPrjQT.pro
+@@ -76,3 +76,13 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ 
+ RESOURCES += \
+     icons.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =NickBilliards.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = images/info.png
++INSTALLS += icons
+-- 
+2.33.1
+

@@ -1,0 +1,21 @@
+package:
+  id: io.github.NickBilliardsPrjQT 
+  name: NickBilliardsPrjQT
+  version: 0.0.1
+  kind: app
+  description: |
+    这是一款适用于台球桌酒吧和餐厅的收费管理应用程序.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/aj501/NickBilliardsPrjQT.git"
+  commit: 27b903c96c4e6abe7753322b5e735c07f562529c
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
