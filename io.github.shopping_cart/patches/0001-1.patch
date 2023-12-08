@@ -1,0 +1,44 @@
+From 8a296b6fde8057eec2abb6b233e003ead18f5732 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Fri, 8 Dec 2023 15:50:13 +0800
+Subject: [PATCH] 1
+
+---
+ project2.desktop | 8 ++++++++
+ project2.pro     | 8 ++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 project2.desktop
+
+diff --git a/project2.desktop b/project2.desktop
+new file mode 100644
+index 0000000..8a124f8
+--- /dev/null
++++ b/project2.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=project2
++Name=project2
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/project2.pro b/project2.pro
+index 03c398c..52cd969 100644
+--- a/project2.pro
++++ b/project2.pro
+@@ -78,3 +78,11 @@ DISTFILES += \
+     Project 2 Description.docx \
+     Bundles.csv \
+     Pets.csv
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =project2.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+-- 
+2.33.1
+

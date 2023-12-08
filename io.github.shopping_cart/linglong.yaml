@@ -1,0 +1,21 @@
+package:
+  id: io.github.shopping_cart 
+  name: shopping_cart
+  version: 0.0.1
+  kind: app
+  description: |
+    该应用程序为购物车，其中可以填充商品列表及其相关价格。
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/shellho1/shopping_cart.git"
+  commit: 17c8c573af31fccc6ed35291ccd49039dc331366
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
