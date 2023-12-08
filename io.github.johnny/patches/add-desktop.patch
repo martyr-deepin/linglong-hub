@@ -1,0 +1,30 @@
+diff --git a/johnny.desktop b/johnny.desktop
+new file mode 100644
+index 0000000..4d06d0f
+--- /dev/null
++++ b/johnny.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=johnny
++Exec=johnny %f
++Icon=johnny_128
+diff --git a/johnny.pro b/johnny.pro
+index 6aa5fa5..77b6d35 100644
+--- a/johnny.pro
++++ b/johnny.pro
+@@ -70,3 +70,14 @@ ICON    = resources/icons/johnny.icns
+ # Build universal binary on OS X for Release target
+ release: CONFIG += x86 ppc x86_64 ppc64
+ }
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += johnny.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = resources/icons/48x48/johnny_128.png
++INSTALLS += icons

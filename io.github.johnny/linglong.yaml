@@ -1,0 +1,21 @@
+package:
+  id: io.github.johnny
+  name: johnny
+  version: 2.2.0
+  kind: app
+  description: |
+    Johnny the open source cross-platform GUI frontend for John the Ripper, the popular password cracker.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/openwall/johnny.git"
+  commit: 44b38a6977d90035f69434e746dd869ece979e93
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
