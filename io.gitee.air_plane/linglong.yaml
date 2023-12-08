@@ -1,0 +1,25 @@
+package:
+  id: io.gitee.air_plane
+  name: air_plane
+  version: 0.0.1
+  kind: app
+  description: |
+   飞机大战游戏.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: icu
+    version: 63.1
+    type: runtime
+
+source:
+  kind: git
+  url: "https://gitee.com/zhouX/air_plane.git"
+  commit: 69a7e90
+  patch: patches/ab.patch
+
+build:
+  kind: qmake
