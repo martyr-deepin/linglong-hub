@@ -1,0 +1,21 @@
+diff --git a/qisoburn.pro b/qisoburn.pro
+index 975b1ce..eb3400d 100644
+--- a/qisoburn.pro
++++ b/qisoburn.pro
+@@ -2,7 +2,6 @@ TEMPLATE = app
+ QMAKE_STRIP =
+ QT += gui core widgets
+ CONFIG += qt warn_on console release
+-PREFIX = /usr
+ BINDIR = $$PREFIX/bin
+ DATADIR = $$PREFIX/share
+ DESTDIR = bin
+@@ -13,7 +12,7 @@ FORMS = ui/ibdialog.ui
+ HEADERS = src/ibdimpl.h
+ SOURCES = src/ibdimpl.cpp src/main.cpp
+ target.path = $$BINDIR
+-desktop.path = $$DATADIR/applications/qisoburn
++desktop.path = $$DATADIR/applications
+ desktop.files += data/qisoburn.desktop
+ INSTALLS += target desktop
+ RESOURCES += qisoburn.qrc
