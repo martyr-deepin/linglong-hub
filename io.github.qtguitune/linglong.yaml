@@ -1,0 +1,21 @@
+package:
+  id: io.github.qtguitune
+  name: qtguitune
+  version: 0.0.1
+  kind: app
+  description: |
+    Guitune is a program for tuning guitars (and other instruments).It is actually an oscilloscope which counts the passes between two trigger levels per time, calculates the frequency and shows thetone on a tone-scale.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/ycollet/qtguitune.git"
+  commit: e191eb66d69f6ff367cf976e7b4e2e332e6b6d2b
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: cmake

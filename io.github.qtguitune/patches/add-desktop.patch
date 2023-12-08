@@ -1,0 +1,21 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index ce14f0b..10c2dc4 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -48,3 +48,6 @@ if (ENABLE_JACK)
+ endif (ENABLE_JACK)
+ 
+ add_subdirectory(src)
++
++install(TARGETS qtguitune DESTINATION bin/)
++install(FILES qtguitune.desktop DESTINATION share/applications/)
+diff --git a/qtguitune.desktop b/qtguitune.desktop
+new file mode 100644
+index 0000000..05561e0
+--- /dev/null
++++ b/qtguitune.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=qtguitune
++Exec=qtguitune %F
++Type=Application
