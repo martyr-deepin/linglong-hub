@@ -1,0 +1,25 @@
+diff --git a/wanperf.desktop b/wanperf.desktop
+new file mode 100644
+index 0000000..ce7c6fb
+--- /dev/null
++++ b/wanperf.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=wanperf
++Exec=wanperf %f
+diff --git a/wanperf.pro b/wanperf.pro
+index fd49506..61eaffe 100644
+--- a/wanperf.pro
++++ b/wanperf.pro
+@@ -36,3 +36,10 @@ FORMS    += mainwindow.ui
+ DISTFILES += \
+     LICENSE.txt \
+     README.md
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += wanperf.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target

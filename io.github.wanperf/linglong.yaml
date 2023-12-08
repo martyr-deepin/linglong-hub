@@ -1,0 +1,21 @@
+package:
+  id: io.github.wanperf
+  name: wanperf
+  version: 1.0.0
+  kind: app
+  description: |
+    wanperf is a multithread application which can be used to measure network performance in a lab environment. It produces network traffic (UDP) wich is echoed by a sattellite. wanperf calculates banwidth in different network layers, pps, packet loss.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/tibob/wanperf.git
+  commit: 4e7285ebfa320c9ec59c342b2314a71cbfc095de
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
