@@ -1,0 +1,44 @@
+From 3714016dfdd11c094b7abd127635c943b9ef9129 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Fri, 8 Dec 2023 13:05:49 +0800
+Subject: [install.patch_] install
+
+---
+ CuteCalendar.desktop | 6 ++++++
+ CuteCalendar.pro     | 8 ++++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 CuteCalendar.desktop
+
+diff --git a/CuteCalendar.desktop b/CuteCalendar.desktop
+new file mode 100644
+index 0000000..4d764f7
+--- /dev/null
++++ b/CuteCalendar.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=CuteCalendar
++Exec=CuteCalendar
++Terminal=false
+\ No newline at end of file
+diff --git a/CuteCalendar.pro b/CuteCalendar.pro
+index 62fb0fa..84b3f21 100644
+--- a/CuteCalendar.pro
++++ b/CuteCalendar.pro
+@@ -92,3 +92,11 @@ FORMS +=
+ 
+ RESOURCES += \
+     res.qrc
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = CuteCalendar.desktop
++INSTALLS += unix_desktop
++}
+\ No newline at end of file
+-- 
+2.33.1
+

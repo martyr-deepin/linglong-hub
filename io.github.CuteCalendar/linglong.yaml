@@ -1,0 +1,20 @@
+package:
+  id: io.github.CuteCalendar
+  name: CuteCalendar
+  version: 3.1.0
+  kind: app
+  description: |
+    Cross-platform calendar developed in Qt5 and C++
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/EgonGalvani/CuteCalendar.git
+  commit: 562ee81601b54c765e980807ed9146aa483e1d0a
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
