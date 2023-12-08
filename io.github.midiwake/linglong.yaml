@@ -1,0 +1,19 @@
+package:
+  id: io.github.midiwake
+  name: midiwake
+  version: 1.0.0
+  kind: app
+  description: |
+    A utility to block the screen saver during MIDI activity.该程序显示在通知区域中，并且它侦听硬件 MIDI 设备（例如合成器键盘）产生的输出。在使用设备时，该程序会阻止桌面进入空闲模式，这可能会锁定会话或激活屏幕保护程序。例如，人们可以在屏幕上练习一首音乐，而不会受到干扰。
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/jpcima/midiwake.git
+  commit: 81f3b41be67084b1668076b51bceeff6921b7105
+
+build:
+  kind: cmake
