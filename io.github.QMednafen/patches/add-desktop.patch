@@ -1,0 +1,30 @@
+diff --git a/qmednafen-0.1.0.pro b/qmednafen-0.1.0.pro
+index 57fb7ec..6bb512a 100644
+--- a/qmednafen-0.1.0.pro
++++ b/qmednafen-0.1.0.pro
+@@ -156,3 +156,14 @@ SOURCES += src/main.cc \
+            src/base/pluginmanager/plugin/blocks/options/optionreal.cc \
+            src/base/pluginmanager/plugin/blocks/options/optionstring.cc
+ RESOURCES += resources.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += qmednafen.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = resources/img/main-512x512.png
++INSTALLS += icons
+diff --git a/qmednafen.desktop b/qmednafen.desktop
+new file mode 100644
+index 0000000..a79599f
+--- /dev/null
++++ b/qmednafen.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=qmednafen
++Exec=qmednafen %f
++Icon=main-512x512
