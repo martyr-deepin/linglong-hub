@@ -1,0 +1,31 @@
+diff --git a/FMBankEdit.pro b/FMBankEdit.pro
+index 24287bb..3fe3916 100644
+--- a/FMBankEdit.pro
++++ b/FMBankEdit.pro
+@@ -220,3 +220,14 @@ plots {
+     CONFIG += qwt
+     DEFINES += ENABLE_PLOTS
+ }
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += opn2_bank_editor.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = src/resources/opn2_48.png
++INSTALLS += icons
+\ No newline at end of file
+diff --git a/opn2_bank_editor.desktop b/opn2_bank_editor.desktop
+new file mode 100644
+index 0000000..952ebb2
+--- /dev/null
++++ b/opn2_bank_editor.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=opn2_bank_editor
++Exec=opn2_bank_editor %f
++Icon=opn2_48

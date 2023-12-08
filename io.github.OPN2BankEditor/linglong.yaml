@@ -1,0 +1,22 @@
+package:
+  id: io.github.OPN2BankEditor
+  name: OPN2BankEditor
+  version: 1.3.0
+  kind: app
+  description: |
+    A small cross-platform editor for the OPN family of FM synthesis soundchips (which were widely used in Sega Genesis (aka Mega Drive) game console), Fujitsu FM Towns home computer and NEC PC-88 and PC-98 home computer series).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Wohlstand/OPN2BankEditor.git
+  commit: af01105644e505f4375ff7dfb26a69af9fa21bf3
+  patch:
+    - patches/add-desktop.patch
+
+
+build:
+  kind: qmake
