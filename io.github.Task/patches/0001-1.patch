@@ -1,0 +1,48 @@
+From b5a1342ab8b57257401b424ae5fdeb9e6748511b Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Fri, 8 Dec 2023 16:18:23 +0800
+Subject: [PATCH] 1
+
+---
+ Checklist/Checklist.desktop |  9 +++++++++
+ Checklist/Checklist.pro     | 11 +++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 Checklist/Checklist.desktop
+
+diff --git a/Checklist/Checklist.desktop b/Checklist/Checklist.desktop
+new file mode 100644
+index 0000000..5be17b4
+--- /dev/null
++++ b/Checklist/Checklist.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Checklist
++Name=Checklist
++StartupNotify=false
++Terminal=false
++Icon=logo2
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Checklist/Checklist.pro b/Checklist/Checklist.pro
+index 93a989e..474f4c2 100644
+--- a/Checklist/Checklist.pro
++++ b/Checklist/Checklist.pro
+@@ -39,3 +39,14 @@ RESOURCES += \
+     imageresources.qrc
+ 
+ DISTFILES +=
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Checklist.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = images/logo2.png
++INSTALLS += icons
++
+-- 
+2.33.1
+

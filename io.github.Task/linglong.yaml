@@ -1,0 +1,30 @@
+package:
+  id: io.github.Task 
+  name: Task
+  version: 0.0.1
+  kind: app
+  description: |
+    A to-do list made in Qt Creator for Windows and Linux
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/stephen-soul/Task.git"
+  commit: 428608998061e6af7d3ebea5b63f88c8018d52f5
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd Checklist
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
