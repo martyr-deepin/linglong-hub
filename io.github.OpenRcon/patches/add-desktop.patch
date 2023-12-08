@@ -1,0 +1,25 @@
+diff --git a/src/openrcon.desktop b/src/openrcon.desktop
+new file mode 100644
+index 0000000..faace7e
+--- /dev/null
++++ b/src/openrcon.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=openrcon
++Exec=openrcon %f
+diff --git a/src/src.pro b/src/src.pro
+index f62934d..2c93d2f 100644
+--- a/src/src.pro
++++ b/src/src.pro
+@@ -10,3 +10,10 @@ TEMPLATE = app
+ 
+ include(client/client.pri)
+ include(common/common.pri)
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += openrcon.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
