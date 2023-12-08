@@ -1,0 +1,27 @@
+package:
+  id: io.github.BingWall
+  name: BingWall
+  version: 2.4.0
+  kind: app
+  description: |
+    Bing wallpaper of the day application for Gnome desktop
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/keshavbhatt/BingWall.git
+  commit: bc5409e6ddb5fc1ca5d06da38c3bf8cd6efbe03b
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
