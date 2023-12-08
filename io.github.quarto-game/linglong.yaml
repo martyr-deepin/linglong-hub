@@ -1,0 +1,20 @@
+package:
+  id: io.github.quarto-game
+  name: quarto-game
+  version: 3.1.0
+  kind: app
+  description: |
+    QT implementation of a board game
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/m-danya/quarto-game.git
+  commit: 9ebbe54e77b076638211d522cfe78c04d824286a
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

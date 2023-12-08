@@ -1,0 +1,43 @@
+From c2b5b539e5c03cab6c6b94b69891ba498f5bce96 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Fri, 8 Dec 2023 13:21:35 +0800
+Subject: [install.patch_] install
+
+---
+ quarto.desktop | 6 ++++++
+ quarto.pro     | 7 +++++++
+ 2 files changed, 13 insertions(+)
+ create mode 100644 quarto.desktop
+
+diff --git a/quarto.desktop b/quarto.desktop
+new file mode 100644
+index 0000000..cac1674
+--- /dev/null
++++ b/quarto.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=quarto
++Exec=quarto
++Terminal=false
+\ No newline at end of file
+diff --git a/quarto.pro b/quarto.pro
+index 3dd2ee9..f352bb4 100644
+--- a/quarto.pro
++++ b/quarto.pro
+@@ -63,4 +63,11 @@ DISTFILES += \
+ RESOURCES += \
+     images.qrc
+ 
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
+ 
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = quarto.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+
