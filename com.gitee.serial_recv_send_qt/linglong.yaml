@@ -1,0 +1,18 @@
+package:
+  id: com.gitee.serial_recv_send_qt
+  name: serial_recv_send_qt
+  version: 1.0.0
+  kind: app
+  description: |
+    windows端串口助手，可在接收到指定数据时进行回复。 一般用于串口配置软件自测试
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/fengyuwuzu0519/serial_recv_send_qt.git"
+  commit: f41e4f7
+  patch: patches/ab.patch
+build:
+  kind: qmake

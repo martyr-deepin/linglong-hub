@@ -1,0 +1,25 @@
+diff -Naur b/complex.pro a/complex.pro
+--- b/complex.pro	2023-12-07 23:23:10.031860622 +0800
++++ a/complex.pro	2023-12-07 23:38:22.643361663 +0800
+@@ -40,6 +40,11 @@
+         mainwindow.ui
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++#qnx: target.path = /tmp/$${TARGET}/bin
++#else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++desktop.files += serial_recv_send_qt.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
++
++INSTALLS += target desktop
+diff -Naur b/serial_recv_send_qt.desktop a/serial_recv_send_qt.desktop
+--- b/serial_recv_send_qt.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/serial_recv_send_qt.desktop	2023-12-07 23:38:03.059240815 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=serial_recv_send_qt
++Exec=complex
++Type=Application
