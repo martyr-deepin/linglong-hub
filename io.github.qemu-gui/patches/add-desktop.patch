@@ -1,0 +1,20 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index d004102..9c45564 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -66,3 +66,5 @@ install(TARGETS qemu-gui
+         RUNTIME DESTINATION bin)
+ install(TARGETS qemu-cli
+         RUNTIME DESTINATION bin)
++
++install(FILES qemu-gui.desktop DESTINATION share/applications/)
+diff --git a/qemu-gui.desktop b/qemu-gui.desktop
+new file mode 100644
+index 0000000..e5f1978
+--- /dev/null
++++ b/qemu-gui.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=qemu-gui
++Exec=qemu-gui %f
