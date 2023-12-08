@@ -1,0 +1,22 @@
+package:
+  id: io.github.QtTimeTimer 
+  name: QtTimeTimer
+  version: 0.0.1
+  kind: app
+  description: |
+    计时器应用程序,将时间图形可视化.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/wimdams/QtTimeTimer.git"
+  commit: 8ac499cfd3f6c366712135690e24b36795f45061
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
