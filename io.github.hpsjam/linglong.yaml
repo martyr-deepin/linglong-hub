@@ -1,0 +1,19 @@
+package:
+  id: io.github.hpsjam
+  name: hpsjam
+  version: 1.2.8
+  kind: app
+  description: |
+    Online audio jamming software
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/hselasky/hpsjam.git
+  commit: 4fca1b6406f9c4d492285bea5a01a440c96792a2
+
+build:
+  kind: qmake

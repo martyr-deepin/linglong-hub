@@ -1,0 +1,29 @@
+From 8da64da6bbfae138a944ca463c9bc2abd5fc680f Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 6 Dec 2023 12:50:04 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index d162ed2..5299e4b 100755
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -18,7 +18,11 @@ target_include_directories(${PROJECT_NAME} PRIVATE
+ )
+ 
+ # Jansson JSON library
+-find_package(Jansson REQUIRED) 
++find_package(PkgConfig REQUIRED)
++pkg_check_modules(JANSSON REQUIRED jansson)
++
++# Include jansson headers
++include_directories(${JANSSON_INCLUDE_DIRS})
+ target_link_libraries(${PROJECT_NAME} ${Jansson_LIBRARIES})
+ target_include_directories(${PROJECT_NAME} PUBLIC ${Jansson_INCLUDE_DIRS})
+ 
+-- 
+2.33.1
+
