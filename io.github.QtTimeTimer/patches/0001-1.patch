@@ -1,0 +1,48 @@
+From 27454c030142a28f23b116ebb9aca50b2ff3b8b2 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Fri, 8 Dec 2023 16:27:35 +0800
+Subject: [PATCH] 1
+
+---
+ TestCase.desktop |  9 +++++++++
+ TestCase.pro     | 11 +++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 TestCase.desktop
+
+diff --git a/TestCase.desktop b/TestCase.desktop
+new file mode 100644
+index 0000000..2a641a5
+--- /dev/null
++++ b/TestCase.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=TestCase
++Name=TestCase
++StartupNotify=false
++Terminal=false
++Icon=Clock-icon
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/TestCase.pro b/TestCase.pro
+index ce5fbcd..cf5ce78 100644
+--- a/TestCase.pro
++++ b/TestCase.pro
+@@ -48,3 +48,14 @@ DISTFILES += \
+     res.rc
+ #WDA zelf toegevoegd:
+ RC_FILE = res.rc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =TestCase.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = res/Clock-icon.png
++INSTALLS += icons
++
+-- 
+2.33.1
+
