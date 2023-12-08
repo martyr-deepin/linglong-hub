@@ -1,0 +1,19 @@
+package:
+  id: io.github.BambooTracker
+  name: BambooTracker
+  version: 0.6.3
+  kind: app
+  description: |
+    BambooTracker is a cross-platform music tracker for the Yamaha YM2608 (OPNA) sound chip which was used in NEC PC-8801/9801 series computers.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/BambooTracker/BambooTracker.git"
+  commit: b18bc39e4350f319023e5e251e4fd99d416671d6
+
+build:
+  kind: qmake
