@@ -1,0 +1,20 @@
+package:
+  id: io.github.hydratool
+  name: hydratool
+  version: 0.3.2.1
+  kind: app
+  description: |
+    HydraBus host tool with GUI (Qt)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/hydrabus/hydratool.git
+  commit: 95a3dbdbf183f6b84703517b5e83f097baf40ee9
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
