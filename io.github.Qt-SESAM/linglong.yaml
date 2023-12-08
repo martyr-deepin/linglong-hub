@@ -1,0 +1,20 @@
+package:
+  id: io.github.Qt-SESAM
+  name: Qt-SESAM
+  version: 2.0.5
+  kind: app
+  description: |
+    c't SESAM Password Manager (Qt version)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/607011/Qt-SESAM.git
+  commit: 4969108ee964e130001fc5ec1fa5d8d3f023de5d
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,56 @@
+From 29f1ecd7b7c07d66dc735f02f76670b3aae99ce8 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 5 Dec 2023 21:48:35 +0800
+Subject: [PATCH] install
+
+---
+ Qt-SESAM/Qt-SESAM.desktop           |   9 +++++++++
+ Qt-SESAM/Qt-SESAM.pro               |  11 ++++++++---
+ Qt-SESAM/translations/QtSESAM_de.qm | Bin
+ 3 files changed, 17 insertions(+), 3 deletions(-)
+ create mode 100644 Qt-SESAM/Qt-SESAM.desktop
+ create mode 100644 Qt-SESAM/translations/QtSESAM_de.qm
+
+diff --git a/Qt-SESAM/Qt-SESAM.desktop b/Qt-SESAM/Qt-SESAM.desktop
+new file mode 100644
+index 0000000..029c663
+--- /dev/null
++++ b/Qt-SESAM/Qt-SESAM.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Qt-SESAM
++Name=Qt-SESAM
++icon=QtSESAM
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Qt-SESAM/Qt-SESAM.pro b/Qt-SESAM/Qt-SESAM.pro
+index f33fc35..6f20299 100644
+--- a/Qt-SESAM/Qt-SESAM.pro
++++ b/Qt-SESAM/Qt-SESAM.pro
+@@ -116,9 +116,14 @@ macx {
+ }
+ 
+ unix {
+-    target.path = /usr/bin
+-    INSTALLS += target
+-
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Qt-SESAM.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = resources/QtSESAM.icns
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+     translations.files = $$replace(TRANSLATIONS, .ts, .qm)
+     translations.path  = $$[QT_INSTALL_TRANSLATIONS]
+     INSTALLS += translations
+diff --git a/Qt-SESAM/translations/QtSESAM_de.qm b/Qt-SESAM/translations/QtSESAM_de.qm
+new file mode 100644
+index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+-- 
+2.33.1
+
