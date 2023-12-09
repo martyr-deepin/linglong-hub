@@ -1,0 +1,17 @@
+--- ../CMakeLists.txt	2023-12-02 14:58:19.635571000 +0800
++++ ../CMakeLists.txt	2023-12-02 15:01:55.337553867 +0800
+@@ -55,3 +55,14 @@
+               -targetDir ${PROJECT_SOURCE_DIR}/release -libDir ${PROJECT_SOURCE_DIR}
+               -qmlDir ${PROJECT_SOURCE_DIR} -recursiveDepth 3"
+   )
++
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=stegano
++Exec=stegano
++Categories=Utility;
++")
++file(WRITE ${CMAKE_INSTALL_PREFIX}/share/applications/stegano.desktop "${DESKTOP_FILE_CONTENT}")
++install(TARGETS stegano DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
++

@@ -1,0 +1,24 @@
+package:
+  id: io.github.stegano
+  name: stegano
+  version: 0.1.2
+  kind: app
+  description: |
+    Bit-level Image Concealing App built with Qt Framework - Steganography Pet Project.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/tm9k1/stegano.git
+  commit: 01b30aaf3e58ed09d056862c8fd65b9416e7d95f
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: cmake
+
