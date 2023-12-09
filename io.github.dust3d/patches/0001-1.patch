@@ -1,0 +1,50 @@
+From 7e1b9557abce1ffb0eb647f7ad2671f00e714d4b Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Fri, 8 Dec 2023 16:02:27 +0800
+Subject: [PATCH] 1
+
+---
+ application/application.pro | 11 +++++++++++
+ application/dust3d.desktop  | 10 ++++++++++
+ 2 files changed, 21 insertions(+)
+ create mode 100644 application/dust3d.desktop
+
+diff --git a/application/application.pro b/application/application.pro
+index 23643473..8bd1f336 100644
+--- a/application/application.pro
++++ b/application/application.pro
+@@ -304,3 +304,14 @@ win32 {
+     LIBS += -luser32
+     LIBS += -lopengl32
+ }
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =dust3d.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
++icons.path = $${PREFIX}/share/icons
++icons.files = favicon.ico
++INSTALLS += icons
+\ No newline at end of file
+diff --git a/application/dust3d.desktop b/application/dust3d.desktop
+new file mode 100644
+index 00000000..d735ae30
+--- /dev/null
++++ b/application/dust3d.desktop
+@@ -0,0 +1,10 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=dust3d
++Name=dust3d
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
++
++Icon=favicom
+-- 
+2.33.1
+
