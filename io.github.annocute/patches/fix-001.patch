@@ -1,0 +1,25 @@
+--- ../annocute.pro	2023-11-30 18:48:07.150271000 +0800
++++ ../annocute.pro	2023-11-30 18:50:44.631195691 +0800
+@@ -30,3 +30,22 @@
+     pathlineedit.h
+ 
+ FORMS    += mainwindow.ui
++
++# desktop指定
++DESKTOP_FILE = ./annocute.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=annocute' >> $$DESKTOP_FILE")
++system("echo 'Comment=annocute.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$PREFIX/bin/annocute' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++# bin文件指定
++target.path = $$PREFIX/bin
++INSTALLS += target

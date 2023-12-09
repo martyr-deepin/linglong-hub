@@ -1,0 +1,24 @@
+package:
+  id: io.github.annocute
+  name: annocute
+  version: 1.0.0
+  kind: app
+  description: |
+    simple genome range annotation tool.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/dridk/annocute.git
+  commit: a14305f920bb2d3dc6cb7d7c3efaa79c961bef23
+  patch: 
+    - patches/fix-001.patch
+
+
+build:
+  kind: qmake
