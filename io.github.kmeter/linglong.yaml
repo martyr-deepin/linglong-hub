@@ -1,0 +1,30 @@
+package:
+  id: io.github.kmeter
+  name: kmeter
+  version: 1.0.0
+  kind: app
+  description: |
+    A free multiplatform (Linux/macOS/Windows) LP-100A virtual control panel.
+
+
+depends:
+  - id: qtserialport
+    version: 5.15.7
+    type: runtime
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/ea4k/kmeter.git
+  commit: 0d5e4e38a0ad68df06d3dbfe422df7dfde609fc0
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+

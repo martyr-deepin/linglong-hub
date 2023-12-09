@@ -1,0 +1,23 @@
+--- ../KMeter.pro	2023-12-01 18:00:33.258648000 +0800
++++ ../KMeter.pro	2023-12-01 18:06:49.912070488 +0800
+@@ -177,3 +177,20 @@
+ {
+     TARGET = kmeter
+ }
++
++
++# desktop指定
++DESKTOP_FILE = ./kmeter.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=kmeter' >> $$DESKTOP_FILE")
++system("echo 'Comment=kmeter.' >> $$DESKTOP_FILE")
++system("echo 'Exec=kmeter' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
