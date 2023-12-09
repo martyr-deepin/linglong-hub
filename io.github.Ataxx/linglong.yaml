@@ -1,0 +1,29 @@
+package:
+  id: io.github.Ataxx
+  name: Ataxx
+  version: 0.0.1
+  kind: app
+  description: |
+    Ataxx（同化棋）游戏，包括使用Qt编写的UI及基于Minimax的AI，优化后的AI在botzone.org上取得较高的rank.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/QtLab/Ataxx.git
+  commit: 29ff07efae7bff85298feb338d735942c22d2136
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd 同化棋UI/src
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
