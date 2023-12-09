@@ -1,0 +1,19 @@
+--- ../CMakeLists.txt	2023-12-09 15:35:17.689554000 +0800
++++ ../CMakeLists.txt	2023-12-09 15:34:22.377422000 +0800
+@@ -79,7 +79,16 @@
+ install(TARGETS mcontrolcenter
+     BUNDLE DESTINATION .
+     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=mcontrolcenter
++Exec=mcontrolcenter
++Categories=Utility;
++")
+ 
++file(WRITE ${CMAKE_BINARY_DIR}/mcontrolcenter.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/mcontrolcenter.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
+ if(QT_VERSION_MAJOR EQUAL 6)
+     qt_finalize_executable(MControlCenter)
+ endif()

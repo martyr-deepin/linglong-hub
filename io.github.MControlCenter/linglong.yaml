@@ -1,0 +1,20 @@
+package:
+  id: io.github.MControlCenter
+  name: MControlCenter
+  version: 0.0.1
+  kind: app
+  description: |
+    An application that allows you to change the settings of MSI laptops running Linux
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/ThePBone/MControlCenter.git
+  commit: d89afda468f06f53d061c6c80557a7456053b7f9
+  patch: patches/fix_001.patch
+build:
+  kind: cmake
