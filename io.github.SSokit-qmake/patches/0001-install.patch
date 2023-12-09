@@ -1,0 +1,93 @@
+From ed034ff0e96189a10b94efdf5446ab9ff7d62dae Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Sat, 9 Dec 2023 10:06:31 +0800
+Subject: [install.patch_] install
+
+---
+ CMakeLists.txt          | 3 ++-
+ SSokit.desktop          | 6 ++++++
+ SSokit.pro              | 6 ++++--
+ src/LogMessageModel.cpp | 2 +-
+ src/logger.cpp          | 2 +-
+ 5 files changed, 14 insertions(+), 5 deletions(-)
+ create mode 100644 SSokit.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index eae315c..a599feb 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -12,6 +12,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
+ set(CMAKE_PREFIX_PATH $ENV{QTDIR})
+ 
++target_include_directories(Logger.h PUBLIC ./src)
+ if (CMAKE_VERSION VERSION_LESS "3.7.0")
+     set(CMAKE_INCLUDE_CURRENT_DIR ON)
+ endif ()
+@@ -57,7 +58,7 @@ set(HEADERS
+         src/UdpClientModel.h
+         src/ClientModel.h
+         src/ServerModel.h
+-        src/Logger.h
++        src/logger.h
+         src/StringListModel.h
+         src/websocketservermodel.h
+         src/websocketclientmodel.h
+diff --git a/SSokit.desktop b/SSokit.desktop
+new file mode 100644
+index 0000000..a32de02
+--- /dev/null
++++ b/SSokit.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=SSokit
++Exec=SSokit
++Terminal=false
+\ No newline at end of file
+diff --git a/SSokit.pro b/SSokit.pro
+index 125bdfb..8c57707 100644
+--- a/SSokit.pro
++++ b/SSokit.pro
+@@ -112,7 +112,9 @@ QT += widgets \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $${PREFIX}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+-
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = SSokit.desktop
++INSTALLS += unix_desktop
+diff --git a/src/LogMessageModel.cpp b/src/LogMessageModel.cpp
+index 529da22..d5021c2 100644
+--- a/src/LogMessageModel.cpp
++++ b/src/LogMessageModel.cpp
+@@ -113,7 +113,7 @@ QVariant LogMessageList::data(const QModelIndex &index, int role) const
+         return QString(d->buf());
+     }
+     else if (role == Datatype::length) {
+-        return d->length();
++        return QVariant(static_cast<qlonglong>(d->length()));
+     }
+     else if (role == Datatype::binData) {
+ //        QString binData="0x"+d->byteArray().toHex(' ').toUpper();
+diff --git a/src/logger.cpp b/src/logger.cpp
+index 85d9073..d6c735b 100644
+--- a/src/logger.cpp
++++ b/src/logger.cpp
+@@ -8,7 +8,7 @@
+ #include <QPlainTextEdit>
+ #include "toolkit.h"
+ #include "setting.h"
+-#include "Logger.h"
++#include "logger.h"
+ #include "SettingTool.h"
+ 
+ #define SET_MAX_LOGITM  100
+-- 
+2.33.1
+

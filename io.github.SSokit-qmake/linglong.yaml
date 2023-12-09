@@ -1,0 +1,20 @@
+package:
+  id: io.github.SSokit-qmake
+  name: SSokit-qmake
+  version: 1.2.1
+  kind: app
+  description: |
+    A Simple & Strong Tool for TCP&UDP Debug
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/rangaofei/SSokit-qmake.git
+  commit: 2700a936222370b707d73a4426179576d449d500
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
