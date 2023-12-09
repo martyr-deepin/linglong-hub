@@ -1,0 +1,20 @@
+package:
+  id: io.github.QFontIcon
+  name: QFontIcon
+  version: 3.1.0
+  kind: app
+  description: |
+    Use font like "awesome font" as icons for Qt application
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dridk/QFontIcon.git
+  commit: 419020c34b0e39f63318831372b644f35496ce02
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

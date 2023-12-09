@@ -1,0 +1,148 @@
+From 5c0199cc118bb7c66c3affcf5642d44a2f45a5ef Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Sat, 9 Dec 2023 09:22:29 +0800
+Subject: [install.patch_] install
+
+---
+ 0001-insatll.patch                      | 70 +++++++++++++++++++++++++
+ QFontIcon.desktop                       |  6 +++
+ QFontIcon.pro                           | 14 ++++-
+ {QFontIcon => QFontIcon1}/QFontIcon.pri |  0
+ {QFontIcon => QFontIcon1}/qfonticon.cpp |  0
+ {QFontIcon => QFontIcon1}/qfonticon.h   |  0
+ 6 files changed, 89 insertions(+), 1 deletion(-)
+ create mode 100644 0001-insatll.patch
+ create mode 100644 QFontIcon.desktop
+ rename {QFontIcon => QFontIcon1}/QFontIcon.pri (100%)
+ rename {QFontIcon => QFontIcon1}/qfonticon.cpp (100%)
+ rename {QFontIcon => QFontIcon1}/qfonticon.h (100%)
+
+diff --git a/0001-insatll.patch b/0001-insatll.patch
+new file mode 100644
+index 0000000..4dfabed
+--- /dev/null
++++ b/0001-insatll.patch
+@@ -0,0 +1,70 @@
++From 2fe971e66bf093d05874464984c6c8eb910f6ef6 Mon Sep 17 00:00:00 2001
++From: xwqlikepsl <2242484264@qq.com>
++Date: Sat, 9 Dec 2023 09:21:24 +0800
++Subject: [install.patch_] insatll
++
++---
++ QFontIcon.desktop                       |  6 ++++++
++ QFontIcon.pro                           | 14 +++++++++++++-
++ {QFontIcon => QFontIcon1}/QFontIcon.pri |  0
++ {QFontIcon => QFontIcon1}/qfonticon.cpp |  0
++ {QFontIcon => QFontIcon1}/qfonticon.h   |  0
++ 5 files changed, 19 insertions(+), 1 deletion(-)
++ create mode 100644 QFontIcon.desktop
++ rename {QFontIcon => QFontIcon1}/QFontIcon.pri (100%)
++ rename {QFontIcon => QFontIcon1}/qfonticon.cpp (100%)
++ rename {QFontIcon => QFontIcon1}/qfonticon.h (100%)
++
++diff --git a/QFontIcon.desktop b/QFontIcon.desktop
++new file mode 100644
++index 0000000..b4d18c0
++--- /dev/null
+++++ b/QFontIcon.desktop
++@@ -0,0 +1,6 @@
+++[Desktop Entry]
+++Version=1.0
+++Type=Application
+++Name=QFontIcon
+++Exec=QFontIcon
+++Terminal=false
++\ No newline at end of file
++diff --git a/QFontIcon.pro b/QFontIcon.pro
++index 83b2ddf..ed8b330 100644
++--- a/QFontIcon.pro
+++++ b/QFontIcon.pro
++@@ -15,7 +15,19 @@ TEMPLATE = app
++ SOURCES += main.cpp
++ 
++ 
++-include("QFontIcon/QFontIcon.pri")
+++include("QFontIcon1/QFontIcon.pri")
++ 
++ RESOURCES += \
++     resource.qrc
+++
+++INCLUDEPATH += ./QFontIcon1
+++
+++
+++unix: {
+++target.path = $${PREFIX}/bin
+++INSTALLS += target
+++
+++unix_desktop.path = $${PREFIX}/share/applications
+++unix_desktop.files = QFontIcon.desktop
+++INSTALLS += unix_desktop
+++}
++diff --git a/QFontIcon/QFontIcon.pri b/QFontIcon1/QFontIcon.pri
++similarity index 100%
++rename from QFontIcon/QFontIcon.pri
++rename to QFontIcon1/QFontIcon.pri
++diff --git a/QFontIcon/qfonticon.cpp b/QFontIcon1/qfonticon.cpp
++similarity index 100%
++rename from QFontIcon/qfonticon.cpp
++rename to QFontIcon1/qfonticon.cpp
++diff --git a/QFontIcon/qfonticon.h b/QFontIcon1/qfonticon.h
++similarity index 100%
++rename from QFontIcon/qfonticon.h
++rename to QFontIcon1/qfonticon.h
++-- 
++2.33.1
++
+diff --git a/QFontIcon.desktop b/QFontIcon.desktop
+new file mode 100644
+index 0000000..b4d18c0
+--- /dev/null
++++ b/QFontIcon.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=QFontIcon
++Exec=QFontIcon
++Terminal=false
+\ No newline at end of file
+diff --git a/QFontIcon.pro b/QFontIcon.pro
+index 83b2ddf..ed8b330 100644
+--- a/QFontIcon.pro
++++ b/QFontIcon.pro
+@@ -15,7 +15,19 @@ TEMPLATE = app
+ SOURCES += main.cpp
+ 
+ 
+-include("QFontIcon/QFontIcon.pri")
++include("QFontIcon1/QFontIcon.pri")
+ 
+ RESOURCES += \
+     resource.qrc
++
++INCLUDEPATH += ./QFontIcon1
++
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = QFontIcon.desktop
++INSTALLS += unix_desktop
++}
+diff --git a/QFontIcon/QFontIcon.pri b/QFontIcon1/QFontIcon.pri
+similarity index 100%
+rename from QFontIcon/QFontIcon.pri
+rename to QFontIcon1/QFontIcon.pri
+diff --git a/QFontIcon/qfonticon.cpp b/QFontIcon1/qfonticon.cpp
+similarity index 100%
+rename from QFontIcon/qfonticon.cpp
+rename to QFontIcon1/qfonticon.cpp
+diff --git a/QFontIcon/qfonticon.h b/QFontIcon1/qfonticon.h
+similarity index 100%
+rename from QFontIcon/qfonticon.h
+rename to QFontIcon1/qfonticon.h
+-- 
+2.33.1
+
