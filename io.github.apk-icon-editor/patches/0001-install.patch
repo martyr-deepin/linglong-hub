@@ -1,0 +1,64 @@
+From 6f4d7db67dd3bfc071ad3a531a1451bf5ab4c636 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Sat, 9 Dec 2023 12:06:36 +0800
+Subject: [install.patch_] install
+
+---
+ res/icons/linux/apk-icon-editor.desktop | 2 +-
+ src/apk-icon-editor.pro                 | 3 +--
+ src/core/keys.h                         | 3 ++-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/res/icons/linux/apk-icon-editor.desktop b/res/icons/linux/apk-icon-editor.desktop
+index e822b51..3eaddb5 100644
+--- a/res/icons/linux/apk-icon-editor.desktop
++++ b/res/icons/linux/apk-icon-editor.desktop
+@@ -4,7 +4,7 @@ Type=Application
+ Name=APK Icon Editor
+ Comment=APK resource editor
+ GenericName=APK resource editor
+-Exec=/usr/bin/apk-icon-editor %F
++Exec=apk-icon-editor
+ Path=/usr/share/apk-icon-editor
+ Icon=apk-icon-editor
+ Categories=Utility;
+diff --git a/src/apk-icon-editor.pro b/src/apk-icon-editor.pro
+index 6288d23..22e471c 100644
+--- a/src/apk-icon-editor.pro
++++ b/src/apk-icon-editor.pro
+@@ -88,12 +88,11 @@ macx:       QMAKE_POST_LINK += chmod +x $$quote($$SHARED/zipalign) $$escape_expa
+ # Install:
+ 
+ unix:!macx {
+-    isEmpty(PREFIX): PREFIX = /usr
+     target.path   = $$PREFIX/bin
+     share.files   = $$PWD/../deploy/general/*
+     share.path    = $$PREFIX/share/apk-icon-editor
+     icons.files   = $$PWD/../res/icons/linux/apk-icon-editor/*
+-    icons.path    = $$PREFIX/share/icons/hicolor
++    icons.path    = $$PREFIX/share/icons/
+     desktop.files = $$PWD/../res/icons/linux/apk-icon-editor.desktop
+     desktop.path  = $$PREFIX/share/applications
+     INSTALLS      += target share icons desktop
+diff --git a/src/core/keys.h b/src/core/keys.h
+index 31571ad..3465a09 100644
+--- a/src/core/keys.h
++++ b/src/core/keys.h
+@@ -11,7 +11,7 @@
+ #include <QString>
+ 
+ #ifndef CI
+-#error The following constants are dummies. Set your own values and/or remove this line.
++
+ #endif
+ 
+ const quint64 SIMPLECRYPT_KEY   = Q_UINT64_C(0x0000000000000000);
+@@ -25,4 +25,5 @@ const QString GGDRIVE_SECRET    = "0000000000000000";
+ const QString ONEDRIVE_ID       = "0000000000000000";
+ const QString ONEDRIVE_SECRET   = "0000000000000000";
+ 
++
+ #endif // KEYS_H
+-- 
+2.33.1
+
