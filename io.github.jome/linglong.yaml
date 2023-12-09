@@ -1,0 +1,20 @@
+package:
+  id: io.github.jome
+  name: jome
+  version: 0.5.0
+  kind: app
+  description: |
+    An emoji picker desktop application
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/eepp/jome.git
+  commit: 568d8c003e7760639b19994724fe203eb603e887
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake

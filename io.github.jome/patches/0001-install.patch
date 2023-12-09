@@ -1,0 +1,40 @@
+From 4d7f6a2cdd296fc766eba59db456dd0d48aa6229 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Sat, 9 Dec 2023 14:04:44 +0800
+Subject: [install.patch_] install
+
+---
+ CMakeLists.txt | 4 ++++
+ jome.desktop   | 6 ++++++
+ 2 files changed, 10 insertions(+)
+ create mode 100644 jome.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8f27d6b7..74326d6b 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -20,3 +20,7 @@ set (JOME-DATA-DIR "${CMAKE_CURRENT_BINARY_DIR}/data")
+ add_subdirectory (assets)
+ add_subdirectory (jome)
+ add_subdirectory (jome-ctl)
++
++
++install(PROGRAMS ./build_dir/jome/jome DESTINATION bin)
++install(PROGRAMS jome.desktop DESTINATION share/applications)
+\ No newline at end of file
+diff --git a/jome.desktop b/jome.desktop
+new file mode 100644
+index 00000000..077570b9
+--- /dev/null
++++ b/jome.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=jome
++Exec=jome
++Terminal=false
+\ No newline at end of file
+-- 
+2.33.1
+
