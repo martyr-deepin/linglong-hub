@@ -1,0 +1,46 @@
+From 22b8e66372d321d0d0cd944714600c4f0c6c0ebf Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Sat, 9 Dec 2023 13:13:41 +0800
+Subject: [install.patch_] install
+
+---
+ app/app.pro            | 8 ++++----
+ app/cutemarked.desktop | 2 +-
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/app/app.pro b/app/app.pro
+index 4827673..a9166e2 100644
+--- a/app/app.pro
++++ b/app/app.pro
+@@ -198,12 +198,12 @@ message("Using LIBS=$$LIBS")
+ ## INSTALLATION
+ 
+ unix:!macx {
+-   isEmpty(PREFIX): PREFIX = /usr
+-   DATADIR = $${PREFIX}/share
++   isEmpty(PREFIX): PREFIX = /opt
++   DATADIR = $${PREFIX}
+ 
+    # install desktop file
+-   desktop.path = $${DATADIR}/applications
+-   desktop.files += cutemarked.desktop
++   desktop.path = $${DATADIR}/share/applications
++   desktop.files += cutemarked.desktop 
+ 
+    # install icons
+    icon16.path = $${DATADIR}/icons/hicolor/16x16/apps
+diff --git a/app/cutemarked.desktop b/app/cutemarked.desktop
+index 05b3163..d2b42e5 100644
+--- a/app/cutemarked.desktop
++++ b/app/cutemarked.desktop
+@@ -10,6 +10,6 @@ Comment[fr]=Éditeur de documents en Markdown avec prévisualisation du rendu HT
+ Comment[pl]=Edytor dokumentów Markdown z podglądem HTML na żywo
+ Icon=cutemarked
+ Terminal=false
+-Exec=cutemarked %f
++Exec=cutemarked
+ MimeType=text/markdown;
+ Categories=Qt;Utility;TextEditor;
+-- 
+2.33.1
+

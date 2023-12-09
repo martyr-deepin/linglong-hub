@@ -1,0 +1,24 @@
+package:
+  id: io.github.CuteMarkEd-NG
+  name: CuteMarkEd-NG
+  version: 3.1.0
+  kind: app
+  description: |
+    Markdown Editor in Qt 5
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine                   
+    version: 5.15.7
+
+source:
+  kind: git
+  url: https://github.com/Waqar144/CuteMarkEd-NG.git
+  commit: 9431ac603cef23d6f29e51e18f1eeee156f5bfb3
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
