@@ -1,0 +1,20 @@
+package:
+  id: io.github.QAmigo
+  name: QAmigo
+  version: 3.0.0
+  kind: app
+  description: |
+    Qt cross-platform serial port socket assistant for visualizing data. Qt编写的串行数据解析与可视化工具，支持串口与TCP，UDP等串行数据流。
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/QAmigo/QAmigo.git
+  commit: 4407080a04b783cd8bfc6b251c158466196d4bf3
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

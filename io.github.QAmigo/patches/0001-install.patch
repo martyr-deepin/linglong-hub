@@ -1,0 +1,57 @@
+From a1b8fc051ba67858e416117450779458eb9ec69e Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Sat, 9 Dec 2023 12:21:08 +0800
+Subject: [install.patch_] install
+
+---
+ QAmigo.desktop                    | 6 ++++++
+ QAmigo.pro                        | 6 +++++-
+ src/SimpleTab/transfercounter.cpp | 1 +
+ 3 files changed, 12 insertions(+), 1 deletion(-)
+ create mode 100644 QAmigo.desktop
+
+diff --git a/QAmigo.desktop b/QAmigo.desktop
+new file mode 100644
+index 0000000..e3f8968
+--- /dev/null
++++ b/QAmigo.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=QAmigo
++Exec=QAmigo
++Terminal=false
+\ No newline at end of file
+diff --git a/QAmigo.pro b/QAmigo.pro
+index 1d74021..9c9d227 100644
+--- a/QAmigo.pro
++++ b/QAmigo.pro
+@@ -62,9 +62,13 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $${PREFIX}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = QAmigo.desktop
++INSTALLS += unix_desktop
+ RESOURCES += \
+     resources/icons.qrc
+ 
+diff --git a/src/SimpleTab/transfercounter.cpp b/src/SimpleTab/transfercounter.cpp
+index 732ad2d..596e821 100644
+--- a/src/SimpleTab/transfercounter.cpp
++++ b/src/SimpleTab/transfercounter.cpp
+@@ -1,4 +1,5 @@
+ #include "transfercounter.h"
++#include <cmath>
+ 
+ TransferCounter::TransferCounter(QWidget *parent, QString name) :
+     QWidget(parent),
+-- 
+2.33.1
+
