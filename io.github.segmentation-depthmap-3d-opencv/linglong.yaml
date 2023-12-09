@@ -1,0 +1,30 @@
+package:
+  id: io.github.segmentation-depthmap-3d-opencv
+  name: segmentation-depthmap-3d-opencv
+  version: 1.5.0
+  kind: app
+  description: |
+    Use an image segmentation to produce a RGB+D image (image + depthmap). Or use the GUI to view already-made RGB+D images in 3D, there's even an anaglyph mode to perceive depth with red+cyan glasses. Animate the 3D view and export to a series of images to build later an animated image. This nice GUI uses QT, OpenCV and OpenGL.
+
+
+depends:
+  - id: opencv
+    version: 4.8.1
+    type: runtime
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/AbsurdePhoton/segmentation-depthmap-3d-opencv.git
+  commit: 4e7920464e2bb9690e42dec6fdce66634b9390f9
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+
