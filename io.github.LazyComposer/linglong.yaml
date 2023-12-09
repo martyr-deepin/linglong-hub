@@ -1,0 +1,24 @@
+package:
+  id: io.github.LazyComposer
+  name: LazyComposer
+  version: 1.2.0
+  kind: app
+  description: |
+    Simple midi music generator
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/3dproger/LazyComposer.git
+  commit: 52f71c25808f87d90472327095c00da88daa2ec0
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile LazyComposer.pro ${conf_args} ${extra_args}

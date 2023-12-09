@@ -1,0 +1,50 @@
+From a47e33b3f195c4db92bdf8d90731d23043449cec Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 1 Dec 2023 10:30:41 +0800
+Subject: [PATCH] install
+ 
+---
+ src/LazyComposer.desktop |  9 +++++++++
+ src/LazyComposer.pro     | 11 ++++++++++-
+ 2 files changed, 19 insertions(+), 1 deletion(-)
+ create mode 100644 src/LazyComposer.desktop
+
+diff --git a/src/LazyComposer.desktop b/src/LazyComposer.desktop
+new file mode 100644
+index 0000000..68d46f9
+--- /dev/null
++++ b/src/LazyComposer.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=LazyComposer
++Name=LazyComposer
++icon=icon.ico
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/src/LazyComposer.pro b/src/LazyComposer.pro
+index c51df3f..3e83f08 100644
+--- a/src/LazyComposer.pro
++++ b/src/LazyComposer.pro
+@@ -93,5 +93,14 @@ win32: {
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =LazyComposer.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = icon.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
