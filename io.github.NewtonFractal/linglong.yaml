@@ -1,0 +1,21 @@
+package:
+  id: io.github.NewtonFractal
+  name: NewtonFractal
+  version: 1.6.2
+  kind: app
+  description: |
+    Qt application to visualize newton fractals.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/chrizbee/NewtonFractal.git
+  commit: 80b3d7267d4ef701d3142773ea12e82ef8c74958
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake

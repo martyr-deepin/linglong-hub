@@ -1,0 +1,50 @@
+From 45d679e69301d78eef18a91ab5aadb84a5d10d4a Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Fri, 8 Dec 2023 15:07:09 +0800
+Subject: [PATCH] 1
+
+---
+ NewtonFractal.pro           | 11 +++++++++++
+ build/NewtonFractal.desktop | 10 ++++++++++
+ 2 files changed, 21 insertions(+)
+ create mode 100644 build/NewtonFractal.desktop
+
+diff --git a/NewtonFractal.pro b/NewtonFractal.pro
+index 9c48fa4..1cce4ff 100644
+--- a/NewtonFractal.pro
++++ b/NewtonFractal.pro
+@@ -66,3 +66,14 @@ RESOURCES += \
+ 
+ DISTFILES += \
+     src/fractal.fsh
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =build/NewtonFractal.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
++icons.path = $${PREFIX}/share/icons
++icons.files = resources/icons/icon.png
++INSTALLS += icons
+\ No newline at end of file
+diff --git a/build/NewtonFractal.desktop b/build/NewtonFractal.desktop
+new file mode 100644
+index 0000000..e83387c
+--- /dev/null
++++ b/build/NewtonFractal.desktop
+@@ -0,0 +1,10 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=NewtonFractal
++Name=NewtonFractal
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
++
++Icon=icon
+-- 
+2.33.1
+
