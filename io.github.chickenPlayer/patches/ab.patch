@@ -1,0 +1,20 @@
+diff -Naur b/chickenPlayer.desktop a/chickenPlayer.desktop
+--- b/chickenPlayer.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/chickenPlayer.desktop	2023-12-09 16:21:54.245501235 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=chickenPlayer
++Exec=Chickenplayer
++Type=Application
+diff -Naur b/Chickenplayer.pro a/Chickenplayer.pro
+--- b/Chickenplayer.pro	2023-12-09 16:19:03.797582869 +0800
++++ a/Chickenplayer.pro	2023-12-09 16:21:38.331263221 +0800
+@@ -41,3 +41,8 @@
+ FORMS    += mainwindow.ui \
+     dialog.ui \
+     aboutdialog.ui
++desktop.files += chickenPlayer.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
++
++INSTALLS += target desktop

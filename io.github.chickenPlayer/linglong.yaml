@@ -1,0 +1,18 @@
+package:
+  id: io.github.chickenPlayer
+  name: chickenPlayer
+  version: 1.0.0
+  kind: app
+  description: |
+    A Simple GUI for MPlayer based on Qt 
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "git@github.com:chickenjohn/chickenPlayer.git"
+  commit: ab558b8
+  patch: patches/ab.patch
+build:
+  kind: qmake
