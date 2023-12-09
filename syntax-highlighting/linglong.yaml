@@ -1,0 +1,20 @@
+package:
+  id: syntax-highlighting
+  name: syntax-highlighting 
+  version: 5.90.0
+  kind: lib
+  description: |
+     Syntax highlighting engine for Kate syntax definitions.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/KDE/syntax-highlighting.git
+  commit: e9e3f635843096155fd0a929f65cc4901eb3379e
+
+build:
+  kind: cmake
