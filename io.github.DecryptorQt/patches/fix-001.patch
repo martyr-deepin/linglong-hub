@@ -1,0 +1,35 @@
+--- ../DecryptorQt.pro	2023-12-02 20:49:54.690736000 +0800
++++ ../DecryptorQt.pro	2023-12-02 20:54:00.108086445 +0800
+@@ -32,7 +32,7 @@
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ DISTFILES += \
+@@ -40,3 +40,23 @@
+ 
+ RESOURCES += \
+     resources.qrc
++
++DESKTOP_FILE = ./FitbitActivitiesChart.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=DecryptorQt' >> $$DESKTOP_FILE")
++system("echo 'Comment=DecryptorQt.' >> $$DESKTOP_FILE")
++system("echo 'Exec=DecryptorQt' >> $$DESKTOP_FILE")
++system("echo 'Icon=duck.ico' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++icon.files = $$PWD/duck.ico
++icon.path = $$PREFIX/share/icons/DecryptorQt/
++INSTALLS += icon
++
