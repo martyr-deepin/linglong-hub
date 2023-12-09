@@ -1,0 +1,40 @@
+From 85819e228e94683d8bfcecfdd4e45bab15393b61 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Sat, 9 Dec 2023 13:40:53 +0800
+Subject: [install.patch_] install
+
+---
+ CMakeLists.txt  | 4 ++++
+ caj2pdf.desktop | 7 +++++++
+ 2 files changed, 11 insertions(+)
+ create mode 100644 caj2pdf.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 1312dd8..5a9dd6b 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -48,3 +48,7 @@ set_target_properties(
+              MACOSX_BUNDLE_SHORT_VERSION_STRING
+              ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
+              MACOSX_BUNDLE_ICON_FILE convert)
++
++
++install(PROGRAMS build_dir/caj2pdf DESTINATION bin)
++install(PROGRAMS caj2pdf.desktop DESTINATION share/applications)
+\ No newline at end of file
+diff --git a/caj2pdf.desktop b/caj2pdf.desktop
+new file mode 100644
+index 0000000..7a6cc37
+--- /dev/null
++++ b/caj2pdf.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=caj2pdf
++Name=新建文本.txt
++Terminal=false
++Type=Application
++Version=1.0
++X-Deepin-Vendor=user-custom
+-- 
+2.33.1
+
