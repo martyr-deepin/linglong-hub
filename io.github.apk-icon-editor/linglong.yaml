@@ -1,0 +1,20 @@
+package:
+  id: io.github.apk-icon-editor
+  name: apk-icon-editor
+  version: 2.2.0
+  kind: app
+  description: |
+    APK editor to easily change APK icons, name and version.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/kefir500/apk-icon-editor.git
+  commit: f90d2d3ad39ecf32bb21e649c36d918d1f218d6e
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
