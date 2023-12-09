@@ -1,0 +1,24 @@
+package:
+  id: io.github.qsnapshot
+  name: qsnapshot
+  version: 1.0.0
+  kind: app
+  description: |
+    ksnapshot clone using qt5.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/dridk/qsnapshot.git
+  commit: c256b3bfefff939cae7ca4ec155a5aa734d30a36
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+
