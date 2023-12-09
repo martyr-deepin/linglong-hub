@@ -1,0 +1,29 @@
+package:
+  id: io.github.dust3d
+  name: dust3d
+  version: 1.0.0
+  kind: app
+  description: |
+    Dust3D is a cross-platform 3D modeling software that makes it easy to create low poly 3D models for video games, 3D printing, and more.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/huxingyi/dust3d.git
+  commit: df589ecbe009fd38db71ddbf3f87dd3a9954a4fd
+  patch: 
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd application
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
