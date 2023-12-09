@@ -1,0 +1,28 @@
+--- ../Toefl-Speaking-Recorder/Toefl-Speaking-Recorder.pro	2023-12-08 09:55:58.629522000 +0800
++++ ../Toefl-Speaking-Recorder/Toefl-Speaking-Recorder.pro	2023-12-08 10:02:56.713028398 +0800
+@@ -31,3 +31,25 @@
+     dialogaudiosettings.ui
+ 
+ RESOURCES += rc.qrc
++
++DESKTOP_FILE = ./Toefl-Speaking-Recorder.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=Toefl-Speaking-Recorder' >> $$DESKTOP_FILE")
++system("echo 'Comment=Toefl-Speaking-Recorder.' >> $$DESKTOP_FILE")
++system("echo 'Exec=Toefl-Speaking-Recorder' >> $$DESKTOP_FILE")
++system("echo 'Icon=favicon.ico' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icon.files += $$PWD/favicon.ico
++icon.path = $$PREFIX/share/icons/Toefl-Speaking-Recorder/
++INSTALLS += icon

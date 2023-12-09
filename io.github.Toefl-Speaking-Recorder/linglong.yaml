@@ -1,0 +1,27 @@
+package:
+  id: io.github.Toefl-Speaking-Recorder
+  name: Toefl-Speaking-Recorder
+  version: 1.0.0
+  kind: app
+  description: |
+    A screen capture tool for Linux/BSD using Qt framework.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/fffaraz/Toefl-Speaking-Recorder.git
+  commit: 1cb2faab9c5449bd2f7ac8621b7841aeb93fee8d
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      mkdir build_dir && cd build_dir
+      qmake -makefile ${conf_args} ${extra_args} ../Toefl-Speaking-Recorder
