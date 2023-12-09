@@ -1,0 +1,44 @@
+From 4bdd2c590e80c2ad3fc6b135aba2fcecffba64c6 Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Fri, 8 Dec 2023 15:33:36 +0800
+Subject: [PATCH] 1
+
+---
+ src/YouDownUI.desktop | 8 ++++++++
+ src/YouDownUI.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 src/YouDownUI.desktop
+
+diff --git a/src/YouDownUI.desktop b/src/YouDownUI.desktop
+new file mode 100644
+index 0000000..98bde9c
+--- /dev/null
++++ b/src/YouDownUI.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=YouDownUI
++Name=YouDownUI
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/src/YouDownUI.pro b/src/YouDownUI.pro
+index debbbf5..8f699f7 100644
+--- a/src/YouDownUI.pro
++++ b/src/YouDownUI.pro
+@@ -43,3 +43,10 @@ FORMS    += mainwindow.ui \
+ 
+ OTHER_FILES += \
+     YouDownUI.rc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =YouDownUI.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
