@@ -1,0 +1,21 @@
+package:
+  id: org.deepin.peg-solitaire
+  name: peg-solitaire
+  version: 2.2.1
+  kind: app
+  description: |
+    Board game for one player with pegs.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://salsa.debian.org/demarchi-guest/peg-solitaire.git
+  commit: 4ce2c081f37b0898d3ded33ba35b43f6e8a95dcf
+  patch: patches/fix_001.patch
+
+build:
+  kind: cmake

@@ -1,0 +1,46 @@
+--- ../CMakeLists.txt	2023-12-09 14:58:57.022121000 +0800
++++ ../CMakeLists.txt	2023-12-09 15:05:54.947943818 +0800
+@@ -93,14 +93,41 @@
+   target_link_libraries(peg-solitaire ${Qt5Widgets_LIBRARIES})
+ 
+   # install executable and translation files
+-install_targets(/games peg-solitaire)
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Exec=peg-solitaire
++GenericName=Peg-Solitaire
++GenericName[ca]=Solitari
++Icon=/usr/share/pixmaps/peg-solitaire.xpm
++Type=Application
++Name=Peg-Solitaire
++Name[ca]=Solitari
++StartupNotify=true
++Terminal=false
++X-KDE-SubstituteUID=false
++Categories=Game;LogicGame;
++Name[ca_ES]=Solitari
++Name[es_ES]=Solitario
++Keywords=Peg-solitaire; logic game
++Comment=Classical Peg-Solitaire game
++Comment[ca]=Joc clĂ ssic de solitari amb fitxes
++Comment[es]=Juego clasico de solitario con fichas
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/peg-solitaire.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/peg-solitaire.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++install_targets(/bin peg-solitaire)
+  # INSTALL( TARGETS ${PROGNAME} DESTINATION bin )
+   install(DIRECTORY games/ DESTINATION share/games/peg-solitaire/games)
++  install(DIRECTORY games/ DESTINATION bin/games)
+   install(DIRECTORY locales/ DESTINATION share/games/peg-solitaire/locales)
++  install(DIRECTORY locales/ DESTINATION bin/locales)
+   install(DIRECTORY images/ DESTINATION share/games/peg-solitaire/images)
++  install(DIRECTORY images/ DESTINATION bin/images)
+   install(DIRECTORY help/ DESTINATION share/games/peg-solitaire/help)
++  install(DIRECTORY help/ DESTINATION bin/help)
+   install(FILES menu/peg-solitaire.6.gz DESTINATION share/man/man6)
+-  install(FILES menu/peg-solitaire.desktop DESTINATION share/applications)
++  install(FILES ${CMAKE_BINARY_DIR}/peg-solitaire.desktop DESTINATION share/applications)
+   install(FILES menu/peg-solitaire.appdata.xml DESTINATION share/appdata)
+   install(FILES images/peg-solitaire.xpm DESTINATION share/pixmaps)
+ 
