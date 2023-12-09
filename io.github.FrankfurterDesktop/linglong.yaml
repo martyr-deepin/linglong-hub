@@ -1,0 +1,24 @@
+package:
+  id: io.github.FrankfurterDesktop
+  name: FrankfurterDesktop
+  version: 0.0.1
+  kind: app
+  description: |
+    App to view currency exchange rate from European Currence Exchange.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/asit-dhal/FrankfurterDesktop.git
+  commit: 6d250175c4f161037436e318b0aaffaa8c1c2f0c
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: cmake
+

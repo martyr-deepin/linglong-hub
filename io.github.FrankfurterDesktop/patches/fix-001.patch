@@ -1,0 +1,20 @@
+--- ../CMakeLists.txt	2023-12-03 20:15:05.171736000 +0800
++++ ../CMakeLists.txt	2023-12-03 20:32:23.870472616 +0800
+@@ -61,3 +61,17 @@
+     juce::juce_gui_basics
+     nlohmann_json::nlohmann_json
+ )
++
++# 写入desktop
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=FrankfurterDesktop
++Exec=FrankfurterDesktop
++Categories=Utility;
++")
++file(WRITE ${CMAKE_INSTALL_PREFIX}/share/applications/FrankfurterDesktop.desktop "${DESKTOP_FILE_CONTENT}")
++# 写入bin文件
++install(TARGETS FrankfurterDesktop DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
++
++
