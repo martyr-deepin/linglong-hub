@@ -1,0 +1,25 @@
+package:
+  id: io.github.TextMaster
+  name: TextMaster
+  version: 1.0.0
+  kind: app
+  description: |
+    Translation tool with GUI written in QT 5.9.5 to be used in Firered (J).
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/jiangzhengwenjz/TextMaster.git
+  commit: 56a7c2315dd7abb15dce52a058a5fe81234112b4
+  patch: 
+    - patches/fix-001.patch
+    - patches/fix-002.patch
+
+
+build:
+  kind: qmake
