@@ -1,0 +1,21 @@
+package:
+  id: solid
+  name: solid 
+  version: 5.90.0
+  kind: lib
+  description: |
+    Desktop hardware abstraction.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+
+source:
+  kind: git
+  url: https://github.com/KDE/solid.git
+  commit: b0916d60deea153219a63dd34d1d787e86b416bb
+
+build:
+  kind: cmake
