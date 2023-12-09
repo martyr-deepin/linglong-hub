@@ -1,0 +1,22 @@
+package:
+  id: io.github.peg-e
+  name: peg-e
+  version: 3.2.0
+  kind: app
+  description: |
+    Peg-E is a peg solitaire game in which you jump over pieces in order to remove them from the board, ultimately trying to eliminate all but one.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/gottcode/peg-e.git
+  commit: 68788e22f433b55cfbb03dcd0b1c98a6455957fa
+
+
+build:
+  kind: qmake
+
