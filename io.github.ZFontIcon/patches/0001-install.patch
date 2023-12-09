@@ -1,0 +1,49 @@
+From eab9cf475372b9a426e26f54cf82db6c3240358d Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Sat, 9 Dec 2023 11:25:13 +0800
+Subject: [install.patch_] install
+
+---
+ ZFontIconSample.desktop | 6 ++++++
+ ZFontIconSample.pro     | 7 +++++--
+ 2 files changed, 11 insertions(+), 2 deletions(-)
+ create mode 100644 ZFontIconSample.desktop
+
+diff --git a/ZFontIconSample.desktop b/ZFontIconSample.desktop
+new file mode 100644
+index 0000000..ec20103
+--- /dev/null
++++ b/ZFontIconSample.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=ZFontIconSample
++Exec=ZFontIconSample
++Terminal=false
+\ No newline at end of file
+diff --git a/ZFontIconSample.pro b/ZFontIconSample.pro
+index 38002ef..1e724a9 100644
+--- a/ZFontIconSample.pro
++++ b/ZFontIconSample.pro
+@@ -48,11 +48,14 @@ linux {
+     # e_type as ET_DYN on the binary file. Consequently, the Operating System recognizes as Shared Library.
+     QMAKE_LFLAGS += -no-pie
+ }
+-
++TARGET = ZFontIconSample
+ 
+ ###
+ # Default rules for deployment.
+ ###
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $${PREFIX}/bin
+ !isEmpty(target.path): INSTALLS += target
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = ZFontIconSample.desktop
++INSTALLS += unix_desktop
+\ No newline at end of file
+-- 
+2.33.1
+

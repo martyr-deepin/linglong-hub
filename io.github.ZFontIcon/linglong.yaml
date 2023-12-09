@@ -1,0 +1,20 @@
+package:
+  id: io.github.
+  name: 
+  version: 3.1.0
+  kind: app
+  description: |
+    
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: 
+  commit: 
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
