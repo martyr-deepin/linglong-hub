@@ -1,0 +1,22 @@
+package:
+  id: io.github.tanglet
+  name: tanglet
+  version: 1.6.0
+  kind: app
+  description: |
+    Tanglet is a single player word finding game based on Boggle. The object of the game is to list as many words as you can before the time runs out.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/gottcode/tanglet.git
+  commit: 98a5f748a56d22bfb652b2294db7b89dd3abd7ce
+
+
+build:
+  kind: qmake
+
