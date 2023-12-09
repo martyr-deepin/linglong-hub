@@ -1,0 +1,44 @@
+From e47f5dd5b9d20beb6599eba39ccc4de4927c3593 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Sat, 9 Dec 2023 09:42:13 +0800
+Subject: [install.patch_] install
+
+---
+ RFID-Manager.desktop | 6 ++++++
+ RFID-Manager.pro     | 9 +++++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 RFID-Manager.desktop
+
+diff --git a/RFID-Manager.desktop b/RFID-Manager.desktop
+new file mode 100644
+index 0000000..d088aca
+--- /dev/null
++++ b/RFID-Manager.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=RFID-Manager
++Exec=RFID-Manager
++Terminal=false
+diff --git a/RFID-Manager.pro b/RFID-Manager.pro
+index a346fe5..4970601 100644
+--- a/RFID-Manager.pro
++++ b/RFID-Manager.pro
+@@ -71,3 +71,12 @@ HEADERS += \
+ SOURCES += \
+     $$PWD/src/MainWindow.cpp \
+     $$PWD/src/main.cpp
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = RFID-Manager.desktop
++INSTALLS += unix_desktop
++}
+\ No newline at end of file
+-- 
+2.33.1
+
