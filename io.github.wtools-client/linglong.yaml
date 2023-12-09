@@ -1,0 +1,22 @@
+package:
+  id: io.github.wtools-client
+  name: wtools-client
+  version: 1.0.0
+  kind: app
+  description: |
+    Qt client for wtools. WTools is a software tool created by FWTools that provides users with a suite of command line tools for manipulating geospatial data.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/dridk/wtools-client.git
+  commit: fc39ebc681a462435836da6481ac2452d7e751b8
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake

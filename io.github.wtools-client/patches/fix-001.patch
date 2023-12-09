@@ -1,0 +1,25 @@
+--- ../wtools-gui.pro	2023-11-30 19:02:54.755162000 +0800
++++ ../wtools-gui.pro	2023-11-30 19:07:06.267665012 +0800
+@@ -39,3 +39,22 @@
+ 
+ RESOURCES += \
+     icons.qrc
++
++# desktop指定
++DESKTOP_FILE = ./wtools-gui.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=wtools-gui' >> $$DESKTOP_FILE")
++system("echo 'Comment=wtools-gui.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$PREFIX/bin/wtools-gui' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++# bin文件指定
++target.path = $$PREFIX/bin
++INSTALLS += target
