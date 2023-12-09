@@ -1,0 +1,20 @@
+diff -Naur b/QtInternetRadio.desktop a/QtInternetRadio.desktop
+--- b/QtInternetRadio.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/QtInternetRadio.desktop	2023-12-09 18:29:38.664852563 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=QtInternetRadio
++Exec=QtInternetRadio
++Type=Application
+diff -Naur b/QtInternetRadio.pro a/QtInternetRadio.pro
+--- b/QtInternetRadio.pro	2023-12-09 18:28:12.151989852 +0800
++++ a/QtInternetRadio.pro	2023-12-09 18:30:17.333193562 +0800
+@@ -18,3 +18,8 @@
+ HEADERS  += mainwindow.h filedownloader.h
+ 
+ FORMS    += mainwindow.ui
++desktop.files += QtInternetRadio.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
++
++INSTALLS += target desktop

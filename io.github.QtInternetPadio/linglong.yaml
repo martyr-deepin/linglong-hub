@@ -1,0 +1,19 @@
+package:
+  id: io.github.QtInternetRadio
+  name: QtInternetRadio
+  version: 1.0.0
+  kind: app
+  description: |
+     Internet radio similar to Screamer Radio, based on Qt. Using Screamer Radio presets.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "git@github.com:ivareske/QtInternetRadio.git"
+  commit: 73bee32
+  patch: patches/ab.patch
+build:
+  kind: qmake
