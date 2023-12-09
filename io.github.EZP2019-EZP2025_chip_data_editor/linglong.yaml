@@ -1,0 +1,24 @@
+package:
+  id: io.github.EZP2019-EZP2025_chip_data_editor
+  name: EZP2019-EZP2025_chip_data_editor
+  version: 1.0.0
+  kind: app
+  description: |
+    QT based editor chip database for EZP2019, EZP2019+, EZP2020, EZP2023, EZP2025, MinPro, XP866+, MinproI programmer devices.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/bigbigmdm/EZP2019-EZP2025_chip_data_editor.git
+  commit: 2ca0977a0523103dde7d22afc94a711025ab322f
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: cmake
+ 
