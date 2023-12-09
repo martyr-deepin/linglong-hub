@@ -1,0 +1,22 @@
+diff -Naur b/Dice_Rolling.desktop a/Dice_Rolling.desktop
+--- b/Dice_Rolling.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/Dice_Rolling.desktop	2023-12-09 20:16:35.404084657 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=Dice_Rolling
++Exec=Dice_Rolling
++Type=Application
+\ 文件尾没有换行符
+diff -Naur b/Dice_Rolling.pro a/Dice_Rolling.pro
+--- b/Dice_Rolling.pro	2023-12-09 20:13:29.440769425 +0800
++++ a/Dice_Rolling.pro	2023-12-09 20:14:11.940453885 +0800
+@@ -37,3 +37,8 @@
+ 
+ RESOURCES += \
+     res.qrc
++
++desktop.files += Dice_Rolling.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++INSTALLS += target desktop
+\ 文件尾没有换行符
