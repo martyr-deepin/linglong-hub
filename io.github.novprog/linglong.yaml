@@ -1,0 +1,22 @@
+package:
+  id: io.github.novprog
+  name: novprog
+  version: 3.2.0
+  kind: app
+  description: |
+    NovProg is a tool to graph your progress in writing a novel.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/gottcode/novprog.git
+  commit: e658c78b37298d0a8590653303f4ef9921b0a2bf
+
+
+build:
+  kind: qmake
+
