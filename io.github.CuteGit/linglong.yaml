@@ -1,0 +1,21 @@
+package:
+  id: io.github.CuteGit
+  name: CuteGit
+  version: 1.0.0
+  kind: app
+  description: |
+    UI for Git (and some day other SCMs), made with Qt/QML.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Jango73/CuteGit.git
+  commit: 3984ef7cd85a5bf382c4234eda057c8d5440988a
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake

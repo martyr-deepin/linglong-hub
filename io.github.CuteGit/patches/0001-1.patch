@@ -1,0 +1,44 @@
+From e3e8867d8e5c68276a55faaace1258791b89d4b5 Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Fri, 8 Dec 2023 14:43:37 +0800
+Subject: [PATCH] 1
+
+---
+ CuteGit/CuteGit.pro            | 7 +++++++
+ CuteGit/bin/CuteGitApp.desktop | 8 ++++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 CuteGit/bin/CuteGitApp.desktop
+
+diff --git a/CuteGit/CuteGit.pro b/CuteGit/CuteGit.pro
+index de01611..f881cd8 100644
+--- a/CuteGit/CuteGit.pro
++++ b/CuteGit/CuteGit.pro
+@@ -68,3 +68,10 @@ QT_LIB_PATH = $$getQtLibPath()
+ #        cmd = $$installerBin --offline-only -p $$packageDirectory -c $$configFile $${TARGET}Installer
+ #    }
+ #}
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =bin/CuteGitApp.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+diff --git a/CuteGit/bin/CuteGitApp.desktop b/CuteGit/bin/CuteGitApp.desktop
+new file mode 100644
+index 0000000..1652f45
+--- /dev/null
++++ b/CuteGit/bin/CuteGitApp.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=CuteGitApp
++Name=CuteGitApp
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+-- 
+2.33.1
+
