@@ -1,0 +1,24 @@
+package:
+  id: io.github.TileData-Editor
+  name: TileData-Editor
+  version: 1.4.0
+  kind: app
+  description: |
+    The editor for the TileData.json used by Cytopia. Cytopia: https://github.com/CytopiaTeam/Cytopia.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/CytopiaTeam/TileData-Editor.git
+  commit: 9ededb2748e200fbf513a9e6a3ffde98ce4b6730
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: cmake
+ 

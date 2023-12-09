@@ -1,0 +1,30 @@
+--- ../CMakeLists.txt	2023-12-08 16:14:34.283730000 +0800
++++ ../CMakeLists.txt	2023-12-08 16:22:49.650337145 +0800
+@@ -2,9 +2,9 @@
+ cmake_policy(SET CMP0087 NEW)
+ 
+ # setup paths
+-SET(RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin/")
+-SET(LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib/")
+-SET(ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib/")
++SET(RUNTIME_OUTPUT_DIRECTORY "${CMAKE_INSTALL_PREFIX}/bin/")
++SET(LIBRARY_OUTPUT_DIRECTORY "${CMAKE_INSTALL_PREFIX}/lib/")
++SET(ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_INSTALL_PREFIX}/lib/")
+ SET(EXECUTABLE_OUTPUT_PATH ${RUNTIME_OUTPUT_DIRECTORY})
+ SET(LIBRARY_OUTPUT_PATH ${RUNTIME_OUTPUT_DIRECTORY})
+ # fix executable paths for windows
+@@ -86,3 +86,14 @@
+     install(CODE "execute_process(COMMAND ${QT_BIN_DIR}/windeployqt.exe $<TARGET_FILE:${PROJECT_NAME}> --release --no-compiler-runtime --no-translations --no-opengl-sw --dir \${CMAKE_INSTALL_PREFIX})")
+ 
+ endif()
++
++
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=TileDataEditor
++Exec=TileDataEditor
++Categories=Utility;
++")
++file(WRITE ${CMAKE_INSTALL_PREFIX}/share/applications/TileDataEditor.desktop "${DESKTOP_FILE_CONTENT}")
++# install(TARGETS TileDataEditor DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
