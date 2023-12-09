@@ -1,0 +1,24 @@
+package:
+  id: io.github.QHexEdit
+  name: QHexEdit
+  version: 1.0.0
+  kind: app
+  description: |
+    QHexEdit is a hex editor widget written in C++ for the Qt (Qt4, Qt5) framework. It is a simple editor for binary data, just like QPlainTextEdit is for text data.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/Andres6936/QHexEdit.git
+  commit: eea6158e5be94009ba559fa824e296ffb50a7e5d
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: cmake
+
