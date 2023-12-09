@@ -1,0 +1,22 @@
+package:
+  id: io.github.cutemaze
+  name: cutemaze
+  version: 1.3.0
+  kind: app
+  description: |
+    CuteMaze is a simple, top-down game in which mazes are randomly generated using one of a choice of several different algorithms.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/gottcode/cutemaze.git
+  commit: 6df585d353b6cdb6962f75a366e8ad33d064dd3a
+
+
+build:
+  kind: qmake
+
