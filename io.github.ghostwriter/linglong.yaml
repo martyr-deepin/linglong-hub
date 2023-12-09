@@ -1,0 +1,35 @@
+package:
+  id: io.github.ghostwriter
+  name: ghostwriter 
+  version: 2.1.6
+  kind: app
+  description: |
+     A simple markdown note management app
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: karchive/5.90.0
+  - id: qtwebengine/5.15.7
+  - id: sonnet/5.90.0
+  - id: kcoreaddons/5.90.0
+  - id: kxmlgui/5.90.0
+  - id: kconfigwidgets/5.90.0 
+  - id: kwidgetsaddons/5.90.0
+  - id: kitemviews/5.90.0
+  - id: kglobalaccel/5.90.0
+  - id: kiconthemes/5.90.0
+  - id: kcodecs/5.90.0
+  - id: ki18n/5.90.0
+  - id: kguiaddons/5.90.0
+  - id: kauth/5.90.0
+  - id: kconfig/5.90.0
+
+source:
+  kind: git
+  url: https://github.com/KDE/ghostwriter.git
+  commit: 422d29f64bd463406d2b1652517964ee9abdfa86
+
+build:
+  kind: cmake
