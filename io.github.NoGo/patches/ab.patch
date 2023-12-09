@@ -1,0 +1,22 @@
+diff -Naur b/NoGo.desktop a/NoGo.desktop
+--- b/NoGo.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/NoGo.desktop	2023-12-09 17:18:10.750298940 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=Nogo
++Exec=Nogo
++Type=Application
+\ 文件尾没有换行符
+diff -Naur b/Nogo.pro a/Nogo.pro
+--- b/Nogo.pro	2023-12-09 17:14:33.417908805 +0800
++++ a/Nogo.pro	2023-12-09 17:15:31.293988048 +0800
+@@ -68,3 +68,8 @@
+ 
+ RC_FILE += \
+     Icon.rc
++
++desktop.files += NoGo.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++INSTALLS += target desktop
+\ 文件尾没有换行符
