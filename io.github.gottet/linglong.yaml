@@ -1,0 +1,22 @@
+package:
+  id: io.github.gottet
+  name: gottet
+  version: 1.2.0
+  kind: app
+  description: |
+    Gottet is a clone of Tetris I wrote.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/gottcode/gottet.git
+  commit: 530c4d93839db266678e2d5b630ce2be14e002c7
+
+
+build:
+  kind: qmake
+
