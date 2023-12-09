@@ -1,0 +1,23 @@
+--- ../AbifReader.pro	2023-12-01 10:39:29.305459000 +0800
++++ ../AbifReader.pro	2023-12-01 10:43:40.701001606 +0800
+@@ -22,3 +22,20 @@
+     abifmodel.h
+ 
+ FORMS    += mainwindow.ui
++
++DESKTOP_FILE = ./AbifReader.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=AbifReader' >> $$DESKTOP_FILE")
++system("echo 'Comment=AbifReader.' >> $$DESKTOP_FILE")
++system("echo 'Exec=AbifReader' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target

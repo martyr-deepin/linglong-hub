@@ -1,0 +1,23 @@
+package:
+  id: io.github.QAbifReader
+  name: QAbifReader
+  version: 1.0.0
+  kind: app
+  description: |
+    QAbifReader is a Qt library to load data from an abif file following the specification of Abif file format. It allows you to read all content of ab1 and fsa file.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/dridk/QAbifReader.git
+  commit: 2c3881ece18e6d469d793c2c1657c58ca90d6a67
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+
