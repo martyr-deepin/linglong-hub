@@ -1,0 +1,23 @@
+package:
+  id: io.github.Sigmaker
+  name: Sigmaker
+  version: 1.1.0
+  kind: app
+  description: |
+    A simple signature maker for use in digital documents.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/mansoor-s/Sigmaker.git
+  commit: 7d85037c1e95c68e4f36fd0d402c78eada2885fb
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake

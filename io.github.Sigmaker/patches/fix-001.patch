@@ -1,0 +1,28 @@
+--- ../sigmaker.pro	2023-12-08 10:40:14.300411000 +0800
++++ ../sigmaker.pro	2023-12-08 10:43:19.732045163 +0800
+@@ -35,8 +35,24 @@
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     resources.qrc
++
++
++DESKTOP_FILE = ./sigmaker.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=sigmaker' >> $$DESKTOP_FILE")
++system("echo 'Comment=sigmaker.' >> $$DESKTOP_FILE")
++system("echo 'Exec=sigmaker' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
