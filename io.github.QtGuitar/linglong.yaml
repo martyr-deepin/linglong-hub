@@ -1,0 +1,27 @@
+package:
+  id: io.github.QtGuitar
+  name: QtGuitar
+  version: 1.0.0
+  kind: app
+  description: |
+    Guitar fretboard learning.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/zgombos/QtGuitar.git
+  commit: 656461790a3ca6b5f498932551608afaccae6145
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      qmake -makefile ${conf_args} ${extra_args} ./src
+
