@@ -1,0 +1,23 @@
+package:
+  id: io.github.plateMaker
+  name: plateMaker
+  version: 1.0.0
+  kind: app
+  description: |
+    This software make a cross join between 2 list according to an expression. It can be use to generate a plan for reaction plate used in molecular biology.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/dridk/plateMaker.git
+  commit: 687922aa94358254798e5dca5be38fa052dfa9dc
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+

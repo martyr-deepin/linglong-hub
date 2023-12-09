@@ -1,0 +1,31 @@
+--- ../PlateMaker.pro	2023-12-01 10:19:12.591917000 +0800
++++ ../PlateMaker.pro	2023-12-01 10:21:11.555798299 +0800
+@@ -30,5 +30,28 @@
+ 
+ win32:RC_ICONS = app.ico
+ 
++# desktop指定
++DESKTOP_FILE = ./PlateMaker.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=PlateMaker' >> $$DESKTOP_FILE")
++system("echo 'Comment=PlateMaker.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$PREFIX/bin/PlateMaker' >> $$DESKTOP_FILE")
++system("echo 'Icon=app.ico' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icon.files = $$PWD/app.ico
++icon.path = $$PREFIX/share/icons/PlateMaker/
++INSTALLS += icon
++
+ 
+ 
