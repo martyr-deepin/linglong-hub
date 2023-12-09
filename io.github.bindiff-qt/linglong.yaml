@@ -1,0 +1,21 @@
+package:
+  id: io.github.bindiff-qt
+  name: bindiff-qt
+  version: 0.0.1
+  kind: app
+  description: |
+    An application for comparing two binary files.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/nikkej/bindiff-qt.git
+  commit: eb804fc5f5845ebab9c27cf938d0693fb24b8a2f
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake

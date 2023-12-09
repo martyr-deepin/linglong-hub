@@ -1,0 +1,44 @@
+From 9aff40851455c0ac5da0013902426e3e78de9ea4 Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Fri, 8 Dec 2023 15:36:36 +0800
+Subject: [PATCH] 1
+
+---
+ bindiff-qt.desktop | 8 ++++++++
+ bindiff-qt.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 bindiff-qt.desktop
+
+diff --git a/bindiff-qt.desktop b/bindiff-qt.desktop
+new file mode 100644
+index 0000000..8c4abe5
+--- /dev/null
++++ b/bindiff-qt.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=bindiff-qt
++Name=bindiff-qt
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/bindiff-qt.pro b/bindiff-qt.pro
+index a6f362e..e30e8bb 100644
+--- a/bindiff-qt.pro
++++ b/bindiff-qt.pro
+@@ -30,3 +30,10 @@ unix{
+     target.path = /bin
+     message( The executable will be installed to $$target.path )
+ }
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =bindiff-qt.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
