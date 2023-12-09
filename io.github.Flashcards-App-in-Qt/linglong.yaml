@@ -1,0 +1,29 @@
+package:
+  id: io.github.Flashcards-App-in-Qt
+  name: Flashcards-App-in-Qt
+  version: 0.0.1
+  kind: app
+  description: |
+    A simple Flashcards Desktop Application in Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/duy0503/Flashcards-App-in-Qt.git
+  commit: 36744000b401273ce1b5655580136f4ba666e805
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd Source
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

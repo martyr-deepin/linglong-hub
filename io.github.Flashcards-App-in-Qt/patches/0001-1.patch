@@ -1,0 +1,44 @@
+From 5d711551848b1c5e0f592d1cf17416d4d8d23746 Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Fri, 8 Dec 2023 14:49:18 +0800
+Subject: [PATCH] 1
+
+---
+ Source/Source.desktop | 8 ++++++++
+ Source/Source.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 Source/Source.desktop
+
+diff --git a/Source/Source.desktop b/Source/Source.desktop
+new file mode 100644
+index 0000000..81b1804
+--- /dev/null
++++ b/Source/Source.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Source
++Name=Source
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Source/Source.pro b/Source/Source.pro
+index 0af5f04..3bc27ac 100644
+--- a/Source/Source.pro
++++ b/Source/Source.pro
+@@ -36,3 +36,10 @@ DISTFILES += \
+ 
+ RESOURCES += \
+     ../Resources/png.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Source.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
