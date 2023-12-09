@@ -1,0 +1,8 @@
+--- ../src/circuits/gates/nandgate.cpp	2023-12-01 20:21:21.111167000 +0800
++++ ../src/circuits/gates/nandgate.cpp	2023-12-01 20:23:10.511342617 +0800
+@@ -1,4 +1,5 @@
+ #include "nandgate.h"
++#include <QPainterPath>
+ 
+ NandGate::NandGate(QPointF position, Orientation orientation) :
+     LogicGate(position, orientation)

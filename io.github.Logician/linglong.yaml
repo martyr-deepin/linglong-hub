@@ -1,0 +1,31 @@
+package:
+  id: io.github.Logician
+  name: Logician
+  version: 1.0.0
+  kind: app
+  description: |
+    A logic circuit emulator better than Logisim.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/SirDavidLudwig/Logician.git
+  commit: dce845d87080d47a86ff39767bdf0a8962537211
+  patch: 
+    - patches/fix-001.patch
+    - patches/fix-002.patch
+    - patches/fix-003.patch
+    - patches/fix-004.patch
+    - patches/fix-005.patch
+    - patches/fix-006.patch
+    - patches/fix-007.patch
+    - patches/fix-008.patch
+
+
+build:
+  kind: qmake
+

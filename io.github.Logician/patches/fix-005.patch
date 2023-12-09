@@ -1,0 +1,8 @@
+--- ../src/circuits/gates/notgate.cpp	2023-12-01 20:16:50.922759000 +0800
++++ ../src/circuits/gates/notgate.cpp	2023-12-01 20:23:51.199409089 +0800
+@@ -1,4 +1,5 @@
+ #include "notgate.h"
++#include <QPainterPath>
+ 
+ NotGate::NotGate(QPointF position, Orientation orientation) :
+     LogicGate(position, orientation)

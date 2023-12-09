@@ -1,0 +1,8 @@
+--- ../src/circuits/gates/xnorgate.cpp	2023-12-01 20:16:50.922759000 +0800
++++ ../src/circuits/gates/xnorgate.cpp	2023-12-01 20:24:42.207493157 +0800
+@@ -1,4 +1,5 @@
+ #include "xnorgate.h"
++#include <QPainterPath>
+ 
+ XnorGate::XnorGate(QPointF position, Orientation orientation) :
+     LogicGate(position, orientation)

@@ -1,0 +1,23 @@
+--- ../Logician.pro	2023-12-01 20:16:50.922759000 +0800
++++ ../Logician.pro	2023-12-01 20:47:15.757821130 +0800
+@@ -70,3 +70,20 @@
+ 
+ RESOURCES += \
+     resources/resources.qrc
++
++DESKTOP_FILE = ./Logician.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=Logician' >> $$DESKTOP_FILE")
++system("echo 'Comment=Logician.' >> $$DESKTOP_FILE")
++system("echo 'Exec=Logician' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
