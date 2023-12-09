@@ -1,0 +1,9 @@
+--- ../mainwindow.cpp	2023-11-30 19:32:41.054575000 +0800
++++ ../mainwindow.cpp	2023-11-30 19:37:19.699262686 +0800
+@@ -1,5 +1,5 @@
+ #include "mainwindow.h"
+-#include "ui_MainWindow.h"
++// #include "ui_MainWindow.h"
+ 
+ MainWindow::MainWindow(QWidget *parent) :
+     QMainWindow(parent)

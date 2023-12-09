@@ -1,0 +1,24 @@
+--- ../hpo_gui.pro	2023-11-30 19:32:41.054575000 +0800
++++ ../hpo_gui.pro	2023-11-30 19:36:18.819090049 +0800
+@@ -49,3 +49,21 @@
+ 
+ RESOURCES += \
+     gfx.qrc
++
++
++DESKTOP_FILE = ./hpo_gui.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=hpo_gui' >> $$DESKTOP_FILE")
++system("echo 'Comment=hpo_gui.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$PREFIX/bin/hpo_gui' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target

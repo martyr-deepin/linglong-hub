@@ -1,0 +1,25 @@
+package:
+  id: io.github.hpo-gui
+  name: hpo-gui
+  version: 1.0.0
+  kind: app
+  description: |
+    Qt gui for HPO. HPO是指与人类表型本体论相关的数据和功能，用于对遗传数据进行分析和解释.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/dridk/hpo-gui.git
+  commit: 70e7a23cfddd97f41d618bd4c22568386a125df6
+  patch: 
+    - patches/fix-001.patch
+    - patches/fix-002.patch
+
+
+build:
+  kind: qmake
+
