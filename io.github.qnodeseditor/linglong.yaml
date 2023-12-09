@@ -1,0 +1,20 @@
+package:
+  id: io.github.qnodeseditor
+  name: qnodeseditor
+  version: 1.0.0
+  kind: app
+  description: |
+    http://adared.ch/qnodeseditor-qt-nodesports-based-data-processing-flow-editor/ 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "git@github.com:BlackStar-EoP/qnodeseditor.git"
+  commit: f27375d
+  patch: patches/ab.patch
+
+build:
+  kind: qmake
