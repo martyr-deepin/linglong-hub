@@ -1,0 +1,24 @@
+package:
+  id: io.github.QtSerialMonitor
+  name: QtSerialMonitor
+  version: 1.53.0
+  kind: app
+  description: |
+    Qt serial monitor and data plotter
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/mich-w/QtSerialMonitor.git
+  commit: b2834cdc235f97e6d7237fb8b821a0a6fa6013e2
+  patch: patches/0001-install.patch
+
+variables:
+  extra_args: |
+     src
+
+build:
+  kind: qmake

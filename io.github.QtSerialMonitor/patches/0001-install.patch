@@ -1,0 +1,46 @@
+From 46dd200ac820aa58e1990f8e2d6c123a3e7c28f3 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Sat, 9 Dec 2023 12:52:09 +0800
+Subject: [install.patch_] install
+
+---
+ src/QtSerialMonitor.desktop | 6 ++++++
+ src/QtSerialMonitor.pro     | 6 +++++-
+ 2 files changed, 11 insertions(+), 1 deletion(-)
+ create mode 100644 src/QtSerialMonitor.desktop
+
+diff --git a/src/QtSerialMonitor.desktop b/src/QtSerialMonitor.desktop
+new file mode 100644
+index 0000000..ff71206
+--- /dev/null
++++ b/src/QtSerialMonitor.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=QtSerialMonitor
++Exec=QtSerialMonitor
++Terminal=false
+\ No newline at end of file
+diff --git a/src/QtSerialMonitor.pro b/src/QtSerialMonitor.pro
+index 780196a..0c881ce 100755
+--- a/src/QtSerialMonitor.pro
++++ b/src/QtSerialMonitor.pro
+@@ -66,9 +66,13 @@ win32:RC_ICONS += QtSM.ico
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $${PREFIX}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = QtSerialMonitor.desktop
++INSTALLS += unix_desktop
++
+ DISTFILES += \
+     QtSM.ico \
+     TODO.txt
+-- 
+2.33.1
+
