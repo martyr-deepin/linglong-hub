@@ -1,0 +1,46 @@
+From 0afaa37eae9fb8d95ccace02713b57706842e75f Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sat, 9 Dec 2023 22:38:39 +0800
+Subject: [PATCH] fix-install
+
+---
+ weather.desktop | 8 ++++++++
+ weather.pro     | 9 +++++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 weather.desktop
+
+diff --git a/weather.desktop b/weather.desktop
+new file mode 100644
+index 0000000..6ae00dd
+--- /dev/null
++++ b/weather.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Comment=weather
++Exec=weather
++Name=weather
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/weather.pro b/weather.pro
+index deeba94..d52391c 100644
+--- a/weather.pro
++++ b/weather.pro
+@@ -28,3 +28,12 @@ RESOURCES += \
+     img.qrc
+ 
+ DISTFILES +=
++
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = weather.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

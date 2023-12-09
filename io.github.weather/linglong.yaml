@@ -1,0 +1,25 @@
+package:
+  id: io.github.weather
+  name: weather
+  version: 0.0.1
+  kind: app
+  description: |
+     天气软件，基于Qt、天气信息是通过api获取.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+depends:
+  - id: qtcharts/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/leolin0518/weather.git
+  commit: 0ff8ec566c84254a4cc3ca0978a7575d7ae02fa2
+  patch: patches/0001-fix-install.patch
+
+build:
+  kind: qmake
