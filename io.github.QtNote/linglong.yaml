@@ -1,0 +1,22 @@
+package:
+  id: io.github.QtNote
+  name: QtNote
+  version: 3.1.5
+  kind: app
+  description: |
+    Note-taking application written with Qt in mind and able to read tomboy notes.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/Ri0n/QtNote.git
+  commit: 37afdaa80a7740abb02391c1bbe9caa590f6a6ea
+
+
+build:
+  kind: cmake
