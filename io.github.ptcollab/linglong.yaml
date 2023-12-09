@@ -1,0 +1,25 @@
+package:
+  id: io.github.ptcollab
+  name: ptcollab
+  version: 0.6.4.7
+  kind: app
+  description: |
+    A collaborative piano-roll music sequencer!
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: rtmidi
+    version: 4.0.0
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/yuxshao/ptcollab.git
+  commit: 2f443503310e3883d1334ef4fa11f7527bd2a8ca
+
+build:
+  kind: qmake
+
