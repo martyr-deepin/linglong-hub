@@ -1,0 +1,21 @@
+package:
+  id: io.github.MonoalphabeticCipher
+  name: MonoalphabeticCipher
+  version: 0.0.1
+  kind: app
+  description: |
+    A nice UI program built with Qt and C++ to perform a letter frequency attack on monoalphabetic cipher.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/meokisama/MonoalphabeticCipher.git
+  commit: d27fc190699cf1fc8b7909a1e8f38bbb394017dc
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
