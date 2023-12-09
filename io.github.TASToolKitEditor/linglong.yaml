@@ -1,0 +1,24 @@
+package:
+  id: io.github.TASToolKitEditor
+  name: TASToolKitEditor
+  version: 1.0.0
+  kind: app
+  description: |
+    A lightweight .csv visualizer/editor meant to assist in the development of Mario Kart Wii Tool-Assisted Speedruns.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/malleoz/TASToolKitEditor.git
+  commit: ccceb288d13c468f7b1dadb3bb48482fbccd4aa4
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: cmake
+  

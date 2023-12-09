@@ -1,0 +1,16 @@
+--- ../CMakeLists.txt	2023-12-02 13:55:41.119148000 +0800
++++ ../CMakeLists.txt	2023-12-02 13:55:50.359350142 +0800
+@@ -23,3 +23,13 @@
+ 
+ install(TARGETS TTKEditor)
+ 
++# 写入desktop
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=TTKEditor
++Exec=TTKEditor
++Categories=Utility;
++")
++file(WRITE ${CMAKE_INSTALL_PREFIX}/share/applications/TTKEditor.desktop "${DESKTOP_FILE_CONTENT}")
++
