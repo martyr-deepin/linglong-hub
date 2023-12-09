@@ -1,0 +1,28 @@
+package:
+  id: io.github.cuterest
+  name: cuterest
+  version: 1.0.0
+  kind: app
+  description: |
+    CuteRest is a REST client tool dedicated for JSON... and also for XML.
+
+
+depends:
+  - id: qtwebengine/5.15.7
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/dridk/cuterest.git
+  commit: bc44cfd942698038d4908f4b02891a0dca89767d
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+

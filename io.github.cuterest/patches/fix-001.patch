@@ -1,0 +1,25 @@
+--- ../src/src.pro	2023-11-30 19:47:36.237418000 +0800
++++ ../src/src.pro	2023-11-30 19:59:54.285999599 +0800
+@@ -9,7 +9,7 @@
+ 
+ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+ 
+-TARGET = CuteRest
++TARGET = cuterest
+ TEMPLATE = app
+ 
+ # ICONS FOR WINDOWS
+@@ -23,10 +23,10 @@
+ 
+ 
+ # Installation
+-target.path  = /usr/local/bin
+-desktop.path = /usr/share/applications
++target.path  = $$PREFIX/bin
++desktop.path = $$PREFIX/share/applications
+ desktop.files += cuterest.desktop
+-icons.path  = /usr/share/icons/hicolor/48x48/apps
++icons.path  = $$PREFIX/share/icons/hicolor/48x48/apps
+ icons.files += cuterest.png
+ INSTALLS += target desktop icons
+ 
