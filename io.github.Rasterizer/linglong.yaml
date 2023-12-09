@@ -1,0 +1,21 @@
+package:
+  id: io.github.Rasterizer
+  name: Rasterizer
+  version: 0.0.1
+  kind: app
+  description: |
+    Implemented a rasterizer along with UI and image filter to parse 3D scenes.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/aieener/Rasterizer.git
+  commit: 18e6488342b89a3f70686ef8f5fc758bc09183ed
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
