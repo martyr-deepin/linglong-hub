@@ -1,0 +1,26 @@
+--- ../CMakeLists.txt	2023-12-09 13:55:20.202967000 +0800
++++ ../CMakeLists.txt	2023-12-09 14:06:46.653094000 +0800
+@@ -2,7 +2,7 @@
+ 
+ if (WIN32)
+ 	add_compile_definitions(WINDOWS)
+-elseif (LINUX)
++elseif (UNIX)
+ 	add_compile_definitions(LINUX)
+ else ()
+ 	message(FATAL_ERROR "Not building for Windows or Linux.")
+@@ -55,3 +55,14 @@
+ )
+ 
+ target_link_libraries(doomify PRIVATE Qt5::Widgets)
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=doomify
++Exec=doomify
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/doomify.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/doomify.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++install(TARGETS doomify DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)

@@ -1,0 +1,21 @@
+package:
+  id: io.github.doomify
+  name: doomify
+  version: 0.1.0
+  kind: app
+  description: |
+    Image color quantization utility for generating DOOM textures written using C++ and Qt..
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/not-ed/doomify.git
+  commit: 8730cbb6faae763f22bc7075114281d7227cb7de
+  patch: patches/fix_001.patch
+
+build:
+  kind: cmake
