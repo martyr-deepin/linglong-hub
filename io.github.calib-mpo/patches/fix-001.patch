@@ -1,0 +1,23 @@
+--- ../calib-mpo-opencv.pro	2023-12-03 15:48:14.482340000 +0800
++++ ../calib-mpo-opencv.pro	2023-12-03 15:51:42.897288038 +0800
+@@ -36,3 +36,20 @@
+ 
+ # icons
+ RESOURCES += resources.qrc
++
++DESKTOP_FILE = ./calib-mpo-opencv.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=calib-mpo-opencv' >> $$DESKTOP_FILE")
++system("echo 'Comment=calib-mpo-opencv.' >> $$DESKTOP_FILE")
++system("echo 'Exec=calib-mpo-opencv' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target

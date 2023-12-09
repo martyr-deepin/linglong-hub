@@ -1,0 +1,30 @@
+package:
+  id: io.github.calib-mpo
+  name: calib-mpo
+  version: 1.0.0
+  kind: app
+  description: |
+    3D stereo camera calibration with QT and openCV, using stereo pairs (PNG, TIF, JPG, etc) or stereo MPO images.
+
+
+depends:
+  - id: opencv
+    version: 4.8.1
+    type: runtime
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/AbsurdePhoton/calib-mpo.git
+  commit: 2e7b56d7d72440342ec3081d458d70907d170d9f
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+
