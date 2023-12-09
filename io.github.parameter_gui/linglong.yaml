@@ -1,0 +1,20 @@
+package:
+  id: io.github.parameter_gui
+  name: parameter_gui
+  version: 0.0.1
+  kind: app
+  description: |
+    QT Gui to edit XML parameter files.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dealii/parameter_gui.git
+  commit: b7c0251b57dfbcc3fe873b25a6eb604a11a63e1d
+  patch: patches/fix_001.patch
+
+build:
+  kind: cmake

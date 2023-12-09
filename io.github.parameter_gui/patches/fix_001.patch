@@ -1,0 +1,20 @@
+--- ../CMakeLists.txt	2023-12-09 11:52:24.737675000 +0800
++++ ../CMakeLists.txt	2023-12-09 11:48:57.805994000 +0800
+@@ -83,6 +83,17 @@
+   RUNTIME DESTINATION ${DEAL_II_EXECUTABLE_RELDIR}
+   COMPONENT parameter_gui
+   )
++# 设置.desktop文件的内容
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=parameter_gui
++Exec=parameter_gui
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/parameter_gui.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS /${CMAKE_BINARY_DIR}/parameter_gui.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
+ EXPORT(TARGETS parameter_gui_exe
+   FILE
+   ${CMAKE_BINARY_DIR}/${DEAL_II_PROJECT_CONFIG_RELDIR}/${DEAL_II_PROJECT_CONFIG_NAME}Targets.cmake
