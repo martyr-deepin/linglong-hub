@@ -1,0 +1,28 @@
+package:
+  id: io.github.lovi
+  name: lovi
+  version: 1.0.0
+  kind: app
+  description: |
+    Lovi is a log file viewer. Lovi works by splitting log files in columns, and colorizing certain lines or cells, depending on user-defined highlights.
+
+
+depends:
+  - id: kguiaddons
+    version: 5.90.0
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/agateau/lovi.git
+  commit: 2327fba60dee52819142a22351a7d6ae26f54577
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: cmake
