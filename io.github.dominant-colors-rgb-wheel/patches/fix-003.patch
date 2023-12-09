@@ -1,0 +1,29 @@
+--- ../dominant-colors-rgb-wheel.pro	2023-12-03 14:55:38.387033921 +0800
++++ ../dominant-colors-rgb-wheel.pro	2023-12-03 14:36:08.835216172 +0800
+@@ -42,3 +42,26 @@
+ RESOURCES += resources.qrc
+ 
+ CONFIG += c++11
++
++
++csv_file.files = /source/color-names.csv
++csv_file.path = $$PREFIX/bin
++INSTALLS += csv_file
++
++DESKTOP_FILE = ./dominant-colors-rgb-wheel.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=dominant-colors-rgb-wheel' >> $$DESKTOP_FILE")
++system("echo 'Comment=dominant-colors-rgb-wheel.' >> $$DESKTOP_FILE")
++system("echo 'Exec=dominant-colors-rgb-wheel' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files = $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++

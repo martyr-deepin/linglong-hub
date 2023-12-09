@@ -1,0 +1,19 @@
+--- ../mainwindow.cpp	2023-12-03 13:59:16.928620000 +0800
++++ ../mainwindow.cpp	2023-12-03 14:51:31.286258107 +0800
+@@ -20,6 +20,7 @@
+ #include <QPainter>
+ #include <QScrollBar>
+ #include <QWhatsThis>
++#include <QApplication>
+ 
+ #include <fstream>
+ 
+@@ -133,7 +134,7 @@
+     // read color names from .csv file
+     std::string line; // line to read in text file
+     std::ifstream names; // file to read
+-    names.open("color-names.csv"); // read color names file
++    names.open((QApplication::applicationDirPath() + "/color-names.csv").toStdString()); // read color names file
+ 
+     if (names) { // if successfully read
+         nb_color_names = -1; // index of color names array

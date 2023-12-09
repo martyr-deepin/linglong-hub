@@ -1,0 +1,33 @@
+package:
+  id: io.github.dominant-colors-rgb-wheel
+  name: dominant-colors-rgb-wheel
+  version: 2.0.0
+  kind: app
+  description: |
+    Find dominant colors in images with QT and OpenCV, with a nice GUI to show results on a RGB wheel - Colors analysis includes color schemes, brightness and cool/warm distribution - All algorithms done in CIELab color space.
+
+
+depends:
+  - id: opencv
+    version: 4.8.1
+    type: runtime
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/AbsurdePhoton/dominant-colors-rgb-wheel.git
+  commit: a137b08345e878306f42e12bb12b3c8d55dee81b
+  patch: 
+    - patches/fix-001.patch
+    - patches/fix-002.patch
+    - patches/fix-003.patch
+
+
+build:
+  kind: qmake
+

@@ -1,0 +1,11 @@
+--- ../mat-image-tools.cpp	2023-12-03 13:59:16.928620000 +0800
++++ ../mat-image-tools.cpp	2023-12-03 14:11:56.930334269 +0800
+@@ -21,6 +21,8 @@
+ 
+ #include <QPixmap>
+ 
++#include <fstream>
++
+ #include "opencv2/opencv.hpp"
+ 
+ #include "mat-image-tools.h"
