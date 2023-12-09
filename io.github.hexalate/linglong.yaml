@@ -1,0 +1,22 @@
+package:
+  id: io.github.hexalate
+  name: hexalate
+  version: 1.6.0
+  kind: app
+  description: |
+    Hexalate is a color matching game. The goal of the game is to rotate and position the circles so that each touching line matches in color.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/gottcode/hexalate.git
+  commit: 4d4ac14aa0b3ef4cd2a0d8f41e75c4a34558af5a
+
+
+build:
+  kind: qmake
+
