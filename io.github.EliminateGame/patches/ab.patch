@@ -1,0 +1,22 @@
+diff -Naur b/untitled.desktop a/untitled.desktop
+--- b/untitled.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/untitled.desktop	2023-12-09 19:44:27.975228892 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=untitled
++Exec=untitled
++Type=Application
+\ 文件尾没有换行符
+diff -Naur b/untitled.pro a/untitled.pro
+--- b/untitled.pro	2023-12-09 19:42:41.137206071 +0800
++++ a/untitled.pro	2023-12-09 19:43:40.396471621 +0800
+@@ -35,3 +35,8 @@
+ 
+ RESOURCES += \
+     picture.qrc
++
++desktop.files += untitled.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++INSTALLS += target desktop
+\ 文件尾没有换行符

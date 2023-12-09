@@ -1,0 +1,21 @@
+package:
+  id: io.github.EliminateGame 
+  name: EliminateGame 
+  version: 0.0.1
+  kind: app
+  description: |
+    A eliminate game made by Qt Creator. Based on other's open source code. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/Cuiyn/EliminateGame.git"
+  commit: fccb43f
+  patch: patches/ab.patch
+
+build:
+  kind: qmake
