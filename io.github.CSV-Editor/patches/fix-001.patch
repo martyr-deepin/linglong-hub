@@ -1,0 +1,116 @@
+--- ../headers/ui_csvMwindow.h	2023-12-02 14:02:21.977853000 +0800
++++ ../headers/ui_csvMwindow.h	2023-12-02 14:31:20.356576405 +0800
+@@ -10,22 +10,22 @@
+ #define UI_CSVMWINDOW_H
+ 
+ #include <QtCore/QVariant>
+-#include <QtGui/QAction>
+-#include <QtGui/QApplication>
+-#include <QtGui/QButtonGroup>
+-#include <QtGui/QCheckBox>
+-#include <QtGui/QHBoxLayout>
+-#include <QtGui/QHeaderView>
+-#include <QtGui/QMainWindow>
+-#include <QtGui/QMenu>
+-#include <QtGui/QMenuBar>
+-#include <QtGui/QPlainTextEdit>
+-#include <QtGui/QSplitter>
+-#include <QtGui/QStatusBar>
+-#include <QtGui/QTabWidget>
+-#include <QtGui/QTableWidget>
+-#include <QtGui/QVBoxLayout>
+-#include <QtGui/QWidget>
++#include <QtWidgets/QAction>
++#include <QtWidgets/QApplication>
++#include <QtWidgets/QButtonGroup>
++#include <QtWidgets/QCheckBox>
++#include <QtWidgets/QHBoxLayout>
++#include <QtWidgets/QHeaderView>
++#include <QtWidgets/QMainWindow>
++#include <QtWidgets/QMenu>
++#include <QtWidgets/QMenuBar>
++#include <QtWidgets/QPlainTextEdit>
++#include <QtWidgets/QSplitter>
++#include <QtWidgets/QStatusBar>
++#include <QtWidgets/QTabWidget>
++#include <QtWidgets/QTableWidget>
++#include <QtWidgets/QVBoxLayout>
++#include <QtWidgets/QWidget>
+ 
+ QT_BEGIN_NAMESPACE
+ 
+@@ -222,41 +222,41 @@
+ 
+     void retranslateUi(QMainWindow *csvMWindow)
+     {
+-        csvMWindow->setWindowTitle(QApplication::translate("csvMWindow", "CSV Editor", 0, QApplication::UnicodeUTF8));
+-        actionNew->setText(QApplication::translate("csvMWindow", "&New", 0, QApplication::UnicodeUTF8));
+-        actionNew->setShortcut(QApplication::translate("csvMWindow", "Ctrl+N", 0, QApplication::UnicodeUTF8));
+-        actionOpen->setText(QApplication::translate("csvMWindow", "Open", 0, QApplication::UnicodeUTF8));
+-        actionOpen->setShortcut(QApplication::translate("csvMWindow", "Ctrl+O", 0, QApplication::UnicodeUTF8));
+-        actionClose->setText(QApplication::translate("csvMWindow", "Close", 0, QApplication::UnicodeUTF8));
+-        actionClose->setShortcut(QApplication::translate("csvMWindow", "Ctrl+W", 0, QApplication::UnicodeUTF8));
+-        actionExit->setText(QApplication::translate("csvMWindow", "Exit", 0, QApplication::UnicodeUTF8));
+-        actionExit->setShortcut(QApplication::translate("csvMWindow", "Ctrl+Q", 0, QApplication::UnicodeUTF8));
+-        actionFolder_Structure->setText(QApplication::translate("csvMWindow", "Folder Structure", 0, QApplication::UnicodeUTF8));
+-        actionOptions->setText(QApplication::translate("csvMWindow", "Options", 0, QApplication::UnicodeUTF8));
+-        actionHelp->setText(QApplication::translate("csvMWindow", "Help", 0, QApplication::UnicodeUTF8));
+-        actionHelp->setShortcut(QApplication::translate("csvMWindow", "Ctrl+H", 0, QApplication::UnicodeUTF8));
+-        actionAbout->setText(QApplication::translate("csvMWindow", "About", 0, QApplication::UnicodeUTF8));
+-        actionCut->setText(QApplication::translate("csvMWindow", "Cut", 0, QApplication::UnicodeUTF8));
+-        actionCut->setShortcut(QApplication::translate("csvMWindow", "Ctrl+X", 0, QApplication::UnicodeUTF8));
+-        actionCopy->setText(QApplication::translate("csvMWindow", "Copy", 0, QApplication::UnicodeUTF8));
+-        actionCopy->setShortcut(QApplication::translate("csvMWindow", "Ctrl+C", 0, QApplication::UnicodeUTF8));
+-        actionPaste->setText(QApplication::translate("csvMWindow", "Paste", 0, QApplication::UnicodeUTF8));
+-        actionPaste->setShortcut(QApplication::translate("csvMWindow", "Ctrl+V", 0, QApplication::UnicodeUTF8));
+-        actionFind_and_Replace->setText(QApplication::translate("csvMWindow", "Find and Replace", 0, QApplication::UnicodeUTF8));
+-        actionFind_and_Replace->setShortcut(QApplication::translate("csvMWindow", "Ctrl+F", 0, QApplication::UnicodeUTF8));
+-        actionSave->setText(QApplication::translate("csvMWindow", "Save", 0, QApplication::UnicodeUTF8));
++        csvMWindow->setWindowTitle(QApplication::translate("csvMWindow", "CSV Editor", 0));
++        actionNew->setText(QApplication::translate("csvMWindow", "&New", 0));
++        actionNew->setShortcut(QApplication::translate("csvMWindow", "Ctrl+N", 0));
++        actionOpen->setText(QApplication::translate("csvMWindow", "Open", 0));
++        actionOpen->setShortcut(QApplication::translate("csvMWindow", "Ctrl+O", 0));
++        actionClose->setText(QApplication::translate("csvMWindow", "Close", 0));
++        actionClose->setShortcut(QApplication::translate("csvMWindow", "Ctrl+W", 0));
++        actionExit->setText(QApplication::translate("csvMWindow", "Exit", 0));
++        actionExit->setShortcut(QApplication::translate("csvMWindow", "Ctrl+Q", 0));
++        actionFolder_Structure->setText(QApplication::translate("csvMWindow", "Folder Structure", 0));
++        actionOptions->setText(QApplication::translate("csvMWindow", "Options", 0));
++        actionHelp->setText(QApplication::translate("csvMWindow", "Help", 0));
++        actionHelp->setShortcut(QApplication::translate("csvMWindow", "Ctrl+H", 0));
++        actionAbout->setText(QApplication::translate("csvMWindow", "About", 0));
++        actionCut->setText(QApplication::translate("csvMWindow", "Cut", 0));
++        actionCut->setShortcut(QApplication::translate("csvMWindow", "Ctrl+X", 0));
++        actionCopy->setText(QApplication::translate("csvMWindow", "Copy", 0));
++        actionCopy->setShortcut(QApplication::translate("csvMWindow", "Ctrl+C", 0));
++        actionPaste->setText(QApplication::translate("csvMWindow", "Paste", 0));
++        actionPaste->setShortcut(QApplication::translate("csvMWindow", "Ctrl+V", 0));
++        actionFind_and_Replace->setText(QApplication::translate("csvMWindow", "Find and Replace", 0));
++        actionFind_and_Replace->setShortcut(QApplication::translate("csvMWindow", "Ctrl+F", 0));
++        actionSave->setText(QApplication::translate("csvMWindow", "Save", 0));
+         actionSave->setEnabled(false);
+-        actionSave->setShortcut(QApplication::translate("csvMWindow", "Ctrl+S", 0, QApplication::UnicodeUTF8));
+-        actionSave_As->setText(QApplication::translate("csvMWindow", "Save As", 0, QApplication::UnicodeUTF8));
+-        chkBxRO->setText(QApplication::translate("csvMWindow", "Read Only", 0, QApplication::UnicodeUTF8));
++        actionSave->setShortcut(QApplication::translate("csvMWindow", "Ctrl+S", 0));
++        actionSave_As->setText(QApplication::translate("csvMWindow", "Save As", 0));
++        chkBxRO->setText(QApplication::translate("csvMWindow", "Read Only", 0));
+         plainTextEdit->setPlainText(QString());
+-        tabWidget->setTabText(tabWidget->indexOf(textTab), QApplication::translate("csvMWindow", "Text", 0, QApplication::UnicodeUTF8));
+-        tabWidget->setTabText(tabWidget->indexOf(sheetTab), QApplication::translate("csvMWindow", "Sheet", 0, QApplication::UnicodeUTF8));
+-        menuCSV_Editor->setTitle(QApplication::translate("csvMWindow", "&File", 0, QApplication::UnicodeUTF8));
+-        menuEdit->setTitle(QApplication::translate("csvMWindow", "&Edit", 0, QApplication::UnicodeUTF8));
+-        menuView->setTitle(QApplication::translate("csvMWindow", "&View", 0, QApplication::UnicodeUTF8));
+-        menuWindow->setTitle(QApplication::translate("csvMWindow", "&Window", 0, QApplication::UnicodeUTF8));
+-        menuHelp->setTitle(QApplication::translate("csvMWindow", "&Help", 0, QApplication::UnicodeUTF8));
++        tabWidget->setTabText(tabWidget->indexOf(textTab), QApplication::translate("csvMWindow", "Text", 0));
++        tabWidget->setTabText(tabWidget->indexOf(sheetTab), QApplication::translate("csvMWindow", "Sheet", 0));
++        menuCSV_Editor->setTitle(QApplication::translate("csvMWindow", "&File", 0));
++        menuEdit->setTitle(QApplication::translate("csvMWindow", "&Edit", 0));
++        menuView->setTitle(QApplication::translate("csvMWindow", "&View", 0));
++        menuWindow->setTitle(QApplication::translate("csvMWindow", "&Window", 0));
++        menuHelp->setTitle(QApplication::translate("csvMWindow", "&Help", 0));
+     } // retranslateUi
+ 
+ };

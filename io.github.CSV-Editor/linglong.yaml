@@ -1,0 +1,25 @@
+package:
+  id: io.github.CSV-Editor
+  name: CSV-Editor
+  version: 1.0.0
+  kind: app
+  description: |
+    CSV Editor created with Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/Govindarajan-D/CSV-Editor.git
+  commit: 4767627c05444706d05addd31d25f0cc0f423d56
+  patch: 
+    - patches/fix-001.patch
+    - patches/fix-002.patch
+
+
+build:
+  kind: qmake
+

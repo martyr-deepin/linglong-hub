@@ -1,0 +1,23 @@
+--- ../CSV_Editor.pro	2023-12-02 14:02:21.977853000 +0800
++++ ../CSV_Editor.pro	2023-12-02 14:33:59.209927814 +0800
+@@ -31,3 +31,20 @@
+ 
+ RESOURCES += \
+     resources/CE_RSRC.qrc
++
++DESKTOP_FILE = ./CSV_Editor.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=CSV_Editor' >> $$DESKTOP_FILE")
++system("echo 'Comment=CSV_Editor.' >> $$DESKTOP_FILE")
++system("echo 'Exec=CSV_Editor' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
