@@ -1,0 +1,19 @@
+package:
+  id: io.github.deepin-picker
+  name: deepin-picker
+  version: 5.0.1
+  kind: app
+  description: |
+    Color picker application.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/linuxdeepin/deepin-picker.git
+  commit: 6adc71842b403767d299e855bcceb45262ffb59d
+
+build:
+  kind: qmake
