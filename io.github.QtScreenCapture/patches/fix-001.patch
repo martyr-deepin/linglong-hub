@@ -1,0 +1,24 @@
+--- ../FarazScreenCapture.pro	2023-12-07 22:11:59.991060000 +0800
++++ ../FarazScreenCapture.pro	2023-12-08 09:25:38.783725446 +0800
+@@ -6,3 +6,21 @@
+ SOURCES += main.cpp mainwindow.cpp
+ HEADERS += mainwindow.h
+ FORMS   += mainwindow.ui
++
++DESKTOP_FILE = ./FarazScreenCapture.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=FarazScreenCapture' >> $$DESKTOP_FILE")
++system("echo 'Comment=FarazScreenCapture.' >> $$DESKTOP_FILE")
++system("echo 'Exec=FarazScreenCapture' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++

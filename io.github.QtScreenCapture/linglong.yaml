@@ -1,0 +1,23 @@
+package:
+  id: io.github.QtScreenCapture
+  name: QtScreenCapture
+  version: 1.0.0
+  kind: app
+  description: |
+    Lightweight screen capture tool and screen video recorder.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/fffaraz/QtScreenCapture.git
+  commit: aefc34e67e197ed7b5f527da592b958f66bb7d4f
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+
