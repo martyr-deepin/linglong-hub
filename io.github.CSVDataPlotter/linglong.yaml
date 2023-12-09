@@ -1,0 +1,27 @@
+package:
+  id: io.github.CSVDataPlotter
+  name: CSVDataPlotter
+  version: 1.0.0
+  kind: app
+  description: |
+    A QT application that plots a CSV file and allows for editing.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/sdvz/CSVDataPlotter.git
+  commit: e4bfab0e27024e05bb17ee5c4707d69bb9ba43e1
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      mkdir build && cd build
+      qmake -makefile ${conf_args} ${extra_args} ../DataRWPlot
+

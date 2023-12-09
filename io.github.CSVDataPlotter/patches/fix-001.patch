@@ -1,0 +1,23 @@
+--- ../DataRWPlot/DataRWPlot.pro	2023-12-08 14:42:54.025621000 +0800
++++ ../DataRWPlot/DataRWPlot.pro	2023-12-08 14:50:05.246693043 +0800
+@@ -20,3 +20,20 @@
+     qcustomplot.h
+ 
+ FORMS    += dialog.ui
++
++DESKTOP_FILE = ./DataRWPlot.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=DataRWPlot' >> $$DESKTOP_FILE")
++system("echo 'Comment=DataRWPlot.' >> $$DESKTOP_FILE")
++system("echo 'Exec=DataRWPlot' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
