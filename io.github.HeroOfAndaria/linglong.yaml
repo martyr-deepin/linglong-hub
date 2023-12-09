@@ -1,0 +1,24 @@
+package:
+  id: io.github.HeroOfAndaria
+  name: HeroOfAndaria
+  version: 1.0.0
+  kind: app
+  description: |
+    一款战争策略游戏.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/Soszu/HeroOfAndaria.git
+  commit: 869a3fcbd8d47ed3402130b3255fe57d08ab0ba5
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: cmake
+

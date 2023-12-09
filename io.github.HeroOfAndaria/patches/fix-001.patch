@@ -1,0 +1,24 @@
+--- ../CMakeLists.txt	2023-12-03 11:09:53.137797000 +0800
++++ ../CMakeLists.txt	2023-12-03 11:23:03.382734478 +0800
+@@ -4,9 +4,18 @@
+ set (CMAKE_CXX_FLAGS "-Wall -std=c++11 -ggdb -pg")
+ 
+ include_directories (${Qt5Widgets_INCLUDE_DIRS} ${Qt5Svg_INCLUDE_DIRS} ${HeroOfAndaria_SOURCE_DIR}/src)
+-set (EXECUTABLE_OUTPUT_PATH "${HeroOfAndaria_BINARY_DIR}/bin")
+-set (LIBRARY_OUTPUT_PATH "${HeroOfAndaria_BINARY_DIR}/lib")
++set (EXECUTABLE_OUTPUT_PATH "${CMAKE_INSTALL_PREFIX}/bin")
++set (LIBRARY_OUTPUT_PATH "${CMAKE_INSTALL_PREFIX}/lib")
+ 
+ add_subdirectory (src)
+ 
+-install (DIRECTORY data DESTINATION "${HeroOfAndaria_BINARY_DIR}")
++install (DIRECTORY data DESTINATION "${CMAKE_INSTALL_PREFIX}")
++
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=HOAGame
++Exec=HOAGame
++Categories=Utility;
++")
++file(WRITE ${CMAKE_INSTALL_PREFIX}/share/applications/HOAGame.desktop "${DESKTOP_FILE_CONTENT}")
