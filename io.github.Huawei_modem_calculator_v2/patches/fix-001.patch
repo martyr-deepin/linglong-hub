@@ -1,0 +1,32 @@
+--- ../serial1.pro	2023-12-08 19:02:28.035289000 +0800
++++ ../serial1.pro	2023-12-08 19:05:49.647237132 +0800
+@@ -45,8 +45,28 @@
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     resource.qrc
++
++DESKTOP_FILE = ./serial1.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=serial1' >> $$DESKTOP_FILE")
++system("echo 'Comment=serial1.' >> $$DESKTOP_FILE")
++system("echo 'Exec=serial1' >> $$DESKTOP_FILE")
++system("echo 'Icon=huawei_unlocker64.png' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++icon.files += $$PWD/img/huawei_unlocker64.png
++icon.path = $$PREFIX/share/icons/serial1/
++INSTALLS += icon
++
