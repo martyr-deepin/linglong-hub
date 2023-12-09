@@ -1,0 +1,30 @@
+package:
+  id: io.github.BenchmarkViewer
+  name: BenchmarkViewer
+  version: 1.0.0
+  kind: app
+  description: |
+    Qt application to view Google Microbenchmarking data https://github.com/google/benchmark.
+
+
+depends:
+  - id: qtcharts
+    version: 5.15.7
+    type: runtime
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/asit-dhal/BenchmarkViewer.git
+  commit: 52d4943936f963d120ca449ce8887eab19aab931
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: cmake
+

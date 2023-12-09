@@ -1,0 +1,16 @@
+--- ../app/CMakeLists.txt	2023-12-04 09:32:39.453861000 +0800
++++ ../app/CMakeLists.txt	2023-12-04 09:37:16.774586759 +0800
+@@ -61,3 +61,13 @@
+                     Qt5::Charts
+                     )
+ 
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=BenchmarkViewer
++Exec=BenchmarkViewer
++Categories=Utility;
++")
++file(WRITE ${CMAKE_INSTALL_PREFIX}/share/applications/BenchmarkViewer.desktop "${DESKTOP_FILE_CONTENT}")
++install(TARGETS BenchmarkViewer DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
++
