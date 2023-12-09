@@ -1,0 +1,21 @@
+package:
+  id: io.github.Curve_Fitting
+  name: Curve_Fitting
+  version: 0.0.1
+  kind: app
+  description: |
+    qt 曲线拟合 最小二乘法 ui实现.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/muleimulei/Curve_Fitting.git
+  commit: ed7bdb912a12e97a2e8bc5304612149ae14388a8
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
