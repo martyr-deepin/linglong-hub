@@ -1,0 +1,26 @@
+package:
+  id: io.github.anilibria-winmaclinux
+  name: anilibria-winmaclinux
+  version: 1.2.12
+  kind: app
+  description: |
+    AniLibria.Qt cross platform desktop client.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/anilibria/anilibria-winmaclinux.git
+  commit: 7f7eb8e9f57514d8370ca07c0533d1e2da505de1
+  patch: patches/fix-001.patch
+
+
+build:  
+  kind: qmake
+  manual :
+    configure: |
+      qmake -makefile ${conf_args} ${extra_args} ./src
