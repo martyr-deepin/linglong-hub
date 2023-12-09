@@ -1,0 +1,24 @@
+--- ../gravastre.pro	2023-12-01 10:52:48.304093000 +0800
++++ ../gravastre.pro	2023-12-01 10:54:54.539894210 +0800
+@@ -31,3 +31,21 @@
+     src/jsonConfig.h \
+     src/utils.h \
+     src/options.h
++
++DESKTOP_FILE = ./gravastre.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=gravastre' >> $$DESKTOP_FILE")
++system("echo 'Comment=gravastre.' >> $$DESKTOP_FILE")
++system("echo 'Exec=gravastre' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++

@@ -1,0 +1,23 @@
+package:
+  id: io.github.gravastre
+  name: gravastre
+  version: 1.0.0
+  kind: app
+  description: |
+    Gravastre is a gravitationnal simulation where all agents (named Astres) interacts, no matter there distance or their mass. The Qt interface allow user to see and play with the simulation during the computations.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/Aluriak/gravastre.git
+  commit: e7f98b5a59636b562f3314033699216b8ad85944
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+
