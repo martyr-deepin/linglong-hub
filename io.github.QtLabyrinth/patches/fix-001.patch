@@ -1,0 +1,26 @@
+--- ../boardscene.cpp	2023-12-02 19:41:46.529649000 +0800
++++ ../boardscene.cpp	2023-12-02 19:52:48.552177560 +0800
+@@ -1,4 +1,7 @@
+ #include "boardscene.h"
++#include <ctime>
++#include <cstdlib>
++#include <algorithm>
+ 
+ BoardScene::BoardScene()
+ {
+@@ -204,9 +207,12 @@
+ void BoardScene::shuffleCards()
+ {
+     // Randomize the card order in the list
+-    std::random_device rd;
+-    std::mt19937 g(rd());
+-    std::shuffle(cardList.begin(), cardList.end(), g);
++    // std::random_device rd;
++    // std::mt19937 g(rd());
++    // std::shuffle(cardList.begin(), cardList.end(), g);
++    // Randomize the movable maze order
++    std::srand(std::time(nullptr));
++    std::random_shuffle(cardList.begin(), cardList.end());
+ 
+     int x{0}, y{0};
+     // Iterate over the four players

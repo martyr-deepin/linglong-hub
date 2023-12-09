@@ -1,0 +1,27 @@
+package:
+  id: io.github.QtLabyrinth
+  name: QtLabyrinth
+  version: 1.0.0
+  kind: app
+  description: |
+    Labyrinth game in Qt.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/zgombos/QtLabyrinth.git
+  commit: fc7bf0f589d9f4179dd28f72c9da8333c64f0fbc
+  patch: 
+    - patches/fix-001.patch
+    - patches/fix-002.patch
+    - patches/fix-003.patch
+
+
+build:
+  kind: qmake
+

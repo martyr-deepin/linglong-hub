@@ -1,0 +1,26 @@
+--- ../gameboard.cpp	2023-12-02 19:41:46.529649000 +0800
++++ ../gameboard.cpp	2023-12-02 19:52:57.584208910 +0800
+@@ -1,4 +1,7 @@
+ #include "gameboard.h"
++#include <ctime>
++#include <cstdlib>
++#include <algorithm>
+ 
+ //#include <QDebug>
+ 
+@@ -135,9 +138,12 @@
+                          imaze8 , imaze9 , imaze10 , imaze11 , imaze12 , imaze13};
+ 
+     // Randomize the movable maze order
+-    std::random_device rd;
+-    std::mt19937 g(rd());
+-    std::shuffle(movableMazePieces.begin(), movableMazePieces.end(), g);
++    // std::random_device rd;
++    // std::mt19937 g(rd());
++    // std::shuffle(movableMazePieces.begin(), movableMazePieces.end(), g);
++    // Randomize the movable maze order
++    std::srand(std::time(nullptr));
++    std::random_shuffle(movableMazePieces.begin(), movableMazePieces.end());
+ 
+     // Get the first from the list as a start maze
+     newMaze = movableMazePieces.takeFirst();
