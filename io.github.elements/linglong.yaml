@@ -1,0 +1,21 @@
+package:
+  id: io.github.elements 
+  name: elements 
+  version: 0.0.1
+  kind: app
+  description: |
+    A Qt based game by QPainter rendering with timers
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/chrisyeh75/elements.git"
+  commit: 69f8e04
+  patch: patches/ab.patch
+
+build:
+  kind: qmake
