@@ -1,0 +1,24 @@
+package:
+  id: io.github.neural-style-jcjohnson-gui
+  name: neural-style-jcjohnson-gui
+  version: 1.0.0
+  kind: app
+  description: |
+    neural-style is a stunning piece of code, which can apply a style (e.g. Picasso, Van Gogh, whatever you choose) to your photos. For that, it uses A.I., more precisely convolutional neural networks. An implementation of neural style with Torch by jcjohnson: https://github.com/jcjohnson/neural-style.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/AbsurdePhoton/neural-style-jcjohnson-gui.git
+  commit: ec4c5c8f53aaf8e75dc84cecbce099248be88c27
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+

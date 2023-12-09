@@ -1,0 +1,25 @@
+--- ../neural-style.pro	2023-12-03 15:26:59.005466000 +0800
++++ ../neural-style.pro	2023-12-03 15:30:04.630063517 +0800
+@@ -20,3 +20,22 @@
+ HEADERS  += mainwindow.h
+ 
+ FORMS    += mainwindow.ui
++
++
++DESKTOP_FILE = ./neural-style.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=neural-style' >> $$DESKTOP_FILE")
++system("echo 'Comment=neural-style.' >> $$DESKTOP_FILE")
++system("echo 'Exec=neural-style' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
