@@ -1,0 +1,22 @@
+package:
+  id: io.github.kapow
+  name: kapow
+  version: 1.5.7
+  kind: app
+  description: |
+    Kapow is a punch clock program designed to easily keep track of your hours, whether you're working on one project or many.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/gottcode/kapow.git
+  commit: ecf560b191f4bfbc3621552584617af11691be52
+
+
+build:
+  kind: qmake
+
