@@ -1,0 +1,19 @@
+package:
+  id: phonon
+  name: phonon 
+  version: 4.11.0
+  kind: lib
+  description: |
+    kde/phonon.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+ 
+source:
+  kind: git
+  url: https://github.com/KDE/phonon.git
+  commit: 840d18e17975bafa3ad393ea35a0ff8bbee02102
+
+build:
+  kind: cmake
