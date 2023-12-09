@@ -1,0 +1,24 @@
+--- ../kluster.pro	2023-12-01 17:51:27.789811000 +0800
++++ ../kluster.pro	2023-12-01 17:56:53.723840831 +0800
+@@ -58,3 +58,21 @@
+     COPYING \
+     Changelog \
+     AUTHORS
++
++DESKTOP_FILE = ./kluster.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=kluster' >> $$DESKTOP_FILE")
++system("echo 'Comment=kluster.' >> $$DESKTOP_FILE")
++system("echo 'Exec=kluster' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++

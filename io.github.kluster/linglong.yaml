@@ -1,0 +1,23 @@
+package:
+  id: io.github.kluster
+  name: kluster
+  version: 1.0.0
+  kind: app
+  description: |
+    A free multiplatform (Linux/macOS/Windows) DX-Cluster client.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/ea4k/kluster.git
+  commit: a3d107103058b37753ed42e76972b31a37b82c42
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+
