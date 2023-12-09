@@ -1,0 +1,27 @@
+package:
+  id: io.github.QRegovar
+  name: QRegovar
+  version: 1.0.0
+  kind: app
+  description: |
+    REGOVAR 是一个协作、免费和开放的项目，用于基因组、外显子组和基因组的高通量测序数据分析软件（NIPT、搜索 SNV、CNV、SV 等）。它的目的是让不同的相关群体（临床遗传学家、生物学家和生物信息学家）参与并团结起来，不受机构或地理限制.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/REGOVAR/QRegovar.git
+  commit: f8fce050eec6b83adeadbb1c0130b97febe69b76
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      qmake -makefile ${conf_args} ${extra_args} ./app
+

@@ -1,0 +1,27 @@
+--- ../app/QRegovar.pro	2023-11-30 19:21:22.559017000 +0800
++++ ../app/QRegovar.pro	2023-11-30 19:23:04.042630752 +0800
+@@ -220,9 +220,23 @@
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++# desktop指定
++DESKTOP_FILE = ./QRegovar.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=QRegovar' >> $$DESKTOP_FILE")
++system("echo 'Comment=QRegovar.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$PREFIX/bin/QRegovar' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
+ 
+ 
+ #win32
