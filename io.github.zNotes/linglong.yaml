@@ -1,0 +1,27 @@
+package:
+  id: io.github.zNotes
+  name: zNotes
+  version: 0.4.7
+  kind: app
+  description: |
+    zNotes is a lightweight cross-platform application for notes management.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "git@github.com:proton/zNotes.git"
+  commit: 37c5e02
+  patch: patches/fix.patch
+
+build:
+  kind: qmake
+  manual:
+    build: |
+      lrelease znotes.pro
+      qmake
+      make
+    install: |
+      make install

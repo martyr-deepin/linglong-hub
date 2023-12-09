@@ -1,0 +1,14 @@
+diff -Naur zNotes-o/znotes.pro zNotes/znotes.pro
+--- zNotes-o/znotes.pro	2023-12-09 17:22:47.727737000 +0800
++++ zNotes/znotes.pro	2023-12-09 17:35:21.747787703 +0800
+@@ -147,3 +147,10 @@
+ }
+ 
+ win32:RC_FILE = znotes.rc
++
++
++desktop.files += znotes.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop
