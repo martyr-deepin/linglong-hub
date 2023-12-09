@@ -1,0 +1,20 @@
+--- ../mainwindow.cpp	2023-12-08 17:04:30.189241000 +0800
++++ ../mainwindow.cpp	2023-12-08 17:32:02.679358137 +0800
+@@ -24,6 +24,8 @@
+ #include "dialogsp.h"
+ #include "dialogrp.h"
+ #include <alloca.h>
++#include <QApplication>
++#include <iostream>
+ 
+ MainWindow::MainWindow(QWidget *parent) :
+     QMainWindow(parent),
+@@ -94,7 +96,7 @@
+     //ui->pushButton->resize(165, ui->pushButton->height()); //change height // widget->setFixedWidth(165)
+     //opening chip database file
+     ui->statusBar->showMessage("Opening DAT file");
+-    QFile datfile("CH341a.Dat");
++    QFile datfile(QApplication::applicationDirPath() + "/database/CH341a.Dat");
+     QByteArray dataChips;
+     if (!datfile.open(QIODevice::ReadOnly))
+     {

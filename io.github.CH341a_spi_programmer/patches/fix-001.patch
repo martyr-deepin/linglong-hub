@@ -1,0 +1,30 @@
+--- ../CMakeLists.txt	2023-12-08 16:53:12.534783000 +0800
++++ ../CMakeLists.txt	2023-12-08 17:18:21.229527429 +0800
+@@ -49,11 +49,21 @@
+ #target_link_libraries(${PROJECT_NAME} Qt5::Widgets)
+ target_link_libraries(${PROJECT_NAME} Qt5::Widgets ${LibUSB_LIBRARIES})
+ 
+-install(TARGETS ${PROJECT_NAME} DESTINATION /opt/CH341SPI)
+-install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/other/CH341SPI.desktop" DESTINATION /opt/CH341SPI)
+-install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/other/CH341SPI.desktop" DESTINATION /usr/share/applications)
+-install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/img/write64.png" DESTINATION /opt/CH341SPI)
+-install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/database/CH341a.Dat" DESTINATION /opt/CH341SPI)
+-install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/other/99-CH341.rules" DESTINATION /etc/udev/rules.d)
++install(TARGETS ${PROJECT_NAME} DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
++# install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/other/CH341SPI.desktop" DESTINATION /opt/CH341SPI)
++# 写入desktop
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=CH341SPI
++Exec=CH341SPI
++Icon='write64.png'
++Categories=Utility;
++")
++file(WRITE ${CMAKE_INSTALL_PREFIX}/share/applications/CH341SPI.desktop "${DESKTOP_FILE_CONTENT}")
++# install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/other/CH341SPI.desktop" DESTINATION /usr/share/applications)
++install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/img/write64.png" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/CH341SPI)
++install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/database/CH341a.Dat" DESTINATION ${CMAKE_INSTALL_PREFIX}/bin/database)
++install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/other/99-CH341.rules" DESTINATION ${CMAKE_INSTALL_PREFIX}/bin/udev/rules.d)
+ 
+ 

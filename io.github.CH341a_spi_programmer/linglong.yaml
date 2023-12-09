@@ -1,0 +1,30 @@
+package:
+  id: io.github.CH341a_spi_programmer
+  name: CH341a_spi_programmer
+  version: 1.0.0
+  kind: app
+  description: |
+    QT5 programmer software for the readind/writing SPI NOR FLASH use the CH341a device.
+
+
+depends:
+  - id: libusb-1.0
+    version: 1.0.24
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/bigbigmdm/CH341a_spi_programmer.git
+  commit: 240d3251e3994b5296409b1cc68dcc48572b2095
+  patch: 
+    - patches/fix-001.patch
+    - patches/fix-002.patch
+
+
+build:
+  kind: cmake
