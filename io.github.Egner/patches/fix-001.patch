@@ -1,0 +1,28 @@
+--- ../Egner.pro	2023-12-01 10:26:40.483332000 +0800
++++ ../Egner.pro	2023-12-01 10:31:56.866432368 +0800
+@@ -71,6 +71,23 @@
+ CONFIG += mobility
+ MOBILITY = 
+ 
+-RESOURCES += \
+-    gfx/gfx.qrc
++#RESOURCES += \
++#    gfx/gfx.qrc
++
++DESKTOP_FILE = ./Egner.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=1.0.0' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=Egner' >> $$DESKTOP_FILE")
++system("echo 'Comment=Egner.' >> $$DESKTOP_FILE")
++system("echo 'Exec=Egner' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
+ 

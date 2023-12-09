@@ -1,0 +1,23 @@
+package:
+  id: io.github.Egner
+  name: Egner
+  version: 1.0.0
+  kind: app
+  description: |
+    Evolution of gene networks by gene duplication.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/dridk/Egner.git
+  commit: ff2ec46b01e74e0a99eccc980c4c5672fc1e6a36
+  patch: patches/fix-001.patch
+
+
+build:
+  kind: qmake
+
