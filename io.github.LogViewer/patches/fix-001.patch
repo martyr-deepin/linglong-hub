@@ -1,0 +1,19 @@
+--- ../CMakeLists.txt	2023-12-04 09:45:22.651887000 +0800
++++ ../CMakeLists.txt	2023-12-04 09:49:09.940783794 +0800
+@@ -64,3 +64,16 @@
+                     Qt5::Network
+                     Qt5::Xml
+                     )
++
++# 写入desktop
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=LogViewer
++Exec=LogViewer
++Categories=Utility;
++")
++file(WRITE ${CMAKE_INSTALL_PREFIX}/share/applications/LogViewer.desktop "${DESKTOP_FILE_CONTENT}")
++install(TARGETS LogViewer DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
++
++
