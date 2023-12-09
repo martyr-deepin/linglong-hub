@@ -1,0 +1,27 @@
+package:
+  id: io.github.ganman
+  name: ganman
+  version: 0.7.0
+  kind: app
+  description: |
+    Simple and multi-platform screen/camera capture.
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/CharNoe/ganman.git
+  commit: 683500b0b282f60938ac93b132bdac2f3992b135
+  patch: 
+    - patches/fix-001.patch
+    - patches/fix-002.patch
+    - patches/fix-003.patch
+
+
+build:
+  kind: cmake
+ 

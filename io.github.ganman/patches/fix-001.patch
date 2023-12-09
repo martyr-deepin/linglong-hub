@@ -1,0 +1,16 @@
+--- ../CMakeLists.txt	2023-12-08 11:15:26.804844000 +0800
++++ ../CMakeLists.txt	2023-12-08 11:27:32.357540099 +0800
+@@ -28,3 +28,13 @@
+     Ganman
+     PRIVATE Qt5::Widgets Qt5::Multimedia
+     )
++
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=Ganman
++Exec=Ganman
++Categories=Utility;
++")
++file(WRITE ${CMAKE_INSTALL_PREFIX}/share/applications/Ganman.desktop "${DESKTOP_FILE_CONTENT}")
++install(TARGETS Ganman DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
