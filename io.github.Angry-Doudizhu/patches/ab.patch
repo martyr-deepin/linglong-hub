@@ -1,0 +1,22 @@
+diff -Naur b/doudizhu.desktop a/doudizhu.desktop
+--- b/doudizhu.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/doudizhu.desktop	2023-12-10 20:25:50.073044075 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=doudizhu
++Exec=doudizhu
++Type=Application
+\ 文件尾没有换行符
+diff -Naur b/doudizhu.pro a/doudizhu.pro
+--- b/doudizhu.pro	2023-12-10 20:24:26.261662528 +0800
++++ a/doudizhu.pro	2023-12-10 20:25:12.497304348 +0800
+@@ -48,3 +48,8 @@
+ 
+ RESOURCES += \
+     images.qrc
++
++desktop.files += doudizhu.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++INSTALLS += target desktop
+\ 文件尾没有换行符

@@ -1,0 +1,21 @@
+package:
+  id: io.github.Angry-Doudizhu 
+  name: Angry-Doudizhu 
+  version: 0.0.1
+  kind: app
+  description: |
+    A simple 斗地主 multiplayer card game using C++ based on Qt. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/delphynium/Angry-Doudizhu.git"
+  commit: 20f1e71
+  patch: patches/ab.patch
+
+build:
+  kind: qmake
