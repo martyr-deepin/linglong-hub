@@ -1,0 +1,22 @@
+package:
+  id: io.github.qPlay
+  name: qPlay
+  version: 1.0.1
+  kind: app
+  description: |
+    mpqt based media with better qt audio support.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/netpipe/qPlay.git"
+  commit: 61284302dcda3467eacb28f0972fc7836814a01e
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
+

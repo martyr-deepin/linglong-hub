@@ -1,0 +1,29 @@
+diff --git a/qPlat.desktop b/qPlat.desktop
+new file mode 100644
+index 0000000..1422a00
+--- /dev/null
++++ b/qPlat.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=qPlay
++Exec=qPlay %f
++Icon=freemp
+diff --git a/qPlay.pro b/qPlay.pro
+index 5e523ba..cb3fd11 100644
+--- a/qPlay.pro
++++ b/qPlay.pro
+@@ -44,4 +44,13 @@ FORMS += \
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
++target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = Resource/img/freemp.png
++INSTALLS += icons
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += qPlat.desktop
++INSTALLS += desktop
