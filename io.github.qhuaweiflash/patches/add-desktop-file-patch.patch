@@ -1,0 +1,11 @@
+diff --git a/qhuaweiflash.desktop b/qhuaweiflash.desktop
+new file mode 100644
+index 0000000..f468cc1
+--- /dev/null
++++ b/qhuaweiflash.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=qhuaweiflash
++Exec=qhuaweiflash %f
++Icon=icon

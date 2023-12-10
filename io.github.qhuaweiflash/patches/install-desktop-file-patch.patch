@@ -1,0 +1,19 @@
+diff --git a/qhuaweiflash.pro b/qhuaweiflash.pro
+index 7fa6bee..e52e6ee 100644
+--- a/qhuaweiflash.pro
++++ b/qhuaweiflash.pro
+@@ -20,3 +20,14 @@ SOURCES += main.cpp MainWindow.cpp sio.cpp ptable.cpp flasher.cpp usbloader.cpp
+   nvcrc.cpp hexedit2/commands.cpp hexedit2/qhexedit.cpp hexedit2/chunks.cpp
+ RESOURCES = qhuaweiflash.qrc
+ LIBS += -lz
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += qhuaweiflash.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = icon.ico
++INSTALLS += icons

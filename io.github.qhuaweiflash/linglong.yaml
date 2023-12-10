@@ -1,0 +1,22 @@
+package:
+  id: io.github.qhuaweiflash
+  name: qhuaweiflash
+  version: 0.0.1
+  kind: app
+  description: |
+    qhuaweiflash内存管理.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/forth32/qhuaweiflash.git"
+  commit: 54ec963fd3f4b101feb625df3634cf81c6e07ca7
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake
