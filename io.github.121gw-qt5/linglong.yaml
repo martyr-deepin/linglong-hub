@@ -1,0 +1,18 @@
+package:
+  id: io.github.121gw-qt5
+  name: 121gw-qt5
+  version: 1.0.0
+  kind: app
+  description: |
+    A Qt5 based application for the 121GW BLE enabled multimeter 
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "git@github.com:zonque/121gw-qt5.git"
+  commit: 02f0d15
+  patch: patches/ab.patch
+build:
+  kind: qmake

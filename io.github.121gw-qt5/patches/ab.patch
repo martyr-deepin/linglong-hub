@@ -1,0 +1,20 @@
+diff -Naur b/121gw-qt5.desktop a/121gw-qt5.desktop
+--- b/121gw-qt5.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/121gw-qt5.desktop	2023-12-10 13:08:38.950780219 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=121gw-qt5
++Exec=121gw-qt5
++Type=Application
+diff -Naur b/121gw-qt5.pro a/121gw-qt5.pro
+--- b/121gw-qt5.pro	2023-12-10 13:07:29.198796553 +0800
++++ a/121gw-qt5.pro	2023-12-10 13:10:48.215494466 +0800
+@@ -44,3 +44,8 @@
+ 
+ RESOURCES += \
+     assets.qrc
++desktop.files += 121gw-qt5.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
++
++INSTALLS += target desktop
