@@ -1,0 +1,48 @@
+From 4d2d18ddc52f098b670a536871cffd2eda69134f Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 1 Dec 2023 10:39:06 +0800
+Subject: [PATCH] install
+  
+---
+ src/GameMakerLegacyHelper.desktop | 8 ++++++++
+ src/GameMakerLegacyHelper.pro     | 9 ++++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 src/GameMakerLegacyHelper.desktop
+
+diff --git a/src/GameMakerLegacyHelper.desktop b/src/GameMakerLegacyHelper.desktop
+new file mode 100644
+index 0000000..0929fff
+--- /dev/null
++++ b/src/GameMakerLegacyHelper.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=GameMakerLegacyHelper
++Name=GameMakerLegacyHelper
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/src/GameMakerLegacyHelper.pro b/src/GameMakerLegacyHelper.pro
+index 30717ff..d63bd87 100644
+--- a/src/GameMakerLegacyHelper.pro
++++ b/src/GameMakerLegacyHelper.pro
+@@ -45,5 +45,12 @@ win32: {
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =GameMakerLegacyHelper.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

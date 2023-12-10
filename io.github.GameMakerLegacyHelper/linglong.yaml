@@ -1,0 +1,28 @@
+package:
+  id: io.github.GameMakerLegacyHelper
+  name: GameMakerLegacyHelper
+  version: 0.1.0.1
+  kind: app
+  description: |
+    The program helps to correct inaccuracies in the conversion of projects from Game Maker 7/8 to Game Maker Studio 1 and GameMaker (Studio 2).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/3dproger/GameMakerLegacyHelper.git
+  commit: 6920e57191573fd87f42037eb60957272546b56b
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile GameMakerLegacyHelper.pro ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
