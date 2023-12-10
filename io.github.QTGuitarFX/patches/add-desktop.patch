@@ -1,0 +1,30 @@
+diff --git a/alsatest1.desktop b/alsatest1.desktop
+new file mode 100644
+index 0000000..d6e3aef
+--- /dev/null
++++ b/alsatest1.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=alsatest1
++Exec=alsatest1 %f
++Icon=guitarrig
+diff --git a/alsatest1.pro b/alsatest1.pro
+index 3250e1a..ae30f2b 100644
+--- a/alsatest1.pro
++++ b/alsatest1.pro
+@@ -21,3 +21,14 @@ FORMS    += mainwindow.ui
+ 
+ LIBS += -L/usr/include/alsa -lasound
+ LIBS += -L/usr/include/jack -ljack
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += alsatest1.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = guitarrig.png
++INSTALLS += icons

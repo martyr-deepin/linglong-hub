@@ -1,0 +1,21 @@
+package:
+  id: io.github.QTGuitarFX
+  name: QTGuitarFX
+  version: 1.0.0
+  kind: app
+  description: |
+    QTGuitarFX - guitar sound fx pre processor for jack and alsa. based on RedFX processor.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/netpipe/QTGuitarFX.git"
+  commit: bec9ec5233adaf9a49d4a9403cdfb53406c8f952
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
