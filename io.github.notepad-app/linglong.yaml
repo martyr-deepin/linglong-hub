@@ -1,0 +1,22 @@
+package:
+  id: io.github.notepad-app
+  name: notepad-app
+  version: 0.0.1
+  kind: app
+  description: |
+    I covered Dialogs, Widgets, Drag and Drop Interfaces, Creating / Opening / Saving Files, Menus, Toolbars, Icons, Printing, and much more.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/ehvenimunis/notepad-app.git"
+  commit: 42ce05a2e1d1e699e09488b9d5ae9563924bb08e
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake

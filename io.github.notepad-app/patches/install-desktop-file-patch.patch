@@ -1,0 +1,14 @@
+diff --git a/notepad.pro b/notepad.pro
+index efe16fc..e6fd7f2 100644
+--- a/notepad.pro
++++ b/notepad.pro
+@@ -21,3 +21,9 @@ RESOURCES += \
+ target.path = $$[QT_INSTALL_EXAMPLES]/widgets/tutorials/notepad
+ INSTALLS += target
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += notepad.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
