@@ -1,0 +1,22 @@
+package:
+  id: io.github.ReFramed
+  name: ReFramed
+  version: 0.0.12
+  kind: app
+  description: |
+    Replay analysis software suite for Super Smash Bros.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/reframedultimate/ReFramed.git
+  commit: 9d4c33b74ad10ac8a3f38de9de1137081c7aba85
+  patch: 
+    - patches/0001-install.patch
+    - patches/0002-install.patch
+
+build:
+  kind: cmake

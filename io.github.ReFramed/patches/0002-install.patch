@@ -1,0 +1,41 @@
+From 1c99075a2d81d83eda02440ccdfd3f97d76dbc68 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 8 Dec 2023 14:39:59 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt             | 4 ++++
+ build_dir/ReFramed.desktop | 8 ++++++++
+ 2 files changed, 12 insertions(+)
+ create mode 100644 build_dir/ReFramed.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 6b908b6..78a0837 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -107,3 +107,7 @@ configure_package_config_file("cmake/ReFramedConfig.cmake.in"
+ install(
+     FILES "${REFRAMED_BUILD_CMAKEDIR}/ReFramedConfig.cmake"
+     DESTINATION ${REFRAMED_INSTALL_CMAKEDIR})
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/ReFramed.desktop DESTINATION share/applications)
++install(TARGETS application DESTINATION bin)
++install(FILES ${CMAKE_BINARY_DIR}/bin/lib/librfcommon.so DESTINATION bin)
+\ No newline at end of file
+diff --git a/build_dir/ReFramed.desktop b/build_dir/ReFramed.desktop
+new file mode 100644
+index 0000000..b0d2880
+--- /dev/null
++++ b/build_dir/ReFramed.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=ReFramed
++Name=ReFramed
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+-- 
+2.33.1
+
