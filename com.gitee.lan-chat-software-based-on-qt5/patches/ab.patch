@@ -1,0 +1,39 @@
+diff -Naur b/lan-chat-software-based-on-qt5.desktop a/lan-chat-software-based-on-qt5.desktop
+--- b/lan-chat-software-based-on-qt5.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/lan-chat-software-based-on-qt5.desktop	2023-12-10 15:26:37.785466964 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=lan-chat-software-based-on-qt5
++Exec=lan-chat-software
++Type=Application
+diff -Naur b/talk.pro a/talk.pro
+--- b/talk.pro	2023-12-10 15:23:33.686620529 +0800
++++ a/talk.pro	2023-12-10 15:26:44.644139381 +0800
+@@ -15,6 +15,9 @@
+ # You can also select to disable deprecated APIs only up to a certain version of Qt.
+ #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+ 
++TARGET = lan-chat-software
++TEMPLATE = app
++
+ SOURCES += \
+     contactinfo.cpp \
+     contactlist.cpp \
+@@ -43,10 +46,15 @@
+     mainwindow.ui
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++#qnx: target.path = /tmp/$${TARGET}/bin
++#else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     img.qrc \
+     sound.qrc
++desktop.files += lan-chat-software-based-on-qt5.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
++
++INSTALLS += target desktop

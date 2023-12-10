@@ -1,0 +1,18 @@
+package:
+  id: com.gitee.lan-chat-software-based-on-qt5
+  name: lan-chat-software-based-on-qt5
+  version: 1.0.0
+  kind: app
+  description: |
+    使用qt5框架，基于飞鸽传书通讯协议，可在局域网内实时聊天
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/UnStoppableeee/lan-chat-software-based-on-qt5.git"
+  commit: b7b9824
+  patch: patches/ab.patch
+build:
+  kind: qmake
