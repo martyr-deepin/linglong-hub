@@ -1,0 +1,19 @@
+diff --git a/qtcalc.pro b/qtcalc.pro
+index 2080b35..0e7634d 100644
+--- a/qtcalc.pro
++++ b/qtcalc.pro
+@@ -25,3 +25,14 @@ QT += widgets
+ LIBS += -lcrypto
+ RESOURCES = huaweicalc.qrc
+ RC_FILE = huaweicalc.rc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += huaweicalc.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = icon.png
++INSTALLS += icons
