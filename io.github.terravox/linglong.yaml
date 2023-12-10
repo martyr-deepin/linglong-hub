@@ -1,0 +1,21 @@
+package:
+  id: io.github.terravox
+  name: terravox
+  version: 0.0.3
+  kind: app
+  description: |
+    Simple heightmap Editor for Voxlap5 VXL (512x512x64 only).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/yvt/terravox.git
+  commit: 25412f892f295d2c259d9c5df3387d635616d555
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
