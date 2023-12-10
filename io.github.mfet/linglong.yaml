@@ -1,0 +1,21 @@
+package:
+  id: io.github.mfet
+  name: mfet
+  version: 1.0.0
+  kind: app
+  description: |
+    This program aims to automatically generate the timetable of a school, high-school or university.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/leonardodazeredo/mfet.git
+  commit: d30d89fd6ac9a9a556fa63e56e8fa7adc15d7567
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+ 
