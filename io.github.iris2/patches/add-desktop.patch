@@ -1,0 +1,30 @@
+diff --git a/iris.desktop b/iris.desktop
+new file mode 100644
+index 0000000..f2a0ca6
+--- /dev/null
++++ b/iris.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=iris
++Exec=iris %f
++Icon=main
+diff --git a/iris.pro b/iris.pro
+index 33f75f1..e960049 100644
+--- a/iris.pro
++++ b/iris.pro
+@@ -51,3 +51,14 @@ HEADERS  += src/MainWindow.h \
+     src/CatalogModel.h \
+     src/CatalogStore.h \
+     src/SqlHelper.h
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += iris.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = img/icons/main.svg
++INSTALLS += icons

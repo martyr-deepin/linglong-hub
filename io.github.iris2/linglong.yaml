@@ -1,0 +1,21 @@
+package:
+  id: io.github.iris2
+  name: iris2
+  version: 2.0.1
+  kind: app
+  description: |
+    A powerful science tool———— Dispersion calculator.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/orion-project/iris2.git
+  commit: f8444ceb9d8286d7c9e68b22dba832763a6f88c1
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
