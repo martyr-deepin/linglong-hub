@@ -1,0 +1,10 @@
+diff --git a/QCommandEdit.desktop b/QCommandEdit.desktop
+new file mode 100644
+index 0000000..c7402c0
+--- /dev/null
++++ b/QCommandEdit.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=QCommandEdit
++Exec=QCommandEdit %f

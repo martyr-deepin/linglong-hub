@@ -1,0 +1,22 @@
+package:
+  id: io.github.QCommandEdit
+  name: QCommandEdit
+  version: 0.0.1
+  kind: app
+  description: |
+    A Qt widget, subclass of QLineEdit, for entering commands, with features common in modern shells such as TAB-completion, history, history-search.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/wyyrepo/QCommandEdit.git"
+  commit: cdf40e4fdcf647761289da32c0c520e73ad16f40
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake
