@@ -1,0 +1,21 @@
+package:
+  id: io.github.spectrum
+  name: spectrum
+  version: 1.0.2.1
+  kind: app
+  description: |
+    Laser resonator calculation tool.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/orion-project/spectrum.git
+  commit: 2a746218938e0528fb4e901849e2eaa458bf14d7
+  patch:
+    - patches/add_desktop.patch
+
+build:
+  kind: qmake
