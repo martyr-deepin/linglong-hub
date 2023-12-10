@@ -1,0 +1,25 @@
+diff --git a/SQLiteViewer.desktop b/SQLiteViewer.desktop
+new file mode 100644
+index 0000000..c79540c
+--- /dev/null
++++ b/SQLiteViewer.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=SQLite Viewer
++Exec=SQLiteViewer %f
+diff --git a/SQLiteViewer.pro b/SQLiteViewer.pro
+index a3be362..5681582 100644
+--- a/SQLiteViewer.pro
++++ b/SQLiteViewer.pro
+@@ -20,3 +20,10 @@ HEADERS  += mainwindow.h \
+     dbloader.h
+ 
+ FORMS    += mainwindow.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += SQLiteViewer.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
