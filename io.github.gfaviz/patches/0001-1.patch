@@ -1,0 +1,43 @@
+From a471828e4500d3e62b7a8fc39367a617af0528e0 Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Sun, 10 Dec 2023 16:13:57 +0800
+Subject: [PATCH] 1
+
+---
+ gfaviz.desktop | 8 ++++++++
+ viz.pro        | 6 ++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 gfaviz.desktop
+
+diff --git a/gfaviz.desktop b/gfaviz.desktop
+new file mode 100644
+index 0000000..263a30c
+--- /dev/null
++++ b/gfaviz.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=gfaviz
++Name=gfaviz
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/viz.pro b/viz.pro
+index 1f6ce34..9614dce 100644
+--- a/viz.pro
++++ b/viz.pro
+@@ -61,3 +61,9 @@ isEmpty(OGDFDIR){
+   LIBS += -L$${OGDFDIR} -lOGDF
+ }
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =gfaviz.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
