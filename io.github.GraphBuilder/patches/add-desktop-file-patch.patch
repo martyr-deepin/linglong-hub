@@ -1,0 +1,11 @@
+diff --git a/GraphBuilder.desktop b/GraphBuilder.desktop
+new file mode 100644
+index 0000000..d5b7f0c
+--- /dev/null
++++ b/GraphBuilder.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=GraphBuilder
++Exec=GraphBuilder %f
++Icon=logo

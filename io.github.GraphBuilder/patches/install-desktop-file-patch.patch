@@ -1,0 +1,19 @@
+diff --git a/GraphBuilder.pro b/GraphBuilder.pro
+index 89dede9..3633d35 100644
+--- a/GraphBuilder.pro
++++ b/GraphBuilder.pro
+@@ -40,3 +40,14 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ 
+ RESOURCES += \
+     icons.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += GraphBuilder.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = logo.ico
++INSTALLS += icons
