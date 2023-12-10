@@ -1,0 +1,21 @@
+package:
+  id: io.github.logotron
+  name: logotron
+  version: 1.0.0
+  kind: app
+  description: |
+    Logotron is a Simple and powerful log parser.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/orion-project/logotron.git
+  commit: 41c7bcbe1912a8e54708d659549a33fa759b344e
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
