@@ -1,0 +1,44 @@
+From 188c2509354793ad4116fb004dcea2d802e9a95a Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Sun, 10 Dec 2023 17:00:37 +0800
+Subject: [PATCH] 1
+
+---
+ QML_Movie_Renderer.desktop | 8 ++++++++
+ QML_Movie_Renderer.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 QML_Movie_Renderer.desktop
+
+diff --git a/QML_Movie_Renderer.desktop b/QML_Movie_Renderer.desktop
+new file mode 100644
+index 0000000..9c475a1
+--- /dev/null
++++ b/QML_Movie_Renderer.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QML_Movie_Renderer
++Name=QML_Movie_Renderer
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/QML_Movie_Renderer.pro b/QML_Movie_Renderer.pro
+index f1b92c3..937424c 100644
+--- a/QML_Movie_Renderer.pro
++++ b/QML_Movie_Renderer.pro
+@@ -13,3 +13,10 @@ HEADERS += \
+ 
+ FORMS += \
+     movierendererwindow.ui
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =QML_Movie_Renderer.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
