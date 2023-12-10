@@ -1,0 +1,22 @@
+package:
+  id: io.github.Super_Mario
+  name: Super_Mario
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt Super Mario game implementation.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/ArsMasiuk/Super_Mario.git"
+  commit: d7c120e0b5754bdb4f83cdab39733b0a8cc6bb1a
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake

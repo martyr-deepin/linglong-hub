@@ -1,0 +1,18 @@
+diff --git a/gameMainWindow.pro b/gameMainWindow.pro
+index f47b7e7..2ff020b 100644
+--- a/gameMainWindow.pro
++++ b/gameMainWindow.pro
+@@ -117,4 +117,13 @@ RESOURCES += \
+     mario.qrc \
+     audio.qrc
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += gameMainWindow.desktop
++INSTALLS += desktop
+ 
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = images/icon.ico
++INSTALLS += icons

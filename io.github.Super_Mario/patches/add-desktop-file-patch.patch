@@ -1,0 +1,11 @@
+diff --git a/gameMainWindow.desktop b/gameMainWindow.desktop
+new file mode 100644
+index 0000000..f010c6b
+--- /dev/null
++++ b/gameMainWindow.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=Super_Mario
++Exec=gameMainWindow %f
++Icon=icon
