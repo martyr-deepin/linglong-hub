@@ -1,0 +1,22 @@
+diff -Naur b/connectfour.desktop a/connectfour.desktop
+--- b/connectfour.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/connectfour.desktop	2023-12-10 20:56:30.208630334 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=connectfour
++Exec=connectfour
++Type=Application
+\ 文件尾没有换行符
+diff -Naur b/connectfour.pro a/connectfour.pro
+--- b/connectfour.pro	2023-12-10 20:55:16.521052391 +0800
++++ a/connectfour.pro	2023-12-10 20:55:55.976820761 +0800
+@@ -81,3 +81,8 @@
+ STATECHARTS +=
+ 
+ # QMAKE_MAC_SDK = macosx10.14
++
++desktop.files += connectfour.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++INSTALLS += target desktop
+\ 文件尾没有换行符
