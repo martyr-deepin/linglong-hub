@@ -1,0 +1,20 @@
+package:
+  id: io.github.tanks
+  name: tanks
+  version: 0.8.6
+  kind: app
+  description: |
+    2D game written in C++ & Qt for Windows, Linux and Android
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "git@github.com:anevero/tanks.git"
+  commit: eb2a9e0
+  patch: patches/fix.patch
+
+build:
+  kind: qmake

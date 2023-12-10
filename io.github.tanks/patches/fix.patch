@@ -1,0 +1,22 @@
+diff -Naur tanks-o/tanks.desktop tanks/tanks.desktop
+--- tanks-o/tanks.desktop	1970-01-01 08:00:00.000000000 +0800
++++ tanks/tanks.desktop	2023-12-10 16:58:46.239979382 +0800
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Name=Tanks
++Exec=Tanks
++Type=Application
++X-Deepin-Vendor=user-custom
+diff -Naur tanks-o/tanks.pro tanks/tanks.pro
+--- tanks-o/tanks.pro	2023-12-10 16:56:53.184406000 +0800
++++ tanks/tanks.pro	2023-12-10 16:59:07.335897170 +0800
+@@ -72,3 +72,9 @@
+ RC_ICONS = resources/app_icon.ico
+ 
+ VERSION = 0.8.6.0
++
++desktop.files += tanks.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop
