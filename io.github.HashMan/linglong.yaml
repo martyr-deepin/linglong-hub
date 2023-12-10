@@ -1,0 +1,21 @@
+package:
+  id: io.github.HashMan
+  name: HashMan
+  version: 1.0.0
+  kind: app
+  description: |
+    Qt based GUI application that calculates and verifies hash sums for files on Windows, Linux and MacOS.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/johanokl/HashMan.git
+  commit: 3580a29c0e3988cc996f6611d7baa8f3696c851d
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
