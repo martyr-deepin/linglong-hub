@@ -1,0 +1,21 @@
+package:
+  id: io.github.Infinity-Edge 
+  name: Infinity-Edge 
+  version: 0.0.1
+  kind: app
+  description: |
+    Alternative to the Android game "Infinity Loop". Based on the Qt-Framework. Features controllable level generation. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/Extorig/Infinity-Edge.git"
+  commit: 890bcfd
+  patch: patches/ab.patch
+
+build:
+  kind: qmake
