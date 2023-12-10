@@ -1,0 +1,19 @@
+package:
+  id: com.gitlab.Abstract-Games
+  name: Abstract-Games
+  version: 0.0.1
+  kind: app
+  description: |
+    A suite of classic arcade and board games.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitlab.com/abstractsoftware/abstract-games.git"
+  commit: 0e68adf4c3b28f134296fda1632051013e7cdd9e
+
+build:
+  kind: cmake
