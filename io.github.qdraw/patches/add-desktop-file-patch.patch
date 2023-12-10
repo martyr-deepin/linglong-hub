@@ -1,0 +1,10 @@
+diff --git a/app/qdraw.desktop b/app/qdraw.desktop
+new file mode 100644
+index 0000000..5ef62ac
+--- /dev/null
++++ b/app/qdraw.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=qdraw
++Exec=qdraw %f

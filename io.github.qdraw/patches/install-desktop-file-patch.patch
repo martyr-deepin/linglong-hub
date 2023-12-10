@@ -1,0 +1,15 @@
+diff --git a/app/app.pro b/app/app.pro
+index 29a211d..2e54712 100644
+--- a/app/app.pro
++++ b/app/app.pro
+@@ -40,3 +40,10 @@ HEADERS  += mainwindow.h \
+ 
+ RESOURCES += \
+     app.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += qdraw.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target

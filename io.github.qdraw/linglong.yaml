@@ -1,0 +1,22 @@
+package:
+  id: io.github.qdraw
+  name: qdraw
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt QGraphicsView drawing demo.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/wyyrepo/qdraw.git"
+  commit: 9039778893908d5038440f6de4a433c3b03aaac5
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake
