@@ -1,0 +1,19 @@
+package:
+  id: io.github.cutemill
+  name: cutemill
+  version: 0.0.1
+  kind: app
+  description: |
+    Cute Chess is a graphical user interface, command-line interface and a library for playing chess.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/calcitem/cutemill.git"
+  commit: 23beb096db53ee32ea505d91b9cd992c01b98d85
+
+build:
+  kind: cmake
