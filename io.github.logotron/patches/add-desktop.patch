@@ -1,0 +1,32 @@
+diff --git a/logotron.desktop b/logotron.desktop
+new file mode 100644
+index 0000000..7d9a2a5
+--- /dev/null
++++ b/logotron.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=logotron
++Exec=logotron %f
++Icon=logotron-blue
+diff --git a/logotron.pro b/logotron.pro
+index 2d1651f..c726a62 100644
+--- a/logotron.pro
++++ b/logotron.pro
+@@ -37,4 +37,15 @@ win32 {
+ RESOURCES += \
+     images.qrc
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += logotron.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = icon/logotron-blue.svg
++INSTALLS += icons
++
+ 
+
