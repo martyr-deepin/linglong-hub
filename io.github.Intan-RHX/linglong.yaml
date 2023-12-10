@@ -1,0 +1,22 @@
+package:
+  id: io.github.Intan-RHX
+  name: Intan-RHX
+  version: 3.3.0.1
+  kind: app
+  description: |
+    Intan RHX is free, powerful data acquisition software that displays and records electrophysiological signals from any Intan RHD or RHS system using an RHD USB interface board
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Intan-Technologies/Intan-RHX.git
+  commit: 0829e0b47cf4a9a2a961e5e597a678c7d4d1b096
+  patch: 
+    - patches/0001-install.patch
+    - patches/0002-install.patch
+
+build:
+  kind: qmake
