@@ -1,0 +1,21 @@
+package:
+  id: com.gitee.snake-qt5
+  name: snake-qt5
+  version: 0.0.1
+  kind: app
+  description: |
+    snake-qt5.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://gitee.com/wwhai/snake-qt5.git"
+  commit: 5f61be1
+  patch: patches/abc.patch
+
+build:
+  kind: qmake
