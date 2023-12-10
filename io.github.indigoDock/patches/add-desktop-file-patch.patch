@@ -1,0 +1,10 @@
+diff --git a/build/TestLayout.desktop b/build/TestLayout.desktop
+new file mode 100644
+index 0000000..a61a57e
+--- /dev/null
++++ b/build/TestLayout.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=TestLayout
++Exec=TestLayout %f

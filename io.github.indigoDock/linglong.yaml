@@ -1,0 +1,22 @@
+package:
+  id: io.github.indigoDock
+  name: indigoDock
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt Docking extension written for Scribus.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/wyyrepo/indigoDock.git"
+  commit: df4764fede2cb5b9c0493f972180760f54c02ae7
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake
