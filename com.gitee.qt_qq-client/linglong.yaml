@@ -1,0 +1,19 @@
+package:
+  id: com.gitee.qt_qq-client
+  name: qt_qq-client
+  version: 1.0.0
+  kind: app
+  description: |
+    C++实训项目客户端，基于Qt开发的仿qq聊天软件
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/chen-jm/qt_qq-client.git"
+  commit: 3372eaf
+  patch: patches/ab.patch
+build:
+  kind: qmake

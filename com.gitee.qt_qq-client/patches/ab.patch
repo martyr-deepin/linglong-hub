@@ -1,0 +1,29 @@
+diff -Naur b/QQClient.pro a/QQClient.pro
+--- b/QQClient.pro	2023-12-10 14:25:55.934817127 +0800
++++ a/QQClient.pro	2023-12-10 14:29:19.679300483 +0800
+@@ -47,9 +47,14 @@
+     chat.ui
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++#qnx: target.path = /tmp/$${TARGET}/bin
++#else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     qqimage.qrc
++desktop.files += qt_qq-client.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
++
++INSTALLS += target desktop
+diff -Naur b/qt_qq-client.desktop a/qt_qq-client.desktop
+--- b/qt_qq-client.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/qt_qq-client.desktop	2023-12-10 14:28:07.256394665 +0800
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Name=qt_qq-client
++Exec=QQClient
++Type=Application
++
