@@ -1,0 +1,11 @@
+diff --git a/Notepad--.desktop b/Notepad--.desktop
+new file mode 100644
+index 0000000..92cc624
+--- /dev/null
++++ b/Notepad--.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=Notepad--
++Exec=Notepad-- %f
++Icon=favicon

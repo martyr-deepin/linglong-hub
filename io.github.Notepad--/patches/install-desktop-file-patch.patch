@@ -1,0 +1,19 @@
+diff --git a/Notepad--.pro b/Notepad--.pro
+index a5355c8..d1c819a 100644
+--- a/Notepad--.pro
++++ b/Notepad--.pro
+@@ -48,3 +48,14 @@ RESOURCES += \
+     resources.qrc
+ 
+ win32:RC_ICONS += favicon.ico
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += Notepad--.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = favicon.ico
++INSTALLS += icons
