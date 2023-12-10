@@ -1,0 +1,30 @@
+diff --git a/spectrum.desktop b/spectrum.desktop
+new file mode 100644
+index 0000000..183d0d2
+--- /dev/null
++++ b/spectrum.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=spectrum
++Exec=spectrum %f
++Icon=spectrum_256
+diff --git a/spectrum.pro b/spectrum.pro
+index b999e8f..a31ef1a 100644
+--- a/spectrum.pro
++++ b/spectrum.pro
+@@ -65,3 +65,14 @@ HEADERS  += \
+     src/core/Modifiers.h \
+     src/widgets/DataGridPanel.h \
+     src/Settings.h
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += spectrum.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = img/icons/spectrum_256.png
++INSTALLS += icons
