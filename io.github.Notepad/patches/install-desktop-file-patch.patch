@@ -1,0 +1,19 @@
+diff --git a/Notepad.pro b/Notepad.pro
+index b8a4439..460b0b6 100644
+--- a/Notepad.pro
++++ b/Notepad.pro
+@@ -35,3 +35,14 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ 
+ RESOURCES += \
+     res.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += Notepad.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = favicon.ico
++INSTALLS += icons
