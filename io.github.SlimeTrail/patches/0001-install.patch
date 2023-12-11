@@ -1,0 +1,49 @@
+From 64ffabcd968b6c5262d89b3d44903fb80700e883 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 5 Dec 2023 15:43:12 +0800
+Subject: [PATCH] install
+
+---
+ SlimeTrail/SlimeTrail.desktop | 8 ++++++++
+ SlimeTrail/SlimeTrail.pro     | 8 +++++++-
+ 2 files changed, 15 insertions(+), 1 deletion(-)
+ create mode 100644 SlimeTrail/SlimeTrail.desktop
+
+diff --git a/SlimeTrail/SlimeTrail.desktop b/SlimeTrail/SlimeTrail.desktop
+new file mode 100644
+index 0000000..361d421
+--- /dev/null
++++ b/SlimeTrail/SlimeTrail.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=SlimeTrail
++Name=SlimeTrail
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/SlimeTrail/SlimeTrail.pro b/SlimeTrail/SlimeTrail.pro
+index d7bfb50..4023c86 100644
+--- a/SlimeTrail/SlimeTrail.pro
++++ b/SlimeTrail/SlimeTrail.pro
+@@ -29,8 +29,14 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     SlimeTrail.qrc
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =SlimeTrail.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
