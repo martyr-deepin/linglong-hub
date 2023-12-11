@@ -1,0 +1,48 @@
+From 3cf5f85c32773c31b67aae355e414c5516566cd3 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Sun, 10 Dec 2023 21:52:08 +0800
+Subject: [PATCH] 1
+
+---
+ main.pro       | 11 +++++++++++
+ window.desktop |  9 +++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 window.desktop
+
+diff --git a/main.pro b/main.pro
+index 998ad68..eaf6ec6 100755
+--- a/main.pro
++++ b/main.pro
+@@ -16,3 +16,14 @@ RESOURCES += application.qrc
+ LIBS += -lhunspell-1.7
+ 
+ INCLUDEPATH += /usr/share/hunspell
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =window.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = images/save.png
++INSTALLS += icons
++
+diff --git a/window.desktop b/window.desktop
+new file mode 100644
+index 0000000..9192e3c
+--- /dev/null
++++ b/window.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=window
++Name=window
++StartupNotify=false
++Terminal=false
++Icon=save
++Type=Application
++X-Deepin-Vendor=user-custom
+-- 
+2.33.1
+

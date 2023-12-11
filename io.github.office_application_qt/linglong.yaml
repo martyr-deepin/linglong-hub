@@ -1,0 +1,22 @@
+package:
+  id: io.github.office_application_qt 
+  name: office_application_qt
+  version: 0.0.1
+  kind: app
+  description: |
+    Office Application QT
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/mcrayssac/office_application_qt.git"
+  commit: 80989e13dffd1840e0ffb80ebb10b1e94fa5c29d
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
