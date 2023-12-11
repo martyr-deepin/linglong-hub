@@ -1,0 +1,30 @@
+diff --git a/afsk1200dec.desktop b/afsk1200dec.desktop
+new file mode 100644
+index 0000000..9f9e10e
+--- /dev/null
++++ b/afsk1200dec.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=afsk1200dec
++Exec=afsk1200dec %f
++Icon=qtmm
+diff --git a/qtmm.pro b/qtmm.pro
+index 48d0aa6..b22f2af 100644
+--- a/qtmm.pro
++++ b/qtmm.pro
+@@ -55,3 +55,14 @@ OTHER_FILES += \
+ 
+ RESOURCES += \
+     qtmm.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += afsk1200dec.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = icons/qtmm.png
++INSTALLS += icons
