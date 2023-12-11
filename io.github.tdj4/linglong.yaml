@@ -1,0 +1,22 @@
+package:
+  id: io.github.tdj4 
+  name: tdj4
+  version: 0.0.1
+  kind: app
+  description: |
+    Personal Information Manager , a program which manages daily notes,appointments, alarms, to-do lists, contacts, addresses, etc.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/letapk/tdj4.git"
+  commit: ae71170827e3d1aa3171bf3bd31a932c51743db4
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
