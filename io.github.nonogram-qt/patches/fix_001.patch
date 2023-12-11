@@ -1,0 +1,21 @@
+--- ../nonogram-qt.pro	2023-12-11 20:58:48.670641000 +0800
++++ ../nonogram-qt.pro	2023-12-11 20:57:50.774395000 +0800
+@@ -15,3 +15,18 @@
+            solver.cpp
+ TRANSLATIONS += translations/nonogram_sv.ts translations/nonogram_fi.ts
+ RESOURCES += nonogram-qt.qrc
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++
++DESKTOP_FILE = ./nonogram-qt.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=nonogram-qt' >> $$DESKTOP_FILE")
++system("echo 'Comment=nonogram-qt.' >> $$DESKTOP_FILE")
++system("echo 'Exec=nonogram-qt' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop

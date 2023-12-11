@@ -1,0 +1,21 @@
+package:
+  id: io.github.nonogram-qt
+  name: nonogram-qt
+  version: 0.0.1
+  kind: app
+  description: |
+    A nonogram puzzle game.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/dsuni/nonogram-qt.git
+  commit: f4a22b3c20528877c36cccd1093a5a627f2a7db5
+  patch: patches/fix_001.patch  
+
+build:
+  kind: qmake
