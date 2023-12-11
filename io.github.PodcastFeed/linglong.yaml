@@ -1,0 +1,21 @@
+package:
+  id: io.github.PodcastFeed
+  name: PodcastFeed
+  version: 0.0.1
+  kind: app
+  description: |
+    Podcast Player using RSS Feeds to keep track of Podcasts.The user enters an link to the iTunes/RSS podcast page. The program will remember the link, and fetch the xml data for the podcast into the users Documents directory.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/pureooze/PodcastFeed.git"
+  commit: 2e7bf934faf46989658cb1d049be25ed6520b18a
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake

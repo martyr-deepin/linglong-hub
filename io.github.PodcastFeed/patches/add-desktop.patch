@@ -1,0 +1,25 @@
+diff --git a/PodcastFeed.desktop b/PodcastFeed.desktop
+new file mode 100644
+index 0000000..82db95c
+--- /dev/null
++++ b/PodcastFeed.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=Podcast Feed
++Exec=PodcastFeed %f
+diff --git a/PodcastFeed.pro b/PodcastFeed.pro
+index cc9d91b..bbd1639 100644
+--- a/PodcastFeed.pro
++++ b/PodcastFeed.pro
+@@ -38,3 +38,10 @@ DISTFILES +=
+ 
+ RESOURCES += \
+     imageresources.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += PodcastFeed.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
