@@ -1,0 +1,44 @@
+From 31d9e92b4e180bb66cfbfd9f0e504edfbf6baf8e Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 5 Dec 2023 15:27:55 +0800
+Subject: [PATCH] install
+
+---
+ Connect4/Connect4.desktop | 8 ++++++++
+ Connect4/Connect4.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 Connect4/Connect4.desktop
+
+diff --git a/Connect4/Connect4.desktop b/Connect4/Connect4.desktop
+new file mode 100644
+index 0000000..2bed98e
+--- /dev/null
++++ b/Connect4/Connect4.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Connect4
++Name=Connect4
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/Connect4/Connect4.pro b/Connect4/Connect4.pro
+index 5f69f92..94b8e98 100644
+--- a/Connect4/Connect4.pro
++++ b/Connect4/Connect4.pro
+@@ -25,3 +25,10 @@ FORMS    += Connect4.ui
+ 
+ RESOURCES += \
+     Connect4.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Connect4.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
