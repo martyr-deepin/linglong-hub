@@ -1,0 +1,31 @@
+package:
+  id: io.github.CloudNote 
+  name: CloudNote
+  version: 0.0.1
+  kind: app
+  description: |
+   A simple cloud note keeping app built with Qt, C++, and Firebase
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/HasiruNavodya/CloudNote.git"
+  commit: 3a3743d67430467f7122cae48c32e5058ca90188
+  patch:
+    - patches/0001-1.patch
+
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd CloudNote 
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
