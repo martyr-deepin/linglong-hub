@@ -1,0 +1,51 @@
+From 66effd675b0685075c25b8ce7ea54d4aadb03061 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 5 Dec 2023 15:22:30 +0800
+Subject: [PATCH] install
+
+---
+ Catch/Catch.desktop | 8 ++++++++
+ Catch/Catch.pro     | 9 ++++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 Catch/Catch.desktop
+
+diff --git a/Catch/Catch.desktop b/Catch/Catch.desktop
+new file mode 100644
+index 0000000..a9c824a
+--- /dev/null
++++ b/Catch/Catch.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Catch
++Name=Catch
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/Catch/Catch.pro b/Catch/Catch.pro
+index 801e43d..e43e9b9 100644
+--- a/Catch/Catch.pro
++++ b/Catch/Catch.pro
+@@ -31,8 +31,15 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     Catch.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Catch.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
