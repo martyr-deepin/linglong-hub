@@ -1,0 +1,50 @@
+From 437d4b08d78537b856b4b2c5dc62595c2641697b Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 5 Dec 2023 15:12:22 +0800
+Subject: [PATCH] install
+
+---
+ Achi/Achi.desktop | 8 ++++++++
+ Achi/Achi.pro     | 9 ++++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 Achi/Achi.desktop
+
+diff --git a/Achi/Achi.desktop b/Achi/Achi.desktop
+new file mode 100644
+index 0000000..2fd26e4
+--- /dev/null
++++ b/Achi/Achi.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Achi
++Name=Achi
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/Achi/Achi.pro b/Achi/Achi.pro
+index 57206ec..e70ec9d 100644
+--- a/Achi/Achi.pro
++++ b/Achi/Achi.pro
+@@ -29,8 +29,15 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     Achi.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Achi.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
