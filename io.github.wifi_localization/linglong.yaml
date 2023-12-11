@@ -1,0 +1,20 @@
+package:
+  id: io.github.wifi_localization
+  name: wifi_localization
+  version: 1.0.0
+  kind: app
+  description: |
+    The source code of the GUI software for WiFi localization.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/yuxiangsun/wifi_localization.git
+  commit: 2368974e825c746de2ac704040f18641f7b8f2ac
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

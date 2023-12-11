@@ -1,0 +1,43 @@
+From 6b24984feabbc434151526a68f1490e37bb362a3 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 8 Dec 2023 12:18:49 +0800
+Subject: [PATCH] install
+
+---
+ wifi_localization.desktop | 8 ++++++++
+ wifi_localization.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 wifi_localization.desktop
+
+diff --git a/wifi_localization.desktop b/wifi_localization.desktop
+new file mode 100644
+index 0000000..24174a4
+--- /dev/null
++++ b/wifi_localization.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=wifi_localization
++Name=wifi_localization
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/wifi_localization.pro b/wifi_localization.pro
+index 4aba8d7..e8808a5 100644
+--- a/wifi_localization.pro
++++ b/wifi_localization.pro
+@@ -27,3 +27,10 @@ OTHER_FILES +=
+ 
+ RESOURCES += \
+     wifi_localization.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =wifi_localization.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
