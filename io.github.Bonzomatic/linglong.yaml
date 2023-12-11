@@ -1,0 +1,19 @@
+package:
+  id: io.github.Bonzomatic
+  name: Bonzomatic
+  version: 0.0.1
+  kind: app
+  description: |
+    This is a live-coding tool, where you can write a 2D fragment/pixel shader while it is running in the background.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Gargaj/Bonzomatic.git"
+  commit: 84ed5e7911f5ab8f68fdc2ce40f9b2cfedc8a420
+
+build:
+  kind: cmake 
