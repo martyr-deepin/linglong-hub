@@ -1,0 +1,27 @@
+--- ../avignon.pro	2023-12-11 21:23:29.799020000 +0800
++++ ../avignon.pro	2023-12-11 21:29:10.118321000 +0800
+@@ -7,3 +7,24 @@
+ # Input
+ HEADERS += deck.h subtile.h table.h terrain.h tile.h mainwindow.h tileimage.h gamecreation.h tablelabel.h player.h follower.h followertype.h followerplacer.h imagelayer.h occupationmapper.h const.h piece.h dragonmover.h
+ SOURCES += deck.cpp main.cpp subtile.cpp table.cpp tile.cpp mainwindow.cpp tileimage.cpp gamecreation.cpp tablelabel.cpp player.cpp follower.cpp followerplacer.cpp occupationmapper.cpp piece.cpp dragonmover.cpp
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++
++DESKTOP_FILE = ./avignon.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=avignon' >> $$DESKTOP_FILE")
++system("echo 'Comment=avignon.' >> $$DESKTOP_FILE")
++system("echo 'Exec=avignon' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++svg_file.files += $$PWD/graphics/
++svg_file.path = $$PREFIX/bin/
++INSTALLS += svg_file
++decks_file.files += $$PWD/decks/
++decks_file.path = $$PREFIX/bin/
++INSTALLS += decks_file

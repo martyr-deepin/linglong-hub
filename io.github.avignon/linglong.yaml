@@ -1,0 +1,21 @@
+package:
+  id: io.github.avignon
+  name: avignon
+  version: 0.0.1
+  kind: app
+  description: |
+    A free software version of the board game Carcassonne.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/dsuni/avignon.git
+  commit: fad6bb11ea9bd090ba4cf3695f942e3563aa53fc
+  patch: patches/fix_001.patch
+
+build:
+  kind: qmake
