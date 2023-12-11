@@ -1,0 +1,22 @@
+package:
+  id: io.github.Qtomato 
+  name: Qtomato
+  version: 0.0.1
+  kind: app
+  description: |
+    A cross-platform app built using Qt5 to follow Pomodoro Technique
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/mdminhazulhaque/Qtomato.git"
+  commit: b0b85ec564e4d917e2117c7440b545d3b565ef48
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
