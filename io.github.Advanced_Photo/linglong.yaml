@@ -1,0 +1,25 @@
+package:
+  id: io.github.Advanced_Photo
+  name: Advanced_Photo
+  version: 1.5.5
+  kind: app
+  description: |
+    The software allows you to open a wide variety of image formats, including some of the popular types, such as JPEG, BMP, GIF, and PNG.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/ARASHz4/Advanced_Photo.git"
+  commit: 9d80645ae84ee644afd96daca78456892eb657ca
+  patch:
+    - patches/fix-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd Source
+      qmake -makefile ${conf_args} ${extra_args}

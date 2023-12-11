@@ -1,0 +1,34 @@
+diff --git a/Source/Advanced_Photo.pro b/Source/Advanced_Photo.pro
+index 8e2e5eb..ce13a71 100644
+--- a/Source/Advanced_Photo.pro
++++ b/Source/Advanced_Photo.pro
+@@ -66,3 +66,14 @@ DISTFILES += \
+     Mac/APIFile.icns \
+     Linux/AdvancedPhoto.desktop \
+     Linux/APIcon.png \
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += Linux/AdvancedPhoto.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = Linux/APIcon.png
++INSTALLS += icons
+diff --git a/Source/Linux/AdvancedPhoto.desktop b/Source/Linux/AdvancedPhoto.desktop
+index 1593f49..fc3fc15 100644
+--- a/Source/Linux/AdvancedPhoto.desktop
++++ b/Source/Linux/AdvancedPhoto.desktop
+@@ -4,8 +4,8 @@ Comment=Advanced Photo View & Rotate & Flip & Resize Photos
+ Version=1.5.5
+ Type=Application
+ GenericName=Photo Viewer
+-Exec=AdvancedPhoto %f
+-Icon=AdvancedPhoto.png
++Exec=Advanced\ Photo %f
++Icon=APIcon
+ StartupNotify=true
+ Terminal=false
+ NoDisplay=false
