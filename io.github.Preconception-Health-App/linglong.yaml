@@ -1,0 +1,22 @@
+package:
+  id: io.github.Preconception-Health-App 
+  name: Preconception-Health-App
+  version: 0.0.1
+  kind: app
+  description: |
+    this is an app for anyone of reproductive age.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/mi7flat5/Preconception-Health-App.git"
+  commit: 0307410bf62df75b412588a52e24bf0b82842b49
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
