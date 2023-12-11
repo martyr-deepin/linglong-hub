@@ -1,0 +1,44 @@
+From b7316384cc5d4f2b982d112ed41459b6a76f8900 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Mon, 11 Dec 2023 15:38:48 +0800
+Subject: [PATCH] 1
+
+---
+ Qtomato.desktop | 8 ++++++++
+ Qtomato.pro     | 8 ++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 Qtomato.desktop
+
+diff --git a/Qtomato.desktop b/Qtomato.desktop
+new file mode 100644
+index 0000000..2d715c2
+--- /dev/null
++++ b/Qtomato.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Qtomato
++Name=Qtomato
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Qtomato.pro b/Qtomato.pro
+index c5fba5b..8ebad53 100644
+--- a/Qtomato.pro
++++ b/Qtomato.pro
+@@ -15,3 +15,11 @@ FORMS    += qtomato.ui
+ 
+ RESOURCES += \
+     res.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Qtomato.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+-- 
+2.33.1
+
