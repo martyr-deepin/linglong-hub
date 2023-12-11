@@ -1,0 +1,47 @@
+From 296243ce0855fd07137fb0716a1c3b5713842073 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 8 Dec 2023 12:59:05 +0800
+Subject: [PATCH] install
+
+---
+ MathMod.desktop |  9 +++++++++
+ MathMod.pro     | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 MathMod.desktop
+
+diff --git a/MathMod.desktop b/MathMod.desktop
+new file mode 100644
+index 0000000..c88e8ab
+--- /dev/null
++++ b/MathMod.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=MathMod
++Name=MathMod
++Icon=mmico
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/MathMod.pro b/MathMod.pro
+index 2e2fbf1..6209b26 100644
+--- a/MathMod.pro
++++ b/MathMod.pro
+@@ -67,3 +67,13 @@ target.path    = $TARGET
+ sources.files  = $$SOURCES $$HEADERS $$RESOURCES $$FORMS mathmod.pro
+ sources.path   = $TARGET
+ INSTALLS      += target sources
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =MathMod.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = mmico.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
++
+-- 
+2.33.1
+
