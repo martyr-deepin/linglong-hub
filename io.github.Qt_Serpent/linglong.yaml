@@ -1,0 +1,22 @@
+package:
+  id: io.github.Qt_Serpent 
+  name: Qt_Serpent
+  version: 0.0.1
+  kind: app
+  description: |
+    贪吃蛇小游戏
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/sarakata64/Qt_Serpent.git"
+  commit: 5524419edcb9e7cda4b825d8f89214fe4f38250b
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
