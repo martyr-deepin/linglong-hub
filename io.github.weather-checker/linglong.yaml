@@ -1,0 +1,22 @@
+package:
+  id: io.github.weather-checker 
+  name: weather-checker
+  version: 0.0.1
+  kind: app
+  description: |
+    This is a GUI application that can be used to check the weather in a specified place in the world. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/kowalskikamil90/weather-checker.git"
+  commit: fcb22f144542cc936c94737201506a995ca090cf
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
