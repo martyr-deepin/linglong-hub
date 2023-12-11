@@ -1,0 +1,34 @@
+package:
+  id: io.github.family-gobang 
+  name: family-gobang
+  version: 0.0.1
+  kind: app
+  description: |
+    a family gobang game in network
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: icu
+    version: 63.1.0
+    type: runtime
+
+source:
+  kind: git
+  url: "https://github.com/mY-fan/family-gobang.git"
+  commit: 5b0bdb07454d52714f8570086cf584bf31fe7b3f
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd Gobang
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

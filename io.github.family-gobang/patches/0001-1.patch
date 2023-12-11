@@ -1,0 +1,44 @@
+From 0597b2dc33bd0d2cca6bbe0047a102c18ba24960 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Mon, 11 Dec 2023 16:25:20 +0800
+Subject: [PATCH] 1
+
+---
+ Gobang/Gobang.desktop | 8 ++++++++
+ Gobang/Gobang.pro     | 8 ++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 Gobang/Gobang.desktop
+
+diff --git a/Gobang/Gobang.desktop b/Gobang/Gobang.desktop
+new file mode 100644
+index 0000000..ccc8dad
+--- /dev/null
++++ b/Gobang/Gobang.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Gobang
++Name=Gobang
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Gobang/Gobang.pro b/Gobang/Gobang.pro
+index d5f6a06..5a118cb 100644
+--- a/Gobang/Gobang.pro
++++ b/Gobang/Gobang.pro
+@@ -18,3 +18,11 @@ SOURCES += main.cpp\
+ 
+ HEADERS  += widget.h \
+     piece.h
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Gobang.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+-- 
+2.33.1
+
