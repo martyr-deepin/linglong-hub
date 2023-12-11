@@ -1,0 +1,48 @@
+From b914eadbdfa9aa51268f634eac5b2997ee9ef30f Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Mon, 11 Dec 2023 15:20:08 +0800
+Subject: [PATCH] 1
+
+---
+ QPolygonMaker.desktop |  9 +++++++++
+ QPolygonMaker.pro     | 11 +++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 QPolygonMaker.desktop
+
+diff --git a/QPolygonMaker.desktop b/QPolygonMaker.desktop
+new file mode 100644
+index 0000000..11e09d9
+--- /dev/null
++++ b/QPolygonMaker.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QPolygonMaker
++Name=QPolygonMaker
++StartupNotify=false
++Terminal=false
++Icon=polygon
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/QPolygonMaker.pro b/QPolygonMaker.pro
+index 905bbf6..57e4e62 100644
+--- a/QPolygonMaker.pro
++++ b/QPolygonMaker.pro
+@@ -42,3 +42,14 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RC_ICONS += $${PWD}/Resources/polygon.ico
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =QPolygonMaker.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = Resources/polygon.ico
++INSTALLS += icons
++
+-- 
+2.33.1
+
