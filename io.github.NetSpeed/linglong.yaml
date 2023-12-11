@@ -1,0 +1,21 @@
+package:
+  id: io.github.NetSpeed
+  name: NetSpeed
+  version: 2.3.0
+  kind: app
+  description: |
+     NetSpeed 是一款轻量的实时网速悬浮窗口（支持任意 Linux 发行版）.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+
+source:
+  kind: git
+  url: https://github.com/XMuli/NetSpeed.git
+  commit: 75846303b3c54bd75796948f3e6bbecfc62e3f7b
+  patch: patches/0001-fix-install.patch
+
+build:
+  kind: cmake
