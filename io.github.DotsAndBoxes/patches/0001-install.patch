@@ -1,0 +1,45 @@
+From 5d4b9cc5d2752e9e2ae691c4f0da42b28ac60d77 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 5 Dec 2023 15:31:44 +0800
+Subject: [PATCH] install
+
+---
+ DotsAndBoxes/DotsAndBoxes.desktop | 8 ++++++++
+ DotsAndBoxes/DotsAndBoxes.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 DotsAndBoxes/DotsAndBoxes.desktop
+
+diff --git a/DotsAndBoxes/DotsAndBoxes.desktop b/DotsAndBoxes/DotsAndBoxes.desktop
+new file mode 100644
+index 0000000..556b7f8
+--- /dev/null
++++ b/DotsAndBoxes/DotsAndBoxes.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=DotsAndBoxes
++Name=DotsAndBoxes
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/DotsAndBoxes/DotsAndBoxes.pro b/DotsAndBoxes/DotsAndBoxes.pro
+index 4c65a99..d272bce 100644
+--- a/DotsAndBoxes/DotsAndBoxes.pro
++++ b/DotsAndBoxes/DotsAndBoxes.pro
+@@ -38,3 +38,10 @@ FORMS    += DotsAndBoxes.ui
+ 
+ RESOURCES += \
+     DotsAndBoxes.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =DotsAndBoxes.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
