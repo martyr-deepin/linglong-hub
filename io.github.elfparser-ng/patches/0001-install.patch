@@ -1,0 +1,41 @@
+From dcf05cb05958e9b3d70495455e36d48c4f278868 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 6 Dec 2023 14:13:55 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt                 | 3 +++
+ build_dir/elfparser-ng.desktop | 8 ++++++++
+ 2 files changed, 11 insertions(+)
+ create mode 100644 build_dir/elfparser-ng.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index e10bf78..6d15c83 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -268,3 +268,6 @@ else()
+         INCLUDE(CPack)
+     endif()
+ endif()
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/elfparser-ng.desktop DESTINATION share/applications)
++install(TARGETS elfparser-ng DESTINATION bin)
+\ No newline at end of file
+diff --git a/build_dir/elfparser-ng.desktop b/build_dir/elfparser-ng.desktop
+new file mode 100644
+index 0000000..fa7b5e1
+--- /dev/null
++++ b/build_dir/elfparser-ng.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=elfparser-ng
++Name=elfparser-ng
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+-- 
+2.33.1
+

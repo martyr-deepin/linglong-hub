@@ -1,0 +1,23 @@
+package:
+  id: io.github.elfparser-ng
+  name: elfparser-ng
+  version: 1.6.0
+  kind: app
+  description: |
+    Multiplatform CLI and GUI tool to show information about ELF files.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: boost-defaults/1.74.0.3
+
+source:
+  kind: git
+  url: https://github.com/mentebinaria/elfparser-ng.git
+  commit: 1a2c69fecf3896cfcfdd778231490d6fbdbf9306
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
