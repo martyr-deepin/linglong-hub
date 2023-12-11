@@ -1,0 +1,21 @@
+package:
+  id: io.github.qtmm
+  name: qtmm
+  version: 0.0.1
+  kind: app
+  description: |
+    An obsolete AFSK1200 decoder that uses the soundcard as input device.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/csete/qtmm.git"
+  commit: bd7e0b5e3def869a996ef4c8f872d934f3994ef2
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
