@@ -1,0 +1,44 @@
+From 1327719724e294bec017ecb569307b9ced586497 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 5 Dec 2023 15:37:58 +0800
+Subject: [PATCH] install
+
+---
+ PegSolitaire/PegSolitaire.desktop | 8 ++++++++
+ PegSolitaire/PegSolitaire.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 PegSolitaire/PegSolitaire.desktop
+
+diff --git a/PegSolitaire/PegSolitaire.desktop b/PegSolitaire/PegSolitaire.desktop
+new file mode 100644
+index 0000000..565a017
+--- /dev/null
++++ b/PegSolitaire/PegSolitaire.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=PegSolitaire
++Name=PegSolitaire
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/PegSolitaire/PegSolitaire.pro b/PegSolitaire/PegSolitaire.pro
+index 30c14d3..4404862 100644
+--- a/PegSolitaire/PegSolitaire.pro
++++ b/PegSolitaire/PegSolitaire.pro
+@@ -25,3 +25,10 @@ FORMS    += PegSolitaire.ui
+ 
+ RESOURCES += \
+     PegSolitaire.qrc
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =PegSolitaire.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+-- 
+2.33.1
+
