@@ -1,0 +1,20 @@
+package:
+  id: io.github.qmbox
+  name: qmbox
+  version: 0.0.1
+  kind: app
+  description: |
+    QT mathematics box
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/hselasky/qmbox.git
+  commit: ca5f53f2bc8253b4138f32b27c6aba0fb873cdd2
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
