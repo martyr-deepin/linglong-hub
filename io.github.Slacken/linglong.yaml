@@ -1,0 +1,24 @@
+package:
+  id: io.github.Slacken
+  name: Slacken
+  version: 0.0.1
+  kind: app
+  description: |
+     Slacken, a lightweight Qt Slack client.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtnetworkauth/5.15.7
+    type: runtime
+
+
+source:
+  kind: git
+  url: https://github.com/pinaraf/Slacken.git
+  commit: 712a019a734327f724f05066c5ecd1a915826a38
+  patch: patches/0001-fix-install.patch
+ 
+build: 
+  kind: qmake

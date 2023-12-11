@@ -1,0 +1,47 @@
+From 0e20d249c2b5768193f6c1557ae7a5741d3b07d8 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Mon, 11 Dec 2023 23:15:31 +0800
+Subject: [PATCH] fix-install
+
+---
+ Slacken.desktop |  8 ++++++++
+ Slacken.pro     | 11 +++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 Slacken.desktop
+
+diff --git a/Slacken.desktop b/Slacken.desktop
+new file mode 100644
+index 0000000..857dba1
+--- /dev/null
++++ b/Slacken.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Exec=Slacken
++Name=Slacken
++Icon=base-icon.png
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Slacken.pro b/Slacken.pro
+index dd427c9..b248f00 100644
+--- a/Slacken.pro
++++ b/Slacken.pro
+@@ -36,3 +36,14 @@ FORMS += \
+ 
+ RESOURCES += \
+     main.qrc
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = Slacken.desktop
++desktop.path = $$DATADIR/applications/
++icon.files=base-icon.png
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+-- 
+2.33.1
+
