@@ -1,0 +1,21 @@
+package:
+  id: io.github.fantascene-dynamic-wallpaper
+  name: fantascene-dynamic-wallpaper 
+  version: 1.6.4
+  kind: app
+  description: |
+      Managed animated wallpaper based on X11 under Linux.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: mpv/0.34.1.2
+  - id: lapack/3.8.0.1
+source:
+  kind: git
+  url: https://github.com/dependon/fantascene-dynamic-wallpaper.git
+  commit: e109d8e77dae8bbb88480aac35e86549c217a3f1
+
+build:
+  kind: qmake
