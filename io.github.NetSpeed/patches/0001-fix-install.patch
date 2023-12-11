@@ -1,0 +1,123 @@
+From 0749cce326d69f40870993888f1efd10c59a29d3 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Mon, 11 Dec 2023 21:31:44 +0800
+Subject: [PATCH] fix-install
+
+---
+ CMakeLists.txt            | 16 +++++++++++-----
+ WinSetting.cpp            | 12 ++++++++----
+ lib/CMakeLists.txt        |  2 +-
+ resource/NetSpeed.desktop |  4 ++--
+ 4 files changed, 22 insertions(+), 12 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 7dc6f10..4472071 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -27,6 +27,11 @@ qt5_create_translation(QM_FILES ${CMAKE_CURRENT_SOURCE_DIR} ${TS_FILES})
+ add_subdirectory(lib)
+ add_subdirectory(dde-dock-plugin)
+ 
++
++##添加路径宏
++add_definitions(-Dpre_fix="${CMAKE_INSTALL_PREFIX}" )
++
++
+ # 加入一个配置头文件，用于处理 CMake 对源码的设置
+ #configure_file("${CMAKE_CURRENT_SOURCE_DIR}/config.h.in"
+ #               "${CMAKE_CURRENT_BINARY_DIR}/config.h")
+@@ -42,10 +47,11 @@ file(GLOB DIR "widgets/*.h" "widgets/*.cpp" "widgets/*.ui" "*.h" "*.hpp" "*.cpp"
+ add_executable(${PROJECT_NAME} ${DIR} ${QM_FILES})
+ target_link_libraries(${PROJECT_NAME} MonitorInfo)   #NetPlugins
+ 
+-install(FILES "./resource/data/NetSpeed.json" DESTINATION "/usr/share/NetSpeed")
+-install(FILES "./resource/images/NetSpeed.svg" DESTINATION "/usr/share/NetSpeed")
+-install(FILES "./resource/NetSpeed.desktop" DESTINATION "/usr/share/applications")
++
++install(FILES "./resource/data/NetSpeed.json" DESTINATION "${CMAKE_INSTALL_PREFIX}/share/NetSpeed")
++install(FILES "./resource/images/NetSpeed.svg" DESTINATION "${CMAKE_INSTALL_PREFIX}/share/NetSpeed")
++install(FILES "./resource/NetSpeed.desktop" DESTINATION "${CMAKE_INSTALL_PREFIX}/share/applications")
+ file(GLOB TRANSLATIONS "${CMAKE_CURRENT_BINARY_DIR}/*.qm")  # 要带上构建生成的路径
+ install(FILES ${TRANSLATIONS}
+-        DESTINATION "/usr/share/NetSpeed/translations")
+-install(TARGETS ${PROJECT_NAME} DESTINATION "/usr/bin/NetSpeed")
++        DESTINATION "${CMAKE_INSTALL_PREFIX}/share/NetSpeed/translations")
++install(TARGETS ${PROJECT_NAME} DESTINATION "${CMAKE_INSTALL_PREFIX}/bin")
+diff --git a/WinSetting.cpp b/WinSetting.cpp
+index 129e053..c78abaa 100644
+--- a/WinSetting.cpp
++++ b/WinSetting.cpp
+@@ -18,6 +18,10 @@
+ #include <QDate>
+ #include <QFileDialog>
+ #include <QFile>
++
++#ifndef pre_fix
++#define pre_fix 
++#endif
+ using namespace std;
+ 
+ WinSetting::WinSetting(QWidget *parent)
+@@ -406,7 +410,7 @@ QString WinSetting::getConfigPath(bool& isHomePath)
+     QString name("/NetSpeed/NetSpeed.json");
+ 
+     QString homePath = QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + name;
+-    QString systemPath("/usr/share");
++    QString systemPath(pre_fix"/share");
+     homePath += name;
+     systemPath += name;
+ 
+@@ -445,7 +449,7 @@ QString WinSetting::getConfigPath(QString systemPath, QString homePath, bool& is
+ QString WinSetting::writeDataToConfigPath()
+ {
+     QString name("/NetSpeed/NetSpeed.json");
+-    QString sour = QString("/usr/share") + name;
++    QString sour = QString(pre_fix"/share") + name;
+     QString dest = QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first() + name;
+     QString sourName = sour;
+     QString destName = dest;
+@@ -618,7 +622,7 @@ void WinSetting::onComboBoxLanguage(int index)
+ {
+     QString language(QLocale().name());
+     language = ui->comboBoxLanguage->itemData(index).toString();
+-    bool ok = m_trans->load("/usr/share/NetSpeed/translations/" + language + ".qm"); // /usr/share/NetSpeed/translations/
++    bool ok = m_trans->load(pre_fix"/share/NetSpeed/translations/" + language + ".qm"); // /usr/share/NetSpeed/translations/
+ //    qDebug()<< "----@1--->" << "/usr/share/NetSpeed/translations/" + language + ".qm" << ok ;
+     QCoreApplication::installTranslator(m_trans);
+ }
+@@ -654,7 +658,7 @@ void WinSetting::onExportData(bool checked)
+     if (ui->radioCustomPath->isChecked()) {
+         path = QString(QStandardPaths::standardLocations(QStandardPaths::ConfigLocation).first()) + name;
+     } else {
+-        path = QString("/usr/share") + name;
++        path = QString(pre_fix"/share") + name;
+     }
+ 
+     if (!QFile::exists(path)) {
+diff --git a/lib/CMakeLists.txt b/lib/CMakeLists.txt
+index 79f43ae..2f7d49b 100644
+--- a/lib/CMakeLists.txt
++++ b/lib/CMakeLists.txt
+@@ -4,4 +4,4 @@ file(GLOB DIR_LIB "*.h" "*.cpp")
+ add_library(${LIB_SHARED_NAME} SHARED ${DIR_LIB})  # 生成动态库 MonitorInfo，
+ target_link_libraries(${LIB_SHARED_NAME} PUBLIC ${REQUIRED_LIBS_QUALIFIED}) # 链接外部 Qt 库，且共享
+ 
+-install(TARGETS ${LIB_SHARED_NAME} LIBRARY DESTINATION /usr/lib)
++install(TARGETS ${LIB_SHARED_NAME} LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
+diff --git a/resource/NetSpeed.desktop b/resource/NetSpeed.desktop
+index be90677..eb629a4 100644
+--- a/resource/NetSpeed.desktop
++++ b/resource/NetSpeed.desktop
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Encoding=UTF-8
+-Exec=/usr/bin/NetSpeed/NetSpeed
+-Icon=/usr/share/NetSpeed/NetSpeed.svg
++Exec=NetSpeed
++Icon=share/NetSpeed/NetSpeed.svg
+ Name=NetSpeed
+ Terminal=false
+ Type=Application
+-- 
+2.33.1
+
