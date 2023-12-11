@@ -1,0 +1,44 @@
+From ead6183679a428f7cd4cfdf2dda97ccadfbec9d8 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Mon, 11 Dec 2023 15:43:32 +0800
+Subject: [PATCH] 1
+
+---
+ Salarios.desktop | 8 ++++++++
+ Salarios.pro     | 8 ++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 Salarios.desktop
+
+diff --git a/Salarios.desktop b/Salarios.desktop
+new file mode 100644
+index 0000000..df73ed7
+--- /dev/null
++++ b/Salarios.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Salarios
++Name=Salarios
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Salarios.pro b/Salarios.pro
+index 3952e8a..3b04fe4 100644
+--- a/Salarios.pro
++++ b/Salarios.pro
+@@ -29,3 +29,11 @@ FORMS += \
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Salarios.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+-- 
+2.33.1
+
