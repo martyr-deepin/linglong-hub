@@ -1,0 +1,31 @@
+package:
+  id: io.github.QtTickTackToe 
+  name: QtTickTackToe
+  version: 1.0.0
+  kind: app
+  description: |
+    a game written with Qt library.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/EgorAlmikeev/QtTickTackToe.git"
+  commit: b9f136a1ca38fdddb315868d3340fbcee23aa127
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd Sources 
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
+
