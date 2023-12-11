@@ -1,0 +1,22 @@
+package:
+  id: io.github.QPolygonMaker 
+  name: QPolygonMaker
+  version: 0.0.1 
+  kind: app
+  description: |
+    Qt widget app for manual stroke and extraction of contours on images
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/pi-null-mezon/QPolygonMaker.git"
+  commit: 5792f5a9ea03c115eae354604f992d5ce66e8f54
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
