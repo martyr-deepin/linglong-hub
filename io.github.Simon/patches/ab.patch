@@ -1,0 +1,22 @@
+diff -Naur b/A5.desktop a/A5.desktop
+--- b/A5.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/A5.desktop	2023-12-11 20:56:11.570850628 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=A5
++Exec=A5
++Type=Application
+\ 文件尾没有换行符
+diff -Naur b/A5.pro a/A5.pro
+--- b/A5.pro	2023-12-11 20:54:49.553673782 +0800
++++ a/A5.pro	2023-12-11 20:55:25.390186101 +0800
+@@ -37,3 +37,8 @@
+ 
+ RESOURCES += \
+     resources.qrc
++
++desktop.files += A5.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++INSTALLS += target desktop
+\ 文件尾没有换行符
