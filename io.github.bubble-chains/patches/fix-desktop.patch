@@ -1,0 +1,64 @@
+diff --git a/chains.pro b/chains.pro
+index a9656cc..79a4709 100644
+--- a/chains.pro
++++ b/chains.pro
+@@ -13,26 +13,26 @@ QMAKE_TARGET_COMPANY =
+ 
+ unix: {
+     TARGET = ./bin/chains
+-    target.path = /usr/local/bin
++    target.path = $$PREFIX/bin
+     INSTALLS += target
+ 
+-    datas.path = /usr/share/games/chains
++    datas.path = $$PREFIX/share/games/chains
+     datas.files = data
+     INSTALLS += datas
+ 	
+-    desktop.path = /usr/share/applications/
++    desktop.path = $$PREFIX/share/applications/
+     desktop.files = setup.linux/chains.desktop
+     INSTALLS += desktop
+ 	
+-    icon.path = /usr/share/icons/hicolor/256x256/apps/
++    icon.path = $$PREFIX/share/icons/hicolor/256x256/apps/
+     icon.files = setup.linux/chains.png
+     INSTALLS += icon
+ 
+-    icon2.path = /usr/share/pixmaps
++    icon2.path = $$PREFIX/share/pixmaps
+     icon2.files = setup.linux/chains.png
+     INSTALLS += icon2
+ 
+-    appdata.path = /usr/share/appdata/
++    appdata.path = $$PREFIX/share/appdata/
+     appdata.files = setup.linux/chains.appdata.xml
+     INSTALLS += appdata
+ 	
+diff --git a/setup.linux/chains.desktop b/setup.linux/chains.desktop
+index ef8ddb5..06d4d97 100644
+--- a/setup.linux/chains.desktop
++++ b/setup.linux/chains.desktop
+@@ -2,7 +2,7 @@
+ Name=Bubble Chains
+ GenericName=Arcade-puzzle 2D game
+ Comment=Seek for chains of bubbles of the same color
+-Exec=chains
+-Icon=chains.png
++Exec=chains %f
++Icon=chains
+ Type=Application
+ Categories=Game;LogicGame;
+diff --git a/main.cpp b/main.cpp
+index 0f181a6..e0c6c3d 100644
+--- a/main.cpp
++++ b/main.cpp
+@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
+     qDebug() << resourcePath;
+ 
+     if (!QDir(resourcePath).exists())
+-      resourcePath = "/usr/share/games/chains/data/";
++      resourcePath = "/opt/apps/bubble-chains/files/share/games/chains/data/";
+   #endif
+ 
+     if (!QDir(resourcePath).exists()) {
