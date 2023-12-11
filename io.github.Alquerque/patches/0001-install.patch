@@ -1,0 +1,45 @@
+From edaafe6a179091774d9d9f1ac466864fc16daa63 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 5 Dec 2023 15:18:57 +0800
+Subject: [PATCH] install
+
+---
+ Alquerque/Alquerque.desktop | 8 ++++++++
+ Alquerque/Alquerque.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 Alquerque/Alquerque.desktop
+
+diff --git a/Alquerque/Alquerque.desktop b/Alquerque/Alquerque.desktop
+new file mode 100644
+index 0000000..4763a12
+--- /dev/null
++++ b/Alquerque/Alquerque.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Alquerque
++Name=Alquerque
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/Alquerque/Alquerque.pro b/Alquerque/Alquerque.pro
+index bca6e89..41d59cf 100644
+--- a/Alquerque/Alquerque.pro
++++ b/Alquerque/Alquerque.pro
+@@ -34,3 +34,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ 
+ RESOURCES += \
+     Alquerque.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Alquerque.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
