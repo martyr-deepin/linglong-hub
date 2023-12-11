@@ -1,0 +1,50 @@
+From f4ab744b9a4dad9b446f0963ca690f76c699c6e8 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 5 Dec 2023 15:46:59 +0800
+Subject: [PATCH] install
+
+---
+ Squadro/Squadro.desktop | 8 ++++++++
+ Squadro/Squadro.pro     | 8 +++++++-
+ 2 files changed, 15 insertions(+), 1 deletion(-)
+ create mode 100644 Squadro/Squadro.desktop
+
+diff --git a/Squadro/Squadro.desktop b/Squadro/Squadro.desktop
+new file mode 100644
+index 0000000..c2dd914
+--- /dev/null
++++ b/Squadro/Squadro.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Squadro
++Name=Squadro
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/Squadro/Squadro.pro b/Squadro/Squadro.pro
+index 36b97d6..b8b0c31 100644
+--- a/Squadro/Squadro.pro
++++ b/Squadro/Squadro.pro
+@@ -26,8 +26,14 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     Squadro.qrc
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Squadro.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
