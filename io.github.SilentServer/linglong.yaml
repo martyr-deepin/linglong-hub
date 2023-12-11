@@ -1,0 +1,28 @@
+package:
+  id: io.github.SilentServer
+  name: SilentServer
+  version: 3.2.2
+  kind: app
+  description: |
+    Silent is very lightweight, high quality - low latency voice chat for gaming. The server runs on Windows and Linux.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Flone-dnb/SilentServer.git
+  commit: c7048be578bb0f9576c2c28a3846028fb3567fa2
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd ide
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

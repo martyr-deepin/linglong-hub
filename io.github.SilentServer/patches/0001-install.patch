@@ -1,0 +1,46 @@
+From 0d3458671f056f6d20f7195022d0f479b73b3f8c Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 5 Dec 2023 22:01:26 +0800
+Subject: [PATCH] install
+
+---
+ ide/SilentServer.desktop | 8 ++++++++
+ ide/SilentServer.pro     | 8 +++++++-
+ 2 files changed, 15 insertions(+), 1 deletion(-)
+ create mode 100644 ide/SilentServer.desktop
+
+diff --git a/ide/SilentServer.desktop b/ide/SilentServer.desktop
+new file mode 100644
+index 0000000..f31b01e
+--- /dev/null
++++ b/ide/SilentServer.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=SilentServer
++Name=SilentServer
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/ide/SilentServer.pro b/ide/SilentServer.pro
+index ab7292f..f4bf3af 100644
+--- a/ide/SilentServer.pro
++++ b/ide/SilentServer.pro
+@@ -84,5 +84,11 @@ INCLUDEPATH += "../ext"
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =SilentServer.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
