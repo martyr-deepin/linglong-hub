@@ -1,0 +1,44 @@
+From 02cf053cd009528cbee7436a48277b5ade5813c6 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Mon, 11 Dec 2023 16:31:52 +0800
+Subject: [PATCH] 1
+
+---
+ EuroMilhoes.desktop | 8 ++++++++
+ EuroMilhoes.pro     | 8 ++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 EuroMilhoes.desktop
+
+diff --git a/EuroMilhoes.desktop b/EuroMilhoes.desktop
+new file mode 100644
+index 0000000..d650717
+--- /dev/null
++++ b/EuroMilhoes.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=EuroMilhoes
++Name=EuroMilhoes
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/EuroMilhoes.pro b/EuroMilhoes.pro
+index b06f601..158c58d 100644
+--- a/EuroMilhoes.pro
++++ b/EuroMilhoes.pro
+@@ -27,3 +27,11 @@ CONFIG += embed_translations
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =EuroMilhoes.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+-- 
+2.33.1
+

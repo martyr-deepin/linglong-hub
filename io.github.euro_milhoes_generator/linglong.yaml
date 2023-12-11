@@ -1,0 +1,22 @@
+package:
+  id: io.github.euro_milhoes_generator 
+  name: euro_milhoes_generator
+  version: 1.0.0 
+  kind: app
+  description: |
+    Application to generate random numbers.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/ivan-pinto/euro_milhoes_generator.git"
+  commit: b7013fa30d65a4bf68e206d3c899aa2452da7950
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
