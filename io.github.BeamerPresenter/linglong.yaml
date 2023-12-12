@@ -1,0 +1,24 @@
+package:
+  id: io.github.BeamerPresenter
+  name: BeamerPresenter
+  version: 0.1.2
+  kind: app
+  description: |
+    Modular multi-screen pdf presentation viewer
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: poppler/0.71.0.2
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/stiglers-eponym/BeamerPresenter.git
+  commit: a061111ad8d476a81ae30d6aa5a29f8aa42736d1
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

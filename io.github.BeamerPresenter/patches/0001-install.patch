@@ -1,0 +1,50 @@
+From 04a24ae26bea6fd9eb4c22a0ad4abfe1a05716b5 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 9 Dec 2023 08:45:35 +0800
+Subject: [PATCH] install
+
+---
+ beamerpresenter.pro | 21 +++++++++++----------
+ 1 file changed, 11 insertions(+), 10 deletions(-)
+
+diff --git a/beamerpresenter.pro b/beamerpresenter.pro
+index 191e2cd..88bef5a 100644
+--- a/beamerpresenter.pro
++++ b/beamerpresenter.pro
+@@ -144,6 +144,7 @@ FORMS += \
+         src/ui/controlscreen.ui
+ 
+ unix {
++INCLUDEPATH += $${PREFIX}/include
+     INCLUDEPATH += /usr/include/poppler/qt5
+     LIBS += -L /usr/lib/ -lpoppler-qt5
+ }
+@@ -178,15 +179,15 @@ unix {
+     configuration.CONFIG = no_build
+     configuration.files = config/$${TARGET}.conf config/pid2wid.sh
+ 
+-    icon.path = $${ICON_PATH}
+-    icon.CONFIG = no_build
+-    icon.files = src/icons/beamerpresenter.svg
+ 
+-    desktop.path = /usr/share/applications/
+-    desktop.CONFIG = no_build
+-    desktop.files = share/applications/beamerpresenter.desktop
+-
+-    target.path = /usr/bin/
+-
+-    INSTALLS += man1 man5 configuration icon desktop target
++    INSTALLS += man1 man5 configuration 
+ }
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =share/applications/beamerpresenter.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = src/icons/beamerpresenter.svg
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
++
+-- 
+2.33.1
+
