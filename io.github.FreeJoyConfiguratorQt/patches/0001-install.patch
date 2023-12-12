@@ -1,0 +1,59 @@
+From 8f7b8bc4888c2172a11e0e5d5948b651fd684a32 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 9 Dec 2023 09:02:01 +0800
+Subject: [PATCH] install
+
+---
+ src/FreeJoyQt.desktop |  9 +++++++++
+ src/src.pro           | 15 ++++++++++++++-
+ 2 files changed, 23 insertions(+), 1 deletion(-)
+ create mode 100644 src/FreeJoyQt.desktop
+
+diff --git a/src/FreeJoyQt.desktop b/src/FreeJoyQt.desktop
+new file mode 100644
+index 0000000..c7eb5bd
+--- /dev/null
++++ b/src/FreeJoyQt.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=FreeJoyQt
++Name=FreeJoyQt
++Icon=icon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/src/src.pro b/src/src.pro
+index 45e8245..0cdeba2 100644
+--- a/src/src.pro
++++ b/src/src.pro
+@@ -158,7 +158,7 @@ TRANSLATIONS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+@@ -183,3 +183,16 @@ macx {
+     SOURCES += \
+     mac/hidapi.c
+ }
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =FreeJoyQt.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
++´øiconµÄ
++icons.files = Images/icon.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
