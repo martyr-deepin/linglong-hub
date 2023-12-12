@@ -1,0 +1,34 @@
+From 9942732106d7d8cdd9e04512c545beda5f1feed9 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 8 Dec 2023 14:35:32 +0800
+Subject: [PATCH] install
+
+---
+ application/src/models/ReplayListModel.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/application/src/models/ReplayListModel.cpp b/application/src/models/ReplayListModel.cpp
+index 7a89cb1..0d0d344 100644
+--- a/application/src/models/ReplayListModel.cpp
++++ b/application/src/models/ReplayListModel.cpp
+@@ -1,7 +1,7 @@
+ #include "application/models/FighterIcon.hpp"
+ #include "application/models/ReplayListModel.hpp"
+ #include "application/models/ReplayGroup.hpp"
+-
++#include <cassert>
+ #include "rfcommon/Profiler.hpp"
+ #include "rfcommon/Session.hpp"
+ #include "rfcommon/FilePathResolver.hpp"
+@@ -121,7 +121,7 @@ QVariant ReplayListModel::data(const QModelIndex& index, int role) const
+                 const ReplaysOnDay& day = days_[index.internalId()];
+                 if (index.row() >= day.replays.count())
+                 {
+-                    assert(false, "Should never happen but it does for some reason");
++                    assert(false);
+                     break;
+                 }
+                 const auto& replay = day.replays[index.row()];
+-- 
+2.33.1
+
