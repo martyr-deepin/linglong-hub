@@ -1,0 +1,53 @@
+From 37e4d77b3c2cdb9a68e01c35f052d748f2be7dba Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 16:28:25 +0800
+Subject: [PATCH] install
+
+---
+ BackGroundWidget.cpp | 2 +-
+ GraphicsWidget.cpp   | 2 +-
+ TimerWidget.cpp      | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/BackGroundWidget.cpp b/BackGroundWidget.cpp
+index 8542e88..cc43408 100644
+--- a/BackGroundWidget.cpp
++++ b/BackGroundWidget.cpp
+@@ -11,7 +11,7 @@
+ #include "PlayerNameDlg.h"
+ #include "DbHandler.h"
+ 
+-
++#include <cmath>
+ BackGroundWidget::BackGroundWidget(QWidget *parent) :
+     QWidget(parent),
+     ui(new Ui::BackGroundWidget)
+diff --git a/GraphicsWidget.cpp b/GraphicsWidget.cpp
+index 82886e0..728b3cf 100644
+--- a/GraphicsWidget.cpp
++++ b/GraphicsWidget.cpp
+@@ -6,7 +6,7 @@
+ #include <QTimer>
+ #include <QEventLoop>
+ #include <time.h>
+-
++#include <cmath>
+ 
+ GraphicsWidget::GraphicsWidget(QWidget *parent) :
+     QFrame(parent)
+diff --git a/TimerWidget.cpp b/TimerWidget.cpp
+index b58fc0c..59637fd 100644
+--- a/TimerWidget.cpp
++++ b/TimerWidget.cpp
+@@ -2,7 +2,7 @@
+ #include <QResizeEvent>
+ #include <QFont>
+ #include <QDebug>
+-
++#include <cmath>
+ TimerWidget::TimerWidget(QWidget *parent) : QFrame(parent)
+ {
+     box = new QHBoxLayout(this);
+-- 
+2.33.1
+

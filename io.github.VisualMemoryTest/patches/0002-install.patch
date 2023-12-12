@@ -1,0 +1,49 @@
+From da926500438bb3f1de6f1a98ffa7300ed429f21e Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 16:31:03 +0800
+Subject: [PATCH] install
+
+---
+ VisualMemoryTest.desktop |  9 +++++++++
+ VisualMemoryTest.pro     | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 VisualMemoryTest.desktop
+
+diff --git a/VisualMemoryTest.desktop b/VisualMemoryTest.desktop
+new file mode 100644
+index 0000000..6656cb0
+--- /dev/null
++++ b/VisualMemoryTest.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=VisualMemoryTest
++Name=VisualMemoryTest
++Icon=sunflowers
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/VisualMemoryTest.pro b/VisualMemoryTest.pro
+index 4658b60..4c3c070 100644
+--- a/VisualMemoryTest.pro
++++ b/VisualMemoryTest.pro
+@@ -65,3 +65,13 @@ OTHER_FILES += \
+     VisualMemoryTest_es.ts \
+     VisualMemoryTest_hu.ts \
+     VisualMemoryTest_ru.ts
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =VisualMemoryTest.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = images/sunflowers.jpg
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+

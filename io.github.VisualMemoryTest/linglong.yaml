@@ -1,0 +1,22 @@
+package:
+  id: io.github.VisualMemoryTest
+  name: VisualMemoryTest
+  version: 1.0.0
+  kind: app
+  description: |
+    A tiny visual memory test
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/voszi/VisualMemoryTest.git
+  commit: 4b79c827bfc364780b60bf33877ee3d9bc5722cd
+  patch: 
+    - patches/0001-install.patch
+    - patches/0002-install.patch
+
+build:
+  kind: qmake
