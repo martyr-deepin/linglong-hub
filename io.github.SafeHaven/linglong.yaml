@@ -1,0 +1,20 @@
+package:
+  id: io.github.SafeHaven
+  name: SafeHaven
+  version: 1.0.0
+  kind: app
+  description: |
+    A diary application built with the Qt5 library.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/adotrdot/SafeHaven.git
+  commit: 99f32facb713ede0b8fe3aa7372fc964cebf583a
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
