@@ -1,0 +1,20 @@
+package:
+  id: io.github.LuxIRC
+  name: LuxIRC
+  version: 0.0.1
+  kind: app
+  description: |
+    IRC Client in Qt5.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/codymj/LuxIRC.git
+  commit: 8122d097b7f1d161db41bf3cd086cd997b508828
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,46 @@
+From 3f84a15ca201a23cfe10b4801d9ed3719cc925c9 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 09:19:20 +0800
+Subject: [PATCH] install
+
+---
+ LuxIRC.desktop | 8 ++++++++
+ LuxIRC.pro     | 8 ++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 LuxIRC.desktop
+
+diff --git a/LuxIRC.desktop b/LuxIRC.desktop
+new file mode 100644
+index 0000000..b2621be
+--- /dev/null
++++ b/LuxIRC.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=LuxIRC
++Name=LuxIRC
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/LuxIRC.pro b/LuxIRC.pro
+index 1ad4aa7..eca05ed 100644
+--- a/LuxIRC.pro
++++ b/LuxIRC.pro
+@@ -41,3 +41,11 @@ SOURCES += src/AboutDlg.cpp \
+            src/main.cpp \
+            src/MainWindow.cpp \
+            src/NetworkDlg.cpp
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =LuxIRC.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
