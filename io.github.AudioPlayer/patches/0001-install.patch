@@ -1,0 +1,40 @@
+From c13a8c06609acbe6af4182760b8a1b3fd9280ab7 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 9 Dec 2023 11:56:16 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt            | 3 +++
+ build_dir/LwSound.desktop | 8 ++++++++
+ 2 files changed, 11 insertions(+)
+ create mode 100644 build_dir/LwSound.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 6a5fe0c..c2e434f 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -72,3 +72,6 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
+ install(TARGETS ${PROJECT_NAME}
+     BUNDLE DESTINATION .
+     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
++
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/LwSound.desktop DESTINATION share/applications)
+\ No newline at end of file
+diff --git a/build_dir/LwSound.desktop b/build_dir/LwSound.desktop
+new file mode 100644
+index 0000000..6aa565f
+--- /dev/null
++++ b/build_dir/LwSound.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=LwSound
++Name=LwSound
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+-- 
+2.33.1
+

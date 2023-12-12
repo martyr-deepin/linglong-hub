@@ -1,0 +1,20 @@
+package:
+  id: io.github.AudioPlayer
+  name: AudioPlayer
+  version: 1.0.0
+  kind: app
+  description: |
+    Audio Player in which you can add favorite tracks, download
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/NiskashY/AudioPlayer.git
+  commit: ccb7aa099204740339cfbb27721a89c184030c58
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
