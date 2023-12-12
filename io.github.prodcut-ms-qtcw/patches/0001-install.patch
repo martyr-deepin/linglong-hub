@@ -1,0 +1,52 @@
+From 14c1ae2a4a924161c3bebc4fe10a68d76e0068d1 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 9 Dec 2023 09:46:03 +0800
+Subject: [PATCH] install
+
+---
+ .../product_management_system.desktop                  |  8 ++++++++
+ .../product_management_system.pro                      | 10 +++++++++-
+ 2 files changed, 17 insertions(+), 1 deletion(-)
+ create mode 100644 product_management_system/product_management_system.desktop
+
+diff --git a/product_management_system/product_management_system.desktop b/product_management_system/product_management_system.desktop
+new file mode 100644
+index 0000000..06a095a
+--- /dev/null
++++ b/product_management_system/product_management_system.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=product_management_system
++Name=product_management_system
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/product_management_system/product_management_system.pro b/product_management_system/product_management_system.pro
+index 40b9bf0..dccd8bd 100644
+--- a/product_management_system/product_management_system.pro
++++ b/product_management_system/product_management_system.pro
+@@ -38,8 +38,16 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     resources.qrc
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =product_management_system.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

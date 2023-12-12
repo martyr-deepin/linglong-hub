@@ -1,0 +1,28 @@
+package:
+  id: io.github.prodcut-ms-qtcw
+  name: prodcut-ms-qtcw
+  version: 1.0.0
+  kind: app
+  description: |
+    Product Management System for university project based on QT framework
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/SanjulaD/prodcut-ms-qtcw.git
+  commit: a8946964f7c2bb2bd66125152f5be802acf0f51b
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd product_management_system
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
