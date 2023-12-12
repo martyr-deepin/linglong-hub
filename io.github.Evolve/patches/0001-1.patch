@@ -1,0 +1,44 @@
+From 950f8f3c8bb1a97dbec83ab75f5a84d8383736a6 Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Tue, 12 Dec 2023 15:28:44 +0800
+Subject: [PATCH] 1
+
+---
+ Evolve.desktop | 8 ++++++++
+ Evolve.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 Evolve.desktop
+
+diff --git a/Evolve.desktop b/Evolve.desktop
+new file mode 100644
+index 0000000..a208b92
+--- /dev/null
++++ b/Evolve.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Evolve
++Name=Evolve
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Evolve.pro b/Evolve.pro
+index 9ed32f1..5c53113 100644
+--- a/Evolve.pro
++++ b/Evolve.pro
+@@ -39,3 +39,10 @@ CONFIG += c++11
+ QMAKE_CXXFLAGS_RELEASE += -O3 -flto -march=native -mmmx # Crashes on some computers
+ QMAKE_CXXFLAGS_DEBUG += -Og -g -march=native -mmmx # Crashes on some computers
+ #QMAKE_CXXFLAGS_DEBUG += -Og
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Evolve.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
