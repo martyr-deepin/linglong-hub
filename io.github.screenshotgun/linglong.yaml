@@ -1,0 +1,20 @@
+package:
+  id: io.github.screenshotgun
+  name: screenshotgun
+  version: 0.21.0
+  kind: app
+  description: |
+    Open cross-platform screenshoter with cloud support and server part
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/ismd/screenshotgun.git
+  commit: 71a139c57c16cd12daf723ee9e1854b648031293
+
+build:
+  kind: cmake
+  
