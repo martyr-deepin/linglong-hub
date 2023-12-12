@@ -1,0 +1,45 @@
+From 9eb3afdf74f72439e59d0df900198d8e8c792f1d Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Tue, 12 Dec 2023 15:21:13 +0800
+Subject: [PATCH] 1
+
+---
+ rrcc.desktop | 9 +++++++++
+ rrcc.pro     | 7 +++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 rrcc.desktop
+
+diff --git a/rrcc.desktop b/rrcc.desktop
+new file mode 100644
+index 0000000..5666540
+--- /dev/null
++++ b/rrcc.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=rrcc
++Name=rrcc
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
++
+diff --git a/rrcc.pro b/rrcc.pro
+index 4482685..4e844cf 100644
+--- a/rrcc.pro
++++ b/rrcc.pro
+@@ -40,3 +40,10 @@ RC_ICONS    += res/ico/app.ico
+ macx {
+ ICON        += res/ico/app.icns
+ }
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =rrcc.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
