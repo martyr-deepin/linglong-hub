@@ -1,0 +1,20 @@
+package:
+  id: io.github.QT-Playstore
+  name: QT-Playstore
+  version: 1.0.0
+  kind: app
+  description: |
+    QT play store Application
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/lakith/QT-Playstore.git
+  commit: a2697faf9f6d3cbed76d74ab8033ee22dfcab3f3
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

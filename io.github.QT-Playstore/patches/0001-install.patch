@@ -1,0 +1,54 @@
+From ce9bf1fb61e1a4d80e7c3b94eeeec33d989f05bd Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 10 Dec 2023 11:09:33 +0800
+Subject: [PATCH] install
+
+---
+ playStore.desktop |  9 +++++++++
+ playStore.pro     | 12 +++++++++++-
+ 2 files changed, 20 insertions(+), 1 deletion(-)
+ create mode 100644 playStore.desktop
+
+diff --git a/playStore.desktop b/playStore.desktop
+new file mode 100644
+index 0000000..3851c79
+--- /dev/null
++++ b/playStore.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=playStore
++Name=playStore
++Icon=playstore-512
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/playStore.pro b/playStore.pro
+index d1db345..f093993 100644
+--- a/playStore.pro
++++ b/playStore.pro
+@@ -58,8 +58,18 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     resource.qrc
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =playStore.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = resourece/logo/playstore-512.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
