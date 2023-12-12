@@ -1,0 +1,55 @@
+From 73b28cba27d30072e57c7544add38acbff63ffb1 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 18:41:50 +0800
+Subject: [PATCH] install
+
+---
+ manosimulator.desktop |  9 +++++++++
+ manosimulator.pro     | 11 +++++++++--
+ 2 files changed, 18 insertions(+), 2 deletions(-)
+ create mode 100644 manosimulator.desktop
+
+diff --git a/manosimulator.desktop b/manosimulator.desktop
+new file mode 100644
+index 0000000..76b1566
+--- /dev/null
++++ b/manosimulator.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=manosimulator
++Name=manosimulator
++Icon=icon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/manosimulator.pro b/manosimulator.pro
+index f67a780..44b757c 100644
+--- a/manosimulator.pro
++++ b/manosimulator.pro
+@@ -27,7 +27,7 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+@@ -44,4 +44,11 @@ DISTFILES += \
+     saveasicon.png \
+     saveicon.png
+ win32:RC_ICONS += laptop.ico
+-
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =manosimulator.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = icon.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
