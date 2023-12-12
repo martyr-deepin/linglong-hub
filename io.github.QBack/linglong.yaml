@@ -1,0 +1,20 @@
+package:
+  id: io.github.QBack
+  name: QBack
+  version: 1.9.0
+  kind: app
+  description: |
+    A simple backup utility for Software and Hardware developers.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/GTRONICK/QBack.git
+  commit: 6dcc86eda9b09ef1ad946b1ad387a628ecdaced0
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

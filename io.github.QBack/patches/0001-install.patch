@@ -1,0 +1,46 @@
+From fd7728978ccee71cfc34f951a0e96813053d5c11 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 19:39:40 +0800
+Subject: [PATCH] install
+
+---
+ QBack.desktop | 9 +++++++++
+ QBack.pro     | 9 +++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 QBack.desktop
+
+diff --git a/QBack.desktop b/QBack.desktop
+new file mode 100644
+index 0000000..f5151b0
+--- /dev/null
++++ b/QBack.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QBack
++Name=QBack
++Icon=log
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/QBack.pro b/QBack.pro
+index a8ee79a..077819e 100644
+--- a/QBack.pro
++++ b/QBack.pro
+@@ -33,3 +33,12 @@ RESOURCES += \
+     img/icons.qrc
+ 
+ win32:RC_ICONS += img/QBackLogo.ico
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =QBack.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = img/log.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
