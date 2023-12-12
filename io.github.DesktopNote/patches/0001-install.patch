@@ -1,0 +1,36 @@
+From c4bde2ef5f4ea3eadb30a897917d78d9a4e654cc Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 8 Dec 2023 16:27:55 +0800
+Subject: [PATCH] install
+
+---
+ DesktopNote.pro | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+diff --git a/DesktopNote.pro b/DesktopNote.pro
+index adea87d..623cd94 100644
+--- a/DesktopNote.pro
++++ b/DesktopNote.pro
+@@ -30,8 +30,17 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     resources.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =DesktopNote.desktop.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = images/tack.svg
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+

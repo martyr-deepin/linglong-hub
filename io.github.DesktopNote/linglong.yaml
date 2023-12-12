@@ -1,0 +1,20 @@
+package:
+  id: io.github.DesktopNote
+  name: DesktopNote
+  version: 1.0.1
+  kind: app
+  description: |
+    A small note paper for writing daily tasks on the desktop
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/parisa-hr/DesktopNote.git
+  commit: 4d415fc700a98a0350d4dc82e432fea5228bbd5b
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
