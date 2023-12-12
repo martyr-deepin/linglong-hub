@@ -1,0 +1,58 @@
+From 930db91eafaead53324610fe01b97039419d77f9 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 18:25:42 +0800
+Subject: [PATCH] install
+
+---
+ Mario.desktop |  9 +++++++++
+ Mario.pro     | 12 +++++++++++-
+ 2 files changed, 20 insertions(+), 1 deletion(-)
+ create mode 100644 Mario.desktop
+
+diff --git a/Mario.desktop b/Mario.desktop
+new file mode 100644
+index 0000000..b4c0bc5
+--- /dev/null
++++ b/Mario.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Mario
++Name=Mario
++Icon=icon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/Mario.pro b/Mario.pro
+index fb8465e..2839889 100644
+--- a/Mario.pro
++++ b/Mario.pro
+@@ -79,7 +79,7 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+@@ -88,3 +88,13 @@ RESOURCES += \
+     Sonidos.qrc
+ 
+ DISTFILES +=
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Mario.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = Imagenes/icon.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+

@@ -1,0 +1,20 @@
+package:
+  id: io.github.Mario
+  name: Mario
+  version: 0.0.1
+  kind: app
+  description: |
+    Implementaci¨®n del popular juego "Mario Bros" en C++ con el GUI de Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/serendipity-com/Mario.git
+  commit: ec0c4c8f9d75bf20226eb74ffd2bd0f10f5ac3c2
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
