@@ -1,0 +1,60 @@
+From e3e5920f6d6f6a642a6672e00ab6822c3333c29e Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 20:02:07 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt                     | 13 +++++++------
+ build_dir/sakura-assistant.desktop |  9 +++++++++
+ 2 files changed, 16 insertions(+), 6 deletions(-)
+ create mode 100644 build_dir/sakura-assistant.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 1961630..d0fec32 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -22,18 +22,19 @@ target_link_dtk(${PROJECT_NAME})
+ 
+ include(cmake/SparkBuildGraphviz.cmake)
+ 
+-# 标准 Linux 安装
+-set(CMAKE_INSTALL_PREFIX "/usr")
+-install(TARGETS ${PROJECT_NAME}
+-    DESTINATION bin)
+-install(DIRECTORY src/sakuraassistant/pkg/usr
+-    DESTINATION "/")
++
++
+ 
+ # deb 构建支持
+ find_package(DebPackage PATHS ${CMAKE_SOURCE_DIR})
+ add_package_descript(cmake/package-deb.descript)
+ 
+ 
++
++install(TARGETS ${PROJECT_NAME}
++    DESTINATION bin)
++install(PROGRAMS ${CMAKE_BINARY_DIR}/sakura-assistant.desktop DESTINATION share/applications)
++install(PROGRAMS src/sakuraassistant/res/sakura.png DESTINATION share/icons)
+ # 预留，Appimage 构建支持
+ # 1. 在顶层构建中导入 Appimage 的构建
+ # include(cmake/SparkDesktopMacros.cmake)
+diff --git a/build_dir/sakura-assistant.desktop b/build_dir/sakura-assistant.desktop
+new file mode 100644
+index 0000000..e10cea6
+--- /dev/null
++++ b/build_dir/sakura-assistant.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=sakura-assistant
++Name=sakura-assistant
++Icon=sakura
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+-- 
+2.33.1
+
