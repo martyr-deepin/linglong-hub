@@ -1,0 +1,51 @@
+From 1ad84f605ce8683f5d37286a324835edc0a671c8 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 16:51:44 +0800
+Subject: [PATCH] install
+
+---
+ MaestroSerialTerm/MaestroSerialTerm.desktop | 10 ++++++++++
+ MaestroSerialTerm/MaestroSerialTerm.pro     | 11 ++++++++++-
+ 2 files changed, 20 insertions(+), 1 deletion(-)
+ create mode 100644 MaestroSerialTerm/MaestroSerialTerm.desktop
+
+diff --git a/MaestroSerialTerm/MaestroSerialTerm.desktop b/MaestroSerialTerm/MaestroSerialTerm.desktop
+new file mode 100644
+index 0000000..97ca4e7
+--- /dev/null
++++ b/MaestroSerialTerm/MaestroSerialTerm.desktop
+@@ -0,0 +1,10 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=MaestroSerialTerm
++Name=MaestroSerialTerm
++Icon=SUSTerm
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
++
+diff --git a/MaestroSerialTerm/MaestroSerialTerm.pro b/MaestroSerialTerm/MaestroSerialTerm.pro
+index a0dcd2c..7b0cc20 100644
+--- a/MaestroSerialTerm/MaestroSerialTerm.pro
++++ b/MaestroSerialTerm/MaestroSerialTerm.pro
+@@ -46,5 +46,14 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =MaestroSerialTerm.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = res/SUSTerm.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
