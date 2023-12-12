@@ -1,0 +1,54 @@
+From 96c4f8ea718ac410c2228dd3fd8d20618ba8497c Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 8 Dec 2023 21:03:56 +0800
+Subject: [PATCH] install
+
+---
+ znotes.pro | 20 ++++++++++++--------
+ 1 file changed, 12 insertions(+), 8 deletions(-)
+
+diff --git a/znotes.pro b/znotes.pro
+index 04cd3f2..15168c3 100644
+--- a/znotes.pro
++++ b/znotes.pro
+@@ -125,20 +125,15 @@ PRE_TARGETDEPS += compiler_TSQM_make_all
+ !os2:DEFINES += VERSION=\\\"$$VERSION\\\"
+ 
+ unix {
+-    PREFIX = $$(PREFIX)
+     isEmpty( PREFIX ):PREFIX = /usr
+     DEFINES += PROGRAM_DATA_DIR=\\\"$$PREFIX/share/znotes/\\\"
+-    target.path = $$PREFIX/bin/
+     locale.path = $$PREFIX/share/znotes/translations/
+     locale.files = translations/*.qm
+     pixmap.path = /usr/share/pixmaps
+     pixmap.files = *.png
+-    desktop.path = /usr/share/applications
+-    desktop.files = *.desktop
+-    INSTALLS += target \
+-        locale \
+-        pixmap \
+-        desktop
++
++    INSTALLS += locale pixmap 
++        
+ }
+ 
+ os2 {
+@@ -147,3 +142,12 @@ os2 {
+ }
+ 
+ win32:RC_FILE = znotes.rc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =znotes.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = znotes.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
