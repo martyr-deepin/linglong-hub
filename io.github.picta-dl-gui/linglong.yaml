@@ -1,0 +1,19 @@
+package:
+  id: io.github.picta-dl-gui
+  name: picta-dl-gui
+  version: 0.12.28
+  kind: app
+  description: |
+    Picta Downloader GUI
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/oleksis/picta-dl-gui.git
+  commit: dee0de990ef94055fffdf83026b24164aa9c6a47
+
+build:
+  kind: cmake
