@@ -1,0 +1,19 @@
+package:
+  id: io.github.KeyboardVisualizer
+  name: KeyboardVisualizer
+  version: 4.0.0
+  kind: app
+  description: |
+    Audio visualizer and effects engine for RGB keyboards, mice, and accessories using the OpenRGB SDK. Supports Windows, Linux, and MacOS. Issue tracker on GitLab.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/CalcProgrammer1/KeyboardVisualizer.git
+  commit: b50cc508f01fddfc2de9909c2611e75816ee444a
+
+build:
+  kind: qmake
