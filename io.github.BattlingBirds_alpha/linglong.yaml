@@ -1,0 +1,20 @@
+package:
+  id: io.github.BattlingBirds_alpha
+  name: BattlingBirds_alpha
+  version: 1.0.0
+  kind: app
+  description: |
+    Qt5自制《愤怒的小鸟》同人STG——《夺蛋录(体验版)》
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/birdx-007/BattlingBirds_alpha.git
+  commit: 008697d48a5cba0f1c5c0981ffbac93f2ab08cfe
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

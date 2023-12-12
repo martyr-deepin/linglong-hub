@@ -1,0 +1,56 @@
+From 61149ca709af0a221e89d98f21a358145a2647e8 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 10:08:13 +0800
+Subject: [PATCH] install
+
+---
+ birds_alpha.desktop |  9 +++++++++
+ birds_alpha.pro     | 12 +++++++++++-
+ 2 files changed, 20 insertions(+), 1 deletion(-)
+ create mode 100644 birds_alpha.desktop
+
+diff --git a/birds_alpha.desktop b/birds_alpha.desktop
+new file mode 100644
+index 0000000..58100fb
+--- /dev/null
++++ b/birds_alpha.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=birds_alpha
++Name=birds_alpha
++icon=pilotpig_normal
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/birds_alpha.pro b/birds_alpha.pro
+index 70d1365..265e030 100644
+--- a/birds_alpha.pro
++++ b/birds_alpha.pro
+@@ -79,10 +79,20 @@ TRANSLATIONS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     res.qrc
+ 
+ DISTFILES +=
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =birds_alpha.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = res/pilotpig_normal.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
