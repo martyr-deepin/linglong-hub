@@ -1,0 +1,92 @@
+From a494985ee1db4dc4437469c6e0d0919d05e8a060 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 8 Dec 2023 18:06:42 +0800
+Subject: [PATCH] install
+
+---
+ m-fet.pro       | 19 ++++++++++++-------
+ src/fet.desktop | 11 +++++++++++
+ src/src.pro     |  9 ++++++---
+ 3 files changed, 29 insertions(+), 10 deletions(-)
+ create mode 100755 src/fet.desktop
+
+diff --git a/m-fet.pro b/m-fet.pro
+index 3ccc7b6..52e1a4e 100755
+--- a/m-fet.pro
++++ b/m-fet.pro
+@@ -2,23 +2,28 @@ TEMPLATE = subdirs
+ SUBDIRS = src/src.pro src/src-cl.pro
+ 
+ unix {
+-translations.path = /usr/share/metafet/translations
++translations.path = $$PREFIX/share/metafet/translations
+ translations.files = translations/*.qm
+ 
+-examples.path = /usr/share/m-fet
++examples.path = $$PREFIX/share/m-fet
+ examples.files = examples/
+ 
+-desktop.path = /usr/share/applications
+-desktop.files = m-fet.desktop
++desktop.path = $$DATADIR/applications/
++desktop.files = fet.desktop
+ 
+-documentation.path = /usr/share/doc/m-fet
++documentation.path = $$PREFIX/share/doc/m-fet
+ documentation.files = doc/* COPYING README.md
+ 
+-manual.path = /usr/share/man/man1
++manual.path = $$PREFIX/share/man/man1
+ manual.files = man/*
+ 
+-icon_png.path = /usr/share/pixmaps
++icon_png.path = $$PREFIX/share/icons
+ icon_png.files = icons/m-fet.png
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++INSTALLS += target 
++
+ INSTALLS += desktop manual documentation icon_png
+ }
+diff --git a/src/fet.desktop b/src/fet.desktop
+new file mode 100755
+index 0000000..c9699e1
+--- /dev/null
++++ b/src/fet.desktop
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Type=Application
++Name=Timetable Generator
++GenericName=Timetable software for schools
++Comment=Generate timetables for educational institutions
++Keywords=schedule;planning;school;high-school;university;education;teacher;students;
++Icon=m-fet
++Exec=m-fet
++Terminal=false
++StartupNotify=true
++Categories=Office;Chart;Qt;
+diff --git a/src/src.pro b/src/src.pro
+index 43b53b0..e7fe2b5 100755
+--- a/src/src.pro
++++ b/src/src.pro
+@@ -1070,9 +1070,12 @@ DEPENDPATH +=engine engine/algorithms interface utils interface/constraints inte
+ RESOURCES += interface/interface_images.qrc
+ 
+ unix {
+-target.path = /usr/bin
+-
+-INSTALLS += target
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =fet.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop 
+ }
+ 
+ DEFINES += MAX_MINUTES=1440
+-- 
+2.33.1
+
