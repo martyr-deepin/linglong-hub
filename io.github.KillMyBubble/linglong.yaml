@@ -1,0 +1,20 @@
+package:
+  id: io.github.KillMyBubble
+  name: KillMyBubble
+  version: 1.1.0
+  kind: app
+  description: |
+    Game on qml + c++
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Childcity/KillMyBubble.git
+  commit: 8cebb9bb17770194be9523768d2ebaabf5e615c9
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

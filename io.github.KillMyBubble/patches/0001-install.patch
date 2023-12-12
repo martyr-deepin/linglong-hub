@@ -1,0 +1,52 @@
+From 97d18188b65bcede1f1398b12f134c6beca7d8c9 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 09:47:31 +0800
+Subject: [PATCH] install
+
+---
+ KillMyBubble.desktop |  9 +++++++++
+ KillMyBubble.pro     | 12 +++++++++++-
+ 2 files changed, 20 insertions(+), 1 deletion(-)
+ create mode 100644 KillMyBubble.desktop
+
+diff --git a/KillMyBubble.desktop b/KillMyBubble.desktop
+new file mode 100644
+index 0000000..52736fd
+--- /dev/null
++++ b/KillMyBubble.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=KillMyBubble
++Name=KillMyBubble
++Icon=bubble
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/KillMyBubble.pro b/KillMyBubble.pro
+index dd9cc7d..a2193cb 100644
+--- a/KillMyBubble.pro
++++ b/KillMyBubble.pro
+@@ -39,5 +39,15 @@ unix {
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =KillMyBubble.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = img/buble.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
