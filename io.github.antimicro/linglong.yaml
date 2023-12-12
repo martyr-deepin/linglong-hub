@@ -1,0 +1,19 @@
+package:
+  id: io.github.antimicro
+  name: antimicro
+  version: 2.24.0
+  kind: app
+  description: |
+    Graphical program used to map keyboard buttons and mouse controls to a gamepad. Useful for playing games with no gamepad support.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/AntiMicro/antimicro.git
+  commit: 346ed1524b7fedf6f0a65be3644818bd83fe1848
+
+build:
+  kind: cmake
