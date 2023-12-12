@@ -1,0 +1,28 @@
+package:
+  id: io.github.SDI-TrekStar-Application
+  name: SDI-TrekStar-Application
+  version: 0.0.1
+  kind: app
+  description: |
+    Repo for the Software Design and Implementation module.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/EdwinLangley/SDI-TrekStar-Application.git
+  commit: 561d9f39d985f36f95d41bcecc436969dc6a175f
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd TrekStarApp
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
