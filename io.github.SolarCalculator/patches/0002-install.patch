@@ -1,0 +1,46 @@
+From 2a137bffe2113b49af6e63ebd21cda91d6ab3139 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 09:38:07 +0800
+Subject: [PATCH] install
+
+---
+ SolarCalculator.desktop | 9 +++++++++
+ SolarCalculator.pro     | 8 ++++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 SolarCalculator.desktop
+
+diff --git a/SolarCalculator.desktop b/SolarCalculator.desktop
+new file mode 100644
+index 0000000..93e1b0f
+--- /dev/null
++++ b/SolarCalculator.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=SolarCalculator
++Name=SolarCalculator
++icon=qt
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/SolarCalculator.pro b/SolarCalculator.pro
+index 58e7da8..bda667f 100644
+--- a/SolarCalculator.pro
++++ b/SolarCalculator.pro
+@@ -40,3 +40,11 @@ FORMS += \
+         src/AboutDlg.ui \
+         src/SelectTimeDlg.ui
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =SolarCalculator.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = icon/qt.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+

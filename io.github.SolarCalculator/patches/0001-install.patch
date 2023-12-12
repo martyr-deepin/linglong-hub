@@ -1,0 +1,25 @@
+From 6efcf076a114fa6f2a64c4f30ca1883dfab7b38b Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 09:36:03 +0800
+Subject: [PATCH] install
+
+---
+ src/ui_MainWindow.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/ui_MainWindow.h b/src/ui_MainWindow.h
+index 4c4860e..d5a553a 100644
+--- a/src/ui_MainWindow.h
++++ b/src/ui_MainWindow.h
+@@ -11,7 +11,7 @@
+ 
+ #include <QtCore/QDate>
+ #include <QtCore/QVariant>
+-#include <QtGui/QAction>
++#include <QAction>
+ #include <QtWidgets/QApplication>
+ #include <QtWidgets/QCheckBox>
+ #include <QtWidgets/QComboBox>
+-- 
+2.33.1
+

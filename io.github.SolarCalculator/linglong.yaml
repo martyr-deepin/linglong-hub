@@ -1,0 +1,24 @@
+package:
+  id: io.github.SolarCalculator
+  name: SolarCalculator
+  version: 1.0.0
+  kind: app
+  description: |
+    Small app to calculate sunrise and sunset based on date, latitude, longitude and time zone.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+
+source:
+  kind: git
+  url: https://github.com/codymj/SolarCalculator.git
+  commit: 8095efab87f23c2e7fba97981a50288ef0c649ad
+  patch: 
+    - patches/0001-install.patch
+    - patches/0002-install.patch
+
+build:
+  kind: qmake
