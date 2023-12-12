@@ -1,0 +1,20 @@
+package:
+  id: io.github.Numerico
+  name: Numerico
+  version: 1.0.0
+  kind: app
+  description: |
+    Self-assignment project. C++ app based on "power of two" mathematical rule created with Qt5
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/goran-milenkovic/Numerico.git
+  commit: fbcea841d32d2189f5a5b48bc28b7b4d4bf21029
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

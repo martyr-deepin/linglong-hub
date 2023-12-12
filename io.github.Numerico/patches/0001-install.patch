@@ -1,0 +1,51 @@
+From 20a7b0182f9df7425b1ba2f54ce20d297e4954d7 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 10 Dec 2023 11:43:50 +0800
+Subject: [PATCH] install
+
+---
+ Numerico.desktop | 10 ++++++++++
+ numerico.pro     | 11 ++++++++++-
+ 2 files changed, 20 insertions(+), 1 deletion(-)
+ create mode 100644 Numerico.desktop
+
+diff --git a/Numerico.desktop b/Numerico.desktop
+new file mode 100644
+index 0000000..68aab82
+--- /dev/null
++++ b/Numerico.desktop
+@@ -0,0 +1,10 @@
++
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Numerico
++Name=Numerico
++Icon=icon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/numerico.pro b/numerico.pro
+index 57652a0..1ff5b47 100644
+--- a/numerico.pro
++++ b/numerico.pro
+@@ -20,5 +20,14 @@ FORMS += \
+         numerico.ui
+ 
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Numerico.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = icon.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
