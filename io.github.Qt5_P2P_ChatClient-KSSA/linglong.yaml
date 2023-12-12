@@ -1,0 +1,22 @@
+package:
+  id: io.github.Qt5_P2P_ChatClient-KSSA
+  name: Qt5_P2P_ChatClient-KSSA
+  version: 1.0.0
+  kind: app
+  description: |
+    A P2P chat application client suitable for local area network(LAN) developed using Qt5 and C++.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Sovea/Qt5_P2P_ChatClient-KSSA.git
+  commit: af0975335b29eeea93e9b987eb4d1a4635d96974
+  patch: 
+    - patches/0001-install.patch
+    - patches/0002-install.patch
+
+build:
+  kind: qmake

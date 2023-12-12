@@ -1,0 +1,24 @@
+From 31237159d8f8e80a1e04ce8274e98367087d864e Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 10:32:42 +0800
+Subject: [PATCH] install
+
+---
+ src/mainwindow.cpp | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/mainwindow.cpp b/src/mainwindow.cpp
+index 0f3cf6a..1bc9d80 100644
+--- a/src/mainwindow.cpp
++++ b/src/mainwindow.cpp
+@@ -42,6 +42,7 @@
+ #include <QtMultimedia/QSound>
+ #include <QQuickWidget>
+ #include <QFileDialog>
++#include <QPainterPath>
+ static QString user_id;
+ static QString user_password; /*qint16 myport=24600;*/
+ static QStringList Friends_Ids;
+-- 
+2.33.1
+

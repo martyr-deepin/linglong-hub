@@ -1,0 +1,49 @@
+From e7ed573f41c94d7dae6a0af2ea27b52facabd67c Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 10:35:12 +0800
+Subject: [PATCH] install
+
+---
+ KSSA.desktop |  9 +++++++++
+ KSSA.pro     | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 KSSA.desktop
+
+diff --git a/KSSA.desktop b/KSSA.desktop
+new file mode 100644
+index 0000000..ad40e88
+--- /dev/null
++++ b/KSSA.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=KSSA
++Name=KSSA
++Icon=KSSA
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/KSSA.pro b/KSSA.pro
+index 3969a9a..1bcc136 100644
+--- a/KSSA.pro
++++ b/KSSA.pro
+@@ -96,3 +96,13 @@ DISTFILES += \
+ 
+ RESOURCES += \
+     Resources.qrc
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =KSSA.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = KSSA.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
