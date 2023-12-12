@@ -1,0 +1,20 @@
+package:
+  id: io.github.mandelbrot
+  name: mandelbrot
+  version: 1.0.0
+  kind: app
+  description: |
+    Mandelbrot set viewer
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/mluebben/mandelbrot.git
+  commit: 309cfd909224f80d912760dedfd9259d66f1d546
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

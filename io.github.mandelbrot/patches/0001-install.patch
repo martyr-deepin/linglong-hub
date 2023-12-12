@@ -1,0 +1,48 @@
+From b20f47622c2fab42ddd0ba6e0f4bc094ac0c2855 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 10 Dec 2023 11:25:46 +0800
+Subject: [PATCH] install
+
+---
+ Mandelbrot.desktop | 8 ++++++++
+ Mandelbrot.pro     | 9 ++++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 Mandelbrot.desktop
+
+diff --git a/Mandelbrot.desktop b/Mandelbrot.desktop
+new file mode 100644
+index 0000000..235813d
+--- /dev/null
++++ b/Mandelbrot.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Mandelbrot
++Name=Mandelbrot
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/Mandelbrot.pro b/Mandelbrot.pro
+index 3dcd8b6..d452162 100644
+--- a/Mandelbrot.pro
++++ b/Mandelbrot.pro
+@@ -37,5 +37,12 @@ DISTFILES += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Mandelbrot.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
