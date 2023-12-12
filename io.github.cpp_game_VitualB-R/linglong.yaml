@@ -1,0 +1,21 @@
+package:
+  id: io.github.cpp_game_VitualB-R
+  name: cpp_game_VitualB-R
+  version: 1.0.0
+  kind: app
+  description: |
+    A C++ Strategy Game built with QT Framework
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/ibrosharp/cpp_game_VitualB-R.git
+  commit: 142b8934aa94d52fe3149ebf0c1ceefaa2ee80e2
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  

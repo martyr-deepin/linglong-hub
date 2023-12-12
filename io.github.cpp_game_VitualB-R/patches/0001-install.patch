@@ -1,0 +1,55 @@
+From 0a2ac11619f606fc4efde1a37ce29d274cf118c2 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 16:17:15 +0800
+Subject: [PATCH] install
+
+---
+ vitualB.desktop |  9 +++++++++
+ vitualB.pro     | 13 ++++++++++++-
+ 2 files changed, 21 insertions(+), 1 deletion(-)
+ create mode 100644 vitualB.desktop
+
+diff --git a/vitualB.desktop b/vitualB.desktop
+new file mode 100644
+index 0000000..4715ad7
+--- /dev/null
++++ b/vitualB.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=vitualB
++Name=vitualB
++Icon=car
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/vitualB.pro b/vitualB.pro
+index a274f3a..d48a03d 100644
+--- a/vitualB.pro
++++ b/vitualB.pro
+@@ -57,8 +57,19 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     res.qrc
++
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =vitualB.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = images/car.jpg
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
