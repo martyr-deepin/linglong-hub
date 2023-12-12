@@ -1,0 +1,42 @@
+From edc77f450ef28de1847b48a278a5610fe50d5971 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 10:04:51 +0800
+Subject: [PATCH] install
+
+---
+ src/PaperTown.desktop | 8 ++++++++
+ src/PaperTown.pro     | 6 ++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 src/PaperTown.desktop
+
+diff --git a/src/PaperTown.desktop b/src/PaperTown.desktop
+new file mode 100644
+index 0000000..21f04a4
+--- /dev/null
++++ b/src/PaperTown.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=PaperTown
++Name=PaperTown
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/src/PaperTown.pro b/src/PaperTown.pro
+index 9f21c70..390afa2 100644
+--- a/src/PaperTown.pro
++++ b/src/PaperTown.pro
+@@ -98,3 +98,9 @@ FORMS += \
+ 
+ SUBDIRS += \
+     PaperTown.pros
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =PaperTown.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+

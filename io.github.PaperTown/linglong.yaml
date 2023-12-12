@@ -1,0 +1,28 @@
+package:
+  id: io.github.PaperTown
+  name: PaperTown
+  version: 1.4.2
+  kind: app
+  description: |
+    A city-building game made in QT for fun
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/kokhnovich/PaperTown.git
+  commit: e33c86f845e6185a14c4cfc9d1ad01ae7be36601
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
