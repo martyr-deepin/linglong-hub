@@ -1,0 +1,25 @@
+From 78155a7b999e0b3cc09beeb1238fe9c12afe0295 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 16:39:28 +0800
+Subject: [PATCH 2/2] install
+
+---
+ src/Board.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/Board.cpp b/src/Board.cpp
+index f99a857..6fb0ac3 100644
+--- a/src/Board.cpp
++++ b/src/Board.cpp
+@@ -7,7 +7,7 @@
+ #include <QPainter>
+ #include <QSound>
+ #include <math.h>
+-
++#include <QPainterPath>
+ #include "AboutDlg.h"
+ #include "HelpDlg.h"
+ #include "ModelDlg.h"
+-- 
+2.33.1
+

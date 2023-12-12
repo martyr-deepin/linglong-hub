@@ -1,0 +1,49 @@
+From 63b2bbc77db9bc58327d15d08af06b3fda881b02 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 16:38:59 +0800
+Subject: [PATCH 1/2] install
+
+---
+ src/WChess.pro     | 10 ++++++++++
+ src/wchess.desktop |  9 +++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 src/wchess.desktop
+
+diff --git a/src/WChess.pro b/src/WChess.pro
+index efb3990..d5b2529 100644
+--- a/src/WChess.pro
++++ b/src/WChess.pro
+@@ -51,3 +51,13 @@ RESOURCES += \
+     Resources.qrc
+ 
+ QT += multimedia
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =wchess.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = assets/imags/logo.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+diff --git a/src/wchess.desktop b/src/wchess.desktop
+new file mode 100644
+index 0000000..57e3dcc
+--- /dev/null
++++ b/src/wchess.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=wchess
++Name=wchess
++Icon=logo
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+-- 
+2.33.1
+
