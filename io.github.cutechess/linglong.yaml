@@ -1,0 +1,19 @@
+package:
+  id: io.github.cutechess
+  name: cutechess
+  version: 1.3.1
+  kind: app
+  description: |
+    Cute Chess is a graphical user interface, command-line interface and a library for playing chess.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/cutechess/cutechess.git
+  commit: 1071d84cf272bd7deca0964336bf02e367e2b22b
+
+build:
+  kind: cmake
