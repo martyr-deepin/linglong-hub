@@ -1,0 +1,22 @@
+package:
+  id: io.github.PlaneWar
+  name: PlaneWar
+  version: 0.0.1
+  kind: app
+  description: |
+    Airplane War Game written in Qt5
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/kun368/PlaneWar.git
+  commit: a74050b89e8a4c3001314c12fd5b3708677aca21
+  patch: 
+    - patches/0001-install.patch
+    - patches/0002-install.patch
+
+build:
+  kind: qmake

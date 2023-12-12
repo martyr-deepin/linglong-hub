@@ -1,0 +1,48 @@
+From 3d31109a22492d0cf57ae5426e1a6cea666bcb83 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 9 Dec 2023 11:32:36 +0800
+Subject: [PATCH] install
+
+---
+ PlaneWar.desktop |  9 +++++++++
+ PlaneWar.pro     | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 PlaneWar.desktop
+
+diff --git a/PlaneWar.desktop b/PlaneWar.desktop
+new file mode 100644
+index 0000000..454cb3f
+--- /dev/null
++++ b/PlaneWar.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=PlaneWar
++Name=PlaneWar
++Icon=myico
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/PlaneWar.pro b/PlaneWar.pro
+index f3f3fbd..af77a24 100644
+--- a/PlaneWar.pro
++++ b/PlaneWar.pro
+@@ -66,3 +66,13 @@ RESOURCES += \
+     my.qrc
+ 
+ RC_FILE  += myico.rc
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =PlaneWar.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = =myico.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
