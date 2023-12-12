@@ -1,0 +1,20 @@
+package:
+  id: io.github.csv-diff-gui
+  name: csv-diff-gui
+  version: 1.0.0
+  kind: app
+  description: |
+    diff tool for csv files with a gui written in C++/Qt (toy project but usable)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/tgys/csv-diff-gui.git
+  commit: a4f5e32a0445b521d41c50221ac957b832d801e0
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

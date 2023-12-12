@@ -1,0 +1,58 @@
+From 6a1b2794c045c759651d5ff15fb839d84e07fb27 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 09:43:08 +0800
+Subject: [PATCH] install
+
+---
+ csv-diff-gui.desktop |  9 +++++++++
+ csv-diff-gui.pro     | 12 +++++++++++-
+ 2 files changed, 20 insertions(+), 1 deletion(-)
+ create mode 100644 csv-diff-gui.desktop
+
+diff --git a/csv-diff-gui.desktop b/csv-diff-gui.desktop
+new file mode 100644
+index 0000000..4d96b92
+--- /dev/null
++++ b/csv-diff-gui.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=csv-diff-gui
++Name=csv-diff-gui
++Icon=base_icon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/csv-diff-gui.pro b/csv-diff-gui.pro
+index 92586a9..a42f503 100644
+--- a/csv-diff-gui.pro
++++ b/csv-diff-gui.pro
+@@ -53,7 +53,7 @@ RESOURCES += qdarkstyle/style.qrc
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ 
+@@ -61,3 +61,13 @@ SUBDIRS += \
+     Qt-Frameless-Window-DarkStyle/frameless_window_dark.pro
+ 
+ DISTFILES +=
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =csv-diff-gui.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = qdarkstyle/svg/base_icon.svg
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
