@@ -1,0 +1,48 @@
+From 8e5dd69b7423e386f4244521542c9bd1c2292bf5 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 10 Dec 2023 12:29:41 +0800
+Subject: [PATCH] install
+
+---
+ mediaplayer.desktop | 9 +++++++++
+ mediaplayer.pro     | 9 +++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 mediaplayer.desktop
+
+diff --git a/mediaplayer.desktop b/mediaplayer.desktop
+new file mode 100644
+index 0000000..bc1a0bd
+--- /dev/null
++++ b/mediaplayer.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=mediaplayer
++Name=mediaplayer
++Icon=playicon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/mediaplayer.pro b/mediaplayer.pro
+index 8744dae..0b9f273 100644
+--- a/mediaplayer.pro
++++ b/mediaplayer.pro
+@@ -27,3 +27,12 @@ RESOURCES += \
+ 
+ DISTFILES += \
+     icons/openicon.png
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =mediaplayer.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = icons/playicon.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+

@@ -1,0 +1,20 @@
+package:
+  id: io.github.Media-Player-Qt
+  name: Media-Player-Qt
+  version: 0.2.0
+  kind: app
+  description: |
+    An open source media player built with Qt(C++)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/stupid-kid-af/Media-Player-Qt.git
+  commit: 7e1eb40c1ae44359918b654adb583726cfd3eedf
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
