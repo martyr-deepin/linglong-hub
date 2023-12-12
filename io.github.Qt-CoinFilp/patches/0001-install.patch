@@ -1,0 +1,52 @@
+From 1e780e3a2d8b5c1ed1ee8d6dec4e3c42af02ca5e Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 10 Dec 2023 12:01:13 +0800
+Subject: [PATCH] install
+
+---
+ CoinFilp/CoinFilp.desktop |  9 +++++++++
+ CoinFilp/CoinFilp.pro     | 11 ++++++++++-
+ 2 files changed, 19 insertions(+), 1 deletion(-)
+ create mode 100644 CoinFilp/CoinFilp.desktop
+
+diff --git a/CoinFilp/CoinFilp.desktop b/CoinFilp/CoinFilp.desktop
+new file mode 100644
+index 0000000..82f0335
+--- /dev/null
++++ b/CoinFilp/CoinFilp.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=CoinFilp
++Name=CoinFilp
++Icon=LevelIcon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/CoinFilp/CoinFilp.pro b/CoinFilp/CoinFilp.pro
+index e247791..a84b312 100644
+--- a/CoinFilp/CoinFilp.pro
++++ b/CoinFilp/CoinFilp.pro
+@@ -47,8 +47,17 @@ FORMS +=
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     res.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =CoinFilp.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = res/LevelIcon.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+

@@ -1,0 +1,28 @@
+package:
+  id: io.github.Qt-CoinFilp
+  name: Qt-CoinFilp
+  version: 1.0.0
+  kind: app
+  description: |
+    一个利用C++和Qt写的翻金币游戏
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/tamya2020/Qt-CoinFilp.git
+  commit: b79a0d93bd005ea66784b4b98c9f057f29789d7c
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd CoinFilp
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
