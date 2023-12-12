@@ -1,0 +1,48 @@
+From 9e56177c08eb6bfa26960e2877cf862249057045 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 10 Dec 2023 10:33:35 +0800
+Subject: [PATCH] install
+
+---
+ PureTouch.desktop |  9 +++++++++
+ PureTouch.pro     | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 PureTouch.desktop
+
+diff --git a/PureTouch.desktop b/PureTouch.desktop
+new file mode 100644
+index 0000000..2f5baa4
+--- /dev/null
++++ b/PureTouch.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=PureTouch
++Name=PureTouch
++Icon=PureTouchIcon3
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/PureTouch.pro b/PureTouch.pro
+index 746b3a5..e96df83 100644
+--- a/PureTouch.pro
++++ b/PureTouch.pro
+@@ -49,3 +49,13 @@ RESOURCES += \
+ DISTFILES += PureTouchIcon3.ico
+ 
+ RE_ICONS = PureTouchIcon3.ico
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =PureTouch.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = PureTouchIcon3.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+

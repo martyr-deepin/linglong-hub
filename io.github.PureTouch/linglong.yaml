@@ -1,0 +1,20 @@
+package:
+  id: io.github.PureTouch
+  name: PureTouch
+  version: 1.0.0
+  kind: app
+  description: |
+    A music player written with Qt
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/TzeHimSung/PureTouch.git
+  commit: b07afa0072ab3cdae7d2fc4ff63e2eeaada25ce2
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
