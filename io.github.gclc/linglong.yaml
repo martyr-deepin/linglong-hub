@@ -1,0 +1,28 @@
+package:
+  id: io.github.gclc
+  name: gclc
+  version: 1.0.0
+  kind: app
+  description: |
+    GCLC is a mathematical software tool for producing high-quality mathematical illustrations
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/janicicpredrag/gclc.git
+  commit: e587fd9ded52a6ea13ade1def47316b22e43bf6d
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd source
+      qmake -makefile gGCLC.pro ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
