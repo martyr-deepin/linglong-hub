@@ -1,0 +1,24 @@
+package:
+  id: io.github.QChicken
+  name: QChicken
+  version: 1.0.0
+  kind: app
+  description: |
+    QChicken is farm control softwareQChicken is farm control software
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtcharts/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/mrlucasrib/QChicken.git
+  commit: 502d44480690b145a4e69354b9ab0ba3fc76aafc
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

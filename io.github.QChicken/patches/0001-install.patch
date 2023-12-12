@@ -1,0 +1,54 @@
+From 84bdd81e4646ddc4c1f17f1be7e60c77c5b1efc2 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 09:32:33 +0800
+Subject: [PATCH] install
+
+---
+ QChickenMain/QChickenMain.desktop |  8 ++++++++
+ QChickenMain/QChickenMain.pro     | 10 +++++++++-
+ 2 files changed, 17 insertions(+), 1 deletion(-)
+ create mode 100644 QChickenMain/QChickenMain.desktop
+
+diff --git a/QChickenMain/QChickenMain.desktop b/QChickenMain/QChickenMain.desktop
+new file mode 100644
+index 0000000..c3039dc
+--- /dev/null
++++ b/QChickenMain/QChickenMain.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QChickenMain
++Name=QChickenMain
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/QChickenMain/QChickenMain.pro b/QChickenMain/QChickenMain.pro
+index f129e10..b5464ae 100644
+--- a/QChickenMain/QChickenMain.pro
++++ b/QChickenMain/QChickenMain.pro
+@@ -37,7 +37,7 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../API/Contabilidade/release/ -lContabilidade
+@@ -46,3 +46,11 @@ else:unix: LIBS += -L$$OUT_PWD/../API/Contabilidade/ -lContabilidade
+ 
+ INCLUDEPATH += $$PWD/../API/Contabilidade
+ DEPENDPATH += $$PWD/../API/Contabilidade
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =QChickenMain.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
