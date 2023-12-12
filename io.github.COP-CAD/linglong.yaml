@@ -1,0 +1,20 @@
+package:
+  id: io.github.COP-CAD
+  name: COP-CAD
+  version: 1.0.0
+  kind: app
+  description: |
+    An Engineering Drawing Visualization and Design Tool made using Qt
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/arpanmangal/COP-CAD.git
+  commit: f5d1673c31588c5bf3f0cb5cc3e9f5e85ccfb59d
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

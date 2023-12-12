@@ -1,0 +1,46 @@
+From ac06c73632f60f875dcaff0915c780ef89fe4e9a Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 17:02:58 +0800
+Subject: [PATCH] install
+
+---
+ CopCAD.desktop  | 8 ++++++++
+ EnngDrawing.pro | 9 ++++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 CopCAD.desktop
+
+diff --git a/CopCAD.desktop b/CopCAD.desktop
+new file mode 100644
+index 0000000..6fc7ff9
+--- /dev/null
++++ b/CopCAD.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=CopCAD
++Name=CopCAD
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/EnngDrawing.pro b/EnngDrawing.pro
+index 7644ba6..23f5987 100644
+--- a/EnngDrawing.pro
++++ b/EnngDrawing.pro
+@@ -32,4 +32,11 @@ UI_DIR      = ./build/uic
+ SOURCES += ./src/*.cpp ./src/QT/*.cpp ./src/2D/*.cpp ./src/3D/*.cpp
+ HEADERS += ./include/QT/*.h ./include/common.h ./include/2D/*.h ./include/3D/*.h
+ 
+-FORMS += ./forms/*.ui \
+\ No newline at end of file
++FORMS += ./forms/*.ui \
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =CopCAD.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
