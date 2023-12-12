@@ -1,0 +1,20 @@
+package:
+  id: io.github.TURQOView
+  name: TURQOView
+  version: 1.0.4
+  kind: app
+  description: |
+    TURQOView - A Qt-based GUI application that lets users investigate and control TORQUE systems
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/davidivanmarsh/TORQUEView.git
+  commit: 76a2c7f7f675a501adaee84f5e3b405622028d24
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

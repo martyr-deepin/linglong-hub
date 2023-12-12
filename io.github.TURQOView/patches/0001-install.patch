@@ -1,0 +1,47 @@
+From 74a4b33b6980523ab219f97612f89854ae1dea2e Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 8 Dec 2023 21:13:33 +0800
+Subject: [PATCH] install
+
+---
+ TORQUEView.desktop | 9 +++++++++
+ TORQUEView.pro     | 9 +++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 TORQUEView.desktop
+
+diff --git a/TORQUEView.desktop b/TORQUEView.desktop
+new file mode 100644
+index 0000000..39a6d80
+--- /dev/null
++++ b/TORQUEView.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=TORQUEView
++Name=TORQUEView
++Icon=general
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/TORQUEView.pro b/TORQUEView.pro
+index 7fcab33..a23f7e8 100644
+--- a/TORQUEView.pro
++++ b/TORQUEView.pro
+@@ -75,3 +75,12 @@ FORMS    += mainwindow.ui \
+ 
+ RESOURCES += \
+     TORQUEView.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =TORQUEView.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = images/general.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
