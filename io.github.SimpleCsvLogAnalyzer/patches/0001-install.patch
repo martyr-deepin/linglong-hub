@@ -1,0 +1,55 @@
+From f572ab7c2da946506d21f6de9021c92d69c1eba6 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 9 Dec 2023 11:11:41 +0800
+Subject: [PATCH] install
+
+---
+ SimpleCsvLogAnalyzer.desktop |  9 +++++++++
+ SimpleCsvLogAnalyzer.pro     | 12 +++++++++++-
+ 2 files changed, 20 insertions(+), 1 deletion(-)
+ create mode 100644 SimpleCsvLogAnalyzer.desktop
+
+diff --git a/SimpleCsvLogAnalyzer.desktop b/SimpleCsvLogAnalyzer.desktop
+new file mode 100644
+index 0000000..e631f41
+--- /dev/null
++++ b/SimpleCsvLogAnalyzer.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=SimpleCsvLogAnalyzer
++Name=SimpleCsvLogAnalyzer
++icon=analyzing
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/SimpleCsvLogAnalyzer.pro b/SimpleCsvLogAnalyzer.pro
+index cd4aad0..6d5cbf8 100644
+--- a/SimpleCsvLogAnalyzer.pro
++++ b/SimpleCsvLogAnalyzer.pro
+@@ -36,9 +36,19 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =SimpleCsvLogAnalyzer.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = images/analyzing.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
++
+ RESOURCES += \
+     icons.qrc
+ 
+-- 
+2.33.1
+

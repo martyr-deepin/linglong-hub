@@ -1,0 +1,20 @@
+package:
+  id: io.github.SimpleCsvLogAnalyzer
+  name: SimpleCsvLogAnalyzer
+  version: 0.0.1
+  kind: app
+  description: |
+    Simple comma seperated (csv) log file analyzer.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dd-sudo/SimpleCsvLogAnalyzer.git
+  commit: d7ade922921118dc6db701129142c74a78a671eb
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
