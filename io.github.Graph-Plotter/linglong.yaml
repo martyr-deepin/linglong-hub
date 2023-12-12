@@ -1,0 +1,32 @@
+package:
+  id: io.github.Graph-Plotter
+  name: Graph-Plotter
+  version: 1.0.0
+  kind: app
+  description: |
+    A Graph Plotter desktop application in C++
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtscript/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/vaithak/Graph-Plotter.git
+  commit: 8e30fc2aa227b4e59f5a743850c042ee65e27f6e
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd Graph-plotter
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

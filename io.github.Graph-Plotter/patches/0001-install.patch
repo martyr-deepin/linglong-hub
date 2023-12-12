@@ -1,0 +1,45 @@
+From 114fbe19c80ce14684e7227195aa2348002899a8 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 9 Dec 2023 09:39:13 +0800
+Subject: [PATCH] install
+
+---
+ Graph-plotter/Graph-plotter.desktop | 8 ++++++++
+ Graph-plotter/Graph-plotter.pro     | 8 ++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 Graph-plotter/Graph-plotter.desktop
+
+diff --git a/Graph-plotter/Graph-plotter.desktop b/Graph-plotter/Graph-plotter.desktop
+new file mode 100644
+index 0000000..6687134
+--- /dev/null
++++ b/Graph-plotter/Graph-plotter.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Graph-plotter
++Name=Graph-plotter
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Graph-plotter/Graph-plotter.pro b/Graph-plotter/Graph-plotter.pro
+index 51e3314..3eb40c1 100644
+--- a/Graph-plotter/Graph-plotter.pro
++++ b/Graph-plotter/Graph-plotter.pro
+@@ -32,3 +32,11 @@ HEADERS += \
+         mainwindow.h \
+     qcustomplot.h \
+     start_plotting.h
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Graph-plotter.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
