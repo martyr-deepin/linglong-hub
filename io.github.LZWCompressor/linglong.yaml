@@ -1,0 +1,20 @@
+package:
+  id: io.github.LZWCompressor
+  name: LZWCompressor
+  version: 0.0.1
+  kind: app
+  description: |
+    LZWCompressor是基于LZW算法的压缩、解压缩软件。程序基于Qt 5开发，支持跨平台编译，可以有效地压缩文本或8bit BMP图像。
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Super262/LZWCompressor.git
+  commit: 2bfe2c4d37f65d41c350257ca2d85298f6d732a7
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

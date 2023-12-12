@@ -1,0 +1,54 @@
+From caea9b7b3952c6c2288754bc80af0e1b814b73e1 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 19:25:07 +0800
+Subject: [PATCH] install
+
+---
+ LZWCompressor.desktop |  9 +++++++++
+ LZWCompressor.pro     | 11 ++++++++++-
+ 2 files changed, 19 insertions(+), 1 deletion(-)
+ create mode 100644 LZWCompressor.desktop
+
+diff --git a/LZWCompressor.desktop b/LZWCompressor.desktop
+new file mode 100644
+index 0000000..b47fd93
+--- /dev/null
++++ b/LZWCompressor.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=LZWCompressor
++Name=LZWCompressor
++Icon=app_icon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/LZWCompressor.pro b/LZWCompressor.pro
+index 52af5d4..f98d0ea 100755
+--- a/LZWCompressor.pro
++++ b/LZWCompressor.pro
+@@ -55,8 +55,17 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     svgs.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =LZWCompressor.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = resources/app_icon.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
