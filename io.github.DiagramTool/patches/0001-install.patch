@@ -1,0 +1,52 @@
+From 4f41d18c3110998f364c8e8aeac571d044b10a5c Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 8 Dec 2023 15:28:51 +0800
+Subject: [PATCH] install
+
+---
+ DiagramTool.desktop |  9 +++++++++
+ DiagramTool.pro     | 10 +++++++++-
+ 2 files changed, 18 insertions(+), 1 deletion(-)
+ create mode 100644 DiagramTool.desktop
+
+diff --git a/DiagramTool.desktop b/DiagramTool.desktop
+new file mode 100644
+index 0000000..d756bdd
+--- /dev/null
++++ b/DiagramTool.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=DiagramTool
++Name=DiagramTool
++icon=diagramTool
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/DiagramTool.pro b/DiagramTool.pro
+index 9a428b6..9cda4c7 100644
+--- a/DiagramTool.pro
++++ b/DiagramTool.pro
+@@ -162,9 +162,17 @@ QML_DESIGNER_IMPORT_PATH =
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =DiagramTool.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = icons/diagramTool.svg
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+ DISTFILES +=
+ 
+ 
+-- 
+2.33.1
+
