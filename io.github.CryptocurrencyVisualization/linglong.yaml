@@ -1,0 +1,24 @@
+package:
+  id: io.github.CryptocurrencyVisualization
+  name: CryptocurrencyVisualization
+  version: 0.1.0
+  kind: app
+  description: |
+    Cryptocurrency Data Visualizaion by Qt Framework - Qt Charts - Qt Network
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtcharts/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/qtuancr261/CryptocurrencyVisualization.git
+  commit: 773cce30131af8c3d1f02e182316297fffbbce62
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

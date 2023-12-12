@@ -1,0 +1,48 @@
+From e28e87a1790f68acb963f3a8b32770e928684f95 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 11:35:35 +0800
+Subject: [PATCH] install
+
+---
+ CryptocurrencyVisualization.desktop |  9 +++++++++
+ CryptocurrencyVisualization.pro     | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 CryptocurrencyVisualization.desktop
+
+diff --git a/CryptocurrencyVisualization.desktop b/CryptocurrencyVisualization.desktop
+new file mode 100644
+index 0000000..c66e138
+--- /dev/null
++++ b/CryptocurrencyVisualization.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=CryptocurrencyVisualization
++Name=CryptocurrencyVisualization
++Icon=cash
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/CryptocurrencyVisualization.pro b/CryptocurrencyVisualization.pro
+index 76464ba..d5c73c7 100644
+--- a/CryptocurrencyVisualization.pro
++++ b/CryptocurrencyVisualization.pro
+@@ -51,3 +51,13 @@ FORMS += \
+ 
+ RESOURCES += \
+     qresource.qrc
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =CryptocurrencyVisualization.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = ico/cash.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
