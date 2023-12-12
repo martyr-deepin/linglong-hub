@@ -1,0 +1,54 @@
+From 0a4b6362121da4fa9763f1da1967f7fdbdf8578c Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 8 Dec 2023 18:49:11 +0800
+Subject: [PATCH] install
+
+---
+ writernote.desktop |  9 +++++++++
+ writernote.pro     | 12 +++++++++++-
+ 2 files changed, 20 insertions(+), 1 deletion(-)
+ create mode 100644 writernote.desktop
+
+diff --git a/writernote.desktop b/writernote.desktop
+new file mode 100644
+index 0000000..eab1b38
+--- /dev/null
++++ b/writernote.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=writernote
++Name=writernote
++icon=application-image
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/writernote.pro b/writernote.pro
+index b7c5c84..4ae4701 100644
+--- a/writernote.pro
++++ b/writernote.pro
+@@ -169,9 +169,19 @@ LIBS += -lstdc++fs -lglib-2.0
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =writernote.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = images/application-image.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
++
++
+ unix: CONFIG += link_pkgconfig
+ unix: PKGCONFIG += libzip
+ 
+-- 
+2.33.1
+

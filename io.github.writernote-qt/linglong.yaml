@@ -1,0 +1,23 @@
+package:
+  id: io.github.writernote-qt
+  name: writernote-qt
+  version: 1.3.8
+  kind: app
+  description: |
+     you can record audio as you write, and listen to it again seeing what you have written for every second of the audio.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: libzip/1.5.1.8
+
+source:
+  kind: git
+  url: https://github.com/giacomogroppi/writernote-qt.git
+  commit: be378e4915d729b4241d51f152836ab52f9f9660
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
