@@ -1,0 +1,19 @@
+package:
+  id: io.github.Play-
+  name: Play-
+  version: 0.63.0
+  kind: app
+  description: |
+    Play! is a PlayStation2 emulator for Windows, macOS, UNIX, Android, iOS & web browser platforms.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/jpd002/Play-.git
+  commit: 58fcc91923cc1f16084b0718e8302426caf51a87
+
+build:
+  kind: cmake
