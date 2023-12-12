@@ -1,0 +1,45 @@
+From d2ade0aeeb3a57b5594e71b58db705b5f771208e Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 19:33:41 +0800
+Subject: [PATCH] install
+
+---
+ qwerty.desktop | 8 ++++++++
+ qwerty.pro     | 8 ++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 qwerty.desktop
+
+diff --git a/qwerty.desktop b/qwerty.desktop
+new file mode 100644
+index 0000000..878df73
+--- /dev/null
++++ b/qwerty.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=qwerty
++Name=qwerty
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/qwerty.pro b/qwerty.pro
+index 742f3ee..40b8854 100644
+--- a/qwerty.pro
++++ b/qwerty.pro
+@@ -68,3 +68,11 @@ SOURCES += \
+ 
+ 
+ CONFIG += c++14
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =qwerty.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

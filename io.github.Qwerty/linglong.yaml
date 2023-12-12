@@ -1,0 +1,20 @@
+package:
+  id: io.github.Qwerty
+  name: Qwerty
+  version: 1.0.0
+  kind: app
+  description: |
+    Simple image editor
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/DevAlone/Qwerty.git
+  commit: 4d020dbb5b66253cb9db68cde8e202b9b06620c1
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
