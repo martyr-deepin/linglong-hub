@@ -1,0 +1,20 @@
+package:
+  id: io.github.ThePainter-CrossPlatform
+  name: ThePainter-CrossPlatform 
+  version: 0.0.1
+  kind: app
+  description: |
+     This is a simple paint application which is developed using c++ with QT framework.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/ashankaushalya97/ThePainter-CrossPlatform.git
+  commit: fe2a1c7f87463ed3d6ff666289baf74340505511
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

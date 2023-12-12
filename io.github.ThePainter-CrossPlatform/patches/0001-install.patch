@@ -1,0 +1,51 @@
+From baa749a1c6751aabd2bee00ecc15039d6700f700 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 10 Dec 2023 10:17:22 +0800
+Subject: [PATCH] install
+
+---
+ PaintV1.desktop |  9 +++++++++
+ PaintV1.pro     | 11 ++++++++++-
+ 2 files changed, 19 insertions(+), 1 deletion(-)
+ create mode 100644 PaintV1.desktop
+
+diff --git a/PaintV1.desktop b/PaintV1.desktop
+new file mode 100644
+index 0000000..09f7633
+--- /dev/null
++++ b/PaintV1.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=PaintV1
++Name=PaintV1
++icon=splash
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/PaintV1.pro b/PaintV1.pro
+index 89e9a88..d6cc09d 100644
+--- a/PaintV1.pro
++++ b/PaintV1.pro
+@@ -29,5 +29,14 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =PaintV1.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = img/splash.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
