@@ -1,0 +1,53 @@
+From 0da2980d93359fcd063d3db6b4e9e1d1970daa31 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 10 Dec 2023 10:39:57 +0800
+Subject: [PATCH] install
+
+---
+ QLink.desktop |  9 +++++++++
+ QLink.pro     | 11 ++++++++++-
+ 2 files changed, 19 insertions(+), 1 deletion(-)
+ create mode 100644 QLink.desktop
+
+diff --git a/QLink.desktop b/QLink.desktop
+new file mode 100644
+index 0000000..e4373f1
+--- /dev/null
++++ b/QLink.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QLink
++Name=QLink
++Icon=clock
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/QLink.pro b/QLink.pro
+index cd1d434..e55d5a2 100644
+--- a/QLink.pro
++++ b/QLink.pro
+@@ -33,8 +33,17 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     qlink.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =QLink.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = assets/clock.jpeg
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+

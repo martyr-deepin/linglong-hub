@@ -1,0 +1,20 @@
+package:
+  id: io.github.QLink
+  name: QLink
+  version: 1.0.0
+  kind: app
+  description: |
+    A RPG link game with poor UI design
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/WindowsXp-Beta/QLink.git
+  commit: 65bae5efd1c90c559e07673f46d5bb8dc9173dad
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
