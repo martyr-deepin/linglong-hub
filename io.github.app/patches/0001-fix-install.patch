@@ -1,0 +1,25 @@
+From c7825617541786d83a4f741315a12933b454b848 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Tue, 12 Dec 2023 22:15:35 +0800
+Subject: [PATCH] fix-install
+
+---
+ socnetv.pro | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/socnetv.pro b/socnetv.pro
+index 39659669..67bc77b1 100755
+--- a/socnetv.pro
++++ b/socnetv.pro
+@@ -160,7 +160,7 @@ unix:!macx{
+ # with the command:
+ # make INSTALL_ROOT=<folder> install; 
+ 
+-  PREFIX = /usr
++  ##PREFIX = /usr
+   target.path = $${PREFIX}/bin
+   TARGET = socnetv
+ 
+-- 
+2.33.1
+
