@@ -1,0 +1,32 @@
+package:
+  id: io.github.Image-Processing-App
+  name: Image-Processing-App
+  version: 1.0.0
+  kind: app
+  description: |
+    This project consist of the implementation of image processing projects without the use of any image processing library (such as opencv).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtcharts/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/OluwaseunOjeleye/Image-Processing-App.git
+  commit: 9e70373fddb74174bd92b7ccca48a90d7e61e467
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd source
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

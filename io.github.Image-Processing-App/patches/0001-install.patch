@@ -1,0 +1,45 @@
+From 0d7b138bdac143b0ced16f053e394ee3054b6836 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 8 Dec 2023 18:58:08 +0800
+Subject: [PATCH] install
+
+---
+ source/ImageProcessing.desktop | 8 ++++++++
+ source/ImageProcessing.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 source/ImageProcessing.desktop
+
+diff --git a/source/ImageProcessing.desktop b/source/ImageProcessing.desktop
+new file mode 100644
+index 0000000..5cc86ef
+--- /dev/null
++++ b/source/ImageProcessing.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=ImageProcessing
++Name=ImageProcessing
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/source/ImageProcessing.pro b/source/ImageProcessing.pro
+index 2f67411..53c62aa 100644
+--- a/source/ImageProcessing.pro
++++ b/source/ImageProcessing.pro
+@@ -35,3 +35,10 @@ HEADERS += \
+ 
+ FORMS += \
+         mainwindow.ui
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =ImageProcessing.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
