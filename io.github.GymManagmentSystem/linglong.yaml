@@ -1,0 +1,20 @@
+package:
+  id: io.github.GymManagmentSystem
+  name: GymManagmentSystem
+  version: 1.0.0
+  kind: app
+  description: |
+    A high end UI based Gym Management System made using QT and SQLite.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/anujsingh4545/GymManagmentSystem-Using-QT-and-SQLITE.git
+  commit: cb929fb23c379eac56b9dcede951ecb359633506
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

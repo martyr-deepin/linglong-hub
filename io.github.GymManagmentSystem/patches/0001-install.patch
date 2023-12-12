@@ -1,0 +1,53 @@
+From cf0dbdd3ed4fc3c88ae8a8cea38e8b2dd74d60b8 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 19:14:47 +0800
+Subject: [PATCH] install
+
+---
+ Project_1.desktop |  9 +++++++++
+ Project_1.pro     | 11 ++++++++++-
+ 2 files changed, 19 insertions(+), 1 deletion(-)
+ create mode 100644 Project_1.desktop
+
+diff --git a/Project_1.desktop b/Project_1.desktop
+new file mode 100644
+index 0000000..e4aa372
+--- /dev/null
++++ b/Project_1.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Project_1
++Name=Project_1
++Icon=eye
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Project_1.pro b/Project_1.pro
+index 9b3b953..971799c 100644
+--- a/Project_1.pro
++++ b/Project_1.pro
+@@ -44,8 +44,17 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     imagesrc.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Project_1.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = eye.PNG
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
