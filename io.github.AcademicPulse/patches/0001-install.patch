@@ -1,0 +1,51 @@
+From 721d866133cf5259eb0a17ff42eb067b7acb2e1e Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 10 Dec 2023 11:32:55 +0800
+Subject: [PATCH] install
+
+---
+ Student_Data_Management.desktop | 8 ++++++++
+ Student_Data_Management.pro     | 9 ++++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 Student_Data_Management.desktop
+
+diff --git a/Student_Data_Management.desktop b/Student_Data_Management.desktop
+new file mode 100644
+index 0000000..6b79d7a
+--- /dev/null
++++ b/Student_Data_Management.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Student_Data_Management
++Name=Student_Data_Management
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/Student_Data_Management.pro b/Student_Data_Management.pro
+index daff764..cb56cf6 100644
+--- a/Student_Data_Management.pro
++++ b/Student_Data_Management.pro
+@@ -35,8 +35,15 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     image.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Student_Data_Management.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
