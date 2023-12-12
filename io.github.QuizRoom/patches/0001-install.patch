@@ -1,0 +1,53 @@
+From 891665559f03ac620ad9bd80b8a6b821be12e23a Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 10 Dec 2023 10:59:33 +0800
+Subject: [PATCH] install
+
+---
+ Progetto_P2.desktop |  9 +++++++++
+ Progetto_P2.pro     | 11 ++++++++++-
+ 2 files changed, 19 insertions(+), 1 deletion(-)
+ create mode 100644 Progetto_P2.desktop
+
+diff --git a/Progetto_P2.desktop b/Progetto_P2.desktop
+new file mode 100644
+index 0000000..00b46bb
+--- /dev/null
++++ b/Progetto_P2.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Progetto_P2
++Name=Progetto_P2
++Icon=quiz_app_icon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/Progetto_P2.pro b/Progetto_P2.pro
+index 1601bb4..4598adb 100644
+--- a/Progetto_P2.pro
++++ b/Progetto_P2.pro
+@@ -97,8 +97,17 @@ FORMS +=
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android:# target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     resources.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Progetto_P2.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = Resources/Images/quiz_app_icon.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+

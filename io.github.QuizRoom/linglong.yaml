@@ -1,0 +1,20 @@
+package:
+  id: io.github.QuizRoom
+  name: QuizRoom
+  version: 0.0.1
+  kind: app
+  description: |
+    Progetto di Programmazione ad Oggetti dell'Universit¨¤ di Padova 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/nicomanto/QuizRoom.git
+  commit: 3949a24b5b335a6a8cc9207cc5e61d6d2c8ede0a
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
