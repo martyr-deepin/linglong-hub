@@ -1,0 +1,25 @@
+From 2e80802d3dc3a88e2aec90552afc324b1edfb9a2 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 11:14:13 +0800
+Subject: [PATCH] install
+
+---
+ custom_widgets/taskprogressbar.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/custom_widgets/taskprogressbar.cpp b/custom_widgets/taskprogressbar.cpp
+index 85f8c13..fb52aad 100644
+--- a/custom_widgets/taskprogressbar.cpp
++++ b/custom_widgets/taskprogressbar.cpp
+@@ -5,7 +5,7 @@
+ #include <QResizeEvent>
+ #include "settings/constants.h"
+ #include "controllers/datecontrollers.h"
+-
++#include <QPainterPath>
+ 
+ TaskProgressBar::TaskProgressBar(QDate current_date, Task task, QWidget* parent) :
+     current_date{current_date},
+-- 
+2.33.1
+

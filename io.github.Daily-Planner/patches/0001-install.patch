@@ -1,0 +1,48 @@
+From 0fd6639f9d268cecc61450892d7bbb58aca3ec4f Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 11:19:28 +0800
+Subject: [PATCH] install
+
+---
+ OrganiserMVC.desktop |  9 +++++++++
+ OrganiserMVC.pro     | 11 +++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 OrganiserMVC.desktop
+
+diff --git a/OrganiserMVC.desktop b/OrganiserMVC.desktop
+new file mode 100644
+index 0000000..db5d5d5
+--- /dev/null
++++ b/OrganiserMVC.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=OrganiserMVC
++Name=OrganiserMVC
++Icon=book
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/OrganiserMVC.pro b/OrganiserMVC.pro
+index 9ebac87..895e97c 100644
+--- a/OrganiserMVC.pro
++++ b/OrganiserMVC.pro
+@@ -59,3 +59,14 @@ FORMS    += views/mainwindow.ui \
+ 
+ RESOURCES += \
+     resources.qrc
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =OrganiserMVC.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = icons/book.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
++
+-- 
+2.33.1
+
