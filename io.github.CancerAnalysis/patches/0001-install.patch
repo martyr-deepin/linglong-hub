@@ -1,0 +1,53 @@
+From f4fbe389fd41583113db310c274b4042856f77d9 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Dec 2023 17:19:57 +0800
+Subject: [PATCH] install
+
+---
+ CancerAnalysis.desktop |  9 +++++++++
+ CancerAnalysis.pro     | 10 +++++++++-
+ 2 files changed, 18 insertions(+), 1 deletion(-)
+ create mode 100644 CancerAnalysis.desktop
+
+diff --git a/CancerAnalysis.desktop b/CancerAnalysis.desktop
+new file mode 100644
+index 0000000..478af96
+--- /dev/null
++++ b/CancerAnalysis.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=CancerAnalysis
++Name=CancerAnalysis
++Icon=favicon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/CancerAnalysis.pro b/CancerAnalysis.pro
+index 13600e8..f114f2d 100644
+--- a/CancerAnalysis.pro
++++ b/CancerAnalysis.pro
+@@ -44,8 +44,16 @@ win32: RC_FILE = iconsource.rc
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     sources.qrc
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =CancerAnalysis.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = favicon.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
