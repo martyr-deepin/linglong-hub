@@ -1,0 +1,78 @@
+From 3a4932a4bb125c52de08889d8c199e1bc355bee6 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 10 Dec 2023 12:20:33 +0800
+Subject: [PATCH] install
+
+---
+ dukto.desktop |  9 +++++++++
+ dukto.pro     | 32 ++++++++++++++------------------
+ 2 files changed, 23 insertions(+), 18 deletions(-)
+ create mode 100644 dukto.desktop
+
+diff --git a/dukto.desktop b/dukto.desktop
+new file mode 100644
+index 0000000..7054fa2
+--- /dev/null
++++ b/dukto.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=dukto
++Name=dukto
++Icon=dukto
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/dukto.pro b/dukto.pro
+index f7cfa10..752aa5b 100644
+--- a/dukto.pro
++++ b/dukto.pro
+@@ -26,24 +26,6 @@ VERSION = 6.0.0
+ symbian:TARGET.CAPABILITY += NetworkServices
+ 
+ 
+-unix {
+-        isEmpty(PREFIX) {
+-            PREFIX=/usr
+-        }
+-        DATADIR = $$PREFIX/share
+-
+-	TARGET = dukto
+-        target.path = $$PREFIX/bin
+-	INSTALLS += target
+-	
+-        icon.path = $$DATADIR/pixmaps
+-        icon.files = data/dukto.png
+-	INSTALLS += icon
+-	
+-        desktop.path = $$DATADIR/applications/
+-        desktop.files = data/dukto.desktop
+-	INSTALLS += desktop
+-}
+ 
+ # If your application uses the Qt Mobility libraries, uncomment the following
+ # lines and add the respective components to the MOBILITY variable.
+@@ -96,3 +78,17 @@ include(third-party/singleapplication/singleapplication.pri)
+ DEFINES += QAPPLICATION_CLASS=QApplication
+ 
+ OTHER_FILES +=
++
++
++
++	TARGET = dukto
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.path = $$DATADIR/applications/
++icons.path = $$PREFIX/share/icons
++	INSTALLS += target
++        icons.files = data/dukto.png
++	INSTALLS += icons
++        desktop.files = dukto.desktop
++	INSTALLS += desktop
+\ No newline at end of file
+-- 
+2.33.1
+
