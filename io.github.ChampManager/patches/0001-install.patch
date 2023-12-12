@@ -1,0 +1,41 @@
+From adcc3b8b3cef56dbb034c155049ff195807b797c Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 10 Dec 2023 10:52:45 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt                 | 3 +++
+ build_dir/ChampManager.desktop | 8 ++++++++
+ 2 files changed, 11 insertions(+)
+ create mode 100644 build_dir/ChampManager.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 273429c..341a6c6 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -48,3 +48,6 @@ if(ENABLE_TESTING)
+   add_test(ParserTestXML tests/test_parser_xml 1)
+   add_test(ParserTestConfig tests/test_parser_config 2)
+ endif()
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/ChampManager.desktop DESTINATION share/applications)
++install(TARGETS ${project_name} DESTINATION bin)
+\ No newline at end of file
+diff --git a/build_dir/ChampManager.desktop b/build_dir/ChampManager.desktop
+new file mode 100644
+index 0000000..d2ded2e
+--- /dev/null
++++ b/build_dir/ChampManager.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=ChampManager
++Name=ChampManager
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+-- 
+2.33.1
+
