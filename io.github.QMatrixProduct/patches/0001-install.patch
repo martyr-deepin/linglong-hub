@@ -1,0 +1,45 @@
+From 0ff5d6abb58255c25ec35d01a0da00865d99a4a6 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 14:47:37 +0800
+Subject: [PATCH] install
+
+---
+ QMatrixProduct.desktop | 8 ++++++++
+ QMatrixProduct.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 QMatrixProduct.desktop
+
+diff --git a/QMatrixProduct.desktop b/QMatrixProduct.desktop
+new file mode 100644
+index 0000000..dd669c3
+--- /dev/null
++++ b/QMatrixProduct.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QMatrixProduct
++Name=QMatrixProduct
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/QMatrixProduct.pro b/QMatrixProduct.pro
+index 42c48f2..f53f7f7 100644
+--- a/QMatrixProduct.pro
++++ b/QMatrixProduct.pro
+@@ -37,3 +37,10 @@ HEADERS  += mainwindow.h \
+     matrixproduct.h \
+     resultswindow.h \
+     squarematrix.h
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =QMatrixProduct.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
