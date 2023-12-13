@@ -1,0 +1,16 @@
+package:
+  id: io.github.qt5ct
+  name: qt5ct
+  version: 5ct-1.2
+  kind: app
+  description: |
+    Mirror of http://svn.code.sf.net/p/qt5ct/code/
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+source:
+  kind: git
+  url: https://github.com/jlindgren90/qt5ct.git
+  commit: a75c36133ebe3a00b3505700812317815a2a9e96
+build:
+  kind: cmake
