@@ -1,0 +1,54 @@
+From 976e5bca2a561d978f781b01e54f76f95d1870fd Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 19:24:01 +0800
+Subject: [PATCH] install
+
+---
+ QGraphScroll.desktop |  9 +++++++++
+ QGraphScroll.pro     | 12 +++++++++++-
+ 2 files changed, 20 insertions(+), 1 deletion(-)
+ create mode 100644 QGraphScroll.desktop
+
+diff --git a/QGraphScroll.desktop b/QGraphScroll.desktop
+new file mode 100644
+index 0000000..4b2bd46
+--- /dev/null
++++ b/QGraphScroll.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QGraphScroll
++Name=QGraphScroll
++Icon=zoom
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/QGraphScroll.pro b/QGraphScroll.pro
+index 79dcbd5..227d9c9 100644
+--- a/QGraphScroll.pro
++++ b/QGraphScroll.pro
+@@ -20,8 +20,18 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     Image.qrc
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =QGraphScroll.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = Image/zoom.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
