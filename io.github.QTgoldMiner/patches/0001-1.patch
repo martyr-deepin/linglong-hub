@@ -1,0 +1,48 @@
+From 46fa3b85618d4af46ed4d1b1d897a44321d5558e Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Wed, 13 Dec 2023 17:32:46 +0800
+Subject: [PATCH] 1
+
+---
+ goldMiner/goldMiner.desktop |  9 +++++++++
+ goldMiner/goldMiner.pro     | 11 +++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 goldMiner/goldMiner.desktop
+
+diff --git a/goldMiner/goldMiner.desktop b/goldMiner/goldMiner.desktop
+new file mode 100644
+index 0000000..0e97607
+--- /dev/null
++++ b/goldMiner/goldMiner.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=goldMiner
++Name=goldMiner
++StartupNotify=false
++Terminal=false
++Icon=begin
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/goldMiner/goldMiner.pro b/goldMiner/goldMiner.pro
+index e85a410..daabd88 100644
+--- a/goldMiner/goldMiner.pro
++++ b/goldMiner/goldMiner.pro
+@@ -59,3 +59,14 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ 
+ RESOURCES += \
+     pictures.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =goldMiner.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = photo/begin.jfif
++INSTALLS += icons
++
+-- 
+2.33.1
+
