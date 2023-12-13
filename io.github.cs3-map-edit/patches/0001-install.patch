@@ -1,0 +1,55 @@
+From 95c008b3da4259945dfdeba25ae44aa078ed8718 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 15:08:54 +0800
+Subject: [PATCH] install
+
+---
+ mapedit.desktop |  8 ++++++++
+ mapedit.pro     | 10 +++++++++-
+ 2 files changed, 17 insertions(+), 1 deletion(-)
+ create mode 100644 mapedit.desktop
+
+diff --git a/mapedit.desktop b/mapedit.desktop
+new file mode 100644
+index 0000000..7628c10
+--- /dev/null
++++ b/mapedit.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=mapedit
++Name=mapedit
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/mapedit.pro b/mapedit.pro
+index 66c3333..d2ccd18 100644
+--- a/mapedit.pro
++++ b/mapedit.pro
+@@ -85,7 +85,7 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+@@ -102,3 +102,11 @@ contains(DEFINES, USE_SDL_MIXER=1){
+ 
+ QMAKE_CXXFLAGS_RELEASE += -std=c++17 -O3
+ QMAKE_CXXFLAGS_DEBUG += -std=c++17 -g3
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =mapedit.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

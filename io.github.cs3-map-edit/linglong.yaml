@@ -1,0 +1,21 @@
+package:
+  id: io.github.cs3-map-edit
+  name: cs3-map-edit
+  version: 0.0.1
+  kind: app
+  description: |
+   Map Editor for CS3 written in C++ using QT
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/cfrankb/cs3-map-edit.git"
+  commit: b6603e6250068ac2ddc884a8bc4d3602f0cdeed8
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  
