@@ -1,0 +1,21 @@
+package:
+  id: io.github.GTSystem
+  name: GTSystem
+  version: 0.0.1
+  kind: app
+  description: |
+   This is a C++ school management system done by QT program
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/jobvinny/GTSystem.git"
+  commit: c385bd36d073428d2a4e3e8f0b3f66cbbd95d202
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  

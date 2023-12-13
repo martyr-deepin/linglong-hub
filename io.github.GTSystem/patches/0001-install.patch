@@ -1,0 +1,49 @@
+From b2cb2007e27e7cbca9ee7224e3549e4730e9bf48 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 14:07:08 +0800
+Subject: [PATCH] install
+
+---
+ GTSystem.desktop |  9 +++++++++
+ GTSystem.pro     | 11 +++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 GTSystem.desktop
+
+diff --git a/GTSystem.desktop b/GTSystem.desktop
+new file mode 100644
+index 0000000..72839c7
+--- /dev/null
++++ b/GTSystem.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=GTSystem
++Name=GTSystem
++Icon=superveloche
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/GTSystem.pro b/GTSystem.pro
+index a65b0d1..da4bbd7 100644
+--- a/GTSystem.pro
++++ b/GTSystem.pro
+@@ -62,3 +62,14 @@ win32: LIBS += -L$$PWD/../mysql/mysql-connector-c-6.1.9-win32/lib/ -llibmysql
+ 
+ INCLUDEPATH += $$PWD/../mysql/mysql-connector-c-6.1.9-win32/include
+ DEPENDPATH += $$PWD/../mysql/mysql-connector-c-6.1.9-win32/include
++
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =GTSystem.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = img/superveloche.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
