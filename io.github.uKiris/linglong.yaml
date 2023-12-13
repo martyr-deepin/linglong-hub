@@ -1,0 +1,21 @@
+package:
+  id: io.github.uKiris
+  name: uKiris
+  version: 1.0.1
+  kind: app
+  description: |
+    Basit kiriş üzerinde kesme ve moment diyagramı çizen uygulama.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/rutku/uKiris.git"
+  commit: edabf5ac2fc4d86f4e814b18d0433e8486ee5c37
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,30 @@
+diff --git a/uKiris.desktop b/uKiris.desktop
+new file mode 100644
+index 0000000..69638da
+--- /dev/null
++++ b/uKiris.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=uKiris
++Exec=uKiris %f
++Icon=calistir
+diff --git a/uKiris.pro b/uKiris.pro
+index 5ec9cc3..12f542e 100644
+--- a/uKiris.pro
++++ b/uKiris.pro
+@@ -80,3 +80,14 @@ RESOURCES += \
+ RC_ICONS = simgeler/simge.ico
+ 
+ DISTFILES +=
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += uKiris.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = simgeler/calistir.png
++INSTALLS += icons
