@@ -1,0 +1,40 @@
+From a1100b025e55f7a4434cfdb858cc14158dc4dc48 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 16:43:50 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt          | 3 +++
+ build_dir/QTodo.desktop | 8 ++++++++
+ 2 files changed, 11 insertions(+)
+ create mode 100644 build_dir/QTodo.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 4de2131..def1da9 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -32,3 +32,6 @@ endif()
+ include_directories(${QTodo_SOURCE_DIR}/include)
+ find_package(Qt${QT_VERSION} COMPONENTS ${REQUIRED_LIBS} REQUIRED)
+ target_link_libraries(${PROJECT_NAME} ${REQUIRED_LIBS_QUALIFIED})
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/QTodo.desktop DESTINATION share/applications)
++install(TARGETS QTodo DESTINATION bin)
+diff --git a/build_dir/QTodo.desktop b/build_dir/QTodo.desktop
+new file mode 100644
+index 0000000..6c50e81
+--- /dev/null
++++ b/build_dir/QTodo.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QTodo
++Name=QTodo
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+-- 
+2.33.1
+
