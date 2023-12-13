@@ -1,0 +1,48 @@
+From 97918e5c688edee2ef1d14ffe6a41d5f8dda2fe2 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 16:17:08 +0800
+Subject: [PATCH] install
+
+---
+ Chronometer.desktop | 9 +++++++++
+ Chronometer.pro     | 9 +++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 Chronometer.desktop
+
+diff --git a/Chronometer.desktop b/Chronometer.desktop
+new file mode 100644
+index 0000000..1107895
+--- /dev/null
++++ b/Chronometer.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Chronometer
++Name=Chronometer
++Icon=logo
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/Chronometer.pro b/Chronometer.pro
+index 8ea4b60..3fa5812 100644
+--- a/Chronometer.pro
++++ b/Chronometer.pro
+@@ -24,3 +24,12 @@ win32-msvc* {
+   # Enable extra MSVC warnings
+   QMAKE_CXXFLAGS += /Wall
+ }
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Chronometer.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = resources/logo.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
