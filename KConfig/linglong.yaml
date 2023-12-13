@@ -1,0 +1,23 @@
+package:
+  id: KConfig
+  name: KConfig
+  version: 5.111.0
+  kind: lib
+  description: |
+    Persistent platform-independent application settings.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: extra-cmake-modules
+    version: 5.111.0 
+
+source:
+  kind: git
+  url: "https://invent.kde.org/frameworks/kconfig.git"
+  commit: 60e259506aa697a0cdf4bdb4f9f9a6703f44154f
+
+build:
+  kind: cmake
