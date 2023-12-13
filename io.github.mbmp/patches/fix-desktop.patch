@@ -1,0 +1,44 @@
+diff --git a/mbmp.pro b/mbmp.pro
+index 6789e4a..99561ed 100755
+--- a/mbmp.pro
++++ b/mbmp.pro
+@@ -24,16 +24,15 @@ for(a, LIST) {
+ 	INSTALLS += icon$${a}
+ }
+ exists(./images/application/scalable/mbmp.svg) {
+-	iconsvg.path = /usr/share/icons/hicolor/scalable/apps
++	iconsvg.path = $${PREFIX}/share/icons
+ 	iconsvg.files = ./images/application/scalable/mbmp.svg
+ 	INSTALLS += iconsvg
+ }
+ 
+ 
+ # desktop file
+-desktop.path = /usr/share/applications
++desktop.path = $$PREFIX/share/applications
+ desktop.files = ./misc/desktop/mbmp.desktop
+-desktop.extra = gtk-update-icon-cache /usr/share/icons/hicolor
+ INSTALLS += desktop
+ 
+ #  Widgets needed for QT5,
+@@ -44,7 +43,7 @@ QT += network
+ 
+ TARGET = mbmp
+ TEMPLATE = app
+-target.path = /usr/bin/
++target.path = $$PREFIX/bin
+ INSTALLS += target
+ 
+ #	header files
+diff --git a/misc/desktop/mbmp.desktop b/misc/desktop/mbmp.desktop
+index 14826cd..6599572 100644
+--- a/misc/desktop/mbmp.desktop
++++ b/misc/desktop/mbmp.desktop
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ Categories=Qt;Audio;Video;AudioVideo;
+-Exec=mbmp
++Exec=mbmp %f
+ Icon=mbmp
+ StartupNotify=false
+ Terminal=false
