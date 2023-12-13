@@ -1,0 +1,57 @@
+From cc990bfbbc2375cd6ab7912b78a666bc6065baa4 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 19:59:59 +0800
+Subject: [PATCH] install
+
+---
+ Painter.desktop |  9 +++++++++
+ Painter.pro     | 12 +++++++++++-
+ 2 files changed, 20 insertions(+), 1 deletion(-)
+ create mode 100644 Painter.desktop
+
+diff --git a/Painter.desktop b/Painter.desktop
+new file mode 100644
+index 0000000..0adfb62
+--- /dev/null
++++ b/Painter.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Painter
++Name=Painter
++Icon=painter
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/Painter.pro b/Painter.pro
+index 586f5b0..0daea73 100644
+--- a/Painter.pro
++++ b/Painter.pro
+@@ -51,7 +51,7 @@ HEADERS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+@@ -59,3 +59,13 @@ RESOURCES += \
+ 
+ FORMS += \
+     qsizedialog.ui
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Painter.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.files = images/painter.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+

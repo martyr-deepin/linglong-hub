@@ -1,0 +1,20 @@
+package:
+  id: io.github.Painter
+  name: Painter
+  version: 1.2.5
+  kind: app
+  description: |
+    A graphics system for painting primitives.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/QinlinChen/Painter.git
+  commit: 1439ffb182917359fea4f8c19e6e70440922dd50
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
