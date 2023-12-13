@@ -1,0 +1,19 @@
+package:
+  id: io.github.qtwilist
+  name: qtwilist
+  version: 0.0.1
+  kind: app
+  description: |
+   Simple GUI to display a list of twitch streams
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/npmiller/qtwilist.git"
+  commit: 986af8a14a5021d128b92211152540a03ebb613a
+build:
+  kind: cmake
+  
