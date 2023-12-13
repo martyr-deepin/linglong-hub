@@ -1,0 +1,20 @@
+package:
+  id: io.github.AppleSAWS
+  name: AppleSAWS
+  version: 0.0.1
+  kind: app
+  description: |
+    Apple Software Analysis WorkShop - Tools for the Apple II
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/markdavidlong/AppleSAWS.git
+  commit: 290fbda875092d4ecb41fff09cf11cf3bc807fad
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
