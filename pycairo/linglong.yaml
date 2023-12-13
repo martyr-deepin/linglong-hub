@@ -1,0 +1,32 @@
+package:
+  id: pycairo
+  name: pycairo
+  version: 1.25.1
+  kind: lib
+  description: |
+    Python bindings for cairo
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: python
+    version: 3.10.13
+
+source:
+  kind: git
+  url: "https://github.com/pygobject/pycairo.git"
+  commit: 6405839
+
+build:
+  kind: manual
+  manual:
+    configure: |
+      mkdir home
+      export HOME=home
+      meson setup build --prefix=$PREFIX
+    build: |
+      meson compile -C build   
+    install: |
+      ninja install -C build
