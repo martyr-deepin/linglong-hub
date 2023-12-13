@@ -1,0 +1,40 @@
+From 523b9f8664057df46d3a1bc1f7c5ea8324f250eb Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 18:16:26 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt               | 2 ++
+ build_dir/usrrerrbar.desktop | 8 ++++++++
+ 2 files changed, 10 insertions(+)
+ create mode 100644 build_dir/usrrerrbar.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 30b1a27..4927793 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -21,3 +21,5 @@ feature_summary(
+     FATAL_ON_MISSING_REQUIRED_PACKAGES
+     WHAT ALL
+ )
++install(PROGRAMS ${CMAKE_BINARY_DIR}/usrrerrbar.desktop DESTINATION share/applications)
++install(TARGETS usrrerrbar DESTINATION bin)
+\ No newline at end of file
+diff --git a/build_dir/usrrerrbar.desktop b/build_dir/usrrerrbar.desktop
+new file mode 100644
+index 0000000..d1cd01d
+--- /dev/null
++++ b/build_dir/usrrerrbar.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=usrrerrbar
++Name=usrrerrbar
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+-- 
+2.33.1
+

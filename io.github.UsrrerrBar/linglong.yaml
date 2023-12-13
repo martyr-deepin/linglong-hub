@@ -1,0 +1,21 @@
+package:
+  id: io.github.UsrrerrBar
+  name: UsrrerrBar
+  version: 0.0.1
+  kind: app
+  description: |
+   A graphical user bar generator.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/nilsding/UsrrerrBar.git"
+  commit: 214cd781f54f95dccb4d0601767b3d800dc4e741
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
+  
