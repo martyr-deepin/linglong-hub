@@ -1,0 +1,21 @@
+package:
+  id: io.github.Fast-Food-Fantasy
+  name: Fast-Food-Fantasy
+  version: 0.0.1
+  kind: app
+  description: |
+   CS1D First Project - Spring 2016
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/adv3006/Fast-Food-Fantasy.git"
+  commit: 125c316fc89f9b3ae0e15bfdf40a7c7ee3b4fa3d
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  

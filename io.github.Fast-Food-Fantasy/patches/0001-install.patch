@@ -1,0 +1,50 @@
+From 5fde3ea3acebb45b66467fba6ff6aa3f6fa76e03 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 13:59:29 +0800
+Subject: [PATCH] install
+
+---
+ FastFoodFantasy.desktop | 9 +++++++++
+ FastFoodFantasy.pro     | 9 +++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 FastFoodFantasy.desktop
+
+diff --git a/FastFoodFantasy.desktop b/FastFoodFantasy.desktop
+new file mode 100644
+index 0000000..10bbb88
+--- /dev/null
++++ b/FastFoodFantasy.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=FastFoodFantasy
++Name=FastFoodFantasy
++Icon=map-location-md
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/FastFoodFantasy.pro b/FastFoodFantasy.pro
+index 1780f2f..e5dd8eb 100644
+--- a/FastFoodFantasy.pro
++++ b/FastFoodFantasy.pro
+@@ -51,6 +51,15 @@ FORMS    += mainwindow.ui \
+     shortesttrip.ui \
+     shoppingsummarywindow.ui
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =FastFoodFantasy.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = map-location-md.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
++
+ DISTFILES += \
+     Restaurants.db
+ 
+-- 
+2.33.1
+
