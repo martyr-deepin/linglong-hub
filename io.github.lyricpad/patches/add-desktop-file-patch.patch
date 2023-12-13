@@ -1,0 +1,11 @@
+diff --git a/lyricpad.desktop b/lyricpad.desktop
+new file mode 100644
+index 0000000..6ccdf61
+--- /dev/null
++++ b/lyricpad.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=lyricpad
++Exec=lyricpad %f
++Icon=icon

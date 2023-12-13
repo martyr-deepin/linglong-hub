@@ -1,0 +1,22 @@
+package:
+  id: io.github.lyricpad
+  name: lyricpad
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt App Lyrics from web.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/keshavbhatt/lyricpad.git"
+  commit: 0b6776f71cc66c3c93d97f184361abcdc4bf2114
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,19 @@
+diff --git a/lyricspad.pro b/lyricspad.pro
+index 93ef0bd..d51acf2 100644
+--- a/lyricspad.pro
++++ b/lyricspad.pro
+@@ -74,3 +74,14 @@ icon.files = others/lyrics.py
+ icon.path = $$BINDIR
+ 
+ INSTALLS += target icon
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += lyricpad.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = snap/gui/icon.png
++INSTALLS += icons
