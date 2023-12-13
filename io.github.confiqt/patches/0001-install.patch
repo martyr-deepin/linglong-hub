@@ -1,0 +1,65 @@
+From 3d64c1e7fb7ce26a56bc7100505a8c145160114f Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 18:46:34 +0800
+Subject: [PATCH] install
+
+---
+ QtConfig.desktop |  9 +++++++++
+ QtConfig.pro     | 19 +++++++++++--------
+ 2 files changed, 20 insertions(+), 8 deletions(-)
+ create mode 100644 QtConfig.desktop
+
+diff --git a/QtConfig.desktop b/QtConfig.desktop
+new file mode 100644
+index 0000000..221c025
+--- /dev/null
++++ b/QtConfig.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QtConfig
++Name=QtConfig
++Icon=QtIcon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/QtConfig.pro b/QtConfig.pro
+index f909c7d..68ff624 100644
+--- a/QtConfig.pro
++++ b/QtConfig.pro
+@@ -129,14 +129,7 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ 
+-defined(INSTALL_PATH, var) {
+-    message(Install path is set)
+-    target.path = $$INSTALL_PATH
+-} else {
+-    qnx: target.path = /tmp/$${TARGET}/bin
+-    else: unix:!android: target.path = /opt/$${TARGET}/bin
+-}
+-!isEmpty(target.path): INSTALLS += target
++
+ 
+ exists(3rdparty/webrequest/WebRequest.pri) {
+     include(3rdparty/webrequest/WebRequest.pri)
+@@ -144,3 +137,13 @@ exists(3rdparty/webrequest/WebRequest.pri) {
+ 
+ RESOURCES += \
+     res/res.qrc
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =QtConfig.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = res/QtIcon.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
