@@ -1,0 +1,47 @@
+From 7520160be29298620d614e9db0d9976c499aeeb3 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 19:55:44 +0800
+Subject: [PATCH] install
+
+---
+ qpicospeaker.desktop |  9 +++++++++
+ qpicospeaker.pro     | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 qpicospeaker.desktop
+
+diff --git a/qpicospeaker.desktop b/qpicospeaker.desktop
+new file mode 100644
+index 0000000..7436cab
+--- /dev/null
++++ b/qpicospeaker.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=qpicospeaker
++Name=qpicospeaker
++Icon=qpicospeaker
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/qpicospeaker.pro b/qpicospeaker.pro
+index d8e5a6f..92c320b 100644
+--- a/qpicospeaker.pro
++++ b/qpicospeaker.pro
+@@ -53,3 +53,13 @@ TRANSLATIONS += lang/qpicospeaker_en.ts \
+ 
+ DISTFILES += src/qpicospeaker_conf.xml \
+     src/lib/tinyxml/LICENSE.md
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =qpicospeaker.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = data/icons/qpicospeaker.svg
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
