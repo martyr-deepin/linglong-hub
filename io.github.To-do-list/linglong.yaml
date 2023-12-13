@@ -1,0 +1,21 @@
+package:
+  id: io.github.To-do-list
+  name: To-do-list
+  version: 0.0.1
+  kind: app
+  description: |
+   To-do-list with qt c++
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/AhmedAbdelGawadFarag/To-do-list.git"
+  commit: 571cf81fa898422eac82d32ef4ccb95b54c0c748
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  

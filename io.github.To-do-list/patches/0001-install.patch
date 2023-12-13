@@ -1,0 +1,52 @@
+From 941ed075445dba81ea85cf6eef37460d4fd9f4b1 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 16:39:18 +0800
+Subject: [PATCH] install
+
+---
+ todolist5.desktop |  9 +++++++++
+ todolist5.pro     | 12 +++++++++++-
+ 2 files changed, 20 insertions(+), 1 deletion(-)
+ create mode 100644 todolist5.desktop
+
+diff --git a/todolist5.desktop b/todolist5.desktop
+new file mode 100644
+index 0000000..87cf2a4
+--- /dev/null
++++ b/todolist5.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=todolist5
++Name=todolist5
++Icon=icon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/todolist5.pro b/todolist5.pro
+index 1b80015..ec9449e 100644
+--- a/todolist5.pro
++++ b/todolist5.pro
+@@ -48,6 +48,16 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ RESOURCES +=  widgets_icons.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =todolist5.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = Resource/icon.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
++
+-- 
+2.33.1
+
