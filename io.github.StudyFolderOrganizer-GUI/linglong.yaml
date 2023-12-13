@@ -1,0 +1,21 @@
+package:
+  id: io.github.StudyFolderOrganizer-GUI
+  name: StudyFolderOrganizer-GUI
+  version: 1.1.0
+  kind: app
+  description: |
+   Mange your study folders in a easy and time saving way. A easy to use graphical app. GUI Version of the StudyFolderOrganizer console app
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Abir-Tx/StudyFolderOrganizer-GUI.git"
+  commit: 1c8c006ca1c781b5c8168e254cf717a8d017af70
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  
