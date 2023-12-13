@@ -1,0 +1,20 @@
+package:
+  id: io.github.Dynamic
+  name: Dynamic
+  version: 0.0.1
+  kind: app
+  description: |
+   §Ó§Ö§â§ã§Ú§ñ §á§â§à§Ô§â§Ñ§Þ§Þ§Ñ §Õ§Ý§ñ §Ú§ã§ã§Ý§Ö§Õ§à§Ó§Ñ§ß§Ú§ñ §á§à§Ó§Ö§Õ§Ö§ß§Ú§Û §à§ä§à§Ò§â§Ñ§Ø§Ö§ß§Ú§ñ §á§â§Ú §â§Ñ§Ù§Ý§Ú§é§ß§í§ç §á§Ñ§â§Ñ§Þ§Ö§ä§â§Ñ§ç §Ú §ß§Ñ§é§Ñ§Ý§î§ß§í§ç §å§ã§Ý§à§Ó§Ú§Û.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Daniil-Budnik/Dynamic.git"
+  commit: e0de7e4bc156f953ebc129c7a0cc83c5158ba1ca
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
