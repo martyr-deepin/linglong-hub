@@ -1,0 +1,48 @@
+From 3cc5a3318bd6546d2189a36b9c6336207c3481b0 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 13:46:50 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt                 | 5 ++++-
+ build_dir/LocalCharger.desktop | 9 +++++++++
+ 2 files changed, 13 insertions(+), 1 deletion(-)
+ create mode 100644 build_dir/LocalCharger.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index ee8e1d8..671bb4c 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-﻿cmake_minimum_required(VERSION 3.13)
++cmake_minimum_required(VERSION 3.13)
+ 
+ set(APP_VERSION 1.8.3)
+ 
+@@ -122,3 +122,6 @@ if(COMPILE_GUI)
+         target_link_libraries(LocalCharger  Qt5::Core Qt5::Gui Qt5::Network Qt5::WebSockets Qt5::Widgets)
+     endif()
+ endif()
++install(PROGRAMS src/resource/pic/LocalCharger.ico DESTINATION share/icons)
++install(PROGRAMS ${CMAKE_BINARY_DIR}/LocalCharger.desktop DESTINATION share/applications)
++install(TARGETS LocalCharger DESTINATION bin)
+\ No newline at end of file
+diff --git a/build_dir/LocalCharger.desktop b/build_dir/LocalCharger.desktop
+new file mode 100644
+index 0000000..4302a40
+--- /dev/null
++++ b/build_dir/LocalCharger.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=LocalCharger
++Name=LocalCharger
++Icon=LocalCharger
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+-- 
+2.33.1
+

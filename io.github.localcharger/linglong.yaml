@@ -1,0 +1,20 @@
+package:
+  id: io.github.localcharger
+  name: localcharger
+  version: 1.8.3
+  kind: app
+  description: |
+   Transport files and messages in LAN.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/realth000/localcharger.git"
+  commit: 1fd3a3107c6ae92f9254e27d93ff05dcf5cf5dbd
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
