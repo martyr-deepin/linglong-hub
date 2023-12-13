@@ -1,0 +1,22 @@
+package:
+  id: io.github.mbmp
+  name: mbmp
+  version: 1.0.0
+  kind: app
+  description: |
+    A QT5 and GStreamer 1.0 series Media Player.Becasue we use GStreamer most any media format can be played provided the GStreamer plugins are installed on your system. Additionally audio CD's and DVD's can be played, and for DVD's interaction with onscreen menus is implemented with either mouse or keyboard control. There is a basic playlist available and it is also possible to play media from an internet URL.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/andrew-bibb/mbmp.git"
+  commit: 3d6d61b70c01e4edcc93bc013de166ddf1547c27
+  patch:
+    - patches/fix-desktop.patch
+
+build:
+  kind: qmake
+
