@@ -1,0 +1,32 @@
+diff --git a/3DPrinterCostCalculate.desktop b/3DPrinterCostCalculate.desktop
+new file mode 100644
+index 0000000..ae85025
+--- /dev/null
++++ b/3DPrinterCostCalculate.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=3DPrinterCostCalculate
++Exec=3DPrinterCostCalculate %f
++Icon=linkedin
+diff --git a/3DPrinterCostCalculate.pro b/3DPrinterCostCalculate.pro
+index 28c297d..3597e31 100644
+--- a/3DPrinterCostCalculate.pro
++++ b/3DPrinterCostCalculate.pro
+@@ -38,7 +38,16 @@ FORMS +=
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
++target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += 3DPrinterCostCalculate.desktop
++INSTALLS += desktop
++
++icons.path = $${PREFIX}/share/icons
++icons.files = linkedin.png
++INSTALLS += icons
++
+ RESOURCES += \
+     icons.qrc
