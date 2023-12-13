@@ -1,0 +1,45 @@
+From af43bb6ae2edb59fb81ea9e848a37538cff11991 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 15:03:42 +0800
+Subject: [PATCH] install
+
+---
+ snake.desktop | 9 +++++++++
+ snake.pro     | 8 ++++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 snake.desktop
+
+diff --git a/snake.desktop b/snake.desktop
+new file mode 100644
+index 0000000..cfd1901
+--- /dev/null
++++ b/snake.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=snake
++Name=snake
++Icon=New_104px
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/snake.pro b/snake.pro
+index db585bb..664fc93 100644
+--- a/snake.pro
++++ b/snake.pro
+@@ -27,3 +27,11 @@ FORMS    += \
+ 
+ RESOURCES += \
+     icon.qrc
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =snake.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = assets/New_104px.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+

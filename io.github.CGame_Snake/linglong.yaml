@@ -1,0 +1,21 @@
+package:
+  id: io.github.CGame_Snake
+  name: CGame_Snake
+  version: 0.0.1
+  kind: app
+  description: |
+   经典游戏-贪吃蛇的 C++ 实现（使用 Qt5 绘制 GUI）
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/ffutop/CGame_Snake.git"
+  commit: 15c7272d66652ef780fdfd140f0aa312927ed881
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  
