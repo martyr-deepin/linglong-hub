@@ -1,0 +1,47 @@
+From b0ca6c92a571448658a128cf0da84cad3706260e Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 19:05:02 +0800
+Subject: [PATCH] install
+
+---
+ QtFramelessWindowDarkStyle.desktop | 9 +++++++++
+ frameless_window_dark.pro          | 9 +++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 QtFramelessWindowDarkStyle.desktop
+
+diff --git a/QtFramelessWindowDarkStyle.desktop b/QtFramelessWindowDarkStyle.desktop
+new file mode 100644
+index 0000000..4b8be4a
+--- /dev/null
++++ b/QtFramelessWindowDarkStyle.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QtFramelessWindowDarkStyle
++Name=QtFramelessWindowDarkStyle
++Icon=icon_radiobutton_checked_disabled
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/frameless_window_dark.pro b/frameless_window_dark.pro
+index ec30a1c..df4d60d 100755
+--- a/frameless_window_dark.pro
++++ b/frameless_window_dark.pro
+@@ -36,3 +36,12 @@ FORMS       += mainwindow.ui \
+ 
+ RESOURCES   += darkstyle.qrc \
+                framelesswindow.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =QtFramelessWindowDarkStyle.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = darkstyle/icon_radiobutton_checked_disabled.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
