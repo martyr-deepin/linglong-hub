@@ -1,0 +1,49 @@
+From 5b98db20c3f3f042574653719d989646fcfce44a Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 14:56:28 +0800
+Subject: [PATCH] install
+
+---
+ Chess.desktop |  9 +++++++++
+ Chess.pro     | 11 ++++++++++-
+ 2 files changed, 19 insertions(+), 1 deletion(-)
+ create mode 100644 Chess.desktop
+
+diff --git a/Chess.desktop b/Chess.desktop
+new file mode 100644
+index 0000000..2ef3198
+--- /dev/null
++++ b/Chess.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Chess
++Name=Chess
++Icon=menu
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Chess.pro b/Chess.pro
+index 9a0e934..1256960 100644
+--- a/Chess.pro
++++ b/Chess.pro
+@@ -66,5 +66,14 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Chess.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = resources/menu.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
