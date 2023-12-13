@@ -1,0 +1,21 @@
+package:
+  id: io.github.qt_rtsp_camera_viewer
+  name: qt_rtsp_camera_viewer
+  version: 1.0.0
+  kind: app
+  description: |
+   Simple Qt rtsp player for educational purposes.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/emelyantsev/qt_rtsp_camera_viewer.git"
+  commit: 86b388c438cc9ef37f9afafa6a7800bf6151fa5c
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  

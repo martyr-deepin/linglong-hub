@@ -1,0 +1,58 @@
+From 91d153ee5fafca56e60f7aa774becf030732163a Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 18:29:32 +0800
+Subject: [PATCH] install
+
+---
+ camera_viewer.desktop |  9 +++++++++
+ camera_viewer.pro     | 12 +++++++++++-
+ 2 files changed, 20 insertions(+), 1 deletion(-)
+ create mode 100644 camera_viewer.desktop
+
+diff --git a/camera_viewer.desktop b/camera_viewer.desktop
+new file mode 100644
+index 0000000..75a79ec
+--- /dev/null
++++ b/camera_viewer.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=camera_viewer
++Name=camera_viewer
++Icon=icon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/camera_viewer.pro b/camera_viewer.pro
+index e711131..1798382 100644
+--- a/camera_viewer.pro
++++ b/camera_viewer.pro
+@@ -26,7 +26,7 @@ HEADERS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+@@ -35,3 +35,13 @@ RESOURCES += \
+ RESOURCES += qdarkstyle/style.qrc
+ 
+ RC_ICONS = icon.ico
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =camera_viewer.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = icon.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
