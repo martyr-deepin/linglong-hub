@@ -1,0 +1,54 @@
+From b58758cd50f66f1b11022a8e6e6bf21bbaf5c00d Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 14:11:42 +0800
+Subject: [PATCH] install
+
+---
+ Caligo.desktop |  9 +++++++++
+ Caligo.pro     | 10 +++++++++-
+ 2 files changed, 18 insertions(+), 1 deletion(-)
+ create mode 100644 Caligo.desktop
+
+diff --git a/Caligo.desktop b/Caligo.desktop
+new file mode 100644
+index 0000000..661910a
+--- /dev/null
++++ b/Caligo.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Caligo
++Name=Caligo
++Icon=icon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Caligo.pro b/Caligo.pro
+index 4fc8abe..053e19a 100644
+--- a/Caligo.pro
++++ b/Caligo.pro
+@@ -60,7 +60,7 @@ TRANSLATIONS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+@@ -70,3 +70,11 @@ RC_ICONS = Res/icon.ico
+ 
+ # Uncomment next line for show qDebug() output
+ # DEFINES += DEBUG_OUTPUT
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Caligo.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = Res/icon.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
