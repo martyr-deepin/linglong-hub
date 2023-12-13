@@ -1,0 +1,23 @@
+package:
+  id: freetype
+  name: freetype
+  version: 2.13.2
+  kind: lib
+  description: |
+    FreeType is a freely available software library to render fonts.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://salsa.debian.org/debian/freetype.git"
+  commit: a951b5c9ca48636d54a83daaf4a7c5cb8b1bce2f
+
+variables:
+  extra_args: | 
+    -DBUILD_SHARED_LIBS=ON
+
+build:
+  kind: cmake
