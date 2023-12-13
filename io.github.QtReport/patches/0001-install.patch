@@ -1,0 +1,47 @@
+From 5fad32667dca84149b35db31aac2225a9809c32d Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 18:52:42 +0800
+Subject: [PATCH] install
+
+---
+ tools/QtReportDesigner/QtReportDesigner.desktop | 9 +++++++++
+ tools/QtReportDesigner/QtReportDesigner.pro     | 9 +++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 tools/QtReportDesigner/QtReportDesigner.desktop
+
+diff --git a/tools/QtReportDesigner/QtReportDesigner.desktop b/tools/QtReportDesigner/QtReportDesigner.desktop
+new file mode 100644
+index 0000000..60587c6
+--- /dev/null
++++ b/tools/QtReportDesigner/QtReportDesigner.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QtReportDesigner
++Name=QtReportDesigner
++Icon=qtreport
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/tools/QtReportDesigner/QtReportDesigner.pro b/tools/QtReportDesigner/QtReportDesigner.pro
+index 050e372..f0fd845 100755
+--- a/tools/QtReportDesigner/QtReportDesigner.pro
++++ b/tools/QtReportDesigner/QtReportDesigner.pro
+@@ -14,3 +14,12 @@ TARGETDEPS += ../../src/libQtReport.a
+ 
+ 
+ RC_FILE = myapp.rc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =QtReportDesigner.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = qtreport.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
