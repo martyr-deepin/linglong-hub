@@ -1,0 +1,10 @@
+diff --git a/acl-display.desktop b/acl-display.desktop
+new file mode 100644
+index 0000000..fa4e8aa
+--- /dev/null
++++ b/acl-display.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=acl-display
++Exec=acl-display %f
