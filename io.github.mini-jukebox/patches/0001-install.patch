@@ -1,0 +1,55 @@
+From 31309c26e59f8515f8e4d3a040f06840481c107f Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 15:39:19 +0800
+Subject: [PATCH] install
+
+---
+ MyMusic2.desktop |  9 +++++++++
+ MyMusic2.pro     | 11 ++++++++++-
+ 2 files changed, 19 insertions(+), 1 deletion(-)
+ create mode 100644 MyMusic2.desktop
+
+diff --git a/MyMusic2.desktop b/MyMusic2.desktop
+new file mode 100644
+index 0000000..d9a2688
+--- /dev/null
++++ b/MyMusic2.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=MyMusic2
++Name=MyMusic2
++Icon=logoMyMusic
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/MyMusic2.pro b/MyMusic2.pro
+index 76ef176..f9b2275 100644
+--- a/MyMusic2.pro
++++ b/MyMusic2.pro
+@@ -27,10 +27,19 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!#android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ DISTFILES +=
+ 
+ RESOURCES += \
+     icons.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =MyMusic2.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = icons/logoMyMusic.svg
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+

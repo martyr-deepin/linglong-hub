@@ -1,0 +1,21 @@
+package:
+  id: io.github.mini-jukebox
+  name: mini-jukebox
+  version: 0.0.1
+  kind: app
+  description: |
+   A music player in a small window with enough features
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Patzi275/mini-jukebox.git"
+  commit: 967ec881595924955b9b65a664ae9b78f35bcb11
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  
