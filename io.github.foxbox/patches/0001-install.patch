@@ -1,0 +1,56 @@
+From 4b57d06f84568e613748afbd4cf403a91190bda7 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 16:50:29 +0800
+Subject: [PATCH] install
+
+---
+ foxbox.desktop |  9 +++++++++
+ foxbox.pro     | 10 +++++++++-
+ 2 files changed, 18 insertions(+), 1 deletion(-)
+ create mode 100644 foxbox.desktop
+
+diff --git a/foxbox.desktop b/foxbox.desktop
+new file mode 100644
+index 0000000..bc74107
+--- /dev/null
++++ b/foxbox.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=foxbox
++Name=foxbox
++Icon=player_end
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/foxbox.pro b/foxbox.pro
+index 9746a8b..98e9f23 100644
+--- a/foxbox.pro
++++ b/foxbox.pro
+@@ -55,7 +55,7 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ INCLUDEPATH += \
+@@ -77,3 +77,11 @@ mac {
+     LIBS += \
+         -framework AppKit
+ }
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =foxbox.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = res/player_end.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
