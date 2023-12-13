@@ -1,0 +1,21 @@
+package:
+  id: io.github.OneToN
+  name: OneToN
+  version: 0.0.4
+  kind: app
+  description: |
+    A very simple, but addictive —— Monkey's Game for Short Term Image Recognition.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/KarlZeilhofer/OneToN.git"
+  commit: 359fafee600068c5b93269d838df572152ddcaba
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake

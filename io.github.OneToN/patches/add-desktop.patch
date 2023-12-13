@@ -1,0 +1,30 @@
+diff --git a/one-to-n.desktop b/one-to-n.desktop
+new file mode 100644
+index 0000000..11e1405
+--- /dev/null
++++ b/one-to-n.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=one-to-n
++Exec=one-to-n %f
++Icon=tile-design
+diff --git a/one-to-n.pro b/one-to-n.pro
+index 3586c53..b1aaeb0 100644
+--- a/one-to-n.pro
++++ b/one-to-n.pro
+@@ -41,3 +41,14 @@ DISTFILES += \
+ 
+ RESOURCES += \
+     sounds.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += one-to-n.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = tile-design.svg
++INSTALLS += icons
