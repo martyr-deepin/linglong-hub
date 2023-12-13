@@ -1,0 +1,58 @@
+From 97e9346ed9e02a77f71c7f7ebcc225540e038bbe Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 16:21:45 +0800
+Subject: [PATCH] install
+
+---
+ EasySlideshow.pro     | 18 ++++++++----------
+ easyslideshow.desktop |  9 +++++++++
+ 2 files changed, 17 insertions(+), 10 deletions(-)
+ create mode 100644 easyslideshow.desktop
+
+diff --git a/EasySlideshow.pro b/EasySlideshow.pro
+index de7d4f6..b105bee 100644
+--- a/EasySlideshow.pro
++++ b/EasySlideshow.pro
+@@ -66,15 +66,13 @@ versionTarget.commands = touch ./version.h; cd $$PWD; git log -n 1 --format=form
+ #QMAKE_EXTRA_TARGETS += versionTarget
+ #PRE_TARGETDEPS += version.h
+ 
+-# installation
+-target.path = /usr/bin
+ 
+-icon.path = /usr/share/icons/hicolor/scalable/apps
+-icon.files = svg/easyslideshow.svg
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =easyslideshow.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = ico/windows_icon.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+ 
+-desktop.path = /usr/share/applications
+-desktop.files = desktop/easyslideshow.desktop
+-
+-INSTALLS += target \
+-icon \
+-desktop
+diff --git a/easyslideshow.desktop b/easyslideshow.desktop
+new file mode 100644
+index 0000000..6d93198
+--- /dev/null
++++ b/easyslideshow.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=easyslideshow
++Name=easyslideshow
++Icon=windows_icon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+-- 
+2.33.1
+
