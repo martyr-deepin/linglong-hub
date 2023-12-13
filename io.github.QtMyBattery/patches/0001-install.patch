@@ -1,0 +1,52 @@
+From 5c2458c9e1426e9835a9939e60872888691ce4e0 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 19:19:37 +0800
+Subject: [PATCH] install
+
+---
+ Qt_Example_Battery.desktop |  9 +++++++++
+ Qt_Example_Battery.pro     | 10 +++++++++-
+ 2 files changed, 18 insertions(+), 1 deletion(-)
+ create mode 100644 Qt_Example_Battery.desktop
+
+diff --git a/Qt_Example_Battery.desktop b/Qt_Example_Battery.desktop
+new file mode 100644
+index 0000000..879aab4
+--- /dev/null
++++ b/Qt_Example_Battery.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Qt_Example_Battery
++Name=Qt_Example_Battery
++Icon=ico
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/Qt_Example_Battery.pro b/Qt_Example_Battery.pro
+index 1f3af81..ccda07b 100644
+--- a/Qt_Example_Battery.pro
++++ b/Qt_Example_Battery.pro
+@@ -20,8 +20,16 @@ RC_ICONS = ico.ico
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     MyBatteryWidget/Battery.qrc
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Qt_Example_Battery.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = ico.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
