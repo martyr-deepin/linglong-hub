@@ -1,0 +1,55 @@
+From 081f8f9a5b2890b01f157065355a5f5264f04f82 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 18:35:33 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt          | 10 ++++------
+ build_dir/qtlog.desktop |  8 ++++++++
+ 2 files changed, 12 insertions(+), 6 deletions(-)
+ create mode 100644 build_dir/qtlog.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 49172d7..2f6a0d8 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,11 +1,7 @@
+ cmake_minimum_required(VERSION 3.5)
+ project(qtlog)
+ 
+-if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+-    set(CMAKE_INSTALL_PREFIX "/usr/local")
+-else()
+-    set(CMAKE_INSTALL_PREFIX "/usr")
+-endif()
++
+ 
+ set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+@@ -40,4 +36,6 @@ else()
+ target_link_libraries(qtlog Qt5::Widgets spdlog fmt)
+ endif()
+ 
+-install(TARGETS qtlog DESTINATION bin)
+\ No newline at end of file
++install(TARGETS qtlog DESTINATION bin)
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/qtlog.desktop DESTINATION share/applications)
+\ No newline at end of file
+diff --git a/build_dir/qtlog.desktop b/build_dir/qtlog.desktop
+new file mode 100644
+index 0000000..65e4488
+--- /dev/null
++++ b/build_dir/qtlog.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=qtlog
++Name=qtlog
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+-- 
+2.33.1
+

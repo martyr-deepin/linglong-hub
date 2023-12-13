@@ -1,0 +1,21 @@
+package:
+  id: io.github.QtLog
+  name: QtLog
+  version: 1.0.0
+  kind: app
+  description: |
+   to see the log for user
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/CamK06/QtLog.git"
+  commit: c4a4d5abedfada5b837ac756517ad80745d259ec
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
+  
