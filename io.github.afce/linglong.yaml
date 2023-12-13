@@ -1,0 +1,19 @@
+package:
+  id: io.github.afce
+  name: afce
+  version: 0.9.8
+  kind: app
+  description: |
+    AFCE is a algorithm flowchart editor with code generation and vector graphics. It has a simple graphical user interface written on Qt. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/viktor-zin/afce.git
+  commit: c008e197b00487982394d2465628677148b2dd5a
+
+build:
+  kind: qmake
