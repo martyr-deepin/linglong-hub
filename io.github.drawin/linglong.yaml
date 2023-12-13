@@ -1,0 +1,21 @@
+package:
+  id: io.github.drawin
+  name: drawin
+  version: 0.1.0
+  kind: app
+  description: |
+   It tryies to evolve agents that draw random images, to the point these agents "learns" to draw (copy) a reference image.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/heitoradao/drawin.git"
+  commit: 677eeb7390bd0c4e9fd989f17d3b297d27355e4d
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  

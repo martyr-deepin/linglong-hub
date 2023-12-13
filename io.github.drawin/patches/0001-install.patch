@@ -1,0 +1,43 @@
+From fe46d63fb64eae434c3fb9e0f97446ecd819e651 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 15:30:42 +0800
+Subject: [PATCH] install
+
+---
+ Drawin.desktop | 8 ++++++++
+ Drawin.pro     | 6 ++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 Drawin.desktop
+
+diff --git a/Drawin.desktop b/Drawin.desktop
+new file mode 100644
+index 0000000..d693630
+--- /dev/null
++++ b/Drawin.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Drawin
++Name=Drawin
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/Drawin.pro b/Drawin.pro
+index 547fda5..ec32771 100644
+--- a/Drawin.pro
++++ b/Drawin.pro
+@@ -19,3 +19,9 @@ HEADERS  += mainwindow.h \
+ FORMS    += mainwindow.ui
+ 
+ DEFINES += USE_THREAD
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Drawin.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
