@@ -1,0 +1,32 @@
+diff --git a/src/softfm-gui.desktop b/src/softfm-gui.desktop
+new file mode 100644
+index 0000000..b3809cc
+--- /dev/null
++++ b/src/softfm-gui.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=softfm-gui
++Exec=softfm-gui %f
++Icon=icon
+diff --git a/src/softfm-gui.pro b/src/softfm-gui.pro
+index 20e34b8..0ad250b 100644
+--- a/src/softfm-gui.pro
++++ b/src/softfm-gui.pro
+@@ -68,4 +68,16 @@ RESOURCES += \
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
++target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += softfm-gui.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = resources/images/icon.png
++INSTALLS += icons
