@@ -1,0 +1,34 @@
+diff --git a/Source/Advanced_Downloader.pro b/Source/Advanced_Downloader.pro
+index 4c0a908..354f60b 100644
+--- a/Source/Advanced_Downloader.pro
++++ b/Source/Advanced_Downloader.pro
+@@ -77,3 +77,14 @@ DISTFILES += \
+     Windows/ADWinDetails.h \
+     "Windows/Advanced Downloader.exe.manifest" \
+     ADT
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += Linux/AdvancedDownloader.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = Linux/ADIcon.png
++INSTALLS += icons
+diff --git a/Source/Linux/AdvancedDownloader.desktop b/Source/Linux/AdvancedDownloader.desktop
+index 850fe43..6a0275c 100755
+--- a/Source/Linux/AdvancedDownloader.desktop
++++ b/Source/Linux/AdvancedDownloader.desktop
+@@ -4,8 +4,8 @@ Type=Application
+ Name=Advanced Downloader
+ GenericName=Internet
+ Comment=Advanced Downloader Fast Download
+-Exec=AdvancedDownloader %f
+-Icon=AdvancedDownloader.png
++Exec=Advanced\ Downloader %f
++Icon=ADIcon
+ NoDisplay=false
+ Categories=Internet;
+ StartupNotify=true

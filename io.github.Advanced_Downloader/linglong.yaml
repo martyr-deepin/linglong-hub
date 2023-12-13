@@ -1,0 +1,25 @@
+package:
+  id: io.github.Advanced_Downloader
+  name: Advanced_Downloader
+  version: 0.0.1
+  kind: app
+  description: |
+    Powerful cross platform download software.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/ARASHz4/Advanced_Downloader.git"
+  commit: 0057bfe97710861dc53741db19fb948d46444a3d
+  patch:
+    - patches/fix-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd Source
+      qmake -makefile ${conf_args} ${extra_args}
