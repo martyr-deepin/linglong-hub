@@ -1,0 +1,27 @@
+package:
+  id: io.github.CasterSoundboard
+  name: CasterSoundboard
+  version: 0.0.1.1
+  kind: app
+  description: |
+    A soundboard for hot-keying and playing back sounds. (For podcasting)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/covarianttensor/CasterSoundboard.git
+  commit: 1a84315b3a3d4bdca1a4b784bd19460637f44438
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd CasterSoundboard
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
