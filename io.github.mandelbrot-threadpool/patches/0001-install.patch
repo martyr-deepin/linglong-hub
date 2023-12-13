@@ -1,0 +1,44 @@
+From b2159ad13a8434fc8ef2ed86436e37ad3c7eb46a Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 19:15:26 +0800
+Subject: [PATCH] install
+
+---
+ ch9-mandelbrot-threadpool.desktop | 8 ++++++++
+ ch9-mandelbrot-threadpool.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 ch9-mandelbrot-threadpool.desktop
+
+diff --git a/ch9-mandelbrot-threadpool.desktop b/ch9-mandelbrot-threadpool.desktop
+new file mode 100644
+index 0000000..c4d2942
+--- /dev/null
++++ b/ch9-mandelbrot-threadpool.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=ch9-mandelbrot-threadpool
++Name=ch9-mandelbrot-threadpool
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/ch9-mandelbrot-threadpool.pro b/ch9-mandelbrot-threadpool.pro
+index d431123..a17c9e1 100644
+--- a/ch9-mandelbrot-threadpool.pro
++++ b/ch9-mandelbrot-threadpool.pro
+@@ -25,3 +25,10 @@ HEADERS += \
+ 
+ FORMS += \
+         mainwindow.ui
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =ch9-mandelbrot-threadpool.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
