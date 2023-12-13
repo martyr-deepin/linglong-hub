@@ -1,0 +1,25 @@
+diff --git a/inverse-tripple-pendulum.desktop b/inverse-tripple-pendulum.desktop
+new file mode 100644
+index 0000000..9a113f2
+--- /dev/null
++++ b/inverse-tripple-pendulum.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=inverse-tripple-pendulum
++Exec=inverse-tripple-pendulum %f
+diff --git a/inverse-tripple-pendulum.pro b/inverse-tripple-pendulum.pro
+index 1bb7cb9..ce708ab 100644
+--- a/inverse-tripple-pendulum.pro
++++ b/inverse-tripple-pendulum.pro
+@@ -18,3 +18,10 @@ HEADERS  += mainwindow.h \
+     matrix.h
+ 
+ FORMS    += mainwindow.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += inverse-tripple-pendulum.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
