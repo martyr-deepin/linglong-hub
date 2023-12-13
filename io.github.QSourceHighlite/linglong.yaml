@@ -1,0 +1,21 @@
+package:
+  id: io.github.QSourceHighlite
+  name: QSourceHighlite
+  version: 1.0.0
+  kind: app
+  description: |
+   Lightweight syntax highlighter written in Qt
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Waqar144/QSourceHighlite.git"
+  commit: f1ed26f26d980360422a0295e49bf676abe7e416
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  

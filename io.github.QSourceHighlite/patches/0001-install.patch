@@ -1,0 +1,52 @@
+From 11f967565ea389fb54e1a281d50991022d7e19c4 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 18:59:25 +0800
+Subject: [PATCH] install
+
+---
+ QSourceHighlite.desktop |  8 ++++++++
+ QSourceHighlite.pro     | 10 +++++++++-
+ 2 files changed, 17 insertions(+), 1 deletion(-)
+ create mode 100644 QSourceHighlite.desktop
+
+diff --git a/QSourceHighlite.desktop b/QSourceHighlite.desktop
+new file mode 100644
+index 0000000..de7217e
+--- /dev/null
++++ b/QSourceHighlite.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QSourceHighlite
++Name=QSourceHighlite
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/QSourceHighlite.pro b/QSourceHighlite.pro
+index e1c12de..500064e 100644
+--- a/QSourceHighlite.pro
++++ b/QSourceHighlite.pro
+@@ -19,8 +19,16 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ DISTFILES += \
+     README.md
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =QSourceHighlite.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
