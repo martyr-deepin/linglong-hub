@@ -1,0 +1,21 @@
+package:
+  id: io.github.Qt-SchoolPlanner
+  name: Qt-SchoolPlanner
+  version: 0.0.1
+  kind: app
+  description: |
+   School Planner project implemented in Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Kjablonska/Qt-SchoolPlanner.git"
+  commit: 7736a9ed69366f0ded38e37ecb3239989ad59079
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  

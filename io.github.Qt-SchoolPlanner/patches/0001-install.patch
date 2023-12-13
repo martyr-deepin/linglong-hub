@@ -1,0 +1,45 @@
+From ec629a1803f9941ac1fbf9a5c96f4e555dffebca Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 14:31:07 +0800
+Subject: [PATCH] install
+
+---
+ SchoolPlanner.desktop | 8 ++++++++
+ SchoolPlanner.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 SchoolPlanner.desktop
+
+diff --git a/SchoolPlanner.desktop b/SchoolPlanner.desktop
+new file mode 100644
+index 0000000..d269d30
+--- /dev/null
++++ b/SchoolPlanner.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=SchoolPlanner
++Name=SchoolPlanner
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/SchoolPlanner.pro b/SchoolPlanner.pro
+index 1584451..7efa569 100644
+--- a/SchoolPlanner.pro
++++ b/SchoolPlanner.pro
+@@ -44,3 +44,10 @@ FORMS += \
+         schoolplanner.ui \
+     editform.ui \
+     editdictionary.ui
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =SchoolPlanner.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
