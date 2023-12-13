@@ -1,0 +1,21 @@
+package:
+  id: io.github.Fractal-Generator
+  name: Fractal-Generator
+  version: 0.0.1
+  kind: app
+  description: |
+   Mandelbrot fractal generator with gui based on qt5
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/KacperSynator/Fractal-Generator.git"
+  commit: 4537f650698e188faf99c3c7bb9e630e2c956f54
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
+  

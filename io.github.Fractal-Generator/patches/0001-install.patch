@@ -1,0 +1,40 @@
+From 38acfe54d3f3d27f99f42ab63ceac62fde0445b8 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 14:27:12 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt                      | 2 ++
+ build_dir/fractal-generator.desktop | 8 ++++++++
+ 2 files changed, 10 insertions(+)
+ create mode 100644 build_dir/fractal-generator.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 4f25614..1aa7cf4 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -23,3 +23,5 @@ target_include_directories(${PROJECT_NAME} PUBLIC
+     "${PROJECT_SOURCE_DIR}/inc/image"
+     "${PROJECT_SOURCE_DIR}/inc/fractal"
+     "${PROJECT_SOURCE_DIR}/gui")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/fractal-generator.desktop DESTINATION share/applications)
++install(TARGETS fractal-generator DESTINATION bin)
+\ No newline at end of file
+diff --git a/build_dir/fractal-generator.desktop b/build_dir/fractal-generator.desktop
+new file mode 100644
+index 0000000..80f5a5f
+--- /dev/null
++++ b/build_dir/fractal-generator.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=fractal-generator
++Name=fractal-generator
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+-- 
+2.33.1
+
