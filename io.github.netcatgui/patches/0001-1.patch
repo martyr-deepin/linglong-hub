@@ -1,0 +1,44 @@
+From cd1223cb9e00bf08f007965972d2852bb0285a1a Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Wed, 13 Dec 2023 18:39:01 +0800
+Subject: [PATCH] 1
+
+---
+ netcatgui.desktop | 8 ++++++++
+ netcatgui.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 netcatgui.desktop
+
+diff --git a/netcatgui.desktop b/netcatgui.desktop
+new file mode 100644
+index 0000000..0a2eb2a
+--- /dev/null
++++ b/netcatgui.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=netcatgui
++Name=netcatgui
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/netcatgui.pro b/netcatgui.pro
+index 627c703..f9d0c39 100644
+--- a/netcatgui.pro
++++ b/netcatgui.pro
+@@ -30,3 +30,10 @@ RESOURCES += \
+     resources/resources.qrc
+ 
+ RC_FILE = resources/ncgui.rc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =netcatgui.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

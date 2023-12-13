@@ -1,0 +1,21 @@
+package:
+  id: io.github.netcatgui
+  name: netcatgui
+  version: 1.0.0
+  kind: app
+  description: |
+    NetcatGUI is a simple GUI program that is set to emulate the popular network "swiss army knife" tool netcat (nc) using an easy to use graphical user interface and cross platform availability.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/shinnok/netcatgui.git
+  commit: b847ff75078e08cb928f2504a3968f1d6841d22a
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
