@@ -1,0 +1,22 @@
+package:
+  id: io.github.Teeko
+  name: Teeko
+  version: 1.0.0
+  kind: app
+  description: |
+    Trabalho de LP, onde criamos uma interface em QT para o jogo Teeko em c++
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Af-Oaks/Teeko.git
+  commit: 77466742d73d31690184eeb21d5bf69168ece904
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake

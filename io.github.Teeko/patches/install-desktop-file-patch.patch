@@ -1,0 +1,15 @@
+diff --git a/Teeko.pro b/Teeko.pro
+index 48690f3..c3e17c7 100644
+--- a/Teeko.pro
++++ b/Teeko.pro
+@@ -29,3 +29,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ 
+ RESOURCES += \
+     Teeko.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += Teeko.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target

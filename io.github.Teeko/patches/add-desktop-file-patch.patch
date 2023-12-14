@@ -1,0 +1,10 @@
+diff --git a/Teeko.desktop b/Teeko.desktop
+new file mode 100644
+index 0000000..16c81cd
+--- /dev/null
++++ b/Teeko.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=Teeko
++Exec=Teeko %f
