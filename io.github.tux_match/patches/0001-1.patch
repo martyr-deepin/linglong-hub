@@ -1,0 +1,48 @@
+From d238913eae854051a8285daa85a66d8a24770db9 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Thu, 14 Dec 2023 15:22:26 +0800
+Subject: [PATCH] 1
+
+---
+ tux_match.desktop |  9 +++++++++
+ tux_match.pro     | 11 +++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 tux_match.desktop
+
+diff --git a/tux_match.desktop b/tux_match.desktop
+new file mode 100644
+index 0000000..9cbeb04
+--- /dev/null
++++ b/tux_match.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=tux_match
++Name=tux_match
++StartupNotify=false
++Terminal=false
++Icon=tux_round
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/tux_match.pro b/tux_match.pro
+index 2d90dfa..bcb7295 100644
+--- a/tux_match.pro
++++ b/tux_match.pro
+@@ -26,3 +26,14 @@ HEADERS += \
+ RESOURCES += \
+     resources/app_resources.qrc \
+     source/graphics_engine/shaders/GL_shaders.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =tux_match.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = resources/tux_round.png
++INSTALLS += icons
++
+-- 
+2.33.1
+

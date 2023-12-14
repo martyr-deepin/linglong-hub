@@ -1,0 +1,22 @@
+package:
+  id: io.github.tux_match 
+  name: tux_match
+  version: 0.0.1
+  kind: app
+  description: |
+    A match three game
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/Mercotui/tux_match.git"
+  commit: 4a10c44bda71f811470da922a85c196c4b2b7736
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
