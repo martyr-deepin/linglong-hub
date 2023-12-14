@@ -1,0 +1,21 @@
+package:
+  id: io.github.Bing-Wallpaper-GUI 
+  name: Bing-Wallpaper-GUI
+  version: 1.1.4 
+  kind: app
+  description: |
+    A GUI version of Bing backgrounds Getter based on Qt for Linux. Automtically get daily wallpaper from www.bing.com and set as your desktop background.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/the0cp/Bing-Wallpaper-GUI.git"
+  commit: b205995eb045156e264abe9ab318fbdc83ae3731
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
