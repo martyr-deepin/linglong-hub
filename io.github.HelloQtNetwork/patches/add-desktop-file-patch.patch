@@ -1,0 +1,10 @@
+diff --git a/TcpFileTransfer/TcpFileTransfer.desktop b/TcpFileTransfer/TcpFileTransfer.desktop
+new file mode 100644
+index 0000000..0c9ad43
+--- /dev/null
++++ b/TcpFileTransfer/TcpFileTransfer.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=TcpFileTransfer
++Exec=TcpFileTransfer %f

@@ -1,0 +1,22 @@
+package:
+  id: io.github.HelloQtNetwork
+  name: HelloQtNetwork
+  version: 1.0.0
+  kind: app
+  description: |
+    Show the use of Qt network module. 展示Qt网络模块的使用
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/gongjianbo/HelloQtNetwork.git
+  commit: 98ee1e73370a6b23154c537e1e4062031fb771eb
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,15 @@
+diff --git a/TcpFileTransfer/TcpFileTransfer.pro b/TcpFileTransfer/TcpFileTransfer.pro
+index 36f4580..cc03594 100644
+--- a/TcpFileTransfer/TcpFileTransfer.pro
++++ b/TcpFileTransfer/TcpFileTransfer.pro
+@@ -37,3 +37,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ 
+ DISTFILES += \
+     Readme.txt
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += TcpFileTransfer.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
