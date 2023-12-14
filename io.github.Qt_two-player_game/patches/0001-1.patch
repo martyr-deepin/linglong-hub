@@ -1,0 +1,44 @@
+From a23ece3c484e84a5124502be1ec64cc4399b727e Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Thu, 14 Dec 2023 15:00:46 +0800
+Subject: [PATCH] 1
+
+---
+ mini_project_example.desktop | 8 ++++++++
+ mini_project_example.pro     | 8 ++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 mini_project_example.desktop
+
+diff --git a/mini_project_example.desktop b/mini_project_example.desktop
+new file mode 100644
+index 0000000..3535056
+--- /dev/null
++++ b/mini_project_example.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=mini_project_example
++Name=mini_project_example
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/mini_project_example.pro b/mini_project_example.pro
+index 0079a9f..8d66cb5 100644
+--- a/mini_project_example.pro
++++ b/mini_project_example.pro
+@@ -40,3 +40,11 @@ RESOURCES += \
+ DISTFILES +=
+ 
+ FORMS += form.ui
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =mini_project_example.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+-- 
+2.33.1
+

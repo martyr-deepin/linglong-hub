@@ -1,0 +1,22 @@
+package:
+  id: io.github.Qt_two-player_game 
+  name: Qt_two-player_game
+  version: 0.0.1
+  kind: app
+  description: |
+    一款单双人游戏,玩家1通过 wsad进行移动 q进行攻击,玩家2通过4568进行移动 7进行攻击.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/Cheng-Hsun/Qt_two-player_game.git"
+  commit: b1f8e50a284883a6b6b899ea8666284ac110c8d6
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
