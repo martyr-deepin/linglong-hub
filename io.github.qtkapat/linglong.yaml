@@ -1,0 +1,22 @@
+package:
+  id: io.github.qtkapat 
+  name: qtkapat
+  version: 1.0.0
+  kind: app
+  description: |
+    Qt5 kullanarak C++ ile yazıldı.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/fbostanci/qtkapat.git"
+  commit: ae6e8806e9c92bd2b38f590e70ac5e6d5be39457
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
