@@ -1,0 +1,31 @@
+package:
+  id: io.github.Dizzy-Editor-Linux 
+  name: Dizzy-Editor-Linux
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt 5 上适用于 Linux 的 Dizzy 地图编辑器.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/da-nie/Dizzy-Editor-Linux.git"
+  commit: c482a0c9f1b265de1e0aebec7d0788a3587b8aee
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd DizzyEditor 
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
+
