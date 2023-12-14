@@ -1,0 +1,30 @@
+package:
+  id: io.github.BattleCity 
+  name: BattleCity
+  version: 0.0.1
+  kind: app
+  description: |
+    Battle City Game
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/SSemenkin/BattleCity.git"
+  commit: 471e30929d61cb39933d25ac498a8d5f1c44ca1f
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src 
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

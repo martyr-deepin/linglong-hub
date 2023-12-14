@@ -1,0 +1,48 @@
+From 28c67572255f6b5602bbc24260f48f8a666804a5 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Thu, 14 Dec 2023 15:18:30 +0800
+Subject: [PATCH] 1
+
+---
+ src/BattleCity.desktop |  9 +++++++++
+ src/BattleCity.pro     | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 src/BattleCity.desktop
+
+diff --git a/src/BattleCity.desktop b/src/BattleCity.desktop
+new file mode 100644
+index 0000000..59802f6
+--- /dev/null
++++ b/src/BattleCity.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=BattleCity
++Name=BattleCity
++StartupNotify=false
++Terminal=false
++Icon=logo
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/src/BattleCity.pro b/src/BattleCity.pro
+index b0828ba..d9e7b4c 100644
+--- a/src/BattleCity.pro
++++ b/src/BattleCity.pro
+@@ -59,4 +59,14 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ RESOURCES += \
+     resources.qrc
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =BattleCity.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = images/logo.png
++INSTALLS += icons
++
+ 
+-- 
+2.33.1
+
