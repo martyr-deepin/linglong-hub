@@ -1,0 +1,22 @@
+package:
+  id: io.github.QtPuppyCatcherGame 
+  name: QtPuppyCatcherGame
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt Puppy Catcher game for PIC 10C
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/arianeayer/QtPuppyCatcherGame.git"
+  commit: 6f11236d1af7931678668ba6951b201c545514b6
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake

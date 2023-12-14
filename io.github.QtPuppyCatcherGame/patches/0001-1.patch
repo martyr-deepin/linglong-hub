@@ -1,0 +1,48 @@
+From c913ca2b584bc71753b23659c797eab52e13a110 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Thu, 14 Dec 2023 15:39:38 +0800
+Subject: [PATCH] 1
+
+---
+ puppies.desktop |  9 +++++++++
+ puppies.pro     | 11 +++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 puppies.desktop
+
+diff --git a/puppies.desktop b/puppies.desktop
+new file mode 100644
+index 0000000..c72742e
+--- /dev/null
++++ b/puppies.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=puppies
++Name=puppies
++StartupNotify=false
++Terminal=false
++Icon=car
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/puppies.pro b/puppies.pro
+index 19004de..0871a3c 100644
+--- a/puppies.pro
++++ b/puppies.pro
+@@ -33,3 +33,14 @@ RESOURCES += \
+     images.qrc
+ 
+ DISTFILES +=
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =puppies.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = car.jpg
++INSTALLS += icons
++
+-- 
+2.33.1
+
