@@ -1,0 +1,10 @@
+diff --git a/chatTCP.desktop b/chatTCP.desktop
+new file mode 100644
+index 0000000..4adcfa1
+--- /dev/null
++++ b/chatTCP.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=chatTCP
++Exec=chatTCP %f

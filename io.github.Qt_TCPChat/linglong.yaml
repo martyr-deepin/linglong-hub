@@ -1,0 +1,22 @@
+package:
+  id: io.github.Qt_TCPChat
+  name: Qt_TCPChat
+  version: 1.0.0
+  kind: app
+  description: |
+    Qt_TCPChat.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/sofia-am/Qt_TCPChat.git
+  commit: 276053bd3018c4dbd3ccd851b2739c806dba47c7
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake

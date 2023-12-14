@@ -1,0 +1,15 @@
+diff --git a/chatTCP.pro b/chatTCP.pro
+index fbc8d5a..b998468 100644
+--- a/chatTCP.pro
++++ b/chatTCP.pro
+@@ -22,3 +22,10 @@ FORMS += \
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += chatTCP.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
