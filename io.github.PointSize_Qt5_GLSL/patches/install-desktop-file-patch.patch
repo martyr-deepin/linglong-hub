@@ -1,0 +1,15 @@
+diff --git a/PointSize_Qt5_GLSL.pro b/PointSize_Qt5_GLSL.pro
+index 8dd6962..4e2e228 100644
+--- a/PointSize_Qt5_GLSL.pro
++++ b/PointSize_Qt5_GLSL.pro
+@@ -33,3 +33,10 @@ QML_DESIGNER_IMPORT_PATH =
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += PointSize_Qt5_GLSL.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target

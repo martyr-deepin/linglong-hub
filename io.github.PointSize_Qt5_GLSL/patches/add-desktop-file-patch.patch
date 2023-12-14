@@ -1,0 +1,10 @@
+diff --git a/PointSize_Qt5_GLSL.desktop b/PointSize_Qt5_GLSL.desktop
+new file mode 100644
+index 0000000..24d2b80
+--- /dev/null
++++ b/PointSize_Qt5_GLSL.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=PointSize_Qt5_GLSL
++Exec=PointSize_Qt5_GLSL %f
