@@ -1,0 +1,22 @@
+package:
+  id: io.github.QtBattleShipsGame 
+  name: QtBattleShipsGame
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt C++ game with AI logic.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/rickskyy/QtBattleShipsGame.git"
+  commit: c488c8d713bc13f43709b601a8b91353dda6b810
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
