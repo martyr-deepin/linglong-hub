@@ -1,0 +1,15 @@
+diff --git a/calculator.pro b/calculator.pro
+index 5085d2a..a7391c3 100644
+--- a/calculator.pro
++++ b/calculator.pro
+@@ -30,3 +30,10 @@ LIBS += -L/home/xander/lib/libgmp.so -lgmp
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += calculator.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
