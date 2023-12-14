@@ -1,0 +1,22 @@
+package:
+  id: io.github.calculadora_qt
+  name: calculadora_qt
+  version: 1.0.0
+  kind: app
+  description: |
+    Calculadora simples feita no Qt Creator
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/caiosbrl7/calculadora_qt.git
+  commit: c0309f5c6a51c893ee993e3fe5fa6b57067ee72f
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake

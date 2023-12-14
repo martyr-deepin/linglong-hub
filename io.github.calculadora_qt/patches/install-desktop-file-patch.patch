@@ -1,0 +1,15 @@
+diff --git a/calculadora_qt.pro b/calculadora_qt.pro
+index b915c09..596b02d 100644
+--- a/calculadora_qt.pro
++++ b/calculadora_qt.pro
+@@ -22,3 +22,10 @@ FORMS += \
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += calculadora_qt.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target

@@ -1,0 +1,10 @@
+diff --git a/calculadora_qt.desktop b/calculadora_qt.desktop
+new file mode 100644
+index 0000000..b6535aa
+--- /dev/null
++++ b/calculadora_qt.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=calculadora_qt
++Exec=calculadora_qt %f
