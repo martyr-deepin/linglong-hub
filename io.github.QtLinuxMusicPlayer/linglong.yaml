@@ -1,0 +1,22 @@
+package:
+  id: io.github.QtLinuxMusicPlayer 
+  name: QtLinuxMusicPlayer
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt 5.9 x64 application that play music
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/Obliczeniowo/QtLinuxMusicPlayer.git"
+  commit: 2fa848e426e512e85df515808fbc874073fba237
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
