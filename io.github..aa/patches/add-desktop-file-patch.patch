@@ -1,0 +1,10 @@
+diff --git a/ej06_qt.desktop b/ej06_qt.desktop
+new file mode 100644
+index 0000000..d46bc54
+--- /dev/null
++++ b/ej06_qt.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=ej06_qt
++Exec=ej06_qt %f

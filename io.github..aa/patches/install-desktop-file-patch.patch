@@ -1,0 +1,15 @@
+diff --git a/ej06_qt.pro b/ej06_qt.pro
+index bcfb90d..23b30ab 100644
+--- a/ej06_qt.pro
++++ b/ej06_qt.pro
+@@ -28,3 +28,10 @@ FORMS += \
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += ej06_qt.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
