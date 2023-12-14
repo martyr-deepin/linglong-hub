@@ -1,0 +1,47 @@
+From 7dc2daaffe68e6349f12469163325c3be80c8529 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Thu, 14 Dec 2023 14:31:03 +0800
+Subject: [PATCH] 1
+
+---
+ AppSwipe.desktop |  9 +++++++++
+ AppSwipe.pro     | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 AppSwipe.desktop
+
+diff --git a/AppSwipe.desktop b/AppSwipe.desktop
+new file mode 100644
+index 0000000..1be9a2c
+--- /dev/null
++++ b/AppSwipe.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=AppSwipe
++Name=AppSwipe
++StartupNotify=false
++Terminal=false
++Icon=app
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/AppSwipe.pro b/AppSwipe.pro
+index c376295..2f5411c 100644
+--- a/AppSwipe.pro
++++ b/AppSwipe.pro
+@@ -56,3 +56,13 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ 
+ RESOURCES += \
+     resources.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =AppSwipe.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = img/app.svg
++INSTALLS += icons
+-- 
+2.33.1
+

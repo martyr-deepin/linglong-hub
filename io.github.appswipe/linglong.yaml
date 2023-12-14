@@ -1,0 +1,22 @@
+package:
+  id: io.github.appswipe 
+  name: appswipe
+  version: 1.1.68
+  kind: app
+  description: |
+    Use this to look up information about installed packages, packages to upgrade, or packages you might want to install. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/k9spud/appswipe.git"
+  commit: b936c894fc596444ba8e55eb56cd80a51a1f7c4a
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
