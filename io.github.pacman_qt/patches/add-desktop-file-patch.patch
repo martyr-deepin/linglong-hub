@@ -1,0 +1,10 @@
+diff --git a/pacman.desktop b/pacman.desktop
+new file mode 100644
+index 0000000..299bcd8
+--- /dev/null
++++ b/pacman.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=pacman
++Exec=pacman %f

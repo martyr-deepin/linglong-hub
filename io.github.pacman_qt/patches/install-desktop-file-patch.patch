@@ -1,0 +1,15 @@
+diff --git a/pacman.pro b/pacman.pro
+index f61384f..4d628a0 100644
+--- a/pacman.pro
++++ b/pacman.pro
+@@ -43,3 +43,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ RESOURCES += \
+     Images.qrc \
+     fonts/fuentes.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += pacman.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
