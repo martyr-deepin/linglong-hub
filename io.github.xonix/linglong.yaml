@@ -1,0 +1,22 @@
+package:
+  id: io.github.xonix 
+  name: xonix
+  version: 0.0.1
+  kind: app
+  description: |
+    xonix game implementation for qt and Nintendo DS
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/ruskim/xonix.git"
+  commit: 4fa3a7dca10c7ed21f4a93570a23356dfde46825
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
