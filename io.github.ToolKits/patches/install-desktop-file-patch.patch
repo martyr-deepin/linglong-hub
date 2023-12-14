@@ -1,0 +1,15 @@
+diff --git a/toolkits.pro b/toolkits.pro
+index b9b7456..231bdfa 100644
+--- a/toolkits.pro
++++ b/toolkits.pro
+@@ -25,3 +25,10 @@ FORMS += \
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += toolkits.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target

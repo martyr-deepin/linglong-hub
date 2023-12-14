@@ -1,0 +1,10 @@
+diff --git a/toolkits.desktop b/toolkits.desktop
+new file mode 100644
+index 0000000..67f4ce9
+--- /dev/null
++++ b/toolkits.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=toolkits
++Exec=toolkits %f
