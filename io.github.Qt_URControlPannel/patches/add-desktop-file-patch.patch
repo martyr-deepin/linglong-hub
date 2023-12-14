@@ -1,0 +1,10 @@
+diff --git a/Qt_URControlPannel.desktop b/Qt_URControlPannel.desktop
+new file mode 100644
+index 0000000..503e893
+--- /dev/null
++++ b/Qt_URControlPannel.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=Qt_URControlPannel
++Exec=Qt_URControlPannel %f

@@ -1,0 +1,15 @@
+diff --git a/Qt_URControlPannel.pro b/Qt_URControlPannel.pro
+index f2d8d2d..3582177 100644
+--- a/Qt_URControlPannel.pro
++++ b/Qt_URControlPannel.pro
+@@ -25,3 +25,10 @@ FORMS += \
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += Qt_URControlPannel.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target

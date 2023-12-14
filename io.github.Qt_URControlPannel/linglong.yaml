@@ -1,0 +1,22 @@
+package:
+  id: io.github.Qt_URControlPannel
+  name: Qt_URControlPannel
+  version: 1.0.0
+  kind: app
+  description: |
+    UR机械臂控件面板.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/ivo-ou/Qt_URControlPannel.git
+  commit: 6c14668b9ece4848bd3eb6b37081945edf1485f7
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake
