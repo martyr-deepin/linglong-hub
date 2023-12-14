@@ -1,0 +1,22 @@
+package:
+  id: io.github.QtCardsGame 
+  name: QtCardsGame
+  version: 0.0.1
+  kind: app
+  description: |
+    a cards game using Qt
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/sbvb/QtCardsGame.git"
+  commit: 40649d6de4605e1263c2e50b45c55b162412cef2
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,47 @@
+From cec248975665b5f1ce8d80e18bbf9f426cb6d3d7 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Thu, 14 Dec 2023 15:45:32 +0800
+Subject: [PATCH] 1
+
+---
+ BlackJack.desktop |  9 +++++++++
+ QtCardsGame.pro   | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 BlackJack.desktop
+
+diff --git a/BlackJack.desktop b/BlackJack.desktop
+new file mode 100644
+index 0000000..c288ee7
+--- /dev/null
++++ b/BlackJack.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=BlackJack
++Name=BlackJack
++StartupNotify=false
++Terminal=false
++Icon=1.1
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/QtCardsGame.pro b/QtCardsGame.pro
+index 25350ce..09bf409 100644
+--- a/QtCardsGame.pro
++++ b/QtCardsGame.pro
+@@ -34,3 +34,13 @@ RESOURCES += \
+ 
+ DISTFILES += \
+     my.pack
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =BlackJack.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = 1.1.png
++INSTALLS += icons
+-- 
+2.33.1
+
