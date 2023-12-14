@@ -1,0 +1,43 @@
+From 2eab56019b943250e018e2a684a443468a1b49b9 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Thu, 14 Dec 2023 15:51:07 +0800
+Subject: [PATCH] 1
+
+---
+ PDA_Maze.desktop | 8 ++++++++
+ PDA_Maze.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 PDA_Maze.desktop
+
+diff --git a/PDA_Maze.desktop b/PDA_Maze.desktop
+new file mode 100644
+index 0000000..d7188a2
+--- /dev/null
++++ b/PDA_Maze.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=PDA_Maze
++Name=PDA_Maze
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/PDA_Maze.pro b/PDA_Maze.pro
+index 321921b..c9c6901 100644
+--- a/PDA_Maze.pro
++++ b/PDA_Maze.pro
+@@ -35,3 +35,10 @@ TRANSLATIONS += i18n/PDA_Maze_en.ts \
+ 
+ # Windows Executable Icon
+ win32:RC_FILE = PDA_Maze.rc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =PDA_Maze.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
