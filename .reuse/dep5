@@ -8,8 +8,14 @@ Files: .github/* .gitlab-ci.yml .obs/workflows.yml
 Copyright: None
 License: CC0-1.0
 
+# gitignore
+Files: .gitignore
+Copyright: None
+License: CC0-1.0
+
+
 # README
-Files: README.md README.zh_CN.md
+Files: README.md README.zh_CN.md 
 Copyright: UnionTech Software Technology Co., Ltd.
 License: CC-BY-4.0
 
