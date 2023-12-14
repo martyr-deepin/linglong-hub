@@ -1,0 +1,10 @@
+diff --git a/2048.desktop b/2048.desktop
+new file mode 100644
+index 0000000..dcf43f8
+--- /dev/null
++++ b/2048.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=2048
++Exec=2048 %f

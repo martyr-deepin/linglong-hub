@@ -1,0 +1,15 @@
+diff --git a/2048.pro b/2048.pro
+index cdf8aa0..944a442 100644
+--- a/2048.pro
++++ b/2048.pro
+@@ -26,3 +26,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ RESOURCES += \
+     res.qrc \
+     res.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += 2048.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
