@@ -1,0 +1,44 @@
+From 8206b24022328ea29347652ae59ba2836285fe80 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Thu, 14 Dec 2023 14:37:11 +0800
+Subject: [PATCH] 1
+
+---
+ GetLinuxAppsInfo.desktop | 8 ++++++++
+ GetLinuxAppsInfo.pro     | 8 ++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 GetLinuxAppsInfo.desktop
+
+diff --git a/GetLinuxAppsInfo.desktop b/GetLinuxAppsInfo.desktop
+new file mode 100644
+index 0000000..1d70cad
+--- /dev/null
++++ b/GetLinuxAppsInfo.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=GetLinuxAppsInfo
++Name=GetLinuxAppsInfo
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/GetLinuxAppsInfo.pro b/GetLinuxAppsInfo.pro
+index 6c08d3b..1f07c2b 100644
+--- a/GetLinuxAppsInfo.pro
++++ b/GetLinuxAppsInfo.pro
+@@ -34,3 +34,11 @@ HEADERS += \
+ 
+ FORMS += \
+         mainwindow.ui
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =GetLinuxAppsInfo.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+-- 
+2.33.1
+
