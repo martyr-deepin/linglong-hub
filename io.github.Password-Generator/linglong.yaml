@@ -1,0 +1,22 @@
+package:
+  id: io.github.Password-Generator 
+  name: Password-Generator
+  version: 0.0.1
+  kind: app
+  description: |
+    deepin linux password generator
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/alvarosamudio/Password-Generator.git"
+  commit: 21ed73a6f203ef219ea6fea922ca9bb8835cd158
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
