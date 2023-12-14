@@ -1,0 +1,19 @@
+diff --git a/qtemu.pro b/qtemu.pro
+index 313ce08..1473d34 100644
+--- a/qtemu.pro
++++ b/qtemu.pro
+@@ -150,3 +150,14 @@ OTHER_FILES += \
+ RESOURCES += qtemu.qrc
+ 
+ RC_ICONS += qtemu.ico
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += qtemu.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = qtemu.png
++INSTALLS += icons

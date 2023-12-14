@@ -1,0 +1,13 @@
+diff --git a/qtemu.desktop b/qtemu.desktop
+index 2a99de3..4cbdb7c 100644
+--- a/qtemu.desktop
++++ b/qtemu.desktop
+@@ -13,7 +13,7 @@ Comment[es]=Un front-end escrito en Qt para el emulador QEMU
+ 
+ 
+ Icon=qtemu
+-Exec=qtemu
++Exec=qtemu %f
+ Terminal=false
+ StartupNotify=false
+ Categories=Qt;System;
