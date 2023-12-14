@@ -1,0 +1,10 @@
+diff --git a/BirdGame.desktop b/BirdGame.desktop
+new file mode 100644
+index 0000000..99e718c
+--- /dev/null
++++ b/BirdGame.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=BirdGame
++Exec=BirdGame %f

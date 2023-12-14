@@ -1,0 +1,22 @@
+package:
+  id: io.github.QTBird
+  name: QTBird
+  version: 1.0.0
+  kind: app
+  description: |
+    QTBird game.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/helxhj/QTBird.git
+  commit: d8273c938c140dfb40ff1351bd54cb5b873cc2fb
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,15 @@
+diff --git a/BirdGame.pro b/BirdGame.pro
+index 3720ee7..8ce2f1e 100644
+--- a/BirdGame.pro
++++ b/BirdGame.pro
+@@ -44,3 +44,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ 
+ RESOURCES += \
+     BirdSource.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += BirdGame.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
