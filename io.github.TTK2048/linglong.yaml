@@ -1,0 +1,22 @@
+package:
+  id: io.github.TTK2048 
+  name: TTK2048
+  version: 0.0.1
+  kind: app
+  description: |
+    2048 game, based on Qt for windows and linux.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/pandygui/TTK2048.git"
+  commit: 7faf5c926c895fa6e90c18516cb2ccb7523e4940
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
