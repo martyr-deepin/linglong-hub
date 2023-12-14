@@ -1,0 +1,10 @@
+diff --git a/Interrogator.desktop b/Interrogator.desktop
+new file mode 100644
+index 0000000..3f5839c
+--- /dev/null
++++ b/Interrogator.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=Interrogator
++Exec=Interrogator %f

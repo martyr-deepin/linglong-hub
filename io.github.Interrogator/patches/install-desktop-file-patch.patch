@@ -1,0 +1,15 @@
+diff --git a/Interrogator.pro b/Interrogator.pro
+index 19f932c..346a142 100644
+--- a/Interrogator.pro
++++ b/Interrogator.pro
+@@ -43,3 +43,10 @@ Debug:OBJECTS_DIR = debug/.obj
+ Debug:MOC_DIR = debug/.moc
+ Debug:RCC_DIR = debug/.rcc
+ Debug:UI_DIR = debug/.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += Interrogator.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
