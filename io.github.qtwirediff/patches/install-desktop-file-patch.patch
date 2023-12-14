@@ -1,0 +1,15 @@
+diff --git a/qtwirediff.pro b/qtwirediff.pro
+index 47fde77..8b2e00e 100644
+--- a/qtwirediff.pro
++++ b/qtwirediff.pro
+@@ -58,3 +58,10 @@ HEADERS += \
+ FORMS += \
+         mainwindow.ui \
+     traceview.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += qtwirediff.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target

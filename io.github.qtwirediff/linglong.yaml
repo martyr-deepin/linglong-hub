@@ -1,0 +1,22 @@
+package:
+  id: io.github.qtwirediff
+  name: qtwirediff
+  version: 1.0.0
+  kind: app
+  description: |
+    WireDiff is a debugging tool to diff network traffic leveraging Wireshark.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/aaptel/qtwirediff.git
+  commit: 6b8983d740205c231cf194b26378be85943aed0b
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake
