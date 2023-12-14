@@ -1,0 +1,10 @@
+diff --git a/jogo.desktop b/jogo.desktop
+new file mode 100644
+index 0000000..d5e50a8
+--- /dev/null
++++ b/jogo.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=jogo
++Exec=jogo %f

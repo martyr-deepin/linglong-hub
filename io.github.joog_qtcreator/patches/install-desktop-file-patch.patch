@@ -1,0 +1,15 @@
+diff --git a/jogo.pro b/jogo.pro
+index c728cab..c09d131 100644
+--- a/jogo.pro
++++ b/jogo.pro
+@@ -31,3 +31,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ 
+ RESOURCES += \
+     resource.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += jogo.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
