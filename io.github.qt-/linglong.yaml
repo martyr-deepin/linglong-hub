@@ -1,0 +1,22 @@
+package:
+  id: io.github.qt-
+  name: qt-
+  version: 1.0.0
+  kind: app
+  description: |
+    基于端口和ip地址的文件传输.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/jiulix/qt-.git
+  commit: 9d1b2d1370caf8c7e424adea405a6da8f32bbc8e
+  patch:
+    - patches/add-desktop-file-patch.patch
+    - patches/install-desktop-file-patch.patch
+
+build:
+  kind: qmake

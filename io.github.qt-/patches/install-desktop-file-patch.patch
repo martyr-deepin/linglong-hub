@@ -1,0 +1,19 @@
+diff --git a/QFTTools.pro b/QFTTools.pro
+index b8c03a1..db771dd 100644
+--- a/QFTTools.pro
++++ b/QFTTools.pro
+@@ -34,3 +34,14 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ 
+ RESOURCES += \
+     images.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += QFTTools.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = images/main.ico
++INSTALLS += icons

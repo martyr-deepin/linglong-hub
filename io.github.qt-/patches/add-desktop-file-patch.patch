@@ -1,0 +1,11 @@
+diff --git a/QFTTools.desktop b/QFTTools.desktop
+new file mode 100644
+index 0000000..e72241d
+--- /dev/null
++++ b/QFTTools.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=QFTTools
++Exec=QFTTools %f
++Icon=main
