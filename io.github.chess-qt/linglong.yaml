@@ -1,0 +1,22 @@
+package:
+  id: io.github.chess-qt 
+  name: chess-qt
+  version: 0.0.1
+  kind: app
+  description: |
+    international Chess game based on Qt for Linux.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/AlexanderAkhtyrtsev/chess-qt.git"
+  commit: dc42f719bceac533c21244008f038e894a9078f5
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
