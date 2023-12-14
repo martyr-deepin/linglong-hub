@@ -1,0 +1,30 @@
+package:
+  id: io.github.BinGrok
+  name: BinGrok
+  version: 1.0.0
+  kind: app
+  description: |
+    BinGrok is a hex editor designed specifically to aid in reverse engineering of binary formats. The goal is to create a 'view' in c-struct-like syntax.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: glfw
+    version: 3.3.8
+
+source:
+  kind: git
+  url: "https://github.com/spuriousdata/BinGrok.git"
+  commit: 453fbc260aba23b1c653badab2c6d22ece7b90a3
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}
+

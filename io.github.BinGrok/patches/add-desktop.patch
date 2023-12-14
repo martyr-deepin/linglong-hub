@@ -1,0 +1,25 @@
+diff --git a/src/BinGrok.desktop b/src/BinGrok.desktop
+new file mode 100644
+index 0000000..65dacd5
+--- /dev/null
++++ b/src/BinGrok.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=BinGrok
++Exec=BinGrok %f
+diff --git a/src/BinGrok.pro b/src/BinGrok.pro
+index 719e825..d58a5c0 100644
+--- a/src/BinGrok.pro
++++ b/src/BinGrok.pro
+@@ -47,3 +47,10 @@ FORMS    += \
+     preferences.ui \
+     structeditor.ui \
+     datavisualizer.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += BinGrok.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
