@@ -1,0 +1,50 @@
+From 06c6b78ad3ad5b926023c6862701d025477563d4 Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Fri, 15 Dec 2023 16:42:23 +0800
+Subject: [PATCH] 1
+
+---
+ QSetupCreator.desktop | 10 ++++++++++
+ QSetupCreator.pro     | 11 +++++++++++
+ 2 files changed, 21 insertions(+)
+ create mode 100644 QSetupCreator.desktop
+
+diff --git a/QSetupCreator.desktop b/QSetupCreator.desktop
+new file mode 100644
+index 0000000..3e50192
+--- /dev/null
++++ b/QSetupCreator.desktop
+@@ -0,0 +1,10 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QSetupCreator
++Name=QSetupCreator
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
++
++Icon=icon
+diff --git a/QSetupCreator.pro b/QSetupCreator.pro
+index 1e97510..d47665a 100644
+--- a/QSetupCreator.pro
++++ b/QSetupCreator.pro
+@@ -46,3 +46,14 @@ DISTFILES +=
+ 
+ RESOURCES += \
+     icon.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =QSetupCreator.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
++icons.path = $${PREFIX}/share/icons
++icons.files = icon.ico
++INSTALLS += icons
+\ No newline at end of file
+-- 
+2.33.1
+

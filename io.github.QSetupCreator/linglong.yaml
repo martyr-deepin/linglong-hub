@@ -1,0 +1,21 @@
+package:
+  id: io.github.QSetupCreator
+  name: QSetupCreator
+  version: 1.2.0
+  kind: app
+  description: |
+    A gui for qt installation framework to create installer for your qt projects on windows.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/mguludag/QSetupCreator.git
+  commit: 1f670e4e633ed5fc92412d523a7365c6b16ade58
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
