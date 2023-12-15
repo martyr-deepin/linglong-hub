@@ -1,0 +1,21 @@
+package:
+  id: io.github.MeeTimeTracker
+  name: MeeTimeTracker
+  version: 1.0.0
+  kind: app
+  description: |
+    QT based appliciaton for time tracking via timers
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/shaanNagra/MeeTimeTracker.git
+  commit: 783554491288f731cb09ba974525986379cf3d35
+  patch:
+    - patches/fix_install.patch
+
+build:
+  kind: cmake

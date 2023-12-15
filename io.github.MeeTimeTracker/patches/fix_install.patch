@@ -1,0 +1,22 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 4eb575e..9ff8c3a 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -80,3 +80,6 @@ install(TARGETS MeeTimeTracker
+ if(QT_VERSION_MAJOR EQUAL 6)
+     qt_finalize_executable(MeeTimeTracker)
+ endif()
++
++install(TARGETS MeeTimeTracker DESTINATION bin/)
++install(FILES build_dir/MeeTimeTracker.desktop DESTINATION share/applications/)
+\ No newline at end of file
+diff --git a/build_dir/MeeTimeTracker.desktop b/build_dir/MeeTimeTracker.desktop
+new file mode 100644
+index 0000000..3a2bc2f
+--- /dev/null
++++ b/build_dir/MeeTimeTracker.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=MeeTimeTracker
++Exec=MeeTimeTracker %F
++Type=Application
