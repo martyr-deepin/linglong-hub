@@ -1,0 +1,24 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 1806ac6..22992a6 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -32,3 +32,7 @@ add_dependencies(sweetfish translations)
+ 
+ install(TARGETS sweetfish DESTINATION bin)
+ install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/locales DESTINATION lib/sweetfish)
++
++install(TARGETS sweetfish DESTINATION bin/)
++install(FILES build_dir/sweetfish.desktop DESTINATION share/applications/)
++install(FILES snap/gui/sweetfish.png DESTINATION share/icons/)
+\ No newline at end of file
+diff --git a/build_dir/sweetfish.desktop b/build_dir/sweetfish.desktop
+new file mode 100644
+index 0000000..13b7bbb
+--- /dev/null
++++ b/build_dir/sweetfish.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Name=sweetfish
++Exec=sweetfish %F
++Icon=sweetfish
++Type=Application
