@@ -1,0 +1,22 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index ef947f7..683f044 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -543,3 +543,6 @@ IF(WIN32)
+     #endif(CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS)
+ ENDIF(WIN32)
+ ENDIF()
++
++install(TARGETS qtphotobox DESTINATION bin/)
++install(FILES build_dir/qtphotobox.desktop DESTINATION share/applications/)
+\ No newline at end of file
+diff --git a/build_dir/qtphotobox.desktop b/build_dir/qtphotobox.desktop
+new file mode 100644
+index 0000000..8885119
+--- /dev/null
++++ b/build_dir/qtphotobox.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=qtphotobox
++Exec=qtphotobox %F
++Type=Application

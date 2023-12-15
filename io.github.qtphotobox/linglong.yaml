@@ -1,0 +1,21 @@
+package:
+  id: io.github.qtphotobox
+  name: qtphotobox
+  version: 1.0.0
+  kind: app
+  description: |
+    A powerful Photobox application written in Qt and C++, heavily based on photobooth (Python).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/andyboeh/qtphotobox.git
+  commit: ef8aed2c214d0e14162bd8ad9a9c618263b31597
+  patch:
+    - patches/fix_install.patch
+
+build:
+  kind: cmake
