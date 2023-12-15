@@ -1,0 +1,22 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 1cfbf6f..887ba0a 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -69,3 +69,6 @@ install(TARGETS Annotations
+ if(QT_VERSION_MAJOR EQUAL 6)
+     qt_finalize_executable(Annotations)
+ endif()
++
++install(TARGETS Annotations DESTINATION bin/)
++install(FILES build_dir/Annotations.desktop DESTINATION share/applications/)
+\ No newline at end of file
+diff --git a/build_dir/Annotations.desktop b/build_dir/Annotations.desktop
+new file mode 100644
+index 0000000..7b5fb57
+--- /dev/null
++++ b/build_dir/Annotations.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=Annotations
++Exec=Annotations %F
++Type=Application

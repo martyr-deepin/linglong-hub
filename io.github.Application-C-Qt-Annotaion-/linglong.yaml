@@ -1,0 +1,21 @@
+package:
+  id: io.github.Application-C-Qt-Annotaion-
+  name: Application-C-Qt-Annotaion-
+  version: 1.0.0
+  kind: app
+  description: |
+    image editor.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/M8YOUSS7/Application-C-Qt-Annotaion-.git
+  commit: e2e307769dfbe56beb76118bd96e8fece68fbb21
+  patch:
+    - patches/fix-desktop.patch
+
+build:
+  kind: cmake
