@@ -1,0 +1,44 @@
+From 0b66a51aea62a9da7e147902ab8573e58f72a9d5 Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Fri, 15 Dec 2023 15:55:20 +0800
+Subject: [PATCH] 1
+
+---
+ FractalQT.desktop | 8 ++++++++
+ FractalQT.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 FractalQT.desktop
+
+diff --git a/FractalQT.desktop b/FractalQT.desktop
+new file mode 100644
+index 0000000..e84d1d0
+--- /dev/null
++++ b/FractalQT.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=FractalQT
++Name=FractalQT
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/FractalQT.pro b/FractalQT.pro
+index cdc4c86..4057f3a 100644
+--- a/FractalQT.pro
++++ b/FractalQT.pro
+@@ -45,3 +45,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ 
+ RESOURCES += \
+     resources.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =FractalQT.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
