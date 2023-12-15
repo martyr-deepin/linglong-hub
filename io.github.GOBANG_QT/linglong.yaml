@@ -1,0 +1,21 @@
+package:
+  id: io.github.GOBANG_QT
+  name: GOBANG_QT
+  version: 0.0.1
+  kind: app
+  description: |
+    一个基于QT的五子棋小游戏.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/zebin-wu/GOBANG_QT.git
+  commit: f89f20544e36bbae33b041eedff5c78e9ef94e2c
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,44 @@
+From 01cce27dffac707e89524e0c1fbfb25220b392c3 Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Fri, 15 Dec 2023 16:07:39 +0800
+Subject: [PATCH] 1
+
+---
+ GoBang_QT.desktop | 8 ++++++++
+ GoBang_QT.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 GoBang_QT.desktop
+
+diff --git a/GoBang_QT.desktop b/GoBang_QT.desktop
+new file mode 100644
+index 0000000..df910d1
+--- /dev/null
++++ b/GoBang_QT.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=GoBang_QT
++Name=GoBang_QT
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/GoBang_QT.pro b/GoBang_QT.pro
+index a53b6a0..dd0f533 100644
+--- a/GoBang_QT.pro
++++ b/GoBang_QT.pro
+@@ -51,3 +51,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ 
+ RESOURCES += \
+     res.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =GoBang_QT.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
