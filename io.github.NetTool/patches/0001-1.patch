@@ -1,0 +1,57 @@
+From 2a5507d34a5b28405bfd10caa9cde2bd7c0f4d34 Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Fri, 15 Dec 2023 15:36:12 +0800
+Subject: [PATCH] build: add NetTool
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Finish build NetTool for ll-build
+
+Log: 完成NetTool的编译
+---
+ NetTool.desktop | 11 +++++++++++
+ NetTool.pro     | 11 +++++++++++
+ 2 files changed, 22 insertions(+)
+ create mode 100644 NetTool.desktop
+
+diff --git a/NetTool.desktop b/NetTool.desktop
+new file mode 100644
+index 0000000..45009d0
+--- /dev/null
++++ b/NetTool.desktop
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=NetTool
++Name=NetTool
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
++
++Icon=Icon
++
+diff --git a/NetTool.pro b/NetTool.pro
+index 3492f08..30744c3 100644
+--- a/NetTool.pro
++++ b/NetTool.pro
+@@ -35,3 +35,14 @@ RESOURCES += \
+     resources.qrc
+ 
+ RC_FILE += logo.rc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =NetTool.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
++icons.path = $${PREFIX}/share/icons
++icons.files = Icon.png
++INSTALLS += icons
+\ No newline at end of file
+-- 
+2.33.1
+
