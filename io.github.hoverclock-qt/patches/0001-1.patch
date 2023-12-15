@@ -1,0 +1,32 @@
+From 5413be5d6f92bd674181bd31b10c9f1579584c12 Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Fri, 15 Dec 2023 16:56:35 +0800
+Subject: [PATCH] 1
+
+---
+ src/hoverclock.pro | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+diff --git a/src/hoverclock.pro b/src/hoverclock.pro
+index 5065c84..edbf30c 100644
+--- a/src/hoverclock.pro
++++ b/src/hoverclock.pro
+@@ -38,3 +38,14 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ 
+ RESOURCES += \
+     resources.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =../hoverclock.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
++icons.path = $${PREFIX}/share/icons
++icons.files = resources/icons/hoverclock.svg
++INSTALLS += icons
+\ No newline at end of file
+-- 
+2.33.1
+
