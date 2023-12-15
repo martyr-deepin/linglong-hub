@@ -1,0 +1,21 @@
+package:
+  id: io.github.kr-data-organization-qt
+  name: kr-data-organization-qt
+  version: 1.0.0
+  kind: app
+  description: |
+    data-organization.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/mai-k304-cpp-sem-3/kr-data-organization-qt.git
+  commit: afcfb402d4a3722cec7d34a86fe41eda414aedce
+  patch:
+    - patches/fix_install.patch
+
+build:
+  kind: cmake

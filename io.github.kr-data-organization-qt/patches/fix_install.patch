@@ -1,0 +1,23 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 16c259a..db21cee 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -67,3 +67,6 @@ install(TARGETS kr-data-organization-qt
+ if(QT_VERSION_MAJOR EQUAL 6)
+     qt_finalize_executable(kr-data-organization-qt)
+ endif()
++
++install(TARGETS kr-data-organization-qt DESTINATION bin/)
++install(FILES build_dir/kr-data-organization-qt.desktop DESTINATION share/applications/)
+\ No newline at end of file
+diff --git a/build_dir/kr-data-organization-qt.desktop b/build_dir/kr-data-organization-qt.desktop
+new file mode 100644
+index 0000000..6bb4631
+--- /dev/null
++++ b/build_dir/kr-data-organization-qt.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Name=kr-data-organization-qt
++Exec=kr-data-organization-qt %F
++Icon=kr-data-organization-qt
++Type=Application
