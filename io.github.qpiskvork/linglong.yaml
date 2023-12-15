@@ -1,0 +1,21 @@
+package:
+  id: io.github.qpiskvork
+  name: qpiskvork
+  version: 0.6.65
+  kind: app
+  description: |
+    Another gomoku or renju manager adapting to Windows and Linux systems.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Joker2770/qpiskvork.git"
+  commit: f02f954cd758d04a4f143c36f13865ad2dd86f68
+  patch:
+    - patches/fix-patch.patch
+
+build:
+  kind: qmake

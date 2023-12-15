@@ -1,0 +1,30 @@
+diff --git a/qpiskvork.desktop b/qpiskvork.desktop
+new file mode 100644
+index 0000000..4da6499
+--- /dev/null
++++ b/qpiskvork.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=qpiskvork
++Exec=qpiskvork %f
++Icon=icon
+diff --git a/qpiskvork.pro b/qpiskvork.pro
+index c59b1ca..d95810b 100644
+--- a/qpiskvork.pro
++++ b/qpiskvork.pro
+@@ -62,3 +62,14 @@ RESOURCES += \
+ 
+ TRANSLATIONS += \
+     language/zh_CN.ts
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += qpiskvork.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = icon/icon.jpg
++INSTALLS += icons
