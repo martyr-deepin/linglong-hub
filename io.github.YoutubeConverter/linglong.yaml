@@ -1,0 +1,21 @@
+package:
+  id: io.github.YoutubeConverter
+  name: YoutubeConverter
+  version: 0.0.1
+  kind: app
+  description: |
+    YouTube converter with Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/AhmetFurkanDEMIR/YoutubeConverter.git
+  commit: c211d1c72c275a744e82f1d7b1882175450c68ee
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
