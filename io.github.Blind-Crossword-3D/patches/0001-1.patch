@@ -1,0 +1,51 @@
+From 552cfa1ee28dfac107c9914d39af471c3e32e163 Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Fri, 15 Dec 2023 16:34:42 +0800
+Subject: [PATCH] 1
+
+---
+ BlindCrossword3D.desktop | 11 +++++++++++
+ BlindCrossword3D.pro     | 11 +++++++++++
+ 2 files changed, 22 insertions(+)
+ create mode 100644 BlindCrossword3D.desktop
+
+diff --git a/BlindCrossword3D.desktop b/BlindCrossword3D.desktop
+new file mode 100644
+index 0000000..d6908bb
+--- /dev/null
++++ b/BlindCrossword3D.desktop
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=BlindCrossword3D
++Name=BlindCrossword3D
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
++
++Icon=icon
++
+diff --git a/BlindCrossword3D.pro b/BlindCrossword3D.pro
+index 5c61d37..e418f49 100644
+--- a/BlindCrossword3D.pro
++++ b/BlindCrossword3D.pro
+@@ -15,3 +15,14 @@ include($$PWD/sources/sources.pri)
+ 
+ # Include the resources, crossword files, icons etc
+ include($$PWD/resources/resources.pri)
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =BlindCrossword3D.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
++icons.path = $${PREFIX}/share/icons
++icons.files = docs/icon.png
++INSTALLS += icons
+\ No newline at end of file
+-- 
+2.33.1
+
