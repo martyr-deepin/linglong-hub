@@ -1,0 +1,43 @@
+From 43c031bf3d8d017dcc0817664c81900d73a32f66 Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Fri, 15 Dec 2023 15:46:56 +0800
+Subject: [PATCH] 1
+
+---
+ parallel-tube.desktop | 8 ++++++++
+ parallel-tube.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 parallel-tube.desktop
+
+diff --git a/parallel-tube.desktop b/parallel-tube.desktop
+new file mode 100644
+index 0000000..2327f4c
+--- /dev/null
++++ b/parallel-tube.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=parallel-tube
++Name=parallel-tube
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/parallel-tube.pro b/parallel-tube.pro
+index 9612f66..6fc14ac 100644
+--- a/parallel-tube.pro
++++ b/parallel-tube.pro
+@@ -43,3 +43,10 @@ FORMS    += mainwindow.ui \
+ 
+ RESOURCES += \
+     resource.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =parallel-tube.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+

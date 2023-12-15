@@ -1,0 +1,21 @@
+package:
+  id: io.github.ParaTube
+  name: ParaTube
+  version: 0.0.1
+  kind: app
+  description: |
+    A multi threaded GUI YouTube downloader.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/grgvineet/ParaTube.git
+  commit: cff310fc7f7eb6d4b4526850f171cc3fd894ccb5
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
