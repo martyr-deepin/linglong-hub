@@ -1,0 +1,50 @@
+From 373fa54be3709ffaac4568a1a743651094b186ac Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Fri, 15 Dec 2023 17:19:15 +0800
+Subject: [PATCH] 1
+
+---
+ src/app/app.pro                            | 11 +++++++++++
+ src/app/build/Release/PictureCrypt.desktop |  9 +++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 src/app/build/Release/PictureCrypt.desktop
+
+diff --git a/src/app/app.pro b/src/app/app.pro
+index 9355ad4..a2ebdfd 100644
+--- a/src/app/app.pro
++++ b/src/app/app.pro
+@@ -66,3 +66,14 @@ TRANSLATIONS +=  \
+ # Some random stuff that helps CI
+ QMAKE_CXXFLAGS += -std=c++0x
+ DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x040900
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =build/Release/PictureCrypt.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
++icons.path = $${PREFIX}/share/icons
++icons.files = icons/unlocked.png
++INSTALLS += icons
+\ No newline at end of file
+diff --git a/src/app/build/Release/PictureCrypt.desktop b/src/app/build/Release/PictureCrypt.desktop
+new file mode 100644
+index 0000000..9686af5
+--- /dev/null
++++ b/src/app/build/Release/PictureCrypt.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=PictureCrypt
++Name=PictureCrypt
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
++Icon=unlocked
+\ No newline at end of file
+-- 
+2.33.1
+

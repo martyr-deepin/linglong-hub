@@ -1,0 +1,29 @@
+package:
+  id: io.github.PictureCrypt
+  name: PictureCrypt
+  version: 1.4.0
+  kind: app
+  description: |
+    PictureCrypt is a simple educational cross-platform steganography tool that hides data in images. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/waleko/PictureCrypt.git
+  commit: 9f05e04756abacbb0826e1a52d82d5051543a723
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
