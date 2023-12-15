@@ -1,0 +1,25 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 98bce69..cc3c950 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -37,3 +37,7 @@ target_link_libraries(${PROJECT_NAME} Qt5::Widgets)
+ target_link_libraries(${PROJECT_NAME} Qt5::Network)
+ 
+ install(TARGETS ${PROJECT_NAME})
++
++install(TARGETS ${PROJECT_NAME} DESTINATION bin/)
++install(FILES desktop/linion.desktop DESTINATION share/applications/)
++install(FILES desktop/64x64/linion.png DESTINATION share/icons/)
+diff --git a/desktop/linion.desktop b/desktop/linion.desktop
+index e878922..2d35978 100644
+--- a/desktop/linion.desktop
++++ b/desktop/linion.desktop
+@@ -14,7 +14,7 @@ Keywords=Games;MMORPG;TESO;addons;
+ Keywords[de]=Spielung;MMORPG;TESO;addons;
+ Keywords[es]=Juegos;MMORPG;TESO;addons;
+ Keywords[ru]=Игры;MMORPG;TESO;аддоны;
+-Exec=linion
++Exec=linion %f
+ Icon=linion
+ Terminal=false
+ Type=Application

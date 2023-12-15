@@ -1,0 +1,21 @@
+package:
+  id: io.github.linion
+  name: linion
+  version: 1.0.8
+  kind: app
+  description: |
+    simple qt demo.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/darthtenebrus/linion.git"
+  commit: a89eec84aa37cffb98909de9234ef38be11c5928
+  patch:
+    - patches/fix-desktop.patch
+
+build:
+  kind: cmake
