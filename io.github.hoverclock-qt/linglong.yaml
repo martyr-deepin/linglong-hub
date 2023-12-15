@@ -1,0 +1,29 @@
+package:
+  id: io.github.hoverclock-qt
+  name: hoverclock-qt
+  version: 1.0.0
+  kind: app
+  description: |
+    Hoverclock-QT is a simple, yet customizable floating clock for Linux created with QT.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/kostoskistefan/hoverclock-qt.git
+  commit: e870ac93e948e4d63c2788b845459a919467a073
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
