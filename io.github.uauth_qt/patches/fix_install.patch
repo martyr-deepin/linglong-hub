@@ -1,0 +1,21 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 7b76b45..2f99ecf 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -83,3 +83,6 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/uaRequester)
+ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/uaTables)
+ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib/qthttp)
+ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib/3rdparty/spdlog-1.9.2)
++
++install(TARGETS uaRequester DESTINATION bin/)
++install(FILES build_dir/uaRequester/uaRequester.desktop DESTINATION share/applications/)
+diff --git a/build_dir/uaRequester/uaRequester.desktop b/build_dir/uaRequester/uaRequester.desktop
+new file mode 100644
+index 0000000..2f2040f
+--- /dev/null
++++ b/build_dir/uaRequester/uaRequester.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=uaRequester
++Exec=uaRequester %F
++Type=Application

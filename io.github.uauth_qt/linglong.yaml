@@ -1,0 +1,21 @@
+package:
+  id: io.github.uauth_qt
+  name: uauth_qt
+  version: 1.0.0
+  kind: app
+  description: |
+    uaRequester.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/yarik111475/uauth_qt.git
+  commit: bb29320d2a68ddfe4360f04dedad7a782f73613b
+  patch:
+    - patches/fix_install.patch
+
+build:
+  kind: cmake
