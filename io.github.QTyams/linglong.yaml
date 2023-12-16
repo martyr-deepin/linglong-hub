@@ -1,0 +1,24 @@
+package:
+  id: io.github.QTyams 
+  name: QTyams
+  version: 0.0.1
+  kind: app
+  description: |
+    Yams game created in QT
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/jikagq/QTyams.git"
+  commit: 5bc4a4770220a58f23f8d800eee00634f083c1f3 
+  patch:
+    - patches/0001-1.patch
+
+
+
+build:
+  kind: qmake
