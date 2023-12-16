@@ -1,0 +1,23 @@
+package:
+  id: io.github.TranslateEditor 
+  name: TranslateEditor
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt语言家(Qml版)，更加简易实用(好上手，比如可以给翻译人员使用)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/mengps/TranslateEditor.git"
+  commit: c8cc0428c230f25f09aa6f81f7d88c959437c026
+  patch:
+    - patches/0001-1.patch
+
+
+build:
+  kind: qmake

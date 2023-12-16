@@ -1,0 +1,48 @@
+From a31f9bbba4012c4948e486aa2e6eb9c834d9f69e Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Sat, 16 Dec 2023 16:22:09 +0800
+Subject: [PATCH] 1
+
+---
+ TranslateEditor.desktop |  9 +++++++++
+ TranslateEditor.pro     | 11 +++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 TranslateEditor.desktop
+
+diff --git a/TranslateEditor.desktop b/TranslateEditor.desktop
+new file mode 100644
+index 0000000..e224e50
+--- /dev/null
++++ b/TranslateEditor.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=TranslateEditor
++Name=TranslateEditor
++StartupNotify=false
++Terminal=false
++Icon=winIcon
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/TranslateEditor.pro b/TranslateEditor.pro
+index dd40c65..41f101d 100644
+--- a/TranslateEditor.pro
++++ b/TranslateEditor.pro
+@@ -48,3 +48,14 @@ QML_DESIGNER_IMPORT_PATH =
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =TranslateEditor.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = image/winIcon.ico
++INSTALLS += icons
++
+-- 
+2.33.1
+
