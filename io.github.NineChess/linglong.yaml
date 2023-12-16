@@ -1,0 +1,31 @@
+package:
+  id: io.github.NineChess 
+  name: NineChess
+  version: 0.0.1
+  kind: app
+  description: |
+    A Simple chess game, including Nine Men's Morris, with a simple AI. Qt GUI.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/liuweilhy/NineChess.git"
+  commit: a588f4af53cd2210534505b05758863a320b3de2
+  patch:
+    - patches/0001-1.patch
+
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd NineChess 
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
