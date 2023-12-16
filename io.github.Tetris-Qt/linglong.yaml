@@ -1,0 +1,22 @@
+ackage:
+  id: io.github.Tetris-Qt 
+  name: Tetris-Qt
+  version: 0.0.1
+  kind: app
+  description: |
+    Classic tetris game made with c++ and Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/walidAbbassi/Tetris-Qt.git"
+  commit: 66f6434d6564c030c0f8df5c790afa92f24fd379
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
