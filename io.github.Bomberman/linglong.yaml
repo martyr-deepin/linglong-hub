@@ -1,0 +1,22 @@
+package:
+  id: io.github.Bomberman 
+  name: Bomberman
+  version: 0.0.1
+  kind: app
+  description: |
+    Bomberman game made with Qt
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/kmalski/Bomberman.git"
+  commit: c2de482199cf5899d42e85c2f4e7521c7298acc3
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake

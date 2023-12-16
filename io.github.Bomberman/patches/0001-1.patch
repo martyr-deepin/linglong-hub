@@ -1,0 +1,42 @@
+From f32ec14681911bbf2533b42303fed9ecd6067d2e Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Sat, 16 Dec 2023 15:28:05 +0800
+Subject: [PATCH] 1
+
+---
+ Bomberman.desktop | 6 ++++++
+ Bomberman.pro     | 8 ++++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 Bomberman.desktop
+
+diff --git a/Bomberman.desktop b/Bomberman.desktop
+new file mode 100644
+index 0000000..8814b73
+--- /dev/null
++++ b/Bomberman.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Bomberman
++Name=Bomberman
++StartupNotify=false
++Terminal=false
+diff --git a/Bomberman.pro b/Bomberman.pro
+index 0d6d8ff..f1f4bd1 100644
+--- a/Bomberman.pro
++++ b/Bomberman.pro
+@@ -61,3 +61,11 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ 
+ RESOURCES += \
+     res.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Bomberman.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+-- 
+2.33.1
+
