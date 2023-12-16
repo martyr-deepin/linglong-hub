@@ -1,0 +1,42 @@
+From c5dee349fc3fe6e4fe1b331869c83b63ca35782b Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Sat, 16 Dec 2023 16:25:43 +0800
+Subject: [PATCH] 1
+
+---
+ TensorBuilder/TensorBuilder.desktop | 6 ++++++
+ TensorBuilder/TensorBuilder.pro     | 8 ++++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 TensorBuilder/TensorBuilder.desktop
+
+diff --git a/TensorBuilder/TensorBuilder.desktop b/TensorBuilder/TensorBuilder.desktop
+new file mode 100644
+index 0000000..45a246d
+--- /dev/null
++++ b/TensorBuilder/TensorBuilder.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=TensorBuilder
++Name=TensorBuilder
++StartupNotify=false
++Terminal=false
+diff --git a/TensorBuilder/TensorBuilder.pro b/TensorBuilder/TensorBuilder.pro
+index 51398bd..7e13937 100644
+--- a/TensorBuilder/TensorBuilder.pro
++++ b/TensorBuilder/TensorBuilder.pro
+@@ -30,3 +30,11 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ 
+ HEADERS += \
+     native.h
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =TensorBuilder.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+-- 
+2.33.1
+

@@ -1,0 +1,31 @@
+package:
+  id: io.github.tensorbuilder 
+  name: tensorbuilder
+  version: 0.0.1
+  kind: app
+  description: |
+    A drag and drop GUI tool written in Qt to rapidly prototype TensorFlow computational graphs, with sharing features.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/TommyX12/tensorbuilder.git"
+  commit: dccdbf302062aaf93940939d7685a0284072b710
+  patch:
+    - patches/0001-1.patch
+
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd TensorBuilder 
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
