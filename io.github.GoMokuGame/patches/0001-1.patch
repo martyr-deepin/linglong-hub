@@ -1,0 +1,48 @@
+From 2ca93d1d5a8e385bf54d7b6eb022fdb0a511544d Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Sat, 16 Dec 2023 15:50:58 +0800
+Subject: [PATCH] 1
+
+---
+ GameView.desktop |  9 +++++++++
+ GameView.pro     | 11 +++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 GameView.desktop
+
+diff --git a/GameView.desktop b/GameView.desktop
+new file mode 100644
+index 0000000..46bb3a9
+--- /dev/null
++++ b/GameView.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=GameView
++Name=GameView
++StartupNotify=false
++Terminal=false
++Icon=main
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/GameView.pro b/GameView.pro
+index dbe957c..f0bf991 100644
+--- a/GameView.pro
++++ b/GameView.pro
+@@ -28,3 +28,14 @@ MOBILITY =
+ 
+ RESOURCES += \
+     resources.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =GameView.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = Resource/main.png
++INSTALLS += icons
++
+-- 
+2.33.1
+
