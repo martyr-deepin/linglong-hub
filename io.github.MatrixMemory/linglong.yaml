@@ -1,0 +1,30 @@
+package:
+  id: io.github.MatrixMemory 
+  name: MatrixMemory
+  version: 0.0.1
+  kind: app
+  description: |
+    game written in C++ using QT framework
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/To-n-y/MatrixMemory.git"
+  commit: 950f5e35164fe6f51373491aede28db02157e065
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd Matrix_memory
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

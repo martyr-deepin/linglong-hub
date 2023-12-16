@@ -1,0 +1,42 @@
+From fba756d35de475bd196dffc3906edd6fcd2c0338 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Sat, 16 Dec 2023 15:03:09 +0800
+Subject: [PATCH] 1
+
+---
+ Matrix_memory/Matrix_memory.desktop | 6 ++++++
+ Matrix_memory/Matrix_memory.pro     | 8 ++++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 Matrix_memory/Matrix_memory.desktop
+
+diff --git a/Matrix_memory/Matrix_memory.desktop b/Matrix_memory/Matrix_memory.desktop
+new file mode 100644
+index 0000000..b16a227
+--- /dev/null
++++ b/Matrix_memory/Matrix_memory.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Matrix_memory
++Name=Matrix_memory
++StartupNotify=false
++Terminal=false
+diff --git a/Matrix_memory/Matrix_memory.pro b/Matrix_memory/Matrix_memory.pro
+index 070241a..b96e771 100644
+--- a/Matrix_memory/Matrix_memory.pro
++++ b/Matrix_memory/Matrix_memory.pro
+@@ -31,3 +31,11 @@ FORMS += \
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Matrix_memory.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+-- 
+2.33.1
+
