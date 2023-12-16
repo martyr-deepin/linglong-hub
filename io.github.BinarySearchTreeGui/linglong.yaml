@@ -1,0 +1,31 @@
+package:
+  id: io.github.BinarySearchTreeGui 
+  name: BinarySearchTreeGui
+  version: 1.4.0
+  kind: app
+  description: |
+    GUI for displaying Binary Search Trees written in C++ using the Qt Library.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/nahrens007/BinarySearchTreeGui.git"
+  commit: 747f84e7283d6c45bbb0bd0790bb45491c213242
+  patch:
+    - patches/0001-1.patch
+
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd BinarySearchTree
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

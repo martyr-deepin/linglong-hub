@@ -1,0 +1,42 @@
+From 26f92c43cec4e0a1d6f39dea3be4090ed30cfce1 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Sat, 16 Dec 2023 16:42:55 +0800
+Subject: [PATCH] 1
+
+---
+ BinarySearchTree/BinarySearchTree.desktop | 6 ++++++
+ BinarySearchTree/BinarySearchTree.pro     | 8 ++++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 BinarySearchTree/BinarySearchTree.desktop
+
+diff --git a/BinarySearchTree/BinarySearchTree.desktop b/BinarySearchTree/BinarySearchTree.desktop
+new file mode 100644
+index 0000000..26c3def
+--- /dev/null
++++ b/BinarySearchTree/BinarySearchTree.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=BinarySearchTree
++Name=BinarySearchTree
++StartupNotify=false
++Terminal=false
+diff --git a/BinarySearchTree/BinarySearchTree.pro b/BinarySearchTree/BinarySearchTree.pro
+index d598bd3..47596a8 100644
+--- a/BinarySearchTree/BinarySearchTree.pro
++++ b/BinarySearchTree/BinarySearchTree.pro
+@@ -25,3 +25,11 @@ HEADERS  += mainwindow.h \
+     bst_about_window.h
+ 
+ FORMS    +=
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =BinarySearchTree.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+-- 
+2.33.1
+
