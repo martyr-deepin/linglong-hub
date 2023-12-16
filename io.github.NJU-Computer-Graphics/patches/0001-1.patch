@@ -1,0 +1,48 @@
+From 9d426dc26a87be4faa13eed1714d9977b33640c5 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Sat, 16 Dec 2023 16:16:36 +0800
+Subject: [PATCH] 1
+
+---
+ CG.desktop |  9 +++++++++
+ CG.pro     | 11 +++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 CG.desktop
+
+diff --git a/CG.desktop b/CG.desktop
+new file mode 100644
+index 0000000..dc94a9d
+--- /dev/null
++++ b/CG.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=CG
++Name=CG
++StartupNotify=false
++Terminal=false
++Icon=Paint
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/CG.pro b/CG.pro
+index aa787b0..69f2171 100644
+--- a/CG.pro
++++ b/CG.pro
+@@ -45,3 +45,14 @@ RESOURCES += \
+     rc.qrc
+ 
+ RC_ICONS = Paint.ico
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =CG.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = Paint.ico
++INSTALLS += icons
++
+-- 
+2.33.1
+
