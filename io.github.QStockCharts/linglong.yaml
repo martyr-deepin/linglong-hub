@@ -1,0 +1,24 @@
+package:
+  id: io.github.QStockCharts 
+  name: QStockCharts
+  version: 0.0.1
+  kind: app
+  description: |
+    a stock charts made by qt widgets
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/toby20130333/QStockCharts.git"
+  commit: 2a7dbec8ca7d5ef949e4c39468bb0e92c2df7cf3
+  patch:
+    - patches/0001-1.patch
+
+
+
+build:
+  kind: qmake
