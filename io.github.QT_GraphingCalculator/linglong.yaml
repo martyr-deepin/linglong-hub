@@ -1,0 +1,23 @@
+package:
+  id: io.github.QT_GraphingCalculator 
+  name: QT_GraphingCalculator
+  version: 0.0.1
+  kind: app
+  description: |
+    Graphing calculator using QT and QTcustomplot
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/brayamcorral/QT_GraphingCalculator.git"
+  commit: c51bc121c63907ea69308ff165a1bfe3e32d3d1a
+  patch:
+    - patches/0001-1.patch
+
+
+build:
+  kind: qmake
