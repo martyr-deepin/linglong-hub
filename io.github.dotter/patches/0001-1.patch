@@ -1,0 +1,41 @@
+From bc43aad35ae33ac909a6e5c0567e8b0dbafc478b Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Sat, 16 Dec 2023 16:30:04 +0800
+Subject: [PATCH] 1
+
+---
+ dotter/dotter.desktop | 6 ++++++
+ dotter/dotter.pro     | 7 +++++++
+ 2 files changed, 13 insertions(+)
+ create mode 100644 dotter/dotter.desktop
+
+diff --git a/dotter/dotter.desktop b/dotter/dotter.desktop
+new file mode 100644
+index 0000000..8a14de8
+--- /dev/null
++++ b/dotter/dotter.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=dotter
++Name=dotter
++StartupNotify=false
++Terminal=false
+diff --git a/dotter/dotter.pro b/dotter/dotter.pro
+index 81477c0..19cff8f 100644
+--- a/dotter/dotter.pro
++++ b/dotter/dotter.pro
+@@ -24,3 +24,10 @@ HEADERS += \
+ FORMS += \
+     abortwidget.ui \
+     mainwindow.ui
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =dotter.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
