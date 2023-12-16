@@ -1,0 +1,22 @@
+package:
+  id: io.github.PersianDoozQt 
+  name: PersianDoozQt
+  version: 0.0.1
+  kind: app
+  description: |
+    This is a Gui Dooz game you should connect 4 taw to win this game is tow player (single player is not complete yet) .
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/FONQRI/PersianDoozQt.git"
+  commit: 421af92cf45583e42c8ed2c99ac4f366938fa5c7
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake

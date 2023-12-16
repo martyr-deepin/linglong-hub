@@ -1,0 +1,48 @@
+From c64ba72d86bb66c446e197f1fbfa1a624f8579aa Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Sat, 16 Dec 2023 15:21:59 +0800
+Subject: [PATCH] 1
+
+---
+ DOOZ.desktop |  9 +++++++++
+ DOOZ.pro     | 11 +++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 DOOZ.desktop
+
+diff --git a/DOOZ.desktop b/DOOZ.desktop
+new file mode 100644
+index 0000000..ff35573
+--- /dev/null
++++ b/DOOZ.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=DOOZ
++Name=DOOZ
++StartupNotify=false
++Terminal=false
++Icon=BlackTaw
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/DOOZ.pro b/DOOZ.pro
+index 8f239dc..e56a343 100644
+--- a/DOOZ.pro
++++ b/DOOZ.pro
+@@ -38,3 +38,14 @@ MOBILITY =
+ RESOURCES += \
+     res.qrc
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =DOOZ.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = BlackTaw.png
++INSTALLS += icons
++
++
+-- 
+2.33.1
+
