@@ -1,0 +1,51 @@
+From b709ee83321137fed71aa95f930f074b10fdafd8 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Sat, 16 Dec 2023 15:31:15 +0800
+Subject: [PATCH] 1
+
+---
+ DominoGame.desktop |  9 +++++++++
+ DominoGame.pro     | 11 +++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 DominoGame.desktop
+
+diff --git a/DominoGame.desktop b/DominoGame.desktop
+new file mode 100644
+index 0000000..d450500
+--- /dev/null
++++ b/DominoGame.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=DominoGame
++Name=DominoGame
++StartupNotify=false
++Terminal=false
++Icon=robotCav
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/DominoGame.pro b/DominoGame.pro
+index 8d49189..7418089 100644
+--- a/DominoGame.pro
++++ b/DominoGame.pro
+@@ -31,6 +31,17 @@ HEADERS += \
+ RESOURCES += \
+     resouces.qrc
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =DominoGame.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = robotCav.png
++INSTALLS += icons
++
++
+ 
+ 
+ 
+-- 
+2.33.1
+
