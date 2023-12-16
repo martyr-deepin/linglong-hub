@@ -1,0 +1,48 @@
+From 9d0291ce99191d74bc590f45c742ac3f85c3a887 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Sat, 16 Dec 2023 16:04:06 +0800
+Subject: [PATCH] 1
+
+---
+ samples/topology/test-topology.desktop |  9 +++++++++
+ samples/topology/topology.pro          | 11 +++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 samples/topology/test-topology.desktop
+
+diff --git a/samples/topology/test-topology.desktop b/samples/topology/test-topology.desktop
+new file mode 100644
+index 0000000..ab1c87f
+--- /dev/null
++++ b/samples/topology/test-topology.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=test-topology
++Name=test-topology
++StartupNotify=false
++Terminal=false
++Icon=ink-align-horizontal-center-symbolic_32
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/samples/topology/topology.pro b/samples/topology/topology.pro
+index ca497d5..0bdb658 100644
+--- a/samples/topology/topology.pro
++++ b/samples/topology/topology.pro
+@@ -19,3 +19,14 @@ OTHER_FILES +=  topology.qml        \
+                 NodesListView.qml   \
+                 EdgesListView.qml   \
+                 ScreenshotPopup.qml
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =test-topology.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = theme/qan/ink-align-horizontal-center-symbolic_32.png
++INSTALLS += icons
++
+-- 
+2.33.1
+

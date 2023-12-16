@@ -1,0 +1,22 @@
+package:
+  id: io.github.QuickQanava 
+  name: QuickQanava
+  version: 2.3.0 
+  kind: app
+  description: |
+    C++14 network/graph visualization library / Qt node editor.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/cneben/QuickQanava.git"
+  commit: 629c92fd081f0da5b7b8e4af9daeeb25c0088150
+  patch:
+    - patches/0001-1.patch
+
+
+build:
+  kind: qmake
