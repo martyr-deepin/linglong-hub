@@ -1,0 +1,43 @@
+From 86a9c45188736e81f81b273b371f56d703211fa5 Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Sat, 16 Dec 2023 14:01:59 +0800
+Subject: [PATCH] 1
+
+---
+ Qutube-dl.desktop | 8 ++++++++
+ Qutube-dl.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 Qutube-dl.desktop
+
+diff --git a/Qutube-dl.desktop b/Qutube-dl.desktop
+new file mode 100644
+index 0000000..49462f5
+--- /dev/null
++++ b/Qutube-dl.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Qutube-dl
++Name=Qutube-dl
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Qutube-dl.pro b/Qutube-dl.pro
+index 20317f1..7e4e46c 100644
+--- a/Qutube-dl.pro
++++ b/Qutube-dl.pro
+@@ -18,3 +18,10 @@ SOURCES += main.cpp\
+ HEADERS  += qutubedl.h
+ 
+ FORMS    += qutubedl.ui
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Qutube-dl.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
