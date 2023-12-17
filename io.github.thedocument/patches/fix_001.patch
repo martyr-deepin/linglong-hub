@@ -1,0 +1,24 @@
+--- ../theDocument.pro	2023-12-17 13:52:19.001178000 +0800
++++ ../theDocument.pro	2023-12-17 13:52:55.936579000 +0800
+@@ -26,7 +26,21 @@
+ }
+ 
+ TEMPLATE = app
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
+ 
++DESKTOP_FILE = ./thedocument.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=thedocument' >> $$DESKTOP_FILE")
++system("echo 'Comment=thedocument.' >> $$DESKTOP_FILE")
++system("echo 'Exec=thedocument' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
+ 
+ SOURCES += main.cpp\
+         mainwindow.cpp \

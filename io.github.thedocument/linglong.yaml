@@ -1,0 +1,23 @@
+package:
+  id: io.github.thedocument
+  name: thedocument
+  version: 0.0.1
+  kind: app
+  description: |
+    Cross Platform Word Processor.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/vicr123/thedocument.git
+  commit: e719dbd74517829de78ad794b5b68896380d4c2c
+  patch: patches/fix_001.patch  
+
+build:
+  kind: qmake
+
+
+
