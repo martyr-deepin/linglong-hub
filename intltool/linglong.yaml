@@ -1,0 +1,23 @@
+package:
+  id: intltool
+  name: intltool
+  version: 1.0.0
+  kind: lib
+  description: |
+    The intltool package has a script, intltoolize, which copies the various scripts and does the other magic to your module.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: automake
+    version: 1.16.5
+
+source:
+  kind: git
+  url: "https://github.com/Distrotech/intltool.git"
+  commit: 6d949670980d8408bdb8804b2f62cfa84b11411d
+
+build:
+  kind: autotools
