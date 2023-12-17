@@ -1,0 +1,30 @@
+package:
+  id: kcontacts
+  name: kcontacts
+  version: 5.90.0
+  kind: lib
+  description:
+    KContacts - Library for working with contact information
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: kcoreaddons
+    version: 5.90.0
+  - id: kconfig
+    version: 5.90.0
+  - id: kcodecs
+    version: 5.90.0
+  - id: ki18n
+    version: 5.90.0
+
+source:
+  kind: git
+  url: 'https://github.com/KDE/kcontacts.git'
+  version: master
+  commit: 00c8932
+
+build:
+  kind: cmake
