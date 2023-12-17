@@ -1,0 +1,24 @@
+--- ../Tarsnap.pro	2023-12-17 09:34:43.594172000 +0800
++++ ../Tarsnap.pro	2023-12-17 09:36:24.698531000 +0800
+@@ -266,6 +266,21 @@
+ 	system($$command)|error("Failed to run: $$command")
+ }
+ 
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++
++DESKTOP_FILE = ./tarsnap-gui.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=tarsnap-gui' >> $$DESKTOP_FILE")
++system("echo 'Comment=tarsnap-gui.' >> $$DESKTOP_FILE")
++system("echo 'Exec=tarsnap-gui' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
+ # Cleaner source directory
+ UI_DIR      = build/gui/
+ MOC_DIR     = build/gui/
