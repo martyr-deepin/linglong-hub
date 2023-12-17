@@ -1,0 +1,23 @@
+package:
+  id: io.github.HiCalendar
+  name: HiCalendar
+  version: 0.7.0
+  kind: app
+  description: |
+    simple qt HiCalendar.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/HadiAbbasi/HiCalendar.git
+  commit: ea5b0b73dce7dac02447c89b3006de019f79a5b3
+  patch: patches/fix_001.patch
+ 
+build:
+  kind: cmake
+
+
+

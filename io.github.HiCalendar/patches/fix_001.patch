@@ -1,0 +1,21 @@
+--- ../CMakeLists.txt	2023-12-17 15:08:39.388964000 +0800
++++ ../CMakeLists.txt	2023-12-17 15:07:23.105010000 +0800
+@@ -91,7 +91,18 @@
+ #  $<INSTALL_INTERFACE:include>
+ )
+ endif()
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=HiCalendar
++Exec=HiCalendar
++Categories=Utility;
++")
+ 
++file(WRITE ${CMAKE_BINARY_DIR}/HiCalendar.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/HiCalendar.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++
++install(TARGETS HiCalendar DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+ target_compile_definitions(HiCalendar
+   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
+ target_link_libraries(HiCalendar
