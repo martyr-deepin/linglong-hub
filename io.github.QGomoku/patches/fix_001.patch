@@ -1,0 +1,21 @@
+--- ../QGomoku.pro	2023-12-17 14:38:39.932456000 +0800
++++ ../QGomoku.pro	2023-12-17 14:38:51.004500000 +0800
+@@ -32,3 +32,18 @@
+ 
+ RESOURCES += \
+     res.qrc
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++
++DESKTOP_FILE = ./QGomoku.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=QGomoku' >> $$DESKTOP_FILE")
++system("echo 'Comment=QGomoku.' >> $$DESKTOP_FILE")
++system("echo 'Exec=QGomoku' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
