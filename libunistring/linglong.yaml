@@ -1,0 +1,25 @@
+package:
+  id: libunistring
+  name: libunistring
+  version: 1.1.2
+  kind: lib
+  description: |
+    This library provides functions for manipulating Unicode strings and for manipulating C strings according to the Unicode standard.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: automake
+    version: 1.16.5
+  - id: texinfo
+    version: 6.8.1
+
+source:
+  kind: git
+  url: "git://jff.email/opt/git/libunistring.git"
+  commit: 1b3a8d5ad2ea2f099d514d9dd51ebf926a628076
+
+build:
+  kind: autotools
