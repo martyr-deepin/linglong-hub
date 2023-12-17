@@ -1,0 +1,27 @@
+package:
+  id: io.github.aqueduct
+  name: aqueduct
+  version: 0.1.1
+  kind: app
+  description: |
+    Aqueduct crossplatform desktop app.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/edgeflow3d/aqueduct.git
+  commit: 09a73c7912f0e924bb5cd27db132c450354cec2e
+  patch: patches/fix_001.patch
+
+build:
+  kind: cmake
+  manual :
+    configure: |
+      cd source
+      cmake -B ${build_dir} ${conf_args} ${extra_args}
+
+
+
