@@ -1,0 +1,27 @@
+package:
+  id: io.github.PointsPicker
+  name: PointsPicker
+  version: 1.0.1
+  kind: app
+  description: |
+    图片坐标获取软件.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Mannix1994/PointsPicker.git
+  commit: 6ac07f4e56c3f4812497b50efa40fe066c754f7d
+  patch: patches/fix_001.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args} ./x-y.pro
+
+
+
