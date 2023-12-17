@@ -1,0 +1,11 @@
+--- ../src/mainwindow.cpp	2023-12-17 11:26:52.389233000 +0800
++++ ../src/mainwindow.cpp	2023-12-17 11:23:51.130248000 +0800
+@@ -1432,7 +1432,7 @@
+             QMenu tabBarMenu(this);
+             tabBarMenu.addAction(&actionCopyFullPath);
+             tabBarMenu.addAction(&actionOpenDirectory);
+-            tabBarMenu.exec(mouseEvent->globalPosition().toPoint());
++            tabBarMenu.exec(mouseEvent->globalPos());
+             return true;
+         }
+     }

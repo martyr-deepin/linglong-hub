@@ -1,0 +1,11 @@
+--- ../src/treemodel.cpp	2023-12-17 11:26:05.209516000 +0800
++++ ../src/treemodel.cpp	2023-12-17 11:21:32.458834000 +0800
+@@ -111,7 +111,7 @@
+                 QString blackSquare = QString::fromUtf8("\xE2\x96\xA0");
+                 return (item->Data(col).toString().isEmpty()) ? "" : blackSquare;
+             }
+-            if (item->Data(col).typeId() == QMetaType::Double	)
++            if (item->Data(col).type() == QMetaType::Double	)
+             {
+                 return QString::number(item->Data(col).toDouble(), 'f', 3);
+             }
