@@ -1,0 +1,22 @@
+--- ../SimplePaint/SimplePaint.pro	2023-12-17 15:45:07.957093000 +0800
++++ ../SimplePaint/SimplePaint.pro	2023-12-17 15:39:44.833779000 +0800
+@@ -45,7 +45,18 @@
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
++DESKTOP_FILE = ./simple_paint.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=simple_paint' >> $$DESKTOP_FILE")
++system("echo 'Comment=simple_paint.' >> $$DESKTOP_FILE")
++system("echo 'Exec=simple_paint' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
+ 
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
+ RESOURCES += resources/icons.qrc

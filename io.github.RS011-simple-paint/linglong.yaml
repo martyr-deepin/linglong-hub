@@ -1,0 +1,27 @@
+package:
+  id: io.github.RS011-simple-paint
+  name: RS011-simple-paint
+  version: 0.0.1
+  kind: app
+  description: |
+    Simple Paint
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/MATF-RS20/RS011-simple-paint.git
+  commit: 0ac6e444f9ca0159efa05885c7a777e780ff5483
+  patch: patches/fix_001.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd SimplePaint
+      qmake -makefile ${conf_args} ${extra_args}
+
+
+
