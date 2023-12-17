@@ -1,0 +1,27 @@
+package:
+  id: io.github.Arkanoid
+  name: Arkanoid
+  version: 2.0.0
+  kind: app
+  description: |
+    A brick-breaker game with built-in concurrency
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: fluidsynth/2.3.4
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/re1nth/Arkanoid.git
+  commit: 615fcc209a1bd2f51b9215d8bedbe155ad5e8b96
+  patch: patches/fix_001.patch
+
+build:
+  kind: qmake
+
+
+
