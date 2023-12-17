@@ -1,0 +1,20 @@
+package:
+  id: kidletime
+  name: kidletime
+  version: 5.90.0
+  kind: lib
+  description:
+    KIdleTime
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: 'https://github.com/KDE/kidletime.git'
+  version: master
+  commit: 6670d97
+
+build:
+  kind: cmake
