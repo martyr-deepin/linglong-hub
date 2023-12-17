@@ -1,0 +1,23 @@
+--- ../MineSweeper.pro	2023-12-17 14:19:32.422142000 +0800
++++ ../MineSweeper.pro	2023-12-17 14:14:07.745670000 +0800
+@@ -40,8 +40,19 @@
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
++DESKTOP_FILE = ./MineSweeper.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=MineSweeper' >> $$DESKTOP_FILE")
++system("echo 'Comment=MineSweeper.' >> $$DESKTOP_FILE")
++system("echo 'Exec=MineSweeper' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
+ 
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
+ RESOURCES += \
+     img.qrc
