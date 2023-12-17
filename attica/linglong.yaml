@@ -1,0 +1,20 @@
+package:
+  id: attica
+  name: attica
+  version: 5.246.0
+  kind: lib
+  description:
+    Attica is a Qt library that implements the Open Collaboration Services API.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: 'https://github.com/KDE/attica.git'
+  version: master
+  commit: 89562a3
+
+build:
+  kind: cmake
