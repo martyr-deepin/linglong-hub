@@ -1,0 +1,17 @@
+--- ../src/x-y.pro	2023-12-27 21:02:00.168817000 +0800
++++ ../src/x-y.pro	2023-12-27 21:03:26.941517000 +0800
+@@ -23,6 +23,14 @@
+ 
+ unix{
+     INCLUDEPATH += /usr/local/include
++    target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++    INSTALLS += target
++    desktop.files += ../build/linux/x-y.AppDir/x-y.desktop
++    desktop.path = $$PREFIX/share/applications
++    INSTALLS += desktop
++    icons.path += $$PREFIX/share/icons
++    icons.files = ./x-y.ico
++    INSTALLS += icons
+ }
+ 
+ win32{
