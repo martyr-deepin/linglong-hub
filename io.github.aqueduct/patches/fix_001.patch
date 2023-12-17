@@ -1,0 +1,18 @@
+--- ../source/CMakeLists.txt	2023-12-27 19:54:05.406566000 +0800
++++ ../source/CMakeLists.txt	2023-12-27 19:58:58.850494000 +0800
+@@ -48,3 +48,15 @@
+     )
+ 
+ target_link_libraries(${PROJECT_NAME} PUBLIC ${QT5_LIBS})
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=Aqueduct
++Exec=Aqueduct
++Icon=aqueduct_logo_256
++Categories=Utility;
++")
++file(WRITE ${CMAKE_BINARY_DIR}/Aqueduct.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/Aqueduct.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++install(PROGRAMS ${build_dir}/source/appimage/aqueduct_logo_256.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons)
++install(TARGETS Aqueduct DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
