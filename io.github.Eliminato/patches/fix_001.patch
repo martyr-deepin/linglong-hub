@@ -1,0 +1,24 @@
+--- ../Eliminato.pro	2023-12-17 14:49:40.479905000 +0800
++++ ../Eliminato.pro	2023-12-17 14:48:53.180089000 +0800
+@@ -6,7 +6,21 @@
+ TARGET = Eliminato
+ INCLUDEPATH += .
+ QT += widgets
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
+ 
++DESKTOP_FILE = ./Eliminato.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=Eliminato' >> $$DESKTOP_FILE")
++system("echo 'Comment=Eliminato.' >> $$DESKTOP_FILE")
++system("echo 'Exec=Eliminato' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
+ # Input
+ HEADERS += Board.h GameOverDialog.h MainWindow.h Tile.h
+ FORMS += gameoverdialog.ui mainwindow.ui

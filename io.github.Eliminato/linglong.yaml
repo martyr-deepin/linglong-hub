@@ -1,0 +1,23 @@
+package:
+  id: io.github.Eliminato
+  name: Eliminato
+  version: 0.1.0
+  kind: app
+  description: |
+    A simple game based on Qt
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/yiwenlu66/Eliminato.git
+  commit: 9f5b4f543dc93207385cf6598e8fa0e0a9f597ec
+  patch: patches/fix_001.patch
+
+build:
+  kind: qmake
+
+
+
