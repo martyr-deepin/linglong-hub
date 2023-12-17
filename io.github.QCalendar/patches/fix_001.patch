@@ -1,0 +1,24 @@
+--- ../QCalendar.pro	2023-12-17 14:57:41.273435000 +0800
++++ ../QCalendar.pro	2023-12-17 14:56:14.073942000 +0800
+@@ -40,7 +40,21 @@
+     calendarfile.cpp \
+     filedetaildialog.cpp
+ TRANSLATIONS += QCalendar_zh_CN.ts
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
+ 
++DESKTOP_FILE = ./QCalendar.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=QCalendar' >> $$DESKTOP_FILE")
++system("echo 'Comment=QCalendar.' >> $$DESKTOP_FILE")
++system("echo 'Exec=QCalendar' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
+ RESOURCES += \
+     res.qrc
+ 
