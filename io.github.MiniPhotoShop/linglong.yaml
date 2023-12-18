@@ -1,0 +1,23 @@
+package:
+  id: io.github.MiniPhotoShop
+  name: MiniPhotoShop
+  version: 1.0.0
+  kind: app
+  description: |
+    A light and simple mini photoshop
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/RayeRen/MiniPhotoShop.git
+  commit: 4842965fd6cab87e3fca87dadc4c309fd031249c
+  patch: patches/fix_001.patch
+
+build:
+  kind: qmake
+
+
+
