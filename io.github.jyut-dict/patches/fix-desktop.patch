@@ -1,0 +1,57 @@
+diff --git a/src/jyut-dict/jyut-dict.pro b/src/jyut-dict/jyut-dict.pro
+index 6928a44..7b064e3 100644
+--- a/src/jyut-dict/jyut-dict.pro
++++ b/src/jyut-dict/jyut-dict.pro
+@@ -311,24 +311,32 @@ unix:!macx {
+     # Move files to appropriate locations on desktop to install the program
+     binfile.extra = cp \"$$system_path($$OUT_PWD)/Jyut Dictionary\" $$system_path($$OUT_PWD)/jyut-dict
+     binfile.files += $$system_path($$OUT_PWD)/jyut-dict
+-    binfile.path = /usr/bin/
++    binfile.path = $$PREFIX/usr/bin/
+     binfile.CONFIG += no_check_exist
+     dictfile.files += resources/db/dict.db
+-    dictfile.path = /usr/share/jyut-dict/dictionaries/
++    dictfile.path = $$PREFIX/usr/share/jyut-dict/dictionaries/
+     userfile.files += resources/db/user.db
+-    userfile.path = /usr/share/jyut-dict/dictionaries/
++    userfile.path = $$PREFIX/usr/share/jyut-dict/dictionaries/
+     flowlayoutlicensefile.files += resources/licenses/FLOW_LAYOUT_LICENSE.txt
+-    flowlayoutlicensefile.path = /usr/share/jyut-dict/licenses/
++    flowlayoutlicensefile.path = $$PREFIX/usr/share/jyut-dict/licenses/
+     shortcutfiles.files += platform/linux/jyut-dict.desktop
+-    shortcutfiles.path = /usr/share/applications/
++    shortcutfiles.path = $$PREFIX/usr/share/applications/
+     icon.files += resources/icon/jyut-dict.svg
+-    icon.path = /usr/share/icons/hicolor/scalable/apps/
++    icon.path = $${PREFIX}/share/icons
+     INSTALLS += binfile
+     INSTALLS += dictfile
+     INSTALLS += userfile
+     INSTALLS += flowlayoutlicensefile
+     INSTALLS += shortcutfiles
+     INSTALLS += icon
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += platform/linux/jyut-dict.desktop
++INSTALLS += desktop
++
+ }
+ 
+ unix|win32:!macx {
+diff --git a/src/jyut-dict/platform/linux/jyut-dict.desktop b/src/jyut-dict/platform/linux/jyut-dict.desktop
+index 74f70d4..543efa3 100644
+--- a/src/jyut-dict/platform/linux/jyut-dict.desktop
++++ b/src/jyut-dict/platform/linux/jyut-dict.desktop
+@@ -11,7 +11,7 @@ Comment[fr]=Cherchez des mots en cantonais ou en mandarin
+ Comment[zh_CN]=搜索粤语字的定义
+ Comment[zh_TW]=搜索粵語字的定義
+ Comment[zh_HK]=揾粤语字嘅定義
+-Exec=/usr/bin/jyut-dict
++Exec=Jyut\ Dictionary %f
+ StartupWMClass=CantoneseDictionary
+ Terminal=false
+ Icon=jyut-dict
+

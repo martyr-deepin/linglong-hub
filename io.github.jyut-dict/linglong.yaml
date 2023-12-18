@@ -1,0 +1,29 @@
+package:
+  id: io.github.jyut-dict 
+  name: jyut-dict
+  version: 2.23.0408
+  kind: app
+  description: |
+    A free, open-source, offline Cantonese Dictionary for Windows, Mac, and Linux. Qt, SQLite. C++ and Python.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/aaronhktan/jyut-dict.git"
+  commit: 095ed6e893fe08d54a3d302289ac1d934586e7b7
+  patch:
+    - patches/fix-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src/jyut-dict
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
