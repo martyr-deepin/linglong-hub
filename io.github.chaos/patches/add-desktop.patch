@@ -1,0 +1,23 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 2ec1316..a173766 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -151,3 +151,7 @@ add_executable(${PROJECT_NAME}Test ${TEST_SOURCES})
+ target_link_libraries(${PROJECT_NAME}Test PRIVATE
+     ${TEST_LIBS}
+ )
++
++install(TARGETS Chaos DESTINATION bin/)
++install(FILES Chaos.desktop DESTINATION share/applications/)
++install(FILES res/Chaos.ico DESTINATION share/icons/)
+diff --git a/Chaos.desktop b/Chaos.desktop
+new file mode 100644
+index 0000000..c11baac
+--- /dev/null
++++ b/Chaos.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Name=Chaos
++Exec=Chaos %F
++Icon=Chaos
++Type=Application
