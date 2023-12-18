@@ -1,0 +1,29 @@
+package:
+  id: io.github.lstune
+  name: lstune
+  version: 0.0.1
+  kind: app
+  description: |
+    LS Tune Strobe Tuner
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/craigeaton/lstune.git"
+  commit: 849dc19907f4cc10643b5bea3eec095078894e8f
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd qt
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

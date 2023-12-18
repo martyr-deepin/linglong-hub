@@ -1,0 +1,30 @@
+diff --git a/qt/lstune.desktop b/qt/lstune.desktop
+new file mode 100644
+index 0000000..9b58905
+--- /dev/null
++++ b/qt/lstune.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=lstune
++Exec=lstune %f
++Icon=fish
+diff --git a/qt/lstune.pro b/qt/lstune.pro
+index d13f638..50ef3d1 100644
+--- a/qt/lstune.pro
++++ b/qt/lstune.pro
+@@ -42,3 +42,14 @@ macx {
+ HEADERS += sound.h wheel.h notes.h filter.h tuner.h noteGuesser.h AudioIO.h LED.h
+ SOURCES += main.cc sound.cc wheel.cc notes.cc filter.cc tuner.cc noteGuesser.cc AudioIO.cc LED.cc
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += lstune.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = ../misc/fish.png
++INSTALLS += icons
++
