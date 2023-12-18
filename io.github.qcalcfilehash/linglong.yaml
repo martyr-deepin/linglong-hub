@@ -1,0 +1,22 @@
+package:
+  id: io.github.qcalcfilehash
+  name: qcalcfilehash
+  version: 1.1.1
+  kind: app
+  description: |
+    graphical utility for calculation and verification of hash sums
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/admsasha/qcalcfilehash.git
+  commit: 4335c7c95a5cde1e5fe7065c509d39e764f24015
+  patch: patches/fix_001.patch
+
+build:
+  kind: qmake
+
+
