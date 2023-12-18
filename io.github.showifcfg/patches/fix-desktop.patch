@@ -1,0 +1,43 @@
+diff --git a/shownetif.desktop b/shownetif.desktop
+index 620f6c0..8b1e4e5 100644
+--- a/shownetif.desktop
++++ b/shownetif.desktop
+@@ -3,6 +3,6 @@ Type=Application
+ Name=showifcfg
+ GenericName=showifcfg
+ Comment=Utility to display ip interface configurations
+-Exec=showifcfg
+-Icon=showifcfg
++Exec=shownetif %f
++Icon=showinetif
+ Categories=Utility;Network;
+diff --git a/shownetif.pro b/shownetif.pro
+index f122fc6..30de0ea 100644
+--- a/shownetif.pro
++++ b/shownetif.pro
+@@ -51,21 +51,21 @@ OTHER_FILES += \
+     notes.txt
+ 
+ unix:!symbian:!maemo5 {
+-    target.path = /usr/bin/
++    target.path = $$PREFIX/bin
+     INSTALLS += target
+ }
+ 
+ BLD_ADDONS = ""
+ unix:!symbian:!maemo5 {
+     desktopfile.files = $${TARGET}.desktop
+-    desktopfile.path = /usr/share/applications
++    desktopfile.path = $$PREFIX/share/applications
+     INSTALLS += desktopfile
+     BLD_ADDONS += "desktop"
+ }
+ 
+ unix:!symbian:!maemo5 {
+-    icon.files = showifcfg.png
+-    icon.path = /usr/share/icons/hicolor/64x64/apps
++    icon.files = images/showinetif.png
++    icon.path = $${PREFIX}/share/icons
+     INSTALLS += icon
+     BLD_ADDONS += "icon"
+ }
