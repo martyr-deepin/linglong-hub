@@ -1,0 +1,21 @@
+package:
+  id: io.github.Find-Prime-Numbers
+  name: Find-Prime-Numbers
+  version: 0.0.1
+  kind: app
+  description: |
+    In this project, we aimed to find the prime factors of the entered number.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/hasancyhn/Find-Prime-Numbers.git
+  commit: 912c6aafafb99519043e7eb43548fa07123eba6a
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
