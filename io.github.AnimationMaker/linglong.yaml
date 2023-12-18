@@ -1,0 +1,21 @@
+package:
+  id: io.github.AnimationMaker
+  name: AnimationMaker
+  version: 1.9.2
+  kind: app
+  description: |
+    Create animated presentations and export them to a video or xml file.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Artanidos/AnimationMaker.git"
+  commit: 9b34fea1182e11708e21c6fc568712992bb9e7ee
+  patch:
+    - patches/fix-desktop.patch
+
+build:
+  kind: qmake
