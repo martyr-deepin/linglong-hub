@@ -1,0 +1,23 @@
+package:
+  id: io.github.QtFinance
+  name: QtFinance
+  version: 0.0.1
+  kind: app
+  description: |
+    Home budget application (C++ & Qt Framework)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/slovinskyi/QtFinance.git
+  commit: 5984df1a529d7fc1a77945a7a3c5e022e09a4bf6
+  patch: patches/fix_001.patch
+
+build:
+  kind: qmake
+
+
+
