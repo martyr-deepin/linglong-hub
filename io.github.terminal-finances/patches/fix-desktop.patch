@@ -1,0 +1,44 @@
+diff --git a/src/terminal-finances.desktop b/src/terminal-finances.desktop
+index 51f981b..f98cdda 100644
+--- a/src/terminal-finances.desktop
++++ b/src/terminal-finances.desktop
+@@ -3,8 +3,8 @@ Version=1.0
+ Name=Terminal Finances
+ GenericName=Financial management
+ Comment=Personal Financial Management
+-Exec=terminal-finances %u
+-Icon=/usr/share/pixmaps/terminal-finances/terminal-finances.png
++Exec=terminal-finances %f
++Icon=terminal-finances
+ Terminal=false
+ Type=Application
+ StartupNotify=true
+diff --git a/src/TerminalFinances.pro b/src/TerminalFinances.pro
+index 811a71d..181bc9d 100644
+--- a/src/TerminalFinances.pro
++++ b/src/TerminalFinances.pro
+@@ -6,6 +6,15 @@ TARGET = terminal-finances
+ 
+ TEMPLATE = app
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += terminal-finances.desktop
++INSTALLS += desktop
++
++
++icons.path = $${PREFIX}/share/icons
++icons.files = assets/terminal-finances/terminal-finances.png
++INSTALLS += icons
++
+ SOURCES += \
+     accountslist.cpp \
+     filesave.cpp \
+@@ -53,7 +62,7 @@ configs.files = terminalfinances
+ trans.path = = /etc/xdg/terminalfinances
+ trans.commands = @mv .qm/* /etc/xdg/terminalfinances
+ 
+-target.path = /usr/local/bin
++target.path = $$PREFIX/bin
+ 
+ INSTALLS += target shortcut images configs trans
+
