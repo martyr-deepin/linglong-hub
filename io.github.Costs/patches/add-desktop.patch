@@ -1,0 +1,30 @@
+diff --git a/Costs.desktop b/Costs.desktop
+new file mode 100644
+index 0000000..ad7145f
+--- /dev/null
++++ b/Costs.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=Costs
++Exec=Costs %f
++Icon=costs
+diff --git a/Costs.pro b/Costs.pro
+index 20ce0d0..a4d4d56 100644
+--- a/Costs.pro
++++ b/Costs.pro
+@@ -86,3 +86,14 @@ RC_ICONS = costs.ico
+ 
+ DISTFILES += \
+     README.md
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += Costs.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = costs.png
++INSTALLS += icons

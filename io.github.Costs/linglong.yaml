@@ -1,0 +1,21 @@
+package:
+  id: io.github.Costs
+  name: Costs
+  version: 0.0.1
+  kind: app
+  description: |
+    Costs is meant to be a simple piece of software to maintain the daily income/expenses in an easy to use, platform independent way.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/torlenor/Costs.git"
+  commit: 1b4c2950592ee0188f78fd32924f1355a64268fb
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake 
