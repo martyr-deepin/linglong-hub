@@ -1,0 +1,29 @@
+diff --git a/FotoBox.desktop b/FotoBox.desktop
+new file mode 100644
+index 0000000..f59ceed
+--- /dev/null
++++ b/FotoBox.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=FotoBox
++Exec=FotoBox %f
++Icon=logo
+diff --git a/fotobox.pro b/fotobox.pro
+index 9d09db0..d335f49 100644
+--- a/fotobox.pro
++++ b/fotobox.pro
+@@ -136,4 +136,13 @@ win32 {
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
++target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += FotoBox.desktop
++INSTALLS += desktop
++
++icons.path = $${PREFIX}/share/icons
++icons.files = resources/logo.png
++INSTALLS += icons
