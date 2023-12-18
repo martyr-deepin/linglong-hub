@@ -1,0 +1,22 @@
+--- ../App/ProCal/ProCal.pro	2023-12-18 10:49:49.905684000 +0800
++++ ../App/ProCal/ProCal.pro	2023-12-18 10:45:11.909934000 +0800
+@@ -54,5 +54,19 @@
+ 
+ RESOURCES += \
+     ui/icons/iconsressourcefile.qrc
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
+ 
++DESKTOP_FILE = ./ProCal.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=ProCal' >> $$DESKTOP_FILE")
++system("echo 'Comment=ProCal.' >> $$DESKTOP_FILE")
++system("echo 'Exec=ProCal' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
+ #ICON = ui/icon/icon.icns

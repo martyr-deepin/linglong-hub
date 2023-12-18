@@ -1,0 +1,27 @@
+package:
+  id: io.github.Project-Calendar
+  name: Project-Calendar
+  version: 0.0.1
+  kind: app
+  description: |
+    A C++/Qt calendar app.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/sd65/Project-Calendar.git
+  commit: e96ba0e9610a8706706e95c19497a96ed473eba0
+  patch: patches/fix_001.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd App/ProCal
+      qmake -makefile ${conf_args} ${extra_args}
+
+
+
