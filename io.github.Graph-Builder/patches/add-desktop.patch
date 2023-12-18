@@ -1,0 +1,30 @@
+diff --git a/GraphBuilder.desktop b/GraphBuilder.desktop
+new file mode 100644
+index 0000000..a0295f8
+--- /dev/null
++++ b/GraphBuilder.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=GraphBuilder
++Exec=Graph\ Builder %f
++Icon=App
+diff --git a/GraphBuilder.pro b/GraphBuilder.pro
+index e8b9b30..e1522aa 100755
+--- a/GraphBuilder.pro
++++ b/GraphBuilder.pro
+@@ -53,3 +53,14 @@ FORMS    += mainwindow.ui \
+ 
+ RESOURCES += \
+ 	Resourses/resourses.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += GraphBuilder.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = Resourses/App.png
++INSTALLS += icons
