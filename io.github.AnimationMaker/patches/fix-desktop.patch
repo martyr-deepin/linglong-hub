@@ -1,0 +1,34 @@
+diff --git a/assets/default.desktop b/assets/default.desktop
+index 34c9ae5..7fe1dc4 100644
+--- a/assets/default.desktop
++++ b/assets/default.desktop
+@@ -1,8 +1,8 @@
+ [Desktop Entry]
+ Type=Application
+ Name=AnimationMaker
+-Exec=animationmaker
+-Icon=animationmaker.svg
++Exec=animationmaker %f
++Icon=default
+ Comment=AnimationMaker - quicly build animations
+ Terminal=false
+ Version=1.0
+diff --git a/src/App/App.pro b/src/App/App.pro
+index e550fc9..8db1f97 100644
+--- a/src/App/App.pro
++++ b/src/App/App.pro
+@@ -50,3 +50,14 @@ RESOURCES += ../images.qrc
+ 
+ VERSION = VERSION_MAJOR.VERSION_MINOR.VERSION_BUILD
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += ../../assets/default.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = ../../assets/default.svg
++INSTALLS += icons
++
