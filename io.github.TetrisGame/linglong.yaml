@@ -1,0 +1,21 @@
+package:
+  id: io.github.TetrisGame
+  name: TetrisGame
+  version: 0.0.1
+  kind: app
+  description: |
+    Classic Tetris - a computer game invented in the USSR. Drop shapes and fill in as many horizontal lines as possible.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/SergeyG22/TetrisGame.git
+  commit: a2617483cb9a733dc0a3c35fe4d3e29df4b298bf
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
