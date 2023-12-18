@@ -1,0 +1,23 @@
+package:
+  id: io.github.QtPaint
+  name: QtPaint
+  version: 0.0.1
+  kind: app
+  description: |
+    MS Paint clone using Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Cohee1207/QtPaint.git
+  commit: a285c231bd19a2b60ca22b445f7a6ff91fdd838e
+  patch: patches/fix_001.patch
+
+build:
+  kind: qmake
+
+
+

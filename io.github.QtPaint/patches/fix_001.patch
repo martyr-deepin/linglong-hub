@@ -1,0 +1,24 @@
+--- ../QtPaint.pro	2023-12-18 09:06:50.731372000 +0800
++++ ../QtPaint.pro	2023-12-18 09:03:50.133199000 +0800
+@@ -10,7 +10,21 @@
+ 
+ TARGET = QtPaint
+ TEMPLATE = app
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
+ 
++DESKTOP_FILE = ./QtPaint.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=QtPaint' >> $$DESKTOP_FILE")
++system("echo 'Comment=QtPaint.' >> $$DESKTOP_FILE")
++system("echo 'Exec=QtPaint' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
+ L#IBS += -lopengl32
+ 
+ # The following define makes your compiler emit warnings if you use
