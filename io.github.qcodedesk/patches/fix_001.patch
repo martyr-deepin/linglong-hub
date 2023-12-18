@@ -1,0 +1,21 @@
+--- ../qcodedesk.pro	2023-12-18 20:56:30.941796000 +0800
++++ ../qcodedesk.pro	2023-12-18 20:53:47.832641000 +0800
+@@ -38,3 +38,18 @@
+     CONFIG += link_pkgconfig
+     PKGCONFIG += libnotify
+ }
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++
++DESKTOP_FILE = ./qcodedesk.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=qcodedesk' >> $$DESKTOP_FILE")
++system("echo 'Comment=qcodedesk.' >> $$DESKTOP_FILE")
++system("echo 'Exec=qcodedesk' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
