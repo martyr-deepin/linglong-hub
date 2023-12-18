@@ -1,0 +1,30 @@
+diff --git a/WZMapEditor.desktop b/WZMapEditor.desktop
+new file mode 100644
+index 0000000..93e9a90
+--- /dev/null
++++ b/WZMapEditor.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=WZMapEditor
++Exec=WZMapEditor %f
++Icon=warzone2100mapeditor
+diff --git a/WZMapEditor.pro b/WZMapEditor.pro
+index ada3abd..3ca2c6d 100644
+--- a/WZMapEditor.pro
++++ b/WZMapEditor.pro
+@@ -65,3 +65,14 @@ DISTFILES += WZMapEditor.xcodeproj \
+ 	Resources \
+ 	configs \
+ 	README.BUILD.MAC.txt
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += WZMapEditor.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = src/resources/icons/warzone2100mapeditor.png
++INSTALLS += icons

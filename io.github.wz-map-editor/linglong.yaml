@@ -1,0 +1,22 @@
+package:
+  id: io.github.wz-map-editor
+  name: wz-map-editor
+  version: 0.0.1
+  kind: app
+  description: |
+    Warzone 2100 Map Editor is Qt5 based map editor for Warzone 2100 game available for Linux, MacOS X, Windows and other platforms supported by Qt framework.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Emdek/wz-map-editor.git"
+  commit: 8d02c15ea5cc5608363e819d9f3c0dd3c2a6acc4
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
+
