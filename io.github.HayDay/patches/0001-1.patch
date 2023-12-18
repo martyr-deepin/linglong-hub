@@ -1,0 +1,48 @@
+From 95e29dec32f59968e4cbf74978b2e1bdc74853ce Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Mon, 18 Dec 2023 19:39:30 +0800
+Subject: [PATCH] 1
+
+---
+ client/client.desktop |  9 +++++++++
+ client/client.pro     | 11 +++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 client/client.desktop
+
+diff --git a/client/client.desktop b/client/client.desktop
+new file mode 100644
+index 0000000..cb62068
+--- /dev/null
++++ b/client/client.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=client
++Name=client
++StartupNotify=false
++Terminal=false
++Icon=silo
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/client/client.pro b/client/client.pro
+index 42b3c9e..ada7ac4 100644
+--- a/client/client.pro
++++ b/client/client.pro
+@@ -75,3 +75,14 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ RESOURCES += \
+     resources.qrc \
+     resources.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =client.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = img/silo.png
++INSTALLS += icons
++
+-- 
+2.33.1
+

@@ -1,0 +1,31 @@
+package:
+  id: io.github.HayDay 
+  name: HayDay
+  version: 0.1.0
+  kind: app
+  description: |
+    A game like HayDay written in CPP using Qt5 GUI framework.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/ArashSameni/HayDay.git"
+  commit: c3e2f9d377452cb4cc2c82f43da78ac8fe640a4c
+  patch:
+    - patches/0001-1.patch
+
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd client
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
