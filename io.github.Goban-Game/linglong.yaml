@@ -1,0 +1,23 @@
+package:
+  id: io.github.Goban-Game
+  name: Goban-Game
+  version: 0.0.1
+  kind: app
+  description: |
+    Naive QT game for OOP course in ZJU.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/haotian-liu/Goban-Game.git
+  commit: d69a8b5dae60360e9a3943af0d6d302ea4db3412
+  patch: patches/fix_001.patch
+
+build:
+  kind: qmake
+
+
+

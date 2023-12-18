@@ -1,0 +1,24 @@
+--- ../fiar.pro	2023-12-18 09:25:31.619621000 +0800
++++ ../fiar.pro	2023-12-18 09:23:53.471633000 +0800
+@@ -21,7 +21,21 @@
+ # In order to do so, uncomment the following line.
+ # You can also select to disable deprecated APIs only up to a certain version of Qt.
+ #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
+ 
++DESKTOP_FILE = ./fiar.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=fiar' >> $$DESKTOP_FILE")
++system("echo 'Comment=fiar.' >> $$DESKTOP_FILE")
++system("echo 'Exec=fiar' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
+ 
+ SOURCES += \
+         main.cpp \
