@@ -1,0 +1,24 @@
+--- ../qPadNote.pro	2023-12-18 10:31:54.998948000 +0800
++++ ../qPadNote.pro	2023-12-18 10:28:48.883282000 +0800
+@@ -48,7 +48,21 @@
+ 
+ 
+ DESTDIR = $$PWD/build/
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
+ 
++DESKTOP_FILE = ./qPadNote.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=qPadNote' >> $$DESKTOP_FILE")
++system("echo 'Comment=qPadNote.' >> $$DESKTOP_FILE")
++system("echo 'Exec=qPadNote' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
+ DISTFILES = $$PWD/build/config.json \
+             README.md \
+             stylesheet.qss \
