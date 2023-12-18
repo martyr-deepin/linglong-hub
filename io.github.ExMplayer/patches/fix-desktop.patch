@@ -1,0 +1,33 @@
+diff --git a/exmplayer.desktop b/exmplayer.desktop
+index c761795..c998121 100644
+--- a/exmplayer.desktop
++++ b/exmplayer.desktop
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Categories=Qt;KDE;AudioVideo;Player;Video;
+ Comment=MPlayer front-end with thumbnail seeking
+-Exec=exmplayer %U
++Exec=exmplayer %f
+ GenericName=Media Player
+ Icon=exmplayer
+ MimeType=audio/ac3;audio/mp4;audio/mpeg;audio/vnd.rn-realaudio;audio/vorbis;audio/x-adpcm;audio/x-matroska;audio/x-mp2;audio/x-mp3;audio/x-ms-wma;audio/x-vorbis;audio/x-wav;audio/mpegurl;audio/x-mpegurl;audio/x-pn-realaudio;audio/x-scpls;video/avi;video/mp4;video/flv;video/mpeg;video/quicktime;video/vnd.rn-realvideo;video/x-matroska;video/x-ms-asf;video/x-msvideo;video/x-ms-wmv;video/x-ogm;video/x-theora;video/webm;
+diff --git a/src/ExMplayer.pro b/src/ExMplayer.pro
+index 0ef08fd..32fd9b6 100644
+--- a/src/ExMplayer.pro
++++ b/src/ExMplayer.pro
+@@ -210,3 +210,14 @@ else:LIBS += libole32
+ }
+ RESOURCES += ExMplayer.qrc
+ RC_FILE = ExMplayer.rc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += ../exmplayer.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = ../debian/exmplayer.png
++INSTALLS += icons
+\ No newline at end of file

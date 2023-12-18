@@ -1,0 +1,29 @@
+package:
+  id: io.github.ExMplayer
+  name: ExMplayer
+  version: 5.0.1
+  kind: app
+  description: |
+    ExMplayer is a free GUI front-end for award-winning MPlayer with 3D/2D video playback support ,tools like audio converter,media cutter and audio extractor.It can play audio,video,dvd files(.vob),vcd files(.mpg,.dat) etc and supports network streaming.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/rupeshs/ExMplayer.git"
+  commit: a1605d1f8ff98492d64309b03cbc3caeb10b3436
+  patch:
+    - patches/fix-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
