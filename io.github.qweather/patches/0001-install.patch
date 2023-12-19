@@ -1,0 +1,52 @@
+From 65765252ad22f7fbeaaca5d142f394f1b8284f2b Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Dec 2023 18:38:24 +0800
+Subject: [PATCH] install
+
+---
+ bitshift.weather.desktop |  2 +-
+ weather.pro              | 11 ++++++++++-
+ 2 files changed, 11 insertions(+), 2 deletions(-)
+
+diff --git a/bitshift.weather.desktop b/bitshift.weather.desktop
+index 30aae1d..0e8086f 100644
+--- a/bitshift.weather.desktop
++++ b/bitshift.weather.desktop
+@@ -2,7 +2,7 @@
+ Name=Weather
+ Comment=Australian Weather
+ Version=1.0
+-Exec=qweather
++Exec=weather
+ MimeType=application/x-weather;
+ Icon=bitshift.weather
+ Type=Application
+diff --git a/weather.pro b/weather.pro
+index a20e9d9..1769505 100644
+--- a/weather.pro
++++ b/weather.pro
+@@ -43,7 +43,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ HEADERS += \
+@@ -74,3 +74,12 @@ contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
+         $$PWD/android
+ }
+ 
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =bitshift.weather.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = res/bitshift.weather.svg
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+

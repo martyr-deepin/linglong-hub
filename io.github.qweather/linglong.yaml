@@ -1,0 +1,21 @@
+package:
+  id: io.github.qweather
+  name: qweather
+  version: 0.0.1
+  kind: app
+  description: |
+   Quick Weather QML Qt application
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/bit-shift-io/qweather.git"
+  commit: 20fd982bbad7110027170bd3a7ed5f0a112c27b0
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  
