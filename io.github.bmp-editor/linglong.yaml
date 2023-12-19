@@ -1,0 +1,31 @@
+package:
+  id: io.github.bmp-editor 
+  name: bmp-editor
+  version: 0.0.1
+  kind: app
+  description: |
+    simple qt demo.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/muratom/bmp-editor.git"
+  commit: 3e3fe9129569226ceb6d590d9330a683733d4e98
+  patch:
+    - patches/0001-1.patch
+
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src 
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

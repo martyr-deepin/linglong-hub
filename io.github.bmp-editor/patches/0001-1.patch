@@ -1,0 +1,43 @@
+From fa42f6b2e9df95d4ad5775b5d597e715f391e20c Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Tue, 19 Dec 2023 15:39:52 +0800
+Subject: [PATCH] 1
+
+---
+ src/CourseWork.desktop | 8 ++++++++
+ src/CourseWork.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 src/CourseWork.desktop
+
+diff --git a/src/CourseWork.desktop b/src/CourseWork.desktop
+new file mode 100644
+index 0000000..55f6614
+--- /dev/null
++++ b/src/CourseWork.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=CourseWork
++Name=CourseWork
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/src/CourseWork.pro b/src/CourseWork.pro
+index 0355ba9..71b71e5 100644
+--- a/src/CourseWork.pro
++++ b/src/CourseWork.pro
+@@ -49,3 +49,10 @@ FORMS += \
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =CourseWork.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
