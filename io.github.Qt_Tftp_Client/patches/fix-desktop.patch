@@ -1,0 +1,25 @@
+diff --git a/Tftp_Client/Tftp_Client.desktop b/Tftp_Client/Tftp_Client.desktop
+new file mode 100644
+index 0000000..6d10f00
+--- /dev/null
++++ b/Tftp_Client/Tftp_Client.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=Tftp_Client
++Exec=Tftp_Client %f
+diff --git a/Tftp_Client/Tftp_Client.pro b/Tftp_Client/Tftp_Client.pro
+index 2e3e626..93f3635 100644
+--- a/Tftp_Client/Tftp_Client.pro
++++ b/Tftp_Client/Tftp_Client.pro
+@@ -31,3 +31,10 @@ HEADERS  += mainwindow.h \
+     tftp.h
+ 
+ FORMS    += mainwindow.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += Tftp_Client.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target

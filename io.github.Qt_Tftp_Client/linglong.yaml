@@ -1,0 +1,29 @@
+package:
+  id: io.github.Qt_Tftp_Client
+  name: Qt_Tftp_Client
+  version: 0.0.1
+  kind: app
+  description: |
+    A simple TFTP client based on Linux Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Fujihai/Qt_Tftp_Client.git"
+  commit: 310ec3f52ae730f8ac481c4bdc212164ae8d064d
+  patch:
+    - patches/fix-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd Tftp_Client
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
