@@ -1,0 +1,20 @@
+package:
+  id: io.github.dots-and-boxes
+  name: dots-and-boxes
+  version: 0.0.1
+  kind: app
+  description: |
+    Dots and Boxes recreated in Qt Widgets.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/glenn-sun/dots-and-boxes.git
+  commit: 86f7b508e0951bb88e2f5d925b752e17fe97a7d4
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

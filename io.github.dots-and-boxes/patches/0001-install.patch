@@ -1,0 +1,45 @@
+From 216682e43e9bd8b823f04a11f2354871f894bda6 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Dec 2023 18:00:40 +0800
+Subject: [PATCH] install
+
+---
+ dotsboxes.desktop | 9 +++++++++
+ dotsboxes.pro     | 7 +++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 dotsboxes.desktop
+
+diff --git a/dotsboxes.desktop b/dotsboxes.desktop
+new file mode 100644
+index 0000000..03445a8
+--- /dev/null
++++ b/dotsboxes.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=dotsboxes
++Name=dotsboxes
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
++
+diff --git a/dotsboxes.pro b/dotsboxes.pro
+index 4461531..ff11891 100644
+--- a/dotsboxes.pro
++++ b/dotsboxes.pro
+@@ -33,3 +33,10 @@ HEADERS += \
+ 
+ FORMS += \
+         mainwindow.ui
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =dotsboxes.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
