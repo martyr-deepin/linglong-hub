@@ -1,0 +1,21 @@
+package:
+  id: io.github.audiobook
+  name: audiobook
+  version: 0.0.1
+  kind: app
+  description: |
+   Minimal audio book reader
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/bit-shift-io/audiobook.git"
+  commit: 94e0e8eebb595fd42a7b1e322e054b23dfd54f4a
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  

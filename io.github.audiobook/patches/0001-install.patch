@@ -1,0 +1,71 @@
+From 00348d093d0af85ec4e94c41af130232f8e2e165 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Dec 2023 18:34:00 +0800
+Subject: [PATCH] install
+
+---
+ audiobook.desktop |  9 +++++++++
+ audiobook.pro     | 14 ++++++++------
+ 2 files changed, 17 insertions(+), 6 deletions(-)
+ create mode 100644 audiobook.desktop
+
+diff --git a/audiobook.desktop b/audiobook.desktop
+new file mode 100644
+index 0000000..ea7469e
+--- /dev/null
++++ b/audiobook.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=audiobook
++Name=audiobook
++Icon=bed-solid
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/audiobook.pro b/audiobook.pro
+index 1f7cec4..11eaf84 100644
+--- a/audiobook.pro
++++ b/audiobook.pro
+@@ -28,7 +28,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ INCLUDEPATH += \
+@@ -307,16 +307,17 @@ RESOURCES += \
+     
+ # Install all files on Linux. For make install
+ unix:!mac:!android {
+-  target.path = $$PREFIX/bin
+-
+-  desktop_file.files = resources/$${APP_REVERSE_NAME}.desktop
+-  desktop_file.path = $$quote($$PREFIX/share/applications/)
++  BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
+ 
++  desktop_file.files = audiobook.desktop
++  desktop_file.path =$$DATADIR/applications/
+   appdata.files = resources/$${APP_REVERSE_NAME}.appdata.xml
+   appdata.path = $$quote($$PREFIX/share/metainfo/)
+ 
+   desktop_icon.files = resources/$${APP_REVERSE_NAME}.svg
+-  desktop_icon.path = $$quote($$PREFIX/share/pixmaps/)
++  desktop_icon.path = $$PREFIX/share/icons
+ 
+   INSTALLS += target desktop_file desktop_icon appdata
+ }
+@@ -338,3 +339,4 @@ contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
+         $$PWD/android
+ }
+ 
++
+-- 
+2.33.1
+
