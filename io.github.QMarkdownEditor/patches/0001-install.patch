@@ -1,0 +1,48 @@
+From 618af006620723089c59a7cbbe347be815d765a4 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Dec 2023 18:56:17 +0800
+Subject: [PATCH] install
+
+---
+ MarkdownEdit.desktop | 8 ++++++++
+ MarkdownEdit.pro     | 9 ++++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 MarkdownEdit.desktop
+
+diff --git a/MarkdownEdit.desktop b/MarkdownEdit.desktop
+new file mode 100644
+index 0000000..c91a257
+--- /dev/null
++++ b/MarkdownEdit.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=MarkdownEdit
++Name=MarkdownEdit
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/MarkdownEdit.pro b/MarkdownEdit.pro
+index 6469c2c..0a0dbbb 100644
+--- a/MarkdownEdit.pro
++++ b/MarkdownEdit.pro
+@@ -29,5 +29,12 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =MarkdownEdit.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

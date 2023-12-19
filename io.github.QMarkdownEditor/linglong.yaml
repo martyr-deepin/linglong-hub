@@ -1,0 +1,21 @@
+package:
+  id: io.github.QMarkdownEditor
+  name: QMarkdownEditor
+  version: 0.0.1
+  kind: app
+  description: |
+   Markdown editor written with Qt5
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/HamedMasafi/QMarkdownEditor.git"
+  commit: 8a4832a9326dcce763fea9276aa0573aae086570
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  
