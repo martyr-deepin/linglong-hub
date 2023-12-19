@@ -1,0 +1,43 @@
+From e19bc2a1da20cf3410d2ac9e9b7240e3e1525d33 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Tue, 19 Dec 2023 20:24:15 +0800
+Subject: [PATCH] 1
+
+---
+ QtAsteroid.desktop | 8 ++++++++
+ QtAsteroid.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 QtAsteroid.desktop
+
+diff --git a/QtAsteroid.desktop b/QtAsteroid.desktop
+new file mode 100644
+index 0000000..67f5c0a
+--- /dev/null
++++ b/QtAsteroid.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QtAsteroid
++Name=QtAsteroid
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/QtAsteroid.pro b/QtAsteroid.pro
+index b24d338..a19ad3b 100644
+--- a/QtAsteroid.pro
++++ b/QtAsteroid.pro
+@@ -20,3 +20,10 @@ HEADERS += \
+     score.h \
+     playership.h \
+     projectile.h \
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =QtAsteroid.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+

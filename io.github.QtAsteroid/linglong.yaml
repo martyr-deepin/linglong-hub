@@ -1,0 +1,22 @@
+package:
+  id: io.github.QtAsteroid 
+  name: QtAsteroid
+  version: 0.0.1
+  kind: app
+  description: |
+    Asteroid Game implemented in Qt5.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/Soulthym/QtAsteroid.git"
+  commit: 993861fe77f22cfdd5bcdced4e1055774cab998a
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
