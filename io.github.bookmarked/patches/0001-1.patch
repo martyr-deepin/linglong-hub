@@ -1,0 +1,44 @@
+From 3901d8deafb70e1a29871831497f11f46adefe6e Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Tue, 19 Dec 2023 19:41:31 +0800
+Subject: [PATCH] 1
+
+---
+ Bookmarked.desktop | 8 ++++++++
+ Bookmarked.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 Bookmarked.desktop
+
+diff --git a/Bookmarked.desktop b/Bookmarked.desktop
+new file mode 100644
+index 0000000..c33faed
+--- /dev/null
++++ b/Bookmarked.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Bookmarked
++Name=Bookmarked
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Bookmarked.pro b/Bookmarked.pro
+index 5ad3c8d..9589580 100644
+--- a/Bookmarked.pro
++++ b/Bookmarked.pro
+@@ -32,3 +32,10 @@ FORMS    += mainwindow.ui \
+ 	addbookmarkdialog.ui \
+ 	aboutdialog.ui \
+ 	editbookdialog.ui
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Bookmarked.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

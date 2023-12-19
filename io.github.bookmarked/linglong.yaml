@@ -1,0 +1,22 @@
+package:
+  id: io.github.bookmarked
+  name: bookmarked
+  version: 0.0.1
+  kind: app
+  description: |
+    A Qt application to help you keep track of your real bookmarks (those made of dead trees).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/nathanpc/bookmarked.git
+  commit: 7f38b2988ef52c23afcce7498a2b95ff279f0eaa
+  patch:
+    - patches/0001-1.patch
+
+
+build:
+  kind: qmake
