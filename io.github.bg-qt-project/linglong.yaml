@@ -1,0 +1,20 @@
+package:
+  id: io.github.bg-qt-project
+  name: bg-qt-project
+  version: 0.0.1
+  kind: app
+  description: |
+    Bilgisayar Grafikleri dersine ait proje ödevidir.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/BayramYARIM/bg-qt-project.git
+  commit: 6f4341417bc32241dfb69e5f5a07b269eee25952
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

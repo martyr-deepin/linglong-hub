@@ -1,0 +1,50 @@
+From 27f3d18e801e09cd4d36e4efc0493c040411a8ba Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Dec 2023 18:20:42 +0800
+Subject: [PATCH] install
+
+---
+ bygame.desktop |  9 +++++++++
+ bygame.pro     | 11 ++++++++++-
+ 2 files changed, 19 insertions(+), 1 deletion(-)
+ create mode 100644 bygame.desktop
+
+diff --git a/bygame.desktop b/bygame.desktop
+new file mode 100644
+index 0000000..8b75709
+--- /dev/null
++++ b/bygame.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=bygame
++Name=bygame
++Icon=downMagnet
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/bygame.pro b/bygame.pro
+index 38526de..57736ec 100644
+--- a/bygame.pro
++++ b/bygame.pro
+@@ -24,5 +24,14 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =bygame.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = res/downMagnet.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
