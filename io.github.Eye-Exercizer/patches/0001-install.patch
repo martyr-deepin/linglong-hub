@@ -1,0 +1,48 @@
+From 77f764a0df25d555f086826433539a6258c8c788 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Dec 2023 21:09:25 +0800
+Subject: [PATCH] install
+
+---
+ EyeExerciser.desktop |  9 +++++++++
+ EyeExerciser.pro     | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 EyeExerciser.desktop
+
+diff --git a/EyeExerciser.desktop b/EyeExerciser.desktop
+new file mode 100644
+index 0000000..cade5b4
+--- /dev/null
++++ b/EyeExerciser.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=EyeExerciser
++Name=EyeExerciser
++Icon=Circle-icons-eye.svg
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/EyeExerciser.pro b/EyeExerciser.pro
+index e8c410c..c33f0a2 100644
+--- a/EyeExerciser.pro
++++ b/EyeExerciser.pro
+@@ -20,3 +20,13 @@ HEADERS  += mainwindow.h \
+     shape.h
+ 
+ FORMS    += mainwindow.ui
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =EyeExerciser.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = Circle-icons-eye.svg.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+

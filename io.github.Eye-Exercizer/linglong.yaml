@@ -1,0 +1,20 @@
+package:
+  id: io.github.Eye-Exercizer
+  name: Eye-Exercizer
+  version: 0.0.1
+  kind: app
+  description: |
+    a C++ Qt application using a moving QRectF for exercizing eyes
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/NiloofarShahbaz/Eye-Exercizer.git
+  commit: dba5f1b5c6f1f71b926977587f4556e18da9c4f7
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
