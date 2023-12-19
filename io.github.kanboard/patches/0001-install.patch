@@ -1,0 +1,49 @@
+From 46334703141f44332c1e2d1879a2cd7f51c4a3ab Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Dec 2023 21:16:16 +0800
+Subject: [PATCH] install
+
+---
+ Kanboard.desktop |  9 +++++++++
+ Kanboard.pro     | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 Kanboard.desktop
+
+diff --git a/Kanboard.desktop b/Kanboard.desktop
+new file mode 100644
+index 0000000..ef482f9
+--- /dev/null
++++ b/Kanboard.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Kanboard
++Name=Kanboard
++Icon=ico
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/Kanboard.pro b/Kanboard.pro
+index d7ad442..f1859cf 100644
+--- a/Kanboard.pro
++++ b/Kanboard.pro
+@@ -23,3 +23,13 @@ FORMS    += kanboard.ui \
+     secdialog.ui
+ 
+ RC_ICONS = icon.ico
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Kanboard.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = icon.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+

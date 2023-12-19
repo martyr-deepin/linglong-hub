@@ -1,0 +1,20 @@
+package:
+  id: io.github.kanboard
+  name: kanboard
+  version: 0.0.1
+  kind: app
+  description: |
+    a kanban interface for small tasks using C++ and Qt
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/patriciadourado/kanboard.git
+  commit: b755a88858d8451d623befe51b8f78054a457e10
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
