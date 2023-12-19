@@ -1,0 +1,21 @@
+package:
+  id: io.github.tensor
+  name: tensor
+  version: 0.0.3
+  kind: app
+  description: |
+    Cross-platform Qt5/QML-based Matrix client.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/davidar/tensor.git"
+  commit: f3f3056d770d7fb4a21c610cee7936ee900569f5
+  patch:
+    - patches/fix-desktop.patch
+
+build:
+  kind: qmake

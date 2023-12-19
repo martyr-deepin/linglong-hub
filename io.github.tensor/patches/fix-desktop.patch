@@ -1,0 +1,30 @@
+diff --git a/tensor.desktop b/tensor.desktop
+new file mode 100644
+index 0000000..9e9dc52
+--- /dev/null
++++ b/tensor.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=tensor
++Exec=tensor %f
++Icon=icon
+diff --git a/tensor.pro b/tensor.pro
+index 239c1ed..ea9c9e1 100644
+--- a/tensor.pro
++++ b/tensor.pro
+@@ -33,3 +33,14 @@ DISTFILES += \
+     android/gradlew.bat
+ 
+ ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += tensor.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = android/res/drawable-hdpi/icon.png
++INSTALLS += icons
