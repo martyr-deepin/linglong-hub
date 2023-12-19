@@ -1,0 +1,20 @@
+package:
+  id: io.github.uni-entrance
+  name: uni-entrance
+  version: 0.0.1
+  kind: app
+  description: |
+    a GUI app written in C++ that allows easy finding the universities an individual can choose according to the matriculation exam marks
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/uitverse/uni-entrance.git
+  commit: 8e57f6244b46a7b8b281460c64a7a07890830719
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

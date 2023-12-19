@@ -1,0 +1,54 @@
+From 0a6fd86f5c11977bcddd1179d6cf51a316e0619d Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Dec 2023 20:30:33 +0800
+Subject: [PATCH] install
+
+---
+ ueis.desktop |  9 +++++++++
+ ueis.pro     | 12 +++++++++++-
+ 2 files changed, 20 insertions(+), 1 deletion(-)
+ create mode 100644 ueis.desktop
+
+diff --git a/ueis.desktop b/ueis.desktop
+new file mode 100644
+index 0000000..dcd0582
+--- /dev/null
++++ b/ueis.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=ueis
++Name=ueis
++Icon=icons_home
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/ueis.pro b/ueis.pro
+index 86fb554..8b7b923 100644
+--- a/ueis.pro
++++ b/ueis.pro
+@@ -36,8 +36,18 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     resources.qrc
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =ueis.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = icons_home.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
