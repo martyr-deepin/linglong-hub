@@ -1,0 +1,44 @@
+From a292a248c9ca6bb6795e3f4a0420f60b0ec11961 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Tue, 19 Dec 2023 18:31:45 +0800
+Subject: [PATCH] 1
+
+---
+ imgViewer.desktop | 8 ++++++++
+ imgViewer.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 imgViewer.desktop
+
+diff --git a/imgViewer.desktop b/imgViewer.desktop
+new file mode 100644
+index 0000000..9d1bfcc
+--- /dev/null
++++ b/imgViewer.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=imgViewer
++Name=imgViewer
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/imgViewer.pro b/imgViewer.pro
+index e1e70bd..3da93c2 100644
+--- a/imgViewer.pro
++++ b/imgViewer.pro
+@@ -54,3 +54,10 @@ FORMS += \
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =imgViewer.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

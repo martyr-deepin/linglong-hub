@@ -1,0 +1,21 @@
+package:
+  id: io.github.Qt-ImageViewer 
+  name: Qt-ImageViewer
+  version: 0.1.0 
+  kind: app
+  description: |
+    对图像进行渲染,变色,图像颜色分析,对具体颜色进行替换等.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/KStepanI1/Qt-ImageViewer.git"
+  commit: 908a161ad63ac68d45f4616b8451e947190e7dd1
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
