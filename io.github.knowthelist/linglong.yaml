@@ -1,0 +1,22 @@
+package:
+  id: io.github.knowthelist
+  name: knowthelist
+  version: 2.3.1
+  kind: app
+  description: |
+    Knowthelist - the awesome party music player.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends: 
+  - id: taglib/1.12.0
+
+source:
+  kind: git
+  url: https://github.com/knowthelist/knowthelist.git
+  commit: 32ec9a32500eba62906d8458b2356fb5d6f33c2b
+
+build:
+  kind: qmake
