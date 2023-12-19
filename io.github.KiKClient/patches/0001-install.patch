@@ -1,0 +1,45 @@
+From 23b271f9e17cde270677a0bc2dcb572796e7941b Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Dec 2023 18:08:20 +0800
+Subject: [PATCH] install
+
+---
+ KiKClient.desktop | 9 +++++++++
+ KiKClient.pro     | 7 +++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 KiKClient.desktop
+
+diff --git a/KiKClient.desktop b/KiKClient.desktop
+new file mode 100644
+index 0000000..ceadc68
+--- /dev/null
++++ b/KiKClient.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=KiKClient
++Name=KiKClient
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
++
+diff --git a/KiKClient.pro b/KiKClient.pro
+index 00cba65..d0bb943 100644
+--- a/KiKClient.pro
++++ b/KiKClient.pro
+@@ -35,3 +35,10 @@ HEADERS += \
+ 
+ FORMS += \
+         mainwindow.ui
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =KiKClient.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

@@ -1,0 +1,20 @@
+package:
+  id: io.github.KiKClient
+  name: KiKClient
+  version: 0.0.1
+  kind: app
+  description: |
+    Kółko i krzyżyk - klient
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/kabi097/KiKClient.git
+  commit: 05be9a8c14111f3ed42019f23e4eac5262ca5272
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
