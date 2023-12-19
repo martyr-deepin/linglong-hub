@@ -1,0 +1,44 @@
+From c0e21e7b58407ac87450bf6aefd812e7889dc7ff Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Dec 2023 21:05:14 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt         | 6 +++++-
+ build_dir/bike.desktop | 8 ++++++++
+ 2 files changed, 13 insertions(+), 1 deletion(-)
+ create mode 100644 build_dir/bike.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index cffcdc0..ef466d7 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -39,4 +39,8 @@ add_executable(bike
+ 
+ set_target_properties(bike PROPERTIES RUNTIME_OUTPUT_DIRECTORY "./bin")
+ 
+-target_link_libraries(bike Qt5::Core Qt5::Gui Qt5::Sql Qt5::Widgets)
+\ No newline at end of file
++target_link_libraries(bike Qt5::Core Qt5::Gui Qt5::Sql Qt5::Widgets)
++
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/bike.desktop DESTINATION share/applications)
++install(TARGETS bike DESTINATION bin)
+\ No newline at end of file
+diff --git a/build_dir/bike.desktop b/build_dir/bike.desktop
+new file mode 100644
+index 0000000..0f1cfcf
+--- /dev/null
++++ b/build_dir/bike.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=bike
++Name=bike
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+-- 
+2.33.1
+

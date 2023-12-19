@@ -1,0 +1,20 @@
+package:
+  id: io.github.BikeConstructor
+  name: BikeConstructor
+  version: 0.0.1
+  kind: app
+  description: |
+    §±§â§Ú§Ý§à§Ø§Ö§ß§Ú§Ö §ã §Ô§â§Ñ§æ§Ú§é§Ö§ã§Ü§Ú§Þ §Ú§ß§ä§Ö§â§æ§Ö§Û§ã§à§Þ §Õ§Ý§ñ §á§à§Õ§Ò§à§â§Ñ §Ü§à§Þ§á§Ý§Ö§Ü§ä§å§ð§ë§Ú§ç §Õ§Ý§ñ §Ó§Ö§Ý§à§ã§Ú§á§Ö§Õ§Ñ. §±§â§Ú§Ý§à§Ø§Ö§ß§Ú§Ö §ß§Ñ§á§Ú§ã§Ñ§ß§à §ß§Ñ Qt5, §Ú§ã§á§à§Ý§î§Ù§å§Ö§ä§ã§ñ §Ò§Ñ§Ù§Ñ §Õ§Ñ§ß§ß§í§ç
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/timerke/BikeConstructor.git
+  commit: 9ada1a78f9bb2ff36e25380520099cc985236837
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
