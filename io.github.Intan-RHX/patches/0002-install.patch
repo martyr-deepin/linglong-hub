@@ -1,0 +1,51 @@
+From 99b35128681ba23e5d0f3f81560d4829592b633a Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 7 Dec 2023 10:22:32 +0800
+Subject: [PATCH] install
+    
+---
+ IntanRHX.desktop |  9 +++++++++
+ IntanRHX.pro     | 13 +++++++++++++
+ 2 files changed, 22 insertions(+)
+ create mode 100644 IntanRHX.desktop
+
+diff --git a/IntanRHX.desktop b/IntanRHX.desktop
+new file mode 100644
+index 0000000..4ba47e5
+--- /dev/null
++++ b/IntanRHX.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=IntanRHX
++Name=IntanRHX
++icon=intan-rhx
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/IntanRHX.pro b/IntanRHX.pro
+index 458ae34..09f73c4 100644
+--- a/IntanRHX.pro
++++ b/IntanRHX.pro
+@@ -289,3 +289,16 @@ LIBS += -L$$PWD/libraries/Linux/ -lokFrontPanel # Opal Kelly Front Panel library
+ QMAKE_LFLAGS += '-Wl,-rpath,\'\$$ORIGIN\'' # Flag that at runtime, look for shared libraries (like
+                                            # libokFrontPanel.so) at the same directory as the binary
+ }
++
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =IntanRHX.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = images/intan-rhx.svg
++icons.path = $$PREFIX/share/icons
++lib.files = libraries/Linux/libokFrontPanel.so
++lib.path = $$BINDIR
++INSTALLS += target desktop icons lib
+-- 
+2.33.1
+

@@ -1,0 +1,26 @@
+From 9472094e0cac0ba1b5493e6f2c5136e7f3a28dda Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 7 Dec 2023 10:03:21 +0800
+Subject: [PATCH] install
+   
+---
+ Engine/Processing/DataFileReaders/fileperchannelmanager.cpp | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/Engine/Processing/DataFileReaders/fileperchannelmanager.cpp b/Engine/Processing/DataFileReaders/fileperchannelmanager.cpp
+index e3e25b7..224a627 100644
+--- a/Engine/Processing/DataFileReaders/fileperchannelmanager.cpp
++++ b/Engine/Processing/DataFileReaders/fileperchannelmanager.cpp
+@@ -27,7 +27,8 @@
+ //  See <http://www.intantech.com> for documentation and product information.
+ //
+ //------------------------------------------------------------------------------
+-
++#include <thread>
++#include <chrono>
+ #include <QFileInfo>
+ #include <iostream>
+ #include "rhxglobals.h"
+-- 
+2.33.1
+
