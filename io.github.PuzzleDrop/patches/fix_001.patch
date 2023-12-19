@@ -1,0 +1,21 @@
+--- ../PuzzleDrop.pro	2023-12-19 21:03:41.351198000 +0800
++++ ../PuzzleDrop.pro	2023-12-19 21:02:11.341574000 +0800
+@@ -16,3 +16,18 @@
+ # Input
+ HEADERS += main_window.hpp puzzle_drop.hpp high_scores.hpp
+ SOURCES += main.cpp main_window.cpp puzzle_drop.cpp high_scores.cpp
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++
++DESKTOP_FILE = ./PuzzleDrop.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=PuzzleDrop' >> $$DESKTOP_FILE")
++system("echo 'Comment=PuzzleDrop.' >> $$DESKTOP_FILE")
++system("echo 'Exec=PuzzleDrop' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
