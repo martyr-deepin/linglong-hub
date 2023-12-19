@@ -1,0 +1,29 @@
+diff --git a/src/ElementDots.desktop b/src/ElementDots.desktop
+new file mode 100644
+index 0000000..20b5353
+--- /dev/null
++++ b/src/ElementDots.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=ElementDots
++Exec=ElementDots %f
++Icon=Chessboard_128x128
+diff --git a/src/src.pro b/src/src.pro
+index 10b8870..13c236d 100644
+--- a/src/src.pro
++++ b/src/src.pro
+@@ -64,3 +64,13 @@ win32|unix {
+     RC_FILE = $$PWD/resources_win.rc
+ }
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += ElementDots.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = res/logo/Chessboard_128x128.png
++INSTALLS += icons

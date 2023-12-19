@@ -1,0 +1,21 @@
+package:
+  id: io.github.element-dots
+  name: element-dots
+  version: 1.0.0
+  kind: app
+  description: |
+    An extended Conway's Game of Life with the Four Elements (earth, air, water & fire).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/setvisible/element-dots.git"
+  commit: 7e79a081fd1e87336a52b4dc74ad79c8fe8db410
+  patch:
+    - patches/fix-desktop.patch
+
+build:
+  kind: qmake
