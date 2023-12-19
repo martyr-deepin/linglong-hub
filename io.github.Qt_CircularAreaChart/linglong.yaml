@@ -1,0 +1,22 @@
+package:
+  id: io.github.Qt_CircularAreaChart 
+  name: Qt_CircularAreaChart
+  version: 0.0.1
+  kind: app
+  description: |
+    Pie chart to visualize data.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/YassineProDev/Qt_CircularAreaChart.git"
+  commit: ab6e40bfff4562771b73df2b03c9cb7cba439c56
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,43 @@
+From c5922b3727b8dd9f8a092bf993c391c0b3a8ec38 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Tue, 19 Dec 2023 15:33:05 +0800
+Subject: [PATCH] 1
+
+---
+ CircularAreaChart.desktop | 8 ++++++++
+ CircularAreaChart.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 CircularAreaChart.desktop
+
+diff --git a/CircularAreaChart.desktop b/CircularAreaChart.desktop
+new file mode 100644
+index 0000000..efe9d45
+--- /dev/null
++++ b/CircularAreaChart.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=CircularAreaChart
++Name=CircularAreaChart
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/CircularAreaChart.pro b/CircularAreaChart.pro
+index 5016b15..71a3642 100644
+--- a/CircularAreaChart.pro
++++ b/CircularAreaChart.pro
+@@ -34,3 +34,10 @@ HEADERS += \
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =CircularAreaChart.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+
