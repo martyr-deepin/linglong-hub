@@ -1,0 +1,25 @@
+--- ../mystiq.pro	2023-12-19 17:43:34.539218000 +0800
++++ ../mystiq.pro	2023-12-19 17:42:18.643648000 +0800
+@@ -166,17 +166,17 @@
+     SOURCES -= services/powermanagement-dummy.cpp
+     SOURCES += services/powermanagement-linux.cpp
+     # Install
+-    target.path = /usr/bin/
+-    icon.path = /usr/share/icons/hicolor/scalable/apps/
++    target.path = $$PREFIX/bin/
++    icon.path = $$PREFIX/share/icons/hicolor/scalable/apps/
+     icon.files += icons/mystiq.svg
+     
+-    man.path = /usr/share/man/man1
++    man.path = $$PREFIX/share/man/man1
+     man.files += man/mystiq.1.gz
+     
+-    appdata.path = /usr/share/metainfo
++    appdata.path = $$PREFIX/share/metainfo
+     appdata.files += metainfo/mystiq.appdata.xml
+     
+-    desktop.path = /usr/share/applications/
++    desktop.path = $$PREFIX/share/applications/
+     desktop.files += mystiq.desktop
+     
+     INSTALLS += target icon desktop man appdata
