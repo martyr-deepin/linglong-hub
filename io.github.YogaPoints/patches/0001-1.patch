@@ -1,0 +1,47 @@
+From 79a0d20f330c4736a63d0554ed06bb7880deea72 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Tue, 19 Dec 2023 20:40:17 +0800
+Subject: [PATCH] 1
+
+---
+ YogaPoints.pro      | 10 ++++++++++
+ YogaPoints2.desktop |  9 +++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 YogaPoints2.desktop
+
+diff --git a/YogaPoints.pro b/YogaPoints.pro
+index a089885..35fe9e6 100644
+--- a/YogaPoints.pro
++++ b/YogaPoints.pro
+@@ -39,3 +39,13 @@ HEADERS  += views/mainwindow.h \
+ 
+ RESOURCES += \
+     resources.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =YogaPoints2.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = images/trash.svg
++INSTALLS += icons
+diff --git a/YogaPoints2.desktop b/YogaPoints2.desktop
+new file mode 100644
+index 0000000..8fcdc95
+--- /dev/null
++++ b/YogaPoints2.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=YogaPoints2
++Name=YogaPoints2
++StartupNotify=false
++Terminal=false
++Icon=trash
++Type=Application
++X-Deepin-Vendor=user-custom
+-- 
+2.33.1
+
