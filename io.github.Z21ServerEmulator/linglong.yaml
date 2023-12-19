@@ -1,0 +1,20 @@
+package:
+  id: io.github.Z21ServerEmulator
+  name: Z21ServerEmulator
+  version: 0.0.1
+  kind: app
+  description: |
+    Computer Z21 Emulator based on Arduino sketch from Philipp Gahtow
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/gfgit/Z21ServerEmulator.git
+  commit: f9bf6298bb144d44d2f4e57328eebbb1f958688e
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake

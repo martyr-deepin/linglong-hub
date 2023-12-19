@@ -1,0 +1,40 @@
+From b5410b1d24e4cf927acb6f4105b154acb57407d0 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Dec 2023 21:19:16 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt                      | 3 +++
+ build_dir/Z21ServerEmulator.desktop | 8 ++++++++
+ 2 files changed, 11 insertions(+)
+ create mode 100644 build_dir/Z21ServerEmulator.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 7ee2aa8..df458a3 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -94,3 +94,6 @@ install(TARGETS Z21ServerEmulator
+ if(QT_VERSION_MAJOR EQUAL 6)
+     qt_finalize_executable(Z21ServerEmulator)
+ endif()
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/Z21ServerEmulator.desktop DESTINATION share/applications)
++install(TARGETS Z21ServerEmulator DESTINATION bin)
+diff --git a/build_dir/Z21ServerEmulator.desktop b/build_dir/Z21ServerEmulator.desktop
+new file mode 100644
+index 0000000..bc823d8
+--- /dev/null
++++ b/build_dir/Z21ServerEmulator.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Z21ServerEmulator
++Name=Z21ServerEmulator
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+-- 
+2.33.1
+
