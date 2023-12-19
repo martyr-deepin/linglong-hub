@@ -1,0 +1,21 @@
+package:
+  id: io.github.munt
+  name: munt
+  version: 2.7.2
+  kind: app
+  description: |
+    A multi-platform software synthesiser emulating pre-GM MIDI devices such as the Roland MT-32, CM-32L, CM-64 and LAPC-I. In no way endorsed by or affiliated with Roland Corp.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/munt/munt.git
+  commit: 356f3088deff299f9b973484ea9ec89234ce31a0
+
+build:
+  kind: cmake
+  
+
