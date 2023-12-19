@@ -1,0 +1,41 @@
+From 2811389b9df57add56714f26cbd56b36ef2b5710 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 8 Dec 2023 20:01:53 +0800
+Subject: [PATCH] install
+ 
+---
+ CMakeLists.txt     | 4 ++--
+ lib/CMakeLists.txt | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 21f8a05..6d97d0c 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -20,8 +20,8 @@ find_package(Qt5SerialPort REQUIRED)
+ find_package(Qt5Positioning REQUIRED)
+ find_package(Qt5LinguistTools REQUIRED)
+ find_package(LIBUSB_1 REQUIRED)
+-find_package(YAMLCPP REQUIRED)
+-
++find_package(yaml-cpp REQUIRED)
++include_directories(${YAML_CPP_INCLUDEDIR})
+ if (${BUILD_MAN})
+   find_program(XSLTPROC_EXECUTABLE xsltproc DOC "xsltproc for man-page generation." REQUIRED)
+ endif(${BUILD_MAN})
+diff --git a/lib/CMakeLists.txt b/lib/CMakeLists.txt
+index 6b28838..9137afc 100644
+--- a/lib/CMakeLists.txt
++++ b/lib/CMakeLists.txt
+@@ -76,7 +76,7 @@ set_target_properties(libdmrconf PROPERTIES
+   VERSION "${PROJECT_VERSION}"
+   SOVERSION "${PROJECT_VERSION_MAJOR}")
+ target_link_libraries(libdmrconf ${CORE_LIBS})
+-
++target_link_libraries(libdmrconf ${YAML_CPP_LIBRARIES})
+ install(TARGETS libdmrconf DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR})
+ install(FILES ${libdmrconf_HEADERS} DESTINATION ${CMAKE_INSTALL_FULL_INCLUDEDIR}/libdmrconf)
+ install(FILES ${libdmrconf_MOC_HEADERS} DESTINATION ${CMAKE_INSTALL_FULL_INCLUDEDIR}/libdmrconf)
+-- 
+2.33.1
+
