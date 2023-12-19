@@ -1,0 +1,25 @@
+package:
+  id: io.github.QTransfer
+  name: QTransfer
+  version: 1.1.1
+  kind: app
+  description: |
+    Small C++ Application to Transfer a file.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/lostjared/QTransfer.git
+  commit: b5ebf08d53163b19ea378994946d67f8c6cc0628
+  patch: patches/fix_001.patch
+
+build:
+  kind: cmake
+  manual :
+    configure: |
+      cd src
+      cmake -B ${build_dir} ${conf_args} ${extra_args}

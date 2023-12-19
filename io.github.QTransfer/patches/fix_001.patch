@@ -1,0 +1,21 @@
+--- ../src/QTransfer.pro	2023-12-19 21:19:25.404560000 +0800
++++ ../src/QTransfer.pro	2023-12-19 21:19:05.140705000 +0800
+@@ -16,3 +16,18 @@
+ # Input
+ HEADERS += transfer_window.h
+ SOURCES += main.cpp transfer_window.cpp
++target.path = $$PREFIX/bin # /opt/$${TARGET}/bin
++INSTALLS += target
++
++DESKTOP_FILE = ./QTransfer.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=QTransfer' >> $$DESKTOP_FILE")
++system("echo 'Comment=QTransfer.' >> $$DESKTOP_FILE")
++system("echo 'Exec=QTransfer' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
