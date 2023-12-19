@@ -1,0 +1,25 @@
+package:
+  id: io.github.azconvert
+  name: azconvert
+  version: 0.0.1
+  kind: app
+  description: |
+    AzConvert is an automatic transliteration program for Azerbaijani language.Converting between Latin and Arabic scripts is hard, because of different rules of writing. AzConvert aimed to fix this problem and provide an easy and automated solution.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/mousamk/azconvert.git"
+  commit: cf101b4d6180ca72482697f408593e6e09ed45a2
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd main
+      qmake -makefile ${conf_args} ${extra_args}

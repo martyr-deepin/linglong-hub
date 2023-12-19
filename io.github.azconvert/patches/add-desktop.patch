@@ -1,0 +1,54 @@
+diff --git a/main/AzConvert.desktop b/main/AzConvert.desktop
+new file mode 100644
+index 0000000..1aee853
+--- /dev/null
++++ b/main/AzConvert.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=AzConvert
++Exec=AzConvert %f
++Icon=Convert
+diff --git a/main/AzConvert.pro b/main/AzConvert.pro
+index b7524e0..a9c2bb6 100644
+--- a/main/AzConvert.pro
++++ b/main/AzConvert.pro
+@@ -89,10 +89,24 @@ RC_FILE = AzConvert.rc
+ 
+ DEFINES += DEBUG_BUILD
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += AzConvert.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = res/Convert.png 
++INSTALLS += icons
++
++otherfiles.path = $${PREFIX}/share
++otherfiles.files = ../otherfiles/
++INSTALLS += otherfiles
+ 
+ # only for unix:
+ #unix {
+-    # in debug mode...
++#     in debug mode...
+ #    CONFIG(debug, debug|release) {
+ #        DESTDIR = debug
+ #    }
+diff --git a/main/dbservice.cpp b/main/dbservice.cpp
+index 9302d1b..db718ae 100644
+--- a/main/dbservice.cpp
++++ b/main/dbservice.cpp
+@@ -43,7 +43,7 @@ bool DbService::loadDb()
+     QString dbFilePath = QCoreApplication::applicationDirPath() + QDir::separator();
+ 
+ #ifdef DEBUG_BUILD
+-    dbFilePath += "../otherfiles/";
++    dbFilePath += "../share/otherfiles/";
+     //qDebug() << "HII";
+ #endif
+        dbFilePath += "db.sqlite";
