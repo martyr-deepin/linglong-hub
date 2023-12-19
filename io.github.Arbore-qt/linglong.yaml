@@ -1,0 +1,29 @@
+package:
+  id: io.github.Arbore-qt
+  name: Arbore-qt
+  version: 0.0.1
+  kind: app
+  description: |
+    Friend-to-friend filesharing app to save the world from dystopia.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/MichaelMure/Arbore-qt.git
+  commit: 8329ad1b416dfd43fcc07b29821315f7916cc0a2
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
