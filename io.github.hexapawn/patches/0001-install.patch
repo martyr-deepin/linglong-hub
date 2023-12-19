@@ -1,0 +1,47 @@
+From 27cb1621512beb3f8d73485ef11de4ee706a166a Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Dec 2023 18:54:18 +0800
+Subject: [PATCH] install
+
+---
+ hexapawn.desktop | 9 +++++++++
+ hexapawn.pro     | 9 +++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 hexapawn.desktop
+
+diff --git a/hexapawn.desktop b/hexapawn.desktop
+new file mode 100644
+index 0000000..1d1129d
+--- /dev/null
++++ b/hexapawn.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=hexapawn
++Name=hexapawn
++Icon=black_pawn
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/hexapawn.pro b/hexapawn.pro
+index 57d309e..9f5eb3e 100644
+--- a/hexapawn.pro
++++ b/hexapawn.pro
+@@ -21,3 +21,12 @@ HEADERS += \
+     src/GameControls.hpp
+ 
+ RESOURCES += res/res.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =hexapawn.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = res/black_pawn.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+

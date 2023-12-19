@@ -1,0 +1,20 @@
+package:
+  id: io.github.hexapawn
+  name: hexapawn
+  version: 0.0.1
+  kind: app
+  description: |
+    Hexapawn game (Qt5 GUI, computer AI opponent)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/olexander-movchan/hexapawn.git
+  commit: 2ce9c734fc68a544c977ce9a7c00e65a17038d70
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
