@@ -1,0 +1,29 @@
+package:
+  id: io.github.Qt_WireShark
+  name: Qt_WireShark
+  version: 0.0.1
+  kind: app
+  description: |
+    A simple WireShark based on Linux Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Fujihai/Qt_WireShark.git"
+  commit: daa56b3beef57599502f9d5b84300650b62b6cb7
+  patch:
+    - patches/fix-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd Qt_WireShark
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

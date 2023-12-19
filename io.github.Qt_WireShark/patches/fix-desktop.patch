@@ -1,0 +1,25 @@
+diff --git a/Qt_WireShark/Qt_WireShark.desktop b/Qt_WireShark/Qt_WireShark.desktop
+new file mode 100644
+index 0000000..47212c7
+--- /dev/null
++++ b/Qt_WireShark/Qt_WireShark.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=Qt_WireShark
++Exec=Qt_WireShark %f
+diff --git a/Qt_WireShark/Qt_WireShark.pro b/Qt_WireShark/Qt_WireShark.pro
+index a772828..4b697ed 100644
+--- a/Qt_WireShark/Qt_WireShark.pro
++++ b/Qt_WireShark/Qt_WireShark.pro
+@@ -29,3 +29,10 @@ SOURCES += main.cpp\
+ HEADERS  += mainwindow.h
+ 
+ FORMS    += mainwindow.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += Qt_WireShark.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
