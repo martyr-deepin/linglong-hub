@@ -1,0 +1,24 @@
+--- ../colormap.pro	2023-12-19 20:20:37.937028000 +0800
++++ ../colormap.pro	2023-12-19 20:19:18.711729000 +0800
+@@ -50,9 +50,20 @@
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
++DESKTOP_FILE = ./colormap.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=colormap' >> $$DESKTOP_FILE")
++system("echo 'Comment=colormap.' >> $$DESKTOP_FILE")
++system("echo 'Exec=colormap' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
+ 
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
+ RESOURCES += \
+     images.qrc
+ 
