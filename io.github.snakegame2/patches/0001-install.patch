@@ -1,0 +1,54 @@
+From 531990fa7a3133f9a5a3a16a69c933365a722b0a Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Dec 2023 18:04:29 +0800
+Subject: [PATCH] install
+
+---
+ snakegame2.desktop |  9 +++++++++
+ snakegame2.pro     | 12 +++++++++++-
+ 2 files changed, 20 insertions(+), 1 deletion(-)
+ create mode 100644 snakegame2.desktop
+
+diff --git a/snakegame2.desktop b/snakegame2.desktop
+new file mode 100644
+index 0000000..74aa0cd
+--- /dev/null
++++ b/snakegame2.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=snakegame2
++Name=snakegame2
++Icon=icon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/snakegame2.pro b/snakegame2.pro
+index 6e72546..6f3a4e9 100644
+--- a/snakegame2.pro
++++ b/snakegame2.pro
+@@ -28,8 +28,18 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+ 	res.qrc
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =snakegame2.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = icon.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+

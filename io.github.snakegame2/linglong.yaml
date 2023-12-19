@@ -1,0 +1,20 @@
+package:
+  id: io.github.snakegame2
+  name: snakegame2
+  version: 0.2.0
+  kind: app
+  description: |
+    Ã∞≥‘…ﬂ
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Ofnoname/snakegame2.git
+  commit: 11ca8c16604e0671e81fa1619fa1ad30d56225c1
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
