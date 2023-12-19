@@ -1,0 +1,19 @@
+package:
+  id: io.github.Saaghar
+  name: Saaghar
+  version: 2.5.0.1
+  kind: app
+  description: |
+    Saaghar is an opensource Persian poetry software, it's based on Qt C++ and it's cross-platform, and available for majaor desktop's operating systems. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/srazi/Saaghar.git
+  commit: 8c16b8de1ba7817dd3a3c6a069bfc1a51185cfe9
+
+build:
+  kind: qmake
