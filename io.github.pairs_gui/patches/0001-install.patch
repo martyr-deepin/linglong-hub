@@ -1,0 +1,50 @@
+From 4f02a40d2d03013611884fe40214be62c5145489 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Dec 2023 18:25:30 +0800
+Subject: [PATCH] install
+
+---
+ pairs_gui.desktop |  9 +++++++++
+ pairs_gui.pro     | 12 +++++++++++-
+ 2 files changed, 20 insertions(+), 1 deletion(-)
+ create mode 100644 pairs_gui.desktop
+
+diff --git a/pairs_gui.desktop b/pairs_gui.desktop
+new file mode 100644
+index 0000000..0f60574
+--- /dev/null
++++ b/pairs_gui.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=pairs_gui
++Name=pairs_gui
++Icon=app_icon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/pairs_gui.pro b/pairs_gui.pro
+index 6f65bb0..a204a39 100644
+--- a/pairs_gui.pro
++++ b/pairs_gui.pro
+@@ -35,5 +35,15 @@ RESOURCES += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =pairs_gui.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = icons/app_icon.ico
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
