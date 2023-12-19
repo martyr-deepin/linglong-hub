@@ -1,0 +1,34 @@
+diff --git a/boxes-server.desktop b/boxes-server.desktop
+index 119bccd..e8232fb 100644
+--- a/boxes-server.desktop
++++ b/boxes-server.desktop
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ Name=Boxes Server
+-Exec=boxes-server
++Exec=boxes-server %f
+ Icon=ic_app
+ Type=Application
+ Categories=Utility;
+diff --git a/boxes-server.pro b/boxes-server.pro
+index e4c1ab4..cfe5e36 100644
+--- a/boxes-server.pro
++++ b/boxes-server.pro
+@@ -39,8 +39,17 @@ FORMS += \
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+ else: unix:!android: target.path = /opt/$${TARGET}/bin
++target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += boxes-server.desktop
++INSTALLS += desktop
++
++icons.path = $${PREFIX}/share/icons
++icons.files = ic_app.png
++INSTALLS += icons
++
+ RESOURCES += \
+     resources.qrc
+ 
