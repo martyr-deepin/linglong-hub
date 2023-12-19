@@ -1,0 +1,30 @@
+diff --git a/MarkSentence.pro b/MarkSentence.pro
+index 5d65420..5384594 100644
+--- a/MarkSentence.pro
++++ b/MarkSentence.pro
+@@ -50,3 +50,14 @@ FORMS += \
+ RESOURCES += \
+     ui/appicon/icon.qrc \
+     ui/qdarkstyle/style.qrc
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += marksentence.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = ui/appicon/main_title.ico
++INSTALLS += icons
+diff --git a/marksentence.desktop b/marksentence.desktop
+new file mode 100644
+index 0000000..790773e
+--- /dev/null
++++ b/marksentence.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=marksentence
++Exec=marksentence %f
++Icon=main_title
