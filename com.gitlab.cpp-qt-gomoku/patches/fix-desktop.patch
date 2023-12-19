@@ -1,0 +1,25 @@
+diff --git a/gomoku.desktop b/gomoku.desktop
+new file mode 100644
+index 0000000..9133954
+--- /dev/null
++++ b/gomoku.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=gomoku
++Exec=gomoku %f
+diff --git a/gomoku.pro b/gomoku.pro
+index 48e27c8..cd568b3 100644
+--- a/gomoku.pro
++++ b/gomoku.pro
+@@ -32,3 +32,10 @@ HEADERS += \
+     slot.h \
+     net.h \
+     step.h
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += gomoku.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target

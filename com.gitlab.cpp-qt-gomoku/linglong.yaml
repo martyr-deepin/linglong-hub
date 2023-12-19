@@ -1,0 +1,21 @@
+package:
+  id: com.gitlab.cpp-qt-gomoku
+  name: cpp-qt-gomoku
+  version: 0.0.1
+  kind: app
+  description: |
+    Yet another gomoku implementation:Cpp-Qt5
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitlab.com/youry.in.ua/cpp-qt-gomoku.git"
+  commit: 018d4a064c931a3f42a66e567de9b5252304373f
+  patch:
+    - patches/fix-desktop.patch
+
+build:
+  kind: qmake
