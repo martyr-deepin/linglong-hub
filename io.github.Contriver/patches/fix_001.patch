@@ -1,0 +1,23 @@
+--- ../Contriver.pro	2023-12-19 19:26:26.030188000 +0800
++++ ../Contriver.pro	2023-12-19 19:24:09.793980000 +0800
+@@ -27,8 +27,19 @@
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
++DESKTOP_FILE = ./Contriver.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=Contriver' >> $$DESKTOP_FILE")
++system("echo 'Comment=Contriver.' >> $$DESKTOP_FILE")
++system("echo 'Exec=Contriver' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
+ 
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
+ RESOURCES += \
+     resources.qrc
