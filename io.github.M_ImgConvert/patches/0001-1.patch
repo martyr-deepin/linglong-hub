@@ -1,0 +1,43 @@
+From ca5418fc155c9e7ae4080d33e0599183dd7298c4 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Tue, 19 Dec 2023 18:04:32 +0800
+Subject: [PATCH] 1
+
+---
+ IconMaker.desktop | 8 ++++++++
+ IconMaker.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 IconMaker.desktop
+
+diff --git a/IconMaker.desktop b/IconMaker.desktop
+new file mode 100644
+index 0000000..0d78b83
+--- /dev/null
++++ b/IconMaker.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=IconMaker
++Name=IconMaker
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/IconMaker.pro b/IconMaker.pro
+index 5196cdd..bb649fc 100644
+--- a/IconMaker.pro
++++ b/IconMaker.pro
+@@ -26,3 +26,10 @@ win32: RC_FILE = myapp.rc
+ 
+ DISTFILES += \
+     myapp.rc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =IconMaker.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+

@@ -1,0 +1,22 @@
+package:
+  id: io.github.M_ImgConvert 
+  name: M_ImgConvert
+  version: 0.0.1
+  kind: app
+  description: |
+    用于从另一种图像格式制作一种图像格式的应用程序.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/ElrondfromRussia/M_ImgConvert.git"
+  commit: 8769fc560b5104a5892c6b20cf818c1637410d8b
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
