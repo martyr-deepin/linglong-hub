@@ -1,0 +1,40 @@
+From ce59734f2b521a6d0d61aeab22f6cf7392358f86 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 17 Dec 2023 12:48:05 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt               | 3 +++
+ build_dir/ecv-queens.desktop | 8 ++++++++
+ 2 files changed, 11 insertions(+)
+ create mode 100644 build_dir/ecv-queens.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index e096c10..4677112 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -25,3 +25,6 @@ target_link_libraries(${PROJECT_NAME} PRIVATE ecv Qt5::Widgets Qt5::Svg)
+ 
+ target_compile_options    (${PROJECT_NAME} PRIVATE -O0 -Werror -Wall -Wextra -pedantic)
+ target_compile_features   (${PROJECT_NAME} PRIVATE cxx_std_17)
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/ecv-queens.desktop DESTINATION share/applications)
++install(TARGETS ecv-queens DESTINATION bin)
+\ No newline at end of file
+diff --git a/build_dir/ecv-queens.desktop b/build_dir/ecv-queens.desktop
+new file mode 100644
+index 0000000..9af165e
+--- /dev/null
++++ b/build_dir/ecv-queens.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=ecv-queens
++Name=ecv-queens
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+-- 
+2.33.1
+

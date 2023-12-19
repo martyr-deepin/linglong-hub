@@ -1,0 +1,20 @@
+package:
+  id: io.github.ecv-queens
+  name: ecv-queens
+  version: 0.0.1
+  kind: app
+  description: |
+    ECV Application : N Queens
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0  
+
+source:
+  kind: git
+  url: https://github.com/MericLuc/ecv-queens.git
+  commit: d80d43ebe9207b87814352e80964f3f8362b6fcc
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
