@@ -1,0 +1,20 @@
+package:
+  id: io.github.tarsnap-gui
+  name: tarsnap-gui
+  version: 1.0.0
+  kind: app
+  description: |
+    Cross-platform GUI for the Tarsnap backup service.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/shinnok/tarsnap-gui.git
+  commit: 72ea64fba0118c1540e7c851fe8e148e9d561b14
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

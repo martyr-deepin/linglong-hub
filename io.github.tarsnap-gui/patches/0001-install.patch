@@ -1,0 +1,48 @@
+From 68b742c0627af8f3926c8765f42afce878de50f3 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 17 Dec 2023 14:09:49 +0800
+Subject: [PATCH] install
+
+---
+ Tarsnap.pro         | 10 ++++++++++
+ tarsnap-gui.desktop |  9 +++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 tarsnap-gui.desktop
+
+diff --git a/Tarsnap.pro b/Tarsnap.pro
+index ae03319..64a064a 100644
+--- a/Tarsnap.pro
++++ b/Tarsnap.pro
+@@ -279,3 +279,13 @@ test_clean.commands =	for D in $${UNIT_TESTS}; do			\
+ clean.depends += test_clean
+ 
+ QMAKE_EXTRA_TARGETS += test test_clean clean test_home_prep
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =tarsnap-gui.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = resources/logos/tarsnap-icon.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+diff --git a/tarsnap-gui.desktop b/tarsnap-gui.desktop
+new file mode 100644
+index 0000000..98c6458
+--- /dev/null
++++ b/tarsnap-gui.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=tarsnap-gui
++Name=tarsnap-gui
++Icon=tarsnap-icon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+-- 
+2.33.1
+
