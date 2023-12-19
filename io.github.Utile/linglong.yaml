@@ -1,0 +1,20 @@
+package:
+  id: io.github.Utile
+  name: Utile
+  version: 0.0.1
+  kind: app
+  description: |
+    Utile is a Windows application for purchasing bus tickets, and managing tickets, based on Qt GUI
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/anas3a/Utile.git
+  commit: 1a31bec34a09406f356641ff5a47ea3500f92d8a
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

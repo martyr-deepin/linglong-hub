@@ -1,0 +1,51 @@
+From 2bea08321ce00eb870c7e6cbaf2686b086668a6b Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Dec 2023 20:40:01 +0800
+Subject: [PATCH] install
+
+---
+ utile.desktop |  8 ++++++++
+ utile.pro     | 10 +++++++++-
+ 2 files changed, 17 insertions(+), 1 deletion(-)
+ create mode 100644 utile.desktop
+
+diff --git a/utile.desktop b/utile.desktop
+new file mode 100644
+index 0000000..f203e80
+--- /dev/null
++++ b/utile.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=utile
++Name=utile
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/utile.pro b/utile.pro
+index 2b770c4..6ba9e53 100644
+--- a/utile.pro
++++ b/utile.pro
+@@ -41,8 +41,16 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     resources.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =utile.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
+-- 
+2.33.1
+
