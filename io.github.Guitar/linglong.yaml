@@ -1,0 +1,28 @@
+package:
+  id: io.github.Guitar
+  name: Guitar
+  version: 1.2.0
+  kind: app
+  description: |
+    Git GUI Client.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/soramimi/Guitar.git"
+  commit: eb223f90ed7d1cbf66a6d483d6ee5e4598f07e8d
+  patch:
+    - patches/fix-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      qmake -makefile Guitar.pro ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

@@ -1,0 +1,30 @@
+diff --git a/Guitar.pri b/Guitar.pri
+index 45c8de1..118addd 100644
+--- a/Guitar.pri
++++ b/Guitar.pri
+@@ -502,3 +502,13 @@ win32 {
+ 
+ include(filetype/filetype.pri)
+ 
++desktop.path = $$PREFIX/share/applications
++desktop.files += LinuxDesktop/guitar.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = LinuxDesktop/Guitar.svg
++INSTALLS += icons
+diff --git a/LinuxDesktop/guitar.desktop b/LinuxDesktop/guitar.desktop
+index d748bfe..d449d2a 100644
+--- a/LinuxDesktop/guitar.desktop
++++ b/LinuxDesktop/guitar.desktop
+@@ -3,5 +3,5 @@ Type=Application
+ Name=Guitar
+ Comment=Graphical git client
+ Categories=Development;
+-Exec=guitar
+-Icon=guitar
++Exec=Guitar %f
++Icon=Guitar
