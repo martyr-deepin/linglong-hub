@@ -1,0 +1,23 @@
+package:
+  id: io.github.qdacco
+  name: qdacco
+  version: 1.1.1
+  kind: app
+  description: |
+    Open Source Dictionari.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: cmake/3.28.0
+
+source:
+  kind: git
+  url: https://github.com/cpina/qdacco.git
+  commit: 108368da22fc0c2f47163e90ecfc13f208ed065f
+  patch: patches/fix_001.patch
+
+build:
+  kind: cmake

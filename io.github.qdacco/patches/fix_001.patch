@@ -1,0 +1,16 @@
+--- ../gui/CMakeLists.txt	2023-12-19 17:22:34.269758000 +0800
++++ ../gui/CMakeLists.txt	2023-12-19 17:19:34.622958000 +0800
+@@ -72,4 +72,13 @@
+ target_link_libraries( qdacco ${Qt5Xml_LIBRARIES} ${Qt5DBus_LIBRARIES})
+ 
+ install_targets(/bin qdacco)	
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=qdacco
++Exec=qdacco
++Categories=Utility;
++")
+ 
++file(WRITE ${CMAKE_BINARY_DIR}/qdacco.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/qdacco.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
