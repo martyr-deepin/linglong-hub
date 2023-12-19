@@ -1,0 +1,22 @@
+package:
+  id: io.github.timeslicer 
+  name: timeslicer
+  version: 0.0.1
+  kind: app
+  description: |
+   Graphical tool for creating Timeslice images from timelapses. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/petrinm/timeslicer.git"
+  commit: 45f437083d9f95decc868af0aff26b06797a976f
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
