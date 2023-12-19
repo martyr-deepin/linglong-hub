@@ -1,0 +1,20 @@
+package:
+  id: io.github.maProc
+  name: maProc
+  version: 0.2.5.1
+  kind: app
+  description: |
+   being able to change the memory with write permission, you can manipulate the process by sending a SIGNAL and can stop or pause it process.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/mentebinaria/maProc.git
+  commit: dee8d4c17bc7f236d98e3f734fd61c35502b7137
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake

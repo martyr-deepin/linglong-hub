@@ -1,0 +1,43 @@
+From cc043fb0b0251fecb80aa8975a2678299f19b6e1 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 6 Dec 2023 14:00:06 +0800
+Subject: [PATCH] install
+ 
+---
+ CMakeLists.txt           | 5 ++++-
+ build_dir/maProc.desktop | 8 ++++++++
+ 2 files changed, 12 insertions(+), 1 deletion(-)
+ create mode 100644 build_dir/maProc.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index abe1a3a..2c35cbc 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -81,4 +81,7 @@ set_target_properties(maProc PROPERTIES
+ 
+ if(QT_VERSION_MAJOR EQUAL 6)
+     qt_finalize_executable(maProc)
+-endif()
+\ No newline at end of file
++endif()
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/maProc.desktop DESTINATION share/applications)
++install(TARGETS maProc DESTINATION bin)
+\ No newline at end of file
+diff --git a/build_dir/maProc.desktop b/build_dir/maProc.desktop
+new file mode 100644
+index 0000000..e7542ab
+--- /dev/null
++++ b/build_dir/maProc.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=maProc
++Name=maProc
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+-- 
+2.33.1
+
