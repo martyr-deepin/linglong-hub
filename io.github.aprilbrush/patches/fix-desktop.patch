@@ -1,0 +1,25 @@
+diff --git a/aprilbrush.desktop b/aprilbrush.desktop
+new file mode 100644
+index 0000000..2c53259
+--- /dev/null
++++ b/aprilbrush.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=aprilbrush
++Exec=aprilbrush %f
+diff --git a/aprilbrush.pro b/aprilbrush.pro
+index 5b8247f..53a144a 100644
+--- a/aprilbrush.pro
++++ b/aprilbrush.pro
+@@ -56,3 +56,10 @@ DISTFILES += \
+     src/js/brush-lib.js \
+     src/qml/components/MessageDialogBase.qml \
+     src/qml/components/style/MainTabViewStyle.qml
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += aprilbrush.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
