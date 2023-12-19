@@ -1,0 +1,24 @@
+package:
+  id: io.github.qdmr
+  name: qdmr
+  version: 0.11.3.1
+  kind: app
+  description: |
+    A GUI application for configuring and programming cheap DMR radios under Linux and MacOS X.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: yaml-cpp/0.8.0
+  - id: doxygen/1.9.8
+
+source:
+  kind: git
+  url: https://github.com/hmatuschek/qdmr.git
+  commit: c557f842074b081f604822c6536fc14412e90340
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
