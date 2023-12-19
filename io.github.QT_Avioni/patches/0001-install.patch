@@ -1,0 +1,57 @@
+From 4a8572f314a5e0ed51b4a7e07e168beba8d54eb0 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Dec 2023 18:12:37 +0800
+Subject: [PATCH] install
+
+---
+ Avioni.desktop |  9 +++++++++
+ Avioni.pro     | 15 ++++++++++++++-
+ 2 files changed, 23 insertions(+), 1 deletion(-)
+ create mode 100644 Avioni.desktop
+
+diff --git a/Avioni.desktop b/Avioni.desktop
+new file mode 100644
+index 0000000..144da7c
+--- /dev/null
++++ b/Avioni.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Avioni
++Name=Avioni
++Icon=missile
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/Avioni.pro b/Avioni.pro
+index d7d2dc6..070c24b 100644
+--- a/Avioni.pro
++++ b/Avioni.pro
+@@ -36,8 +36,21 @@ FORMS +=
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     resource.qrc
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Avioni.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++
++´øiconµÄ
++icons.files =missile.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
