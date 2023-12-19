@@ -1,0 +1,22 @@
+package:
+  id: io.github.ImagePixelator 
+  name: ImagePixelator
+  version: 0.0.1
+  kind: app
+  description: |
+    Program for pixelating images with a customizable cell size. Written in Qt/C++.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/Extender/ImagePixelator.git"
+  commit: d1ae600a1ce06499bcd5886e049b43a0e990ca3c
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
