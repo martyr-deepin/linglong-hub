@@ -1,0 +1,47 @@
+From b3724b9d60b2fd37cfe66efc6a1e0344dbb7223a Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Dec 2023 21:13:26 +0800
+Subject: [PATCH] install
+
+---
+ QTSM.desktop |  8 ++++++++
+ QTSM.pro     | 10 +++++++++-
+ 2 files changed, 17 insertions(+), 1 deletion(-)
+ create mode 100644 QTSM.desktop
+
+diff --git a/QTSM.desktop b/QTSM.desktop
+new file mode 100644
+index 0000000..1b95080
+--- /dev/null
++++ b/QTSM.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QTSM
++Name=QTSM
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/QTSM.pro b/QTSM.pro
+index 991a212..c83e59e 100644
+--- a/QTSM.pro
++++ b/QTSM.pro
+@@ -51,5 +51,13 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =QTSM.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+

@@ -1,0 +1,20 @@
+package:
+  id: io.github.QTSM
+  name: QTSM
+  version: 0.0.1
+  kind: app
+  description: |
+    This is a task manager, in developpement for now. Feel free to suggest some upgrades and modifications.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Far4X/QTSM.git
+  commit: ae466aa6893c2310a7567d24c254563cbba1ca32
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
