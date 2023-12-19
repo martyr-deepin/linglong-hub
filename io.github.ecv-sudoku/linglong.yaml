@@ -1,0 +1,20 @@
+package:
+  id: io.github.ecv-sudoku
+  name: ecv-sudoku
+  version: 0.0.1
+  kind: app
+  description: |
+    ECV Application : Sudoku
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/MericLuc/ecv-sudoku.git
+  commit: 9f4ed723ee39b85d7ca17b18acb440a265b6f7ef
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake

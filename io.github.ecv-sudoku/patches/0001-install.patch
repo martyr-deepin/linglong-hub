@@ -1,0 +1,42 @@
+From 90fcc7845559b2377be0c771c1ee79cea4cfb3f6 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 17 Dec 2023 12:41:02 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt               | 4 ++++
+ build_dir/ecv-sudoku.desktop | 8 ++++++++
+ 2 files changed, 12 insertions(+)
+ create mode 100644 build_dir/ecv-sudoku.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 1615fc3..8f0aadf 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -25,3 +25,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE ecv Qt5::Widgets)
+ 
+ target_compile_options    (${PROJECT_NAME} PRIVATE -O0 -Werror -Wall -Wextra -pedantic)
+ target_compile_features   (${PROJECT_NAME} PRIVATE cxx_std_17)
++
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/ecv-sudoku.desktop DESTINATION share/applications)
++install(TARGETS ecv-sudoku DESTINATION bin)
+\ No newline at end of file
+diff --git a/build_dir/ecv-sudoku.desktop b/build_dir/ecv-sudoku.desktop
+new file mode 100644
+index 0000000..e392fe1
+--- /dev/null
++++ b/build_dir/ecv-sudoku.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=ecv-sudoku
++Name=ecv-sudoku
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+-- 
+2.33.1
+
