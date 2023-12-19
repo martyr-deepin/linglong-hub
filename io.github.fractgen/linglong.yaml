@@ -1,0 +1,19 @@
+package:
+  id: io.github.fractgen
+  name: fractgen
+  version: 2.1.14
+  kind: app
+  description: |
+    FractalGenerator is a Qt-based program to generate fractal images (e.g. Mandelbrot set). 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dreibh/fractgen.git
+  commit: c4728d937d58436c622a4f1c420dc6e7222de799
+
+build:
+  kind: cmake
