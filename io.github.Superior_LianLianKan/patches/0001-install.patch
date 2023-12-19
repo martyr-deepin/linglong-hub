@@ -1,0 +1,48 @@
+From ab8e3638ab6bca1be8325d37ea8b90076db85050 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 17 Dec 2023 12:19:30 +0800
+Subject: [PATCH] install
+
+---
+ QtLianliankan.desktop |  9 +++++++++
+ QtLianliankan.pro     | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 QtLianliankan.desktop
+
+diff --git a/QtLianliankan.desktop b/QtLianliankan.desktop
+new file mode 100644
+index 0000000..19767fb
+--- /dev/null
++++ b/QtLianliankan.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=QtLianliankan
++Name=QtLianliankan
++Icon=bg
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/QtLianliankan.pro b/QtLianliankan.pro
+index d6e017c..8cec94a 100644
+--- a/QtLianliankan.pro
++++ b/QtLianliankan.pro
+@@ -17,3 +17,13 @@ FORMS    += main_game_window.ui
+ 
+ RESOURCES += \
+     res.qrc
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =QtLianliankan.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = res/image/bg.jpg
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+

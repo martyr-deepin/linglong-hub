@@ -1,0 +1,21 @@
+package:
+  id: io.github.Superior_LianLianKan
+  name: Superior_LianLianKan
+  version: 1.2.0
+  kind: app
+  description: |
+    LianLianKan Game C++ QT5
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/L-W-X-X/Superior_LianLianKan.git
+  commit: 2bcfcbe87fad3789f0aac53f05e8583c80135c5a
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  
