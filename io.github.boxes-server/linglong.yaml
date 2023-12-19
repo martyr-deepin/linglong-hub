@@ -1,0 +1,21 @@
+package:
+  id: io.github.boxes-server
+  name: boxes-server
+  version: 0.1.0.1
+  kind: app
+  description: |
+    This is a desktop application for Windows 10 (x64) and Linux (x64) which can be used for playing with HTTP requests. It contains embedded SQLite database which can be explored via the desktop interface.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/romychab/boxes-server.git"
+  commit: c25de1046e7bb644bc2dd8530fb961c86faa4cac
+  patch:
+    - patches/fix-desktop.patch
+
+build:
+  kind: qmake
