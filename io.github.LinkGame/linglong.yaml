@@ -1,0 +1,30 @@
+package:
+  id: io.github.LinkGame 
+  name: LinkGame
+  version: 0.0.1
+  kind: app
+  description: |
+    一个连连看游戏.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/XPping/LinkGame.git"
+  commit: ea453cb109c9116f89e940bb4b044c2ef958cc8a
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd LinkGame 
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
