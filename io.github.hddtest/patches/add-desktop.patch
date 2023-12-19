@@ -1,0 +1,23 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 9a2f8fd..b5aa30a 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -49,3 +49,7 @@ install(TARGETS hddtest
+     BUNDLE DESTINATION .
+     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+ )
++
++install(TARGETS hddtest DESTINATION bin/)
++install(FILES hddtest.desktop DESTINATION share/applications/)
++install(FILES icon/hdd.png DESTINATION share/icons/)
+diff --git a/hddtest.desktop b/hddtest.desktop
+new file mode 100644
+index 0000000..1a0b68a
+--- /dev/null
++++ b/hddtest.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Name=hddtest
++Exec=hddtest %F
++Icon=hdd
++Type=Application
