@@ -1,0 +1,20 @@
+package:
+  id: io.github.cutebuzz
+  name: cutebuzz
+  version: 0.0.1
+  kind: app
+  description: |
+    Using Playstation 2 Buzz game controllers from Qt 5 and QtQuick
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/oniongarlic/cutebuzz.git
+  commit: 901e13fe005b930fc5875cf7072d77b6fb3a70ae
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,48 @@
+From f190d605bcfc4b06a16dd6171cb81f55637ea5c9 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Dec 2023 18:47:02 +0800
+Subject: [PATCH] install
+
+---
+ cutebuzz.desktop |  8 ++++++++
+ cutebuzz.pro     | 10 +++++++++-
+ 2 files changed, 17 insertions(+), 1 deletion(-)
+ create mode 100644 cutebuzz.desktop
+
+diff --git a/cutebuzz.desktop b/cutebuzz.desktop
+new file mode 100644
+index 0000000..30cd52a
+--- /dev/null
++++ b/cutebuzz.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=cutebuzz
++Name=cutebuzz
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/cutebuzz.pro b/cutebuzz.pro
+index 16f61b8..de49200 100644
+--- a/cutebuzz.pro
++++ b/cutebuzz.pro
+@@ -35,5 +35,13 @@ QML_DESIGNER_IMPORT_PATH =
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =cutebuzz.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+
