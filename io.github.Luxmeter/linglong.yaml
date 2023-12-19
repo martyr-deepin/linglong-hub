@@ -1,0 +1,24 @@
+package:
+  id: io.github.Luxmeter
+  name: Luxmeter
+  version: 0.0.1
+  kind: app
+  description: |
+    Luxmeter app with Qt and c++.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtserialport/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/Skodaa/Luxmeter.git
+  commit: a0bc7c10fcf00f90a2cd4a12fb16c3e6b09dcaee
+  patch: patches/fix_001.patch
+
+build:
+  kind: qmake
