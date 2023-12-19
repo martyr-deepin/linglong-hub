@@ -1,0 +1,21 @@
+package:
+  id: io.github.marksentence
+  name: marksentence
+  version: 1.2.0
+  kind: app
+  description: |
+    一个标记托福考试听力句子的工具（精听工具）
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/leihui6/marksentence.git"
+  commit: 559760ee98f03a58bbd5e3bd2d587a5b89a8977f
+  patch:
+    - patches/fix-desktop.patch
+
+build:
+  kind: qmake
