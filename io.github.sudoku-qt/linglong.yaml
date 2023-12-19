@@ -1,0 +1,20 @@
+package:
+  id: io.github.sudoku-qt
+  name: sudoku-qt
+  version: 0.0.1
+  kind: app
+  description: |
+    A simple sudoku game with easy, intermediate and expert levels
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/satvik-tandon/sudoku.git
+  commit: 8243542f15335bb3ea6924878f8e1dfb6869907d
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake

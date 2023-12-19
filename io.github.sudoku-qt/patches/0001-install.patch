@@ -1,0 +1,40 @@
+From f9de8cb9e86050bc81f8e735d78b88936ea8a3e9 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Dec 2023 18:42:27 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt           | 3 +++
+ build_dir/sudoku.desktop | 8 ++++++++
+ 2 files changed, 11 insertions(+)
+ create mode 100644 build_dir/sudoku.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index b9a0cdd..cae99ef 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -70,3 +70,6 @@ install(TARGETS ${PROJECT_NAME}
+ 
+ install(FILES ${QM_FILES} DESTINATION ${CMAKE_INSTALL_BINDIR})
+ 
++install(PROGRAMS ${CMAKE_BINARY_DIR}/sudoku.desktop DESTINATION share/applications)
++install(TARGETS sudoku DESTINATION bin)
++
+diff --git a/build_dir/sudoku.desktop b/build_dir/sudoku.desktop
+new file mode 100644
+index 0000000..b5e4dd1
+--- /dev/null
++++ b/build_dir/sudoku.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=sudoku
++Name=sudoku
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+-- 
+2.33.1
+
