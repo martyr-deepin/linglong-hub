@@ -1,0 +1,25 @@
+diff --git a/NightlyBuilder.desktop b/NightlyBuilder.desktop
+new file mode 100644
+index 0000000..bdb852c
+--- /dev/null
++++ b/NightlyBuilder.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=NightlyBuilder
++Exec=NightlyBuilder %f
+diff --git a/NightlyBuilder.pro b/NightlyBuilder.pro
+index 622b97b..458f350 100644
+--- a/NightlyBuilder.pro
++++ b/NightlyBuilder.pro
+@@ -68,3 +68,10 @@ linux {
+         DEFINES += LINUX_X64
+     }
+ }
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += NightlyBuilder.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
