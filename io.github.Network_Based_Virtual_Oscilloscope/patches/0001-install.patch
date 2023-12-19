@@ -1,0 +1,48 @@
+From 94cdbd2584fbac9f889cd35cae0e87f8672bba14 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 17 Dec 2023 14:35:09 +0800
+Subject: [PATCH] install
+
+---
+ Virtual_Oscilloscope.desktop | 9 +++++++++
+ Virtual_Oscilloscope.pro     | 9 +++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 Virtual_Oscilloscope.desktop
+
+diff --git a/Virtual_Oscilloscope.desktop b/Virtual_Oscilloscope.desktop
+new file mode 100644
+index 0000000..9785014
+--- /dev/null
++++ b/Virtual_Oscilloscope.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Virtual_Oscilloscope
++Name=Virtual_Oscilloscope
++Icon=1
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/Virtual_Oscilloscope.pro b/Virtual_Oscilloscope.pro
+index 42ce9a9..19947c9 100644
+--- a/Virtual_Oscilloscope.pro
++++ b/Virtual_Oscilloscope.pro
+@@ -20,3 +20,12 @@ HEADERS  += vo.h \
+     qcustomplot.h
+ 
+ FORMS    += vo.ui
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Virtual_Oscilloscope.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = Picture/1.JPG
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+

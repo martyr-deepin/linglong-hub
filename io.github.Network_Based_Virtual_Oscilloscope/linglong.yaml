@@ -1,0 +1,20 @@
+package:
+  id: io.github.Network_Based_Virtual_Oscilloscope
+  name: Network_Based_Virtual_Oscilloscope
+  version: 0.0.1
+  kind: app
+  description: |
+    A Virtual Oscilloscope software base on Qt. It can show waveform sent by a TCP/IP server.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+  
+source:
+  kind: git
+  url: https://github.com/Landzs/Network_Based_Virtual_Oscilloscope.git
+  commit: fdb0129b703c5028c3a4b46f59940d6f8dbb0ad1
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
