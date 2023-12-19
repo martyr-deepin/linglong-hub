@@ -1,0 +1,20 @@
+package:
+  id: io.github.Mezgeldek
+  name: Mezgeldek
+  version: 0.0.1
+  kind: app
+  description: |
+    This is image resizing application.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/rutku/Mezgeldek.git
+  commit: 9767eb0f2f4bafeac196ade86fdedff9f9891517
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

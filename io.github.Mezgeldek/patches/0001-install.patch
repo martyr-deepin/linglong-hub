@@ -1,0 +1,48 @@
+From 3fd6c99698c026b79679fca6956349f162a13567 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 17 Dec 2023 14:17:37 +0800
+Subject: [PATCH] install
+
+---
+ Mezgeldek.desktop | 9 +++++++++
+ Mezgeldek.pro     | 9 +++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 Mezgeldek.desktop
+
+diff --git a/Mezgeldek.desktop b/Mezgeldek.desktop
+new file mode 100644
+index 0000000..8aa24e0
+--- /dev/null
++++ b/Mezgeldek.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Mezgeldek
++Name=Mezgeldek
++Icon=mezgeldek
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/Mezgeldek.pro b/Mezgeldek.pro
+index 9edd57d..0e2e78b 100644
+--- a/Mezgeldek.pro
++++ b/Mezgeldek.pro
+@@ -29,3 +29,12 @@ SOURCES += \
+ 
+ HEADERS += \
+         mainwindow.h
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Mezgeldek.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = mezgeldek.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
