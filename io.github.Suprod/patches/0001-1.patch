@@ -1,0 +1,44 @@
+From bb3736738edb5e960bdb6b6e874bc25370002e72 Mon Sep 17 00:00:00 2001
+From: LLLLSHANG <742851145@qq.com>
+Date: Tue, 19 Dec 2023 19:48:00 +0800
+Subject: [PATCH] 1
+
+---
+ src/Suprod.desktop | 8 ++++++++
+ src/Suprod.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 src/Suprod.desktop
+
+diff --git a/src/Suprod.desktop b/src/Suprod.desktop
+new file mode 100644
+index 0000000..d43e306
+--- /dev/null
++++ b/src/Suprod.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=suprod
++Name=suprod
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/src/Suprod.pro b/src/Suprod.pro
+index 1cbc746..0b486fa 100644
+--- a/src/Suprod.pro
++++ b/src/Suprod.pro
+@@ -66,3 +66,10 @@ isEmpty(PREFIX) {
+  PREFIX = /opt/$(TARGET)
+ }
+ target.path = $$PREFIX/
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =suprod.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

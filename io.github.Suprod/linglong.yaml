@@ -1,0 +1,29 @@
+package:
+  id: io.github.Suprod
+  name: Suprod
+  version: 0.0.1
+  kind: app
+  description: |
+    Suprood : is Qt application used for offline tasks management and habits tracking , easy to use and portable for windows .
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/mahmoudmuawad/Suprod.git
+  commit: 1c08537d9e7b604f0befacc8698af1c4821e6cac
+  patch:
+    - patches/0001-1.patch  
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
