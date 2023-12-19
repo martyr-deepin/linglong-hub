@@ -1,0 +1,20 @@
+package:
+  id: io.github.SheepSweeper
+  name: SheepSweeper
+  version: 1.0.0
+  kind: app
+  description: |
+    Clone of MineSweeper game written in C++ and Qt5
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Antidote1911/SheepSweeper.git
+  commit: d546180f4d07d4c825fb3b75edcee6d1fcf54ba4
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,48 @@
+From 856fc80bb6bea04ca393c1c8d0202787b38b1030 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Dec 2023 20:21:50 +0800
+Subject: [PATCH] install
+
+---
+ app/app.desktop |  9 +++++++++
+ app/app.pro     | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 app/app.desktop
+
+diff --git a/app/app.desktop b/app/app.desktop
+new file mode 100644
+index 0000000..a26c70a
+--- /dev/null
++++ b/app/app.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=app
++Name=app
++Icon=big_sheep
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/app/app.pro b/app/app.pro
+index 8ce88f1..c258dcb 100644
+--- a/app/app.pro
++++ b/app/app.pro
+@@ -54,3 +54,13 @@ DISTFILES += \
+     ../doc/screen1.png \
+     ../doc/screen2.png
+ 
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =app.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = images/big_sheep.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
