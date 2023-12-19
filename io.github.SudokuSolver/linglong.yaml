@@ -1,0 +1,20 @@
+package:
+  id: io.github.SudokuSolver
+  name: SudokuSolver
+  version: 0.0.1
+  kind: app
+  description: |
+    Project is done as a part of Software development course on Faculty of Mathematics, Bachelor studies
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/ivonamilutinovic/SudokuSolver.git
+  commit: 0bfea7fbdcd23054418d8a2182953e84007c38de
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

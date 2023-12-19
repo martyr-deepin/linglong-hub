@@ -1,0 +1,47 @@
+From 81ba0dc39cf26a6ebf8e4e4759260e6086781c05 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 17 Dec 2023 14:24:38 +0800
+Subject: [PATCH] install
+
+---
+ Sudoku_solver.desktop | 9 +++++++++
+ Sudoku_solver.pro     | 9 +++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 Sudoku_solver.desktop
+
+diff --git a/Sudoku_solver.desktop b/Sudoku_solver.desktop
+new file mode 100644
+index 0000000..1fffd38
+--- /dev/null
++++ b/Sudoku_solver.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Sudoku_solver
++Name=Sudoku_solver
++Icon=background0
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+\ No newline at end of file
+diff --git a/Sudoku_solver.pro b/Sudoku_solver.pro
+index 17c962b..ce20159 100644
+--- a/Sudoku_solver.pro
++++ b/Sudoku_solver.pro
+@@ -42,3 +42,12 @@ FORMS += \
+ 
+ RESOURCES += \
+     sudoku.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Sudoku_solver.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = images/background0.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
