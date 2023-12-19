@@ -1,0 +1,21 @@
+package:
+  id: io.github.qt-weather-desktop-app
+  name: qt-weather-desktop-app
+  version: 0.0.1
+  kind: app
+  description: |
+    A desktop weather forecast app using Qt/C++ inspired by windows weather app.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/zzhezz/qt-weather-desktop-app.git
+  commit: 72a0d0d9742628b589d65579045a0ab1bc610379
+  patch: patches/fix_001.patch
+
+build:
+  kind: qmake
