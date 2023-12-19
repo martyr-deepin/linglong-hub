@@ -1,0 +1,30 @@
+--- ../ipQalc.pro	2023-12-19 16:54:06.136658000 +0800
++++ ../ipQalc.pro	2023-12-19 16:53:51.548388000 +0800
+@@ -63,19 +63,23 @@
+ updateqm.CONFIG += no_link target_predeps
+ QMAKE_EXTRA_COMPILERS += updateqm
+ 
+-data_bin.path = /usr/bin/
++data_bin.path = $$PREFIX/bin/
+ data_bin.files = Bin/ipqalc
+ INSTALLS += data_bin
+ 
+-data_app.path = /usr/share/applications/
++data_app.path = $$PREFIX/share/applications/
+ data_app.files = pkg/ipqalc.desktop
+ INSTALLS += data_app
+ 
+-data_pixmaps.path = /usr/share/pixmaps/
++data_pixmaps.path = $$PREFIX/share/pixmaps/
+ data_pixmaps.files = pkg/ipqalc.png
+ INSTALLS += data_pixmaps
+ 
+-data_langs.path = /usr/share/ipqalc/langs/
++data_icons.path = $$PREFIX/share/icons/
++data_icons.files = pkg/ipqalc.png
++INSTALLS += data_icons
++
++data_langs.path = $$PREFIX/share/ipqalc/langs/
+ data_langs.files = langs/*.qm
+ INSTALLS += data_langs
+ 

@@ -1,0 +1,21 @@
+package:
+  id: com.debian.ipqalc
+  name: ipqalc
+  version: 1.5.3
+  kind: app
+  description: |
+    Graphical utility for IPv4 subnet calculation.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://salsa.debian.org/debian/ipqalc.git
+  commit: 29e70faf468d126a81ec46744b42413e9f97b3bd
+  patch: patches/fix_001.patch  
+
+build:
+  kind: qmake
