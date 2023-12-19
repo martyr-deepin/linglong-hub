@@ -1,0 +1,55 @@
+From b396ed034dc3df1ef5d8c1ff2102b3b0423f7d17 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 18 Dec 2023 12:48:00 +0800
+Subject: [PATCH] install
+ 
+---
+ partkeeprTools.desktop |  8 ++++++++
+ partkeeprTools.pro     | 12 +++++++++++-
+ 2 files changed, 19 insertions(+), 1 deletion(-)
+ create mode 100644 partkeeprTools.desktop
+
+diff --git a/partkeeprTools.desktop b/partkeeprTools.desktop
+new file mode 100644
+index 0000000..3a433f9
+--- /dev/null
++++ b/partkeeprTools.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Type=Application
++Name=partkeeprTools
++Comment=A set of tools for the partkeepr application
++Exec=partkeeprTools
++Icon=partkeeprTools
++Categories=Office;
++Name[en_US]=partkeeprTools.desktop
+diff --git a/partkeeprTools.pro b/partkeeprTools.pro
+index 590e515..6c858e9 100644
+--- a/partkeeprTools.pro
++++ b/partkeeprTools.pro
+@@ -28,7 +28,7 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+@@ -42,3 +42,13 @@ export(first.depends)
+ export(copydata.commands)
+ QMAKE_EXTRA_TARGETS += first copydata
+ }
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =partkeeprTools.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = partkeeprTools.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
