@@ -1,0 +1,37 @@
+diff --git a/qrest.desktop b/qrest.desktop
+new file mode 100644
+index 0000000..d0c1bff
+--- /dev/null
++++ b/qrest.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=qrest
++Exec=qrest %f
++Icon=qresticon
+diff --git a/qrest.pro b/qrest.pro
+index 2872aa3..1bfffef 100644
+--- a/qrest.pro
++++ b/qrest.pro
+@@ -76,7 +76,7 @@ OBJECTS_DIR = tmp
+ RCC_DIR = tmp
+ RC_FILE = resources/winicon.rc
+ linux-* { 
+-    target.path = /usr/bin
++    target.path = $$PREFIX/bin
+     INSTALLS += target
+     manpages.path = $$MANDEST
+     manpages.files = $$MANSRC
+@@ -84,7 +84,10 @@ linux-* {
+     manpages_fr.files = $$MANSRC_FR
+     INSTALLS += manpages
+     INSTALLS += manpages_fr
+-    icons.path = $$ICONDEST
+-    icons.files = $$ICONSRC
++    icons.path = $${PREFIX}/share/icons
++    icons.files = resources/pix/qresticon.png
+     INSTALLS += icons
++    desktop.path = $$PREFIX/share/applications
++    desktop.files += qrest.desktop
++    INSTALLS += desktop
+ }
