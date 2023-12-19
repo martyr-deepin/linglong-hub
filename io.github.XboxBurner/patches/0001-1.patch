@@ -1,0 +1,47 @@
+From a77c43d394373861c00aabb8391a2469550a9959 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Tue, 19 Dec 2023 21:46:22 +0800
+Subject: [PATCH] 1
+
+---
+ XBoxBurner.pro               |  7 +++++++
+ resources/XBoxBurner.desktop | 11 ++++++-----
+ 2 files changed, 13 insertions(+), 5 deletions(-)
+
+diff --git a/XBoxBurner.pro b/XBoxBurner.pro
+index bf9e6d5..3ddb4dc 100644
+--- a/XBoxBurner.pro
++++ b/XBoxBurner.pro
+@@ -106,3 +106,10 @@ macx {
+   target.path        = /Applications
+   INSTALLS          += target
+ }
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =resources/XBoxBurner.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+diff --git a/resources/XBoxBurner.desktop b/resources/XBoxBurner.desktop
+index 2dcab9c..c28cc1a 100644
+--- a/resources/XBoxBurner.desktop
++++ b/resources/XBoxBurner.desktop
+@@ -1,7 +1,8 @@
+ [Desktop Entry]
+-Type=Application
+-Terminal=false
+-Icon=XBoxBurner
+-Name=XBoxBurner
++Categories=Game;Qt;
+ Exec=XBoxBurner
+-Comment=Easy to use burner for XBox and XBox360 game images
++Name=XBoxBurner
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+-- 
+2.33.1
+
