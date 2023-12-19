@@ -1,0 +1,43 @@
+From aba79bd7082073e51fd634f936bed016fc666fd4 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Tue, 19 Dec 2023 21:18:44 +0800
+Subject: [PATCH] 1
+
+---
+ TmViewer/TmViewer.desktop | 8 ++++++++
+ TmViewer/TmViewer.pro     | 7 +++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 TmViewer/TmViewer.desktop
+
+diff --git a/TmViewer/TmViewer.desktop b/TmViewer/TmViewer.desktop
+new file mode 100644
+index 0000000..ee382c4
+--- /dev/null
++++ b/TmViewer/TmViewer.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=TmViewer
++Name=TmViewer
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/TmViewer/TmViewer.pro b/TmViewer/TmViewer.pro
+index 17279e4..776121d 100644
+--- a/TmViewer/TmViewer.pro
++++ b/TmViewer/TmViewer.pro
+@@ -32,3 +32,10 @@ HEADERS  += mainwindow.h \
+     qcustomplot.h
+ 
+ FORMS    += mainwindow.ui
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =TmViewer.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+-- 
+2.33.1
+

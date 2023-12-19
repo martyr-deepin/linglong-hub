@@ -1,0 +1,30 @@
+package:
+  id: io.github.GenericTelemetryAnalyzer 
+  name: GenericTelemetryAnalyzer
+  version: 0.0.1
+  kind: app
+  description: |
+    QT project designed to read in a dictionary file and use it to parse a binary telemetry file. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/Xeelot/GenericTelemetryAnalyzer.git"
+  commit: 1b7e9c3ba9cfe5eeef2f332db2203f3c8a2421e7
+  patch:
+    - patches/0001-1.patch
+
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd TmViewer 
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
