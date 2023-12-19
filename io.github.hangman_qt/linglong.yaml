@@ -1,0 +1,21 @@
+package:
+  id: io.github.hangman_qt
+  name: hangman_qt
+  version: 0.0.1
+  kind: app
+  description: |
+    Simple hangman game framework written in C++ and Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/ElTh0r0/hangman_qt.git
+  commit: 210297472d78b0e77ca539303ed1db2da0be39fe
+  patch: patches/fix_001.patch
+
+build:
+  kind: qmake

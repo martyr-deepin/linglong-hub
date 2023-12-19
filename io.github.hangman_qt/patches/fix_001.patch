@@ -1,0 +1,11 @@
+--- ../hangman.pro	2023-12-19 22:06:24.125227000 +0800
++++ ../hangman.pro	2023-12-19 22:04:17.696454000 +0800
+@@ -73,7 +73,7 @@
+ 
+ unix: !macx {
+   isEmpty(PREFIX) {
+-    PREFIX = /usr/local
++    PREFIX = $$PREFIX
+   }
+   isEmpty(BINDIR) {
+     BINDIR = bin
