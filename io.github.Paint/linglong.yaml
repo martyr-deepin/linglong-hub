@@ -1,0 +1,21 @@
+package:
+  id: io.github.Paint
+  name: Paint
+  version: 0.0.1
+  kind: app
+  description: |
+    A toy QT application resembling gPaint.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/stoic1979/Paint.git"
+  commit: 73c4f68fa8c9e028d1e1635862277a06e0885bd0
+  patch:
+    - patches/fix-desktop.patch
+
+build:
+  kind: qmake

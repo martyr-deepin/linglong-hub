@@ -1,0 +1,25 @@
+diff --git a/Paint.desktop b/Paint.desktop
+new file mode 100644
+index 0000000..dd6d2d4
+--- /dev/null
++++ b/Paint.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=Paint
++Exec=Paint %f
+diff --git a/Paint.pro b/Paint.pro
+index ecf6bbf..ffccb36 100755
+--- a/Paint.pro
++++ b/Paint.pro
+@@ -34,3 +34,10 @@ OTHER_FILES += \
+     README.md \
+     UNLICENSE.txt \
+     LICENSE.GPL
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += Paint.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
