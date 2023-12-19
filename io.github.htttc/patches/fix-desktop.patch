@@ -1,0 +1,22 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8582904..40d64df 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -59,3 +59,6 @@ install(TARGETS htttc
+ if(QT_VERSION_MAJOR EQUAL 6)
+     qt_finalize_executable(htttc)
+ endif()
++
++install(TARGETS htttc DESTINATION bin/)
++install(FILES build_dir/htttc.desktop DESTINATION share/applications/)
+\ No newline at end of file
+diff --git a/build_dir/htttc.desktop b/build_dir/htttc.desktop
+new file mode 100644
+index 0000000..0436a00
+--- /dev/null
++++ b/build_dir/htttc.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=htttc
++Exec=htttc %F
++Type=Application
