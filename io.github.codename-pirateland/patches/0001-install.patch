@@ -1,0 +1,53 @@
+From 91deac2f1ad3806052df798e5070d9d0f3019433 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Dec 2023 18:16:29 +0800
+Subject: [PATCH] install
+
+---
+ codename-piratelands.desktop | 8 ++++++++
+ codename-piratelands.pro     | 9 ++++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 codename-piratelands.desktop
+
+diff --git a/codename-piratelands.desktop b/codename-piratelands.desktop
+new file mode 100644
+index 0000000..3c2e3fc
+--- /dev/null
++++ b/codename-piratelands.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=codename-piratelands
++Name=codename-piratelands
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/codename-piratelands.pro b/codename-piratelands.pro
+index d6dd0dc..0f9abbc 100644
+--- a/codename-piratelands.pro
++++ b/codename-piratelands.pro
+@@ -66,7 +66,7 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android:# target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ DISTFILES += \
+@@ -82,3 +82,10 @@ DISTFILES += \
+ 
+ RESOURCES += \
+     RoomImages.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =codename-piratelands.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ No newline at end of file
+-- 
+2.33.1
+

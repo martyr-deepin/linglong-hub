@@ -1,0 +1,20 @@
+package:
+  id: io.github.codename-pirateland
+  name: codename-pirateland
+  version: 0.0.1
+  kind: app
+  description: |
+    §®§Ñ§Ý§Ö§ß§î§Ü§Ñ§ñ §Ú§Ô§â§Ñ §Ó §á§Ú§â§Ñ§ä§ã§Ü§à§Þ §ã§Ö§ä§ä§Ú§ß§Ô§Ö
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/6rayWa1cher/codename-piratelands.git
+  commit: 092850162879aa2fdfba8c78166311657c67bcf6
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
