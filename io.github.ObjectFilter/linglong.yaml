@@ -1,0 +1,22 @@
+package:
+  id: io.github.ObjectFilter 
+  name: ObjectFilter
+  version: 0.0.1
+  kind: app
+  description: |
+    Selecting objects on the Image from the scope using Qt and C++.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/gurmaaan/ObjectFilter.git"
+  commit: cf0cf5ea72b79d5fd8a27177cee8554558fb16a8
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake

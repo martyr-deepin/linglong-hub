@@ -1,0 +1,47 @@
+From 3c4ae2fbc54b4b82ed308b9667caa8187deb3ad8 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Tue, 19 Dec 2023 18:12:16 +0800
+Subject: [PATCH] 1
+
+---
+ ObjectsFilter.desktop |  9 +++++++++
+ ObjectsFilter.pro     | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 ObjectsFilter.desktop
+
+diff --git a/ObjectsFilter.desktop b/ObjectsFilter.desktop
+new file mode 100644
+index 0000000..3fa44e9
+--- /dev/null
++++ b/ObjectsFilter.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=ObjectsFilter
++Name=ObjectsFilter
++StartupNotify=false
++Terminal=false
++Icon=view_groups_objects_ic
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/ObjectsFilter.pro b/ObjectsFilter.pro
+index 2fcb475..2469058 100644
+--- a/ObjectsFilter.pro
++++ b/ObjectsFilter.pro
+@@ -39,3 +39,13 @@ RESOURCES += \
+     sources.qrc
+ 
+ win32: RC_FILE = iconsource.rc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =ObjectsFilter.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = icons/view_groups_objects_ic.png
++INSTALLS += icons
+-- 
+2.33.1
+
