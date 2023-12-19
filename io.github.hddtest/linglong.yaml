@@ -1,0 +1,21 @@
+package:
+  id: io.github.hddtest
+  name: hddtest
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt graphical storage benchmark for Linux.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/vladamatena/hddtest.git"
+  commit: f28aceb541fa3286d0fd73ce7af81cfbf5c2266b
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: cmake
