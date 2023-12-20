@@ -1,0 +1,20 @@
+package:
+  id: io.github.mdbsqlgui
+  name: mdbsqlgui
+  version: 5.1.4
+  kind: app
+  description: |
+    用于维护MariaDB数据库的简单GUI前端，基于Qt5，
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url:  https://github.com/jkamsk/mdbsqlgui.git
+  commit: d71ba70efd862397114bf4ad894686834f3b5eb4
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

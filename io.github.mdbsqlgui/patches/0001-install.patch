@@ -1,0 +1,43 @@
+From be850fab62418731204ac8ccbee2fa5acd00a868 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Wed, 20 Dec 2023 10:04:57 +0800
+Subject: [install.patch_] install
+
+---
+ mdbsqlgui.desktop | 6 ++++++
+ mdbsqlgui.pro     | 8 ++++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 mdbsqlgui.desktop
+
+diff --git a/mdbsqlgui.desktop b/mdbsqlgui.desktop
+new file mode 100644
+index 0000000..325933c
+--- /dev/null
++++ b/mdbsqlgui.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=mdbsqlgui
++Exec=mdbsqlgui
++Terminal=false
+\ No newline at end of file
+diff --git a/mdbsqlgui.pro b/mdbsqlgui.pro
+index 366ee77..c7f8665 100644
+--- a/mdbsqlgui.pro
++++ b/mdbsqlgui.pro
+@@ -54,3 +54,11 @@ RESOURCES += \
+ DISTFILES += \
+     readme.txt \
+     change.log
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = mdbsqlgui.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+
