@@ -1,0 +1,19 @@
+package:
+  id: xalan-c
+  name: xalan-c
+  version: 1.12.0
+  kind: lib
+  description: |
+    XSLT processor for transforming XML into HTML, text, or other XML types.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/apache/xalan-c.git
+  commit: 4055bb0c58e3053b04fcd0c68fdcda8f84411213
+
+build:
+  kind: cmake
