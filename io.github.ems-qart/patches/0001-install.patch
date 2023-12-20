@@ -1,0 +1,43 @@
+From 57c2f7794d349032ffc4456381792a99e608264b Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Wed, 20 Dec 2023 09:12:03 +0800
+Subject: [install.patch_] install
+
+---
+ ems-qart.desktop | 6 ++++++
+ ems-qart.pro     | 7 +++++++
+ 2 files changed, 13 insertions(+)
+ create mode 100644 ems-qart.desktop
+
+diff --git a/ems-qart.desktop b/ems-qart.desktop
+new file mode 100644
+index 0000000..627c73d
+--- /dev/null
++++ b/ems-qart.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=ems-qart
++Exec=ems-qart
++Terminal=false
+\ No newline at end of file
+diff --git a/ems-qart.pro b/ems-qart.pro
+index 991c3cb..919cb53 100644
+--- a/ems-qart.pro
++++ b/ems-qart.pro
+@@ -28,3 +28,10 @@ unix:udevrules.files = 50_ems_gb_flash.rules
+ 
+ unix:target.path = $$PREFIX/bin/
+ unix:INSTALLS += target udevrules
++
++unix: {
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = ems-qart.desktop
++INSTALLS += unix_desktop
++}
+\ No newline at end of file
+-- 
+2.33.1
+

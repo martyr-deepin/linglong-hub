@@ -1,0 +1,20 @@
+package:
+  id: io.github.ems-qart
+  name: ems-qart
+  version: 0.9.4
+  kind: app
+  description: |
+    A Qt application to flash EMS 64M cartridges
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/rbino/ems-qart.git
+  commit: 2b88a04302865caefd7531c5972e053eaf01283e
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
