@@ -1,0 +1,21 @@
+package:
+  id: io.github.qt-html-editor
+  name: qt-html-editor
+  version: 0.0.1
+  kind: app
+  description: |
+    Application to edit html and 'on the fly' view result.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/azoyan/qt-html-editor.git
+  commit: d981e9f1c421915a912ab770b84eeb89a3d7ecb1
+  patch:
+    - patches/0001-1.patch
+
+build:
+  kind: qmake
