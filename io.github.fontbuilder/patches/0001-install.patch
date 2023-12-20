@@ -1,0 +1,44 @@
+From c7a56b32c876977d1510955cab63c729495ef010 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Wed, 20 Dec 2023 09:47:15 +0800
+Subject: [install.patch_] install
+
+---
+ FontBuilder.desktop | 6 ++++++
+ FontBuilder.pro     | 9 +++++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 FontBuilder.desktop
+
+diff --git a/FontBuilder.desktop b/FontBuilder.desktop
+new file mode 100644
+index 0000000..3719b38
+--- /dev/null
++++ b/FontBuilder.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=FontBuilder
++Exec=FontBuilder
++Terminal=false
+diff --git a/FontBuilder.pro b/FontBuilder.pro
+index b8c9dc3..63ed8c5 100644
+--- a/FontBuilder.pro
++++ b/FontBuilder.pro
+@@ -183,3 +183,12 @@ isEmpty(FREETYPE2CONFIG) {
+ }
+ OTHER_FILES += fontbuilder_ru.ts \
+     fontbuilder_en.ts
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = FontBuilder.desktop
++INSTALLS += unix_desktop
++}
+\ No newline at end of file
+-- 
+2.33.1
+
