@@ -1,0 +1,19 @@
+--- ../CMakeLists.txt	2023-12-20 14:21:23.297543000 +0800
++++ ../CMakeLists.txt	2023-12-20 14:20:03.296479000 +0800
+@@ -66,6 +66,16 @@
+ install(TARGETS boxbuddy
+     BUNDLE DESTINATION .
+     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=boxbuddy
++Exec=boxbuddy
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/boxbuddy.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/boxbuddy.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
+ 
+ if(QT_VERSION_MAJOR EQUAL 6)
+     qt_finalize_executable(boxbuddy)
