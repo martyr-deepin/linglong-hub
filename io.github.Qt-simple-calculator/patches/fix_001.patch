@@ -1,0 +1,17 @@
+--- ../CMakeLists.txt	2023-12-20 13:20:38.421207000 +0800
++++ ../CMakeLists.txt	2023-12-20 13:21:25.603294000 +0800
+@@ -28,3 +28,14 @@
+ 
+ 
+ qt5_use_modules( lab2_cpp_calculator Core Widgets Gui )
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=lab2_cpp_calculator
++Exec=lab2_cpp_calculator
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/lab2_cpp_calculator.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/lab2_cpp_calculator.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++install(TARGETS lab2_cpp_calculator DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
