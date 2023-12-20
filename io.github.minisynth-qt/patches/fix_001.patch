@@ -1,0 +1,17 @@
+--- ../CMakeLists.txt	2023-12-20 16:51:11.002455000 +0800
++++ ../CMakeLists.txt	2023-12-20 15:36:12.937155000 +0800
+@@ -47,3 +47,14 @@
+ if(QT_VERSION_MAJOR EQUAL 6)
+     qt_finalize_target(minisynth-qt)
+ endif()
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=minisynth-qt
++Exec=minisynth-qt
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/minisynth-qt.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/minisynth-qt.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++install(TARGETS minisynth-qt DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)

@@ -1,0 +1,21 @@
+package:
+  id: io.github.minisynth-qt
+  name: minisynth-qt
+  version: 0.0.1
+  kind: app
+  description: |
+    Minimalist Music Synthesizer for Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/pedrolcl/minisynth-qt.git
+  commit: fa727e740b030586f70ab0896d831e32012a473e
+  patch: patches/fix_001.patch
+
+build:
+  kind: cmake
