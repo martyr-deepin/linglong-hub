@@ -1,0 +1,13 @@
+--- ../qelectrotech.pro	2023-12-20 11:28:04.547892000 +0800
++++ ../qelectrotech.pro	2023-12-20 11:26:51.147347000 +0800
+@@ -5,8 +5,8 @@
+ # Chemins utilises pour la compilation et l'installation de QET
+ unix {
+         # Chemins UNIX
+-        COMPIL_PREFIX              = '/usr/local/'
+-        INSTALL_PREFIX             = '/usr/local/'
++        COMPIL_PREFIX              = $$PREFIX/
++        INSTALL_PREFIX             = $$PREFIX/
+         QET_BINARY_PATH            = 'bin/'
+         QET_COMMON_COLLECTION_PATH = 'share/qelectrotech/elements/'
+         QET_COMMON_TBT_PATH        = 'share/qelectrotech/titleblocks/'
