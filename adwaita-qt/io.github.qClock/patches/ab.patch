@@ -1,0 +1,23 @@
+diff -Naur b/Clock.desktop a/Clock.desktop
+--- b/Clock.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/Clock.desktop	2023-12-24 01:23:55.995756989 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=Clock
++Name=CLock
+diff -Naur b/Clock.pro a/Clock.pro
+--- b/Clock.pro	2023-12-24 01:21:42.753111000 +0800
++++ a/Clock.pro	2023-12-24 01:22:55.154006202 +0800
+@@ -29,3 +29,10 @@
+     clock.qrc
+ 
+ RC_FILE = clock.rc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =Clock.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ 文件尾没有换行符
