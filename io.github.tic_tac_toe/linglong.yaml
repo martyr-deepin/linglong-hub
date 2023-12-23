@@ -1,0 +1,23 @@
+package:
+  id: io.github.tic_tac_toe
+  name: tic_tac_toe
+  version: 0.0.1
+  kind: app
+  description: |
+     井字棋游戏.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+depends:
+  - id: icu
+    version: 63.1
+    type: runtime
+
+source:
+  kind: git
+  url: "https://github.com/Zane-Yu/tic_tac_toe.git"
+  commit: e858d6be408e7bf00555860dd88eafb28fccf4c6
+  patch: patches/ab.patch
+build:
+  kind: qmake
