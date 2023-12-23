@@ -1,0 +1,24 @@
+package:
+  id: ECDit
+  name: ECDit
+  version: 0.0.1
+  kind: app
+  description: |
+    一个在线的字典.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: icu
+    version: 63.1
+    type: runtime
+
+source:
+  kind: git
+  url: "https://github.com/esgloamp/ECDict.git"
+  commit: 0bcf4c2a43f4f5ee89e26028eb5e9ce9e911595a
+  patch: patches/ab.patch
+build:
+  kind: qmake

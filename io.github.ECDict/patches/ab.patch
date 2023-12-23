@@ -1,0 +1,23 @@
+diff -Naur b/ECDict.desktop a/ECDict.desktop
+--- b/ECDict.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/ECDict.desktop	2023-12-24 01:06:06.236495590 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=ECDict
++Name=ECDict
+diff -Naur b/ECDict.pro a/ECDict.pro
+--- b/ECDict.pro	2023-12-24 01:00:08.007357000 +0800
++++ a/ECDict.pro	2023-12-24 01:05:01.401971456 +0800
+@@ -35,3 +35,10 @@
+ 
+ RESOURCES += \
+     res/res.qrc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =ECDict.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ 文件尾没有换行符
