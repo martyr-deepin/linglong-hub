@@ -1,0 +1,21 @@
+package:
+  id: io.github.nobleNote
+  name: nobleNote
+  version: 1.3.0
+  kind: app
+  description:
+    Program to make and manage notes
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: 'https://github.com/hakaishi/nobleNote.git'
+  version: master
+  commit: 0d1f80c07b564b8238303c27450f18499b17a630
+  patch: patches/ab.patch
+
+build:
+  kind: qmake
