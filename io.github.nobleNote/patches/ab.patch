@@ -1,0 +1,28 @@
+diff -Naur b/nobleNote.pro a/nobleNote.pro
+--- b/nobleNote.pro	2023-12-24 15:16:39.415641413 +0800
++++ a/nobleNote.pro	2023-12-24 15:31:01.840919619 +0800
+@@ -96,18 +96,18 @@
+ 
+ !win32{
+ # install
+-target.path = /usr/bin
++target.path = $$PREFIX/bin
+ icons.files = src/noblenote-icons/*
+-icons.path = /usr/share/pixmaps/noblenote-icons
++icons.path = $$PREFIX/share/pixmaps/noblenote-icons
+ translation.files = src/translations/*.qm
+-translation.path = /usr/share/noblenote/translations
+-autostart.files = autostart/noblenote.desktop
+-autostart.path = /usr/share/applications
++translation.path = $$PREFIX/share/noblenote/translations
++autostart.files = noblenote.desktop
++autostart.path = $$PREFIX/share/applications
+ 
+ INSTALLS = target icons translation autostart
+ 
+ deinstall.depends = uninstall FORCE
+-deinstall.commands = rm -R /usr/share/noblenote
++deinstall.commands = rm -R $$PREFIX/share/noblenote
+ QMAKE_EXTRA_TARGETS = deinstall
+ }
+ 
