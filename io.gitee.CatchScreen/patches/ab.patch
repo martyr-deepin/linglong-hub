@@ -1,0 +1,21 @@
+diff -Naur b/CatchScreen.desktop a/CatchScreen.desktop
+--- b/CatchScreen.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/CatchScreen.desktop	2023-12-09 18:23:43.192351649 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Exec=CatchScreen
++Name=CatchScreen
++Type=Application
+diff -Naur b/CatchScreen.pro a/CatchScreen.pro
+--- b/CatchScreen.pro	2023-12-09 18:21:15.792667312 +0800
++++ a/CatchScreen.pro	2023-12-09 18:22:48.153389638 +0800
+@@ -21,3 +21,9 @@
+ 
+ FORMS    += mainwindow.ui \
+     catchdialog.ui
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = CatchScreen.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
