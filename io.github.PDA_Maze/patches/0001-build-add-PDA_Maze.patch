@@ -1,0 +1,51 @@
+From 39b0fdc4c395b7b21017ca9a3c3dba9fcf226373 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Wed, 27 Dec 2023 17:51:59 +0800
+Subject: [PATCH] build: add PDA_Maze
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Log: 完成 PDA_Maze 的编译
+---
+ PDA_Maze.desktop |  9 +++++++++
+ PDA_Maze.pro     | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 PDA_Maze.desktop
+
+diff --git a/PDA_Maze.desktop b/PDA_Maze.desktop
+new file mode 100644
+index 0000000..11267fb
+--- /dev/null
++++ b/PDA_Maze.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=PDA_Maze
++Name=PDA_Maze
++StartupNotify=false
++Terminal=false
++Icon=PDA_maze_64x64
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/PDA_Maze.pro b/PDA_Maze.pro
+index 321921b..a11dace 100644
+--- a/PDA_Maze.pro
++++ b/PDA_Maze.pro
+@@ -35,3 +35,13 @@ TRANSLATIONS += i18n/PDA_Maze_en.ts \
+ 
+ # Windows Executable Icon
+ win32:RC_FILE = PDA_Maze.rc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =PDA_Maze.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = icons/PDA_maze_64x64.png
++INSTALLS += icons
+-- 
+2.33.1
+

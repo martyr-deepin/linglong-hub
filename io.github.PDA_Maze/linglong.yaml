@@ -1,0 +1,23 @@
+package:
+  id: io.github.PDA_Maze 
+  name: PDA_Maze
+  version: 0.1.0
+  kind: app
+  description: |
+    A port of the rewrite Bill Kendrick's and Robert Ernst labyrinth game to Qt framework.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/EXL/PDA_Maze.git"
+  commit: ba8768c587a58e34c1fdbb56b656f0ffabcdd75d
+  patch:
+    - patches/0001-build-add-PDA_Maze.patch
+
+
+build:
+  kind: qmake
