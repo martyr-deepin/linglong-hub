@@ -1,0 +1,49 @@
+From fb34d04daf41eef56cadcfbfbab2cdbcde4c0852 Mon Sep 17 00:00:00 2001
+From: Xxxgh28 <826409886@qq.com>
+Date: Fri, 29 Dec 2023 14:42:54 +0800
+Subject: [PATCH] 1
+
+---
+ PDA_Maze.desktop |  9 +++++++++
+ PDA_Maze.pro     | 12 ++++++++++++
+ 2 files changed, 21 insertions(+)
+ create mode 100644 PDA_Maze.desktop
+
+diff --git a/PDA_Maze.desktop b/PDA_Maze.desktop
+new file mode 100644
+index 0000000..bebe502
+--- /dev/null
++++ b/PDA_Maze.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Game;Qt;
++Exec=PDA_Maze
++Name=PDA_Maze
++StartupNotify=false
++Terminal=false
++Icon=PDA_maze
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/PDA_Maze.pro b/PDA_Maze.pro
+index 321921b..3f1de99 100644
+--- a/PDA_Maze.pro
++++ b/PDA_Maze.pro
+@@ -35,3 +35,15 @@ TRANSLATIONS += i18n/PDA_Maze_en.ts \
+ 
+ # Windows Executable Icon
+ win32:RC_FILE = PDA_Maze.rc
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =PDA_Maze.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
++icons.path = $${PREFIX}/share/icons/hicolor/64×64/apps
++icons.files = icons/PDA_maze.png
++icons.path = $${PREFIX}/share/icons/hicolor/256×256/apps
++icons.files = icons/PDA_maze.ico
++INSTALLS += icons
+-- 
+2.33.1
+
