@@ -1,0 +1,39 @@
+diff --git a/Seq66qt5/Seq66qt5.pro b/Seq66qt5/Seq66qt5.pro
+index ced96336..b13b4f21 100644
+--- a/Seq66qt5/Seq66qt5.pro
++++ b/Seq66qt5/Seq66qt5.pro
+@@ -159,6 +159,18 @@ windows:RC_ICONS += ../resources/icons/route66.ico \
+  ../resources/icons/route66-64x64.ico \
+  ../resources/icons/route66-256x256.ico
+ 
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += ../distros/debian/seq66.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = ../resources/icons/route66.xpm
++INSTALLS += icons
++
+ #******************************************************************************
+ # Seq66qt5.pro (Seq66qt5)
+ #------------------------------------------------------------------------------
+diff --git a/distros/debian/seq66.desktop b/distros/debian/seq66.desktop
+index 862ffe2d..514649a6 100644
+--- a/distros/debian/seq66.desktop
++++ b/distros/debian/seq66.desktop
+@@ -4,9 +4,9 @@ Version=1.0
+ GenericName=Live Grid Sequencer
+ Comment=MIDI Loop Sequencer derived from seq24
+ Comment[fr]=Séquenceur de boucle MIDI dérivé de seq24
+-Icon=/usr/share/pixmaps/seq66.xpm
++Icon=route66.xpm
+ Type=Application
+ Categories=Qt;AudioVideo;Audio;Midi;Music;Sequencer;X-Alsa;X-Jack;X-MIDI;
+-Exec=qseq66
++Exec=qpseq66
+ Terminal=false
+ X-NSM-Capable=true
