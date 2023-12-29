@@ -1,0 +1,21 @@
+package:
+  id: io.github.doublecontact
+  name: doublecontact
+  version: 0.2.5
+  kind: app
+  description: |
+    Offline DE-independent Qt-based contact manager primarily for phonebooks editing/merging.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/DarkHobbit/doublecontact.git
+  commit: f6eb7bf5e1ade66bb3a1e1245277ff9af266bee6
+  patch:
+    - patches/fix_install.patch
+
+build:
+  kind: qmake
