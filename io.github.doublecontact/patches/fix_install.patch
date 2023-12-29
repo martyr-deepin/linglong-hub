@@ -1,0 +1,31 @@
+diff --git a/app/doublecontact.pro b/app/doublecontact.pro
+index 6ad5679..aa91b8d 100644
+--- a/app/doublecontact.pro
++++ b/app/doublecontact.pro
+@@ -113,3 +113,12 @@ RESOURCES += \
+     doublecontact.qrc
+ win32:RC_FILE = doublecontact.rc
+ macx:ICON = $${PWD}/../img/multi/doublecontact.icns
++
++target.path = $$PREFIX/bin
++desktop-file.path = $$PREFIX/share/applications
++desktop-file.files += doublecontact.desktop
++desktop-icon.path = $$PREFIX/share/icons
++desktop-icon.files += ../img/
++translations.path = $$PREFIX/share/
++translations.files += ../translations/
++INSTALLS += target desktop-file desktop-icon translations
+diff --git a/core/languagemanager.cpp b/core/languagemanager.cpp
+index 545dcdc..6068707 100644
+--- a/core/languagemanager.cpp
++++ b/core/languagemanager.cpp
+@@ -111,6 +111,8 @@ QString LanguageManager::transPath()
+         // Developer case
+         if (QDir(qApp->applicationDirPath()+"/../translations").exists()) // in-source build
+             return qApp->applicationDirPath()+"/../translations";
++        if (QDir(qApp->applicationDirPath()+"/../share/translations").exists()) // in-source build
++            return qApp->applicationDirPath()+"/../share/translations";
+         else
+             return qApp->applicationDirPath()+"/../../doublecontact/translations"; // shadow build
+     }
+
