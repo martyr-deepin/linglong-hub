@@ -1,0 +1,46 @@
+diff --git a/dsremote.pro b/dsremote.pro
+index 99e866c..698e978 100644
+--- a/dsremote.pro
++++ b/dsremote.pro
+@@ -48,30 +48,35 @@ SOURCES += settings_dialog.cpp
+ 
+ RESOURCES = images.qrc
+ 
+-target.path = /usr/bin
++target.path = $$PREFIX/bin
+ target.files = dsremote
+ INSTALLS += target
+ 
+-icon_a.path = /usr/share/icons
++icon_a.path = $$PREFIX/usr/share/icons
+ icon_a.files = images/r.png
+ INSTALLS += icon_a
+ 
+-icon_b.path += /usr/share/pixmaps
++icon_b.path += $$PREFIX/usr/share/pixmaps
+ icon_b.files = images/r.png
+ INSTALLS += icon_b
+ 
+-icon_c.path += /usr/share/icons/hicolor/48x48/apps
++icon_c.path += $$PREFIX/usr/share/icons/hicolor/48x48/apps
+ icon_c.files = images/r.png
+ INSTALLS += icon_c
+ 
+-icon_d.path += /usr/share/icons/hicolor/48x48/mimetypes
++icon_d.path += $$PREFIX/usr/share/icons/hicolor/48x48/mimetypes
+ icon_d.files = images/r.png
+ INSTALLS += icon_d
+ 
+-desktop_link.path += /usr/share/applications
++desktop_link.path += $$PREFIX/share/applications
+ desktop_link.files += install/dsremote.desktop
+ INSTALLS += desktop_link
+ 
++icons.path = $${PREFIX}/share/icons
++icons.files = images/r.png
++INSTALLS += icons
++
++
+ 
+ 
+ 
