@@ -1,0 +1,30 @@
+diff --git a/QTblEditor.desktop b/QTblEditor.desktop
+new file mode 100644
+index 0000000..245f800
+--- /dev/null
++++ b/QTblEditor.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Type=Application
++Name=QTblEditor
++Exec=QTblEditor %f
++Icon=Baal
+diff --git a/QTblEditor.pro b/QTblEditor.pro
+index 2d2c057..dde2912 100644
+--- a/QTblEditor.pro
++++ b/QTblEditor.pro
+@@ -96,3 +96,14 @@ macx {
+ win32 {
+     RC_FILE = qtbleditor.rc
+ }
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += QTblEditor.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = Resources/Baal.png
++INSTALLS += icons

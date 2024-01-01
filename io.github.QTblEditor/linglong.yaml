@@ -1,0 +1,22 @@
+package:
+  id: io.github.QTblEditor
+  name: QTblEditor
+  version: 1.5.0
+  kind: app
+  description: |
+    just another Diablo II .tbl file editor.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/kambala-decapitator/QTblEditor.git
+  commit: 887d1863cce9835e8708f6be398a714339af043a
+  patch:
+    - patches/add_desktop.patch
+
+
+build:
+  kind: qmake
