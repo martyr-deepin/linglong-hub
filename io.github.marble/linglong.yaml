@@ -1,0 +1,20 @@
+package:
+  id: io.github.marble
+  name: marble
+  version: 24.01.85
+  kind: app
+  description:
+    Virtual Globe and World Atlas that you can use to learn more about the Earth
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: 'https://github.com/KDE/marble.git'
+  version: master
+  commit: 140c50956ece2121f9bfffb1e47d4d59abba229e
+
+build:
+  kind: cmake
