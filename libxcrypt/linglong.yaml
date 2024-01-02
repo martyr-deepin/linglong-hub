@@ -1,0 +1,26 @@
+package:
+  id: libxcrypt
+  name: libxcrypt
+  version: 4.4.36
+  kind: lib
+  description:
+    Extended crypt library for descrypt, md5crypt, bcrypt, and others
+
+depends:
+  - id: automake
+    version: 1.16.5
+  - id: libtool
+    version: 2.4.2
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: 'https://github.com/besser82/libxcrypt.git'
+  version: master
+  commit: f531a36aa916a22ef2ce7d270ba381e264250cbf
+
+build:
+  kind: autotools
