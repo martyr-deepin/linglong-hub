@@ -1,0 +1,37 @@
+From d6200ab0412146a3a76bba67f18ed84ef6b8de2f Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 5 Jan 2024 18:11:38 +0800
+Subject: [PATCH] install
+
+---
+ src/CMakeLists.txt | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 159529f..7477948 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -102,7 +102,7 @@ endif(USE_QT_WEBENGINE)
+ ##############################################################################
+ install(TARGETS ${DownZemAll_NAME}
+     RUNTIME
+-    DESTINATION ${CMAKE_INSTALL_PREFIX}
++    DESTINATION bin
+     )
+ 
+ install (
+@@ -131,7 +131,9 @@ endif()
+ 
+ install (
+     FILES ${Desktop_Shortcut}
+-    DESTINATION ${CMAKE_INSTALL_PREFIX}/desktop_shortcut
++    DESTINATION share/applications
+     COMPONENT release_docs
+     )
+ 
++install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/installer/unix/portable/DownZemAll_64x64.png
++        DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/64x64/apps/")
+\ No newline at end of file
+-- 
+2.33.1
+
