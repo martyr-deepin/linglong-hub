@@ -1,0 +1,19 @@
+package:
+  id: io.github.coolreader
+  name: coolreader
+  version: 3.2.58
+  kind: app
+  description: |
+    Official site of CoolReader project. Sourceforge repository is obsolete.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/buggins/coolreader.git
+  commit: 105a1ef1c456dd49fafae36f5e7cb7eb33ba957a
+
+build:
+  kind: cmake
