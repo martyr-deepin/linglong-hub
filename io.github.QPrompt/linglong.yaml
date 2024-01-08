@@ -1,0 +1,25 @@
+package:
+  id: io.github.QPrompt
+  name: QPrompt
+  version: 1.0.0
+  kind: app
+  description: |
+    Teleprompter software for all video creators. Built with ease of use, productivity, control accuracy, and smooth performance in mind.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: kirigami/5.90.0
+  - id: ki18n/5.90.0
+  - id: kcoreaddons/5.90.0
+  - id: kiconthemes/5.90.0
+
+source:
+  kind: git
+  url: https://github.com/Cuperino/QPrompt-Teleprompter.git
+  commit: c886f9b692dc8900af69f01b6af26f19f220090f
+
+build:
+  kind: cmake
