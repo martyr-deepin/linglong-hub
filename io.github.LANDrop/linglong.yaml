@@ -1,0 +1,27 @@
+package:
+  id: io.github.LANDrop
+  name: LANDrop
+  version: 0.4.0
+  kind: app
+  description: |
+    Drop any files to any devices on your LAN.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/LANDrop/LANDrop.git
+  commit: b9675d7b9df5f79b7c6ab4c7b37cabd1ad28328c
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd LANDrop
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
