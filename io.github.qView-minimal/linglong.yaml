@@ -1,0 +1,20 @@
+package:
+  id: io.github.qView-minimal
+  name: qView-minimal
+  version: 3.0.0
+  kind: app
+  description: |
+    Practical and minimal image viewer
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Qt-Widgets/qView-minimal-image-viewer.git
+  commit: a744bf572a0a84e19a4822bc8922c7230e5a67ab
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
