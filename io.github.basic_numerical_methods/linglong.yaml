@@ -1,0 +1,28 @@
+package:
+  id: io.github.basic_numerical_methods
+  name: basic_numerical_methods
+  version: 3.0.9
+  kind: app
+  description: |
+    A Qt application for basic numerical methods.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/hafmed/basic_numerical_methods.git
+  commit: 03077a360081a13651b9ea844d90d17323b58d68
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

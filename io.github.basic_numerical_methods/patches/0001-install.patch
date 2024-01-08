@@ -1,0 +1,29 @@
+From 613181c524034c5e4988d736954009e779a92f9b Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 8 Jan 2024 19:06:13 +0800
+Subject: [PATCH] install
+
+---
+ src/basic_numerical_methods.pro | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/src/basic_numerical_methods.pro b/src/basic_numerical_methods.pro
+index 54ca030..9b81943 100644
+--- a/src/basic_numerical_methods.pro
++++ b/src/basic_numerical_methods.pro
+@@ -44,3 +44,12 @@ RESOURCES += \
+ 
+ win32:RC_ICONS += basic_numerical_methods.ico
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =basic_numerical_methods.desktop
++desktop.path = $$DATADIR/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = basic_numerical_methods.png
++INSTALLS += target desktop icons
++
+-- 
+2.33.1
+
