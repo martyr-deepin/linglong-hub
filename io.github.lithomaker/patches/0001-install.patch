@@ -1,0 +1,45 @@
+From f6e2119c3142f073288579c8171a90b9a22395bf Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 6 Jan 2024 14:19:20 +0800
+Subject: [PATCH] install
+
+---
+ default.desktop |  2 +-
+ lithomaker.pro  | 10 ++++++++++
+ 2 files changed, 11 insertions(+), 1 deletion(-)
+
+diff --git a/default.desktop b/default.desktop
+index eaee8bf..f57bf66 100644
+--- a/default.desktop
++++ b/default.desktop
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Type=Application
+ Name=LithoMaker
+-Exec=AppRun %F
++Exec=LithoMaker
+ Icon=default
+ Comment=Lithophane 3D mesh renderer and exporter
+ Terminal=true
+diff --git a/lithomaker.pro b/lithomaker.pro
+index 5e5ccf9..51d8f1c 100644
+--- a/lithomaker.pro
++++ b/lithomaker.pro
+@@ -32,3 +32,13 @@ SOURCES += src/main.cpp \
+            src/configpages.cpp \
+            src/configdialog.cpp \
+            src/aboutbox.cpp
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =default.desktop
++desktop.path = $$DATADIR/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = default.png
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
