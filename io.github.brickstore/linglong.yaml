@@ -1,0 +1,23 @@
+package:
+  id: io.github.brickstore
+  name: brickstore
+  version: 2021.1.0
+  kind: app
+  description: |
+    An offline BrickLink inventory management tool.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtscript/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/rgriebl/brickstore.git
+  commit: c9da44132419b0f45929f72b63d9abd6f40f22e0
+
+build:
+  kind: qmake
