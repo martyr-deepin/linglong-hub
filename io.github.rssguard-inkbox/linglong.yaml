@@ -1,0 +1,19 @@
+package:
+  id: io.github.rssguard-inkbox
+  name: rssguard-inkbox
+  version: 4.3.4
+  kind: app
+  description: |
+    Feed reader which supports RSS/ATOM/JSON and many web-based feed services.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Szybet/rssguard-inkbox.git
+  commit: 5604f1268d1c13ea982a23c5fb34571adaa08d4c
+
+build:
+  kind: cmake
