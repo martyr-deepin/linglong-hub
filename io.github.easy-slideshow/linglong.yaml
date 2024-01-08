@@ -1,0 +1,19 @@
+package:
+  id: io.github.easy-slideshow
+  name: easy-slideshow
+  version: 0.4.5.3
+  kind: app
+  description: |
+    Slideshow that displays the images of multiple folders in a randomized order.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/minils/easy-slideshow.git
+  commit: c5bf2b85cb9f70618ba04aa610cc1ef1b03d56ae
+
+build:
+  kind: qmake
