@@ -1,0 +1,20 @@
+package:
+  id: io.github.lithomaker
+  name: lithomaker
+  version: 0.7.1
+  kind: app
+  description: |
+    Creates 3D lithophanes from image files, exports them to stl files, ready for slicing and 3D printing.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/muldjord/lithomaker.git
+  commit: 9643d4020387d72910803bb1c38913c4e97b7549
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
