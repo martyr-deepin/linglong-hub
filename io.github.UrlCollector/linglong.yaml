@@ -1,0 +1,21 @@
+package:
+  id: io.github.UrlCollector
+  name: UrlCollector
+  version: 2.1.0
+  kind: app
+  description: |
+    Desktop application for collect web-links
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/TechnoMag82/UrlCollector.git
+  commit: a148f6ec832e49852372b489222762544d76d999
+  patch: 
+    - patches/0001-install.patch
+
+build:
+  kind: qmake
