@@ -1,0 +1,28 @@
+package:
+  id: io.github.hydraulics_channel_gvf
+  name: hydraulics_channel_gvf
+  version: 3.0.9.1
+  kind: app
+  description: |
+    Application that calculate water-surface elevation in prismatic channel with gradually varied flow.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/hafmed/hydraulics_channel_gvf.git
+  commit: 80cdebf27d1e7e3eeccdcd9a9aea7667873008dd
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
