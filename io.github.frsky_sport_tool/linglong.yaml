@@ -1,0 +1,20 @@
+package:
+  id: io.github.frsky_sport_tool
+  name: frsky_sport_tool
+  version: 0.2.0
+  kind: app
+  description: |
+    Open-Source, Multi-Platform Frsky Sport Tool Suite for firmware programming, device configuration, and data monitoring of Frsky RC Receivers and Telemetry devices.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dewhisna/frsky_sport_tool.git
+  commit: 231159b97bda6e6b9147b645d05ed306aa6c98a3
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
