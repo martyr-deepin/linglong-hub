@@ -1,0 +1,45 @@
+From 8a9c26b07ec5c2471f1556a8749af9ed00717259 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 8 Jan 2024 18:35:07 +0800
+Subject: [PATCH] install
+
+---
+ src/water-hammer-simulation.desktop |  2 +-
+ src/water-hammer-simulation.pro     | 11 +++++++++++
+ 2 files changed, 12 insertions(+), 1 deletion(-)
+
+diff --git a/src/water-hammer-simulation.desktop b/src/water-hammer-simulation.desktop
+index 13e5f43..3cf5801 100644
+--- a/src/water-hammer-simulation.desktop
++++ b/src/water-hammer-simulation.desktop
+@@ -2,7 +2,7 @@
+ Name=water-hammer-simulation
+ Comment=Application to calculate Water HAMMER phenomen.
+ Exec=water-hammer-simulation
+-Icon=default
++Icon=water-hammer-simulation
+ Terminal=false
+ Type=Application
+ Categories=Utility;Graphics;Education;Science;
+diff --git a/src/water-hammer-simulation.pro b/src/water-hammer-simulation.pro
+index 82cf0ad..945361b 100644
+--- a/src/water-hammer-simulation.pro
++++ b/src/water-hammer-simulation.pro
+@@ -37,3 +37,14 @@ RESOURCES += \
+ 
+ win32:RC_ICONS += icons\water-hammer-simulation.ico
+ 
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =water-hammer-simulation.desktop
++desktop.path = $$DATADIR/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = water-hammer-simulation.ico
++icon1.path = $$PREFIX/share/icons
++icon1.files = icons/water-hammer-simulation.png
++INSTALLS += target desktop icons icon1
+-- 
+2.33.1
+
