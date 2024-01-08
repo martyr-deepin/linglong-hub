@@ -1,0 +1,24 @@
+From f843879a645ca7dd0b77df32ad1e1b6c36e3da32 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 5 Jan 2024 17:58:46 +0800
+Subject: [PATCH] install
+
+---
+ installer/unix/portable/DownZemAll.desktop | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/installer/unix/portable/DownZemAll.desktop b/installer/unix/portable/DownZemAll.desktop
+index e33a9e6..b5a35bf 100644
+--- a/installer/unix/portable/DownZemAll.desktop
++++ b/installer/unix/portable/DownZemAll.desktop
+@@ -8,5 +8,5 @@ Comment[fr]=Le parfait téléchargeur de masse
+ Categories=Utility;
+ StartupNotify=false
+ Terminal=false
+-Exec=/ABSOLUTE/PATH/TO/APP/DIRECTORY/../DownZemAll %U
+-Icon=/ABSOLUTE/PATH/TO/APP/DIRECTORY/DownZemAll_64x64.png
++Exec=DownZemAll
++Icon=DownZemAll_64x64.png
+-- 
+2.33.1
+

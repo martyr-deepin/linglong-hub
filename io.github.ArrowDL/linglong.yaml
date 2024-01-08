@@ -1,0 +1,22 @@
+package:
+  id: io.github.ArrowDL
+  name: ArrowDL
+  version: 2.5.0
+  kind: app
+  description: |
+    ArrowDL (Arrow Downloader) is a download manager for Windows, MacOS and Linux
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/setvisible/ArrowDL.git
+  commit: 0c87b4720312edc45e2fd396dab7c57d19d159f4
+  patch:
+    - patches/0001-install.patch
+    - patches/0002-install.patch
+
+build:
+  kind: cmake
