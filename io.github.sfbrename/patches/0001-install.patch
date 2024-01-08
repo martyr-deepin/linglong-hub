@@ -1,0 +1,47 @@
+From 897c617f57faaa1cfcf9f0ac86145f6d2209cee0 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 5 Jan 2024 20:15:01 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt        | 4 ++++
+ rsc/sfbrename.desktop | 2 +-
+ 2 files changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 200c7fe..27dd666 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -69,6 +69,7 @@ if(NOT CONSOLE)
+ endif()
+ 
+ add_executable(${PROJECT_NAME} WIN32 ${SRC_FILES})
++target_link_libraries(sfbrename -lz)
+ target_link_libraries(${PROJECT_NAME} ${PKGCONFS_LIBRARIES})
+ if(MINGW)
+ 	set(RESOURCE_OBJ "${CMAKE_BINARY_DIR}/sfbrename.res")
+@@ -217,6 +218,9 @@ else()
+ 	endif()
+ endif()
+ 
++install(FILES rsc/sfbrename.desktop
++            DESTINATION share/applications)
++
+ if(APPIMAGE)
+ 	add_custom_target("uninstall"
+ 		COMMAND "${CMAKE_COMMAND}" -E remove -f "${CMAKE_INSTALL_PREFIX}/bin/${PROJECT_NAME}.AppImage"
+diff --git a/rsc/sfbrename.desktop b/rsc/sfbrename.desktop
+index f1e8738..9593b22 100755
+--- a/rsc/sfbrename.desktop
++++ b/rsc/sfbrename.desktop
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ Name=sfbrename
+-Exec=usr/bin/sfbrename
++Exec=sfbrename
+ Icon=sfbrename
+ Comment=Tool for batch renaming files
+ GenericName=Bulk file renamer
+-- 
+2.33.1
+

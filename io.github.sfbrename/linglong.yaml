@@ -1,0 +1,20 @@
+package:
+  id: io.github.sfbrename
+  name: sfbrename
+  version: 1.0.0
+  kind: app
+  description: |
+    Bulk file renamer
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/karwler/sfbrename.git
+  commit: 2efee1430b95d2fc509b2b44a1762b0b3b206cf5
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
