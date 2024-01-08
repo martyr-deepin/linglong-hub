@@ -1,0 +1,19 @@
+package:
+  id: io.github.noson-app
+  name: noson-app
+  version: 2.3.5
+  kind: app
+  description: |
+    The essential to control music from your SONOS devices on Linux platforms
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/janbar/noson-app.git
+  commit: 0928bab0c1464c8b451e1d369bb888f5669a087b
+
+build:
+  kind: cmake
