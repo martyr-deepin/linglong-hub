@@ -1,0 +1,19 @@
+package:
+  id: io.github.qmidinet
+  name: qmidinet
+  version: 0.9.11
+  kind: app
+  description: |
+    QmidiNet - A MIDI Network Gateway via UDP/IP Multicast
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/rncbc/qmidinet.git
+  commit: ab27e04dd9c7cbb53f9c1f6d987495fbbd29fa3e
+
+build:
+  kind: cmake
