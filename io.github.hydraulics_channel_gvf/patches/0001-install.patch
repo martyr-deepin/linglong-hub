@@ -1,0 +1,29 @@
+From adc576642eb9fecdbce93c9fbd3ab6301e78c335 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 8 Jan 2024 18:53:50 +0800
+Subject: [PATCH] install
+
+---
+ src/hydraulics-channel-gvf.pro | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/src/hydraulics-channel-gvf.pro b/src/hydraulics-channel-gvf.pro
+index c31fc79..b43a587 100644
+--- a/src/hydraulics-channel-gvf.pro
++++ b/src/hydraulics-channel-gvf.pro
+@@ -39,3 +39,12 @@ RESOURCES += \
+ 
+ win32:RC_ICONS += icons\hydraulics-channel-gvf.ico
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =../CompilationLinux/hydraulics-channel-gvf.desktop
++desktop.path = $$DATADIR/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = ../CompilationLinux/hydraulics-channel-gvf.png
++INSTALLS += target desktop icons
++
+-- 
+2.33.1
+
