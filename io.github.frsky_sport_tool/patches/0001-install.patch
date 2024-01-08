@@ -1,0 +1,29 @@
+From 5d7f99cdf70735877689eadb9e7b3c3393caeb39 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 6 Jan 2024 13:42:27 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 36f9474..dce72ee 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -124,3 +124,11 @@ target_link_libraries(frsky_sport_tool PRIVATE
+ 
+ add_subdirectory(frsky_firmware_flash)
+ add_subdirectory(frsky_device_emu)
++
++install(TARGETS ${PROJECT_NAME}
++             DESTINATION bin)
++install(FILES frsky_sport_tool4.png
++        DESTINATION share/icons)
++
++install(FILES frsky_sport_tool.desktop
++            DESTINATION share/applications)
+\ No newline at end of file
+-- 
+2.33.1
+
