@@ -1,0 +1,31 @@
+From 8c73d2968247b96cb299ca9021bc2815b4753416 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 8 Jan 2024 20:33:04 +0800
+Subject: [PATCH] install
+
+---
+ Serial-Studio.pro | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/Serial-Studio.pro b/Serial-Studio.pro
+index 53216f4..a668806 100644
+--- a/Serial-Studio.pro
++++ b/Serial-Studio.pro
+@@ -92,9 +92,11 @@ macx* {
+ }
+ 
+ linux:!android {
+-    target.path = /usr/bin
+-    icon.path = /usr/share/pixmaps
+-    desktop.path = /usr/share/applications
++    BINDIR = $$PREFIX/bin
++    DATADIR = $$PREFIX/share
++    target.path = $$BINDIR
++    icon.path = $$PREFIX/share/icons
++    desktop.path = $$DATADIR/applications/
+     icon.files += deploy/linux/serial-studio.png
+     desktop.files += deploy/linux/serial-studio.desktop
+ 
+-- 
+2.33.1
+
