@@ -1,0 +1,24 @@
+package:
+  id: io.github.Eqonomize
+  name: Eqonomize
+  version: 1.5.6
+  kind: app
+  description: |
+    Eqonomize! Personal accounting (cross-platform)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtcharts/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/Eqonomize/Eqonomize.git
+  commit: ebec8a3e1c7d655265059cfcc0d1711b4a775ca2
+
+build:
+  kind: qmake
+
