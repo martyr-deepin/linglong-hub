@@ -1,0 +1,19 @@
+package:
+  id: io.github.Forserino
+  name: Forserino
+  version: 2.3.4
+  kind: app
+  description: |
+    Chat client for twitch.tv. See releases for download. Only nightlies are supported.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/felyp7/Forserino.git
+  commit: dbb00895d8c87c1ed93eb99ab30bf1d59c070c19
+
+build:
+  kind: cmake
