@@ -1,0 +1,27 @@
+package:
+  id: io.github.kleiner-brauhelfer-2
+  name: kleiner-brauhelfer-2
+  version: 2.2.0
+  kind: app
+  description: |
+    Der kleine-brauhelfer ist ein Hilfsprogramm f¨¹r Hobbybrauer zum Erstellen und Verwalten von Biersuden.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine/5.15.7
+    type: runtime
+  - id: qtcharts/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/kleiner-brauhelfer/kleiner-brauhelfer-2.git
+  commit: 0706ab69cfa72de352f4d0673529820128cf5a4f
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  

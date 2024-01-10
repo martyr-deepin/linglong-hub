@@ -1,0 +1,30 @@
+From 2229638d056255fd082f7c7b6bb14aea73b8066f Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 9 Jan 2024 16:05:15 +0800
+Subject: [PATCH] install
+
+---
+ kleiner-brauhelfer/kleiner-brauhelfer.pro | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/kleiner-brauhelfer/kleiner-brauhelfer.pro b/kleiner-brauhelfer/kleiner-brauhelfer.pro
+index 3d29493..567a202 100644
+--- a/kleiner-brauhelfer/kleiner-brauhelfer.pro
++++ b/kleiner-brauhelfer/kleiner-brauhelfer.pro
+@@ -236,3 +236,13 @@ RESOURCES += \
+ TRANSLATIONS += \
+     translations/kbh_en.ts \
+     translations/kbh_sv.ts
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =../deployment/linux/64bit/AppImage/kleiner-brauhelfer-2.desktop
++desktop.path = $$DATADIR/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = ../deployment/kleiner-brauhelfer-2.svg
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
