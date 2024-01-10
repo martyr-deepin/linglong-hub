@@ -1,0 +1,25 @@
+From af6631d5e763a5b1667f21e7bd442119584ec92e Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 10 Jan 2024 11:55:50 +0800
+Subject: [PATCH] install
+
+---
+ src/frame_slider.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/frame_slider.cpp b/src/frame_slider.cpp
+index 5d834f1..d45dbdd 100644
+--- a/src/frame_slider.cpp
++++ b/src/frame_slider.cpp
+@@ -23,7 +23,7 @@
+ #include <QPainter>
+ #include <QSlider>
+ #include <QStyleOptionSlider>
+-
++#include <QPainterPath>
+ #include <cassert>
+ 
+ #include "persistent_data.h"
+-- 
+2.33.1
+
