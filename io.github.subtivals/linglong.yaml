@@ -1,0 +1,27 @@
+package:
+  id: io.github.subtivals
+  name: subtivals
+  version: 1.10.0
+  kind: app
+  description: |
+    Subtivals is a tool to project subtitles under a movie in festivals, specialy targeted at the hard of hearing community.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Subtivals/subtivals.git
+  commit: ec820876325bd51e860bf2e329d171321853dad1
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
