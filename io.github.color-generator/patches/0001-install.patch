@@ -1,0 +1,39 @@
+From c1cf5c96f68793ab773b92e59dc6ae963f2a059a Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 9 Jan 2024 12:09:59 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 3e79cea..5b33dcb 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -7,7 +7,7 @@ if(NOT CMAKE_BUILD_TYPE)
+   set(CMAKE_BUILD_TYPE Release)
+ endif()
+ 
+-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
++set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build_dir)
+ set(EXECUTABLE_NAME "color-generator")
+ 
+ include_directories(${PROJECT_SOURCE_DIR}/inc)
+@@ -17,3 +17,12 @@ add_executable(${EXECUTABLE_NAME} ${sources})
+ find_package(wxWidgets REQUIRED core base)
+ include(${wxWidgets_USE_FILE})
+ target_link_libraries(${EXECUTABLE_NAME} ${wxWidgets_LIBRARIES})
++
++install(TARGETS color-generator DESTINATION bin)
++
++install(FILES dist/icon.png
++        DESTINATION share/icons)
++
++
++install(FILES scripts/linux/color-generator.desktop
++            DESTINATION share/applications)
+\ No newline at end of file
+-- 
+2.33.1
+

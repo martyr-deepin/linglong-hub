@@ -1,0 +1,24 @@
+package:
+  id: io.github.color-generator
+  name: color-generator
+  version: 0.22.0
+  kind: app
+  description: |
+    An application that generates color palettes similar to ColorBrewer but algorithmically using intuitive parameters.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: wxWidgets/3.2.3
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/YaShock/color-generator.git
+  commit: dfd5e91f11257b52026375f1d6298b18cc2a04a7
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
