@@ -1,0 +1,19 @@
+package:
+  id: io.github.obs-studio
+  name: obs-studio
+  version: 26.0.1
+  kind: app
+  description: |
+    OBS Studio - Free and open source software for live streaming and screen recording
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/obsproject/obs-studio.git
+  commit: 50cbafd711c3899d886ff2401787e15f1e38fbee
+
+build:
+  kind: cmake
