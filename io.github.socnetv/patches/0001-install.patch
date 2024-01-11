@@ -1,0 +1,30 @@
+From a1b5ac74aadc8519a0af6411c41814b5e35b112e Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 11 Jan 2024 13:37:00 +0800
+Subject: [PATCH] install
+
+---
+ socnetv.pro | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/socnetv.pro b/socnetv.pro
+index 5d186696..8c27f8eb 100755
+--- a/socnetv.pro
++++ b/socnetv.pro
+@@ -146,11 +146,11 @@ unix:!macx{
+ # with the command:
+ # make INSTALL_ROOT=<folder> install; 
+ 
+-  PREFIX = /usr
++
+   target.path = $${PREFIX}/bin
+   TARGET = socnetv
+ 
+-  pixmap.path = $${PREFIX}/share/pixmaps
++  pixmap.path = $${PREFIX}/share/icons
+   pixmap.files = src/images/socnetv.png
+ 
+ #  documentation.path = $${PREFIX}/share/doc/socnetv
+-- 
+2.33.1
+
