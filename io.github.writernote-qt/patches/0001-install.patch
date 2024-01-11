@@ -1,0 +1,51 @@
+From 44a7ad3843f6c3adb8f6021572b9376169e6e7ea Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 11 Jan 2024 15:32:43 +0800
+Subject: [PATCH] install
+
+---
+ snap/gui/writernote.desktop |  2 +-
+ writernote.pro              | 12 +++++++++++-
+ 2 files changed, 12 insertions(+), 2 deletions(-)
+
+diff --git a/snap/gui/writernote.desktop b/snap/gui/writernote.desktop
+index a777ad19..d562d153 100644
+--- a/snap/gui/writernote.desktop
++++ b/snap/gui/writernote.desktop
+@@ -2,7 +2,7 @@
+ Name=writernote
+ Comment=Take notes smart
+ Exec=writernote
+-Icon=${SNAP}/meta/gui/icon-writernote.png
++Icon=icon-writernote
+ Terminal=false
+ Type=Application
+ Encoding=UTF-8
+diff --git a/writernote.pro b/writernote.pro
+index b7c5c843..f38892e3 100644
+--- a/writernote.pro
++++ b/writernote.pro
+@@ -169,9 +169,19 @@ LIBS += -lstdc++fs -lglib-2.0
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =snap/gui/writernote.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = snap/gui/icon-writernote.png
++icons.path = $$PREFIX/share/icons
++INSTALLS += target desktop icons
++
++
+ unix: CONFIG += link_pkgconfig
+ unix: PKGCONFIG += libzip
+ 
+-- 
+2.33.1
+
