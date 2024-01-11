@@ -1,0 +1,36 @@
+From 23559aa2335b01f32d40fa027bdc96c4494b145e Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 10 Jan 2024 13:48:10 +0800
+Subject: [PATCH] install
+
+---
+ src/CMakeLists.txt | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 785396e..04e3feb 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -216,5 +216,19 @@ add_executable(${PROJECT_NAME} ${SYSTEM_TYPE} ${SOURCE_FILES})
+ 
+ install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
+ 
++install(FILES resources/seergdb_32x32.png
++        DESTINATION /share/icons/hicolor/32x32/apps/)
++install(FILES resources/seergdb_64x64.png
++        DESTINATION /share/icons/hicolor/64x64/apps/)
++install(FILES resources/seergdb_128x128.png
++        DESTINATION /share/icons/hicolor/128x128/apps/)
++install(FILES resources/seergdb_256x256.png
++        DESTINATION /share/icons/hicolor/256x256/apps/)
++install(FILES resources/seergdb_512x512.png
++        DESTINATION /share/icons/hicolor/512x512/apps/)
++
++install(FILES resources/seergdb.desktop
++            DESTINATION share/applications)
++
+ target_link_libraries(${PROJECT_NAME} Qt5::Widgets Qt5::Gui Qt5::Core Qt5::PrintSupport Qt5::Charts)
+ 
+-- 
+2.33.1
+
