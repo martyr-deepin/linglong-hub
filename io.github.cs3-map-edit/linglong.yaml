@@ -1,0 +1,20 @@
+package:
+  id: io.github.cs3-map-edit
+  name: cs3-map-edit
+  version: 0.3.0.2
+  kind: app
+  description: |
+    Map Editor for CS3 Remake 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/cfrankb/cs3-map-edit.git
+  commit: 928048b13c8fd2a070b089eda416b5b983fd83dd
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

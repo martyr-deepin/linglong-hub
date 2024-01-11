@@ -1,0 +1,41 @@
+From d3e76c9862ccfb4c436272f421bddc1f6b982798 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 10 Jan 2024 14:08:45 +0800
+Subject: [PATCH] install
+
+---
+ mapedit.pro | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
+
+diff --git a/mapedit.pro b/mapedit.pro
+index 3eca5a4..1987f71 100644
+--- a/mapedit.pro
++++ b/mapedit.pro
+@@ -80,9 +80,10 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++
+ RESOURCES += \
+     mapedit.qrc
+ 
+@@ -91,3 +92,12 @@ win32:LIBS += -L"libs" -lzlib
+ 
+ QMAKE_CXXFLAGS_RELEASE += -std=c++17 -O3
+ QMAKE_CXXFLAGS_DEBUG += -std=c++17 -g3
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =linux/CS3MapEdit.desktop
++desktop.path = $$DATADIR/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = linux/CS3MapEdit-icon.png
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
