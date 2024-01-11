@@ -1,0 +1,60 @@
+From d92a601a9994fa7b48e2ef58d29295a73964602c Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 11 Jan 2024 15:24:25 +0800
+Subject: [PATCH] install
+
+---
+ m-fet.pro   | 14 +++++++-------
+ src/src.pro |  2 +-
+ 2 files changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/m-fet.pro b/m-fet.pro
+index 3ccc7b6..958a21d 100755
+--- a/m-fet.pro
++++ b/m-fet.pro
+@@ -2,22 +2,22 @@ TEMPLATE = subdirs
+ SUBDIRS = src/src.pro src/src-cl.pro
+ 
+ unix {
+-translations.path = /usr/share/metafet/translations
++translations.path = $$PREFIX/share/metafet/translations
+ translations.files = translations/*.qm
+ 
+-examples.path = /usr/share/m-fet
++examples.path = $$PREFIX/share/m-fet
+ examples.files = examples/
+ 
+-desktop.path = /usr/share/applications
+-desktop.files = m-fet.desktop
++desktop.path = $$PREFIX/share/applications/
++desktop.files = fet.desktop
+ 
+-documentation.path = /usr/share/doc/m-fet
++documentation.path = $$PREFIX/share/doc/m-fet
+ documentation.files = doc/* COPYING README.md
+ 
+-manual.path = /usr/share/man/man1
++manual.path = $$PREFIX/share/man/man1
+ manual.files = man/*
+ 
+-icon_png.path = /usr/share/pixmaps
++icon_png.path = $$PREFIX/share/icons
+ icon_png.files = icons/m-fet.png
+ 
+ INSTALLS += desktop manual documentation icon_png
+diff --git a/src/src.pro b/src/src.pro
+index 43b53b0..b2b97e9 100755
+--- a/src/src.pro
++++ b/src/src.pro
+@@ -1070,7 +1070,7 @@ DEPENDPATH +=engine engine/algorithms interface utils interface/constraints inte
+ RESOURCES += interface/interface_images.qrc
+ 
+ unix {
+-target.path = /usr/bin
++target.path = $$PREFIX/bin
+ 
+ INSTALLS += target
+ }
+-- 
+2.33.1
+
