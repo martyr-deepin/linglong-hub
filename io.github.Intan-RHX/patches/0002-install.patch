@@ -1,0 +1,45 @@
+From d784ba29794b6278bb7c2d826b5b383bddc36105 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 11 Jan 2024 14:58:41 +0800
+Subject: [PATCH] install
+
+---
+ IntanRHX.pro                            | 13 +++++++++++++
+ contrib/com.intantech.intan_rhx.desktop |  2 +-
+ 2 files changed, 14 insertions(+), 1 deletion(-)
+
+diff --git a/IntanRHX.pro b/IntanRHX.pro
+index 458ae34..4bb5bc7 100644
+--- a/IntanRHX.pro
++++ b/IntanRHX.pro
+@@ -289,3 +289,16 @@ LIBS += -L$$PWD/libraries/Linux/ -lokFrontPanel # Opal Kelly Front Panel library
+ QMAKE_LFLAGS += '-Wl,-rpath,\'\$$ORIGIN\'' # Flag that at runtime, look for shared libraries (like
+                                            # libokFrontPanel.so) at the same directory as the binary
+ }
++
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =contrib/com.intantech.intan_rhx.desktop
++desktop.path = $$DATADIR/applications/
++icons.files = images/intan-rhx.svg
++icons.path = $$PREFIX/share/icons
++lib.files = libraries/Linux/libokFrontPanel.so
++lib.path = $$BINDIR
++INSTALLS += target desktop icons lib
+diff --git a/contrib/com.intantech.intan_rhx.desktop b/contrib/com.intantech.intan_rhx.desktop
+index ef44aa3..c5e48c4 100644
+--- a/contrib/com.intantech.intan_rhx.desktop
++++ b/contrib/com.intantech.intan_rhx.desktop
+@@ -7,5 +7,5 @@ Comment=A free, powerful data acquisition software for electrophysiological sign
+ Categories=Science;Biology;
+ 
+ Icon=intan-rhx
+-Exec=intan-rhx
++Exec=IntanRHX
+ Terminal=false
+-- 
+2.33.1
+
