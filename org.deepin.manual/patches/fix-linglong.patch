@@ -1,0 +1,44 @@
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 3b022571..cb821553 100755
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -7,6 +7,18 @@ project(deepin-manual C CXX)
+ set(CMAKE_INSTALL_PREFIX /usr)
+ add_definitions(-DDMAN_MANUAL_DIR="${CMAKE_INSTALL_PREFIX}/share/deepin-manual/manual-assets")
+ 
++####### 玲珑构建配置
++# 设置玲珑构建安装目录到CMAKE_INSTALL_PREFIX
++set(CMAKE_INSTALL_PREFIX $ENV{PREFIX})
++# 玲珑构建编译开关
++add_definitions(-DLINGLONG_BUILD)
++# qwebengine玲珑路径
++add_definitions(-DDMAN_QWEBENGINE_DIR="${CMAKE_INSTALL_PREFIX}/lib")
++# webengine资源玲珑路径
++add_definitions(-DDMAN_WEBENGINERES_DIR="${CMAKE_INSTALL_PREFIX}/share/qt5/resources")
++# webengine翻译玲珑路径
++add_definitions(-DDMAN_WEBENGINETS_DIR="${CMAKE_INSTALL_PREFIX}/share/qt5/translations")
++
+ if (CMAKE_BUILD_TYPE MATCHES Debug)
+   add_definitions(-DDMAN_SEARCH_DB="${CMAKE_SOURCE_DIR}/manual-assets")
+   add_definitions(-DDMAN_WEB_DIR="${CMAKE_CURRENT_SOURCE_DIR}/web_dist")
+diff --git a/src/dbus/com.deepin.Manual.Open.service b/src/dbus/com.deepin.Manual.Open.service
+index 912a73ee..23ba3492 100755
+--- a/src/dbus/com.deepin.Manual.Open.service
++++ b/src/dbus/com.deepin.Manual.Open.service
+@@ -1,3 +1,4 @@
+ [D-BUS Service]
+ Name=com.deepin.Manual.Open
+-Exec=/usr/bin/dman --dbus
++Exec=/usr/bin/ll-cli run org.deepin.manual --exec "dman --dbus"
++
+diff --git a/src/dbus/com.deepin.Manual.Search.service b/src/dbus/com.deepin.Manual.Search.service
+index 1729b5b5..457ee4c3 100755
+--- a/src/dbus/com.deepin.Manual.Search.service
++++ b/src/dbus/com.deepin.Manual.Search.service
+@@ -1,3 +1,3 @@
+ [D-BUS Service]
+ Name=com.deepin.Manual.Search
+-Exec=/usr/bin/dmanHelper
+\ No newline at end of file
++Exec=/usr/bin/ll-cli run org.deepin.manual --exec "dmanHelper"
+\ No newline at end of file
