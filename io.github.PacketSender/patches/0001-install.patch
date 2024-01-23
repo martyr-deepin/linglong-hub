@@ -1,0 +1,49 @@
+From bef49a8d48979d1d4968e0277b2b989b1cc129d5 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 12 Jan 2024 13:02:15 +0800
+Subject: [PATCH] install
+
+---
+ src/PacketSender.pro     | 16 ++++++++++++++++
+ src/packetsender.desktop |  2 +-
+ 2 files changed, 17 insertions(+), 1 deletion(-)
+
+diff --git a/src/PacketSender.pro b/src/PacketSender.pro
+index d19b379..8a11892 100755
+--- a/src/PacketSender.pro
++++ b/src/PacketSender.pro
+@@ -61,3 +61,19 @@ macx:ICON = psicons.icns
+ 
+ 
+ RESOURCES += packetsender.qrc
++
++
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =packetsender.desktop
++desktop.path = $$DATADIR/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = pslogo.png
++icon1.path = $$PREFIX/share/icons/hicolor/128x128/apps
++icon1.files = pslogo128.png
++icon2.path = $$PREFIX/share/icons/hicolor/192x192/apps
++icon2.files = pslogo192.png
++icon3.path = $$PREFIX/share/icons//hicolor/256x256/apps
++icon3.files = pslogo256.png
++INSTALLS += target desktop icons icon1 icon2 icon3
+\ No newline at end of file
+diff --git a/src/packetsender.desktop b/src/packetsender.desktop
+index 37ac27b..249d9de 100644
+--- a/src/packetsender.desktop
++++ b/src/packetsender.desktop
+@@ -2,5 +2,5 @@
+ Type=Application
+ Name=PacketSender
+ Exec=PacketSender
+-Icon=packetsender
++Icon=pslogo
+ Categories=Network;
+-- 
+2.33.1
+
