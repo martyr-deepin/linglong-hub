@@ -1,0 +1,46 @@
+From 16381570bcbc66abba2968236ab9af36583c641d Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 12 Jan 2024 12:50:59 +0800
+Subject: [PATCH] install
+
+---
+ qnapi.pro | 11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
+
+diff --git a/qnapi.pro b/qnapi.pro
+index 36cabc7..f4ff11f 100644
+--- a/qnapi.pro
++++ b/qnapi.pro
+@@ -118,9 +118,8 @@ macx {
+ }
+ 
+ unix { 
+-    INSTALL_PREFIX = /usr
+-    target.path = $${INSTALL_PREFIX}/bin
+-    doc.path = $${INSTALL_PREFIX}/share/doc/$${TARGET}
++    target.path = $$PREFIX/bin
++    doc.path = $$PREFIX/share/doc/$${TARGET}
+     doc.files = doc/ChangeLog \
+         doc/LICENSE \
+         doc/LICENSE-pl \
+@@ -129,14 +128,14 @@ unix {
+         doc/qnapi-scan.desktop \
+         doc/qnapi-download.schemas \
+         doc/qnapi-scan.schemas
+-    man.path = $${INSTALL_PREFIX}/share/man/man1
++    man.path = $$PREFIX/share/man/man1
+     man.files = doc/$${TARGET}.1.gz
+-    icons.path = /usr/share/icons
++    icons.path = $$PREFIX/share/icons
+     icons.files = res/qnapi.png \
+         res/qnapi-48.png \
+         res/qnapi-128.png \
+         res/qnapi-512.png
+-    desktop.path = /usr/share/applications
++    desktop.path = $$PREFIX/share/applications
+     desktop.files = doc/$${TARGET}.desktop
+     INSTALLS = target \
+         doc \
+-- 
+2.33.1
+

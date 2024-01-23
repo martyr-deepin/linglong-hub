@@ -1,0 +1,20 @@
+package:
+  id: io.github.qnapi
+  name: qnapi
+  version: 0.1.7
+  kind: app
+  description: |
+    Qt-based, multi-engine, multi-platform subtitle downloader
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/QNapi/qnapi.git
+  commit: 994ff9ce2e0a8af44c28e31dc3f783710b6c6e9d
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
