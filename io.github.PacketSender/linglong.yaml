@@ -1,0 +1,28 @@
+package:
+  id: io.github.PacketSender
+  name: PacketSender
+  version: 5.4.0
+  kind: app
+  description: |
+    Network utility for sending / receiving TCP, UDP, SSL, HTTP
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dannagle/PacketSender.git
+  commit: c4fe32b980c2c403844e543537e6ba202f1c4091
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
