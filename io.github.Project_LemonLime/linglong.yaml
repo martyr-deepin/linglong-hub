@@ -1,0 +1,19 @@
+package:
+  id: io.github.Project_LemonLime
+  name: Project_LemonLime
+  version: 0.3.4.4
+  kind: app
+  description: |
+    为了 OI 比赛而生的基于 Lemon + LemonPlus 的轻量评测系统 | 三大桌面系统支持.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Project-LemonLime/Project_LemonLime.git
+  commit: ca5d7092f2bf96d4db18436dc8d637d593408cef
+
+build:
+  kind: cmake
