@@ -1,0 +1,21 @@
+package:
+  id: io.github.gtest-runner
+  name: gtest-runner
+  version: 1.4.0
+  kind: app
+  description: |
+    A cross-platform, Qt5 based Graphical User Interface for Google Test unit tests.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/nholthaus/gtest-runner.git
+  commit: da39a2c7687d52026edb752f260930f1312b50f4
+  patch:
+    - patches/fix_build.patch
+
+build:
+  kind: cmake

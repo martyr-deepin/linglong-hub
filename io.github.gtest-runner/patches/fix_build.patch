@@ -1,0 +1,24 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 2eb2d38..67a3628 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -70,9 +70,9 @@ find_package(Qt5Test REQUIRED)
+ # Test for supported Qt version
+ find_program(QMAKE_EXECUTABLE NAMES qmake HINTS ${QTDIR} ENV QTDIR PATH_SUFFIXES bin)
+ execute_process(COMMAND ${QMAKE_EXECUTABLE} -query QT_VERSION OUTPUT_VARIABLE QT_VERSION)
+-if(QT_VERSION LESS QT_MINIMUM_VERSION)
+-	MESSAGE(FATAL_ERROR "Minimum supported Qt version: ${QT_MINIMUM_VERSION}. Installed version: ${QT_VERSION}")
+-endif()
++#if(QT_VERSION LESS QT_MINIMUM_VERSION)
++#	MESSAGE(FATAL_ERROR "Minimum supported Qt version: ${QT_MINIMUM_VERSION}. Installed version: ${QT_VERSION}")
++#endif()
+ 
+ # find thread library 
+ find_package(Threads REQUIRED)
+@@ -277,4 +277,4 @@ SET(CPACK_PACKAGE_INSTALL_DIRECTORY "${TARGET_NAME}")
+ set(CPACK_PACKAGE_DIRECTORY ${PROJECT_BINARY_DIR}/Release)
+ set(CPACK_PACKAGE_EXECUTABLES "${TARGET_NAME}" "gtest-runner")
+ 
+-INCLUDE(CPack)
+\ No newline at end of file
++INCLUDE(CPack)
