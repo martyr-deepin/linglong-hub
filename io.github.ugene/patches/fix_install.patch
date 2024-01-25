@@ -1,0 +1,31 @@
+diff --git a/ugene.pri b/ugene.pri
+index 37ceb97c9c..fabfb0902d 100644
+--- a/ugene.pri
++++ b/ugene.pri
+@@ -44,7 +44,7 @@ system($$[QT_INSTALL_BINS]/lrelease-qt5 -version > $$UGENE_DEV_NULL 2> $$UGENE_D
+ unix {
+     # Rules how to copy files on make install.
+     ugene_build_dir.files = src/_release/*
+-    ugene_build_dir.path = $${PREFIX}
++    ugene_build_dir.path = $${PREFIX}/share/ugene_build_dir
+ 
+     data.files += data/*
+     data.path = $${PREFIX}/data
+@@ -58,6 +58,15 @@ unix {
+     resources.files += etc/shared/ugene.png etc/shared/ugene.xpm
+     resources.path = $${PREFIX}
+ 
+-    INSTALLS += ugene_build_dir data resources
++    desktop.files += etc/shared/ugene.desktop
++    desktop.path = $${PREFIX}/share/applications
++
++    icons.files += etc/shared/ugene.png
++    icons.path = $${PREFIX}/share/icons
++
++    conf.path = $${PREFIX}/bin
++    conf.extra = ln -sf $$ugene_build_dir.path/ugene $$conf.path
++
++    INSTALLS += ugene_build_dir data resources desktop icons conf
+ }
+ 
+
