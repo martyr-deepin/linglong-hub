@@ -1,0 +1,23 @@
+package:
+  id: io.github.nitrokey-app
+  name: nitrokey-app
+  version: 1.5.9.1
+  kind: app
+  description: |
+    Nitrokey's Application (Win, Linux, Mac).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: hidapi/0.14.0
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/Nitrokey/nitrokey-app.git
+  commit: 7ca3c4ce3a1d3dd1e1e171312b1fcaac7a78e170
+
+build:
+  kind: cmake
