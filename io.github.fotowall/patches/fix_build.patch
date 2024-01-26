@@ -1,0 +1,25 @@
+diff --git a/3rdparty/posterazor/paintcanvas.cpp b/3rdparty/posterazor/paintcanvas.cpp
+index df33b8a..fd0f319 100644
+--- a/3rdparty/posterazor/paintcanvas.cpp
++++ b/3rdparty/posterazor/paintcanvas.cpp
+@@ -23,6 +23,7 @@
+ #include "paintcanvas.h"
+ #include <QImage>
+ #include <QPainter>
++#include <QPainterPath>
+ 
+ PaintCanvas::PaintCanvas(QWidget *parent)
+     : QWidget(parent)
+diff --git a/fotowall.qrc b/fotowall.qrc
+index 0ed39b1..a87ddf7 100644
+--- a/fotowall.qrc
++++ b/fotowall.qrc
+@@ -57,7 +57,6 @@
+         <file>translations/fotowall_it.qm</file>
+         <file>translations/fotowall_pl.qm</file>
+         <file>translations/fotowall_pt_BR.qm</file>
+-        <file>translations/fotowall_ru_Ru.qm</file>
+     </qresource>
+     <qresource prefix="/plasma-frames" >
+         <file alias="1.svg" >data/frame-plasma-1.svg</file>
+
