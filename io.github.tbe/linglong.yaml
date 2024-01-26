@@ -1,0 +1,21 @@
+package:
+  id: io.github.tbe
+  name: tbe
+  version: 0.9.3.1
+  kind: app
+  description: |
+    The Butterfly Effect, a realistic physics simulation game.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/the-butterfly-effect/tbe.git
+  commit: c98676323e380704a1f9b41a8337bc362b88f779
+  patch:
+    - patches/fix_install.patch
+
+build:
+  kind: cmake
