@@ -1,0 +1,23 @@
+package:
+  id: io.github.loganalyzer
+  name: loganalyzer
+  version: 23.5.1
+  kind: app
+  description: |
+    LogAnalyzer is a tool that helps you to analyze your log files by reducing the content with patterns you define.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/pbek/loganalyzer.git
+  commit: b24d4f8fe5941d2d170aa3da749fbb0ca2bd0b63
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}
