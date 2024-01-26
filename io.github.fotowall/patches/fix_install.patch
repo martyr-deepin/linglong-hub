@@ -1,0 +1,22 @@
+diff --git a/fotowall.pro b/fotowall.pro
+index 0b8fb7e..8afbdbc 100644
+--- a/fotowall.pro
++++ b/fotowall.pro
+@@ -50,13 +50,13 @@ include(fotowall.pri)
+ 
+ # deployment on Linux
+ unix {
+-    target.path = /usr/bin
++    target.path = $$PREFIX/bin
+     icon.files = fotowall.png
+-    icon.path = /usr/share/pixmaps
++    icon.path = $$PREFIX/share/pixmaps
+     dfile.files = fotowall.desktop
+-    dfile.path = /usr/share/applications
++    dfile.path = $$PREFIX/share/applications
+     man.files = fotowall.1
+-    man.path = /usr/share/man/man1
++    man.path = $$PREFIX/share/man/man1
+     INSTALLS += target \
+         icon \
+         dfile \

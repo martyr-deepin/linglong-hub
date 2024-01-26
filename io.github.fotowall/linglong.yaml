@@ -1,0 +1,22 @@
+package:
+  id: io.github.fotowall
+  name: fotowall
+  version: 1.0.1
+  kind: app
+  description: |
+    Pictures collage & creativity tool.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/enricoros/fotowall.git
+  commit: 7d1230109bb9383a6bd9dfea082f2324962a7c99
+  patch:
+    - patches/fix_build.patch
+    - patches/fix_install.patch
+
+build:
+  kind: qmake
