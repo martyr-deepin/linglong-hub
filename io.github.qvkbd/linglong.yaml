@@ -1,10 +1,10 @@
 package:
-  id: io.github.qvkbd
-  name: qvkbd
-  version: 0.1.1
+  id: io.github.QVKbd
+  name: QVKbd
+  version: 1.0.0
   kind: app
   description: |
-    Virtual keyboard written in Qt.
+    Qt based VirtualKeyboard.
 
 runtime:
   id: org.deepin.Runtime
@@ -12,8 +12,8 @@ runtime:
 
 source:
   kind: git
-  url: https://github.com/KivApple/qvkbd.git
-  commit: 576287467b76d5f8b7ee40db994358144381827e
-
+  url: https://github.com/marcusbritanicus/QVKbd.git
+  commit: 6a17a2a6ebeabc40634f477273386e14d79cdb45
+  patch: patches/fix_qvkbd.patch
 build:
   kind: qmake
