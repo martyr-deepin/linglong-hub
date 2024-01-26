@@ -1,0 +1,22 @@
+package:
+  id: QEverCloud
+  name: QEverCloud
+  version: 6.1.0
+  kind: lib
+  description: |
+    Unofficial Evernote Cloud API for Qt 5.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine/5.15.7
+
+source:
+  kind: git
+  url: https://github.com/d1vanov/QEverCloud.git
+  commit: 0b47731ca76bd21eeee64179a4be2a6943ac508e
+
+build:
+  kind: cmake
