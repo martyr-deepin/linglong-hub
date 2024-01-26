@@ -1,0 +1,23 @@
+package:
+  id: io.github.embedded-ide
+  name: embedded-ide
+  version: 0.6.1
+  kind: app
+  description: |
+    IDE for C embedded development centered on bare-metal ARM systems.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qscintilla/2.13.3.1
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/martinribelotta/embedded-ide.git
+  commit: 6961d5fd91c0cfb961602276d693ca31040b5b1a
+
+build:
+  kind: qmake
