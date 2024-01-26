@@ -1,0 +1,34 @@
+diff --git a/OpenSoundMeter.pro b/OpenSoundMeter.pro
+index 2ea709c..ed861e1 100644
+--- a/OpenSoundMeter.pro
++++ b/OpenSoundMeter.pro
+@@ -124,7 +124,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ INCLUDEPATH += \
+@@ -486,7 +486,7 @@ isEqual(GRAPH, "OPENGL") {
+ unix:!macx:!ios:CONFIG(release, debug|release) {
+     QMAKE_POST_LINK += $$QMAKE_COPY $$PWD/OpenSoundMeter.desktop $$OUT_PWD/OpenSoundMeter_\\"$$APP_GIT_VERSION\\".desktop
+     QMAKE_POST_LINK += && $$QMAKE_COPY $$PWD/icons/white.png $$OUT_PWD
+-    QMAKE_POST_LINK += && $$QMAKE_COPY $$PWD/linuxdeployosm.sh $$OUT_PWD
++    #QMAKE_POST_LINK += && $$QMAKE_COPY $$PWD/linuxdeployosm.sh $$OUT_PWD
+     QMAKE_POST_LINK += && chmod u+x $$OUT_PWD/linuxdeployosm.sh && $$OUT_PWD/linuxdeployosm.sh $$APP_GIT_VERSION $$PWD $$[QT_INSTALL_BINS]
+ 
+     QMAKE_CXXFLAGS_RELEASE += -fno-fast-math
+@@ -559,3 +559,11 @@ pvs_studio.args = --dump-files
+ pvs_studio.cxxflags = -std=c++1z
+ pvs_studio.sources = $${SOURCES}
+ include(PVS-Studio.pri)
++
++desktop.files = OpenSoundMeter.desktop
++desktop.path = $$PREFIX/share/applications
++
++icons.files = icons/white.png
++icons.path = $$PREFIX/share/icons
++
++INSTALLS += desktop icons
