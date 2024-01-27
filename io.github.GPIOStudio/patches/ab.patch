@@ -1,0 +1,30 @@
+diff -Naur b/GPIOStudio.desktop a/GPIOStudio.desktop
+--- b/GPIOStudio.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/GPIOStudio.desktop	2024-01-26 21:50:16.328319786 +0800
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Name=GPIOStudio
++Exec=GPIOStudio
++Icon=GPIOStudio
++Type=Application
+diff -Naur b/GPIOStudio.pro a/GPIOStudio.pro
+--- b/GPIOStudio.pro	2024-01-26 21:47:16.820220000 +0800
++++ a/GPIOStudio.pro	2024-01-26 21:49:15.024299277 +0800
+@@ -8,4 +8,14 @@
+ 
+ QMAKE_CXXFLAGS_RELEASE += -std=c++11 -v -O0
+ 
+-QMAKE_CXXFLAGS_RELEASE -= -O2
+\ 文件尾没有换行符
++QMAKE_CXXFLAGS_RELEASE -= -O2
++
++TEMPTLATE = app
++
++TARGET = GPIOStudio
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = GPIOStudio.desktop
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop
+\ 文件尾没有换行符
