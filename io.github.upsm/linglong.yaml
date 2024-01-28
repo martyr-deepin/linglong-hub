@@ -1,0 +1,19 @@
+package:
+  id: io.github.upsm
+  name: upsm
+  version: 3.0.0
+  kind: app
+  description: |
+    Qt-based ups monitor (front-end for upsc from Network UPS Tools)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/psemiletov/upsm.git
+  commit: b234f674fe320415ea77300405f829fffd0da114
+
+build:
+  kind: qmake
