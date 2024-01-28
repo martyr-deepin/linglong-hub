@@ -1,0 +1,41 @@
+From 9b0fb300c9037a0554c49a006fbe5cb2b18523fb Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 24 Jan 2024 18:22:17 +0800
+Subject: [PATCH] install
+
+---
+ FastQt.pro | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/FastQt.pro b/FastQt.pro
+index 44ffac6..4a229b6 100644
+--- a/FastQt.pro
++++ b/FastQt.pro
+@@ -15,8 +15,8 @@ QMAKE_CXXFLAGS += -std=c++11
+ 
+ # METHOD 2 : Otherwise link it as a common library
+ unix {
+-INCLUDEPATH += "/usr/include/KF5/KArchive"
+-LIBS +=  -L"/usr/lib"  -lKF5Archive
++INCLUDEPATH += $${PREFIX}/include/KF5/KArchive
++LIBS +=  -L$${PREFIX}/lib  -lKF5Archive
+ }
+ 
+ win32{
+@@ -33,10 +33,10 @@ TARGET = fastqt
+ TEMPLATE = app
+ 
+ # Installation
+-target.path  = /usr/local/bin
+-desktop.path = /usr/share/applications
++target.path  = $${PREFIX}/bin
++desktop.path = $${PREFIX}/share/applications
+ desktop.files += fastqt.desktop
+-icons.path = /usr/share/icons/hicolor/48x48/apps
++icons.path = $${PREFIX}/share/icons/hicolor/48x48/apps
+ icons.files += fastqt.png
+ 
+ INSTALLS += target desktop icons
+-- 
+2.33.1
+

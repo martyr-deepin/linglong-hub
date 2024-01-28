@@ -1,0 +1,26 @@
+package:
+  id: io.github.FastQt
+  name: FastQt
+  version: 0.0.2
+  kind: app
+  description: |
+    FastQC port to Qt5: A quality control tool for high throughput sequence data.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: karchive/5.90.0
+    type: runtime
+  - id: qtcharts/5.15.7
+    type: runtime
+
+source:  
+  kind: git
+  url: https://github.com/labsquare/FastQt.git
+  commit: 761e422e0989271f3cc684acf589f9953ecc8e8e
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
