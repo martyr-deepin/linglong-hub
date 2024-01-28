@@ -1,0 +1,20 @@
+package:
+  id: io.github.qnetstatview
+  name: qnetstatview
+  version: 1.5.8
+  kind: app
+  description: |
+    program that will show you detailed listings of all TCP and UDP endpoints on your system, including the local and remote addresses and state of TCP connections.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/admsasha/qnetstatview.git
+  commit: 28a4984f65962fd160163bd71e9ef9e4cde26ab6
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
