@@ -1,0 +1,19 @@
+package:
+  id: io.github.tanglet
+  name: tanglet
+  version: 1.6.6
+  kind: app
+  description: |
+    Single player variant of Boggle.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/gottcode/tanglet.git
+  commit: 98a5f748a56d22bfb652b2294db7b89dd3abd7ce
+
+build:
+  kind: qmake
