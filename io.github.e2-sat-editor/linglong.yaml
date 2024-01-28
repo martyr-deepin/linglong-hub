@@ -1,0 +1,27 @@
+package:
+  id: io.github.e2-sat-editor
+  name: e2-sat-editor
+  version: 1.1.1
+  kind: app
+  description: |
+    Satellite channel lists editor with tabbed nav 📡 for Enigma2, Neutrino, Lamedb, dreambox lists
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/ctlcltd/e2-sat-editor.git
+  commit: d371d559066f85bef4e4dca159ecb5a2f6a03161
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
