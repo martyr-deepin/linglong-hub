@@ -1,0 +1,27 @@
+From 3b42c34cae5f958364c78f423648fb448a0bcfa5 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 25 Jan 2024 12:56:54 +0800
+Subject: [PATCH] install
+
+---
+ src/CMakeLists.txt | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 921f915..bbb2255 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -63,3 +63,9 @@ install(TARGETS ${PROJECT_NAME}
+   RUNTIME DESTINATION "${EVOPLEX_INSTALL_RUNTIME}"
+   BUNDLE DESTINATION .
+ )
++install(FILES evoplex.png
++        DESTINATION share/icons)
++
++
++install(FILES evoplex.desktop
++            DESTINATION share/applications)
+\ No newline at end of file
+-- 
+2.33.1
+
