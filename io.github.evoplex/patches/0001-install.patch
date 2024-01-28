@@ -1,0 +1,79 @@
+From 586d344fc3e622760b5b8e41ca6dfaa74d24aa8e Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 25 Jan 2024 12:53:41 +0800
+Subject: [PATCH] install
+
+---
+ src/gui/external/qt-material-widgets/qtmaterialavatar.cpp       | 1 +
+ .../external/qt-material-widgets/qtmaterialcircularprogress.cpp | 2 +-
+ src/gui/external/qt-material-widgets/qtmaterialfab.cpp          | 2 +-
+ src/gui/external/qt-material-widgets/qtmaterialprogress.cpp     | 1 +
+ src/gui/external/qt-material-widgets/qtmaterialscrollbar.cpp    | 2 +-
+ 5 files changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/src/gui/external/qt-material-widgets/qtmaterialavatar.cpp b/src/gui/external/qt-material-widgets/qtmaterialavatar.cpp
+index 9d77734..e769f8f 100644
+--- a/src/gui/external/qt-material-widgets/qtmaterialavatar.cpp
++++ b/src/gui/external/qt-material-widgets/qtmaterialavatar.cpp
+@@ -1,6 +1,7 @@
+ #include "qtmaterialavatar.h"
+ #include "qtmaterialavatar_p.h"
+ #include <QPainter>
++#include <QPainterPath>
+ #include "lib/qtmaterialstyle.h"
+ 
+ /*!
+diff --git a/src/gui/external/qt-material-widgets/qtmaterialcircularprogress.cpp b/src/gui/external/qt-material-widgets/qtmaterialcircularprogress.cpp
+index c783f75..8ed3063 100644
+--- a/src/gui/external/qt-material-widgets/qtmaterialcircularprogress.cpp
++++ b/src/gui/external/qt-material-widgets/qtmaterialcircularprogress.cpp
+@@ -5,7 +5,7 @@
+ #include <QPainter>
+ #include "qtmaterialcircularprogress_internal.h"
+ #include "lib/qtmaterialstyle.h"
+-
++#include <QPainterPath>
+ /*!
+  *  \class QtMaterialCircularProgressPrivate
+  *  \internal
+diff --git a/src/gui/external/qt-material-widgets/qtmaterialfab.cpp b/src/gui/external/qt-material-widgets/qtmaterialfab.cpp
+index 3c3de8a..8eb7ebe 100644
+--- a/src/gui/external/qt-material-widgets/qtmaterialfab.cpp
++++ b/src/gui/external/qt-material-widgets/qtmaterialfab.cpp
+@@ -5,7 +5,7 @@
+ #include <QEvent>
+ #include <QPainter>
+ #include "lib/qtmaterialrippleoverlay.h"
+-
++#include <QPainterPath>
+ /*!
+  *  \class QtMaterialFloatingActionButtonPrivate
+  *  \internal
+diff --git a/src/gui/external/qt-material-widgets/qtmaterialprogress.cpp b/src/gui/external/qt-material-widgets/qtmaterialprogress.cpp
+index da8c40c..03b15b2 100644
+--- a/src/gui/external/qt-material-widgets/qtmaterialprogress.cpp
++++ b/src/gui/external/qt-material-widgets/qtmaterialprogress.cpp
+@@ -2,6 +2,7 @@
+ #include "qtmaterialprogress_p.h"
+ #include <QPropertyAnimation>
+ #include <QPainter>
++#include <QPainterPath>
+ #include "qtmaterialprogress_internal.h"
+ #include "lib/qtmaterialstyle.h"
+ 
+diff --git a/src/gui/external/qt-material-widgets/qtmaterialscrollbar.cpp b/src/gui/external/qt-material-widgets/qtmaterialscrollbar.cpp
+index 46386b2..7a88fd3 100644
+--- a/src/gui/external/qt-material-widgets/qtmaterialscrollbar.cpp
++++ b/src/gui/external/qt-material-widgets/qtmaterialscrollbar.cpp
+@@ -4,7 +4,7 @@
+ #include <QDebug>
+ #include "qtmaterialscrollbar_internal.h"
+ #include "lib/qtmaterialstyle.h"
+-
++#include <QPainterPath>
+ /*!
+  *  \class QtMaterialScrollBarPrivate
+  *  \internal
+-- 
+2.33.1
+

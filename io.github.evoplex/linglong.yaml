@@ -1,0 +1,22 @@
+package:
+  id: io.github.evoplex
+  name: evoplex
+  version: 0.2.1
+  kind: app
+  description: |
+    Evoplex is a fast, robust and extensible platform for developing agent-based models and multi-agent systems on networks. It's available for Windows, Linux and macOS.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/evoplex/evoplex.git
+  commit: c6e78af5fb0d2fc5a5ce7b02e5e4ec61de8934b6
+  patch: 
+    - patches/0001-install.patch
+    - patches/0002-install.patch
+
+build:
+  kind: cmake
