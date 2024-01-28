@@ -1,0 +1,20 @@
+package:
+  id: io.github.sudoku-solver
+  name: sudoku-solver
+  version: 1.0.1
+  kind: app
+  description: |
+    Sudoku solver
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/admsasha/sudoku-solver.git
+  commit: 36f1ba70373a0c89f440748f5c2f7a6db7bfa556
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
