@@ -1,0 +1,40 @@
+From 071de3c2b0e54f39d921561893135d2dce02fb92 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 26 Jan 2024 18:51:46 +0800
+Subject: [PATCH] install
+
+---
+ sudoku-solver.pro | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/sudoku-solver.pro b/sudoku-solver.pro
+index 2bc124c..a23ea87 100644
+--- a/sudoku-solver.pro
++++ b/sudoku-solver.pro
+@@ -62,19 +62,19 @@ updateqm.commands = $$QMAKE_LRELEASE -silent ${QMAKE_FILE_IN} -qm langs/${QMAKE_
+ updateqm.CONFIG += no_link target_predeps
+ QMAKE_EXTRA_COMPILERS += updateqm
+ 
+-data_bin.path = /usr/bin/
++data_bin.path = $$PREFIX/bin/
+ data_bin.files = Bin/sudoku-solver
+ INSTALLS += data_bin
+ 
+-data_app.path = /usr/share/applications/
++data_app.path = $$PREFIX/share/applications/
+ data_app.files = pkg/sudoku-solver.desktop
+ INSTALLS += data_app
+ 
+-data_icons.path = /usr/share/icons/hicolor/
++data_icons.path = $$PREFIX/share/icons/hicolor/
+ data_icons.files = pkg/icons/*
+ INSTALLS += data_icons
+ 
+-data_langs.path = /usr/share/sudoku-solver/langs/
++data_langs.path = $$PREFIX/share/sudoku-solver/langs/
+ data_langs.files = langs/*.qm
+ INSTALLS += data_langs
+ 
+-- 
+2.33.1
+
