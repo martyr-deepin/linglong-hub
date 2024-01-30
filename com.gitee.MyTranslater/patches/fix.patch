@@ -1,0 +1,24 @@
+diff -Naur MyTranslater-o/MyTranslate.pro MyTranslater/MyTranslate.pro
+--- MyTranslater-o/MyTranslate.pro	2023-12-02 19:17:05.571898000 +0800
++++ MyTranslater/MyTranslate.pro	2023-12-02 19:42:25.801799747 +0800
+@@ -46,3 +46,10 @@
+ UI_DIR      += $$OUT_PWD/tmp
+ RCC_DIR     += $$OUT_PWD/tmp
+ DESTDIR     += $$OUT_PWD
++
++
++desktop.files += MyTranslater.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop
+diff -Naur MyTranslater-o/MyTranslater.desktop MyTranslater/MyTranslater.desktop
+--- MyTranslater-o/MyTranslater.desktop	1970-01-01 08:00:00.000000000 +0800
++++ MyTranslater/MyTranslater.desktop	2024-01-30 16:35:05.876600939 +0800
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Exec=MyTranslate
++Name=MyTranslater
++Type=Application
++Icon=res/windowIcon.ico
++
