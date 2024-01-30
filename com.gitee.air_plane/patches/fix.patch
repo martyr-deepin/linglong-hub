@@ -1,0 +1,31 @@
+diff -Naur air_plane-o/air_plane.desktop air_plane/air_plane.desktop
+--- air_plane-o/air_plane.desktop	1970-01-01 08:00:00.000000000 +0800
++++ air_plane/air_plane.desktop	2024-01-30 16:47:05.067074449 +0800
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Name=air_plane
++Exec=air_plane
++Type=Application
++Icon=image/player.png
+diff -Naur air_plane-o/air.pro air_plane/air.pro
+--- air_plane-o/air.pro	2023-12-02 20:20:40.255482000 +0800
++++ air_plane/air.pro	2023-12-02 20:25:19.151537111 +0800
+@@ -1,4 +1,7 @@
+ 
++TARGET = air_plane
++TEMPLATE = app
++
+ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+ 
+ HEADERS += \
+@@ -73,3 +76,10 @@
+ 
+ RESOURCES += \
+     image.qrc
++
++desktop.files += air_plane.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop
++

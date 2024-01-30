@@ -1,0 +1,20 @@
+package:
+  id: com.gitee.air_plane
+  name: air_plane
+  version: 0.0.1
+  kind: app
+  description: |
+    基于Qt GraphicsView Framework的2D游戏，俗称“打飞机”
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/zhouX/air_plane.git"
+  commit: 69a7e90
+  patch: patches/fix.patch
+
+build:
+  kind: qmake
