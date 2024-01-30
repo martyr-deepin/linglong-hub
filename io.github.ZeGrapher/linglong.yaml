@@ -1,0 +1,22 @@
+package:
+  id: io.github.ZeGrapher
+  name: ZeGrapher
+  version: 3.2.0
+  kind: app
+  description: |
+    2D Math and Data plotter.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: boost-defaults/1.74.0.3
+
+source:
+  kind: git
+  url: https://github.com/AdelKS/ZeGrapher.git
+  commit: 854f2608d0f2bcb23e0b4b90b6c9424ef75ebb5a
+
+build:
+  kind: qmake
