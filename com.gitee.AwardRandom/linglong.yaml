@@ -1,0 +1,20 @@
+package:
+  id: com.gitee.AwardRandom
+  name: AwardRandom
+  version: 0.0.1
+  kind: app
+  description: |
+    QT完成的用于进行公司抽奖的工具，可以进行奖项和背景设置
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/song_df/AwardRandom.git"
+  commit: 8b9510c
+  patch: patches/fix.patch
+
+build:
+  kind: qmake
