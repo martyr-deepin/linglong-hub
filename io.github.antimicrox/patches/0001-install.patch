@@ -1,0 +1,25 @@
+From 8f340f507c52385b0f38cf74aa5069d612aac64c Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 8 Jan 2024 20:08:05 +0800
+Subject: [PATCH] install
+  
+---
+ other/appdata/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/other/appdata/CMakeLists.txt b/other/appdata/CMakeLists.txt
+index 840fe84c..78d3c545 100644
+--- a/other/appdata/CMakeLists.txt
++++ b/other/appdata/CMakeLists.txt
+@@ -10,7 +10,7 @@ if(APPDATA)
+ 
+             COMMAND itstool -i "${PROJECT_SOURCE_DIR}/other/appdata/appdata.its" -j "${PROJECT_SOURCE_DIR}/other/appdata/io.github.antimicrox.antimicrox.appdata.xml.in" -o "io.github.antimicrox.antimicrox.appdata.xml" "${CMAKE_CURRENT_BINARY_DIR}/PO_files/*.mo"
+             )
+-
++configure_file(io.github.antimicrox.antimicrox.appdata.xml.in ${CMAKE_CURRENT_BINARY_DIR}/io.github.antimicrox.antimicrox.appdata.xml COPYONLY)
+     # Only install an appdata file ifthe user requested to have one built.
+     install(FILES "${CMAKE_CURRENT_BINARY_DIR}/io.github.antimicrox.antimicrox.appdata.xml" DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/metainfo")
+ endif(APPDATA)
+-- 
+2.33.1
+
