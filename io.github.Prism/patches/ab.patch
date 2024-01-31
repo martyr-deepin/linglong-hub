@@ -1,0 +1,24 @@
+diff -Naur b/Prism.desktop a/Prism.desktop
+--- b/Prism.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/Prism.desktop	2023-12-02 21:11:09.340236059 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=Prism
++Exec=Prism
++Type=Application
+diff -Naur b/Prism.pro a/Prism.pro
+--- b/Prism.pro	2023-12-02 21:08:50.188216295 +0800
++++ a/Prism.pro	2023-12-02 21:10:00.656226324 +0800
+@@ -58,3 +58,11 @@
+ unix:!macx{
+ LIBS += -ldl
+ }
++
++
++desktop.files += Prism.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop
++ 
+\ 文件尾没有换行符
