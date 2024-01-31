@@ -1,0 +1,21 @@
+diff -Naur b/ChineseChess.desktop a/ChineseChess.desktop
+--- b/ChineseChess.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/ChineseChess.desktop	2023-11-19 20:10:41.355207954 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name= ChineseChess
++Exec= ChineseChess
++Type= Application
+diff -Naur b/ChineseChess.pro a/ChineseChess.pro
+--- b/ChineseChess.pro	2023-11-15 22:58:57.000000000 +0800
++++ a/ChineseChess.pro	2023-11-19 19:24:57.652696787 +0800
+@@ -49,4 +49,9 @@
+     chooseresource.qrc
+ 
+ RC_FILE = res.rc
++desktop.files += ChineseChess.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop
+ 
