@@ -1,0 +1,1636 @@
+From ac5b4dab27b79a7c200efb391aea6a3c5351b77d Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 5 Jan 2024 19:09:57 +0800
+Subject: [PATCH] install
+ 
+---
+ lang/Open-Typer_de_DE.qm | 721 +++++++++++++++++++++++++++++++
+ lang/Open-Typer_sk_SK.qm | 888 +++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 1609 insertions(+)
+ create mode 100644 lang/Open-Typer_de_DE.qm
+ create mode 100644 lang/Open-Typer_sk_SK.qm
+
+diff --git a/lang/Open-Typer_de_DE.qm b/lang/Open-Typer_de_DE.qm
+new file mode 100644
+index 00000000..28ca8b45
+--- /dev/null
++++ b/lang/Open-Typer_de_DE.qm
+@@ -0,0 +1,721 @@
++<?xml version="1.0" encoding="utf-8"?>
++<!DOCTYPE TS>
++<TS version="2.1" language="de_DE">
++<context>
++    <name>OpenTyper</name>
++    <message>
++        <source>Options</source>
++        <translation>Optionen</translation>
++    </message>
++    <message>
++        <source>Open custom exercise</source>
++        <translation>Benutzerdefinierte Aufgabe öffnen</translation>
++    </message>
++    <message>
++        <source>Open custom pack</source>
++        <translation>Benutzerdefiniertes Packet öffnen</translation>
++    </message>
++    <message>
++        <source>Open editor</source>
++        <translation>Editor öffnen</translation>
++    </message>
++    <message>
++        <source>Repeat exercise</source>
++        <translation>Aufgabe wiederholen</translation>
++    </message>
++    <message>
++        <source>Previous exercise</source>
++        <translation>Vorherige Aufgabe</translation>
++    </message>
++    <message>
++        <source>Next exercise</source>
++        <translation>Nächste Aufgabe</translation>
++    </message>
++    <message>
++        <source>Lesson:</source>
++        <translation>Lektion:</translation>
++    </message>
++    <message>
++        <source>Sublesson:</source>
++        <translation>Unter Lektion:</translation>
++    </message>
++    <message>
++        <source>Exercise:</source>
++        <translation>Aufgabe:</translation>
++    </message>
++    <message>
++        <source>Time:</source>
++        <translation>Zeit:</translation>
++    </message>
++    <message>
++        <source>Mistakes:</source>
++        <translation>Fehler:</translation>
++    </message>
++    <message>
++        <source>Current state:</source>
++        <translation>Aktueller Status:</translation>
++    </message>
++    <message>
++        <source>Lesson</source>
++        <translation>Lektion</translation>
++    </message>
++    <message>
++        <source>Exercise</source>
++        <translation>Aufgabe</translation>
++    </message>
++    <message>
++        <source>Text files</source>
++        <translation>Text Dateien</translation>
++    </message>
++    <message>
++        <source>All files</source>
++        <translation>Alle Dateien</translation>
++    </message>
++    <message>
++        <source>This file is too large!</source>
++        <translation>Diese Datei ist zu groß!</translation>
++    </message>
++    <message>
++        <source>Open-Typer pack files</source>
++        <translation>Open-Typer packet Dateien</translation>
++    </message>
++    <message>
++        <source>Timed exercise</source>
++        <translation>Zeitbegrenzte Aufgabe</translation>
++    </message>
++    <message>
++        <source>Remaining time:</source>
++        <translation>Verbleibende Zeit:</translation>
++    </message>
++    <message>
++        <source>Exercise history</source>
++        <extracomment>The history (and stats) of this exercise</extracomment>
++        <translation type="unfinished">Aufgabe Verlauf</translation>
++    </message>
++    <message>
++        <source>Student options</source>
++        <translation type="unfinished"></translation>
++    </message>
++    <message>
++        <source>Logged in as %1</source>
++        <translation type="unfinished"></translation>
++    </message>
++    <message>
++        <source>Not logged in.</source>
++        <translation type="unfinished"></translation>
++    </message>
++    <message>
++        <source>Open</source>
++        <translation>Öffnen</translation>
++    </message>
++</context>
++<context>
++    <name>QObject</name>
++    <message>
++        <source>Revision</source>
++        <translation>Revision</translation>
++    </message>
++    <message>
++        <source>Shift</source>
++        <comment>Shift key</comment>
++        <translation>Shift</translation>
++    </message>
++</context>
++<context>
++    <name>SimpleColorDialog</name>
++    <message>
++        <source>Color selection</source>
++        <translation>Farb Auswahl</translation>
++    </message>
++    <message>
++        <source>Quick selection:</source>
++        <translation>Schnelle Auswahl:</translation>
++    </message>
++    <message>
++        <source>Choose a color</source>
++        <translation>Wähle eine Farbe</translation>
++    </message>
++    <message>
++        <source>Advanced:</source>
++        <translation>Fortgeschritten:</translation>
++    </message>
++    <message>
++        <source>Apply</source>
++        <translation>Anwenden</translation>
++    </message>
++    <message>
++        <source>Cancel</source>
++        <translation>Abbrechen</translation>
++    </message>
++</context>
++<context>
++    <name>UpdaterDialog</name>
++    <message>
++        <source>Update</source>
++        <translation>Update</translation>
++    </message>
++    <message>
++        <source>Update available</source>
++        <translation>Update verfügbar</translation>
++    </message>
++    <message>
++        <source>There&apos;s a new update available.
++Would you like to download and install it?</source>
++        <translation>Es ist ein neues Update verfügbar.
++Möchtest du es herunterladen und installieren?</translation>
++    </message>
++    <message>
++        <source>Yes</source>
++        <translation>Ja</translation>
++    </message>
++    <message>
++        <source>No</source>
++        <translation>Nein</translation>
++    </message>
++</context>
++<context>
++    <name>behaviorOptions</name>
++    <message>
++        <source>Start new line using space bar</source>
++        <translation>Neue Zeile mit der Leer Taste beginnen</translation>
++    </message>
++    <message>
++        <source>Error penalty:</source>
++        <translation>Fehlerstrafe:</translation>
++    </message>
++    <message>
++        <source>Exercise options</source>
++        <translation>Aufgaben Optionen</translation>
++    </message>
++</context>
++<context>
++    <name>builtinPacks</name>
++    <message>
++        <source>Unknown pack</source>
++        <translation>Unbekanntes Paket</translation>
++    </message>
++    <message>
++        <source>auto-generated</source>
++        <translation type="unfinished"></translation>
++    </message>
++</context>
++<context>
++    <name>configParser</name>
++    <message>
++        <source>Touch</source>
++        <translation>Berühren</translation>
++    </message>
++    <message>
++        <source>Words</source>
++        <translation>Wörter</translation>
++    </message>
++    <message>
++        <source>Sentences</source>
++        <translation>Sätze</translation>
++    </message>
++    <message>
++        <source>Text</source>
++        <translation>Text</translation>
++    </message>
++    <message>
++        <source>Sublesson</source>
++        <translation>Unter Lektion</translation>
++    </message>
++</context>
++<context>
++    <name>connectionOptions</name>
++    <message>
++        <source>Server options</source>
++        <translation type="unfinished"></translation>
++    </message>
++    <message>
++        <source>IP address:</source>
++        <translation type="unfinished"></translation>
++    </message>
++    <message>
++        <source>Port:</source>
++        <translation type="unfinished"></translation>
++    </message>
++    <message>
++        <source>Use class monitor server</source>
++        <extracomment>Do not translate class monitor</extracomment>
++        <translation type="unfinished"></translation>
++    </message>
++    <message>
++        <source>Test connection</source>
++        <translation type="unfinished"></translation>
++    </message>
++    <message>
++        <source>Connection status:</source>
++        <translation type="unfinished"></translation>
++    </message>
++    <message>
++        <source>Unknown</source>
++        <translation type="unfinished"></translation>
++    </message>
++    <message>
++        <source>Failed to connect</source>
++        <translation type="unfinished"></translation>
++    </message>
++</context>
++<context>
++    <name>customizationOptions</name>
++    <message>
++        <source>System (default)</source>
++        <translation>System (Standard)</translation>
++    </message>
++    <message>
++        <source>Dark</source>
++        <translation>Dunkel</translation>
++    </message>
++    <message>
++        <source>Light</source>
++        <translation>Hell</translation>
++    </message>
++    <message>
++        <source>Font:</source>
++        <translation>Schriftart:</translation>
++    </message>
++    <message>
++        <source>Font size:</source>
++        <translation>Schrift größe:</translation>
++    </message>
++    <message>
++        <source>Italic</source>
++        <translation>Kursiv</translation>
++    </message>
++    <message>
++        <source>Bold</source>
++        <translation>Fett gedruckt</translation>
++    </message>
++    <message>
++        <source>Underlined</source>
++        <translation>Unterstrichen</translation>
++    </message>
++    <message>
++        <source>Text style:</source>
++        <translation>Text Stil:</translation>
++    </message>
++    <message>
++        <source>Themes</source>
++        <translation>Themas</translation>
++    </message>
++    <message>
++        <source>Exercise text color:</source>
++        <translation>Aufgaben Text Farbe:</translation>
++    </message>
++    <message>
++        <source>Input text color:</source>
++        <translation>Input Text Farbe:</translation>
++    </message>
++    <message>
++        <source>Background color:</source>
++        <translation>Hintergrund Farbe:</translation>
++    </message>
++    <message>
++        <source>Paper color:</source>
++        <translation>Papier Farbe:</translation>
++    </message>
++    <message>
++        <source>Panel color:</source>
++        <translation>Panel Farbe:</translation>
++    </message>
++    <message>
++        <source>Go back</source>
++        <translation type="unfinished"></translation>
++    </message>
++    <message>
++        <source>Style:</source>
++        <translation>Stil:</translation>
++    </message>
++</context>
++<context>
++    <name>initialSetup</name>
++    <message>
++        <source>Welcome to Open-Typer!</source>
++        <translation>Willkommen bei Open-Typer!</translation>
++    </message>
++    <message>
++        <source>Show all</source>
++        <translation>Anzeigen alles</translation>
++    </message>
++    <message>
++        <source>Choose a pack with lessons for your keyboard layout:</source>
++        <translation>Wählen Sie ein Paket mit Lektionen für Ihr Tastaturlayout:</translation>
++    </message>
++</context>
++<context>
++    <name>keyboardOptions</name>
++    <message>
++        <source>Editor</source>
++        <translation></translation>
++    </message>
++</context>
++<context>
++    <name>keyboardWidget</name>
++    <message>
++        <source>Hide keyboard</source>
++        <translation>Verstecken die Tastatur</translation>
++    </message>
++    <message>
++        <source>Show keyboard</source>
++        <translation>Anzeigen die Tastatur</translation>
++    </message>
++</context>
++<context>
++    <name>languageManager</name>
++    <message>
++        <source>System (default)</source>
++        <translation>System (Standard)</translation>
++    </message>
++</context>
++<context>
++    <name>levelSummary</name>
++    <message>
++        <source>Summary</source>
++        <translation>Zusammenfassung</translation>
++    </message>
++    <message>
++        <source>Total time:</source>
++        <translation>Gesamtzeit:</translation>
++    </message>
++    <message>
++        <source>Hits per minute:</source>
++        <translation>Schläge pro Minute:</translation>
++    </message>
++    <message>
++        <source>Exercise completed</source>
++        <translation>Aufgaben abgeschlossen</translation>
++    </message>
++    <message>
++        <source>Mistakes:</source>
++        <translation>Fehler:</translation>
++    </message>
++    <message>
++        <source>seconds</source>
++        <translation>Sekunden</translation>
++    </message>
++    <message>
++        <source>Total hits:</source>
++        <translation>Gesamtschläge:</translation>
++    </message>
++    <message>
++        <source>Preview</source>
++        <translation>Vorschau</translation>
++    </message>
++</context>
++<context>
++    <name>monitorClient</name>
++    <message>
++        <source>Error</source>
++        <translation>Fehler</translation>
++    </message>
++    <message>
++        <source>Unable to connect to class monitor server.</source>
++        <translation>Die Verbindung zum Class Monitor Server kann nicht hergestellt werden.</translation>
++    </message>
++</context>
++<context>
++    <name>optionsWindow</name>
++    <message>
++        <source>Options</source>
++        <translation>Optionen</translation>
++    </message>
++    <message>
++        <source>Language</source>
++        <translation>Sprache</translation>
++    </message>
++    <message>
++        <source>Keyboard</source>
++        <translation>Tastatur</translation>
++    </message>
++    <message>
++        <source>Customization</source>
++        <translation>Anpassung</translation>
++    </message>
++    <message>
++        <source>Behavior</source>
++        <translation>Verhalten</translation>
++    </message>
++    <message>
++        <source>Connection</source>
++        <translation>Verbindung</translation>
++    </message>
++</context>
++<context>
++    <name>packEditor</name>
++    <message>
++        <source>Open-Typer Pack Editor</source>
++        <translation>Open-Typer Packet Editor</translation>
++    </message>
++    <message>
++        <source>New</source>
++        <translation>Neu</translation>
++    </message>
++    <message>
++        <source>Open</source>
++        <translation>Öffnen</translation>
++    </message>
++    <message>
++        <source>Unnamed</source>
++        <translation>Unbenannt</translation>
++    </message>
++    <message>
++        <source>Open-Typer pack files</source>
++        <translation>Open-Typer Packet Dateien</translation>
++    </message>
++    <message>
++        <source>All files</source>
++        <translation>Alle Dateien</translation>
++    </message>
++    <message>
++        <source>File</source>
++        <translation>Datei</translation>
++    </message>
++    <message>
++        <source>Open built-in pack</source>
++        <translation>Built-In Packet öffnen</translation>
++    </message>
++    <message>
++        <source>Save</source>
++        <translation>Sichern</translation>
++    </message>
++    <message>
++        <source>Save As...</source>
++        <translation>Sichern als...</translation>
++    </message>
++</context>
++<context>
++    <name>packSelector</name>
++    <message>
++        <source>Open built-in pack</source>
++        <translation>Built-In Packet öffnen</translation>
++    </message>
++    <message>
++        <source>Choose built-in pack:</source>
++        <translation>Built-In Packet auswählen:</translation>
++    </message>
++    <message>
++        <source>Cancel</source>
++        <translation>Abbrechen</translation>
++    </message>
++    <message>
++        <source>Load</source>
++        <translation>Laden</translation>
++    </message>
++</context>
++<context>
++    <name>packView</name>
++    <message>
++        <source>Lesson:</source>
++        <translation>Lektion:</translation>
++    </message>
++    <message>
++        <source>Exercise:</source>
++        <translation>Aufgabe:</translation>
++    </message>
++    <message>
++        <source>Sublesson:</source>
++        <translation>Unter Lektion:</translation>
++    </message>
++    <message>
++        <source>Save</source>
++        <translation>Sichern</translation>
++    </message>
++    <message>
++        <source>Exercise options:</source>
++        <translation>Aufgaben Optionen:</translation>
++    </message>
++    <message>
++        <source>Repeating:</source>
++        <translation>Wiederholend:</translation>
++    </message>
++    <message>
++        <source>None</source>
++        <translation>Keine</translation>
++    </message>
++    <message>
++        <source>Words</source>
++        <translation>Wörter</translation>
++    </message>
++    <message>
++        <source>Line length:</source>
++        <translation>Zeilen Länge:</translation>
++    </message>
++    <message>
++        <source>Lesson options:</source>
++        <translation>Lektions Optionen:</translation>
++    </message>
++    <message>
++        <source>Description:</source>
++        <translation>Beschreibung:</translation>
++    </message>
++    <message>
++        <source>Revision</source>
++        <translation>Revision</translation>
++    </message>
++    <message>
++        <source>Write error</source>
++        <translation>Schreib Fehler</translation>
++    </message>
++    <message>
++        <source>Save changes to</source>
++        <translation>Änderungen Sichern als</translation>
++    </message>
++    <message>
++        <source>before closing?</source>
++        <translation>bevor schließen?</translation>
++    </message>
++    <message>
++        <source>Cancel</source>
++        <translation>Abbrechen</translation>
++    </message>
++    <message>
++        <source>Close without saving</source>
++        <translation>Ohne speichern schließen</translation>
++    </message>
++    <message>
++        <source>Lesson</source>
++        <translation>Lektion</translation>
++    </message>
++    <message>
++        <source>empty</source>
++        <translation>Leer</translation>
++    </message>
++    <message>
++        <source>Exercise</source>
++        <translation>Aufgabe</translation>
++    </message>
++    <message>
++        <source>New exercise</source>
++        <translation>Neue Aufgabe</translation>
++    </message>
++    <message>
++        <source>Text length:</source>
++        <translation>Text länge:</translation>
++    </message>
++    <message>
++        <source>Open-Typer pack files</source>
++        <translation>Open-Typer Paket Dateien</translation>
++    </message>
++    <message>
++        <source>All files</source>
++        <translation>Alle Dateien</translation>
++    </message>
++</context>
++<context>
++    <name>paperConfigDialog</name>
++    <message>
++        <source>Size preferences</source>
++        <translation>Größen präferenzen</translation>
++    </message>
++    <message>
++        <source>Line length:</source>
++        <translation>Zeilen Länge:</translation>
++    </message>
++    <message>
++        <source>Load</source>
++        <translation>Laden</translation>
++    </message>
++    <message>
++        <source>Include new lines</source>
++        <translation>Enthalten neue Zeilen</translation>
++    </message>
++</context>
++<context>
++    <name>statsDialog</name>
++    <message>
++        <source>Exercise history</source>
++        <translation>Aufgabe Verlauf</translation>
++    </message>
++    <message>
++        <source>Table</source>
++        <translation>Tabelle</translation>
++    </message>
++    <message>
++        <source>Charts</source>
++        <translation>die Diagramme</translation>
++    </message>
++    <message>
++        <source>Speed</source>
++        <translation>Tempo</translation>
++    </message>
++    <message>
++        <source>Mistakes</source>
++        <translation>Fehler</translation>
++    </message>
++    <message>
++        <source>Time</source>
++        <translation>Zeit</translation>
++    </message>
++    <message>
++        <source>Better students: %1</source>
++        <translation>Bessere Studenten: %1</translation>
++    </message>
++    <message>
++        <source>Worse students: %1</source>
++        <translation>Schlechter Studenten: %1</translation>
++    </message>
++</context>
++<context>
++    <name>studentOptions</name>
++    <message>
++        <source>Authentication</source>
++        <translation type="unfinished"></translation>
++    </message>
++    <message>
++        <source>Student log in</source>
++        <translation type="unfinished"></translation>
++    </message>
++    <message>
++        <source>Username:</source>
++        <translation type="unfinished"></translation>
++    </message>
++    <message>
++        <source>Password:</source>
++        <translation type="unfinished"></translation>
++    </message>
++    <message>
++        <source>Incorrect password</source>
++        <translation type="unfinished"></translation>
++    </message>
++</context>
++<context>
++    <name>themeEngine</name>
++    <message>
++        <source>Default</source>
++        <translation type="unfinished">Standard</translation>
++    </message>
++    <message>
++        <source>Dark</source>
++        <translation type="unfinished">Dunkel</translation>
++    </message>
++    <message>
++        <source>Light</source>
++        <translation type="unfinished">Hell</translation>
++    </message>
++    <message>
++        <source>Green</source>
++        <translation type="unfinished">Grün</translation>
++    </message>
++    <message>
++        <source>Custom</source>
++        <translation type="unfinished"></translation>
++    </message>
++</context>
++<context>
++    <name>timeDialog</name>
++    <message>
++        <source>Time</source>
++        <translation>Zeit</translation>
++    </message>
++    <message>
++        <source>Start</source>
++        <translation>Starten</translation>
++    </message>
++    <message>
++        <source>Cancel</source>
++        <translation>Abbrechen</translation>
++    </message>
++</context>
++</TS>
+diff --git a/lang/Open-Typer_sk_SK.qm b/lang/Open-Typer_sk_SK.qm
+new file mode 100644
+index 00000000..917aa49d
+--- /dev/null
++++ b/lang/Open-Typer_sk_SK.qm
+@@ -0,0 +1,888 @@
++<?xml version="1.0" encoding="utf-8"?>
++<!DOCTYPE TS>
++<TS version="2.1" language="sk_SK">
++<context>
++    <name>OpenTyper</name>
++    <message>
++        <location filename="../ui/opentyper.ui" line="249"/>
++        <source>Open editor</source>
++        <translation>Otvoriť editor</translation>
++    </message>
++    <message>
++        <location filename="../ui/opentyper.ui" line="188"/>
++        <source>Options</source>
++        <translation>Možnosti</translation>
++    </message>
++    <message>
++        <location filename="../ui/opentyper.ui" line="1112"/>
++        <source>Exercise history</source>
++        <extracomment>The history (and stats) of this exercise</extracomment>
++        <translation>História cvičenia</translation>
++    </message>
++    <message>
++        <location filename="../ui/opentyper.ui" line="217"/>
++        <source>Open</source>
++        <translation>Otvoriť</translation>
++    </message>
++    <message>
++        <location filename="../ui/opentyper.ui" line="272"/>
++        <source>Student options</source>
++        <translation>Možnosti študenta</translation>
++    </message>
++    <message>
++        <location filename="../ui/opentyper.ui" line="465"/>
++        <location filename="../ui/opentyper.ui" line="468"/>
++        <source>Repeat exercise</source>
++        <translation>Opakovať cvičenie</translation>
++    </message>
++    <message>
++        <location filename="../ui/opentyper.ui" line="500"/>
++        <source>Previous exercise</source>
++        <translation>Predchádzajúce cvičenie</translation>
++    </message>
++    <message>
++        <location filename="../ui/opentyper.ui" line="529"/>
++        <source>Next exercise</source>
++        <translation>Nasledujúce cvičenie</translation>
++    </message>
++    <message>
++        <location filename="../ui/opentyper.ui" line="576"/>
++        <source>Time:</source>
++        <translation>Čas:</translation>
++    </message>
++    <message>
++        <location filename="../ui/opentyper.ui" line="590"/>
++        <source>Mistakes:</source>
++        <translation>Počet chýb:</translation>
++    </message>
++    <message>
++        <location filename="../ui/opentyper.ui" line="610"/>
++        <source>Current state:</source>
++        <translation>Stav:</translation>
++    </message>
++    <message>
++        <location filename="../ui/opentyper.ui" line="684"/>
++        <source>Remaining time:</source>
++        <translation>Zostávajúci čas:</translation>
++    </message>
++    <message>
++        <location filename="../ui/opentyper.ui" line="1089"/>
++        <source>Timed exercise</source>
++        <translation>Cvičenie na čas</translation>
++    </message>
++    <message>
++        <location filename="../ui/opentyper.ui" line="399"/>
++        <source>Lesson:</source>
++        <translation>Lekcia:</translation>
++    </message>
++    <message>
++        <location filename="../ui/opentyper.ui" line="419"/>
++        <source>Exercise:</source>
++        <translation>Cvičenie:</translation>
++    </message>
++    <message>
++        <location filename="../ui/opentyper.ui" line="366"/>
++        <source>Sublesson:</source>
++        <translation>Podlekcia:</translation>
++    </message>
++    <message>
++        <location filename="../src/opentyper.cpp" line="36"/>
++        <source>Open custom exercise</source>
++        <translation>Otvoriť vlastné cvičenie</translation>
++    </message>
++    <message>
++        <location filename="../src/opentyper.cpp" line="37"/>
++        <source>Open custom pack</source>
++        <translation>Otvoriť vlastný balík</translation>
++    </message>
++    <message>
++        <location filename="../src/opentyper.cpp" line="370"/>
++        <location filename="../src/opentyper.cpp" line="372"/>
++        <source>Lesson</source>
++        <translation>Lekcia</translation>
++    </message>
++    <message>
++        <location filename="../src/opentyper.cpp" line="408"/>
++        <source>Exercise</source>
++        <translation>Cvičenie</translation>
++    </message>
++    <message>
++        <location filename="../src/opentyper.cpp" line="612"/>
++        <source>Logged in as %1</source>
++        <translation>Prihlásený ako %1</translation>
++    </message>
++    <message>
++        <location filename="../src/opentyper.cpp" line="637"/>
++        <source>Not logged in.</source>
++        <translation>Neprihlásený.</translation>
++    </message>
++    <message>
++        <location filename="../src/opentyper.cpp" line="705"/>
++        <source>Text files</source>
++        <translation>Textové súbory</translation>
++    </message>
++    <message>
++        <location filename="../src/opentyper.cpp" line="705"/>
++        <location filename="../src/opentyper.cpp" line="1125"/>
++        <source>All files</source>
++        <translation>Všetky súbory</translation>
++    </message>
++    <message>
++        <location filename="../src/opentyper.cpp" line="685"/>
++        <source>This file is too large!</source>
++        <translation>Tento súbor je príliš veľký!</translation>
++    </message>
++    <message>
++        <location filename="../src/opentyper.cpp" line="1125"/>
++        <source>Open-Typer pack files</source>
++        <translation>Súbory balíkov Open-Typer</translation>
++    </message>
++</context>
++<context>
++    <name>QObject</name>
++    <message>
++        <location filename="../src/core/configfile.cpp" line="249"/>
++        <source>Revision</source>
++        <translation>Opakovanie</translation>
++    </message>
++    <message>
++        <location filename="../src/core/configfile.cpp" line="264"/>
++        <source>Shift</source>
++        <comment>Shift key</comment>
++        <translation>Shift</translation>
++    </message>
++</context>
++<context>
++    <name>SimpleColorDialog</name>
++    <message>
++        <location filename="../ui/simplecolordialog.ui" line="26"/>
++        <source>Color selection</source>
++        <translation>Výber farby</translation>
++    </message>
++    <message>
++        <location filename="../ui/simplecolordialog.ui" line="323"/>
++        <source>Choose a color</source>
++        <translation>Vyberte farbu</translation>
++    </message>
++    <message>
++        <location filename="../ui/simplecolordialog.ui" line="65"/>
++        <source>Quick selection:</source>
++        <translation>Rýchly výber:</translation>
++    </message>
++    <message>
++        <location filename="../ui/simplecolordialog.ui" line="513"/>
++        <source>Apply</source>
++        <translation>Použiť</translation>
++    </message>
++    <message>
++        <location filename="../ui/simplecolordialog.ui" line="523"/>
++        <source>Cancel</source>
++        <translation>Zrušiť</translation>
++    </message>
++    <message>
++        <location filename="../ui/simplecolordialog.ui" line="360"/>
++        <source>Advanced:</source>
++        <translation>Rozšírené:</translation>
++    </message>
++</context>
++<context>
++    <name>UpdaterDialog</name>
++    <message>
++        <location filename="../ui/updater/updaterdialog.ui" line="14"/>
++        <source>Update</source>
++        <translation>Aktualizácia</translation>
++    </message>
++    <message>
++        <location filename="../ui/updater/updaterdialog.ui" line="47"/>
++        <source>Yes</source>
++        <translation>Áno</translation>
++    </message>
++    <message>
++        <location filename="../ui/updater/updaterdialog.ui" line="57"/>
++        <source>No</source>
++        <translation>Nie</translation>
++    </message>
++    <message>
++        <location filename="../ui/updater/updaterdialog.ui" line="89"/>
++        <source>Update available</source>
++        <translation>Dostupná aktualizácia</translation>
++    </message>
++    <message>
++        <location filename="../ui/updater/updaterdialog.ui" line="67"/>
++        <source>There&apos;s a new update available.
++Would you like to download and install it?</source>
++        <translation>Je dostupná nová verzia.
++Prajete si ju stiahnuť a nainštalovať?</translation>
++    </message>
++</context>
++<context>
++    <name>behaviorOptions</name>
++    <message>
++        <location filename="../ui/options/behavior.ui" line="48"/>
++        <source>Start new line using space bar</source>
++        <translation>Začať nový riadok medzerníkom</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/behavior.ui" line="74"/>
++        <source>Error penalty:</source>
++        <translation>Penalizácia chýb:</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/behavior.ui" line="36"/>
++        <source>Exercise options</source>
++        <translation>Možnosti cvičenia</translation>
++    </message>
++</context>
++<context>
++    <name>builtinPacks</name>
++    <message>
++        <location filename="../src/core/packs.cpp" line="26"/>
++        <source>auto-generated</source>
++        <translation>automaticky generované</translation>
++    </message>
++    <message>
++        <location filename="../src/core/packs.cpp" line="45"/>
++        <source>Unknown pack</source>
++        <translation>Neznámy balík</translation>
++    </message>
++</context>
++<context>
++    <name>configParser</name>
++    <message>
++        <location filename="../src/core/configfile.cpp" line="292"/>
++        <source>Touch</source>
++        <translation>Hmaty</translation>
++    </message>
++    <message>
++        <location filename="../src/core/configfile.cpp" line="295"/>
++        <source>Words</source>
++        <translation>Slová</translation>
++    </message>
++    <message>
++        <location filename="../src/core/configfile.cpp" line="298"/>
++        <source>Sentences</source>
++        <translation>Vety</translation>
++    </message>
++    <message>
++        <location filename="../src/core/configfile.cpp" line="301"/>
++        <source>Text</source>
++        <translation>Text</translation>
++    </message>
++    <message>
++        <location filename="../src/core/configfile.cpp" line="304"/>
++        <source>Sublesson</source>
++        <translation>Podlekcia</translation>
++    </message>
++</context>
++<context>
++    <name>connectionOptions</name>
++    <message>
++        <location filename="../ui/options/connection.ui" line="47"/>
++        <source>Server options</source>
++        <translation>Možnosti servera</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/connection.ui" line="53"/>
++        <source>IP address:</source>
++        <translation>Adresa IP:</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/connection.ui" line="67"/>
++        <source>Port:</source>
++        <translation>Port:</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/connection.ui" line="74"/>
++        <source>Use class monitor server</source>
++        <extracomment>Do not translate class monitor</extracomment>
++        <translation>Používať server class monitor</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/connection.ui" line="81"/>
++        <source>Test connection</source>
++        <translation>Vyskúšať spojenie</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/connection.ui" line="88"/>
++        <source>Connection status:</source>
++        <translation>Stav spojenia:</translation>
++    </message>
++    <message>
++        <location filename="../src/options/connection.cpp" line="57"/>
++        <source>Unknown</source>
++        <translation>Neznámy</translation>
++    </message>
++    <message>
++        <location filename="../src/options/connection.cpp" line="83"/>
++        <source>Failed to connect</source>
++        <translation>Nepodarilo sa pripojiť</translation>
++    </message>
++</context>
++<context>
++    <name>customizationOptions</name>
++    <message>
++        <location filename="../ui/options/customization.ui" line="154"/>
++        <source>System (default)</source>
++        <translation>Systémový (predvolené)</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/customization.ui" line="159"/>
++        <source>Dark</source>
++        <translation>Tmavý</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/customization.ui" line="164"/>
++        <source>Light</source>
++        <translation>Svetlý</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/customization.ui" line="343"/>
++        <source>Exercise text color:</source>
++        <translation>Farba textu cvičenia:</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/customization.ui" line="378"/>
++        <source>Input text color:</source>
++        <translation>Farba vstupného textu:</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/customization.ui" line="407"/>
++        <source>Background color:</source>
++        <translation>Farba pozadia:</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/customization.ui" line="436"/>
++        <source>Paper color:</source>
++        <translation>Farba papiera:</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/customization.ui" line="465"/>
++        <source>Panel color:</source>
++        <translation>Farba panela:</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/customization.ui" line="653"/>
++        <source>Go back</source>
++        <translation>Späť</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/customization.ui" line="196"/>
++        <source>Font:</source>
++        <translation>Písmo:</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/customization.ui" line="143"/>
++        <source>Style:</source>
++        <translation>Štýl:</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/customization.ui" line="219"/>
++        <source>Font size:</source>
++        <translation>Veľkosť písma:</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/customization.ui" line="285"/>
++        <source>Italic</source>
++        <translation>Kurzíva</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/customization.ui" line="267"/>
++        <source>Bold</source>
++        <translation>Tučný</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/customization.ui" line="48"/>
++        <source>Themes</source>
++        <translation>Motívy</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/customization.ui" line="303"/>
++        <source>Underlined</source>
++        <translation>Podčiarknutý</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/customization.ui" line="251"/>
++        <source>Text style:</source>
++        <translation>Štýl textu:</translation>
++    </message>
++</context>
++<context>
++    <name>initialSetup</name>
++    <message>
++        <location filename="../ui/initialsetup.ui" line="33"/>
++        <source>Welcome to Open-Typer!</source>
++        <translation>Vitajte v programe Open-Typer!</translation>
++    </message>
++    <message>
++        <location filename="../ui/initialsetup.ui" line="46"/>
++        <source>Choose a pack with lessons for your keyboard layout:</source>
++        <translation>Vyberte si balík s lekciami pre Vaše rozloženie klávesnice:</translation>
++    </message>
++    <message>
++        <location filename="../ui/initialsetup.ui" line="63"/>
++        <source>Show all</source>
++        <translation>Zobraziť všetko</translation>
++    </message>
++</context>
++<context>
++    <name>keyboardOptions</name>
++    <message>
++        <location filename="../ui/options/keyboard.ui" line="70"/>
++        <source>Editor</source>
++        <translation>Editor</translation>
++    </message>
++</context>
++<context>
++    <name>keyboardWidget</name>
++    <message>
++        <location filename="../src/widgets/keyboardwidget.cpp" line="579"/>
++        <source>Hide keyboard</source>
++        <translation>Skryť klávesnicu</translation>
++    </message>
++    <message>
++        <location filename="../src/widgets/keyboardwidget.cpp" line="584"/>
++        <source>Show keyboard</source>
++        <translation>Zobraziť klávesnicu</translation>
++    </message>
++</context>
++<context>
++    <name>languageManager</name>
++    <message>
++        <location filename="../src/core/language.cpp" line="43"/>
++        <source>System (default)</source>
++        <translation>Systémový (predvolené)</translation>
++    </message>
++</context>
++<context>
++    <name>levelSummary</name>
++    <message>
++        <location filename="../ui/levelsummary.ui" line="14"/>
++        <source>Summary</source>
++        <translation>Súhrn</translation>
++    </message>
++    <message>
++        <location filename="../ui/levelsummary.ui" line="97"/>
++        <source>Preview</source>
++        <translation>Náhľad</translation>
++    </message>
++    <message>
++        <location filename="../ui/levelsummary.ui" line="141"/>
++        <source>Total time:</source>
++        <translation>Celkový čas:</translation>
++    </message>
++    <message>
++        <location filename="../ui/levelsummary.ui" line="125"/>
++        <source>Hits per minute:</source>
++        <translation>Počet čistých úderov za minútu:</translation>
++    </message>
++    <message>
++        <location filename="../ui/levelsummary.ui" line="57"/>
++        <source>Exercise completed</source>
++        <translation>Cvičenie dokončené</translation>
++    </message>
++    <message>
++        <location filename="../ui/levelsummary.ui" line="29"/>
++        <source>Mistakes:</source>
++        <translation>Počet chýb:</translation>
++    </message>
++    <message>
++        <location filename="../ui/levelsummary.ui" line="157"/>
++        <source>Total hits:</source>
++        <translation>Celkový počet úderov:</translation>
++    </message>
++    <message>
++        <location filename="../src/levelsummary.cpp" line="48"/>
++        <source>seconds</source>
++        <translation>sekúnd</translation>
++    </message>
++</context>
++<context>
++    <name>monitorClient</name>
++    <message>
++        <location filename="../src/core/net.cpp" line="175"/>
++        <source>Error</source>
++        <translation>Chyba</translation>
++    </message>
++    <message>
++        <location filename="../src/core/net.cpp" line="176"/>
++        <source>Unable to connect to class monitor server.</source>
++        <translation>Nepodarilo sa spojiť so serverom class monitor.</translation>
++    </message>
++</context>
++<context>
++    <name>optionsWindow</name>
++    <message>
++        <location filename="../ui/options/optionswindow.ui" line="14"/>
++        <source>Options</source>
++        <translation>Možnosti</translation>
++    </message>
++    <message>
++        <location filename="../src/options/optionswindow.cpp" line="42"/>
++        <source>Language</source>
++        <translation>Jazyk</translation>
++    </message>
++    <message>
++        <location filename="../src/options/optionswindow.cpp" line="43"/>
++        <source>Behavior</source>
++        <translation>Správanie</translation>
++    </message>
++    <message>
++        <location filename="../src/options/optionswindow.cpp" line="44"/>
++        <source>Keyboard</source>
++        <translation>Klávesnica</translation>
++    </message>
++    <message>
++        <location filename="../src/options/optionswindow.cpp" line="45"/>
++        <source>Customization</source>
++        <translation>Prispôsobenie</translation>
++    </message>
++    <message>
++        <location filename="../src/options/optionswindow.cpp" line="47"/>
++        <source>Connection</source>
++        <translation>Pripojenie</translation>
++    </message>
++</context>
++<context>
++    <name>packEditor</name>
++    <message>
++        <location filename="../ui/packEditor/packeditor.ui" line="14"/>
++        <source>Open-Typer Pack Editor</source>
++        <translation>Editor balíkov Open-Typer</translation>
++    </message>
++    <message>
++        <location filename="../ui/packEditor/packeditor.ui" line="47"/>
++        <source>File</source>
++        <translation>Súbor</translation>
++    </message>
++    <message>
++        <location filename="../ui/packEditor/packeditor.ui" line="62"/>
++        <source>New</source>
++        <translation>Nový</translation>
++    </message>
++    <message>
++        <location filename="../ui/packEditor/packeditor.ui" line="70"/>
++        <source>Open</source>
++        <translation>Otvoriť</translation>
++    </message>
++    <message>
++        <location filename="../ui/packEditor/packeditor.ui" line="78"/>
++        <source>Open built-in pack</source>
++        <translation>Otvoriť vstavaný balík</translation>
++    </message>
++    <message>
++        <location filename="../ui/packEditor/packeditor.ui" line="86"/>
++        <source>Save</source>
++        <translation>Uložiť</translation>
++    </message>
++    <message>
++        <location filename="../ui/packEditor/packeditor.ui" line="94"/>
++        <source>Save As...</source>
++        <translation>Uložiť ako...</translation>
++    </message>
++    <message>
++        <location filename="../src/packEditor/packeditor.cpp" line="45"/>
++        <source>Unnamed</source>
++        <translation>Nepomenovaný</translation>
++    </message>
++    <message>
++        <location filename="../src/packEditor/packeditor.cpp" line="93"/>
++        <source>Open-Typer pack files</source>
++        <translation>Súbory balíkov Open-Typer</translation>
++    </message>
++    <message>
++        <location filename="../src/packEditor/packeditor.cpp" line="93"/>
++        <source>All files</source>
++        <translation>Všetky súbory</translation>
++    </message>
++</context>
++<context>
++    <name>packSelector</name>
++    <message>
++        <location filename="../ui/packEditor/packselector.ui" line="26"/>
++        <source>Open built-in pack</source>
++        <translation>Otvoriť vstavaný balík</translation>
++    </message>
++    <message>
++        <location filename="../ui/packEditor/packselector.ui" line="42"/>
++        <source>Choose built-in pack:</source>
++        <translation>Vyberte vstavaný balík:</translation>
++    </message>
++    <message>
++        <location filename="../ui/packEditor/packselector.ui" line="79"/>
++        <source>Cancel</source>
++        <translation>Zrušiť</translation>
++    </message>
++    <message>
++        <location filename="../ui/packEditor/packselector.ui" line="92"/>
++        <source>Load</source>
++        <translation>Načítať</translation>
++    </message>
++</context>
++<context>
++    <name>packView</name>
++    <message>
++        <location filename="../ui/packEditor/packview.ui" line="226"/>
++        <source>Lesson:</source>
++        <translation>Lekcia:</translation>
++    </message>
++    <message>
++        <location filename="../ui/packEditor/packview.ui" line="174"/>
++        <source>Exercise:</source>
++        <translation>Cvičenie:</translation>
++    </message>
++    <message>
++        <location filename="../ui/packEditor/packview.ui" line="155"/>
++        <source>Sublesson:</source>
++        <translation>Podlekcia:</translation>
++    </message>
++    <message>
++        <location filename="../src/packEditor/packview.cpp" line="146"/>
++        <source>Save</source>
++        <translation>Uložiť</translation>
++    </message>
++    <message>
++        <location filename="../ui/packEditor/packview.ui" line="402"/>
++        <source>Exercise options:</source>
++        <translation>Možnosti cvičenia:</translation>
++    </message>
++    <message>
++        <location filename="../ui/packEditor/packview.ui" line="409"/>
++        <source>Repeating:</source>
++        <translation>Opakovanie:</translation>
++    </message>
++    <message>
++        <location filename="../ui/packEditor/packview.ui" line="417"/>
++        <source>None</source>
++        <translation>Žiadne</translation>
++    </message>
++    <message>
++        <location filename="../ui/packEditor/packview.ui" line="422"/>
++        <source>Words</source>
++        <translation>Slová</translation>
++    </message>
++    <message>
++        <location filename="../ui/packEditor/packview.ui" line="430"/>
++        <source>Line length:</source>
++        <translation>Dĺžka riadka:</translation>
++    </message>
++    <message>
++        <location filename="../ui/packEditor/packview.ui" line="341"/>
++        <source>Lesson options:</source>
++        <translation>Možnosti lekcie:</translation>
++    </message>
++    <message>
++        <location filename="../ui/packEditor/packview.ui" line="364"/>
++        <source>Description:</source>
++        <translation>Popis:</translation>
++    </message>
++    <message>
++        <location filename="../ui/packEditor/packview.ui" line="371"/>
++        <source>Revision</source>
++        <translation>Opakovanie</translation>
++    </message>
++    <message>
++        <location filename="../src/packEditor/packview.cpp" line="96"/>
++        <source>Write error</source>
++        <translation>Chyba zápisu</translation>
++    </message>
++    <message>
++        <location filename="../src/packEditor/packview.cpp" line="145"/>
++        <source>Save changes to</source>
++        <translation>Uložiť zmeny súboru</translation>
++    </message>
++    <message>
++        <location filename="../src/packEditor/packview.cpp" line="145"/>
++        <source>before closing?</source>
++        <translation>pred zavretím?</translation>
++    </message>
++    <message>
++        <location filename="../src/packEditor/packview.cpp" line="147"/>
++        <source>Cancel</source>
++        <translation>Zrušiť</translation>
++    </message>
++    <message>
++        <location filename="../src/packEditor/packview.cpp" line="148"/>
++        <source>Close without saving</source>
++        <translation>Zavrieť bez uloženia</translation>
++    </message>
++    <message>
++        <location filename="../src/packEditor/packview.cpp" line="210"/>
++        <location filename="../src/packEditor/packview.cpp" line="212"/>
++        <source>Lesson</source>
++        <translation>Lekcia</translation>
++    </message>
++    <message>
++        <location filename="../src/packEditor/packview.cpp" line="240"/>
++        <source>empty</source>
++        <translation>prázdna</translation>
++    </message>
++    <message>
++        <location filename="../src/packEditor/packview.cpp" line="255"/>
++        <source>Exercise</source>
++        <translation>Cvičenie</translation>
++    </message>
++    <message>
++        <location filename="../src/packEditor/packview.cpp" line="357"/>
++        <source>New exercise</source>
++        <translation>Nové cvičenie</translation>
++    </message>
++    <message>
++        <location filename="../src/packEditor/packview.cpp" line="524"/>
++        <source>Text length:</source>
++        <translation>Dĺžka textu:</translation>
++    </message>
++    <message>
++        <location filename="../src/packEditor/packview.cpp" line="708"/>
++        <source>Open-Typer pack files</source>
++        <translation>Súbory balíkov Open-Typer</translation>
++    </message>
++    <message>
++        <location filename="../src/packEditor/packview.cpp" line="708"/>
++        <source>All files</source>
++        <translation>Všetky súbory</translation>
++    </message>
++</context>
++<context>
++    <name>paperConfigDialog</name>
++    <message>
++        <location filename="../ui/paperconfigdialog.ui" line="17"/>
++        <source>Size preferences</source>
++        <translation>Nastavenia veľkosti</translation>
++    </message>
++    <message>
++        <location filename="../ui/paperconfigdialog.ui" line="44"/>
++        <source>Line length:</source>
++        <translation>Dĺžka riadka:</translation>
++    </message>
++    <message>
++        <location filename="../ui/paperconfigdialog.ui" line="85"/>
++        <source>Load</source>
++        <translation>Načítať</translation>
++    </message>
++    <message>
++        <location filename="../ui/paperconfigdialog.ui" line="95"/>
++        <source>Include new lines</source>
++        <translation>Zahrnúť nové riadky</translation>
++    </message>
++</context>
++<context>
++    <name>statsDialog</name>
++    <message>
++        <location filename="../ui/statsdialog.ui" line="14"/>
++        <source>Exercise history</source>
++        <translation>História cvičenia</translation>
++    </message>
++    <message>
++        <location filename="../ui/statsdialog.ui" line="77"/>
++        <source>Table</source>
++        <translation>Tabuľka</translation>
++    </message>
++    <message>
++        <location filename="../ui/statsdialog.ui" line="106"/>
++        <source>Charts</source>
++        <translation>Grafy</translation>
++    </message>
++    <message>
++        <location filename="../src/statsdialog.cpp" line="46"/>
++        <location filename="../src/statsdialog.cpp" line="91"/>
++        <source>Speed</source>
++        <translation>Rýchlosť</translation>
++    </message>
++    <message>
++        <location filename="../src/statsdialog.cpp" line="46"/>
++        <location filename="../src/statsdialog.cpp" line="100"/>
++        <source>Mistakes</source>
++        <translation>Chyby</translation>
++    </message>
++    <message>
++        <location filename="../src/statsdialog.cpp" line="46"/>
++        <location filename="../src/statsdialog.cpp" line="109"/>
++        <source>Time</source>
++        <translation>Čas</translation>
++    </message>
++    <message>
++        <location filename="../src/statsdialog.cpp" line="129"/>
++        <source>Better students: %1</source>
++        <translation>Lepší študenti: %1</translation>
++    </message>
++    <message>
++        <location filename="../src/statsdialog.cpp" line="134"/>
++        <source>Worse students: %1</source>
++        <translation>Horší študenti: %1</translation>
++    </message>
++</context>
++<context>
++    <name>studentOptions</name>
++    <message>
++        <location filename="../ui/options/studentoptions.ui" line="14"/>
++        <source>Authentication</source>
++        <translation>Overenie totožnosti</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/studentoptions.ui" line="79"/>
++        <source>Student log in</source>
++        <translation>Prihlásenie študenta</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/studentoptions.ui" line="98"/>
++        <source>Username:</source>
++        <translation>Používateľské meno:</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/studentoptions.ui" line="112"/>
++        <source>Password:</source>
++        <translation>Heslo:</translation>
++    </message>
++    <message>
++        <location filename="../ui/options/studentoptions.ui" line="147"/>
++        <source>Incorrect password</source>
++        <translation>Nesprávne heslo</translation>
++    </message>
++</context>
++<context>
++    <name>themeEngine</name>
++    <message>
++        <location filename="../src/core/theme.cpp" line="32"/>
++        <source>Default</source>
++        <translation>Predvolený</translation>
++    </message>
++    <message>
++        <location filename="../src/core/theme.cpp" line="38"/>
++        <source>Dark</source>
++        <translation>Tmavý</translation>
++    </message>
++    <message>
++        <location filename="../src/core/theme.cpp" line="45"/>
++        <source>Light</source>
++        <translation>Svetlý</translation>
++    </message>
++    <message>
++        <location filename="../src/core/theme.cpp" line="52"/>
++        <source>Green</source>
++        <translation>Zelený</translation>
++    </message>
++    <message>
++        <location filename="../src/core/theme.cpp" line="61"/>
++        <source>Custom</source>
++        <translation>Vlastný</translation>
++    </message>
++</context>
++<context>
++    <name>timeDialog</name>
++    <message>
++        <location filename="../ui/timedialog.ui" line="29"/>
++        <source>Time</source>
++        <translation>Čas</translation>
++    </message>
++    <message>
++        <location filename="../ui/timedialog.ui" line="99"/>
++        <source>Start</source>
++        <translation>Štart</translation>
++    </message>
++    <message>
++        <location filename="../ui/timedialog.ui" line="112"/>
++        <source>Cancel</source>
++        <translation>Zrušiť</translation>
++    </message>
++</context>
++</TS>
+-- 
+2.33.1
+

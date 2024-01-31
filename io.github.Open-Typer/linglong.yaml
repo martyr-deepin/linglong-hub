@@ -1,0 +1,26 @@
+package:
+  id: io.github.Open-Typer
+  name: Open-Typer
+  version: 4.0.0.1
+  kind: app
+  description: |
+    A free and open source typing tutor program
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtcharts/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/Open-Typer/Open-Typer.git
+  commit: 2a78be1304167aad64218a677c3046d82baea624
+  patch: 
+    - patches/0001-install.patch
+    - patches/0002-install.patch
+
+build:
+  kind: qmake

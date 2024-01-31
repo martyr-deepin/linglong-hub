@@ -1,0 +1,47 @@
+From 3c94ca7cd0964179d27afc8ac868d4d3bd923247 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 5 Jan 2024 19:20:59 +0800
+Subject: [PATCH] install
+ 
+---
+ Open-Typer.pro                                        | 11 ++++++++++-
+ .../usr/share/applications/open-typer.desktop         |  2 +-
+ 2 files changed, 11 insertions(+), 2 deletions(-)
+
+diff --git a/Open-Typer.pro b/Open-Typer.pro
+index 43119079..bbf97e96 100644
+--- a/Open-Typer.pro
++++ b/Open-Typer.pro
+@@ -187,5 +187,14 @@ win32:RC_ICONS += res/images/icon.ico
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /usr/bin
++else: unix:!android: #target.path = /usr/bin
+ !isEmpty(target.path): INSTALLS += target
++
++BINDIR=$$PREFIX/bin
++DATADIR=$$PREFIX/share
++target.path=$$BINDIR
++desktop.files=res/linux-release/usr/share/applications/open-typer.desktop
++desktop.path=$$DATADIR/applications/
++icons.path=$$PREFIX/share/icons
++icons.files=res/linux-release/usr/share/pixmaps/open-typer.png
++INSTALLS += target desktop icons
+\ No newline at end of file
+diff --git a/res/linux-release/usr/share/applications/open-typer.desktop b/res/linux-release/usr/share/applications/open-typer.desktop
+index 39179c9a..9c159b57 100755
+--- a/res/linux-release/usr/share/applications/open-typer.desktop
++++ b/res/linux-release/usr/share/applications/open-typer.desktop
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env xdg-open
+ [Desktop Entry]
+ Name=Open-Typer
+-Exec=/usr/bin/open-typer %U
++Exec=open-typer %U
+ Terminal=false
+ Type=Application
+ Icon=open-typer
+-- 
+2.33.1
+
