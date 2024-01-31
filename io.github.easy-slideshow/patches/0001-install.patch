@@ -1,0 +1,46 @@
+From a42dc0c38f6337b5bf568d1aebe6e3b128343124 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 31 Jan 2024 20:44:25 +0800
+Subject: [PATCH] install
+
+---
+ EasySlideshow.pro             | 6 +++---
+ desktop/easyslideshow.desktop | 2 +-
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/EasySlideshow.pro b/EasySlideshow.pro
+index de7d4f6..ce436c4 100644
+--- a/EasySlideshow.pro
++++ b/EasySlideshow.pro
+@@ -67,12 +67,12 @@ versionTarget.commands = touch ./version.h; cd $$PWD; git log -n 1 --format=form
+ #PRE_TARGETDEPS += version.h
+ 
+ # installation
+-target.path = /usr/bin
++target.path =  $$PREFIX/bin
+ 
+-icon.path = /usr/share/icons/hicolor/scalable/apps
++icon.path = $$PREFIX/share/icons/hicolor/scalable/apps
+ icon.files = svg/easyslideshow.svg
+ 
+-desktop.path = /usr/share/applications
++desktop.path = $$PREFIX/share/applications
+ desktop.files = desktop/easyslideshow.desktop
+ 
+ INSTALLS += target \
+diff --git a/desktop/easyslideshow.desktop b/desktop/easyslideshow.desktop
+index a408a0c..bc07ced 100644
+--- a/desktop/easyslideshow.desktop
++++ b/desktop/easyslideshow.desktop
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Name=EasySlideshow
+ Comment= Slideshow that displays the images of multiple folders in a randomized order.
+-Exec=/usr/bin/easyslideshow
++Exec=easyslideshow
+ Icon=easyslideshow
+ Type=Application
+ Categories=Graphics;Utility;
+-- 
+2.33.1
+
