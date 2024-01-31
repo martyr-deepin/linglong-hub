@@ -1,0 +1,20 @@
+package:
+  id: io.github.ChineseChess
+  name: ChineseChess
+  version: 6.1
+  kind: app
+  description: |
+    Cross-platform and online battle platform game based on Qt: Chinese Chess. Also known as:『Xiangqi』
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/XMuli/ChineseChess.git"
+  commit: e755af5c9b8024be10234e86d9f47b1bef697b6d
+  patch: patches/ab.patch
+build:
+  kind: qmake
