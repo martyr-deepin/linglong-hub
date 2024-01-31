@@ -1,0 +1,20 @@
+package:
+  id: io.github.HJ-Editor
+  name: HJ-Editor
+  version: 1.0
+  kind: app
+  description: |
+    Qt based simple C++ code editor with code highlighting, code completion and compiling/基于Qt的简单C++编辑器，带代码高亮、联想和编译运行功能 
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/m-iDev-0792/HJ-Editor.git"
+  commit: bf4d55f
+  patch: patches/ab.patch
+
+build:
+  kind: qmake
