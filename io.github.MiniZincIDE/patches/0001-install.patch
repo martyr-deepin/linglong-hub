@@ -1,0 +1,45 @@
+From 311fba87f1894fd53d3332952b05c7a982476857 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 31 Jan 2024 17:13:45 +0800
+Subject: [PATCH] install
+
+---
+ MiniZincIDE/MiniZincIDE.pro        | 10 ++++++++--
+ resources/misc/MiniZincIDE.desktop |  4 ++--
+ 2 files changed, 10 insertions(+), 4 deletions(-)
+
+diff --git a/MiniZincIDE/MiniZincIDE.pro b/MiniZincIDE/MiniZincIDE.pro
+index 7fc5516..f3aba25 100644
+--- a/MiniZincIDE/MiniZincIDE.pro
++++ b/MiniZincIDE/MiniZincIDE.pro
+@@ -7,5 +7,11 @@ SOURCES += main.cpp
+ 
+ include($$PWD/MiniZincIDE.pri)
+ 
+-target.path = $$PREFIX/bin
+-INSTALLS += target
++BINDIR = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files =../resources/misc/MiniZincIDE.desktop
++desktop.path = $$DATADIR/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = images/mznicon.png
++INSTALLS += target desktop icons
+diff --git a/resources/misc/MiniZincIDE.desktop b/resources/misc/MiniZincIDE.desktop
+index 1eb3d5a..d4d5479 100644
+--- a/resources/misc/MiniZincIDE.desktop
++++ b/resources/misc/MiniZincIDE.desktop
+@@ -2,7 +2,7 @@
+ Version=1.0
+ Type=Application
+ Terminal=false
+-Exec=minizinc.ide
++Exec=MiniZincIDE
+ Name=MiniZincIDE
+-Icon=${SNAP}/meta/gui/icon.png
++Icon=mznicon
+ Categories=Science;Development;Education;
+-- 
+2.33.1
+
