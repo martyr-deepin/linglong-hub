@@ -1,54 +1,47 @@
-From 3604cf5a1823af68414df3c8f328717e21a8446a Mon Sep 17 00:00:00 2001
+From bdc8bb8f9742962502827869b0f769f5653ec455 Mon Sep 17 00:00:00 2001
 From: wjyrich <1071633242@qq.com>
-Date: Thu, 11 Jan 2024 15:38:03 +0800
+Date: Wed, 31 Jan 2024 20:28:04 +0800
 Subject: [PATCH] install
 
 ---
- znotes.pro | 20 ++++++++++++--------
- 1 file changed, 12 insertions(+), 8 deletions(-)
+ znotes.pro | 19 ++++++++++---------
+ 1 file changed, 10 insertions(+), 9 deletions(-)
 
 diff --git a/znotes.pro b/znotes.pro
-index 04cd3f2..a4f2082 100644
+index 04cd3f2..95c71b7 100644
 --- a/znotes.pro
 +++ b/znotes.pro
-@@ -125,20 +125,15 @@ PRE_TARGETDEPS += compiler_TSQM_make_all
+@@ -125,20 +125,21 @@ PRE_TARGETDEPS += compiler_TSQM_make_all
  !os2:DEFINES += VERSION=\\\"$$VERSION\\\"
  
  unix {
 -    PREFIX = $$(PREFIX)
-     isEmpty( PREFIX ):PREFIX = /usr
+-    isEmpty( PREFIX ):PREFIX = /usr
++    BINDIR = $$PREFIX/bin
++    DATADIR = $$PREFIX/share
++    target.path = $$BINDIR
++    desktop.files =znotes.desktop
++    desktop.path = $$DATADIR/applications/
++    icons.files = znotes.png
++    icons.path = $$PREFIX/share/icons
++    INSTALLS += target desktop icons
      DEFINES += PROGRAM_DATA_DIR=\\\"$$PREFIX/share/znotes/\\\"
 -    target.path = $$PREFIX/bin/
      locale.path = $$PREFIX/share/znotes/translations/
      locale.files = translations/*.qm
-     pixmap.path = /usr/share/pixmaps
+-    pixmap.path = /usr/share/pixmaps
++    pixmap.path = $$PREFIX/share/pixmaps
      pixmap.files = *.png
 -    desktop.path = /usr/share/applications
 -    desktop.files = *.desktop
 -    INSTALLS += target \
 -        locale \
--        pixmap \
++    INSTALLS += locale \
+         pixmap \
 -        desktop
-+
-+    INSTALLS += locale pixmap 
-+        
  }
  
  os2 {
-@@ -147,3 +142,12 @@ os2 {
- }
- 
- win32:RC_FILE = znotes.rc
-+
-+BINDIR = $$PREFIX/bin
-+DATADIR = $$PREFIX/share
-+target.path = $$BINDIR
-+desktop.files =znotes.desktop
-+desktop.path = $$DATADIR/applications/
-+icons.files = znotes.png
-+icons.path = $$PREFIX/share/icons
-+INSTALLS += target desktop icons
-\ No newline at end of file
 -- 
 2.33.1
 
