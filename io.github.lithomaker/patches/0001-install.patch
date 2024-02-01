@@ -1,35 +1,36 @@
-From f6e2119c3142f073288579c8171a90b9a22395bf Mon Sep 17 00:00:00 2001
+From 211d691b3591ba1e26e838e0e194b205f7430af0 Mon Sep 17 00:00:00 2001
 From: wjyrich <1071633242@qq.com>
-Date: Sat, 6 Jan 2024 14:19:20 +0800
+Date: Wed, 31 Jan 2024 21:12:59 +0800
 Subject: [PATCH] install
 
 ---
- default.desktop |  2 +-
- lithomaker.pro  | 10 ++++++++++
- 2 files changed, 11 insertions(+), 1 deletion(-)
+ default.desktop | 4 ++--
+ lithomaker.pro  | 9 +++++++++
+ 2 files changed, 11 insertions(+), 2 deletions(-)
 
 diff --git a/default.desktop b/default.desktop
-index eaee8bf..f57bf66 100644
+index eaee8bf..c45d49f 100644
 --- a/default.desktop
 +++ b/default.desktop
-@@ -1,7 +1,7 @@
+@@ -1,8 +1,8 @@
  [Desktop Entry]
  Type=Application
  Name=LithoMaker
 -Exec=AppRun %F
-+Exec=LithoMaker
- Icon=default
+-Icon=default
++Exec=LithoMaker %F
++Icon=mainconfig
  Comment=Lithophane 3D mesh renderer and exporter
  Terminal=true
+ Categories=Graphics;
 diff --git a/lithomaker.pro b/lithomaker.pro
-index 5e5ccf9..51d8f1c 100644
+index 5e5ccf9..ac513e5 100644
 --- a/lithomaker.pro
 +++ b/lithomaker.pro
-@@ -32,3 +32,13 @@ SOURCES += src/main.cpp \
+@@ -32,3 +32,12 @@ SOURCES += src/main.cpp \
             src/configpages.cpp \
             src/configdialog.cpp \
             src/aboutbox.cpp
-+
 +
 +BINDIR = $$PREFIX/bin
 +DATADIR = $$PREFIX/share
@@ -37,7 +38,7 @@ index 5e5ccf9..51d8f1c 100644
 +desktop.files =default.desktop
 +desktop.path = $$DATADIR/applications/
 +icons.path = $$PREFIX/share/icons
-+icons.files = default.png
++icons.files = icons/mainconfig.png
 +INSTALLS += target desktop icons
 \ No newline at end of file
 -- 
