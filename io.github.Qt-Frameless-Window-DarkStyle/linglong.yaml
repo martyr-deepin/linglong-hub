@@ -1,0 +1,23 @@
+package:
+  id: io.github.Qt-Frameless-Window-DarkStyle
+  name: Qt-Frameless-Window-DarkStyle
+  version: 0.0.1
+  kind: app
+  description: |
+    simple MainWindow class implementation with frameless window and custom dark style.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: icu
+    version: 63.1
+    type: runtime
+
+source:
+  kind: git
+  url: "https://github.com/Jorgen-VikingGod/Qt-Frameless-Window-DarkStyle.git"
+  commit: dee9e1463ed7f8f1d3cd53a2ad3f5ca13757b175
+build:
+  kind: qmake
