@@ -1,0 +1,25 @@
+package:
+  id: io.github.GPIOStudio
+  name: GPIOStudio
+  version: 0.0.1
+  kind: app
+  description: |
+    GPIO Studio is a flow based GUI Tool used to create scripts. These scripts interact with Raspberry Pi GPIO (and a few non-GPIO) components.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: icu
+    version: 63.1
+    type: runtime
+
+source:
+  kind: git
+  url: "https://github.com/arnitdo/GPIOStudio.git"
+  commit: a19e9aaa1aa58a029e2cec6cc9166459349bbaa2
+  patch: patches/ab.patch
+
+build:
+  kind: qmake
