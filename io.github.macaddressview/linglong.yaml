@@ -1,0 +1,20 @@
+package:
+  id: io.github.macaddressview
+  name: macaddressview
+  version: 1.0.0
+  kind: app
+  description: |
+    A tool to view information according to a given MAC address.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://bitbucket.org/admsasha/macaddressview.git
+  commit: 0a06d3c1c865782b1832a99de2433964cbc410a4
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

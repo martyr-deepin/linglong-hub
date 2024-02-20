@@ -1,0 +1,45 @@
+From e6f0b2f448c3a36416ade735ae7155b37bb7059c Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 16 Feb 2024 10:35:26 +0800
+Subject: [PATCH] install
+
+---
+ MACAddressView.pro | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/MACAddressView.pro b/MACAddressView.pro
+index fb76018..0faacdf 100644
+--- a/MACAddressView.pro
++++ b/MACAddressView.pro
+@@ -64,23 +64,23 @@ updateqm.commands = $$QMAKE_LRELEASE -silent ${QMAKE_FILE_IN} -qm langs/${QMAKE_
+ updateqm.CONFIG += no_link target_predeps
+ QMAKE_EXTRA_COMPILERS += updateqm
+ 
+-data_bin.path = /usr/bin/
++data_bin.path = $$PREFIX/bin
+ data_bin.files = Bin/macaddressview
+ INSTALLS += data_bin
+ 
+-data_app.path = /usr/share/applications/
++data_app.path = $$PREFIX/share/applications/
+ data_app.files = pkg/macaddressview.desktop
+ INSTALLS += data_app
+ 
+-data_pixmaps.path = /usr/share/pixmaps/
++data_pixmaps.path = $$PREFIX/share/pixmaps/
+ data_pixmaps.files = data/macaddressview.png
+ INSTALLS += data_pixmaps
+ 
+-data_oui.path = /usr/share/macaddressview/
++data_oui.path = $$PREFIX/share/macaddressview/
+ data_oui.files = data/oui.csv
+ INSTALLS += data_oui
+ 
+-data_langs.path = /usr/share/macaddressview/langs/
++data_langs.path = $$PREFIX/share/macaddressview/langs/
+ data_langs.files = langs/*.qm
+ INSTALLS += data_langs
+ 
+-- 
+2.33.1
+
