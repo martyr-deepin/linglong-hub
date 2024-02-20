@@ -1,0 +1,28 @@
+package:
+  id: io.github.qgo
+  name: qgo
+  version: 2.1.0
+  kind: app
+  description: |
+    qGo is a Go Client (IGS, WING, LGS, WBaduk/CyberORO, Tygem, Tom, and eWeiqi) based on Qt 5. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/pzorin/qgo.git
+  commit: 2a4212d473372bb531fdc5c919a20dd96819f9b0
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

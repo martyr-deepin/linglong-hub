@@ -1,0 +1,38 @@
+From dab74a11dac3333d513c80efa95f5a432d480f24 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 20 Feb 2024 15:47:53 +0800
+Subject: [PATCH] install
+
+---
+ src/src.pro | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/src/src.pro b/src/src.pro
+index 2a9d893..9c581cb 100644
+--- a/src/src.pro
++++ b/src/src.pro
+@@ -168,17 +168,17 @@ SOURCES += displayboard.cpp \
+     preferences.cpp
+ 
+ unix*:!macx-* {
+-    QGO_INSTALL_PATH = /usr/share/qgo
+-    QGO_INSTALL_BIN_PATH = /usr/bin
++    QGO_INSTALL_PATH = $$PREFIX/share/qgo
++    QGO_INSTALL_BIN_PATH = $$PREFIX/bin
+ 
+-    icon.path = /usr/share/pixmaps
++    icon.path = $$PREFIX/share/pixmaps
+     icon.files = resources/pics/qgo.png
+     icon.files += resources/pics/qgo_16x16.xpm
+     icon.files += resources/pics/qgo_32x32.xpm
+     icon.files += resources/pics/qgo_48x48.png
+     icon.files += resources/pics/qgo_48x48.xpm
+     INSTALLS += icon
+-    desktopfile.path = /usr/share/applications
++    desktopfile.path = $$PREFIX/share/applications/
+     desktopfile.files = qgo.desktop
+     INSTALLS += desktopfile
+ }
+-- 
+2.33.1
+
