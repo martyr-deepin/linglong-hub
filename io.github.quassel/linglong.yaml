@@ -1,0 +1,19 @@
+package:
+  id: io.github.quassel
+  name: quassel
+  version: 0.14.0
+  kind: app
+  description: |
+    Quassel IRC: Chat comfortably. Everywhere.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/quassel/quassel.git
+  commit: 020c163421691fa37330826df92ac0a248721290
+
+build:
+  kind: cmake
