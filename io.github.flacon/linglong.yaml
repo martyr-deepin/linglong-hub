@@ -1,0 +1,19 @@
+package:
+  id: io.github.flacon
+  name: flacon
+  version: 3.1.1
+  kind: app
+  description: |
+    Audio File Encoder. Extracts audio tracks from an audio CD image to separate tracks.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+  
+source:
+  kind: git
+  url: https://github.com/flacon/flacon.git
+  commit: 8f81f61ff2a160a504338c71207d0b33ed174751
+
+build:
+  kind: cmake
