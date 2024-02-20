@@ -1,0 +1,71 @@
+From 89f571d7e15447ac1e3fc139173bdddaafa31526 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 16 Feb 2024 10:45:10 +0800
+Subject: [PATCH] install
+
+---
+ ulcc.pro | 20 ++++++++++----------
+ 1 file changed, 10 insertions(+), 10 deletions(-)
+
+diff --git a/ulcc.pro b/ulcc.pro
+index 8cc15c4..98f6d5b 100644
+--- a/ulcc.pro
++++ b/ulcc.pro
+@@ -63,44 +63,44 @@ updateqm.commands = $$QMAKE_LRELEASE -silent ${QMAKE_FILE_IN} -qm langs/${QMAKE_
+ updateqm.CONFIG += no_link target_predeps
+ QMAKE_EXTRA_COMPILERS += updateqm
+ 
+-data_bin.path = /usr/bin/
++data_bin.path = $$PREFIX/bin
+ data_bin.files = Bin/ulcc
+ INSTALLS += data_bin
+ 
+-data_images.path = /usr/share/ulcc/images/
++data_images.path = $$PREFIX/share/ulcc/images/
+ data_images.files = images/*
+ INSTALLS += data_images
+ 
+-data_dictionaries.path = /usr/share/ulcc/dictionaries/
++data_dictionaries.path = $$PREFIX/share/ulcc/dictionaries/
+ data_dictionaries.files = dictionaries/*
+ INSTALLS += data_dictionaries
+ 
+-data_app.path = /usr/share/applications/
++data_app.path = $$PREFIX/share/applications/
+ data_app.files = pkg/ulcc.desktop
+ INSTALLS += data_app
+ 
+-data_icons16.path = /usr/share/icons/hicolor/16x16/apps/
++data_icons16.path = $$PREFIX/share/icons/hicolor/16x16/apps/
+ data_icons16.files = pkg/icons/16x16/ulcc.png
+ INSTALLS += data_icons16
+ 
+-data_icons32.path = /usr/share/icons/hicolor/32x32/apps/
++data_icons32.path = $$PREFIX/share/icons/hicolor/32x32/apps/
+ data_icons32.files = pkg/icons/32x32/ulcc.png
+ INSTALLS += data_icons32
+ 
+-data_icons48.path = /usr/share/icons/hicolor/48x48/apps/
++data_icons48.path = $$PREFIX/share/icons/hicolor/48x48/apps/
+ data_icons48.files = pkg/icons/48x48/ulcc.png
+ INSTALLS += data_icons48
+ 
+-data_icons64.path = /usr/share/icons/hicolor/64x64/apps/
++data_icons64.path = $$PREFIX/share/icons/hicolor/64x64/apps/
+ data_icons64.files = pkg/icons/64x64/ulcc.png
+ INSTALLS += data_icons64
+ 
+-data_icons128.path = /usr/share/icons/hicolor/128x128/apps/
++data_icons128.path = $$PREFIX/share/icons/hicolor/128x128/apps/
+ data_icons128.files = pkg/icons/128x128/ulcc.png
+ INSTALLS += data_icons128
+ 
+ 
+-data_langs.path = /usr/share/ulcc/langs/
++data_langs.path = $$PREFIX/share/ulcc/langs/
+ data_langs.files = langs/*.qm langs/langs.json
+ INSTALLS += data_langs
+ 
+-- 
+2.33.1
+
