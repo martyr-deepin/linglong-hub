@@ -1,0 +1,20 @@
+package:
+  id: io.github.qpdftools
+  name: qpdftools
+  version: 1.4.0
+  kind: app
+  description: |
+    Qpdf Tools is an easy-to-use Qt interface for Ghostscript and QPDF
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/silash35/qpdftools.git
+  commit: 3d6b4fde69249ede8898ed838a8f3eda4810e803
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake

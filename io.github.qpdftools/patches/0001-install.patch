@@ -1,0 +1,47 @@
+From 7fcea851a2a8b243dde5ae9c0f09aab0cc173f96 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 22 Feb 2024 13:55:20 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt              | 8 ++++----
+ resources/qpdftools.desktop | 4 ++--
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 6442d75..e22613f 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -34,9 +34,9 @@ target_link_libraries(qpdftools
+ 
+ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ 
+-    install(TARGETS qpdftools DESTINATION /usr/bin)
+-    install(FILES resources/qpdftools.svg DESTINATION /usr/share/pixmaps)
+-    install(FILES ${QM} DESTINATION /usr/lib/qpdftools)
+-    install(FILES resources/qpdftools.desktop DESTINATION /usr/share/applications)
++    install(TARGETS qpdftools DESTINATION bin)
++    install(FILES resources/qpdftools.svg DESTINATION share/icons)
++    install(FILES ${QM} DESTINATION lib/qpdftools)
++    install(FILES resources/qpdftools.desktop DESTINATION share/applications)
+ 
+ endif (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+diff --git a/resources/qpdftools.desktop b/resources/qpdftools.desktop
+index 38d7b19..a6f36cf 100755
+--- a/resources/qpdftools.desktop
++++ b/resources/qpdftools.desktop
+@@ -1,9 +1,9 @@
+ [Desktop Entry]
+ Name=Qpdf Tools
+ Version=1.0
+-Exec=/usr/bin/qpdftools
++Exec=qpdftools
+ Comment=A easy-to-use Qt interface for Ghostscript and Stapler
+-Icon=/usr/share/pixmaps/qpdftools.svg
++Icon=qpdftools
+ Type=Application
+ Terminal=false
+ StartupNotify=true
+-- 
+2.33.1
+
