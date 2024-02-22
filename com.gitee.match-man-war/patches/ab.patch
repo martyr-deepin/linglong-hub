@@ -1,0 +1,23 @@
+diff -Naur b/match-man-war.desktop a/match-man-war.desktop
+--- b/match-man-war.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/match-man-war.desktop	2023-12-04 19:39:08.867345324 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=match-man-war
++Exec=text1
++Type=Application
+diff -Naur b/test1.pro a/test1.pro
+--- b/test1.pro	2023-12-04 19:32:16.094830232 +0800
++++ a/test1.pro	2023-12-04 19:39:50.327339128 +0800
+@@ -31,4 +31,9 @@
+         text.h
+ 
+ FORMS += \
+-        text.ui
+\ 文件尾没有换行符
++        text.ui
++desktop.files += match-man-war.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
++
++INSTALLS += target desktop
