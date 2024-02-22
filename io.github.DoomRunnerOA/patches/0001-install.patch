@@ -1,0 +1,48 @@
+From 4ce4523eaba8a70e2c3e7f87b78d1146fa54cd00 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 22 Feb 2024 14:56:17 +0800
+Subject: [PATCH] install
+
+---
+ DoomRunner.desktop |  4 ++--
+ DoomRunner.pro     | 11 +++++++++--
+ 2 files changed, 11 insertions(+), 4 deletions(-)
+
+diff --git a/DoomRunner.desktop b/DoomRunner.desktop
+index ee62497..439aa07 100644
+--- a/DoomRunner.desktop
++++ b/DoomRunner.desktop
+@@ -1,8 +1,8 @@
+ [Desktop Entry]
+ Name=DoomRunner
+ Comment=Preset-oriented graphical launcher of ZDoom and derivatives
+-Exec=doomrunner
+-Icon=/usr/share/icons/doomrunner.ico
++Exec=DoomRunner
++Icon=Play
+ Type=Application
+ Categories=Game
+ X-Desktop-File-Install-Version=0.26
+diff --git a/DoomRunner.pro b/DoomRunner.pro
+index 7bac029..b86a764 100644
+--- a/DoomRunner.pro
++++ b/DoomRunner.pro
+@@ -121,5 +121,12 @@ win32:LIBS += -lole32 -luuid -ldwmapi
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
++!isEmpty(target.path): #INSTALLS += target
++
++target.path =$$PREFIX/bin
++desktop.files =DoomRunner.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = Resources/Icons/Play.png
++INSTALLS += desktop icons target
+\ No newline at end of file
+-- 
+2.33.1
+
