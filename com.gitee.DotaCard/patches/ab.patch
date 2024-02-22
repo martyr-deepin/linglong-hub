@@ -1,0 +1,24 @@
+diff -Naur b/DotaCard.desktop a/DotaCard.desktop
+--- b/DotaCard.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/DotaCard.desktop	2023-12-03 17:38:07.616551087 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=DotaCard
++Exec=DotaCard
+\ 文件尾没有换行符
+diff -Naur b/duel_client.pro a/duel_client.pro
+--- b/duel_client.pro	2023-12-03 17:37:07.104054130 +0800
++++ a/duel_client.pro	2023-12-03 17:38:25.548698491 +0800
+@@ -81,3 +81,11 @@
+ 
+ RESOURCES += \
+     res.qrc
++
++
++desktop.files += DotaCard.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
++
++INSTALLS += target desktop
++
