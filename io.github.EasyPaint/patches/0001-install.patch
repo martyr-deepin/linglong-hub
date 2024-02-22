@@ -1,0 +1,46 @@
+From 76f3a208ffb83085ef41f86f7b5142973e7a3a4d Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 21 Feb 2024 13:35:51 +0800
+Subject: [PATCH] install
+
+---
+ sources/easypaint.pro                       | 8 ++++----
+ sources/instruments/curvelineinstrument.cpp | 1 +
+ 2 files changed, 5 insertions(+), 4 deletions(-)
+
+diff --git a/sources/easypaint.pro b/sources/easypaint.pro
+index 9ecb58e..5fe1f57 100644
+--- a/sources/easypaint.pro
++++ b/sources/easypaint.pro
+@@ -112,12 +112,12 @@ TRANSLATIONS += \
+ RESOURCES += \
+     resources.qrc
+ 
+-target.path = /usr/bin
+-translations.path = /usr/share/easypaint/translations
++target.path = $$PREFIX/bin
++translations.path = $$PREFIX/share/easypaint/translations
+ translations.files = translations/*.qm
+-desktop.path = /usr/share/applications
++desktop.path = $$PREFIX/share/applications
+ desktop.files = media/easypaint.desktop
+-icon.path = /usr/share/pixmaps
++icon.path = $$PREFIX/share/pixmaps
+ icon.files = media/logo/easypaint_64.png
+ isEmpty(QMAKE_LRELEASE) {
+  win32 {
+diff --git a/sources/instruments/curvelineinstrument.cpp b/sources/instruments/curvelineinstrument.cpp
+index e4719e0..35eb8e2 100644
+--- a/sources/instruments/curvelineinstrument.cpp
++++ b/sources/instruments/curvelineinstrument.cpp
+@@ -29,6 +29,7 @@
+ 
+ #include <QPen>
+ #include <QPainter>
++#include <QPainterPath>
+ #include <QImage>
+ 
+ CurveLineInstrument::CurveLineInstrument(QObject *parent) :
+-- 
+2.33.1
+
