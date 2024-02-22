@@ -1,0 +1,23 @@
+package:
+  id: io.github.rssguard-debian
+  name: rssguard-debian
+  version: 4.0.2
+  kind: app
+  description: |
+    Debian packaging of RSS Guard
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/norbusan/rssguard-debian.git
+  commit: 6ef5274e2c377a0a24a9b2fc8a65592ccfa7bfb8
+
+build:
+  kind: cmake
