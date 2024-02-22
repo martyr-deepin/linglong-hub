@@ -1,0 +1,27 @@
+package:
+  id: io.github.yefm
+  name: yefm
+  version: 1.0.0
+  kind: app
+  description: |
+    Simple 2 panes file manager based on Qt
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/yede/yefm.git
+  commit: 2e13f5268662fe5fcb3ac14576753a5afd45920e
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      qmake -makefile yefm.pro ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

@@ -1,0 +1,38 @@
+From 4c57d4d690e7c17e5eec6b2f1d4f88b438cf7da0 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 20 Feb 2024 20:26:22 +0800
+Subject: [PATCH] install
+
+---
+ install.pri | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/install.pri b/install.pri
+index da0541f..a25a6ec 100644
+--- a/install.pri
++++ b/install.pri
+@@ -1,16 +1,16 @@
+ 
+-target.path = /usr/bin
++target.path = $$PREFIX/bin
+ 
+-desktop.path  += /usr/share/applications
++desktop.path  += $$PREFIX/share/applications/
+ desktop.files += data/yefm.desktop
+ 
+-icon.path  += /usr/share/pixmaps
++icon.path  += $$PREFIX/share/icons
+ icon.files += data/imgs/yefm.png
+ 
+-docs.path  += /usr/share/doc/yefm
++docs.path  += $$PREFIX/share/doc/yefm
+ docs.files += README CHANGELOG COPYING
+ 
+-trans.path  += /usr/share/yefm/translations
++trans.path  += $$PREFIX/share/yefm/translations
+ trans.files += \
+ 	data/translations/yefm_zh_CN.qm
+ 
+-- 
+2.33.1
+
