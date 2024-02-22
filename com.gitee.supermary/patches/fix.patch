@@ -1,0 +1,29 @@
+diff -Naur supermary-o/supermary.desktop supermary/supermary.desktop
+--- supermary-o/supermary.desktop	1970-01-01 08:00:00.000000000 +0800
++++ supermary/supermary.desktop	2023-12-02 18:59:32.770476226 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=supermary
++Exec=supermary
++Type=Application
+diff -Naur supermary-o/super_mary.pro supermary/super_mary.pro
+--- supermary-o/super_mary.pro	2023-12-02 19:00:42.578278310 +0800
++++ supermary/super_mary.pro	2023-12-02 19:00:00.965370000 +0800
+@@ -1,3 +1,6 @@
++TARGET = supermary
++TEMPLATE = app
++
+ QT       += core gui
+ 
+ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+@@ -57,3 +60,10 @@
+ RESOURCES += \
+     res.qrc
+ ICON = icon.icns
++
++desktop.files += supermary.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop
++
