@@ -1,0 +1,26 @@
+package:
+  id: io.github.KettleClient
+  name: KettleClient
+  version: 0.0.1
+  kind: app
+  description: |
+    Graphical client for REST KettleService, written in Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Arquanite/KettleClient.git
+  commit: 9ce8b6c8dc18432bc1d264ab2c4620bc81bdb24b
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      qmake -makefile  KettleClient.pro ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
