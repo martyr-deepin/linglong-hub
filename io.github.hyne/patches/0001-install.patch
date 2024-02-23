@@ -1,0 +1,53 @@
+From 01d164c11030301a8c2ac053b3fdb77abdebd062 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 23 Feb 2024 15:24:24 +0800
+Subject: [PATCH] install
+
+---
+ Hyne.desktop | 4 ++--
+ Hyne.pro     | 8 ++++----
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/Hyne.desktop b/Hyne.desktop
+index 209b979..f4c46b2 100644
+--- a/Hyne.desktop
++++ b/Hyne.desktop
+@@ -6,8 +6,8 @@ GenericName=FF8 Save Game Editor
+ GenericName[fr]=Éditeur de sauvegarde FF8
+ Comment=Can edit saves from Final Fantasy VIII (PS & PC)
+ Comment[fr]=Permet de modifier les sauvegardes de Final Fantasy VIII (PS et PC)
+-Icon=hyne.png
+-Exec=/usr/bin/hyne
++Icon=hyne
++Exec=hyne
+ Path=
+ Terminal=false
+ Categories=Application;Game;
+diff --git a/Hyne.pro b/Hyne.pro
+index 76456dc..979b47d 100644
+--- a/Hyne.pro
++++ b/Hyne.pro
+@@ -171,16 +171,16 @@ system(lrelease Hyne.pro)
+ # only on linux/unix (for package creation and other deploys)
+ unix:!macx:!symbian {
+ 
+-    target.path = /usr/bin
++    target.path = $$PREFIX/bin
+ 
+     langfiles.files = *.qm
+-    langfiles.path = /usr/share/hyne/
++    langfiles.path = $$PREFIX/share/hyne/
+ 
+     icon.files = images/Hyne.png
+-    icon.path = /usr/share/pixmaps
++    icon.path = $$PREFIX/share/pixmaps
+ 
+     desktop.files = Hyne.desktop
+-    desktop.path = /usr/share/applications
++    desktop.path = $$PREFIX/share/applications
+ 
+     INSTALLS += target langfiles icon desktop
+ }
+-- 
+2.33.1
+
