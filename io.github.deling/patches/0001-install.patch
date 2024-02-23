@@ -1,0 +1,44 @@
+From eb1fa57fdacf78bc3d8bc21c7e631f9a95aa13f2 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 23 Feb 2024 15:54:00 +0800
+Subject: [PATCH] install
+
+---
+ Deling.desktop | 4 ++--
+ Deling.pro     | 7 +++++++
+ 2 files changed, 9 insertions(+), 2 deletions(-)
+
+diff --git a/Deling.desktop b/Deling.desktop
+index e949537..18b9ba7 100644
+--- a/Deling.desktop
++++ b/Deling.desktop
+@@ -6,8 +6,8 @@ GenericName=FF8 Field Editor
+ GenericName[fr]=Éditeur d'écrans FF8
+ Comment=Can edit field from Final Fantasy VIII (PS & PC)
+ Comment[fr]=Permet de modifier les écrans de Final Fantasy VIII (PS et PC)
+-Icon=deling.png
+-Exec=/usr/bin/deling
++Icon=deling
++Exec=deling
+ Path=
+ Terminal=false
+ Categories=Application;Game;
+diff --git a/Deling.pro b/Deling.pro
+index f92ada7..d1a09fe 100644
+--- a/Deling.pro
++++ b/Deling.pro
+@@ -248,3 +248,10 @@ system(lrelease Deling.pro)
+ unix:!macx:!symbian {
+     LIBS += -lglut -lGLU
+ }
++target.path =$$PREFIX/bin
++desktop.files =Deling.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = images/deling.png
++
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
