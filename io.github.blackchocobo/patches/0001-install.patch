@@ -1,0 +1,25 @@
+From 70ce24bb7e07211e6660bad0f3fdf440a69d1375 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 23 Feb 2024 15:08:49 +0800
+Subject: [PATCH] install
+
+---
+ Black_Chocobo.desktop | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Black_Chocobo.desktop b/Black_Chocobo.desktop
+index 225c306..7101194 100644
+--- a/Black_Chocobo.desktop
++++ b/Black_Chocobo.desktop
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Categories=Application;Game;
+ Encoding=UTF-8
+-Exec=/usr/bin/blackchocobo
++Exec=blackchocobo
+ GenericName=FF7 Save Game Editor
+ GenericName[en]=FF7 Save Game Editor
+ GenericName[es]=Editor de partidas guardadas para FF7
+-- 
+2.33.1
+
