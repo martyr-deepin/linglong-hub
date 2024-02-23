@@ -1,0 +1,22 @@
+package:
+  id: io.github.Cockatrice
+  name: Cockatrice
+  version: 2.9.0
+  kind: app
+  description: |
+    A cross-platform virtual tabletop for multiplayer card games
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: protobuf/25.1.0
+
+source:
+  kind: git
+  url: https://github.com/Cockatrice/Cockatrice.git
+  commit: 1715bcb2166f2a505d35329b7e542c227076ba6f
+
+build:
+  kind: cmake
