@@ -1,0 +1,41 @@
+From e74d4899d18206e7a1821c8b790b56480dcb39ef Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 23 Feb 2024 16:42:12 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt      | 3 ++-
+ mkvsplitter.desktop | 4 ++--
+ 2 files changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index fae7570..f0a301e 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -47,6 +47,7 @@ else()
+ endif()
+ 
+ target_link_libraries(mkvsplitter PRIVATE Qt5::Widgets)
+-
++install(TARGETS mkvsplitter
++             DESTINATION bin)
+ install(FILES mkvsplitter.desktop DESTINATION share/applications)
+ install(FILES mkvsplitter.png     DESTINATION share/icons)
+diff --git a/mkvsplitter.desktop b/mkvsplitter.desktop
+index efc497e..f955e7f 100644
+--- a/mkvsplitter.desktop
++++ b/mkvsplitter.desktop
+@@ -1,8 +1,8 @@
+ [Desktop Entry]
+ Version=1.0
+ Name=MKVSplitter
+-Exec=/usr/local/bin/mkvsplitter %U
+-TryExec=/usr/local/bin/mkvsplitter
++Exec=mkvsplitter %U
++TryExec=mkvsplitter
+ Icon=mkvsplitter
+ Terminal=false
+ Type=Application
+-- 
+2.33.1
+

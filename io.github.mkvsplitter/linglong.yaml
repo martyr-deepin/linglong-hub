@@ -1,0 +1,20 @@
+package:
+  id: io.github.mkvsplitter
+  name: mkvsplitter
+  version: 0.6.0
+  kind: app
+  description: |
+    Splits mkv files based on chapter information.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://gitlab.com/dustinwidmann/mkvsplitter.git
+  commit: d5f2cf3877f0aedac2c910cb366f8a0e865c5413
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
