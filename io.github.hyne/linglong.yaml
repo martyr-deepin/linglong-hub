@@ -1,0 +1,20 @@
+package:
+  id: io.github.hyne
+  name: hyne
+  version: 1.11.4
+  kind: app
+  description: |
+    Final Fantasy VIII Save Editor
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/sithlord48/hyne.git
+  commit: 815f3e3c07ac7d16b2f4f8c352aa9ef13b650810
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
