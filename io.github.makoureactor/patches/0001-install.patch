@@ -1,0 +1,51 @@
+From dea80651c9ca3280e6595a480f7d0856c15e9631 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 23 Feb 2024 15:44:10 +0800
+Subject: [PATCH] install
+
+---
+ Makou_Reactor.desktop | 2 +-
+ Makou_Reactor.pro     | 8 ++++----
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/Makou_Reactor.desktop b/Makou_Reactor.desktop
+index 2cc9198..62f4173 100644
+--- a/Makou_Reactor.desktop
++++ b/Makou_Reactor.desktop
+@@ -7,7 +7,7 @@ GenericName[fr]=Éditeur d'écrans FF7
+ Comment=Can edit field from Final Fantasy VII (PS & PC)
+ Comment[fr]=Permet de modifier les écrans de Final Fantasy VII (PS et PC)
+ Icon=logo-shinra.png
+-Exec=/usr/bin/makoureactor
++Exec=makoureactor
+ Path=
+ Terminal=false
+ Categories=Application;Game;
+diff --git a/Makou_Reactor.pro b/Makou_Reactor.pro
+index e18276e..a7f8206 100644
+--- a/Makou_Reactor.pro
++++ b/Makou_Reactor.pro
+@@ -339,16 +339,16 @@ system(lrelease Makou_Reactor.pro) # call lrelease to make the qm files.
+ unix:!macx:!symbian {
+     LIBS += -lglut -lGLU
+ 
+-    target.path = /usr/bin
++    target.path = $$PREFIX/bin
+ 
+     langfiles.files = *.qm
+-    langfiles.path = /usr/share/makoureactor
++    langfiles.path = $$PREFIX/share/makoureactor
+ 
+     icon.files = images/logo-shinra.png
+-    icon.path = /usr/share/pixmaps
++    icon.path = $$PREFIX/share/pixmaps
+ 
+     desktop.files = Makou_Reactor.desktop
+-    desktop.path = /usr/share/applications
++    desktop.path = $$PREFIX/share/applications
+ 
+     INSTALLS += target langfiles icon desktop
+ }
+-- 
+2.33.1
+
