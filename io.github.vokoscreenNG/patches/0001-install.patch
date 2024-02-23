@@ -1,0 +1,29 @@
+From 0afead8a0a2f0cec1cb0ebd2b2a551a77db6f08d Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 23 Feb 2024 14:22:57 +0800
+Subject: [PATCH] install
+
+---
+ src/vokoscreenNG.pro | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/src/vokoscreenNG.pro b/src/vokoscreenNG.pro
+index 0841f117..02a28a3b 100644
+--- a/src/vokoscreenNG.pro
++++ b/src/vokoscreenNG.pro
+@@ -135,3 +135,11 @@ include(screenManager/screenManager.pri)
+ 
+ # licenses
+ include(licenses/licenses.pri)
++
++
++target.path =$$PREFIX/bin
++desktop.files = applications/vokoscreenNG.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = applications/vokoscreenNG.png
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+

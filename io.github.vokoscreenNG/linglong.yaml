@@ -1,0 +1,30 @@
+package:
+  id: io.github.vokoscreenNG
+  name: vokoscreenNG
+  version: 2.9.8
+  kind: app
+  description: |
+    vokoscreenNG is a powerful screencast creator in many languages to record the screen
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/vkohaupt/vokoscreenNG.git
+  commit: a608668d6f5c143f8a3a136738ab48e034746b21
+  patch: 
+    - patches/0001-install.patch
+    - patches/0002-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

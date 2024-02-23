@@ -1,0 +1,25 @@
+From 99a6a219cfd0b86295c1ffb51ab38a8f67a41e2b Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 23 Feb 2024 14:12:18 +0800
+Subject: [PATCH] install
+
+---
+ src/region/QvkRegionButtonArrow.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/region/QvkRegionButtonArrow.cpp b/src/region/QvkRegionButtonArrow.cpp
+index 4add01fe..d0c45f01 100644
+--- a/src/region/QvkRegionButtonArrow.cpp
++++ b/src/region/QvkRegionButtonArrow.cpp
+@@ -19,7 +19,7 @@
+  *
+  * --End_License--
+  */
+-
++#include "QPainterPath"
+ #include "QvkRegionButtonArrow.h"
+ 
+ QvkRegionButtonArrow::QvkRegionButtonArrow()
+-- 
+2.33.1
+
