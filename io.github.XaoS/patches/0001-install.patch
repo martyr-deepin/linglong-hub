@@ -1,0 +1,27 @@
+From 2a3b6788d970840efc5731a3b1759cd2368aa59a Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 23 Feb 2024 13:50:10 +0800
+Subject: [PATCH] install
+
+---
+ XaoS.pro | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/XaoS.pro b/XaoS.pro
+index 0e4c658..da6537a 100644
+--- a/XaoS.pro
++++ b/XaoS.pro
+@@ -69,3 +69,10 @@ include($$PWD/src/engine/engine.pri)
+ include($$PWD/src/ui-hlp/ui-hlp.pri)
+ include($$PWD/src/util/util.pri)
+ include($$PWD/src/sffe/sffe.pri)
++
++target.path =$$PREFIX/bin
++desktop.files = xdg/xaos.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = xdg/xaos.png
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
