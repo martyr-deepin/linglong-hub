@@ -1,0 +1,23 @@
+package:
+  id: io.github.CopyQ
+  name: CopyQ
+  version: 3.12.0
+  kind: app
+  description: |
+    Clipboard manager with advanced features
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtscript/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/hluk/CopyQ.git
+  commit: 3f0c3e7368475ed576136ddf1ca7a6789359c018
+
+build:
+  kind: cmake
