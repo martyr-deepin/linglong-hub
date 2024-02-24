@@ -1,0 +1,22 @@
+package:
+  id: io.github.scantailor-advanced
+  name: scantailor-advanced
+  version: 1.0.16
+  kind: app
+  description: |
+    ScanTailor Advanced is the version that merges the features of the ScanTailor Featured and ScanTailor Enhanced versions, brings new ones and fixes.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: boost-defaults/1.74.0.3
+
+source:
+  kind: git
+  url: https://github.com/4lex4/scantailor-advanced.git
+  commit: 3d1e74e6ace413733511086934a66f4e3f7a6027
+
+build:
+  kind: cmake
