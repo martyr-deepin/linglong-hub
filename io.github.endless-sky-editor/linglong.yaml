@@ -1,0 +1,20 @@
+package:
+  id: io.github.endless-sky-editor
+  name: endless-sky-editor
+  version: 0.7.10
+  kind: app
+  description: |
+    Map editor for the Endless Sky universe.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/endless-sky/endless-sky-editor.git
+  commit: 8d43f12b10ec09ceee171cf5cb257170f8ef145c
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
