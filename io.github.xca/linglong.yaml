@@ -1,0 +1,20 @@
+package:
+  id: io.github.xca
+  name: xca
+  version: 2.5.0
+  kind: app
+  description: |
+    X Certificate and Key management
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/chris2511/xca.git
+  commit: 27853766893c1ddb82948496ac3d043f98f3012e
+
+build:
+  kind: cmake
+ 
