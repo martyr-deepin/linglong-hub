@@ -1,0 +1,22 @@
+package:
+  id: io.github.DigitalClock4
+  name: DigitalClock4
+  version: 4.7.9
+  kind: app
+  description: |
+    beautiful highly customizable clock with plugins.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Kolcha/DigitalClock4.git
+  commit: 9535a2c4ff16bd74bb10a5d057c662b94a70ffc5
+  patch:
+    - patches/fix_build.patch
+    - patches/fix_install.patch
+
+build:
+  kind: qmake

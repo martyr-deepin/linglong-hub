@@ -1,0 +1,378 @@
+diff --git a/digital_clock/lang/lang.pri b/digital_clock/lang/lang.pri
+index e511d8d4..87c69826 100644
+--- a/digital_clock/lang/lang.pri
++++ b/digital_clock/lang/lang.pri
+@@ -1,5 +1,4 @@
+ TRANSLATIONS += \
+-    lang/digital_clock_en.ts \
+     lang/digital_clock_nl.ts \
+     lang/digital_clock_pt_PT.ts \
+     lang/digital_clock_ru.ts \
+diff --git a/digital_clock/lang/lang.qrc b/digital_clock/lang/lang.qrc
+index 1375bd03..25146408 100644
+--- a/digital_clock/lang/lang.qrc
++++ b/digital_clock/lang/lang.qrc
+@@ -1,6 +1,5 @@
+ <RCC>
+     <qresource prefix="/digital_clock/lang">
+-        <file>digital_clock_en.qm</file>
+         <file>digital_clock_nl.qm</file>
+         <file>digital_clock_pt_PT.qm</file>
+         <file>digital_clock_ru.qm</file>
+diff --git a/plugin_core/lang/lang.pri b/plugin_core/lang/lang.pri
+index 698da106..f9b9594b 100644
+--- a/plugin_core/lang/lang.pri
++++ b/plugin_core/lang/lang.pri
+@@ -1,5 +1,4 @@
+ TRANSLATIONS += \
+-    lang/plugin_core_en.ts \
+     lang/plugin_core_pt_PT.ts \
+     lang/plugin_core_ru.ts \
+     lang/plugin_core_zh_CN.ts
+diff --git a/plugin_core/lang/lang.qrc b/plugin_core/lang/lang.qrc
+index 5dc15a3b..1626edba 100644
+--- a/plugin_core/lang/lang.qrc
++++ b/plugin_core/lang/lang.qrc
+@@ -1,6 +1,5 @@
+ <RCC>
+     <qresource prefix="/plugin_core/lang">
+-        <file>plugin_core_en.qm</file>
+         <file>plugin_core_pt_PT.qm</file>
+         <file>plugin_core_ru.qm</file>
+         <file>plugin_core_zh_CN.qm</file>
+diff --git a/plugins/alarm/lang/lang.pri b/plugins/alarm/lang/lang.pri
+index 233832a9..89d1b64d 100644
+--- a/plugins/alarm/lang/lang.pri
++++ b/plugins/alarm/lang/lang.pri
+@@ -1,5 +1,4 @@
+ TRANSLATIONS += \
+-    lang/alarm_en.ts \
+     lang/alarm_pt_PT.ts \
+     lang/alarm_ru.ts \
+     lang/alarm_zh_CN.ts
+diff --git a/plugins/alarm/lang/lang.qrc b/plugins/alarm/lang/lang.qrc
+index fe32b9fe..5a014762 100644
+--- a/plugins/alarm/lang/lang.qrc
++++ b/plugins/alarm/lang/lang.qrc
+@@ -1,6 +1,5 @@
+ <RCC>
+     <qresource prefix="/alarm/lang">
+-        <file>alarm_en.qm</file>
+         <file>alarm_pt_PT.qm</file>
+         <file>alarm_ru.qm</file>
+         <file>alarm_zh_CN.qm</file>
+diff --git a/plugins/any_zoom/lang/lang.pri b/plugins/any_zoom/lang/lang.pri
+index 214cee97..a4e6ead2 100644
+--- a/plugins/any_zoom/lang/lang.pri
++++ b/plugins/any_zoom/lang/lang.pri
+@@ -1,5 +1,4 @@
+ TRANSLATIONS += \
+-    lang/any_zoom_en.ts \
+     lang/any_zoom_pt_PT.ts \
+     lang/any_zoom_ru.ts \
+     lang/any_zoom_zh_CN.ts
+diff --git a/plugins/any_zoom/lang/lang.qrc b/plugins/any_zoom/lang/lang.qrc
+index cfe1aeae..8d5b6979 100644
+--- a/plugins/any_zoom/lang/lang.qrc
++++ b/plugins/any_zoom/lang/lang.qrc
+@@ -1,6 +1,5 @@
+ <RCC>
+     <qresource prefix="/any_zoom/lang">
+-        <file>any_zoom_en.qm</file>
+         <file>any_zoom_pt_PT.qm</file>
+         <file>any_zoom_ru.qm</file>
+         <file>any_zoom_zh_CN.qm</file>
+diff --git a/plugins/chime/lang/lang.pri b/plugins/chime/lang/lang.pri
+index 3a8afeac..8b1945e6 100644
+--- a/plugins/chime/lang/lang.pri
++++ b/plugins/chime/lang/lang.pri
+@@ -1,5 +1,4 @@
+ TRANSLATIONS += \
+-    lang/chime_en.ts \
+     lang/chime_pt_PT.ts \
+     lang/chime_ru.ts \
+     lang/chime_zh_CN.ts
+diff --git a/plugins/chime/lang/lang.qrc b/plugins/chime/lang/lang.qrc
+index 02d015db..75bbbd37 100644
+--- a/plugins/chime/lang/lang.qrc
++++ b/plugins/chime/lang/lang.qrc
+@@ -1,6 +1,5 @@
+ <RCC>
+     <qresource prefix="/chime/lang">
+-        <file>chime_en.qm</file>
+         <file>chime_pt_PT.qm</file>
+         <file>chime_ru.qm</file>
+         <file>chime_zh_CN.qm</file>
+diff --git a/plugins/countdown_timer/lang/lang.pri b/plugins/countdown_timer/lang/lang.pri
+index 280df9bd..9481895e 100644
+--- a/plugins/countdown_timer/lang/lang.pri
++++ b/plugins/countdown_timer/lang/lang.pri
+@@ -1,5 +1,4 @@
+ TRANSLATIONS += \
+-    lang/countdown_timer_en.ts \
+     lang/countdown_timer_pt_PT.ts \
+     lang/countdown_timer_ru.ts \
+     lang/countdown_timer_zh_CN.ts
+diff --git a/plugins/countdown_timer/lang/lang.qrc b/plugins/countdown_timer/lang/lang.qrc
+index 2a3f2f3e..dc578db4 100644
+--- a/plugins/countdown_timer/lang/lang.qrc
++++ b/plugins/countdown_timer/lang/lang.qrc
+@@ -1,6 +1,5 @@
+ <RCC>
+     <qresource prefix="/countdown_timer/lang">
+-        <file>countdown_timer_en.qm</file>
+         <file>countdown_timer_pt_PT.qm</file>
+         <file>countdown_timer_ru.qm</file>
+         <file>countdown_timer_zh_CN.qm</file>
+diff --git a/plugins/date/lang/lang.pri b/plugins/date/lang/lang.pri
+index 5e6f9ca2..2a1c3d30 100644
+--- a/plugins/date/lang/lang.pri
++++ b/plugins/date/lang/lang.pri
+@@ -1,5 +1,4 @@
+ TRANSLATIONS += \
+-    lang/date_en.ts \
+     lang/date_pt_PT.ts \
+     lang/date_ru.ts \
+     lang/date_zh_CN.ts
+diff --git a/plugins/date/lang/lang.qrc b/plugins/date/lang/lang.qrc
+index 8d5798cf..f355f923 100644
+--- a/plugins/date/lang/lang.qrc
++++ b/plugins/date/lang/lang.qrc
+@@ -1,6 +1,5 @@
+ <RCC>
+     <qresource prefix="/date/lang">
+-        <file>date_en.qm</file>
+         <file>date_pt_PT.qm</file>
+         <file>date_ru.qm</file>
+         <file>date_zh_CN.qm</file>
+diff --git a/plugins/ip_address/lang/lang.pri b/plugins/ip_address/lang/lang.pri
+index 6f05c375..84abb30b 100644
+--- a/plugins/ip_address/lang/lang.pri
++++ b/plugins/ip_address/lang/lang.pri
+@@ -1,5 +1,4 @@
+ TRANSLATIONS += \
+-    lang/ip_address_en.ts \
+     lang/ip_address_pt_PT.ts \
+     lang/ip_address_ru.ts \
+     lang/ip_address_zh_CN.ts
+diff --git a/plugins/ip_address/lang/lang.qrc b/plugins/ip_address/lang/lang.qrc
+index 498baf60..cc11f43e 100644
+--- a/plugins/ip_address/lang/lang.qrc
++++ b/plugins/ip_address/lang/lang.qrc
+@@ -1,6 +1,5 @@
+ <RCC>
+     <qresource prefix="/ip_address/lang">
+-        <file>ip_address_en.qm</file>
+         <file>ip_address_pt_PT.qm</file>
+         <file>ip_address_ru.qm</file>
+         <file>ip_address_zh_CN.qm</file>
+diff --git a/plugins/power_off/lang/lang.pri b/plugins/power_off/lang/lang.pri
+index 299fcc39..a2a88bf3 100644
+--- a/plugins/power_off/lang/lang.pri
++++ b/plugins/power_off/lang/lang.pri
+@@ -1,5 +1,4 @@
+ TRANSLATIONS += \
+-    lang/power_off_en.ts \
+     lang/power_off_pt_PT.ts \
+     lang/power_off_ru.ts \
+     lang/power_off_zh_CN.ts
+diff --git a/plugins/power_off/lang/lang.qrc b/plugins/power_off/lang/lang.qrc
+index 6b0d1831..553439fe 100644
+--- a/plugins/power_off/lang/lang.qrc
++++ b/plugins/power_off/lang/lang.qrc
+@@ -1,6 +1,5 @@
+ <RCC>
+     <qresource prefix="/power_off/lang">
+-        <file>power_off_en.qm</file>
+         <file>power_off_pt_PT.qm</file>
+         <file>power_off_ru.qm</file>
+         <file>power_off_zh_CN.qm</file>
+diff --git a/plugins/quick_note/lang/lang.pri b/plugins/quick_note/lang/lang.pri
+index 5a2d28eb..47e08ce9 100644
+--- a/plugins/quick_note/lang/lang.pri
++++ b/plugins/quick_note/lang/lang.pri
+@@ -1,5 +1,4 @@
+ TRANSLATIONS += \
+-    lang/quick_note_en.ts \
+     lang/quick_note_pt_PT.ts \
+     lang/quick_note_ru.ts \
+     lang/quick_note_zh_CN.ts
+diff --git a/plugins/quick_note/lang/lang.qrc b/plugins/quick_note/lang/lang.qrc
+index d041673b..c9ed8f36 100644
+--- a/plugins/quick_note/lang/lang.qrc
++++ b/plugins/quick_note/lang/lang.qrc
+@@ -1,6 +1,5 @@
+ <RCC>
+     <qresource prefix="/quick_note/lang">
+-        <file>quick_note_en.qm</file>
+         <file>quick_note_pt_PT.qm</file>
+         <file>quick_note_ru.qm</file>
+         <file>quick_note_zh_CN.qm</file>
+diff --git a/plugins/random_position/lang/lang.pri b/plugins/random_position/lang/lang.pri
+index db7525ea..ebdce626 100644
+--- a/plugins/random_position/lang/lang.pri
++++ b/plugins/random_position/lang/lang.pri
+@@ -1,5 +1,4 @@
+ TRANSLATIONS += \
+-    lang/random_position_en.ts \
+     lang/random_position_ru.ts \
+     lang/random_position_zh_CN.ts
+ 
+diff --git a/plugins/random_position/lang/lang.qrc b/plugins/random_position/lang/lang.qrc
+index ec23642c..74914432 100644
+--- a/plugins/random_position/lang/lang.qrc
++++ b/plugins/random_position/lang/lang.qrc
+@@ -1,6 +1,5 @@
+ <RCC>
+     <qresource prefix="/random_position/lang">
+-        <file>random_position_en.qm</file>
+         <file>random_position_ru.qm</file>
+         <file>random_position_zh_CN.qm</file>
+     </qresource>
+diff --git a/plugins/schedule/lang/lang.pri b/plugins/schedule/lang/lang.pri
+index eaec0f3f..f474a31e 100644
+--- a/plugins/schedule/lang/lang.pri
++++ b/plugins/schedule/lang/lang.pri
+@@ -1,5 +1,4 @@
+ TRANSLATIONS += \
+-    lang/schedule_en.ts \
+     lang/schedule_pt_PT.ts \
+     lang/schedule_ru.ts \
+     lang/schedule_zh_CN.ts
+diff --git a/plugins/schedule/lang/lang.qrc b/plugins/schedule/lang/lang.qrc
+index 0c94b3b9..f5f83e94 100644
+--- a/plugins/schedule/lang/lang.qrc
++++ b/plugins/schedule/lang/lang.qrc
+@@ -1,6 +1,5 @@
+ <RCC>
+     <qresource prefix="/schedule/lang">
+-        <file>schedule_en.qm</file>
+         <file>schedule_pt_PT.qm</file>
+         <file>schedule_ru.qm</file>
+         <file>schedule_zh_CN.qm</file>
+diff --git a/plugins/spectrum_clock/lang/lang.pri b/plugins/spectrum_clock/lang/lang.pri
+index 8622c37a..26556091 100644
+--- a/plugins/spectrum_clock/lang/lang.pri
++++ b/plugins/spectrum_clock/lang/lang.pri
+@@ -1,5 +1,4 @@
+ TRANSLATIONS += \
+-    lang/spectrum_clock_en.ts \
+     lang/spectrum_clock_pt_PT.ts \
+     lang/spectrum_clock_ru.ts \
+     lang/spectrum_clock_zh_CN.ts
+diff --git a/plugins/spectrum_clock/lang/lang.qrc b/plugins/spectrum_clock/lang/lang.qrc
+index 1730a4ee..54ddf5a5 100644
+--- a/plugins/spectrum_clock/lang/lang.qrc
++++ b/plugins/spectrum_clock/lang/lang.qrc
+@@ -1,6 +1,5 @@
+ <RCC>
+     <qresource prefix="/spectrum_clock/lang">
+-        <file>spectrum_clock_en.qm</file>
+         <file>spectrum_clock_pt_PT.qm</file>
+         <file>spectrum_clock_ru.qm</file>
+         <file>spectrum_clock_zh_CN.qm</file>
+diff --git a/plugins/talking_clock/lang/lang.pri b/plugins/talking_clock/lang/lang.pri
+index 50275b99..e4d4bbb6 100644
+--- a/plugins/talking_clock/lang/lang.pri
++++ b/plugins/talking_clock/lang/lang.pri
+@@ -1,5 +1,4 @@
+ TRANSLATIONS += \
+-    lang/talking_clock_en.ts \
+     lang/talking_clock_pt_PT.ts \
+     lang/talking_clock_ru.ts \
+     lang/talking_clock_zh_CN.ts
+diff --git a/plugins/talking_clock/lang/lang.qrc b/plugins/talking_clock/lang/lang.qrc
+index 8da92523..ddca20d1 100644
+--- a/plugins/talking_clock/lang/lang.qrc
++++ b/plugins/talking_clock/lang/lang.qrc
+@@ -1,6 +1,5 @@
+ <RCC>
+     <qresource prefix="/talking_clock/lang">
+-        <file>talking_clock_en.qm</file>
+         <file>talking_clock_pt_PT.qm</file>
+         <file>talking_clock_ru.qm</file>
+         <file>talking_clock_zh_CN.qm</file>
+diff --git a/plugins/timetracker/lang/lang.pri b/plugins/timetracker/lang/lang.pri
+index 0005a273..8ee244a9 100644
+--- a/plugins/timetracker/lang/lang.pri
++++ b/plugins/timetracker/lang/lang.pri
+@@ -1,5 +1,4 @@
+ TRANSLATIONS += \
+-    lang/timetracker_en.ts \
+     lang/timetracker_ru.ts
+ 
+ RESOURCES += lang/lang.qrc
+diff --git a/plugins/timetracker/lang/lang.qrc b/plugins/timetracker/lang/lang.qrc
+index b15adff3..02704853 100644
+--- a/plugins/timetracker/lang/lang.qrc
++++ b/plugins/timetracker/lang/lang.qrc
+@@ -1,6 +1,5 @@
+ <RCC>
+     <qresource prefix="/timetracker/lang">
+-        <file>timetracker_en.qm</file>
+         <file>timetracker_ru.qm</file>
+     </qresource>
+ </RCC>
+diff --git a/plugins/tray_color/lang/lang.pri b/plugins/tray_color/lang/lang.pri
+index 67c1b5dd..61905e1c 100644
+--- a/plugins/tray_color/lang/lang.pri
++++ b/plugins/tray_color/lang/lang.pri
+@@ -1,5 +1,4 @@
+ TRANSLATIONS += \
+-    lang/tray_color_en.ts \
+     lang/tray_color_pt_PT.ts \
+     lang/tray_color_ru.ts \
+     lang/tray_color_zh_CN.ts
+diff --git a/plugins/tray_color/lang/lang.qrc b/plugins/tray_color/lang/lang.qrc
+index e0070c8d..36eb0ec7 100644
+--- a/plugins/tray_color/lang/lang.qrc
++++ b/plugins/tray_color/lang/lang.qrc
+@@ -1,6 +1,5 @@
+ <RCC>
+     <qresource prefix="/tray_color/lang">
+-        <file>tray_color_en.qm</file>
+         <file>tray_color_pt_PT.qm</file>
+         <file>tray_color_ru.qm</file>
+         <file>tray_color_zh_CN.qm</file>
+diff --git a/plugins/var_translucency/lang/lang.pri b/plugins/var_translucency/lang/lang.pri
+index 0add2589..98323b00 100644
+--- a/plugins/var_translucency/lang/lang.pri
++++ b/plugins/var_translucency/lang/lang.pri
+@@ -1,5 +1,4 @@
+ TRANSLATIONS += \
+-    lang/var_translucency_en.ts \
+     lang/var_translucency_pt_PT.ts \
+     lang/var_translucency_ru.ts \
+     lang/var_translucency_zh_CN.ts
+diff --git a/plugins/var_translucency/lang/lang.qrc b/plugins/var_translucency/lang/lang.qrc
+index 9047044f..ff34e613 100644
+--- a/plugins/var_translucency/lang/lang.qrc
++++ b/plugins/var_translucency/lang/lang.qrc
+@@ -1,6 +1,5 @@
+ <RCC>
+     <qresource prefix="/var_translucency/lang">
+-        <file>var_translucency_en.qm</file>
+         <file>var_translucency_pt_PT.qm</file>
+         <file>var_translucency_ru.qm</file>
+         <file>var_translucency_zh_CN.qm</file>
+diff --git a/plugins/win_on_top/win_on_top/lang/lang.pri b/plugins/win_on_top/win_on_top/lang/lang.pri
+index e223a7ee..93dbadbf 100644
+--- a/plugins/win_on_top/win_on_top/lang/lang.pri
++++ b/plugins/win_on_top/win_on_top/lang/lang.pri
+@@ -1,5 +1,4 @@
+ TRANSLATIONS += \
+-    lang/win_on_top_en.ts \
+     lang/win_on_top_pt_PT.ts \
+     lang/win_on_top_ru.ts \
+     lang/win_on_top_zh_CN.ts
+diff --git a/plugins/win_on_top/win_on_top/lang/lang.qrc b/plugins/win_on_top/win_on_top/lang/lang.qrc
+index 0047d6fb..5642e726 100644
+--- a/plugins/win_on_top/win_on_top/lang/lang.qrc
++++ b/plugins/win_on_top/win_on_top/lang/lang.qrc
+@@ -1,6 +1,5 @@
+ <RCC>
+     <qresource prefix="/win_on_top/lang">
+-        <file>win_on_top_en.qm</file>
+         <file>win_on_top_pt_PT.qm</file>
+         <file>win_on_top_ru.qm</file>
+         <file>win_on_top_zh_CN.qm</file>
