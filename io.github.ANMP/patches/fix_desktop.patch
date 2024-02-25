@@ -1,0 +1,16 @@
+diff --git a/contrib/anmp.desktop b/contrib/anmp.desktop
+index 193ffba..cf5fa63 100755
+--- a/contrib/anmp.desktop
++++ b/contrib/anmp.desktop
+@@ -3,8 +3,8 @@
+ Name=ANMP
+ GenericName=Music Player
+ Comment=Audio Player for various formats
+-Exec=/usr/bin/anmp-qt %U
+-TryExec=/usr/bin/anmp-qt
++Exec=anmp-qt %U
++TryExec=anmp-qt
+ Terminal=true
+ Type=Application
+ Categories=AudioVideo;Audio;Player;
+

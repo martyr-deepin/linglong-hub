@@ -1,0 +1,22 @@
+package:
+  id: io.github.ANMP
+  name: ANMP
+  version: 10.0.0
+  kind: app
+  description: |
+    multi-channel loopable video game music player for nerds and audiophiles.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/derselbst/ANMP.git
+  commit: 2542ec674278f897e394790abf9ad81a25798ee7
+  patch:
+    - patches/fix_install.patch
+    - patches/fix_desktop.patch
+
+build:
+  kind: cmake
