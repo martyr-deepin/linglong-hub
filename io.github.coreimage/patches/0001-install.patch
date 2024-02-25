@@ -1,0 +1,39 @@
+From e152299916e5b90716244d695642f765d2f510c8 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 25 Feb 2024 20:00:47 +0800
+Subject: [PATCH] install
+
+---
+ coreimage.desktop | 2 +-
+ coreimage.pro     | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/coreimage.desktop b/coreimage.desktop
+index 5dc84c2..5b26de3 100644
+--- a/coreimage.desktop
++++ b/coreimage.desktop
+@@ -2,7 +2,7 @@
+ Name=CoreImage
+ Comment=CoreImage is image viewer from CoreApps.
+ Exec=coreimage %F
+-Icon=/usr/share/coreapps/icons/coreimage.svg
++Icon=coreimage
+ Type=Application
+ Categories=Utility;Qt;Graphics;Viewer;
+ Terminal=false
+diff --git a/coreimage.pro b/coreimage.pro
+index a9c9a13..24b62c2 100644
+--- a/coreimage.pro
++++ b/coreimage.pro
+@@ -8,7 +8,7 @@ QT       += core gui widgets concurrent
+ 
+ TARGET = coreimage
+ TEMPLATE = app
+-
++INCLUDEPATH += $${PREFIX}/include   
+ # library for theme
+ unix:!macx: LIBS += -lcprime
+ 
+-- 
+2.33.1
+
