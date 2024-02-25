@@ -1,0 +1,32 @@
+package:
+  id: io.github.corerenamer
+  name: corerenamer
+  version: 2.3.0
+  kind: app
+  description: |
+    CoreRenamer is a batch file renamer.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: libcprime
+    type: runtime
+    version: 1.0.0
+    source:
+      kind: git
+      url: https://github.com/rahmanshaber/libcprime.git
+      version: master
+      commit: 499f472b8d99cecec83c1064164edea64e8ca6bb
+    build:
+      kind: qmake
+
+source:
+  kind: git
+  url: https://gitlab.com/cubocore/coreapps/corerenamer.git
+  commit: 2e150db7e6cc3cb2ae6d294c55934d46c086482b
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
