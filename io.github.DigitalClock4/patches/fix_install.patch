@@ -1,0 +1,14 @@
+diff --git a/config.pri b/config.pri
+index f8e314c7..508642b2 100644
+--- a/config.pri
++++ b/config.pri
+@@ -24,7 +24,7 @@ DEFINES += QT_USE_QSTRINGBUILDER
+ win32-msvc*: QMAKE_LFLAGS_RELEASE += /RELEASE
+ 
+ unix:!macx {
+-    isEmpty(prefix): prefix = /usr/local
+-    isEmpty(lib_dir): lib_dir = $$prefix/lib
++    isEmpty(prefix): prefix = $${PREFIX}
++    isEmpty(lib_dir): lib_dir = $${LIB_INSTALL_DIR}
+     clock_libs_path = $$lib_dir/digitalclock4
+ }
