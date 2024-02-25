@@ -1,0 +1,39 @@
+From 9fba9f9341626df0d3aeafa9b6b1ca9875150d67 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 25 Feb 2024 21:02:05 +0800
+Subject: [PATCH] install
+
+---
+ coretime.desktop | 2 +-
+ coretime.pro     | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/coretime.desktop b/coretime.desktop
+index 46852c4..3d0f86e 100644
+--- a/coretime.desktop
++++ b/coretime.desktop
+@@ -2,7 +2,7 @@
+ Name=CoreTime
+ Comment=CoreTime is a time related task app from CoreApps.
+ Exec=coretime
+-Icon=/usr/share/coreapps/icons/coretime.svg
++Icon=coretime
+ Type=Application
+ Categories=Utility;Qt;
+ Terminal=false
+diff --git a/coretime.pro b/coretime.pro
+index 71bd51d..7c31e0d 100644
+--- a/coretime.pro
++++ b/coretime.pro
+@@ -8,7 +8,7 @@ QT       += core gui widgets multimedia #multimediawidgets
+ 
+ TARGET = coretime
+ TEMPLATE = app
+-
++INCLUDEPATH += $${PREFIX}/include  
+ # library for theme
+ unix:!macx: LIBS += -lcprime
+ 
+-- 
+2.33.1
+
