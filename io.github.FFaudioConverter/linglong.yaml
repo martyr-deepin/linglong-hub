@@ -1,0 +1,19 @@
+package:
+  id: io.github.FFaudioConverter
+  name: FFaudioConverter
+  version: 0.31.0
+  kind: app
+  description: |
+    Graphical audio convert and filter tool
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Bleuzen/FFaudioConverter.git
+  commit: af088c32fbfb711f2a42866dce751349d913d485
+
+build:
+  kind: qmake
