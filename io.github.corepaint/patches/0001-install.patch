@@ -1,0 +1,39 @@
+From 15d41709bd2e34a31d9b241dda0d0ba418a96763 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 25 Feb 2024 19:35:43 +0800
+Subject: [PATCH] install
+
+---
+ corepaint.pro                       | 2 +-
+ instruments/curvelineinstrument.cpp | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/corepaint.pro b/corepaint.pro
+index f93340c..e965ba7 100644
+--- a/corepaint.pro
++++ b/corepaint.pro
+@@ -1,7 +1,7 @@
+ QT       += core gui widgets
+ TARGET    = corepaint
+ TEMPLATE  = app
+-
++INCLUDEPATH += $${PREFIX}/include  
+ # Disable warnings, enable threading support and c++11
+ CONFIG   += thread silent build_all c++11
+ 
+diff --git a/instruments/curvelineinstrument.cpp b/instruments/curvelineinstrument.cpp
+index 7193672..ded335d 100644
+--- a/instruments/curvelineinstrument.cpp
++++ b/instruments/curvelineinstrument.cpp
+@@ -15,7 +15,7 @@ You should have received a copy of the GNU General Public License
+ along with this program; if not, see {http://www.gnu.org/licenses/}. */
+ 
+ #include "curvelineinstrument.h"
+-
++#include <QPainterPath>
+ 
+ CurveLineInstrument::CurveLineInstrument(QObject *parent):AbstractInstrument(parent)
+ {
+-- 
+2.33.1
+
