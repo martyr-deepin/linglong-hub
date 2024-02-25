@@ -1,0 +1,19 @@
+package:
+  id: io.github.CPU-X
+  name: CPU-X
+  version: 5.0.3
+  kind: app
+  description: |
+    CPU-X is a Free software that gathers information on CPU, motherboard and more
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/TheTumultuousUnicornOfDarkness/CPU-X.git
+  commit: c442f9fa071af3a821359129a6791a063dce251c
+
+build:
+  kind: cmake
