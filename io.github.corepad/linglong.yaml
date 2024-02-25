@@ -1,0 +1,32 @@
+package:
+  id: io.github.corepad
+  name: corepad
+  version: 0.0.4
+  kind: app
+  description: |
+    CorePad is document editor app.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: libcprime
+    type: runtime
+    version: 1.0.0
+    source:
+      kind: git
+      url: https://github.com/rahmanshaber/libcprime.git
+      version: master
+      commit: 499f472b8d99cecec83c1064164edea64e8ca6bb
+    build:
+      kind: qmake
+
+source:
+  kind: git
+  url: https://github.com/rahmanshaber/corepad.git
+  commit: 3b330b1e4839254b3bc976863a01344ceab6a928
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
