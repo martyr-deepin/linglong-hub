@@ -1,0 +1,25 @@
+From be6ea3b50293b6bfe22e9094c17dab1a26a289e8 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 25 Feb 2024 20:24:58 +0800
+Subject: [PATCH] install
+
+---
+ corekeyboard.desktop | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/corekeyboard.desktop b/corekeyboard.desktop
+index 1fd5ffe..a257ce3 100644
+--- a/corekeyboard.desktop
++++ b/corekeyboard.desktop
+@@ -2,7 +2,7 @@
+ Name=CoreKeyboard
+ Comment=A virtual keyboard for X11 from the CoreApps family.
+ Exec=corekeyboard
+-Icon=/usr/share/coreapps/icons/corekeyboard.svg
++Icon=corekeyboard
+ Type=Application
+ Categories=Qt;Utility;Accessibility;
+ Terminal=false
+-- 
+2.33.1
+
