@@ -1,0 +1,20 @@
+diff --git a/delaycut.pro b/delaycut.pro
+index 7e18564..5e3e978 100644
+--- a/delaycut.pro
++++ b/delaycut.pro
+@@ -28,8 +28,12 @@ win32 {
+ !win32 {
+   QMAKE_CXXFLAGS += -Wno-unused-but-set-variable
+   RESOURCES      += src/icon_png.qrc
+-  target.path     = /usr/bin
+-  INSTALLS       += target
++  target.path     = $$PREFIX/bin
++  desktop.files  += misc/delaycut.desktop
++  desktop.path    = $$PREFIX/share/applications
++  icon.files     += src/delaycut.png
++  icon.path       = $$PREFIX/share/icons
++  INSTALLS       += target desktop icon
+ }
+ 
+ win32-g++* {
+

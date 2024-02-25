@@ -1,0 +1,25 @@
+package:
+  id: io.github.delaycut
+  name: delaycut
+  version: 1.4.3.10
+  kind: app
+  description: |
+    cuts and corrects delay in ac3 and dts files.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/darealshinji/delaycut.git
+  commit: 2c4d875e353c99dbe59bc74e0a0d42f2b7cea6ee
+  patch:
+    - patches/fix_install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cp src/icon.png src/delaycut.png
+      qmake -makefile ${conf_args} ${extra_args}
