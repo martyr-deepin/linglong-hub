@@ -1,0 +1,32 @@
+package:
+  id: io.github.coretime
+  name: coretime
+  version: 2.3.0
+  kind: app
+  description: |
+    CoreTime is a time related task app
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: libcprime
+    type: runtime
+    version: 1.0.0
+    source:
+      kind: git
+      url: https://github.com/rahmanshaber/libcprime.git
+      version: master
+      commit: 499f472b8d99cecec83c1064164edea64e8ca6bb
+    build:
+      kind: qmake
+
+source:
+  kind: git
+  url: https://gitlab.com/cubocore/coreapps/coretime.git
+  commit: 275373ca9b7ce974d3e8ed7f189e934420976e40
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
