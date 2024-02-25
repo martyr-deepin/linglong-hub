@@ -1,0 +1,32 @@
+package:
+  id: io.github.coregarage
+  name: coregarage
+  version: 2.3.0
+  kind: app
+  description: |
+    Settings is for setup CoreApps settings.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: libcprime
+    type: runtime
+    version: 1.0.0
+    source:
+      kind: git
+      url: https://github.com/rahmanshaber/libcprime.git
+      version: master
+      commit: 499f472b8d99cecec83c1064164edea64e8ca6bb
+    build:
+      kind: qmake
+
+source:
+  kind: git
+  url: https://gitlab.com/cubocore/coreapps/coregarage.git
+  commit: f2f1d404154a5279bd9662b00e207cb7a3168ad2
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

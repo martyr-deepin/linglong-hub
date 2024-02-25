@@ -1,0 +1,39 @@
+From 202cd845d964d8ea1cb165ef44cdfb436eacdef8 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 25 Feb 2024 20:15:00 +0800
+Subject: [PATCH] install
+
+---
+ settings coreapps.desktop | 2 +-
+ settings.pro              | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/settings coreapps.desktop b/settings coreapps.desktop
+index ab0519e..5df73a4 100644
+--- a/settings coreapps.desktop	
++++ b/settings coreapps.desktop	
+@@ -2,7 +2,7 @@
+ Name=Settings CoreApps
+ Comment=Settings is for setup CoreApps settings.
+ Exec=settings
+-Icon=/usr/share/coreapps/icons/settings.svg
++Icon=settings
+ Type=Application
+ Categories=Settings;Qt;Utility;
+ Terminal=false
+diff --git a/settings.pro b/settings.pro
+index d97b541..1cc174c 100644
+--- a/settings.pro
++++ b/settings.pro
+@@ -8,7 +8,7 @@ QT       += core gui widgets concurrent
+ 
+ TARGET    = settings
+ TEMPLATE  = app
+-
++INCLUDEPATH += $${PREFIX}/include  
+ # library for theme
+ unix:!macx: LIBS += -lcprime
+ 
+-- 
+2.33.1
+
