@@ -1,0 +1,33 @@
+package:
+  id: io.github.QMidiPlayer
+  name: QMidiPlayer
+  version: 0.8.7.2
+  kind: app
+  description: |
+    A cross-platform midi file player based on libfluidsynth and Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: fluidsynth
+    type: runtime
+    version: 2.3.4
+  - id: glfw/3.3.8
+  - id: rtmidi
+    type: runtime
+    version: 4.0.0
+
+variables:
+  extra_args: |
+    -DBUILD_VISUALIZATION=OFF
+
+source:
+  kind: git
+  url: https://github.com/chirs241097/QMidiPlayer.git
+  commit: 07ee50be7c390668f8c600b8eb5805f56cf6a8a1
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake

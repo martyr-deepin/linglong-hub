@@ -1,0 +1,25 @@
+From d58bed5c49137979a109ba959479fbc77a04d0b0 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 25 Feb 2024 18:44:29 +0800
+Subject: [PATCH] install
+
+---
+ qmidiplayer-desktop/qmidiplayer.desktop | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/qmidiplayer-desktop/qmidiplayer.desktop b/qmidiplayer-desktop/qmidiplayer.desktop
+index 2884d18..8837b14 100644
+--- a/qmidiplayer-desktop/qmidiplayer.desktop
++++ b/qmidiplayer-desktop/qmidiplayer.desktop
+@@ -5,7 +5,7 @@ Name=QMidiPlayer
+ Version=0.8.1
+ GenericName=MIDI Player
+ Comment=QMidiPlayer is a midi file player based on Fluidsynth and Qt.
+-Exec=/usr/bin/qmidiplayer
++Exec=qmidiplayer
+ Icon=qmidiplyr
+ Keywords=audio;sound;
+ Categories=Audio;AudioVideo;Midi;X-Alsa;X-Jack;Qt;
+-- 
+2.33.1
+
