@@ -1,0 +1,23 @@
+package:
+  id: io.github.plug
+  name: plug
+  version: 1.4.5
+  kind: app
+  description: |
+    Software for Fender Mustang Amps.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/offa/plug.git
+  commit: 0b36e459bc0060a9a8fcb644618758d2281664b4
+
+variables:
+  extra_args: |
+    -DPLUG_UNITTEST=OFF
+
+build:
+  kind: cmake
