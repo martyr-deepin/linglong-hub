@@ -1,0 +1,12 @@
+diff --git a/Server/artmoo-server.desktop b/Server/artmoo-server.desktop
+index 8326c91..ff9b0a2 100644
+--- a/Server/artmoo-server.desktop
++++ b/Server/artmoo-server.desktop
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ Exec=artmoo-server
+-Icon=usr/share/icons/hicolor/512x512/apps/artmoo-server.png
++Icon=artmoo-server
+ Version=1.0.0
+ Name=ArtMOO
+ Terminal=false
