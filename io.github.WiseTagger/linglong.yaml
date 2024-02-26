@@ -1,0 +1,21 @@
+package:
+  id: io.github.WiseTagger
+  name: WiseTagger
+  version: 0.6.10
+  kind: app
+  description: |
+    Simple picture tagging tool.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/0xb8/WiseTagger.git
+  commit: 99ea31bf958f633a847f7b03a7f045346a30a925
+  patch:
+    - patches/fix_install.patch
+
+build:
+  kind: cmake
