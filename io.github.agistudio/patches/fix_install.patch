@@ -1,0 +1,27 @@
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 567ae35..e38d2b1 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -113,4 +113,8 @@ source_group("Source Files" FILES ${AGIStudio_SOURCES})
+ 
+ add_executable(AGIStudio WIN32 ${AGIStudio_HEADERS} ${AGIStudio_SOURCES} ${AGIStudio_RESOURCES})
+ 
+-target_link_libraries(AGIStudio Qt5::Widgets Qt5::Multimedia)
+\ No newline at end of file
++target_link_libraries(AGIStudio Qt5::Widgets Qt5::Multimedia)
++
++install(TARGETS AGIStudio DESTINATION bin/)
++install(FILES ../packaging/agistudio.desktop DESTINATION share/applications/)
++install(FILES ../packaging/qtagistudio.xpm DESTINATION share/icons/)
+diff --git a/packaging/agistudio.desktop b/packaging/agistudio.desktop
+index 5c31cb8..bbe83ab 100644
+--- a/packaging/agistudio.desktop
++++ b/packaging/agistudio.desktop
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ Name=QT AGI Studio
+-Exec=agistudio
++Exec=AGIStudio
+ Icon=qtagistudio
+ Type=Application
+ Terminal=false

@@ -1,0 +1,21 @@
+package:
+  id: io.github.agistudio
+  name: agistudio
+  version: 1.4.0.1
+  kind: app
+  description: |
+    Qt5 AGI Studio - Editor for Sierra AGI games.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Deledrius/agistudio.git
+  commit: 8461595dccda1021ae7567c387d233b6fb087a1d
+  patch:
+    - patches/fix_install.patch
+
+build:
+  kind: cmake
