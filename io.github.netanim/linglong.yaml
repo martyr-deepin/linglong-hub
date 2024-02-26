@@ -1,0 +1,20 @@
+package:
+  id: io.github.netanim
+  name: netanim
+  version: 3.10.9
+  kind: app
+  description: |
+    ns-3 network animator
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://gitlab.com/nsnam/netanim.git
+  commit: 76b401767b3b7e1ea83fe6061bfada02fe592b95
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

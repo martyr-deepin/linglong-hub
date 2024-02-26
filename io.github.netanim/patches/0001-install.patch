@@ -1,0 +1,47 @@
+From eceb0e3542175848f3f419719ba54ff037152ef6 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 26 Feb 2024 14:08:14 +0800
+Subject: [PATCH] install
+
+---
+ NetAnim.desktop | 11 +++++++++++
+ NetAnim.pro     |  6 ++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 NetAnim.desktop
+
+diff --git a/NetAnim.desktop b/NetAnim.desktop
+new file mode 100644
+index 0000000..6049ea6
+--- /dev/null
++++ b/NetAnim.desktop
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Name=NetAnim
++GenericName=NetAnim
++Type=Application
++Comment=NetAnim is an offline animator based on the Qt toolkit for ns-3. It animates a previously executed simulation using an XML trace file generated during a simulation.
++Icon=netanim-logo
++Exec=NetAnim
++Terminal=false
++StartupNotify=false
++Keywords=netanim;ns3;ns-3
++Categories=Development
+\ No newline at end of file
+diff --git a/NetAnim.pro b/NetAnim.pro
+index 5eab742..a104afd 100644
+--- a/NetAnim.pro
++++ b/NetAnim.pro
+@@ -160,3 +160,9 @@ macx {
+  QMAKESPEC = macx-g++
+ }
+ 
++target.path =$$PREFIX/bin
++desktop.files = NetAnim.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = netanim-logo.png
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
