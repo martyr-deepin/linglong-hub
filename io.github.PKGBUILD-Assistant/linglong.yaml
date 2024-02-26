@@ -1,0 +1,25 @@
+package:
+  id: io.github.PKGBUILD-Assistant
+  name: PKGBUILD-Assistant
+  version: 2.2.0
+  kind: app
+  description: |
+    An auxiliary tool for writing PKGBUILD files written in Qt5.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/skykeyjoker/PKGBUILD-Assistant.git
+  commit: ccaaba8059dd5d3b0f3f0efdb98c4533dc32bde9
+  patch:
+    - patches/fix_install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cp ico.png pkgbuild-assistant.png
+      qmake -makefile ${conf_args} ${extra_args}
