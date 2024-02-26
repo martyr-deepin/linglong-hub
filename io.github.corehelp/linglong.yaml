@@ -1,0 +1,31 @@
+package:
+  id: io.github.corehelp
+  name: corehelp
+  version: 2.3.0
+  kind: app
+  description: |
+    Help app for CoreApps related help documents.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: libcprime
+    type: runtime
+    version: 1.0.0
+    source:
+      kind: git
+      url: https://github.com/rahmanshaber/libcprime.git
+      version: master
+      commit: 499f472b8d99cecec83c1064164edea64e8ca6bb
+    build:
+      kind: qmake
+
+source:
+  kind: git
+  url: https://github.com/rahmanshaber/help.git
+  commit: fa67e53a2c833bd0568e57cedc13ff9d48e0be80
+  patch: patches/0001-install.patch
+build:
+  kind: qmake

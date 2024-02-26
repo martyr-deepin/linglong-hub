@@ -1,0 +1,39 @@
+From 81fede1b9604c8a203e6b282d93f57598f85910f Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 25 Feb 2024 21:36:36 +0800
+Subject: [PATCH] install
+
+---
+ help coreapps.desktop | 2 +-
+ help.pro              | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/help coreapps.desktop b/help coreapps.desktop
+index efdf3e3..c7f6446 100644
+--- a/help coreapps.desktop	
++++ b/help coreapps.desktop	
+@@ -2,7 +2,7 @@
+ Name=Help CoreApps
+ Comment=Help app for CoreApps related help
+ Exec=help
+-Icon=/usr/share/coreapps/icons/help.svg
++Icon=help
+ Type=Application
+ Categories=Utility;Core;Qt;Documentation;
+ Terminal=false
+diff --git a/help.pro b/help.pro
+index d0a3d94..74a9a0e 100644
+--- a/help.pro
++++ b/help.pro
+@@ -8,7 +8,7 @@ QT       += core gui widgets
+ 
+ TARGET = help
+ TEMPLATE = app
+-
++INCLUDEPATH += $${PREFIX}/include
+ # library for theme
+ unix:!macx: LIBS += -lcprime
+ 
+-- 
+2.33.1
+
