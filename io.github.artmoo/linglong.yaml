@@ -1,0 +1,25 @@
+package:
+  id: io.github.artmoo
+  name: artmoo
+  version: 1.0.1.1
+  kind: app
+  description: |
+    A telnet/websocket Multi-user Object Orientated (MOO) server for creating text-only art projects and virtual worlds.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtserialport/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/bigfug/moo.git
+  commit: a6f1325a19f4e5f33cc236ee0274ee34390e74fe
+  patch:
+    - patches/fix_desktop.patch
+
+build:
+  kind: cmake
