@@ -1,0 +1,51 @@
+From d4c100a6a7902c8f6bea01ec284c0f2ebec3f600 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 26 Feb 2024 16:50:26 +0800
+Subject: [PATCH] install
+
+---
+ gui/screenerqt.desktop    |  4 ++--
+ screenerQt/screenerQt.pro | 10 +++++++++-
+ 2 files changed, 11 insertions(+), 3 deletions(-)
+
+diff --git a/gui/screenerqt.desktop b/gui/screenerqt.desktop
+index 24fce14..8c93a67 100644
+--- a/gui/screenerqt.desktop
++++ b/gui/screenerqt.desktop
+@@ -4,8 +4,8 @@ Name=ScreenerQt
+ GenericName=ScreenerQt
+ Comment=ScreenerQt open source gui for console application Screeener.
+ Keywords=utils
+-Exec=screenerqt
+-Icon=${SNAP}/images/screenerqt.png
++Exec=screenerQt
++Icon=screenerqt
+ Terminal=false
+ Type=Application
+ Categories=Utility;
+diff --git a/screenerQt/screenerQt.pro b/screenerQt/screenerQt.pro
+index ae8ce46..5991aa5 100644
+--- a/screenerQt/screenerQt.pro
++++ b/screenerQt/screenerQt.pro
+@@ -34,8 +34,16 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     data/resources.qrc
++
++target.path =$$PREFIX/bin
++desktop.files =../gui/screenerqt.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = ../gui/screenerqt.png
++
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
