@@ -1,0 +1,38 @@
+diff --git a/src/main.cpp b/src/main.cpp
+index 405cf7e..2007b2e 100644
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -17,6 +17,8 @@
+ #include <QTranslator>
+ #include <QStyleFactory>
+ #include <QProxyStyle>
++#include <QPainter>
++#include <QPainterPath>
+ 
+ #define SETT_STYLE              QStringLiteral("window/style")
+ 
+diff --git a/src/window.cpp b/src/window.cpp
+index 7f647c3..882f5c5 100644
+--- a/src/window.cpp
++++ b/src/window.cpp
+@@ -32,6 +32,7 @@
+ #include <QUrl>
+ #include <QVersionNumber>
+ #include <memory>
++#include <QClipboard>
+ 
+ #include "window.h"
+ #include "global_enums.h"
+diff --git a/util/open_graphical_shell.cpp b/util/open_graphical_shell.cpp
+index 8006601..eb86255 100644
+--- a/util/open_graphical_shell.cpp
++++ b/util/open_graphical_shell.cpp
+@@ -75,7 +75,7 @@ void util::open_files_in_gui_shell(const QStringList& input_files) {
+ 	}
+ 
+ #else
+-	for (const auto& file : files)
++	for (const auto& file : input_files)
+ 		QDesktopServices::openUrl(QUrl::fromLocalFile(QFileInfo(file).path()));
+ #endif
+ }
