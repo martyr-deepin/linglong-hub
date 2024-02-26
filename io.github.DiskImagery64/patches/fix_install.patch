@@ -1,0 +1,22 @@
+diff --git a/imagery/imagery.pro b/imagery/imagery.pro
+index c0ec12e..8adbbe4 100644
+--- a/imagery/imagery.pro
++++ b/imagery/imagery.pro
+@@ -37,13 +37,13 @@ win32 {
+ }
+ 
+ unix {
+-    icon.path = /usr/share/pixmaps
++    icon.path = $$PREFIX/share/pixmaps
+     icon.files = ../icons/imagery/imagery.xpm
+     icon.uninstall = @echo "uninstall"
+-    desktop.path = /usr/share/applications
++    desktop.path = $$PREFIX/share/applications
+     desktop.files = ../icons/imagery/diskimagery64.desktop
+     desktop.uninstall = @echo "uninstall"
+-    target.path = /usr/local/bin
++    target.path = $$PREFIX/bin
+     target.files = diskimagery64
+     target.uninstall = @echo "uninstall"
+ 
+

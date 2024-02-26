@@ -1,0 +1,21 @@
+package:
+  id: io.github.DiskImagery64
+  name: DiskImagery64
+  version: 0.0.1
+  kind: app
+  description: |
+    A portable drag & drop D64 Disk Image Editor.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/ProbablyNotArtyom/DiskImagery64.git
+  commit: 32ee2eec3bd31961ff3a6760a3d4f702100474ab
+  patch:
+    - patches/fix_install.patch
+
+build:
+  kind: qmake
