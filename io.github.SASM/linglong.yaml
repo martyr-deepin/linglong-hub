@@ -1,0 +1,19 @@
+package:
+  id: io.github.SASM
+  name: SASM
+  version: 3.13.4
+  kind: app
+  description: |
+    SASM - simple crossplatform IDE for NASM, MASM, GAS and FASM assembly languages
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Dman95/SASM.git
+  commit: 6bb9ba90b3cd8019c8b8ef7593fb8cf8f5da3a1d
+
+build:
+  kind: qmake
