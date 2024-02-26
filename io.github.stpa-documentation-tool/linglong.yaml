@@ -1,0 +1,23 @@
+package:
+  id: io.github.stpa-documentation-tool
+  name: stpa-documentation-tool
+  version: 0.0.1
+  kind: app
+  description: |
+    This tool aims to organize STPA analysis results in a tree format, and then produce analysis documentation automatically
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: yaml-cpp/0.8.0
+
+source:
+  kind: git
+  url: https://gitlab.com/trustable/stpa-documentation-tool.git
+  commit: 371092c597d8e13060ff3aefabdf62f763c6093e
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake

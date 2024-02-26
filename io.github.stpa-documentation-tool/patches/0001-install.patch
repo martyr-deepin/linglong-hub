@@ -1,0 +1,51 @@
+From 68a89e0a24fa25b3c2e1d3c9adae84ec98afef0d Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 26 Feb 2024 15:19:56 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt     |  5 +++++
+ src/CMakeLists.txt | 13 +++++++++++++
+ 2 files changed, 18 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 56e7389..8120d65 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -11,6 +11,11 @@
+ cmake_minimum_required(VERSION 3.10.0)
+ project(stpa_documentation_tool)
+ 
++find_package(PkgConfig)
++pkg_check_modules(YAMLCPP yaml-cpp)
++include_directories(${YAMLCPP_INCLUDE_DIRS})
++
++
+ # The builds fall into two categories:
+ # - NO_UNIT_TESTS, built on a local host using Docker / Flatpak
+ # - CLI or remote docker build, which assume all unit tests are built
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 696cca8..9c040fe 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -58,3 +58,16 @@ qt5_use_modules(stpa_documentation_tool Core Widgets)
+ 
+ install(TARGETS stpa_documentation_tool	
+         RUNTIME DESTINATION bin)
++
++install(FILES ../flathub/share/icons/hicolor/48x48/stpa_documentation_tool-48x48.png
++        DESTINATION share/icons/hicolor/48x48/apps)
++
++install(FILES ../flathub/share/icons/hicolor/64x64/stpa_documentation_tool-64x64.png
++        DESTINATION share/icons/hicolor/64x64/apps)
++
++install(FILES ../flathub/share/icons/hicolor/128x128/stpa_documentation_tool-128x128.png
++        DESTINATION share/icons/hicolor/128x128/apps)
++
++
++install(FILES ../flathub/share/stpa_documentation_tool.desktop
++            DESTINATION share/applications)
+\ No newline at end of file
+-- 
+2.33.1
+
