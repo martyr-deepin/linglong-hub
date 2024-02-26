@@ -1,0 +1,39 @@
+From f2e30f84d704f8fbf32af0699510030fc017b249 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 25 Feb 2024 21:30:53 +0800
+Subject: [PATCH] install
+
+---
+ coreshot.desktop | 2 +-
+ coreshot.pro     | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/coreshot.desktop b/coreshot.desktop
+index 75ada63..f1d980d 100644
+--- a/coreshot.desktop
++++ b/coreshot.desktop
+@@ -2,7 +2,7 @@
+ Name=CoreShot
+ Comment=CoreShot is screen capture app from CoreApps.
+ Exec=coreshot
+-Icon=/usr/share/coreapps/icons/coreshot.svg
++Icon=coreshot
+ Type=Application
+ Categories=Utility;Graphics;Viewer;Qt;
+ Terminal=false
+diff --git a/coreshot.pro b/coreshot.pro
+index ca7d3e7..dbde9b6 100644
+--- a/coreshot.pro
++++ b/coreshot.pro
+@@ -8,7 +8,7 @@ QT       += core gui widgets x11extras
+ 
+ TARGET = coreshot
+ TEMPLATE = app
+-
++INCLUDEPATH += $${PREFIX}/include
+ # library for theme
+ unix:!macx: LIBS += -lcprime -lX11
+ 
+-- 
+2.33.1
+
