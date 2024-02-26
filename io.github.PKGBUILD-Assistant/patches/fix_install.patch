@@ -1,0 +1,32 @@
+diff --git a/PKGBUILD_ASSISTANT.pro b/PKGBUILD_ASSISTANT.pro
+index ba34cbc..421d7f5 100644
+--- a/PKGBUILD_ASSISTANT.pro
++++ b/PKGBUILD_ASSISTANT.pro
+@@ -37,8 +37,13 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
++desktop.files = pkgbuild-assistant.desktop
++desktop.path = $$PREFIX/share/applications
++icon.files = pkgbuild-assistant.png
++icon.path = $$PREFIX/share/icons
++INSTALLS += desktop icon
+ 
+ RESOURCES += \
+     res.qrc
+diff --git a/pkgbuild-assistant.desktop b/pkgbuild-assistant.desktop
+index 9fc2b9a..08cb9f7 100644
+--- a/pkgbuild-assistant.desktop
++++ b/pkgbuild-assistant.desktop
+@@ -2,7 +2,7 @@
+ Name=PKGBUILD Assistant
+ Comment=An auxiliary tool for writing PKGBUILD files developed using the Qt5 framework.
+ GenericName=PKGBUILD Assistant
+-Exec=pkgbuild-assistant
++Exec=PKGBUILD_ASSISTANT
+ Icon=pkgbuild-assistant
+ StartupNotify=true
+ Terminal=false
