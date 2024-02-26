@@ -1,0 +1,25 @@
+package:
+  id: io.github.vatsinator-legacy
+  name: vatsinator-legacy
+  version: 0.3.0.3
+  kind: app
+  description: |
+    An open-source Vatsim monitor.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Vatsinator/vatsinator-legacy.git
+  commit: f80c21059afb89e8baec154283d3e8f12c62db30
+  patch:
+    - patches/fix_desktop.patch
+
+build:
+  kind: cmake
+  manual:
+    install: |
+      env DESTDIR=${dest_dir} cmake --build ${build_dir} --target install
+      chmod +x ${PREFIX}/lib/vatsinator/*

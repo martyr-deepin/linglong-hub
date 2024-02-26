@@ -1,0 +1,16 @@
+diff --git a/src/application/widgets/dist/vatsinator.desktop.in b/src/application/widgets/dist/vatsinator.desktop.in
+index 07e6e3b3..7893356c 100644
+--- a/src/application/widgets/dist/vatsinator.desktop.in
++++ b/src/application/widgets/dist/vatsinator.desktop.in
+@@ -4,8 +4,8 @@ Type=Application
+ Name=Vatsinator
+ GenericName=Vatsim monitor
+ Comment=A simple Vatsim monitor
+-TryExec=${CMAKE_INSTALL_PREFIX}/bin/vatsinator
+-Exec=${CMAKE_INSTALL_PREFIX}/bin/vatsinator
++TryExec=env LD_LIBRARY_PATH=$LD_LIBRARY_PATH:@CMAKE_INSTALL_PREFIX@/lib/vatsinator/ vatsinator
++Exec=env LD_LIBRARY_PATH=$LD_LIBRARY_PATH:@CMAKE_INSTALL_PREFIX@/lib/vatsinator/ vatsinator
+ Categories=Network;Qt;
+ Icon=vatsinator
+ 
+
