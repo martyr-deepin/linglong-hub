@@ -1,0 +1,22 @@
+package:
+  id: io.github.zint
+  name: zint
+  version: 2.5.0
+  kind: app
+  description: |
+    Zint is a suite of programs to allow easy encoding of data in any of the wide range of public domain barcode standards and to allow integration ofthis capability into your own programs.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/hmyit/zint-sf.git
+  commit: bcec2718ee9deabd2e28e61ba9db33977242cbbf
+  patch: 
+    - patches/0001-install.patch
+    - patches/0002-install.patch
+
+build:
+  kind: cmake
