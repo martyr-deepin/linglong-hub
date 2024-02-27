@@ -1,0 +1,48 @@
+From f3ec8cbfdd0c2ae4c61036dd44334a20d58388e2 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 26 Feb 2024 15:43:21 +0800
+Subject: [PATCH] install
+ 
+---
+ lyricspad.pro             | 9 ++++++++-
+ snap/gui/lyricpad.desktop | 2 +-
+ 2 files changed, 9 insertions(+), 2 deletions(-)
+
+diff --git a/lyricspad.pro b/lyricspad.pro
+index 93ef0bd..6d8e7f8 100644
+--- a/lyricspad.pro
++++ b/lyricspad.pro
+@@ -43,9 +43,16 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++target.path =$$PREFIX/bin
++desktop.files =snap/gui/lyricpad.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = snap/gui/icon.png
++INSTALLS += target desktop icons
++
+ RESOURCES += \
+     themes.qrc
+ 
+diff --git a/snap/gui/lyricpad.desktop b/snap/gui/lyricpad.desktop
+index 97c65a9..5c484ff 100644
+--- a/snap/gui/lyricpad.desktop
++++ b/snap/gui/lyricpad.desktop
+@@ -3,7 +3,7 @@ Version=1.0
+ GenericName=Lyricpad
+ Name=Lyricpad
+ Type=Application
+-Icon=${SNAP}/meta/gui/icon.png
++Icon=icon
+ Keywords=Lyrics;Musicmatch
+ Exec=lyricpad %F
+ Categories=Utility;Audio;
+-- 
+2.33.1
+
