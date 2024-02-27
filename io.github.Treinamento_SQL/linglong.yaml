@@ -1,0 +1,19 @@
+package:
+  id: io.github.Treinamento_SQL
+  name: Treinamento_SQL
+  version: 3.12.2
+  kind: app
+  description: |
+    Official home of the DB Browser for SQLite (DB4S) project
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Gabrieldiasdeoliveira/Treinamento_SQL.git
+  commit: 2179c5de422e96a56caca30940467bccab49b127
+
+build:
+  kind: cmake
