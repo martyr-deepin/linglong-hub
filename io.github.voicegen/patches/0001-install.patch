@@ -1,0 +1,38 @@
+From d84c0b6465936a944bdf20c5d6105a218fd3b65a Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 27 Feb 2024 19:14:24 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt            | 6 ++++++
+ snap/gui/voicegen.desktop | 2 +-
+ 2 files changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8324ed2..90ed176 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -32,3 +32,9 @@ target_link_libraries(voicegen Qt5::Widgets Qt5::Multimedia)
+ # Install the executable
+ install(TARGETS voicegen DESTINATION bin)
+ 
++install(FILES snap/gui/voicegen.svg
++        DESTINATION share/icons)
++
++
++install(FILES snap/gui/voicegen.desktop
++            DESTINATION share/applications)
+\ No newline at end of file
+diff --git a/snap/gui/voicegen.desktop b/snap/gui/voicegen.desktop
+index 5d6dcbb..5d2db3c 100755
+--- a/snap/gui/voicegen.desktop
++++ b/snap/gui/voicegen.desktop
+@@ -8,4 +8,4 @@ Terminal=false
+ Exec=voicegen
+ Keywords=Speech;Streamlabs;tts;svox;
+ Categories=Utility;
+-Icon=${SNAP}/meta/gui/voicegen.svg
++Icon==voicegen
+-- 
+2.33.1
+
