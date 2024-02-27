@@ -1,0 +1,28 @@
+From d07a8ebac864a24e42214f4f5dc7ba4d4eddd57f Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 27 Feb 2024 20:04:42 +0800
+Subject: [PATCH] install
+
+---
+ frontend_qt/CMakeLists.txt | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/frontend_qt/CMakeLists.txt b/frontend_qt/CMakeLists.txt
+index 5eef524..c911771 100644
+--- a/frontend_qt/CMakeLists.txt
++++ b/frontend_qt/CMakeLists.txt
+@@ -23,3 +23,10 @@ link_directories( "${CMAKE_BINARY_DIR}/backend" "${CMAKE_BINARY_DIR}/backend_qt"
+ target_link_libraries(zint-qt zint QZint Qt5::UiTools ${QT_QTXML_LIBRARY} Qt5::Gui Qt5::Core )
+ 
+ install(TARGETS zint-qt DESTINATION "${BIN_INSTALL_DIR}" RUNTIME)
++
++install(FILES ../zint.png
++        DESTINATION share/icons)
++
++
++install(FILES ../zint-qt.desktop
++            DESTINATION share/applications)
+\ No newline at end of file
+-- 
+2.33.1
+

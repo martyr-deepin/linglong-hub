@@ -1,0 +1,25 @@
+From 6d03ae2d4de3ed9af03a8283a3ce9b5bcd44b2ff Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 27 Feb 2024 20:00:58 +0800
+Subject: [PATCH] install
+
+---
+ backend_qt/qzint.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/backend_qt/qzint.cpp b/backend_qt/qzint.cpp
+index d0069eb..4a82c5c 100644
+--- a/backend_qt/qzint.cpp
++++ b/backend_qt/qzint.cpp
+@@ -17,7 +17,7 @@
+ 
+ #include "qzint.h"
+ #include <stdio.h>
+-
++#include <QPainterPath>
+ namespace Zint {
+ 
+     static const qreal maxi_diagonal = 11;
+-- 
+2.33.1
+
