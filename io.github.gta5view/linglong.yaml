@@ -1,0 +1,19 @@
+package:
+  id: io.github.gta5view
+  name: gta5view
+  version: 1.10.2
+  kind: app
+  description: |
+    Open Source Snapmatic and Savegame viewer/editor for GTA V
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/SyDevTeam/gta5view.git
+  commit: 20de3627d563a70924304408949914d64126ffb3
+
+build:
+  kind: cmake
