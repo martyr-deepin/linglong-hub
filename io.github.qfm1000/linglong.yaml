@@ -1,0 +1,23 @@
+package:
+  id: io.github.qfm1000
+  name: qfm1000
+  version: 0.7.1
+  kind: app
+  description: |
+    Philips FM1000 EEPROM channels and configuration parameters editor.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtserialport/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/sardylan/qfm1000.git
+  commit: 0f265bc34571976acd7eed33abdf68eccf6899bf
+
+build:
+  kind: cmake
