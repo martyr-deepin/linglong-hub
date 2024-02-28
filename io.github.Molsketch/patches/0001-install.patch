@@ -1,0 +1,76 @@
+From 4fd39c9b113465db31f730dce07f78c21cae89e5 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 28 Feb 2024 17:45:53 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt              |  2 +-
+ libmolsketch/CMakeLists.txt |  6 +++---
+ molsketch/CMakeLists.txt    | 18 ++++++++++--------
+ 3 files changed, 14 insertions(+), 12 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 9f47001..74e8c5d 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -108,7 +108,7 @@ endif(WIN32 OR WIN64)
+ 
+ add_definitions(-DOBABEL_IFACE_LOCATION="\\\"${MSK_INSTALL_LIBS}/${OBABEL_IFACE_NAME}\\\"")
+ 
+-set(CMAKE_INSTALL_PREFIX ${MSK_PREFIX})
++#set(CMAKE_INSTALL_PREFIX ${MSK_PREFIX})
+ 
+ ################ Adding subdirs
+ add_subdirectory(libmolsketch)
+diff --git a/libmolsketch/CMakeLists.txt b/libmolsketch/CMakeLists.txt
+index 7ad6398..0baafa9 100644
+--- a/libmolsketch/CMakeLists.txt
++++ b/libmolsketch/CMakeLists.txt
+@@ -29,7 +29,7 @@ target_link_libraries(molsketch_LIB ${QT_LIBRARIES})
+ 
+ # Install the executable and the library
+ install(TARGETS molsketch_LIB
+-    RUNTIME DESTINATION ${MSK_INSTALL_BINS}
+-    LIBRARY DESTINATION ${MSK_INSTALL_LIBS}
+-    ARCHIVE DESTINATION ${MSK_INSTALL_LIBS}/static)
++    RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}
++    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
++    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}/static)
+ install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} DESTINATION ${MSK_INSTALL_INCLUDES} FILES_MATCHING PATTERN "*.h" PATTERN "tools" EXCLUDE)
+diff --git a/molsketch/CMakeLists.txt b/molsketch/CMakeLists.txt
+index 2fcf566..294f2b1 100644
+--- a/molsketch/CMakeLists.txt
++++ b/molsketch/CMakeLists.txt
+@@ -32,7 +32,7 @@ add_definitions( -fexceptions )
+ link_directories(${CMAKE_BINARY_DIR}/lib)
+ set(APP_ICON_RESOURCE_WINDOWS "${CMAKE_CURRENT_SOURCE_DIR}/images/molsketch.ico")
+ add_executable(molsketch ${molsketch_SRCS} ${molsketch_UIS_H} ${molsketch_MOC_HDRS} ${APP_ICON_RESOURCE_WINDOWS})
+-install(TARGETS molsketch DESTINATION ${MSK_INSTALL_BINS})
++install(TARGETS molsketch DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+ set_property(TARGET molsketch PROPERTY CXX_STANDARD 14)
+ set_property(TARGET molsketch PROPERTY INSTALL_RPATH ${MSK_INSTALL_LIBS})
+ target_link_libraries(molsketch molsketch_LIB)
+@@ -46,11 +46,13 @@ install(DIRECTORY ${PROJECT_SOURCE_DIR}/doc/ DESTINATION ${MSK_INSTALL_DOCS})
+ 
+ # Install menu entries on Linux
+ if(UNIX)
+-  install(FILES ${PROJECT_SOURCE_DIR}/molsketch/images/molsketch.svg DESTINATION share/icons/hicolor/scalable/apps)
+-  install(FILES ${PROJECT_SOURCE_DIR}/molsketch/images/molsketch.xpm DESTINATION share/pixmaps)
+-  install(FILES ${PROJECT_SOURCE_DIR}/molsketch/images/application-x-molsketch.svg DESTINATION share/icons/hicolor/scalable/mimetypes)
+-  install(FILES ${PROJECT_SOURCE_DIR}/molsketch/images/application-x-molsketch-molecule.svg DESTINATION share/icons/hicolor/scalable/mimetypes)
+-  install(FILES ${PROJECT_SOURCE_DIR}/molsketch/molsketch.xml DESTINATION share/mime/packages)
+-  install(FILES ${PROJECT_SOURCE_DIR}/molsketch/molsketch.desktop DESTINATION share/applications)
+-  install(FILES ${PROJECT_SOURCE_DIR}/molsketch/net.sourceforge.molsketch.appdata.xml DESTINATION share/metainfo)
++  install(FILES ${PROJECT_SOURCE_DIR}/molsketch/images/molsketch.svg DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons)
++  install(FILES ${PROJECT_SOURCE_DIR}/molsketch/images/molsketch.xpm DESTINATION ${CMAKE_INSTALL_PREFIX}/share/pixmaps)
++  install(FILES ${PROJECT_SOURCE_DIR}/molsketch/images/application-x-molsketch.svg DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/mimetypes)
++  install(FILES ${PROJECT_SOURCE_DIR}/molsketch/images/application-x-molsketch-molecule.svg DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/mimetypes)
++  install(FILES ${PROJECT_SOURCE_DIR}/molsketch/molsketch.xml DESTINATION ${CMAKE_INSTALL_PREFIX}/share/mime/packages)
++  install(FILES ${PROJECT_SOURCE_DIR}/molsketch/molsketch.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++  install(FILES ${PROJECT_SOURCE_DIR}/molsketch/net.sourceforge.molsketch.appdata.xml DESTINATION ${CMAKE_INSTALL_PREFIX}/share/metainfo)
++
++  install(FILES ../build_dir/libmolsketch/libmolsketch.so DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+ endif(UNIX)
+-- 
+2.33.1
+
