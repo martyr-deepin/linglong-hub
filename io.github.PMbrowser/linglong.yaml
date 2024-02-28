@@ -1,0 +1,20 @@
+package:
+  id: io.github.PMbrowser
+  name: PMbrowser
+  version: 2.4.2
+  kind: app
+  description: |
+    A tool to browse PatchMaster generated files. Supports export for IgorPro and numpy
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/ChrisHal/PMbrowser.git
+  commit: 82ecf737ec2fa1dcfbc54dfe9d41bd0be0d83720
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
