@@ -1,0 +1,39 @@
+From c986fc59d89c5273b5191b4589ea9220dead5fd5 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 28 Feb 2024 19:00:53 +0800
+Subject: [PATCH] install
+
+---
+ QtPMbrowser/CMakeLists.txt | 2 +-
+ QtPMbrowser/renderarea.cpp | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/QtPMbrowser/CMakeLists.txt b/QtPMbrowser/CMakeLists.txt
+index d6011d7..2d93891 100644
+--- a/QtPMbrowser/CMakeLists.txt
++++ b/QtPMbrowser/CMakeLists.txt
+@@ -14,7 +14,7 @@ set(CMAKE_AUTOMOC ON)
+ set(CMAKE_AUTOUIC ON)
+ set(CMAKE_AUTORCC ON)
+ 
+-find_package(QT NAMES Qt6 REQUIRED COMPONENTS Core)
++find_package(QT NAMES Qt5 REQUIRED COMPONENTS Core)
+ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Gui Widgets)
+ 
+ add_executable(QtPMbrowser WIN32 MACOSX_BUNDLE
+diff --git a/QtPMbrowser/renderarea.cpp b/QtPMbrowser/renderarea.cpp
+index cebbcac..cad103b 100644
+--- a/QtPMbrowser/renderarea.cpp
++++ b/QtPMbrowser/renderarea.cpp
+@@ -777,7 +777,7 @@ void RenderArea::pinchTriggered(QPinchGesture* gesture)
+     }
+     if (change_flags & QPinchGesture::ScaleFactorChanged) {
+         auto scale = gesture->scaleFactor();
+-        auto center = mapFromGlobal(gesture->centerPoint());
++        auto center = mapFromGlobal(gesture->centerPoint().toPoint());
+         double x_c{}, y_c{};
+         scaleFromPixToXY(center, x_c, y_c);
+ 
+-- 
+2.33.1
+
