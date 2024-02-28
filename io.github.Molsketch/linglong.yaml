@@ -1,0 +1,24 @@
+package:
+  id: io.github.Molsketch
+  name: Molsketch
+  version: 2.1.0
+  kind: app
+  description: |
+    Molsketch 2D molecular editor
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+variables:
+  extra_args: 
+    -DMSK_OBABELIFACE=false
+
+source:
+  kind: git
+  url: https://github.com/timvdm/Molsketch.git
+  commit: 7e41f6a16da96c572f4bca19003d9b8ebaba3f79
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
