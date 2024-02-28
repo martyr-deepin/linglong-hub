@@ -1,0 +1,30 @@
+From 93d72218da2e1c242fbe1c5849b2453d7513e4c7 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 28 Feb 2024 14:33:48 +0800
+Subject: [PATCH] install
+
+---
+ rdr2view.pro | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/rdr2view.pro b/rdr2view.pro
+index ea6db07..f35bb93 100644
+--- a/rdr2view.pro
++++ b/rdr2view.pro
+@@ -208,11 +208,11 @@ isEqual(QT_MAJOR_VERSION, 5): GTA5SYNC_RCC = $$[QT_HOST_BINS]/rcc
+ 
+ # PROJECT INSTALLATION
+ 
+-isEmpty(GTA5SYNC_PREFIX): GTA5SYNC_PREFIX = /usr/local
++isEmpty(GTA5SYNC_PREFIX): GTA5SYNC_PREFIX = $$PREFIX
+ 
+ appfiles.path = $$GTA5SYNC_PREFIX/share/applications
+ appfiles.files = $$PWD/res/rdr2view.desktop
+-pixmaps.path = $$GTA5SYNC_PREFIX/share/pixmaps
++pixmaps.path = $$GTA5SYNC_PREFIX/share/icons
+ pixmaps.files = $$PWD/res/gta5view.png
+ target.path = $$GTA5SYNC_PREFIX/bin
+ INSTALLS += target pixmaps appfiles
+-- 
+2.33.1
+
