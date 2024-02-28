@@ -1,0 +1,25 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8b36ae4..c97000c 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -70,3 +70,7 @@ target_link_libraries(
+     Qt5::Sql
+     Qt5::Widgets
+ )
++
++install(TARGETS Goat DESTINATION bin)
++install(FILES packaging/goat.desktop DESTINATION share/applications)
++install(FILES packaging/goat.png DESTINATION share/icons)
+diff --git a/packaging/goat.desktop b/packaging/goat.desktop
+index 55cc0c4..082cee3 100644
+--- a/packaging/goat.desktop
++++ b/packaging/goat.desktop
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Categories=Office;Database;Qt;KDE;
+ StartupNotify=true
+-Exec=/usr/bin/goat
++Exec=Goat
+ Name=Goat
+ GenericName=Goat database management
+ Terminal=false
