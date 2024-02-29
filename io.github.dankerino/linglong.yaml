@@ -1,0 +1,19 @@
+package:
+  id: io.github.dankerino
+  name: dankerino
+  version: 2.4.6
+  kind: app
+  description: |
+    Chat client for twitch.tv. See releases for download. Only nightlies are supported.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+ 
+source:
+  kind: git
+  url: https://github.com/Mm2PL/dankerino.git
+  commit: c7c04035b218b5b7c090dc6f697f1e3d0160cfaa
+
+build:
+  kind: cmake
