@@ -1,0 +1,23 @@
+package:
+  id: io.github.multivnc
+  name: multivnc
+  version: 0.7.0
+  kind: app
+  description: |
+    MultiVNC is a cross-platform Multicast-enabled VNC viewer based on LibVNCClient.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: wxWidgets/3.2.3
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/bk138/multivnc.git
+  commit: cc282e1a1c03448fe7768df9df8de2f1140d8fc1
+
+build:
+  kind: cmake
