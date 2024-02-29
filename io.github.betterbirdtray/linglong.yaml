@@ -1,0 +1,19 @@
+package:
+  id: io.github.betterbirdtray
+  name: betterbirdtray
+  version: 1.14.0
+  kind: app
+  description: |
+    new mail system tray notification icon for Thunderbird
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/jpdoherty/betterbirdtray.git
+  commit: f7b451c0dc8b7df0f60fd258ebb2f2f74ae9bb09
+
+build:
+  kind: cmake
