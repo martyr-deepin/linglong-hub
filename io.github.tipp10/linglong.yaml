@@ -1,0 +1,19 @@
+package:
+  id: io.github.tipp10
+  name: tipp10
+  version: 3.1.0
+  kind: app
+  description: |
+    Tipp10 is a free touch typing tutor for your browser and for user.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://gitlab.com/tipp10/tipp10.git
+  commit: ee51c2850f3b9d592619d5ddb5a74c0f6ecee645
+
+build:
+  kind: cmake
