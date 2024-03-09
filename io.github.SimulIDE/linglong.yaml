@@ -1,0 +1,26 @@
+package:
+  id: io.github.SimulIDE
+  name: SimulIDE
+  version: 0.4.13
+  kind: app
+  description: |
+    SimulIDE is a simple real-time electronic circuit simulator
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtserialport/5.15.7
+    type: runtime
+  - id: qtscript/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/SimulIDE/SimulIDE.git
+  commit: 4bf26bc839147551a00938aa2949012681a3e046
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
