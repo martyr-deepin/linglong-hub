@@ -1,0 +1,19 @@
+package:
+  id: io.github.ellipticcurve
+  name: ellipticcurve
+  version: 1.1.6
+  kind: app
+  description: |
+    Play and exeriment with elliptic curves and their group law.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://gitlab.com/kebekus/ellipticcurve.git
+  commit: c446ae0582354c531fbfd0c7b865e299ce507655
+
+build:
+  kind: cmake
