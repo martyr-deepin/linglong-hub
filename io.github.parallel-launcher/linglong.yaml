@@ -1,0 +1,28 @@
+package:
+  id: io.github.parallel-launcher
+  name: parallel-launcher
+  version: 7.2.0
+  kind: app
+  description: |
+    A simple easy-to-use launcher for the ParallelN64 emulator
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://gitlab.com/parallel-launcher/parallel-launcher.git
+  commit: 05f40d0e3783a60c54f4961ce5a11c08437d778d
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cp appicon.icns ca.parallel_launcher.ParallelLauncher.png
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

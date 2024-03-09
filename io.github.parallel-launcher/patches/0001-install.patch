@@ -1,0 +1,29 @@
+From e3a6224fa120038c1b2692043b04a7530b607d25 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 1 Mar 2024 12:49:02 +0800
+Subject: [PATCH] install
+
+---
+ app.pro | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/app.pro b/app.pro
+index 8337d1d..27eab2d 100644
+--- a/app.pro
++++ b/app.pro
+@@ -172,3 +172,11 @@ flatpak-version {
+ 
+ 	INSTALLS = inst_bin inst_desktop
+ }
++
++target.path =$$PREFIX/bin
++desktop.files =ca.parallel_launcher.ParallelLauncher.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = ca.parallel_launcher.ParallelLauncher.png
++
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
