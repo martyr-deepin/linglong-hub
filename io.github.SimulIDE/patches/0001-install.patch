@@ -1,0 +1,44 @@
+From beed3a3c2e274b7c15e6e410788b9fb91df1317f Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 8 Mar 2024 17:01:08 +0800
+Subject: [PATCH] install
+
+---
+ SimulIDE.pro               | 8 ++++++++
+ resources/simulide.desktop | 4 ++--
+ 2 files changed, 10 insertions(+), 2 deletions(-)
+
+diff --git a/SimulIDE.pro b/SimulIDE.pro
+index 260f42a..f73e9d8 100644
+--- a/SimulIDE.pro
++++ b/SimulIDE.pro
+@@ -141,3 +141,11 @@ message( "    "                               )
+ message( "    Destination Folder:"            )
+ message( $$TARGET_PREFIX                      )
+ message( "-----------------------------------")
++
++target.path =$$PREFIX/bin
++desktop.files =resources/simulide.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = resources/icons/hicolor/256x256/simulide.png
++
++INSTALLS += target desktop icons
+diff --git a/resources/simulide.desktop b/resources/simulide.desktop
+index 56ac90e..3131502 100644
+--- a/resources/simulide.desktop
++++ b/resources/simulide.desktop
+@@ -3,8 +3,8 @@ Version=0.3.10
+ Name=SimulIDE
+ GenericName=SimulIDE
+ Comment=Electronic Circuit Simulator Software
+-Exec=/home/user/SimulIDE_0.3.10/bin/simulide
+-Icon=/home/user/SimulIDE_0.3.10/share/icons/hicolor/256x256/simulide.png
++Exec=simulide
++Icon=simulide
+ Terminal=false
+ Type=Application
+ Categories=Electronics;EDA;
+-- 
+2.33.1
+
