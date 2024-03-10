@@ -1,0 +1,25 @@
+package:
+  id: io.github.SerialPlot
+  name: SerialPlot
+  version: 0.0.1
+  kind: app
+  description: |
+   基于QCustomPlot，使用Qt编写的串口波形实时绘图工具 .
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: icu
+    version: 63.1
+    type: runtime
+
+source:
+  kind: git
+  url: "https://github.com/ZhiliangMa/Qt_SerialPlot.git"
+  commit: a3b4af3d2159b62c275c3d4b55dc4452f41ef1a0
+  patch: patches/ab.patch
+
+build:
+  kind: qmake
