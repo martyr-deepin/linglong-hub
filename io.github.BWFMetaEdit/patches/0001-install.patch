@@ -1,0 +1,46 @@
+From 6d17e75f14c7ae6a0e2bead45cf1acb6bde86b09 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Mar 2024 18:25:55 +0800
+Subject: [PATCH] install
+
+---
+ Project/GNU/GUI/bwfmetaedit-gui.desktop | 2 +-
+ Project/QtCreator/bwfmetaedit-gui.pro   | 8 ++++++--
+ 2 files changed, 7 insertions(+), 3 deletions(-)
+
+diff --git a/Project/GNU/GUI/bwfmetaedit-gui.desktop b/Project/GNU/GUI/bwfmetaedit-gui.desktop
+index cb26fa5..182a522 100644
+--- a/Project/GNU/GUI/bwfmetaedit-gui.desktop
++++ b/Project/GNU/GUI/bwfmetaedit-gui.desktop
+@@ -5,7 +5,7 @@ Version=1.0
+ Name=BWF MetaEdit
+ GenericName=Media Analyzer
+ Comment=Edit BWF files
+-Icon=bwfmetaedit
++Icon=BWFMetaEdit
+ Exec=bwfmetaedit-gui %f
+ Terminal=false
+ MimeType=
+diff --git a/Project/QtCreator/bwfmetaedit-gui.pro b/Project/QtCreator/bwfmetaedit-gui.pro
+index a06e4c3..d321b4e 100644
+--- a/Project/QtCreator/bwfmetaedit-gui.pro
++++ b/Project/QtCreator/bwfmetaedit-gui.pro
+@@ -25,9 +25,13 @@ macx {
+ }
+ 
+ unix {
+-    isEmpty(BINDIR): BINDIR = /usr/bin
++    isEmpty(BINDIR): BINDIR = $$PREFIX/bin
++    desktop.files =../GNU/GUI/bwfmetaedit-gui.desktop
++    desktop.path = $$PREFIX/share/applications/
++    icons.path = $$PREFIX/share/icons
++    icons.files = ../../Source/Resource/Image/BWFMetaEdit.svg
+     target.path = $$BINDIR
+-    INSTALLS += target
++    INSTALLS += target desktop icons
+ }
+ 
+ CONFIG += qt release c++11
+-- 
+2.33.1
+
