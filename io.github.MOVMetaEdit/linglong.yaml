@@ -1,0 +1,28 @@
+package:
+  id: io.github.MOVMetaEdit
+  name: MOVMetaEdit
+  version: 17.10.1
+  kind: app
+  description: |
+    Basic MOV metadata editor for specific needs
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/MediaArea/MOVMetaEdit.git
+  commit: 9ce206357871416d26237f2a72dba1e135350e1b
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd Project/Qt
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
