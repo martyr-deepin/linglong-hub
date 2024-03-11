@@ -1,0 +1,26 @@
+From ed1336ed7df44233e2cbfe42fd36a29be9a41b12 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 10 Mar 2024 20:46:58 +0800
+Subject: [PATCH] install
+
+---
+ resources/openkjtools.desktop | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/resources/openkjtools.desktop b/resources/openkjtools.desktop
+index a44617a..2cf3b4d 100644
+--- a/resources/openkjtools.desktop
++++ b/resources/openkjtools.desktop
+@@ -3,7 +3,7 @@ Type=Application
+ Version=1.0
+ Name=OpenKJ Tools
+ Comment=Tool for managing karaoke files
+-Exec=/usr/bin/OpenKJTools
+-Icon=/usr/share/pixmaps/openkjtools.png
++Exec=OpenKJTools
++Icon=openkjtools
+ Terminal=false
+ Categories=AudioVideo;Audio;
+-- 
+2.33.1
+

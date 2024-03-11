@@ -1,0 +1,20 @@
+package:
+  id: io.github.OpenKJTools
+  name: OpenKJTools
+  version: 0.0.1
+  kind: app
+  description: |
+    Tool for managing karaoke files
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/OpenKJ/OpenKJTools.git
+  commit: 57810519d699fdb920cc3c7efce4ca2b002cfb33
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
