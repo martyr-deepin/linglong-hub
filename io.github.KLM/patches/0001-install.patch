@@ -1,0 +1,26 @@
+From cad0d58a12154b7ace962e5305f0f5b7ef3fc7ad Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 10 Mar 2024 20:38:05 +0800
+Subject: [PATCH] install
+
+---
+ linux/klm.desktop | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/linux/klm.desktop b/linux/klm.desktop
+index 221e34a..013dc35 100644
+--- a/linux/klm.desktop
++++ b/linux/klm.desktop
+@@ -3,7 +3,7 @@ Type=Application
+ Version=1.0
+ Name=Karaoke Library Manager
+ Comment=OpenKJ Karaoke Library Manager
+-Exec=/usr/bin/klm
+-Icon=/usr/share/pixmaps/klm.svg
++Exec=klm
++Icon=klm
+ Terminal=false
+ Categories=AudioVideo;
+-- 
+2.33.1
+
