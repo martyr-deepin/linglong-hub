@@ -1,0 +1,20 @@
+package:
+  id: io.github.KaraokeRG
+  name: KaraokeRG
+  version: 0.0.9
+  kind: app
+  description: |
+    Tool to process mp3+g zip files through mp3gain (ReplayGain)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/OpenKJ/KaraokeRG.git
+  commit: 4f53d133ed5a45802e139ab3c633cf92658337fc
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

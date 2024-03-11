@@ -1,0 +1,26 @@
+From 2b407b55f7b9bc75d4cb62a246bd8626058f78ca Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 10 Mar 2024 15:15:05 +0800
+Subject: [PATCH] install
+
+---
+ resources/karaokerg.desktop | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/resources/karaokerg.desktop b/resources/karaokerg.desktop
+index 6f6ab04..103f78f 100644
+--- a/resources/karaokerg.desktop
++++ b/resources/karaokerg.desktop
+@@ -3,7 +3,7 @@ Type=Application
+ Version=1.0
+ Name=KaraokeRG
+ Comment=ReplayGain processor for mp3+g zip files
+-Exec=/usr/bin/KaraokeRG
+-Icon=/usr/share/pixmaps/karaokerg.png
++Exec=KaraokeRG
++Icon=karaokerg
+ Terminal=false
+ Categories=AudioVideo;Audio;
+-- 
+2.33.1
+
