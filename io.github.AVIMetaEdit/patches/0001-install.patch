@@ -1,0 +1,47 @@
+From 5c5e819ef58e5eb4d9dd8242c4502a29ec934825 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Mar 2024 18:47:15 +0800
+Subject: [PATCH] install
+
+---
+ Project/GNU/GUI/avimetaedit-gui.desktop | 2 +-
+ Project/QtCreator/avimetaedit-gui.pro   | 9 +++++++--
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+diff --git a/Project/GNU/GUI/avimetaedit-gui.desktop b/Project/GNU/GUI/avimetaedit-gui.desktop
+index b39299f..b8f9a4d 100755
+--- a/Project/GNU/GUI/avimetaedit-gui.desktop
++++ b/Project/GNU/GUI/avimetaedit-gui.desktop
+@@ -5,7 +5,7 @@ Version=1.0
+ Name=AVI MetaEdit
+ GenericName=Media Analyzer
+ Comment=Edit AVI files
+-Icon=avimetaedit
++Icon=AVIMetaEdit
+ Exec=avimetaedit-gui %f 
+ Terminal=false
+ MimeType=
+diff --git a/Project/QtCreator/avimetaedit-gui.pro b/Project/QtCreator/avimetaedit-gui.pro
+index c8d97fa..c484016 100644
+--- a/Project/QtCreator/avimetaedit-gui.pro
++++ b/Project/QtCreator/avimetaedit-gui.pro
+@@ -26,9 +26,14 @@ macx {
+ }
+ 
+ unix {
+-    isEmpty(BINDIR): BINDIR = /usr/bin
++    isEmpty(BINDIR): BINDIR = $$PREFIX/bin
+     target.path = $$BINDIR
+-    INSTALLS += target
++    desktop.files =../GNU/GUI/avimetaedit-gui.desktop
++    desktop.path = $$PREFIX/share/applications/
++    icons.path = $$PREFIX/share/icons
++    icons.files = ../../Source/Resource/Image/AVIMetaEdit.svg
++    INSTALLS += target desktop icons
++
+ }
+ 
+ TEMPLATE = app
+-- 
+2.33.1
+
