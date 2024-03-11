@@ -1,0 +1,42 @@
+From 8af874cbd7473c3adb5edbfd7e83172959297c47 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 11 Mar 2024 17:57:30 +0800
+Subject: [PATCH] install
+
+---
+ Project/Qt/movmetaedit-gui.desktop | 2 +-
+ Project/Qt/movmetaedit-gui.pro     | 7 +++++++
+ 2 files changed, 8 insertions(+), 1 deletion(-)
+
+diff --git a/Project/Qt/movmetaedit-gui.desktop b/Project/Qt/movmetaedit-gui.desktop
+index ce1b0f7..b7fde13 100644
+--- a/Project/Qt/movmetaedit-gui.desktop
++++ b/Project/Qt/movmetaedit-gui.desktop
+@@ -5,7 +5,7 @@ Version=1.0
+ Name=MOV MetaEdit
+ GenericName=Media Analyzer
+ Comment=Edit MOV files
+-Icon=movmetaedit
++Icon=MOVMetaEdit
+ Exec=movmetaedit-gui %f
+ Terminal=false
+ MimeType=
+diff --git a/Project/Qt/movmetaedit-gui.pro b/Project/Qt/movmetaedit-gui.pro
+index bf038e3..51b2fc2 100644
+--- a/Project/Qt/movmetaedit-gui.pro
++++ b/Project/Qt/movmetaedit-gui.pro
+@@ -177,3 +177,10 @@ UI_SOURCES_DIR   =  _Automated
+ UI_DIR           =  _Automated
+ RCC_DIR          =  _Automated
+ 
++target.path =$$PREFIX/bin
++desktop.files =movmetaedit-gui.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = ../../Source/Resource/Image/MOVMetaEdit.svg
++
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
