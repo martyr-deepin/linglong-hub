@@ -1,0 +1,28 @@
+package:
+  id: io.github.BWFMetaEdit
+  name: BWFMetaEdit
+  version: 23.0.4
+  kind: app
+  description: |
+    BWF metadata editor
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/MediaArea/BWFMetaEdit.git
+  commit: d7317188e5b097c979decc1ceeb53c0255746bd5
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd Project/QtCreator
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
