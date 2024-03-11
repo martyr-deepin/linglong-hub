@@ -1,0 +1,25 @@
+From 82ee96e8341b49e709a59fc72cdaa9750cb199fe Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 10 Mar 2024 13:00:44 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index a9c4f95c3..b44295539 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -166,7 +166,7 @@ file(MAKE_DIRECTORY ${LIBRARY_OUTPUT_PATH}/GLanguage)
+ 
+ set(OPENSSL_DIR "" CACHE PATH "Openssl install path")
+ 
+-set(TTK_QT_VERSION "0" CACHE STRING "Expected Qt version")
++set(TTK_QT_VERSION "5" CACHE STRING "Expected Qt version")
+ set_property(CACHE TTK_QT_VERSION PROPERTY STRINGS 4 5)
+ 
+ if(NOT (TTK_QT_VERSION STREQUAL "4" OR TTK_QT_VERSION STREQUAL "5"))
+-- 
+2.33.1
+

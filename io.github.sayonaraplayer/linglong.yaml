@@ -1,0 +1,22 @@
+package:
+  id: io.github.sayonaraplayer
+  name: sayonaraplayer
+  version: 1.9.0
+  kind: app
+  description: |
+    Sayonara is a small, clear and fast audio player for Linux written in C++, supported by the Qt framework. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: taglib/1.12.0
+
+source:
+  kind: git
+  url: https://gitlab.com/luciocarreras/sayonara-player.git
+  commit: efb5da454704b75b3a67f1c8bce97ae1bed4b5eb
+
+build:
+  kind: cmake
