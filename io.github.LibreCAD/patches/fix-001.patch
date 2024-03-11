@@ -1,0 +1,28 @@
+--- ../librecad/src/src.pro	2023-11-02 16:33:28.977609000 +0800
++++ ../librecad/src/src.pro	2023-11-02 16:31:28.865061536 +0800
+@@ -84,6 +84,25 @@
+ 
+ DEFINES += LC_VERSION=\"$$LC_VERSION\"
+ 
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++# 定义：.desktop 文件路径
++DESKTOP_FILE = ./librecad.desktop
++
++# 输入内容： .desktop 文件
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=2.2.0.2' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=librecad' >> $$DESKTOP_FILE")
++system("echo 'Comment=librecad, a tool.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$PREFIX/bin/librecad' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
+ # Additional libraries to load
+ LIBS += -L../../generated/lib  \
+     -ldxfrw \

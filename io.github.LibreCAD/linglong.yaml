@@ -1,0 +1,25 @@
+package:
+  id: io.github.LibreCAD
+  name: LibreCAD
+  version: 1.0.4
+  kind: app
+  description: |
+    LibreCAD is a cross-platform 2D CAD program written in C++14 using the Qt framework. It can read DXF and DWG files and can write DXF, PDF and SVG files. The user interface is highly customizable, and has dozens of translations.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/LibreCAD/LibreCAD.git
+  commit: 3aa2c41c5597a95fce70338c76017383d8580c88
+  patch: patches/fix-001.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      qmake -makefile ${conf_args} ${extra_args} ./librecad.pro
+
