@@ -1,0 +1,25 @@
+From c273b0e6547a82a114b182a9ffa8295f4c215313 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Mar 2024 20:07:14 +0800
+Subject: [PATCH] install
+
+---
+ res/autopanorama.desktop | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/res/autopanorama.desktop b/res/autopanorama.desktop
+index a7f6256..e329e13 100644
+--- a/res/autopanorama.desktop
++++ b/res/autopanorama.desktop
+@@ -4,6 +4,6 @@ Version=1.0
+ Terminal=false
+ Type=Application
+ Name=Autopanorama
+-Exec=/usr/bin/autopanorama
+-Icon=/usr/share/autopanorama/autopanorama.png
++Exec=autopanorama
++Icon=autopanorama
+ Categories=Graphics;Photography;ImageProcessing;Qt;
+-- 
+2.33.1
+

@@ -1,0 +1,20 @@
+package:
+  id: io.github.AutoPanorama
+  name: AutoPanorama
+  version: 1.3.4
+  kind: app
+  description: |
+    Compose panoramas from pictures or videos
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/qchateau/AutoPanorama.git
+  commit: b0f0e59ba46da805ffe599473afbce5a549235b5
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
