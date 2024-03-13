@@ -1,0 +1,53 @@
+From 5702eec692455f323e78995d2d66b1e5aafc2380 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Mar 2024 16:20:00 +0800
+Subject: [PATCH] install
+ 
+---
+ librecad/src/lib/engine/lc_splinepoints.cpp | 2 +-
+ librecad/src/lib/engine/rs_hatch.cpp        | 2 +-
+ librecad/src/lib/gui/rs_painterqt.cpp       | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/librecad/src/lib/engine/lc_splinepoints.cpp b/librecad/src/lib/engine/lc_splinepoints.cpp
+index f811e525..7fbf823b 100644
+--- a/librecad/src/lib/engine/lc_splinepoints.cpp
++++ b/librecad/src/lib/engine/lc_splinepoints.cpp
+@@ -23,7 +23,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ 
+ #include <QPolygonF>
+ #include "lc_splinepoints.h"
+-
++#include<QPainterPath>
+ #include "rs_circle.h"
+ #include "rs_debug.h"
+ #include "rs_line.h"
+diff --git a/librecad/src/lib/engine/rs_hatch.cpp b/librecad/src/lib/engine/rs_hatch.cpp
+index 0dbc4e54..a81e493f 100644
+--- a/librecad/src/lib/engine/rs_hatch.cpp
++++ b/librecad/src/lib/engine/rs_hatch.cpp
+@@ -30,7 +30,7 @@
+ #include <QBrush>
+ #include <QString>
+ #include "rs_hatch.h"
+-
++#include<QPainterPath>
+ #include "rs_arc.h"
+ #include "rs_circle.h"
+ #include "rs_ellipse.h"
+diff --git a/librecad/src/lib/gui/rs_painterqt.cpp b/librecad/src/lib/gui/rs_painterqt.cpp
+index bc3f6552..722de932 100644
+--- a/librecad/src/lib/gui/rs_painterqt.cpp
++++ b/librecad/src/lib/gui/rs_painterqt.cpp
+@@ -28,7 +28,7 @@
+ #include "rs_painterqt.h"
+ #include "rs_math.h"
+ #include "rs_debug.h"
+-
++#include<QPainterPath>
+ namespace {
+ /**
+  * Wrapper for Qt
+-- 
+2.33.1
+
