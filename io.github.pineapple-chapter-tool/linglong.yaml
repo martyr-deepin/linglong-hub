@@ -1,0 +1,21 @@
+package:
+  id: io.github.pineapple-chapter-tool
+  name: pineapple-chapter-tool
+  version: 1.0.0
+  kind: app
+  description: |
+    Tool for adding chapter markers to audio files.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: taglib/1.12.0
+
+source:
+  kind: git
+  url: https://github.com/BLumia/pineapple-chapter-tool.git
+  commit: 0f9251931b4e0fd7949bc3b3a3097bc9d3ae0be2
+build:
+  kind: cmake
