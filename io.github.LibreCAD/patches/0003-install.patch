@@ -1,0 +1,29 @@
+From 9bdd1a05da3a7681f3d6cb3b04e0bce5973dd27a Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Mar 2024 16:32:04 +0800
+Subject: [PATCH] install
+ 
+---
+ librecad/src/src.pro | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/librecad/src/src.pro b/librecad/src/src.pro
+index 94d63cf4..c7d3744f 100644
+--- a/librecad/src/src.pro
++++ b/librecad/src/src.pro
+@@ -982,3 +982,11 @@ TRANSLATIONS = ../ts/librecad_ar.ts \
+     ../ts/librecad_uk.ts \
+     ../ts/librecad_zh_cn.ts \
+     ../ts/librecad_zh_tw.ts
++
++
++target.path =$$PREFIX/bin
++desktop.files =../../desktop/librecad.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = ../librecad/res/main/librecad.png
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+

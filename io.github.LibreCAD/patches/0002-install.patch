@@ -1,0 +1,25 @@
+From ad7c080daede31f90c98acf05f7ae975341909ba Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 12 Mar 2024 16:25:12 +0800
+Subject: [PATCH] install
+ 
+---
+ librecad/src/ui/generic/widgetcreator.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/librecad/src/ui/generic/widgetcreator.cpp b/librecad/src/ui/generic/widgetcreator.cpp
+index ca89ab13..4c23d745 100644
+--- a/librecad/src/ui/generic/widgetcreator.cpp
++++ b/librecad/src/ui/generic/widgetcreator.cpp
+@@ -30,7 +30,7 @@
+ #include <QSettings>
+ #include <QLineEdit>
+ #include <QPushButton>
+-
++#include <QActionGroup>
+ WidgetCreator::WidgetCreator(QWidget* parent,
+                              QMap<QString, QAction*>& actions,
+                              QMap<QString, QActionGroup*> action_groups,
+-- 
+2.33.1
+
