@@ -1,0 +1,20 @@
+package:
+  id: io.github.PrestoPalette
+  name: PrestoPalette
+  version: 0.1.31.2
+  kind: app
+  description: |
+    An artist's tool for creating harmonious color palettes
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/PrestoPalette/PrestoPalette.git
+  commit: ab902c3b088e10c0326f469855201ee61528f5b1
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake

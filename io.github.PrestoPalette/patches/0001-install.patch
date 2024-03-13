@@ -1,0 +1,49 @@
+From 7730bbd9a4309b35ee6a5155f46fb2a8fe9bf3c7 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Mar 2024 19:22:07 +0800
+Subject: [PATCH] install
+
+--- 
+ CMakeLists.txt        | 10 ++++++++++
+ PrestoPalette.desktop | 10 ++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 PrestoPalette.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index b0648de..ad1d040 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -138,4 +138,14 @@ ENDIF()
+ 
+ SET(CPACK_PACKAGE_FILE_NAME "${CMAKE_PROJECT_NAME}-${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}${PACKAGE_PLATFORM_TAG}")
+ 
++install(TARGETS ${PROJECT_NAME}
++             DESTINATION bin)
++
++install(FILES graphics/YWheel_Fine.png
++        DESTINATION share/icons)
++
++
++install(FILES PrestoPalette.desktop
++            DESTINATION share/applications)
++
+ INCLUDE(CPack)
+diff --git a/PrestoPalette.desktop b/PrestoPalette.desktop
+new file mode 100644
+index 0000000..6bd6789
+--- /dev/null
++++ b/PrestoPalette.desktop
+@@ -0,0 +1,10 @@
++[Desktop Entry]
++Categories=Painter;Qt;Utility;
++Comment=An artist's tool for creating harmonious color palettes
++Exec=PrestoPalette
++Name=PrestoPalette
++Icon=YWheel_Fine
++StartupNotify=false
++Terminal=false
++Type=Application
++
+-- 
+2.33.1
+
