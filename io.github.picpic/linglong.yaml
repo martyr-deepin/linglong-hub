@@ -1,0 +1,20 @@
+package:
+  id: io.github.picpic
+  name: picpic
+  version: 1.1.0
+  kind: app
+  description: |
+     photo sorting software.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/qchateau/picpic.git
+  commit: e9cccb9e250538adae5ac5ccdd0041c87e47ba1e
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake

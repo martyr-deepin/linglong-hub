@@ -1,0 +1,38 @@
+From 64f49e52592a8f11a69b0afd68b3a3cacbfd1ba6 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 13 Mar 2024 20:20:36 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt     | 1 +
+ res/picpic.desktop | 4 ++--
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index cecd323..e3a4e1e 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -15,6 +15,7 @@ elseif(WIN32)
+ endif()
+ 
+ find_package(Qt5 COMPONENTS Widgets Sql REQUIRED)
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-declarations")
+ 
+ # Resouces
+ 
+diff --git a/res/picpic.desktop b/res/picpic.desktop
+index 2d9651a..99b20e8 100644
+--- a/res/picpic.desktop
++++ b/res/picpic.desktop
+@@ -4,6 +4,6 @@ Version=1.0
+ Terminal=false
+ Type=Application
+ Name=picpic
+-Exec=/usr/bin/picpic
+-Icon=/usr/share/picpic/picpic.png
++Exec=picpic
++Icon=picpic
+ Categories=Photography;Qt;
+-- 
+2.33.1
+
