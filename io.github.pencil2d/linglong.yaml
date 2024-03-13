@@ -1,0 +1,19 @@
+package:
+  id: io.github.pencil2d
+  name: pencil2d
+  version: 0.6.6
+  kind: app
+  description: |
+    Pencil2D is a traditional hand-drawn animation (cartoon) using both bitmap and vector graphics.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/chchwy/pencil2d.git
+  commit: 4eb164396476eff449a74ff80aa6a2aca6cb7a31
+
+build:
+  kind: qmake
