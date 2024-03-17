@@ -1,0 +1,25 @@
+package:
+  id: io.github.crwx-ng	
+  name: crwx-ng
+  version: 0.3.1
+  kind: app
+  description: |
+    crwx-ng - cross-platform open source e-book reader 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: wxWidgets/3.2.3
+    type: runtime
+  - id: crengine-ng/0.9.10
+    type: runtime
+
+source:
+  kind: git
+  url: https://gitlab.com/coolreader-ng/crwx-ng.git
+  commit: 72e7eca541ec21adc606a41041e19663c28d2db0
+
+build:
+  kind: cmake
