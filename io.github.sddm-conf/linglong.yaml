@@ -1,0 +1,35 @@
+package:
+  id: io.github.sddm-conf
+  name: sddm-conf
+  version: 0.2.0.2
+  kind: app
+  description: |
+    SDDM configuration editor
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtilitools
+    version: 0.1.1
+  - id: policykit-1
+    version: 0.105.11.1
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/qtilities/sddm-conf.git
+  commit: 1b5bc1f5b0abd17862c632c6e3d2a41477b72c1a
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
+  manual:
+    configure: |
+      cp resources/icons/preferences-system.svgz resources/icons/preferences-system.png
+      cmake -B ${build_dir} ${conf_args} ${extra_args}
+    build: |
+      cmake --build ${build_dir} -- ${jobs}
+    install: |
+      env DESTDIR=${dest_dir} cmake --build ${build_dir} --target install
