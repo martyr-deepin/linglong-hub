@@ -1,0 +1,19 @@
+package:
+  id: io.github.glaxnimate
+  name: glaxnimate
+  version: 0.1.5
+  kind: app
+  description: |
+    A simple vector graphics animation program.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://gitlab.com/mattbas/glaxnimate.git
+  commit: 25efc51e03728bd9069cd710a2bf6df6c8c58aee
+
+build:
+  kind: cmake
