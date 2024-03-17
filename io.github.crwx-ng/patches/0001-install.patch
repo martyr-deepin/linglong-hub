@@ -1,0 +1,25 @@
+From 6ae11fdc3cceebe6ee14cfa25ed7579a1d1ad910 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 17 Mar 2024 11:21:51 +0800
+Subject: [PATCH] install
+
+---
+ third_party/poco/Crypto/src/RSACipherImpl.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/third_party/poco/Crypto/src/RSACipherImpl.cpp b/third_party/poco/Crypto/src/RSACipherImpl.cpp
+index 5c2e493..3f93e9d 100755
+--- a/third_party/poco/Crypto/src/RSACipherImpl.cpp
++++ b/third_party/poco/Crypto/src/RSACipherImpl.cpp
+@@ -51,7 +51,7 @@ namespace
+ 		case RSA_PADDING_PKCS1_OAEP:
+ 			return RSA_PKCS1_OAEP_PADDING;
+ 		case RSA_PADDING_SSLV23:
+-			return RSA_SSLV23_PADDING;
++			return 2;
+ 		case RSA_PADDING_NONE:
+ 			return RSA_NO_PADDING;
+ 		default:
+-- 
+2.33.1
+
