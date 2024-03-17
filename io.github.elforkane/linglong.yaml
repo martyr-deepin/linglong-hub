@@ -1,0 +1,27 @@
+package:
+  id: io.github.elforkane
+  name: elforkane
+  version: 1.2.1
+  kind: app
+  description: |
+    The electronic Holly Quran browser Elforkane
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/zakariakov/elforkane.git
+  commit: f43f661ad5415d2dce53f8a1fcbededf51a954f8
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      qmake -makefile  elforkane.pro ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

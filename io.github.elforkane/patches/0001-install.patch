@@ -1,0 +1,79 @@
+From b201ba368406c8f99918bb49c50b4cf13872d868 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 14 Mar 2024 13:36:16 +0800
+Subject: [PATCH] install
+
+---
+ elforkane.pro | 36 ++++++++++++++++++------------------
+ 1 file changed, 18 insertions(+), 18 deletions(-)
+
+diff --git a/elforkane.pro b/elforkane.pro
+index 60cce27..5184578 100644
+--- a/elforkane.pro
++++ b/elforkane.pro
+@@ -131,44 +131,44 @@ CODECFORTR = UTF-8
+ 
+ # install
+ 
+-MKDIR = mkdir -p /usr/share/elforkane
++MKDIR = mkdir -p $$PREFIX/share/elforkane
+ 
+  data.files =usr/share/elforkane*
+- data.path=/usr/share/
++ data.path=$$PREFIX/share/
+ 
+  desktopfile.files = elforkane.desktop
+- desktopfile.path = /usr/share/applications
++ desktopfile.path = $$PREFIX/share/applications
+ 
+  icon.files = usr/share/icons/hicolor/8x8/apps/elforkane.png
+- icon.path = /usr/share/icons/hicolor/8x8/apps
++ icon.path = $$PREFIX/share/icons/hicolor/8x8/apps
+  icon.files = usr/share/icons/hicolor/16x16/apps/elforkane.png
+- icon.path = /usr/share/icons/hicolor/16x16/apps
++ icon.path = $$PREFIX/share/icons/hicolor/16x16/apps
+  icon.files = usr/share/icons/hicolor/22x22/apps/elforkane.png
+- icon.path = /usr/share/icons/hicolor/22x22/apps
++ icon.path = $$PREFIX/share/icons/hicolor/22x22/apps
+  icon1.files = usr/share/icons/hicolor/24x24/apps/elforkane.png
+- icon1.path = /usr/share/icons/hicolor/24x24/apps
++ icon1.path = $$PREFIX/share/icons/hicolor/24x24/apps
+  icon2.files = usr/share/icons/hicolor/32x32/apps/elforkane.png
+- icon2.path = /usr/share/icons/hicolor/32x32/apps
++ icon2.path = $$PREFIX/share/icons/hicolor/32x32/apps
+  icon.files = usr/share/icons/hicolor/36x36/apps/elforkane.png
+- icon.path = /usr/share/icons/hicolor/36x36/apps
++ icon.path = $$PREFIX/share/icons/hicolor/36x36/apps
+  icon3.files = usr/share/icons/hicolor/48x48/apps/elforkane.png
+- icon3.path = /usr/share/icons/hicolor/48x48/apps
++ icon3.path = $$PREFIX/share/icons/hicolor/48x48/apps
+  icon4.files = usr/share/icons/hicolor/64x64/apps/elforkane.png
+- icon4.path = /usr/share/icons/hicolor/64x64/apps
++ icon4.path = $$PREFIX/share/icons/hicolor/64x64/apps
+  icon.files = usr/share/icons/hicolor/72x72/apps/elforkane.png
+- icon.path = /usr/share/icons/hicolor/72x72/apps
++ icon.path = $$PREFIX/share/icons/hicolor/72x72/apps
+  icon.files = usr/share/icons/hicolor/96x96/apps/elforkane.png
+- icon.path = /usr/share/icons/hicolor/96x96/apps
++ icon.path = $$PREFIX/share/icons/hicolor/96x96/apps
+  icon.files = usr/share/icons/hicolor/128x128/apps/elforkane.png
+- icon.path = /usr/share/icons/hicolor/128x128/apps
++ icon.path = $$PREFIX/share/icons/hicolor/128x128/apps
+  icon.files = usr/share/icons/hicolor/256x256/apps/elforkane.png
+- icon.path = /usr/share/icons/hicolor/256x256/apps
++ icon.path = $$PREFIX/share/icons/hicolor/256x256/apps
+  icon.files = usr/share/icons/hicolor/512x512/apps/elforkane.png
+- icon.path = /usr/share/icons/hicolor/512x512/apps
++ icon.path = $$PREFIX/share/icons/hicolor/512x512/apps
+  icon5.files = usr/share/icons/hicolor/scalable/apps/elforkane.svg
+- icon5.path = /usr/share/icons/hicolor/scalable/apps
++ icon5.path = $$PREFIX/share/icons/hicolor/scalable/apps
+ 
+- target.path = /usr/bin
++ target.path = $$PREFIX/bin
+ 
+  INSTALLS +=    data \
+                 target \
+-- 
+2.33.1
+
