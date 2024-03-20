@@ -1,0 +1,19 @@
+package:
+  id: io.github.kochmorse
+  name: kochmorse
+  version: 3.5.1
+  kind: app
+  description: |
+    A simple morse tutor using the Koch method.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/hmatuschek/kochmorse.git
+  commit: 51b81986d07217441ac0c5623a8181ddd30821f7
+
+build:
+  kind: cmake
