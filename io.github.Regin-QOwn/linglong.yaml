@@ -1,0 +1,23 @@
+package:
+  id: io.github.Regin-QOwn
+  name: Regin-QOwn
+  version: 23.9.0
+  kind: app
+  description: |
+    Regin is a plain-text file notepad and todo-list manager with markdown support and Nextcloud / ownCloud integration.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/LycaonIndustries/Regin-QOwn.git
+  commit: 79346721d87c91a04fe60d0e90bac63a8a8ee5c5
+  
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}
