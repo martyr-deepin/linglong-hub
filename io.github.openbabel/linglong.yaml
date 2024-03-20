@@ -1,0 +1,32 @@
+package:
+  id: io.github.openbabel
+  name: openbabel
+  version: 2.4.1
+  kind: app
+  description: |
+    Open Babel is a chemical toolbox designed to speak the many languages of chemical data.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: wxWidgets/3.2.3
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/openbabel/openbabel.git
+  commit: 701f6049c483b1349118c2ff736a7f609a84dedd
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
+  manual:
+    configure: |
+      cp src/GUI/babel2.ico src/GUI/babel2.png
+      cmake -B ${build_dir} ${conf_args} ${extra_args}
+    build: |
+      cmake --build ${build_dir} -- ${jobs}
+    install: |
+      env DESTDIR=${dest_dir} cmake --build ${build_dir} --target install
