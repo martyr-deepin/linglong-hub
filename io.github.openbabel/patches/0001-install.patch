@@ -1,0 +1,47 @@
+From ba62d9836ef14cf53ab2fbc53ca227de4820b15c Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 20 Mar 2024 14:35:38 +0800
+Subject: [PATCH] install
+
+---
+ src/GUI/CMakeLists.txt |  6 ++++++
+ src/GUI/babel2.desktop | 11 +++++++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 src/GUI/babel2.desktop
+
+diff --git a/src/GUI/CMakeLists.txt b/src/GUI/CMakeLists.txt
+index 54bf0c9..72c417b 100644
+--- a/src/GUI/CMakeLists.txt
++++ b/src/GUI/CMakeLists.txt
+@@ -11,3 +11,9 @@ install(TARGETS obgui
+ 	  LIBRARY DESTINATION lib
+ 	  ARCHIVE DESTINATION lib
+ )
++install(FILES babel2.png
++        DESTINATION share/icons)
++
++
++install(FILES babel2.desktop
++            DESTINATION share/applications)
+\ No newline at end of file
+diff --git a/src/GUI/babel2.desktop b/src/GUI/babel2.desktop
+new file mode 100644
+index 0000000..7024f48
+--- /dev/null
++++ b/src/GUI/babel2.desktop
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Name=obgui
++Comment=s a chemical toolbox designed to speak the many languages of chemical data
++Exec=obgui
++Keywords=markdown;designed;notes;
++Icon=babel2
++Type=Application
++Terminal=false
++StartupNotify=true
++Categories=designed;Education;
++StartupWMClass=obgui
+\ No newline at end of file
+-- 
+2.33.1
+
