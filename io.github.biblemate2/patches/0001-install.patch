@@ -1,0 +1,48 @@
+From 20f12f78ac5a41f88b12a995286dd3395f7d1e26 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 20 Mar 2024 20:57:06 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt         | 6 ++++++
+ img/biblemate2.desktop | 9 +++++++++
+ 2 files changed, 15 insertions(+)
+ create mode 100644 img/biblemate2.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index c21f7a9..ce6ba90 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -77,7 +77,13 @@ else()
+             ${QM_FILES}
+         )
+         install(TARGETS biblemate2 DESTINATION bin)
++        install(FILES img/bible2.png
++        DESTINATION share/icons)
+ 
++        install(FILES img/biblemate2.desktop
++            DESTINATION share/applications)
++        install(DIRECTORY  bibles
++            DESTINATION bin)
+     endif()
+ 
+     #qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
+diff --git a/img/biblemate2.desktop b/img/biblemate2.desktop
+new file mode 100644
+index 0000000..efdc2ec
+--- /dev/null
++++ b/img/biblemate2.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Exec=biblemate2
++Name=biblemate2
++Icon=bible2
++StartupNotify=false
++Categories=database;Qt;Utility;
++Terminal=false
++Type=Application
++Comment=Funcionamiento de la página BibleMates
+\ No newline at end of file
+-- 
+2.33.1
+

@@ -1,0 +1,20 @@
+package:
+  id: io.github.biblemate2
+  name: biblemate2
+  version: 1.2.1
+  kind: app
+  description: |
+    Funcionamiento de la p¨¢gina BibleMates 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/rebirth75/biblemate2.git
+  commit: 1855b3736fbd84fb08b32b36d45e5e0379bf9676
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
