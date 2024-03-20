@@ -1,0 +1,47 @@
+From 7cfbafac3eb5d8b89c77f9df8b7f9e5976b0b7da Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 20 Mar 2024 13:41:29 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt                     | 6 +++++-
+ snap/gui/serialporttoolgui.desktop | 4 ++--
+ 2 files changed, 7 insertions(+), 3 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 4b50587..40970a1 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -65,9 +65,13 @@ target_link_libraries(${PROJECT_NAME} ${GTK3_LIBRARIES})
+ 
+ # Install
+ if(UNIX)
+-	set(CMAKE_INSTALL_PREFIX /usr/local)
++	
+ 	install(TARGETS ${PROJECT_NAME} DESTINATION bin)
+ 	install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/SerialPortToolGUI.ui DESTINATION bin)
++       install(FILES snap/gui/serialporttoolgui.png
++        DESTINATION share/icons)
++       install(FILES snap/gui/serialporttoolgui.desktop
++            DESTINATION share/applications)
+ elseif(WIN32)
+ 	set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/")
+ 	install(TARGETS ${PROJECT_NAME} DESTINATION SerialPortTool)
+diff --git a/snap/gui/serialporttoolgui.desktop b/snap/gui/serialporttoolgui.desktop
+index 0cb2d4a..4e81e5b 100644
+--- a/snap/gui/serialporttoolgui.desktop
++++ b/snap/gui/serialporttoolgui.desktop
+@@ -3,8 +3,8 @@ Version=0.1.07.20240219
+ Encoding=UTF-8
+ Name=serialporttoolgui
+ Comment=A Cross-platform serial debug tool.
+-Exec=serialporttoolgui
++Exec=SerialPortToolGUI
+ Terminal=false
+ Type=Application
+ Categories=Utility
+-Icon=${SNAP}/meta/gui/serialporttoolgui.png
++Icon=serialporttoolgui
+-- 
+2.33.1
+

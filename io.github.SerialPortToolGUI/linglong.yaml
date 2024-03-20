@@ -1,0 +1,20 @@
+package:
+  id: io.github.SerialPortToolGUI
+  name: SerialPortToolGUI
+  version: 0.1.07
+  kind: app
+  description: |
+    A Cross-platform serial debug tool.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Joker2770/SerialPortToolGUI.git
+  commit: 41fdf52150ea26a0453eba5240420bbf5ba5e4c9
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
