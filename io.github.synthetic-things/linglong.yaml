@@ -1,0 +1,20 @@
+package:
+  id: io.github.synthetic-things
+  name: synthetic-things
+  version: 1.0.0
+  kind: app
+  description: |
+    A fantastic factory to make synthetic fruits.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Joker2770/synthetic-things.git
+  commit: 66c7bb44e28dd06a393386b893fc1cf680a24463
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
