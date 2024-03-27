@@ -1,0 +1,32 @@
+package:
+  id: io.github.smplayer
+  name: smplayer
+  version: 21.12.0.1
+  kind: app
+  description: |
+    ree Media Player for Windows, Linux and Mac OS with YouTube support.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: mpv/0.34.1.2
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/smplayer-dev/smplayer.git
+  commit: ff80969eae6d033ec9b6a95ff1776fc890fbc388
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
