@@ -1,0 +1,19 @@
+package:
+  id: io.github.composer
+  name: composer
+  version: 2.0.0
+  kind: app
+  description: |
+    Song editor for Performous and other singing games
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/performous/composer.git
+  commit: bd9fbd1ed3f933b82c900ecb56e3835989315e06
+
+build:
+  kind: cmake
