@@ -1,0 +1,20 @@
+package:
+  id: io.github.Play-
+  name: Play-
+  version: 10.15.1
+  kind: app
+  description: |
+    Play- - PlayStation2 Emulator
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/jpd002/Play-.git
+  commit: 79cb8379b0ac86d26bacf85f34b5d199b232f6fa
+
+build:
+  kind: cmake
+ 
