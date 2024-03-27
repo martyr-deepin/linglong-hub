@@ -1,0 +1,21 @@
+package:
+  id: io.github.OpenKJ
+  name: OpenKJ
+  version: 2.0.0.1
+  kind: app
+  description: |
+    Open source karaoke show hosting software.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/OpenKJ/OpenKJ.git
+  commit: 674e14a76db9d9829875dc2b95374918aff399b0
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
+ 
