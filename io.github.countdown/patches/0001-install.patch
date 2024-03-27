@@ -1,0 +1,25 @@
+From c43b4323a101490e87d369c212bfa107640c30ec Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 27 Mar 2024 10:53:51 +0800
+Subject: [PATCH] install
+
+---
+ src/countdown.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/countdown.cc b/src/countdown.cc
+index f7581be..9d1c6b5 100644
+--- a/src/countdown.cc
++++ b/src/countdown.cc
+@@ -9,7 +9,7 @@
+ #include <QString>
+ #include <QFontMetrics>
+ #include <QFont>
+-
++#include <QPainterPath>
+ 
+ Countdown::Countdown(Application &app, QWidget *parent)
+   : QWidget(parent), _app(app)
+-- 
+2.33.1
+

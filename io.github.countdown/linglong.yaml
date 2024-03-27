@@ -1,0 +1,20 @@
+package:
+  id: io.github.countdown
+  name: countdown
+  version: 1.2.2
+  kind: app
+  description: |
+    A simple count-down clock for exams etc.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+ 
+source:
+  kind: git
+  url: https://github.com/hmatuschek/countdown.git
+  commit: 1c80729f7cbe43a5af2438ef74a3bfaa3c952443
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
