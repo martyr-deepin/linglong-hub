@@ -1,0 +1,28 @@
+package:
+  id: io.github.hidracpp
+  name: hidracpp
+  version: 1.2.0
+  kind: app
+  description: |
+    Projeto hidra, versão feita em C++
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/petcomputacaoufrgs/hidracpp.git
+  commit: 99a65725b831f1924d024540c7d1f76647af7853
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
+  manual:
+    configure: |
+      cp dev/livro/342-343.jpg dev/livro/hidracpp.png
+      cmake -B ${build_dir} ${conf_args} ${extra_args}
+    build: |
+      cmake --build ${build_dir} -- ${jobs}
+    install: |
+      env DESTDIR=${dest_dir} cmake --build ${build_dir} --target install

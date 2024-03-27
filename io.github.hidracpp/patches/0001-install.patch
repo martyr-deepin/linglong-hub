@@ -1,0 +1,54 @@
+From 47477463a5a0bd434d37554c5e99db2dae91f0f4 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 27 Mar 2024 11:22:44 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt             | 12 +++++++++++-
+ dev/livro/hidracpp.desktop | 12 ++++++++++++
+ 2 files changed, 23 insertions(+), 1 deletion(-)
+ create mode 100644 dev/livro/hidracpp.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 668a404..ccaddc5 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -26,4 +26,14 @@ set(CMAKE_PREFIX_PATH ${QT_PATH})
+ enable_testing(true)
+ 
+ add_subdirectory(src)
+-add_subdirectory(src/tests)
+\ No newline at end of file
++add_subdirectory(src/tests)
++
++install(TARGETS ${PROJECT_NAME}
++             DESTINATION bin)
++
++install(FILES dev/livro/hidracpp.png
++        DESTINATION share/icons)
++
++
++install(FILES dev/livro/hidracpp.desktop
++            DESTINATION share/applications)
+\ No newline at end of file
+diff --git a/dev/livro/hidracpp.desktop b/dev/livro/hidracpp.desktop
+new file mode 100644
+index 0000000..93f067c
+--- /dev/null
++++ b/dev/livro/hidracpp.desktop
+@@ -0,0 +1,12 @@
++[Desktop Entry]
++Exec=hidracpp
++Name=hidracpp
++Icon=hidracpp
++Version=1.2.0
++StartupNotify=false
++Terminal=false
++Type=Application
++Encoding=UTF-8
++Comment=Projeto hidra, versão feita em C++
++Terminal=false
++Categories=electron;tool;Qt;
+-- 
+2.33.1
+
