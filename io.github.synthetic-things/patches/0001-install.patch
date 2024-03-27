@@ -1,0 +1,45 @@
+From 8d880c568a14ceca51eefe1679c36b0dc3f9dce5 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 27 Mar 2024 11:52:08 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt                    | 7 ++++++-
+ snap/gui/synthetic-things.desktop | 2 +-
+ 2 files changed, 7 insertions(+), 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 321fc55..4d2219d 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -52,11 +52,16 @@ target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBRARIES})
+ 
+ # Install
+ if(UNIX)
+-	set(CMAKE_INSTALL_PREFIX /usr/local/share/games)
+ 	install(TARGETS ${PROJECT_NAME} DESTINATION synthetic-things)
+ 	install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/res/Picture DESTINATION synthetic-things)
+ 	install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/res/Sound DESTINATION synthetic-things)
+ 	install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/scripts/launcher.sh DESTINATION synthetic-things)
++       install(TARGETS ${PROJECT_NAME}
++             DESTINATION bin)
++       install(FILES snap/gui/synthetic-things.png
++        DESTINATION share/icons)
++       install(FILES snap/gui/synthetic-things.desktop
++            DESTINATION share/applications)
+ elseif(WIN32)
+ 	set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/")
+ 	install(TARGETS ${PROJECT_NAME} DESTINATION synthetic-things)
+diff --git a/snap/gui/synthetic-things.desktop b/snap/gui/synthetic-things.desktop
+index 48d8233..cc4a2b9 100644
+--- a/snap/gui/synthetic-things.desktop
++++ b/snap/gui/synthetic-things.desktop
+@@ -7,4 +7,4 @@ Exec=synthetic-things
+ Terminal=false
+ Type=Application
+ Categories=Game
+-Icon=${SNAP}/meta/gui/synthetic-things.png
++Icon=synthetic-things
+-- 
+2.33.1
+
