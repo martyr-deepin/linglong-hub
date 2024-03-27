@@ -1,0 +1,46 @@
+From c5528c8afbde4289411699b9d0bd2af789583928 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 27 Mar 2024 11:44:02 +0800
+Subject: [PATCH] install
+
+---
+ src/ui/flutter_app/debian/gui/mill.desktop | 4 ++--
+ src/ui/qt/CMakeLists.txt                   | 9 +++++++++
+ 2 files changed, 11 insertions(+), 2 deletions(-)
+
+diff --git a/src/ui/flutter_app/debian/gui/mill.desktop b/src/ui/flutter_app/debian/gui/mill.desktop
+index 38181eb..430e977 100644
+--- a/src/ui/flutter_app/debian/gui/mill.desktop
++++ b/src/ui/flutter_app/debian/gui/mill.desktop
+@@ -3,8 +3,8 @@ Version=4.0.3
+ Encoding=UTF-8
+ Name=Mill
+ Comment=A Mill Game which supports many rule variants.
+-Exec=mill
++Exec=mill-pro
+ Terminal=false
+ Type=Application
+ Categories=Game;BoardGame;
+-Icon=mill.png
++Icon=mill
+\ No newline at end of file
+diff --git a/src/ui/qt/CMakeLists.txt b/src/ui/qt/CMakeLists.txt
+index 7bef90c..1a50f48 100644
+--- a/src/ui/qt/CMakeLists.txt
++++ b/src/ui/qt/CMakeLists.txt
+@@ -55,3 +55,12 @@ target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Gui Qt5::Multimedia Qt5::Wi
+ 
+ set_target_properties(${PROJECT_NAME} PROPERTIES AUTOMOC ON AUTOUIC ON AUTORCC ON)
+ 
++install(TARGETS ${PROJECT_NAME}
++             DESTINATION bin)
++
++install(FILES ../flutter_app/debian/gui/mill.png
++        DESTINATION share/icons)
++
++
++install(FILES ../flutter_app/debian/gui/mill.desktop
++            DESTINATION share/applications)
+-- 
+2.33.1
+

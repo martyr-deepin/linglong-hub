@@ -1,0 +1,28 @@
+package:
+  id: io.github.Sanmill
+  name: Sanmill
+  version: 4.0.3
+  kind: app
+  description: |
+    Sanmill is an open-source,  program with CUI, Flutter GUI and Qt GUI,sharing and freely distributing the code, tools and data needed to deliver this mill game.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/calcitem/Sanmill.git
+  commit: d738866cb62c491d3aaedaafd02f5c7bb5165335
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
+  manual:
+    configure: |
+      cd src/ui/qt
+      cmake -B ${build_dir} ${conf_args} ${extra_args}
+    build: |
+      cmake --build ${build_dir} -- ${jobs}
+    install: |
+      env DESTDIR=${dest_dir} cmake --build ${build_dir} --target install
