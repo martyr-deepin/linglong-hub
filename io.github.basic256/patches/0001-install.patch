@@ -1,0 +1,45 @@
+From c06f9c0e734bcb5083a1a11035bc95ccb7a4066d Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 27 Mar 2024 11:14:39 +0800
+Subject: [PATCH] install
+
+---
+ BASIC256.pro                             | 8 ++++++++
+ snap_build_env/snap/gui/basic256.desktop | 6 +++++-
+ 2 files changed, 13 insertions(+), 1 deletion(-)
+
+diff --git a/BASIC256.pro b/BASIC256.pro
+index 3f2cd07e..ca4052d3 100644
+--- a/BASIC256.pro
++++ b/BASIC256.pro
+@@ -153,3 +153,11 @@ HEADERS 						+=	*.h
+ SOURCES 						+=	LEX/lex.yy.c
+ SOURCES 						+=	LEX/basicParse.tab.c
+ SOURCES 						+=	*.cpp
++
++
++target.path =$$PREFIX/bin
++desktop.files =snap_build_env/snap/gui/basic256.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = /snap_build_env/snap/gui/basic256.png
++INSTALLS += target desktop icons
+\ No newline at end of file
+diff --git a/snap_build_env/snap/gui/basic256.desktop b/snap_build_env/snap/gui/basic256.desktop
+index 2898e166..ad6f9fda 100644
+--- a/snap_build_env/snap/gui/basic256.desktop
++++ b/snap_build_env/snap/gui/basic256.desktop
+@@ -4,5 +4,9 @@ Encoding=UTF-8
+ Name=BASIC2556
+ Comment=BASIC language for Education and Fun
+ Exec=basic256
+-Icon=${SNAP}/meta/gui/basic256.png
++Icon=basic256
+ Terminal=false
++Comment[ca]=Apreneu BASIC en un entorn dissenyat per a nens.
++Comment[de]=Lerne BASIC in einer Programmierumgebung speziell f¶Ër die ganz Kleinen.
++Comment[es]=Aprende BASIC en un entorno dise…gado para ni…gos.
++Comment[fr]=Apprend BASIC dans un environnement visÞ{ aux jeunes enfants.
+-- 
+2.33.1
+

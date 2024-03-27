@@ -1,0 +1,31 @@
+package:
+  id: io.github.basic256
+  name: basic256
+  version: 2.0.99
+  kind: app
+  description: |
+    BASIC-256 is an easy to use version of BASIC designed to teach anybody (especially middle and high-school students) the basics of computer programming.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtserialport/5.15.7 
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/comick/basic256.git
+  commit: 32cd4e1d23ce94a5f7755e684540c0ba2a08503b
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      qmake -makefile BASIC256.pro ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
