@@ -1,0 +1,26 @@
+From 1df6a34dbd193f9047f857c5058c56805ef62057 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 27 Mar 2024 20:18:35 +0800
+Subject: [PATCH] install
+
+---
+ src/openkj.desktop | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/openkj.desktop b/src/openkj.desktop
+index 72cdb3e..2cb6ec7 100644
+--- a/src/openkj.desktop
++++ b/src/openkj.desktop
+@@ -3,7 +3,7 @@ Type=Application
+ Version=1.0
+ Name=OpenKJ
+ Comment=Karaoke Hosting Software
+-Exec=env QT_QPA_PLATFORM=xcb /usr/bin/openkj
+-Icon=/usr/share/pixmaps/okjicon.svg
++Exec=env QT_QPA_PLATFORM=xcb openkj
++Icon=okjicon
+ Terminal=false
+ Categories=AudioVideo;Audio;Player;
+-- 
+2.33.1
+
