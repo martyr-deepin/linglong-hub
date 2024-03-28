@@ -1,0 +1,18 @@
+diff --git a/Tachyon-IDE.desktop b/Tachyon-IDE.desktop
+index 29fc0ff..e204356 100755
+--- a/Tachyon-IDE.desktop
++++ b/Tachyon-IDE.desktop
+@@ -1,10 +1,10 @@
+ [Desktop Entry]
+ Comment[en_US]=
+ Comment=
+-Exec=/home/behm/dvlsw/@ibb/Tachyon-IDE/bin/tachyonForth-IDE
++Exec=tachyonForth-IDE
+ GenericName[en_US]=
+ GenericName=
+-Icon=/home/behm/dvlsw/@ibb/Tachyon-IDE/pics/useforthlogo-s.png
++Icon=useforthlogo-s
+ MimeType=
+ Name[en_US]=
+ Name=
+
