@@ -1,0 +1,13 @@
+diff --git a/Galaxy-Calculator.pro b/Galaxy-Calculator.pro
+index 66d35ae..e62ff3b 100755
+--- a/Galaxy-Calculator.pro
++++ b/Galaxy-Calculator.pro
+@@ -28,7 +28,7 @@ unix {
+     shortcutfiles.files = resources/Galaxy-Calculator.desktop
+     shortcutfiles.path = $$PREFIX/share/applications/
+     data.files += resources/Galaxy-Calculator.png
+-    data.path = $$PREFIX/share/pixmaps/
++    data.path = $$PREFIX/share/icons/
+     INSTALLS += shortcutfiles
+     INSTALLS += data
+     macx {

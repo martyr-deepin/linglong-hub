@@ -1,0 +1,21 @@
+package:
+  id: io.github.galaxy-calculator
+  name: galaxy-calculator
+  version: 0.0.2.2
+  kind: app
+  description: |
+    Galaxy Calculator: Given the size of the Galaxy you can plot the Track the Sun is on and Life might exist.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Light-Wizzard/galaxy-calculator.git
+  commit: 89dd029e41760e2adc1aa835e0f03c6c4512bc7b
+  patch:
+    - patches/fix_install.patch
+
+build:
+  kind: qmake
