@@ -1,0 +1,16 @@
+diff --git a/inventory-files.pro b/inventory-files.pro
+index 24bda24..f7bedf8 100644
+--- a/inventory-files.pro
++++ b/inventory-files.pro
+@@ -134,3 +134,11 @@ RESOURCES     = inventory-files.qrc
+ 
+ OBJECTS_DIR = tmp/
+ MOC_DIR = tmp/
++
++target.path = $$PREFIX/bin
++desktop.files = contrib/ppa/install-files/usr/share/applications/inventory-files.desktop
++desktop.path = $$PREFIX/share/applications
++icon.files = contrib/ppa/install-files/usr/share/icons/hicolor
++icon.path = $$PREFIX/share/icons
++
++INSTALLS += target desktop icon

@@ -1,0 +1,22 @@
+package:
+  id: io.github.inventory-files
+  name: inventory-files
+  version: 0.0.3
+  kind: app
+  description: |
+    Program for inventory files on your computer (for linux).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/sea-kg/inventory-files.git
+  commit: d81e961535170f8b29e7b8b47eb6176f8e7be095
+  patch:
+    - patches/fix_install.patch
+    - patches/fix_desktop.patch
+
+build:
+  kind: qmake
