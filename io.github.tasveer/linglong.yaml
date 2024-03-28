@@ -1,0 +1,21 @@
+package:
+  id: io.github.tasveer
+  name: tasveer
+  version: 1.0.0
+  kind: app
+  description: |
+    A simple image browsing and tagging application.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/bitgato/tasveer.git
+  commit: 861ffdffc594beac88c9db440a5e3673441547e9
+  patch:
+    - patches/fix_install.patch
+
+build:
+  kind: qmake
