@@ -1,0 +1,15 @@
+diff --git a/tachyonForth-IDE.pro b/tachyonForth-IDE.pro
+index 9b54a54..36bfbaa 100644
+--- a/tachyonForth-IDE.pro
++++ b/tachyonForth-IDE.pro
+@@ -53,3 +53,9 @@ DISTFILES += \
+     LICENSE \
+     .gitignore
+ 
++target.path = $${PREFIX}/bin
++desktop.path = $${PREFIX}/share/applications
++desktop.files = Tachyon-IDE.desktop
++icons.path = $${PREFIX}/share/icons
++icons.files = pics/useforthlogo-s.png
++INSTALLS += target desktop icons
+

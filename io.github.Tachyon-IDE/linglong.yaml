@@ -1,0 +1,26 @@
+package:
+  id: io.github.Tachyon-IDE
+  name: Tachyon-IDE
+  version: 1.9.0.1
+  kind: app
+  description: |
+    An IDE for Peter Jakacki's Tachyon FORTH for the Propeller. It contains a simple editor and a terminal with upload function.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtserialport/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/rbehm-ibb/Tachyon-IDE.git
+  commit: 21f446bfcf458214777286ab6c12ac5b56712209
+  patch:
+    - patches/fix_install.patch
+    - patches/fix_desktop.patch
+
+build:
+  kind: qmake
