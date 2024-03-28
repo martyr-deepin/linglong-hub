@@ -1,0 +1,18 @@
+diff --git a/contrib/ppa/install-files/usr/share/applications/inventory-files.desktop b/contrib/ppa/install-files/usr/share/applications/inventory-files.desktop
+index d0b68c7..6fb33c4 100644
+--- a/contrib/ppa/install-files/usr/share/applications/inventory-files.desktop
++++ b/contrib/ppa/install-files/usr/share/applications/inventory-files.desktop
+@@ -1,10 +1,10 @@
+ [Desktop Entry]
+ Name=Inventory Files
+ Comment=Inventory Files
+-Exec=/usr/bin/inventory-files %U
++Exec=inventory-files %U
+ Icon=inventory-files
+ Terminal=false
+ Type=Application
+ StartupNotify=true
+ Encoding=UTF-8
+-Categories=Application;
+\ No newline at end of file
++Categories=Application;
