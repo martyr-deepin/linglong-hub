@@ -1,0 +1,28 @@
+package:
+  id: io.github.q5Go
+  name: q5Go
+  version: 2.1.3
+  kind: app
+  description: |
+    A tool for Go players: SGF editor, analysis tool, game database and pattern search tool, IGS client
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/bernds/q5Go.git
+  commit: e5a003daabae58e18a1705757be25a7a086a591b
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

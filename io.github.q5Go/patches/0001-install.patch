@@ -1,0 +1,52 @@
+From 00149674529b5101b7fbf008380a3f30b6fe58fe Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 29 Mar 2024 12:40:47 +0800
+Subject: [PATCH] install
+
+---
+ src/q5go.pro          | 8 +++++++-
+ templates/qgo.desktop | 4 ++--
+ 2 files changed, 9 insertions(+), 3 deletions(-)
+
+diff --git a/src/q5go.pro b/src/q5go.pro
+index b5f0868..405a447 100644
+--- a/src/q5go.pro
++++ b/src/q5go.pro
+@@ -209,12 +209,18 @@ readme.commands		= pandoc -f markdown_github -o readme.html ../README.md
+ readme_images.path	= $$DOCDIR/html/screens/
+ readme_images.files	= ../screens/*.png ../screens/*.jpg
+ INSTALLS += readme readme_images
++
++
+ }
+ 
+ html.path             = $$DOCDIR/html/
+ html.files            = ../html/*.html ../html/images/*.png
+ INSTALLS += html
+-
++desktop.files =../templates/qgo.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = images/clientwindow/Bowl.png
++INSTALLS += desktop icons
+ target.path           = $$PREFIX/bin
+ INSTALLS += target
+ }
+diff --git a/templates/qgo.desktop b/templates/qgo.desktop
+index fca5893..213385a 100644
+--- a/templates/qgo.desktop
++++ b/templates/qgo.desktop
+@@ -1,8 +1,8 @@
+ [Desktop Entry]
+ Encoding=UTF-8
+ Comment=qgo
+-Exec=qgo
+-Icon=/usr/share/qGo/pics/Bowl.png
++Exec=q5go
++Icon=Bowl
+ MimeType=text/plain;text/sfg;Application
+ Name=qgo
+ GenericName=Go
+-- 
+2.33.1
+
