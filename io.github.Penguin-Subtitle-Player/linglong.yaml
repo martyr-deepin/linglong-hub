@@ -1,0 +1,19 @@
+package:
+  id: io.github.Penguin-Subtitle-Player
+  name: Penguin-Subtitle-Player
+  version: 1.6.0
+  kind: app
+  description: |
+    An open-source, cross-platform standalone subtitle player
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/carsonip/Penguin-Subtitle-Player.git
+  commit: e54f0c16279914eacb6ae609f20992285db8808f
+
+build:
+  kind: qmake
