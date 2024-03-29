@@ -1,0 +1,28 @@
+From 2295060c1758d249e1d9191d8a0c6560d2d4f326 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 15 Mar 2024 09:11:21 +0800
+Subject: [PATCH] install
+
+---
+ elokab-adhan/elokab-adhan.pro | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/elokab-adhan/elokab-adhan.pro b/elokab-adhan/elokab-adhan.pro
+index 448a4d0..8aa3a06 100755
+--- a/elokab-adhan/elokab-adhan.pro
++++ b/elokab-adhan/elokab-adhan.pro
+@@ -97,9 +97,9 @@ RESOURCES += \
+     images.qrc
+ 
+ #INSTALL Linux
+- target.path = /usr/bin
++ target.path = $$PREFIX/bin
+  data.files=../usr/share/*
+- data.path=/usr/share
++ data.path=$$PREFIX/share
+  INSTALLS +=    target \
+                           data
+              
+-- 
+2.33.1
+
