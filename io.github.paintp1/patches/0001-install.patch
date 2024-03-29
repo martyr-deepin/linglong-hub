@@ -1,0 +1,49 @@
+From dfa05d6ad37d4031e837f4b6ce7a826961891101 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 28 Mar 2024 12:12:23 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt             | 10 ++++++++++
+ src/images/paintpp.desktop |  9 +++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 src/images/paintpp.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 9dd4dd2..e85710e 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -6,3 +6,13 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+ 
+ add_subdirectory(src)
++
++install(TARGETS ${PROJECT_NAME}
++             DESTINATION bin)
++
++install(FILES src/images/paintpp.png
++        DESTINATION share/icons)
++
++
++install(FILES src/images/paintpp.desktop
++            DESTINATION share/applications)
+\ No newline at end of file
+diff --git a/src/images/paintpp.desktop b/src/images/paintpp.desktop
+new file mode 100644
+index 0000000..41b0d2a
+--- /dev/null
++++ b/src/images/paintpp.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Exec=paint++
++Name=paintpp
++Icon=paintpp
++Comment=Paint++ is an app develop in C++ and Qt. 
++StartupNotify=false
++Terminal=false
++Type=Application
++Categories=Painter;Qt;tool;
+\ No newline at end of file
+-- 
+2.33.1
+

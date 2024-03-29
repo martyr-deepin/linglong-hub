@@ -1,0 +1,31 @@
+package:
+  id: io.github.paintp1
+  name: paintp1
+  version: 0.0.1
+  kind: app
+  description: |
+    Paint++ is an app develop in C++ and Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: cmake/3.28.0
+
+source:
+  kind: git
+  url: https://github.com/Carlos12001/paintpp.git
+  commit: a4cc3f044c8ae0e35e4d4c7215b81b815b6fa8f7
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
+  manual:
+    configure: |
+      cp src/images/anime.bmp src/images/paintpp.png
+      cmake -B ${build_dir} ${conf_args} ${extra_args}
+    build: |
+      cmake --build ${build_dir} -- ${jobs}
+    install: |
+      env DESTDIR=${dest_dir} cmake --build ${build_dir} --target install
