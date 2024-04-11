@@ -1,0 +1,48 @@
+From f46e5c7462c32fc684032d6a108f1e2e5a17a950 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sun, 14 Apr 2024 22:18:33 +0800
+Subject: [PATCH] fix-desktop
+
+---
+ src/ngPost.desktop | 10 ++++++++++
+ src/ngPost.pro     | 10 ++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 src/ngPost.desktop
+
+diff --git a/src/ngPost.desktop b/src/ngPost.desktop
+new file mode 100644
+index 0000000..11de4f5
+--- /dev/null
++++ b/src/ngPost.desktop
+@@ -0,0 +1,10 @@
++[Desktop Entry]
++Categories=Tool;Qt;
++Comment=for binaries developped in C++/QT
++Exec=ngPost
++Name=ngPost
++Icon=ngPost
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/src/ngPost.pro b/src/ngPost.pro
+index ac6a23c..f6da8f4 100644
+--- a/src/ngPost.pro
++++ b/src/ngPost.pro
+@@ -36,3 +36,13 @@ FORMS += \
+     hmi/MainWindow.ui \
+     hmi/PostingWidget.ui
+ }
++
++#install
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = ngPost.desktop
++icon.files = resources/icons/ngPost.png
++icon.path = $$DATADIR/icons/
++desktop.path = $$DATADIR/applications/
++INSTALLS += target desktop icon
+-- 
+2.33.1
+

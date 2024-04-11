@@ -1,0 +1,27 @@
+package:
+  id: io.github.ngPost
+  name: ngPost 
+  version: 4.16.0.4
+  kind: app
+  description: |
+     Command Line (or minimalist GUI) usenet poster for binaries developped in C++/QT designed to be as fast as possible and offer all the main features to post data easily and safely. 
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/mbruel/ngPost.git
+  commit: 97a84347f1ea548f3fdc4104759552a452be3c2b
+  patch: patches/0001-fix-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake ngPost.pro  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
