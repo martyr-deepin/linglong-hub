@@ -1,0 +1,43 @@
+From 76ccb230c52a8bf2de5ceeb76ef93961c1a9eeb3 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Fri, 12 Apr 2024 21:48:18 +0800
+Subject: [PATCH] fix-path
+
+---
+ CMakeLists.txt   | 6 +++---
+ capturer.desktop | 2 +-
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f36b7c9..81a0ab0 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -160,9 +160,9 @@ elseif (UNIX AND NOT APPLE)
+     # installed: ~/.local/logs/capturer/capturer-*.log
+     install(TARGETS ${PROJECT_NAME} DESTINATION "${CMAKE_INSTALL_PREFIX}/bin")
+     install(FILES ${QM_FILES} DESTINATION "${CMAKE_INSTALL_PREFIX}/etc/capturer/translations")
+-    install(FILES "${PROJECT_SOURCE_DIR}/capturer.desktop" DESTINATION "/usr/share/applications")
+-    install(FILES "${PROJECT_SOURCE_DIR}/src/resources/icons/capturer.png" DESTINATION "/usr/share/pixmaps")
+-    install(FILES "${PROJECT_SOURCE_DIR}/src/resources/icons/capturer.png" DESTINATION "/usr/share/icons/hicolor/128x128/apps")
++    install(FILES "${PROJECT_SOURCE_DIR}/capturer.desktop" DESTINATION "share/applications")
++    install(FILES "${PROJECT_SOURCE_DIR}/src/resources/icons/capturer.png" DESTINATION "share/pixmaps")
++    install(FILES "${PROJECT_SOURCE_DIR}/src/resources/icons/capturer.png" DESTINATION "share/icons")
+ endif ()
+ 
+ add_custom_target(uninstall COMMAND ${CMAKE_COMMAND} -P "${PROJECT_SOURCE_DIR}/cmake/uninstall.cmake")
+diff --git a/capturer.desktop b/capturer.desktop
+index f3ea73b..f91e537 100644
+--- a/capturer.desktop
++++ b/capturer.desktop
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Name=Capturer
+ Comment=Screen recording and screenshot.
+-Exec=/usr/local/bin/capturer
++Exec=capturer
+ Icon=capturer
+ X-GNOME-Autostart-enabled=true
+ Terminal=false
+-- 
+2.33.1
+

@@ -1,0 +1,24 @@
+package:
+  id: io.github.Capturer
+  name: Capturer 
+  version: 1.6.1.0
+  kind: app
+  description: |
+     Capturer是一款主打快速截图、贴图、录屏和录制GIF的软件.使用快捷键可以快速选择感兴趣的桌面区域或窗口进行截图/录制，并将截图快速钉在桌面上.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: cmake/3.28.0
+  - id: lapack/3.8.0.1
+
+source:
+  kind: git
+  url: https://github.com/ffiirree/Capturer.git
+  commit: d884653f161ae580a7ab1cbac3f0fe7f1d39c5cb
+  patch: patches/0001-fix-path.patch
+ 
+build:
+  kind: cmake
