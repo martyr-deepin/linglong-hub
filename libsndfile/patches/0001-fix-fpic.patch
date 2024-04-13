@@ -1,0 +1,25 @@
+From 3fa38a4c3b6f5319d7ad488fde1482cdae195388 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sat, 13 Apr 2024 10:25:14 +0800
+Subject: [PATCH] fix-fpic
+
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index c12c68be..e934ac0c 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -36,7 +36,7 @@ if (BUILD_REGTEST)
+ endif ()
+ 
+ project(libsndfile VERSION 1.2.2)
+-
++add_compile_options(-fPIC)
+ #
+ # Variables
+ #
+-- 
+2.33.1
+
