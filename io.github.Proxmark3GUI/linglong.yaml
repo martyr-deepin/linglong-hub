@@ -1,0 +1,27 @@
+package:
+  id: io.github.Proxmark3GUI
+  name: Proxmark3GUI
+  version: 0.2.8.1
+  kind: app
+  description: |
+    A cross-platform GUI for Proxmark3/Proxmark3 Iceman fork client
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/wh201906/Proxmark3GUI.git
+  commit: e2fb18970e360da2b7cfc29388287f6710efe772
+  patch: patches/0001-fix-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
