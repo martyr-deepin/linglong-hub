@@ -1,0 +1,56 @@
+From b7b5699c0bd80f5faaa57bc01e3eb8a22e4ea43e Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sun, 14 Apr 2024 21:58:40 +0800
+Subject: [PATCH] fix-desktop
+
+---
+ src/Proxmark3GUI.desktop |  9 +++++++++
+ src/Proxmark3GUI.pro     | 16 +++++++++++++---
+ 2 files changed, 22 insertions(+), 3 deletions(-)
+ create mode 100644 src/Proxmark3GUI.desktop
+
+diff --git a/src/Proxmark3GUI.desktop b/src/Proxmark3GUI.desktop
+new file mode 100644
+index 0000000..a984065
+--- /dev/null
++++ b/src/Proxmark3GUI.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Tool;Qt;
++Exec=Proxmark3GUI
++Name=Proxmark3GUI
++Icon=base_icon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/src/Proxmark3GUI.pro b/src/Proxmark3GUI.pro
+index 433c921..f694b82 100644
+--- a/src/Proxmark3GUI.pro
++++ b/src/Proxmark3GUI.pro
+@@ -55,9 +55,19 @@ TRANSLATIONS += \
+     ../i18n/en_US.ts
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
++#qnx: target.path = /tmp/$${TARGET}/bin
++#else: unix:!android: target.path = /opt/$${TARGET}/bin
++#!isEmpty(target.path): INSTALLS += target
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = Proxmark3GUI.desktop
++desktop.path = $$DATADIR/applications/
++icon.files=qdarkstyle/light/rc/base_icon.png
++icon.path=$$DATADIR/icons/
++INSTALLS += target desktop icon
++
+ 
+ VERSION = 0.2.8
+ QMAKE_TARGET_PRODUCT = "Proxmark3GUI"
+-- 
+2.33.1
+
