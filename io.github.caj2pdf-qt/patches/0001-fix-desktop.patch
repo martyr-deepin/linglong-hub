@@ -1,0 +1,36 @@
+From 7363c6fda560e39d54ec6a09b1d090d2bebe5792 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sat, 13 Apr 2024 14:41:26 +0800
+Subject: [PATCH] fix-desktop
+
+---
+ CMakeLists.txt | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 1312dd8..f6198f8 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -48,3 +48,18 @@ set_target_properties(
+              MACOSX_BUNDLE_SHORT_VERSION_STRING
+              ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
+              MACOSX_BUNDLE_ICON_FILE convert)
++
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=caj2pdf
++Exec=caj2pdf
++Icon=convert
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/caj2pdf.desktop "${DESKTOP_FILE_CONTENT}")
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/caj2pdf.desktop DESTINATION share/applications)
++install(PROGRAMS ${PROJECT_SOURCE_DIR}/icons/convert.png DESTINATION share/icons)
++install(TARGETS caj2pdf DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+\ No newline at end of file
+-- 
+2.33.1
+

@@ -1,0 +1,19 @@
+package:
+  id: io.github.caj2pdf-qt
+  name: caj2pdf-qt
+  version: 0.1.5.1
+  kind: app
+  description: |
+    CAJ 转 PDF 转换器（GUI 版本）
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/sainnhe/caj2pdf-qt.git
+  commit: 5ea291c0f27c28dc533398c4e827215c18e1cceb
+  patch: patches/0001-fix-desktop.patch
+
+build:
+  kind: cmake
