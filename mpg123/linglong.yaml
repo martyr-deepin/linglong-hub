@@ -1,0 +1,30 @@
+package:
+  id: mpg123
+  name: mpg123 
+  version: 0.39.0.1
+  kind: lib
+  description: |
+      mpg123 - MPEG 1.0/2.0/2.5 audio player 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: automake/1.16.5
+  - id: autoconf/2.4.7
+  - id: pkgconf/2.0.3
+source:
+  kind: git
+  url: https://github.com/georgi/mpg123.git
+  commit: 7ca057e31db4a2b4fa138cff76eaaf9db1e3d68e
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      ./configure ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
