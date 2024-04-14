@@ -1,0 +1,20 @@
+package:
+  id: io.github.porymap
+  name: porymap
+  version: 1.0.3
+  kind: app
+  description: |
+    Map editor for pokeemerald, pokefirered, and pokerub
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/huderlem/porymap.git
+  commit: 6ee76f80d1ffb131239ab181112cd8b68286ca01
+  patch: patches/fix_pr.patch
+
+build:
+  kind: qmake
