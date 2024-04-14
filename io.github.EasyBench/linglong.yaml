@@ -1,0 +1,21 @@
+package:
+  id: io.github.EasyBench
+  name: EasyBench 
+  version: 1.5.1.1
+  kind: app
+  description: |
+     EasyBench 是一个运行于嵌入式 Linux 平台，集系统监控、设备测试和席位功能配置于一体的软件工具。
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/luhuadong/EasyBench.git
+  commit: e87d025ab78d42e5bc1dcbc9b672131989402342
+  patch: patches/0001-fix-desktop.patch
+
+build:
+  kind: qmake
