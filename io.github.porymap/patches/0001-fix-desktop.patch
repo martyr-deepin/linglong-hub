@@ -1,0 +1,47 @@
+From 91488e311fc5a904496350991ebcdf7e7faa46d7 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sun, 14 Apr 2024 13:26:53 +0800
+Subject: [PATCH] fix-desktop
+
+---
+ porymap.desktop |  9 +++++++++
+ porymap.pro     | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 porymap.desktop
+
+diff --git a/porymap.desktop b/porymap.desktop
+new file mode 100644
+index 0000000..4e7db37
+--- /dev/null
++++ b/porymap.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Tool;Qt;
++Exec=porymap
++Name=porymap
++Icon=flowers-painted
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/porymap.pro b/porymap.pro
+index 63b97c1..fc74a65 100644
+--- a/porymap.pro
++++ b/porymap.pro
+@@ -226,3 +226,13 @@ INCLUDEPATH += include/lib
+ INCLUDEPATH += forms
+ 
+ include(src/vendor/QtGifImage/gifimage/qtgifimage.pri)
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = porymap.desktop
++desktop.path = $$DATADIR/applications/
++icon.files=docs/_images/flowers-painted.png
++icon.path= $$DATADIR/icons/
++INSTALLS += target desktop icon
+-- 
+2.33.1
+
