@@ -1,0 +1,43 @@
+From bb6d49b85c68d166ff986ece672120a3fdfd6d0a Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sun, 14 Apr 2024 12:23:12 +0800
+Subject: [PATCH] fix-install-path
+
+---
+ CMakeLists.txt | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 938d498..7fe14d6 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -89,7 +89,7 @@ SET(PKG_CONFIG_FILE_PATH
+     "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc"
+ )
+ SET(PKG_CONFIG_LIBDIR
+-    "${CMAKE_INSTALL_PREFIX}/lib${LLVM_LIBDIR_SUFFIX}"
++    "${CMAKE_INSTALL_LIBDIR}"
+ )
+ SET(PKG_CONFIG_INCLUDEDIR
+     "${CMAKE_INSTALL_PREFIX}/include"
+@@ -105,8 +105,16 @@ CONFIGURE_FILE(
+     "${PKG_CONFIG_FILE_PATH}"
+ )
+ INSTALL(FILES "${PKG_CONFIG_FILE_PATH}"
+-        DESTINATION lib${LLVM_LIBDIR_SUFFIX}/pkgconfig)
++        DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
+ 
++
++install(TARGETS keystone
++            EXPORT keystone-targets
++            RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
++            LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
++            ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
++            INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
++    )
+ # uninstall target
+ configure_file(
+     "${CMAKE_CURRENT_SOURCE_DIR}/CMakeUninstall.in"
+-- 
+2.33.1
+
