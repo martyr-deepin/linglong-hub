@@ -1,0 +1,25 @@
+From 39b879cd4feb540b688b80c61fa17c12388368f4 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Mon, 15 Apr 2024 22:18:08 +0800
+Subject: [PATCH] fix-desktop
+
+---
+ Makefile.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile.in b/Makefile.in
+index cf79858..d4e73b8 100644
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -293,7 +293,7 @@ FFQ_BINARY = ffqueue
+ FFQ_XDGVER = `xdg-icon-resource --version`
+ @FFQ_BASE_DIR_FALSE@FFQ_RES = ../res
+ @FFQ_BASE_DIR_TRUE@FFQ_RES = res
+-FFQ_DEST = $(DESTDIR)/usr/share
++FFQ_DEST = $(DESTDIR)/${prefix}/share
+ FFQ_ICONDEST = $(FFQ_DEST)/icons/hicolor
+ all: all-recursive
+ 
+-- 
+2.33.1
+
