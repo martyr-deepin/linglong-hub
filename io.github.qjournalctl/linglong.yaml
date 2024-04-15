@@ -1,0 +1,19 @@
+package:
+  id: io.github.qjournalctl
+  name: qjournalctl
+  version: 0.6.4
+  kind: app
+  description: |
+     A Qt-based Graphical User Interface for systemd's journalctl command
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/pentix/qjournalctl.git
+  commit: 42581b1d222977ac779ed9f528dedc82067ad15b
+  patch: patches/0001-fix-desktop.patch
+build:
+  kind: qmake
