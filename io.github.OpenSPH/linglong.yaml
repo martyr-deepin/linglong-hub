@@ -1,0 +1,30 @@
+package:
+  id: io.github.OpenSPH
+  name: OpenSPH
+  version: 0.4.1
+  kind: app
+  description: |
+     OpenSPH is a library and a GUI application for hydrodynamic and N-body simulations
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/pavelsevecek/OpenSPH.git
+  commit: 6c0d4b81516f8a8156b494e2152fc924e40fd482
+  patch: patches/0001-fix-desktop.patch
+
+depends:
+  - id: wxWidgets/3.2.3
+    type: runtime
+build:
+  kind: qmake
+  manual:
+    configure: |
+      qmake sph.pro ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
