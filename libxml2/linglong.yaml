@@ -1,0 +1,23 @@
+package:
+  id: libxml2
+  name: libxml2
+  version: 2.12.6
+  kind: lib
+  description: |
+     libxml2 is an XML toolkit implemented in C, originally developed for the GNOME Project.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: python/3.10.13.0
+
+source:
+  kind: git
+  url: https://github.com/GNOME/libxml2.git
+  commit: f506ec66547ef9bac97a2bf306d368ecea8c0c9e
+
+
+build:
+  kind: cmake
