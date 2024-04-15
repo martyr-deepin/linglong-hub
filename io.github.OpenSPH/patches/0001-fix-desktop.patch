@@ -1,0 +1,46 @@
+From da6d06f0dac183a8cae42ed6b0c532017214ed44 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Mon, 15 Apr 2024 23:35:26 +0800
+Subject: [PATCH] fix-desktop
+
+---
+ opensph.desktop | 9 +++++++++
+ sph.pro         | 8 ++++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 opensph.desktop
+
+diff --git a/opensph.desktop b/opensph.desktop
+new file mode 100644
+index 00000000..b4624d1f
+--- /dev/null
++++ b/opensph.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Tool;Qt;
++Exec=opensph
++Name=opensph
++Icon=reference
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/sph.pro b/sph.pro
+index f94636d8..0f157575 100644
+--- a/sph.pro
++++ b/sph.pro
+@@ -12,3 +12,11 @@ gui.depends = core
+ launcher.depends = core
+ info.depends = core
+ launcherGui.depends = core gui
++
++#install role
++DATADIR = $$PREFIX/share
++desktop.files = opensph.desktop
++desktop.path = $$DATADIR/applications/
++icon.files = regression/impact/reference.png
++icon.path = $$DATADIR/icons/
++INSTALLS += desktop icon
+\ No newline at end of file
+-- 
+2.33.1
+
