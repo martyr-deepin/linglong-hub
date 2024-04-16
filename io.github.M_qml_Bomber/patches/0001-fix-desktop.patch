@@ -1,0 +1,34 @@
+From 1f19a0ba5656a0f3269db12d7f24ca40c4cda77f Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Tue, 16 Apr 2024 22:30:43 +0800
+Subject: [PATCH] fix-desktop
+
+---
+ CMakeLists.txt | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index ba554c0..f43d1bb 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -56,3 +56,17 @@ if(${PROJECT_NAME}_BUILD_TEST)
+   add_subdirectory(tests)
+ endif()
+ 
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=My_Saper
++Exec=My_Saper
++Icon=bomb
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/My_Saper.desktop "${DESKTOP_FILE_CONTENT}")
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/My_Saper.desktop DESTINATION share/applications)
++install(PROGRAMS ${CMAKE_BINARY_DIR}/../src/bomb.png DESTINATION share/icons)
++install(TARGETS My_Saper DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+-- 
+2.33.1
+

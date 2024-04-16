@@ -1,0 +1,20 @@
+package:
+  id: io.github.M_qml_Bomber 
+  name: M_qml_Bomber
+  version: 0.0.1
+  kind: app
+  description: |
+    Bomber game written with QML and C++ in Qt Creator Has a settings page, an opportunity to begin a new game etc.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/ElrondfromRussia/M_qml_Bomber.git
+  commit:  c1b1bbf9e627c1654f10a99e52a328e7bab3f6bf
+  patch: patches/0001-fix-desktop.patch
+
+build:
+  kind: cmake
