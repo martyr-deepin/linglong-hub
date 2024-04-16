@@ -1,0 +1,22 @@
+package:
+  id: io.github.CuteMarkEd-NG
+  name: CuteMarkEd-NG
+  version: 0.12.1.0
+  kind: app
+  description: |
+    A Qt-based, free and open source markdown editor with live HTML preview, math expressions, code syntax highlighting and syntax highlighting of markdown document.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/Waqar144/CuteMarkEd-NG.git
+  commit: 9431ac603cef23d6f29e51e18f1eeee156f5bfb3
+
+build:
+  kind: qmake
