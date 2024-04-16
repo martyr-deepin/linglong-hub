@@ -1,0 +1,48 @@
+From 212048df343b236925b52995414f6d564fceddf1 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Tue, 16 Apr 2024 22:04:52 +0800
+Subject: [PATCH] fix-desktop
+
+---
+ IconMaker.desktop |  9 +++++++++
+ IconMaker.pro     | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 IconMaker.desktop
+
+diff --git a/IconMaker.desktop b/IconMaker.desktop
+new file mode 100644
+index 0000000..81618f3
+--- /dev/null
++++ b/IconMaker.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Tool;Qt;
++Exec=IconMaker
++Name=IconMaker
++Icon=app_icon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/IconMaker.pro b/IconMaker.pro
+index 5196cdd..717c83a 100644
+--- a/IconMaker.pro
++++ b/IconMaker.pro
+@@ -26,3 +26,13 @@ win32: RC_FILE = myapp.rc
+ 
+ DISTFILES += \
+     myapp.rc
++
++#install role
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = IconMaker.desktop
++desktop.path = $$DATADIR/applications/
++icon.files = app_icon.png
++icon.path = $$DATADIR/icons/
++INSTALLS += target desktop icon
+\ No newline at end of file
+-- 
+2.33.1
+
