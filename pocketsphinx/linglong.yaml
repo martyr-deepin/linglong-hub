@@ -1,0 +1,29 @@
+package:
+  id: pocketsphinx
+  name: pocketsphinx
+  version: 3.0.0
+  kind: lib
+  description: |
+     This is PocketSphinx, one of Carnegie Mellon University's open source large vocabulary, speaker-independent continuous speech recognition engines.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+source:
+  kind: git
+  url: https://github.com/cmusphinx/pocketsphinx.git
+  commit: 5da71f0a05350c923676b02a69423d1291825d5b 
+
+
+variables:
+  extra_args: |
+     PYTHON=python3.10
+depends:
+  - id: sphinxbase/3.0.0
+  - id: automake/1.16.5
+  - id: python/3.10.13.0
+  - id: swig/8.3.0
+  - id: libtool/2.4.6
+
+build:
+  kind: autotools
