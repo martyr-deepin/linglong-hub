@@ -1,0 +1,72 @@
+From cc16380321c408d96165824849a8392d33ea5357 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Wed, 17 Apr 2024 23:02:28 +0800
+Subject: [PATCH] fix
+
+---
+ .../knpreference/sdk/knpreferenceheaderbutton.h     |  2 +-
+ src/sdk/knroundswitchbutton.h                       |  2 +-
+ src/src.pro                                         | 13 ++++++++++---
+ 3 files changed, 12 insertions(+), 5 deletions(-)
+
+diff --git a/src/plugin/knpreference/sdk/knpreferenceheaderbutton.h b/src/plugin/knpreference/sdk/knpreferenceheaderbutton.h
+index 72e3c74c..9433f786 100644
+--- a/src/plugin/knpreference/sdk/knpreferenceheaderbutton.h
++++ b/src/plugin/knpreference/sdk/knpreferenceheaderbutton.h
+@@ -20,7 +20,7 @@
+ #define KNPREFERENCEHEADERBUTTON_H
+ 
+ #include <QAbstractButton>
+-
++#include <QPainterPath>
+ class QTimeLine;
+ /*!
+  * \brief The KNPreferenceHeaderButton class provides a great header button of
+diff --git a/src/sdk/knroundswitchbutton.h b/src/sdk/knroundswitchbutton.h
+index d3f0aecc..ebfee613 100644
+--- a/src/sdk/knroundswitchbutton.h
++++ b/src/sdk/knroundswitchbutton.h
+@@ -21,7 +21,7 @@ Foundation,
+ #define KNROUNDSWITCHBUTTON_H
+ 
+ #include <QPen>
+-
++#include <QPainterPath>
+ #include <QAbstractButton>
+ 
+ class QTimeLine;
+diff --git a/src/src.pro b/src/src.pro
+index bb72e755..e377b1d4 100644
+--- a/src/src.pro
++++ b/src/src.pro
+@@ -170,9 +170,16 @@ linux: {
+     # Backend and ffmpeg configuration for linux.
+     CONFIG += backend-mpv ffmpeg-swresample transcoder-ffmpeg
+     # Set the destination directory for the Linux special.
+-    DESTDIR = ../bin
++    DESTDIR = ../bin
+     # This options is added for Linux specially.
+-    INSTALLS += target
++    BINDIR  = $$PREFIX/bin
++    DATADIR = $$PREFIX/share
++    target.path = $$BINDIR
++    desktop.files = ../debian/mu.desktop
++    desktop.path = $$DATADIR/applications/
++    icon.files = resource/icon/mu.png
++    icon.path = $$DATADIR/icons/
++    INSTALLS += target desktop icon
+ }
+ 
+ # Linux common settings
+@@ -344,7 +351,7 @@ transcoder-ffmpeg: {
+ }
+ 
+ # Add sdk directory to include path.
+-INCLUDEPATH += \
++INCLUDEPATH += $$PREFIX/include \
+     sdk \
+     plugin/knmusicplugin/sdk/
+ 
+-- 
+2.33.1
+

@@ -1,0 +1,28 @@
+package:
+  id: io.github.Mu 
+  name: Mu
+  version: 1.0.0
+  kind: app
+  description: |
+    An open-source music manager.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: pocketsphinx/3.0.0
+  - id: sphinxbase/3.0.0
+  - id: mpv/0.35.0
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/Kreogist/Mu.git
+  commit: db5b81dd531703eaf7d799478a67edc309b3e651
+  patch: 
+    - patches/0001-fix.patch 
+    - patches/0001-fix-headers.patch
+
+build:
+  kind: qmake
