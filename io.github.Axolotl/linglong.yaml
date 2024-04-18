@@ -1,0 +1,20 @@
+package:
+  id: io.github.Axolotl
+  name: Axolotl
+  version: 0.0.1
+  kind: app
+  description: |
+    a cross-platform text editor similar to Sublime/Visual Studio Code using the Qt 5 library.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/jeffuong/Axolotl.git
+  commit: e87ee8c71b39965b02d1a7dc4099d3de76d4af2d
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake

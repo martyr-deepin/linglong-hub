@@ -1,0 +1,68 @@
+From 1414fa79013be67190ed9dc36f0b764031593344 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 8 Apr 2024 15:13:59 +0800
+Subject: [PATCH] install
+
+---
+ src/CMakeLists.txt         | 27 ++++++---------------------
+ src/imgs/testimage.desktop |  8 ++++++++
+ 2 files changed, 14 insertions(+), 21 deletions(-)
+ create mode 100644 src/imgs/testimage.desktop
+
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 1f393bd..ca05f9c 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -44,27 +44,12 @@ endif(WIN32)
+ # Installation packaging 
+ install (TARGETS "${CMAKE_PROJECT_NAME}" DESTINATION bin)
+ 
+-install (FILES
+-  "${CMAKE_PREFIX_PATH}/bin/Qt5Cored.dll"
+-  "${CMAKE_PREFIX_PATH}/bin/Qt5Guid.dll"
+-  "${CMAKE_PREFIX_PATH}/bin/Qt5Widgetsd.dll"
+-  "${CMAKE_PREFIX_PATH}/bin/Qt5PrintSupportd.dll"
+-  DESTINATION bin
+-)
++install(FILES imgs/testimage.png
++        DESTINATION share/icons)
++
++install(FILES imgs/testimage.desktop
++            DESTINATION share/applications)
++
+ 
+-install (FILES 
+-  "Main.cpp" 
+-  "codeeditor.cpp"
+-  "files.cpp"
+-  "filedirectory.cpp"
+-  "main.cpp"
+-  "mainwindow.cpp"
+-  "mainwindow.ui" 
+-  "findwordwindow.cpp"
+-  "findwordwindow.ui"
+-  "syntaxhighlighter.cpp"
+-  "resources.qrc"
+-  DESTINATION src
+-)
+ 
+ INCLUDE(CPack)
+\ No newline at end of file
+diff --git a/src/imgs/testimage.desktop b/src/imgs/testimage.desktop
+new file mode 100644
+index 0000000..9cdcc76
+--- /dev/null
++++ b/src/imgs/testimage.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Exec=Axolotl
++Name=Axolotl
++Icon=testimage
++StartupNotify=false
++Terminal=false
++Type=Application
++Categories=Accessibility;Qt;Utility;
+\ No newline at end of file
+-- 
+2.33.1
+
