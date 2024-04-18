@@ -1,0 +1,21 @@
+package:
+  id: io.github.qdraw
+  name: qdraw
+  version: 1.0.0
+  kind: app
+  description: |
+    Qt QGraphicsView drawing 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/egan2015/qdraw.git
+  commit: 9039778893908d5038440f6de4a433c3b03aaac5
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  
