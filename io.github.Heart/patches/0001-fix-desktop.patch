@@ -1,0 +1,57 @@
+From d0d9014660517a7cbb1274b0c8c7b8e698440088 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Thu, 18 Apr 2024 15:41:46 +0800
+Subject: [PATCH] fix-desktop
+
+---
+ Heart.desktop |  9 +++++++++
+ Heart.pro     | 17 ++++++++++++++---
+ 2 files changed, 23 insertions(+), 3 deletions(-)
+ create mode 100644 Heart.desktop
+
+diff --git a/Heart.desktop b/Heart.desktop
+new file mode 100644
+index 0000000..6c64b59
+--- /dev/null
++++ b/Heart.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Tool;Qt;
++Exec=Heart
++Name=Heart
++Icon=HeartIcon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Heart.pro b/Heart.pro
+index e930d46..8fc1a31 100644
+--- a/Heart.pro
++++ b/Heart.pro
+@@ -19,9 +19,20 @@ FORMS += \
+     src/mainwindow.ui
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
++#qnx: target.path = /tmp/$${TARGET}/bin
++#else: unix:!android: target.path = /opt/$${TARGET}/bin
++#!isEmpty(target.path): INSTALLS += target
++
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = Heart.desktop
++desktop.path = $$DATADIR/applications/
++
++
++icon.files = resource/HeartIcon.svg
++icon.path = $$DATADIR/icons
++INSTALLS += target desktop icon
+ 
+ RESOURCES += \
+     resource/res.qrc \
+-- 
+2.33.1
+

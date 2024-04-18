@@ -1,0 +1,33 @@
+package:
+  id: io.github.Heart
+  name: Heart
+  version: 1.0.1.1
+  kind: app
+  description: |
+    用Qt实现与下位机（单片机）进行通信的上位机程序
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtconnectivity/5.15.7
+    type: runtime
+  - id: qtcharts/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/Pylogmon/Heart.git
+  commit: af598a7cd4768911d7646f00de7f36b16f7f4888 
+  patch: patches/0001-fix-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cp resource/icon.svg resource/HeartIcon.svg
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
