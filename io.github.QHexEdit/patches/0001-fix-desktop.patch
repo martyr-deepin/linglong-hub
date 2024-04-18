@@ -1,0 +1,38 @@
+From 2283aad434067b2b38e5a0f2a1fd2b097219a177 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Thu, 18 Apr 2024 14:00:51 +0800
+Subject: [PATCH] fix-desktop
+
+---
+ CMakeLists.txt | 16 +++++++++++++++-
+ 1 file changed, 15 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 1e24b4a..11ed89e 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -31,4 +31,18 @@ TARGET_LINK_LIBRARIES(QHex PRIVATE Qt5::Gui)
+ 
+ FILE(COPY example/images/ DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/images)
+ FILE(COPY example/translations/ DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/translations)
+-FILE(COPY ${CMAKE_CURRENT_SOURCE_DIR}/Icons/ DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Icons)
+\ No newline at end of file
++FILE(COPY ${CMAKE_CURRENT_SOURCE_DIR}/Icons/ DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Icons)
++
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=QHex
++Exec=QHex
++Icon=qhexedit
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/QHex.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/QHex.desktop DESTINATION share/applications)
++install(PROGRAMS ${CMAKE_BINARY_DIR}/../example/images/qhexedit.svg DESTINATION share/icons)
++install(TARGETS QHex DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+\ No newline at end of file
+-- 
+2.33.1
+
