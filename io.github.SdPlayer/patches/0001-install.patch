@@ -1,0 +1,41 @@
+From e2381310246b5b8039e18939351d7a2baf56603b Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 8 Apr 2024 14:16:26 +0800
+Subject: [PATCH] install
+
+---
+ SdPlayer.pro                   | 6 ++++++
+ assets/krubow-sdplayer.desktop | 2 +-
+ 2 files changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/SdPlayer.pro b/SdPlayer.pro
+index f0d687d..bb92225 100644
+--- a/SdPlayer.pro
++++ b/SdPlayer.pro
+@@ -66,3 +66,9 @@ macx {
+   LIBS += -L"/Applications/VLC.app/Contents/MacOS/lib"
+   LIBS += -lvlc
+ }
++target.path =$$PREFIX/bin
++desktop.files =assets/krubow-sdplayer.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = Music.png
++INSTALLS += target desktop icons
+\ No newline at end of file
+diff --git a/assets/krubow-sdplayer.desktop b/assets/krubow-sdplayer.desktop
+index f89e2e4..7892727 100644
+--- a/assets/krubow-sdplayer.desktop
++++ b/assets/krubow-sdplayer.desktop
+@@ -3,7 +3,7 @@ Encoding=UTF-8
+ Name=SdPlayer
+ Comment=Square Dance music player
+ Exec=SdPlayer
+-Icon=/usr/share/sdplayer/Music.png
++Icon=Music
+ StartupNotify=true
+ Terminal=false
+ Type=Application
+-- 
+2.33.1
+

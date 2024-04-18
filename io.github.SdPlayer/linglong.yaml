@@ -1,0 +1,20 @@
+package:
+  id: io.github.SdPlayer
+  name: SdPlayer
+  version: 2.0.0
+  kind: app
+  description: |
+    Music player for square dance tape groups 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dehnert/SdPlayer.git
+  commit: 6604a2ee15445c7ad61e950ff9edecf0d2986dea
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
