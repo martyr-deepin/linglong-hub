@@ -1,0 +1,45 @@
+From 135b81d3639fdbd1624641a813e988a12612eb32 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 18 Apr 2024 08:55:40 +0800
+Subject: [PATCH] install
+
+---
+ src/GitlHEVCAnalyzer.desktop | 9 +++++++++
+ src/src.pro                  | 7 +++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 src/GitlHEVCAnalyzer.desktop
+
+diff --git a/src/GitlHEVCAnalyzer.desktop b/src/GitlHEVCAnalyzer.desktop
+new file mode 100644
+index 0000000..a8e8cab
+--- /dev/null
++++ b/src/GitlHEVCAnalyzer.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Exec=Gitl_HEVC_Analyzer
++Name=Gitl_HEVC_Analyzer
++Icon=Gitl_HEVC_Analyzer
++StartupNotify=false
++Terminal=false
++Categories=Analyzer;Qt;Utility;
++Type=Application
++Comment=Gitl HEVC/H.265 Analyzer based on Qt. Custom filters supported.
+\ No newline at end of file
+diff --git a/src/src.pro b/src/src.pro
+index 19172c2..4010871 100644
+--- a/src/src.pro
++++ b/src/src.pro
+@@ -206,3 +206,10 @@ RC_FILE = resources/icons/appicon.rc
+ 
+ RESOURCES += \
+     resources/resources.qrc
++
++target.path =$$PREFIX/bin
++desktop.files =GitlHEVCAnalyzer.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = ../screenshots/Gitl_HEVC_Analyzer.png
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
