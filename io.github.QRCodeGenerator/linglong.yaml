@@ -1,0 +1,19 @@
+package:
+  id: io.github.QRCodeGenerator
+  name: QRCodeGenerator
+  version: 0.0.1
+  kind: app
+  description: |
+     QR code generator
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+source:
+  kind: git
+  url: https://github.com/Van020530/QRCodeGenerator.git
+  commit: f61bd001499d7c095eae1e91e77802a41d70b0ab 
+
+
+build:
+  kind: qmake
