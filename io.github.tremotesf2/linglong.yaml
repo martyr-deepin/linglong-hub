@@ -1,0 +1,23 @@
+package:
+  id: io.github.tremotesf2
+  name: tremotesf2
+  version: 1.6.4
+  kind: app
+  description: |
+    Remote GUI for transmission-daemon
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: cmake/3.28.0
+  - id: kwidgetsaddons/5.90.0
+
+source:
+  kind: git
+  url: https://github.com/equeim/tremotesf2.git
+  commit: 51aa4d8fb379930026eccae3a98ddda4541770a3
+
+build:
+  kind: cmake
