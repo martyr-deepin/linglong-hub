@@ -1,0 +1,28 @@
+package:
+  id: io.github.GitlHEVCAnalyzer
+  name: GitlHEVCAnalyzer
+  version: 1.5.1
+  kind: app
+  description: |
+    Gitl HEVC/H.265 Analyzer based on Qt. Custom filters supported.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/lheric/GitlHEVCAnalyzer.git
+  commit: 6975257b6eeddc356fa91f1fa26ca1beed29ebbe
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cp screenshots/logo.png screenshots/Gitl_HEVC_Analyzer.png
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
