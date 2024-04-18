@@ -1,0 +1,47 @@
+From 1f33993d97f71a835365e2f216417bfd63603484 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 18 Apr 2024 10:31:39 +0800
+Subject: [PATCH] install
+
+---
+ app/app.pro       |  7 +++++++
+ app/qdraw.desktop | 11 +++++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 app/qdraw.desktop
+
+diff --git a/app/app.pro b/app/app.pro
+index 29a211d..f84adc5 100644
+--- a/app/app.pro
++++ b/app/app.pro
+@@ -40,3 +40,10 @@ HEADERS  += mainwindow.h \
+ 
+ RESOURCES += \
+     app.qrc
++
++target.path =$$PREFIX/bin
++desktop.files =qdraw.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = icons/group.png
++INSTALLS += target desktop icons
+diff --git a/app/qdraw.desktop b/app/qdraw.desktop
+new file mode 100644
+index 0000000..1560b0e
+--- /dev/null
++++ b/app/qdraw.desktop
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Version=1.0
++GenericName=qdraw
++Name=qdraw
++Type=Application
++Icon=group
++Exec=qdraw %F
++Comment=Qt QGraphicsView drawing
++Categories=Utility;Qt;
++Terminal=false
++Name[en_US]=qdraw
+\ No newline at end of file
+-- 
+2.33.1
+
