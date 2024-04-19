@@ -1,0 +1,29 @@
+package:
+  id: io.github.SYLoader
+  name: SYLoader
+  version: 1.1.2
+  kind: app
+  description: |
+    Simple, Smart, Fast YouTube Downloader
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/panastasiadist/SYLoader.git
+  commit: b4e896a2f4e8eeace6442f686e2c7ce7bc0c7df1
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      cp logo.ico SYLoader.png
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

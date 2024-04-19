@@ -1,0 +1,42 @@
+From 60810736d81a4c3b2e07e434ab50abd30265c408 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 19 Apr 2024 19:57:17 +0800
+Subject: [PATCH] install
+
+---
+ src/SYLoader.desktop | 7 +++++++
+ src/SYLoader.pro     | 7 +++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 src/SYLoader.desktop
+
+diff --git a/src/SYLoader.desktop b/src/SYLoader.desktop
+new file mode 100644
+index 0000000..e5cc9be
+--- /dev/null
++++ b/src/SYLoader.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=SYLoader
++Name=SYLoader
++Icon=SYLoader
++Comment=Fast YouTube Downloader
++Type=Application
++Categories=Downloader;Qt;Video;
+diff --git a/src/SYLoader.pro b/src/SYLoader.pro
+index f6b88b5..eff7d69 100644
+--- a/src/SYLoader.pro
++++ b/src/SYLoader.pro
+@@ -69,3 +69,10 @@ QMAKE_CXXFLAGS += -DWITH_UPDATE_CHECK
+ 
+ # Comment it if you don't distribute OpenSSL binaries with the software.
+ QMAKE_CXXFLAGS += -DWITH_OPENSSL_NOTICE
++
++target.path =$$PREFIX/bin
++desktop.files =SYLoader.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = SYLoader.png
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
