@@ -1,0 +1,19 @@
+package:
+  id: nlohmann-json3
+  name: nlohmann-json3
+  version: 3.11.3.1
+  kind: lib
+  description: |
+     lib nlohmann-json3
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/deepin-community/nlohmann-json3.git
+  commit: 52828a718236a7865880e5e556403f5b902e7109
+
+build:
+  kind: cmake
