@@ -1,0 +1,48 @@
+From b730f63647b2ef9814cb1aeec8f1fe2edbb4606c Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 19 Apr 2024 20:23:45 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt        | 10 ++++++++++
+ SmartCalc_CPP.desktop |  9 +++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 SmartCalc_CPP.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 22ea3f8..2bec284 100755
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -100,3 +100,13 @@ endif()
+ 
+ 
+ add_compile_options("-Wall -Wextra -Wpedantic -Werror")
++
++install(TARGETS calc
++             DESTINATION bin)
++
++install(FILES resources/icons/SmartCalc_CPP.png
++      DESTINATION share/icons)
++
++
++install(FILES SmartCalc_CPP.desktop
++            DESTINATION share/applications)
+diff --git a/SmartCalc_CPP.desktop b/SmartCalc_CPP.desktop
+new file mode 100644
+index 0000000..618ad7e
+--- /dev/null
++++ b/SmartCalc_CPP.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Calculate;Qt;tool;
++Comment=Calculator with graph
++Name=SmartCalc_CPP
++StartupNotify=false
++Exec=calc
++Icon=SmartCalc_CPP
++Terminal=false
++Type=Application
+\ No newline at end of file
+-- 
+2.33.1
+
