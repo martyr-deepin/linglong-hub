@@ -1,0 +1,46 @@
+From 2f2fb0b3975e4601e522096ac12707c7415a2d2a Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Fri, 19 Apr 2024 15:18:08 +0800
+Subject: [PATCH] fix-desktop
+
+---
+ kroket.desktop | 9 +++++++++
+ kroket.pro     | 9 +++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 kroket.desktop
+
+diff --git a/kroket.desktop b/kroket.desktop
+new file mode 100644
+index 0000000..c5c22db
+--- /dev/null
++++ b/kroket.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Tool;Qt;
++Exec=kroket
++Name=kroket
++Icon=kroket-icon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/kroket.pro b/kroket.pro
+index c4cb8ed..f35e1a6 100644
+--- a/kroket.pro
++++ b/kroket.pro
+@@ -31,3 +31,12 @@ MOC_DIR = build
+ RCC_DIR = build
+ 
+ QT += gui widgets printsupport
++
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = kroket.desktop
++desktop.path = $$DATADIR/applications/
++icon.files = gfx/kroket-icon.svg
++icon.path= $$DATADIR/icons/
++INSTALLS += target desktop icon
+-- 
+2.33.1
+
