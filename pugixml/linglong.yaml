@@ -1,0 +1,19 @@
+package:
+  id: pugixml
+  name: pugixml
+  version: 1.14.0
+  kind: lib
+  description: |
+    pugixml is a C++ XML processing library
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/zeux/pugixml.git
+  commit: f1d8c51ec8e05b571d7f420ce5cb1a6708c5e0ed
+
+build:
+  kind: cmake
