@@ -1,0 +1,41 @@
+From 3929c4f6ed4688c4622823a413869d2e31ff7848 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Fri, 19 Apr 2024 22:41:48 +0800
+Subject: [PATCH] fix-path
+
+---
+ CMakeLists.txt | 3 +++
+ rtmidi.pc.in   | 4 ++--
+ 2 files changed, 5 insertions(+), 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 28ee1f8..4436be0 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -223,6 +223,9 @@ message(STATUS "Compiling with support for: ${apilist}")
+ # PkgConfig file
+ string(REPLACE ";" " " req "${PKGCONFIG_REQUIRES}")
+ string(REPLACE ";" " " api "${API_DEFS}")
++set(prefix ${CMAKE_INSTALL_PREFIX})
++set(libdir ${CMAKE_INSTALL_LIBDIR})
++set(includedir ${CMAKE_INSTALL_INCLUDEDIR})
+ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/rtmidi.pc.in" "rtmidi.pc" @ONLY)
+ 
+ # Add install rule.
+diff --git a/rtmidi.pc.in b/rtmidi.pc.in
+index 9af1a04..ba69b5b 100644
+--- a/rtmidi.pc.in
++++ b/rtmidi.pc.in
+@@ -1,7 +1,7 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
+-includedir=${prefix}/include/rtmidi
++libdir=@libdir@
++includedir=${prefix}/@includedir@
+ 
+ Name: librtmidi
+ Description: RtMidi - a set of C++ classes that provide a common API for realtime MIDI input/output
+-- 
+2.33.1
+

@@ -1,0 +1,18 @@
+package:
+  id: rtmidi
+  name: rtmidi
+  version: 4.0.0.1
+  kind: lib
+  description: |
+    A set of C++ classes that provide a common API for realtime MIDI input/output across Linux (ALSA & JACK), Macintosh OS X (CoreMIDI) and Windows (Multimedia).
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/thestk/rtmidi.git
+  commit: cc887191c3b4cb6697aeba5536d9f4eb423090aa
+  patch: patches/0001-fix-path.patch
+build:
+  kind: cmake
