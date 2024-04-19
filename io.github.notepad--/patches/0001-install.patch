@@ -1,0 +1,41 @@
+From 2925b0289ee6c7cd8e64b36014b7775377b08df7 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 19 Apr 2024 20:58:06 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt                                     | 4 ++--
+ src/linux/usr/share/applications/NotePad--.desktop | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index ec442ce..41da89a 100755
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -65,8 +65,8 @@ if(CMAKE_HOST_UNIX)
+         DESTINATION "bin"
+     )
+ 
+-    install(DIRECTORY  ${PROJECT_SOURCE_DIR}/src/linux/usr
+-            DESTINATION "/")
++    install(DIRECTORY  ${PROJECT_SOURCE_DIR}/src/linux/usr/share
++            DESTINATION ${CMAKE_INSTALL_PREFIX})
+ 
+     include(${PROJECT_SOURCE_DIR}/cmake/deb_package_config.cmake) 
+     include(CPack)
+diff --git a/src/linux/usr/share/applications/NotePad--.desktop b/src/linux/usr/share/applications/NotePad--.desktop
+index 0804c41..8d05f8e 100755
+--- a/src/linux/usr/share/applications/NotePad--.desktop
++++ b/src/linux/usr/share/applications/NotePad--.desktop
+@@ -5,7 +5,7 @@ Name[zh_CN]=NotePad--
+ Comment=NotePad-- 是一个国产跨平台、简单的文本编辑器。
+ Type=Application
+ Exec=NotePad-- %F 
+-Icon=/usr/share/icons/hicolor/128x128/apps/notepad--.png
++Icon=notepad--
+ Categories=Development;Office;
+ Terminal=false
+ MimeType=text/english;text/plain;text/x-makefile;text/x-c++hdr;text/x-c++src;text/x-chdr;text/x-csrc;text/x-java;text/x-moc;text/x-pascal;text/x-tcl;text/x-tex;application/x-shellscript;text/x-patch;text/x-adasrc;text/x-chdr;text/x-csrc;text/css;application/x-desktop;text/x-patch;text/x-fortran;text/html;text/x-java;text/x-tex;text/x-makefile;text/x-objcsrc;text/x-pascal;application/x-perl;application/x-perl;application/x-php;text/vnd.wap.wml;text/x-python;application/x-ruby;text/sgml;application/xml;model/vrml;image/svg+xml;application/json;
+-- 
+2.33.1
+
