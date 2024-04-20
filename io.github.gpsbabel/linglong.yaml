@@ -1,0 +1,33 @@
+package:
+  id: io.github.gpsbabel
+  name: gpsbabel
+  version: 1.9.0
+  kind: app
+  description: |
+    GPSBabel: convert, manipulate, and transfer data from GPS programs or GPS receivers.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine/5.15.7
+  - id: qtserialport/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/GPSBabel/gpsbabel.git
+  commit: 386f1ca4419c739d2bebe8cb185d515bfbd37e6b
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
+  manual:
+    configure: |
+      cp gui/images/appicon.png gui/images/gpsbabel.png
+      cmake -B ${build_dir} ${conf_args} ${extra_args}
+    build: |
+      cmake --build ${build_dir} -- ${jobs}
+    install: |
+      env DESTDIR=${dest_dir} cmake --build ${build_dir} --target install

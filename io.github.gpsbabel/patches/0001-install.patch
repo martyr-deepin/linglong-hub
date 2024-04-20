@@ -1,0 +1,43 @@
+From 7da640fe5dd578c8eed77ac2852f69f7c179ee82 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 20 Apr 2024 21:12:08 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt     |  2 ++
+ gui/CMakeLists.txt | 11 +++++++++++
+ 2 files changed, 13 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 52cedd50..0a7c2e30 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -505,3 +505,5 @@ if((CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR) AND NOT _isMultiConfig)
+ else()
+   message(WARNING "Document generation is only supported for in-source builds with single configuration generators.")
+ endif()
++install(TARGETS ${PROJECT_NAME}
++             DESTINATION bin)
+diff --git a/gui/CMakeLists.txt b/gui/CMakeLists.txt
+index a64f6813..11009ad7 100644
+--- a/gui/CMakeLists.txt
++++ b/gui/CMakeLists.txt
+@@ -246,3 +246,14 @@ else()
+     endif()
+   endif()
+ endif()
++
++
++install(TARGETS gpsbabelfe
++             DESTINATION bin)
++
++install(FILES images/gpsbabel.png
++        DESTINATION share/icons)
++
++
++install(FILES gpsbabel.desktop
++            DESTINATION share/applications)
+\ No newline at end of file
+-- 
+2.33.1
+
