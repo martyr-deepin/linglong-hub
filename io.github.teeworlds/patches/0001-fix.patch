@@ -1,0 +1,42 @@
+From 9b3459bd7fea145a011ac8edbc916669582089bd Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sun, 21 Apr 2024 14:08:56 +0800
+Subject: [PATCH] fix
+
+---
+ CMakeLists.txt                | 3 +++
+ src/engine/shared/storage.cpp | 2 +-
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 348fae5ce..cf02ed2e4 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1897,8 +1897,11 @@ if(TARGET_OS STREQUAL "windows")
+   list(APPEND CPACK_FILES other/config_directory.bat)
+ endif()
+ 
++set(DATADIR "${CMAKE_INSTALL_PREFIX}/share/${PROJECT_NAME}/data")
++add_definitions(-DMY_DATADIR="${DATADIR}")
+ if(NOT DEV)
+   install(DIRECTORY ${PROJECT_BINARY_DIR}/data DESTINATION share/${PROJECT_NAME} COMPONENT data)
++  install(PROGRAMS ${CMAKE_BINARY_DIR}/../other/teeworlds.desktop DESTINATION share/applications)
+   install(TARGETS ${TARGET_CLIENT} DESTINATION bin COMPONENT client)
+   install(TARGETS ${TARGET_SERVER} DESTINATION bin COMPONENT server)
+ endif()
+diff --git a/src/engine/shared/storage.cpp b/src/engine/shared/storage.cpp
+index 4c2605a17..9cf3c89c5 100644
+--- a/src/engine/shared/storage.cpp
++++ b/src/engine/shared/storage.cpp
+@@ -7,7 +7,7 @@
+ #include <zlib.h>
+ 
+ // compiled-in data-dir path
+-#define DATA_DIR "data"
++#define DATA_DIR MY_DATADIR
+ 
+ class CStorage : public IStorage
+ {
+-- 
+2.33.1
+

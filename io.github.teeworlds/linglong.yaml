@@ -1,0 +1,20 @@
+package:
+  id: io.github.teeworlds
+  name: teeworlds
+  version: 0.7.5.1
+  kind: app
+  description: |
+     A retro multiplayer shooter
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/teeworlds/teeworlds.git
+  commit: a1911c8f7d8458fb4076ef8e7651e8ef5e91ab3e 
+  patch: patches/0001-fix.patch
+
+build:
+  kind: cmake
