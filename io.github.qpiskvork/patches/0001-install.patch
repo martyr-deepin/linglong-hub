@@ -1,0 +1,41 @@
+From 68a8f9b6f4419c4ba556e94b37105911eade59b1 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 20 Apr 2024 17:23:08 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt             | 7 +++++++
+ snap/gui/qpiskvork.desktop | 2 +-
+ 2 files changed, 8 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 141d0bd..fe63688 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -89,6 +89,13 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
+ 
+ install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+ 
++install(FILES snap/gui/qpiskvork.desktop
++        DESTINATION share/applications)
++
++
++install(FILES snap/gui/qpiskvork.png
++            DESTINATION share/icons)
++
+ if(QT_VERSION_MAJOR EQUAL 6)
+     qt_finalize_executable(${PROJECT_NAME})
+ endif()
+diff --git a/snap/gui/qpiskvork.desktop b/snap/gui/qpiskvork.desktop
+index eae0d6b..d21d36f 100644
+--- a/snap/gui/qpiskvork.desktop
++++ b/snap/gui/qpiskvork.desktop
+@@ -7,4 +7,4 @@ Exec=qpiskvork
+ Terminal=false
+ Type=Application
+ Categories=Utility;Game;BoardGame;
+-Icon=${SNAP}/meta/gui/qpiskvork.png
++Icon=qpiskvork
+-- 
+2.33.1
+
