@@ -1,0 +1,31 @@
+From 455d0b98eb8936bd7e4f634cf7db54098c0a9b8c Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 19 Apr 2024 21:36:53 +0800
+Subject: [PATCH] install
+
+---
+ src/src.pro | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/src/src.pro b/src/src.pro
+index b71215a..928613d 100644
+--- a/src/src.pro
++++ b/src/src.pro
+@@ -38,6 +38,14 @@ defineTest(minQtVersion) {
+ TARGET = vchar64
+ target.path = $${PREFIX}/bin
+ INSTALLS += target
++desktop.files =../moe.retro.vchar64.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = res/vchar64.png
++
++INSTALLS +=desktop icons
++
++
+ win32 {
+     DESTDIR = ..
+ } else {
+-- 
+2.33.1
+

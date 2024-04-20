@@ -1,0 +1,28 @@
+package:
+  id: io.github.vchar64
+  name: vchar64
+  version: 0.2.4
+  kind: app
+  description: |
+    editor for the Commodore 64
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/ricardoquesada/vchar64.git
+  commit: aba4dbb30b9edee241850f7131bc1d724bb8b36a
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cp src/res/logo512.png src/res/vchar64.png
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
