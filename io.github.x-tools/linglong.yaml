@@ -1,0 +1,24 @@
+package:
+  id: io.github.x-tools
+  name: x-tools
+  version: 3.5.0
+  kind: app
+  description: |
+    Qt SerialPort-UDP-TCP-WebSocket-Modbus-CAN-BLE-Assistant.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtserialport/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/x-tools-author/x-tools.git
+  commit: 11498676608d526a1531adbf509154efc92572e4
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
