@@ -1,0 +1,30 @@
+package:
+  id: io.github.conky
+  name: conky 
+  version: 1.20.1
+  kind: app
+  description: |
+     Conky is a free, light-weight system monitor for X, that displays any kind of information on your desktop. It can also run on Wayland (with caveats), macOS, output to your console, a file, or even HTTP (oh my!).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/brndnmtthws/conky.git
+  commit: 45500b1439f8284e87aa715a0e1557133ddbd924
+
+variables:
+  conf_args: |
+    -DCMAKE_INSTALL_PREFIX=${PREFIX} \
+    -DCMAKE_INSTALL_LIBDIR=${PREFIX}/lib/${TRIPLET}
+    -DLUA_LIBRARIES=${PREFIX}/lib
+    -DLUA_INCLUDE_DIR=${PREFIX}/include
+depends:
+  - id: lua/5.3.2
+    type: runtime
+  - id: imlib2/1.4.10
+    type: runtime
+build:
+  kind: cmake
