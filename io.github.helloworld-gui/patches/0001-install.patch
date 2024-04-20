@@ -1,0 +1,22 @@
+From 04c786fa3180635e8da4009638c6fbfe18b821a5 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 20 Apr 2024 20:32:51 +0800
+Subject: [PATCH] install
+
+---
+ src/cdcat.pro | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/cdcat.pro b/src/cdcat.pro
+index 4045577..ec4c411 100644
+--- a/src/cdcat.pro
++++ b/src/cdcat.pro
+@@ -1,4 +1,4 @@
+-lessThan(QT_VERSION, 5.2.0): error(This project requires Qt 5.2.0 or later)
++
+ 
+ TRANSLATIONS = lang/cdcat_hu.ts \
+                lang/cdcat_de.ts \
+-- 
+2.33.1
+
