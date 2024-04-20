@@ -1,0 +1,35 @@
+From 646f28c912be1149a513cc9fb1f895fe8cfa9802 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sat, 20 Apr 2024 11:22:16 +0800
+Subject: [PATCH] fix-desktop
+
+---
+ CMakeLists.txt | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 02a0a9d..62ea6e4 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -49,3 +49,17 @@ add_subdirectory(cliTest)
+ add_subdirectory(depthmapXTest)
+ add_subdirectory(depthmapX)
+ add_subdirectory(GuiUnitTest)
++
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=depthmapX
++Exec=depthmapX
++Icon=depthmapX
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/depthmapX.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/depthmapX.desktop DESTINATION share/applications)
++install(PROGRAMS ${CMAKE_BINARY_DIR}/../depthmapX/images/depthmapX.png DESTINATION share/icons)
++install(TARGETS depthmapX DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+\ No newline at end of file
+-- 
+2.33.1
+
