@@ -1,0 +1,27 @@
+package:
+  id: io.github.ImGuiFontStudio
+  name: ImGuiFontStudio 
+  version: 0.8.0
+  kind: app
+  description: |
+     ImGuiFontStudio is a tool for Subset font and extract glyph names for use embbeded or not in a software, especially for use with ImGui for embedded way.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+variables:
+  extra_args: |
+     -DCMAKE_BUILD_TYPE=Release
+
+source:
+  kind: git
+  url: https://github.com/aiekick/ImGuiFontStudio.git
+  commit: 9819f342f7476746db7ac9253372508163ff8e3d
+  patch: 
+    - patches/0001-fix-code.patch
+    - patches/0001-fix-install.patch
+
+
+build:
+  kind: cmake

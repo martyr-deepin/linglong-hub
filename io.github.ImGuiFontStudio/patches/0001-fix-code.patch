@@ -1,0 +1,62 @@
+From 93d226669d82e6fcfdcc8045d5e49fde881d318d Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sat, 20 Apr 2024 10:39:04 +0800
+Subject: [PATCH] fix-code
+
+---
+ src/Gui/ImWidgets.cpp     | 4 ++--
+ src/Panes/ParamsPane.cpp  | 2 +-
+ src/Project/FontInfos.cpp | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/src/Gui/ImWidgets.cpp b/src/Gui/ImWidgets.cpp
+index f844d23..74a0e97 100644
+--- a/src/Gui/ImWidgets.cpp
++++ b/src/Gui/ImWidgets.cpp
+@@ -749,7 +749,7 @@ bool ImGui::CheckBoxBoolDefault(const char* vName, bool* vVar, bool vDefault, co
+ 
+ 	if (vHelp)
+ 		if (ImGui::IsItemHovered())
+-			ImGui::SetTooltip(vHelp);
++			ImGui::SetTooltip("%s", vHelp);
+ 
+ 	return change;
+ }
+@@ -1057,7 +1057,7 @@ bool ImGui::ButtonNoFrame(const char* vLabel, ImVec2 size, ImVec4 vColor, const
+ 
+ 	if (vHelp)
+ 		if (ImGui::IsItemHovered())
+-			ImGui::SetTooltip(vHelp);
++			ImGui::SetTooltip("%s", vHelp);
+ 
+ 	return pressed;
+ }
+diff --git a/src/Panes/ParamsPane.cpp b/src/Panes/ParamsPane.cpp
+index 500d078..e66706f 100644
+--- a/src/Panes/ParamsPane.cpp
++++ b/src/Panes/ParamsPane.cpp
+@@ -193,7 +193,7 @@ void ParamsPane::DrawParamsPane()
+ 									if (sw > cw)
+ 									{
+ 										if (ImGui::IsItemHovered())
+-											ImGui::SetTooltip(itFont.first.c_str());
++											ImGui::SetTooltip("%s", itFont.first.c_str());
+ 									}
+ 								}
+ 								if (ImGui::TableSetColumnIndex(1)) // second column
+diff --git a/src/Project/FontInfos.cpp b/src/Project/FontInfos.cpp
+index 7268bfb..95ea56e 100644
+--- a/src/Project/FontInfos.cpp
++++ b/src/Project/FontInfos.cpp
+@@ -438,7 +438,7 @@ void FontInfos::DrawInfos()
+ 								if (sw > aw - ImGui::GetCursorPosX())
+ 								{
+ 									if (ImGui::IsItemHovered())
+-										ImGui::SetTooltip(infos.second.c_str());
++										ImGui::SetTooltip("%s", infos.second.c_str());
+ 								}
+ 							}
+ 						}
+-- 
+2.33.1
+

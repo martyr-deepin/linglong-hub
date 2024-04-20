@@ -1,0 +1,51 @@
+From 7e491a81cea656a4b5d7c6b93983f280ef3b7ef0 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sat, 20 Apr 2024 11:03:32 +0800
+Subject: [PATCH] fix-install
+
+---
+ CMakeLists.txt | 26 +++++++++++++++++++-------
+ 1 file changed, 19 insertions(+), 7 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 59e47c4..bb191e0 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -136,15 +136,27 @@ elseif(WIN32)
+ 		set_target_properties(${PROJECT} PROPERTIES	OUTPUT_NAME "${PROJECT}_Msvc_${ARCH}")
+ 	endif()
+ elseif(UNIX)
+-	set_target_properties(${PROJECT} PROPERTIES	OUTPUT_NAME "${PROJECT}_${ARCH}")
++	set_target_properties(${PROJECT} PROPERTIES	OUTPUT_NAME "${PROJECT}")
+ endif()
+ 
+-set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/bin/${ARCH}")
+-install(DIRECTORY projects DESTINATION "${CMAKE_SOURCE_DIR}/bin/${ARCH}")
+-install(DIRECTORY samples_Fonts DESTINATION "${CMAKE_SOURCE_DIR}/bin/${ARCH}")
+-install(DIRECTORY doc DESTINATION "${CMAKE_SOURCE_DIR}/bin/${ARCH}")
+-install(FILES LICENSE MacOSXBundleInfo.plist.in README.md DESTINATION "${CMAKE_SOURCE_DIR}/bin/${ARCH}")
+-install(TARGETS ${PROJECT} DESTINATION ${CMAKE_INSTALL_PREFIX})
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=ImGuiFontStudio
++Exec=ImGuiFontStudio
++Icon=dst_edit
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/ImGuiFontStudio.desktop "${DESKTOP_FILE_CONTENT}")
++set(CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
++install(DIRECTORY projects DESTINATION "${CMAKE_INSTALL_PREFIX}/share/applications")
++install(DIRECTORY samples_Fonts DESTINATION "${CMAKE_INSTALL_PREFIX}/share/applications")
++install(DIRECTORY doc DESTINATION "${CMAKE_INSTALL_PREFIX}/share/applications")
++install(FILES LICENSE MacOSXBundleInfo.plist.in README.md DESTINATION "${CMAKE_INSTALL_PREFIX}/share/applications")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/ImGuiFontStudio.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++install(PROGRAMS ${CMAKE_BINARY_DIR}/../doc/dst_edit.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons)
++install(TARGETS ${PROJECT} DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+ 
+ if (USE_VULKAN)
+ 	set(BACKEND_INCLUDE_DIRS ${Vulkan_INCLUDE_DIRS})
+-- 
+2.33.1
+
