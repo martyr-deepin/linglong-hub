@@ -1,0 +1,22 @@
+package:
+  id: ccache
+  name: ccache
+  version: 4.9.1
+  kind: lib
+  description: |
+     ccache – a fast compiler cache
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/ccache/ccache.git
+  commit: b358bb2791711c864df930b7395e9e4344a122b8 
+
+depends:
+  - id: hiredis/1.2.0
+
+build:
+  kind: cmake
