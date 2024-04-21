@@ -1,0 +1,20 @@
+package:
+  id: freeglut
+  name: freeglut
+  version: 3.4.0
+  kind: lib
+  description: |
+    Free implementation of the OpenGL Utility Toolkit (GLUT)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/freeglut/freeglut.git
+  commit: 9ad320c1ad1a25558998ddfe47674511567fec57
+
+
+build:
+  kind: cmake
