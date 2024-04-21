@@ -1,0 +1,35 @@
+From 3f90604708f07242885d69733b86f081a5701b09 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sun, 21 Apr 2024 22:30:30 +0800
+Subject: [PATCH] fix-desktop
+
+---
+ src/CMakeLists.txt | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index b924a51..418b5bd 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -48,3 +48,17 @@ target_link_libraries(Candle
+     Qt5::Gui
+     Qt5::SerialPort
+     )
++
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=Candle
++Exec=Candle
++Icon=candle_256
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/Candle.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/Candle.desktop DESTINATION share/applications)
++install(PROGRAMS ${CMAKE_BINARY_DIR}/../images/candle_256.png DESTINATION share/icons)
++install(TARGETS Candle DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+\ No newline at end of file
+-- 
+2.33.1
+
