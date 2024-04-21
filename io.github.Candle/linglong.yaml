@@ -1,0 +1,28 @@
+package:
+  id: io.github.Candle
+  name: Candle
+  version: 1.2.0
+  kind: app
+  description: |
+    GRBL controller application with G-Code visualizer written in Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Denvi/Candle.git
+  commit: 3f763bcde1195e23ba119a5b3c70d7c889881019
+  patch: patches/0001-fix-desktop.patch
+
+build:
+  kind: cmake
+  manual :
+    configure: |
+      cd src
+      cmake -B ${build_dir} ${conf_args} ${extra_args}
+    build: |
+      cmake --build ${build_dir} -- ${jobs}
+    install: |
+      env DESTDIR=${dest_dir} cmake --build ${build_dir} --target install
