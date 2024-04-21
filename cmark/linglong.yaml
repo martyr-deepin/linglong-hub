@@ -1,0 +1,24 @@
+package:
+  id: cmark
+  name: cmark
+  version: 0.29.0
+  kind: lib
+  description: |
+     GitHub's fork of cmark, a CommonMark parsing and rendering library and program in C
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dvorka/cmark.git
+  commit: 4ca8688093228c599432a87d7bd945804c573d51 
+
+variables:
+   extra_args: |
+     -DCMARK_TESTS=OFF 
+     -DCMARK_SHARED=OFF
+
+build:
+  kind: cmake
