@@ -1,0 +1,26 @@
+From cb804ddbaf1f581f337392bd1eec18738b07f5be Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Mon, 22 Apr 2024 22:45:22 +0800
+Subject: [PATCH] fix
+
+---
+ src/core/kernelMidi.cpp | 3 ---
+ 1 file changed, 3 deletions(-)
+
+diff --git a/src/core/kernelMidi.cpp b/src/core/kernelMidi.cpp
+index 37564847..fd3cd1a3 100644
+--- a/src/core/kernelMidi.cpp
++++ b/src/core/kernelMidi.cpp
+@@ -397,9 +397,6 @@ void KernelMidi::logCompiledAPIs()
+ 		case RtMidi::Api::RTMIDI_DUMMY:
+ 			u::log::print("  Dummy\n");
+ 			break;
+-		case RtMidi::Api::WEB_MIDI_API:
+-			u::log::print("  Web MIDI API\n");
+-			break;
+ 		default:
+ 			u::log::print("  (unknown)\n");
+ 			break;
+-- 
+2.33.1
+

@@ -1,0 +1,31 @@
+package:
+  id: io.github.giada
+  name: giada
+  version: 1.0.0
+  kind: app
+  description: |
+    Your Hardcore Loop Machine.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/monocasual/giada.git
+  commit: 291e30fd8c96074083cbef1c11589426018846a3
+  patch: patches/0001-fix.patch
+variables:
+  extra_args: |
+    -DLIBRARY_RTMIDI_INCLUDE_DIR=${PREFIX}/include
+depends:
+  - id: fltk/1.4.0
+  - id: pkgconf/2.0.3
+  - id: rtmidi/4.0.0.1
+    type: runtime
+  - id: libsndfile/1.2.2.1
+  - id: fmtlib/10.1.2
+  - id: Catch2/3.4.0
+  - id: nlohmann-json3/3.11.3.1
+build:
+  kind: cmake
