@@ -1,0 +1,21 @@
+package:
+  id: io.github.CuteBoard
+  name: CuteBoard
+  version: 0.2.0.1
+  kind: app
+  description: |
+    Real time Dashboard (Qt)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/BrnSlr/CuteBoard.git
+  commit: 00beb783e234c9a08f9a53baa0fe10744452f755
+  patch: patches/0001-fix.patch
+
+build:
+  kind: qmake

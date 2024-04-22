@@ -1,0 +1,60 @@
+From efccbe49b9fd36deaf2f7cc069469d6b7a912206 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Mon, 22 Apr 2024 21:01:03 +0800
+Subject: [PATCH] fix
+
+---
+ CuteBoard.pro                                 | 6 ++++++
+ app/CuteBoard.desktop                         | 2 +-
+ data_sources/DemoDataSource/demoparameter.cpp | 4 ++--
+ 3 files changed, 9 insertions(+), 3 deletions(-)
+
+diff --git a/CuteBoard.pro b/CuteBoard.pro
+index b266e45..470efea 100644
+--- a/CuteBoard.pro
++++ b/CuteBoard.pro
+@@ -9,3 +9,9 @@ SUBDIRS += \
+     ui \
+     elements \
+     app
++
++dekstop.files = app/CuteBoard.desktop
++desktop.path = $$DATADIR/applications/
++icon.files = app/resources/logo/cuteboard.png
++icon.path= $$DATADIR/icons/hicolor/512x512/apps/
++INSTALLS += desktop icon
+\ No newline at end of file
+diff --git a/app/CuteBoard.desktop b/app/CuteBoard.desktop
+index b4f97f1..743fb06 100644
+--- a/app/CuteBoard.desktop
++++ b/app/CuteBoard.desktop
+@@ -3,5 +3,5 @@ Type=Application
+ Name=CuteBoard
+ Comment=Real Time Dashboard
+ Exec=CuteBoard
+-Icon=empty
++Icon=cuteboard
+ Categories=Office;
+diff --git a/data_sources/DemoDataSource/demoparameter.cpp b/data_sources/DemoDataSource/demoparameter.cpp
+index 209b56d..2ac90ad 100644
+--- a/data_sources/DemoDataSource/demoparameter.cpp
++++ b/data_sources/DemoDataSource/demoparameter.cpp
+@@ -89,13 +89,13 @@ DataValue DemoParameter::updateParameter(double timeSec)
+     {
+         int64_t      val;
+         updateValue(timeSec, val);
+-        return DataValue(val);
++        return DataValue((qint64)val);
+     }
+     case DataValue::TYPE_UINT64:
+     {
+         uint64_t      val;
+         updateValue(timeSec, val);
+-        return DataValue(val);
++        return DataValue((quint64)val);
+     }
+     case DataValue::TYPE_DOUBLE:
+     {
+-- 
+2.33.1
+
