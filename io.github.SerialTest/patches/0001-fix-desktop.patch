@@ -1,0 +1,47 @@
+From 27c6932ecc2815209ca1b07dbbe29358bdc5b8ee Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Mon, 22 Apr 2024 20:23:17 +0800
+Subject: [PATCH] fix-desktop
+
+---
+ src/SerialTest.desktop | 9 +++++++++
+ src/SerialTest.pro     | 7 +++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 src/SerialTest.desktop
+
+diff --git a/src/SerialTest.desktop b/src/SerialTest.desktop
+new file mode 100644
+index 0000000..75e3585
+--- /dev/null
++++ b/src/SerialTest.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Tool;Qt;
++Exec=SerialTest
++Name=SerialTest
++Icon=SerialTest_nobg
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/src/SerialTest.pro b/src/SerialTest.pro
+index afdc9e1..a5d6363 100644
+--- a/src/SerialTest.pro
++++ b/src/SerialTest.pro
+@@ -102,6 +102,13 @@ qnx {
+     message(Install path: $${target.path})
+ }
+ 
++DATADIR = $$PREFIX/share
++desktop.files = SerialTest.desktop
++desktop.path = $$DATADIR/applications/
++icon.files = icon/raw/SerialTest_nobg.png
++icon.path= $$DATADIR/icons/
++INSTALLS += desktop icon
++
+ # Remember to change version in AndroidManifest.xml
+ VERSION = 0.3.5
+ QMAKE_TARGET_PRODUCT = "SerialTest"
+-- 
+2.33.1
+
