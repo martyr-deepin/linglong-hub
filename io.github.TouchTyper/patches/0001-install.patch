@@ -1,0 +1,53 @@
+From 88ff6904be7ea051c7dee78cb0bc00df12e71925 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 22 Apr 2024 20:33:29 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt     | 13 +++++++++++++
+ TouchTyper.desktop | 10 ++++++++++
+ 2 files changed, 23 insertions(+)
+ create mode 100644 TouchTyper.desktop
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 617532b..9bb0242 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -44,3 +44,16 @@ if (EMSCRIPTEN)
+   set_target_properties(${CMAKE_PROJECT_NAME} PROPERTIES LINK_FLAGS "--preload-file assets")
+ endif()
+ target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE raylib)
++
++install(TARGETS ${PROJECT_NAME}
++             DESTINATION bin)
++
++install(FILES TouchTyper.png
++        DESTINATION share/icons)
++
++
++install(FILES TouchTyper.desktop
++            DESTINATION share/applications)
++
++install(DIRECTORY assets
++            DESTINATION bin)
+\ No newline at end of file
+diff --git a/TouchTyper.desktop b/TouchTyper.desktop
+new file mode 100644
+index 0000000..5591f9a
+--- /dev/null
++++ b/TouchTyper.desktop
+@@ -0,0 +1,10 @@
++[Desktop Entry]
++Exec=TouchTyper
++Name=TouchTyper
++Categories=tool;Qt;table;
++Icon=TouchTyper
++StartupNotify=false
++Terminal=false
++Type=Application
++GenericName=TouchTyper
++Version=0.3.0
+\ No newline at end of file
+-- 
+2.33.1
+

@@ -1,0 +1,28 @@
+package:
+  id: io.github.TouchTyper
+  name: TouchTyper
+  version: 0.3.0.1
+  kind: app
+  description: |
+    A minimalistic typing test software inspired by monkeytype for both desktop and browser.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/siddharthroy12/TouchTyper.git
+  commit: c0d3bcb9a8e2b1b35c4d3b26eca4224fe57d8de6
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
+  manual:
+    configure: |
+      cp libs/raylib/logo/raylib.ico TouchTyper.png
+      cmake -B ${build_dir} ${conf_args} ${extra_args}
+    build: |
+      cmake --build ${build_dir} -- ${jobs}
+    install: |
+      env DESTDIR=${dest_dir} cmake --build ${build_dir} --target install
