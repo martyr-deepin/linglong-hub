@@ -1,0 +1,33 @@
+package:
+  id: io.github.UDTStudio
+  name: UDTStudio
+  version: 1.0.0
+  kind: app
+  description: |
+    UniSwarm Tools for UDT interface and CANOpen in Qt5/6
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtcharts/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/UniSwarm/UDTStudio.git
+  commit: 7c2bea8d1ef82c0f4044c5489dab74ef62860cb0
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cp src/lib/udtgui/img/udtstudio.ico src/lib/udtgui/img/udtstudio.png
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

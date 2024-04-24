@@ -1,0 +1,101 @@
+From 6f2e4a56bb056bd6de5a86cdeaf1653b3c7c65ff Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 23 Apr 2024 15:51:20 +0800
+Subject: [PATCH] install
+
+---
+ src/lib/canopen/canopen.pro        | 5 +----
+ src/lib/od/od.pro                  | 5 +----
+ src/lib/udtgui/udtgui.pro          | 5 +----
+ src/udtstudio/udtstudio.desktop.in | 4 ++--
+ src/udtstudio/udtstudio.pro        | 9 +++------
+ 5 files changed, 8 insertions(+), 20 deletions(-)
+
+diff --git a/src/lib/canopen/canopen.pro b/src/lib/canopen/canopen.pro
+index 92c1fd4a..49591e63 100644
+--- a/src/lib/canopen/canopen.pro
++++ b/src/lib/canopen/canopen.pro
+@@ -139,9 +139,6 @@ unix:{
+     QMAKE_LFLAGS += "-Wl,-rpath,\'\$$ORIGIN\'"
+ }
+ 
+-isEmpty(PREFIX)
+-{
+-    PREFIX=/usr/local
+-}
++
+ target.path=$$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
+diff --git a/src/lib/od/od.pro b/src/lib/od/od.pro
+index 2c86078f..796cdb22 100644
+--- a/src/lib/od/od.pro
++++ b/src/lib/od/od.pro
+@@ -63,9 +63,6 @@ SOURCES += \
+     $$PWD/writer/deviceiniwriter.cpp \
+     $$PWD/writer/edswriter.cpp
+ 
+-isEmpty(PREFIX)
+-{
+-    PREFIX=/usr/local
+-}
++
+ target.path=$$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
+diff --git a/src/lib/udtgui/udtgui.pro b/src/lib/udtgui/udtgui.pro
+index 3bd28884..29132d55 100644
+--- a/src/lib/udtgui/udtgui.pro
++++ b/src/lib/udtgui/udtgui.pro
+@@ -174,9 +174,6 @@ unix:{
+ 
+ RESOURCES += $$PWD/img.qrc
+ 
+-isEmpty(PREFIX)
+-{
+-    PREFIX=/usr/local
+-}
++
+ target.path=$$PREFIX/bin
+ !isEmpty(target.path): INSTALLS += target
+diff --git a/src/udtstudio/udtstudio.desktop.in b/src/udtstudio/udtstudio.desktop.in
+index d5668651..023a531f 100644
+--- a/src/udtstudio/udtstudio.desktop.in
++++ b/src/udtstudio/udtstudio.desktop.in
+@@ -2,6 +2,6 @@
+ Type=Application
+ Name=UDTStudio
+ Comment=UniSwarm UDTStudio
+-Exec=$$target.path/udtstudio
+-Icon=$$icons.path/udtstudio.ico
++Exec=udtstudio
++Icon=udtstudio
+ Categories=IDE;
+diff --git a/src/udtstudio/udtstudio.pro b/src/udtstudio/udtstudio.pro
+index 218da7ba..74821da0 100644
+--- a/src/udtstudio/udtstudio.pro
++++ b/src/udtstudio/udtstudio.pro
+@@ -29,19 +29,16 @@ unix:{
+ RESOURCES += $$PWD/../../contrib/QDarkStyleSheet/qdarkstyle/style.qrc
+ #RESOURCES += $$PWD/../../contrib/QD2/qdarkstyle/dark/style.qrc
+ 
+-isEmpty(PREFIX)
+-{
+-    PREFIX=/usr/local
+-}
++
+ target.path=$$PREFIX/bin
+ unix
+ {
+     QMAKE_SUBSTITUTES += udtstudio.desktop.in
+     desktop.path  = $$PREFIX/share/applications
+-    desktop.files = udtstudio.desktop
++    desktop.files = udtstudio.desktop.in
+     INSTALLS += desktop
+     icons.path    = $$PREFIX/share/icons
+-    icons.files   = ../lib/udtgui/img/udtstudio.ico
++    icons.files   = ../lib/udtgui/img/udtstudio.png
+     INSTALLS += icons
+     eds.path  = $$PREFIX/data/eds
+     eds.files = ../../eds/*
+-- 
+2.33.1
+
