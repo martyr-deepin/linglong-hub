@@ -1,0 +1,19 @@
+package:
+  id: io.github.ClownMapEd
+  name: ClownMapEd
+  version: 1.1.2
+  kind: app
+  description: |
+    Sonic the Hedgehog sprite editor, portable clone of Xenowhirl's SonMapEd.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Clownacy/ClownMapEd.git
+  commit: 71626887ddad0e0f990fad08c858fd6b9de426c5
+
+build:
+  kind: cmake
