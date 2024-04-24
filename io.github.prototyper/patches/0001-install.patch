@@ -1,0 +1,67 @@
+From ae70b6577f60856225477f62df013293b8253b4f Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 23 Apr 2024 14:18:42 +0800
+Subject: [PATCH] install
+
+---
+ Prototyper.desktop            |  9 +++++++++
+ Prototyper.pro                | 16 ++++++++++++++++
+ src/Prototyper/Prototyper.pro |  4 ++++
+ 3 files changed, 29 insertions(+)
+ create mode 100644 Prototyper.desktop
+
+diff --git a/Prototyper.desktop b/Prototyper.desktop
+new file mode 100644
+index 0000000..3d8786c
+--- /dev/null
++++ b/Prototyper.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Exec=Prototyper
++Name=Prototyper
++Name[zh_CN]=Prototyper
++Icon=bitcoin-btc-logo-full
++Categories=Picture;Qt;Utility;
++Type=Application
++GenericName=
++Version=2.0.2
+\ No newline at end of file
+diff --git a/Prototyper.pro b/Prototyper.pro
+index e6d3317..411a7e7 100644
+--- a/Prototyper.pro
++++ b/Prototyper.pro
+@@ -35,3 +35,19 @@ SUBDIRS = src \
+ src.depends = 3rdparty
+ 
+ OTHER_FILES = LICENSE README.md
++
++desktop.files =Prototyper.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = bitcoin-btc-logo-full.png
++lib1.path = $$PREFIX/bin
++lib1.files = libPrototyper.Core.so.1
++lib2.path = $$PREFIX/bin
++lib2.files = libPrototyper.Core.so
++lib3.path = $$PREFIX/bin
++lib3.files = libPrototyper.Core.so.1.0
++lib4.path = $$PREFIX/bin
++lib4.files = libPrototyper.Core.so.1.0.0
++INSTALLS += lib1 lib2 lib3 lib4
++INSTALLS += desktop icons
++
+diff --git a/src/Prototyper/Prototyper.pro b/src/Prototyper/Prototyper.pro
+index eed0242..da20141 100644
+--- a/src/Prototyper/Prototyper.pro
++++ b/src/Prototyper/Prototyper.pro
+@@ -29,3 +29,7 @@ unix|win32: LIBS += -L$$OUT_PWD/../../ -lPrototyper.Core
+ 
+ INCLUDEPATH += $$PWD/..
+ DEPENDPATH += $$PWD/..
++
++
++target.path =$$PREFIX/bin
++INSTALLS += target
+-- 
+2.33.1
+
