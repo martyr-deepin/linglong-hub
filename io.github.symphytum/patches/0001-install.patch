@@ -1,0 +1,29 @@
+From 0a0bd15271be8d746d04f07ff90234c55c31fe7d Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 22 Apr 2024 21:28:14 +0800
+Subject: [PATCH] install
+
+---
+ Symphytum.pro | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/Symphytum.pro b/Symphytum.pro
+index 98a1c43..7be0db7 100644
+--- a/Symphytum.pro
++++ b/Symphytum.pro
+@@ -229,3 +229,11 @@ TRANSLATIONS = stuff/translations/symphytum_de.ts \
+ 
+ ICON = resources/images/icons/symphytum.icns # for mac
+ RC_FILE = resources/symphytum.rc # for windows
++
++
++target.path =$$PREFIX/bin
++desktop.files =stuff/installers/deb/usr/share/applications/symphytum.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = resources/images/icons/symphytum.png
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
