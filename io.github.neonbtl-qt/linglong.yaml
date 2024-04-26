@@ -1,0 +1,28 @@
+package:
+  id: io.github.neonbtl-qt
+  name: neonbtl-qt
+  version: 0.38.0
+  kind: app
+  description: |
+    Emulator for Soyuz-Neon PK-11/16
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/nzeemin/neonbtl-qt.git
+  commit: 3f0349151e6600475388afdcad7d3c6b13fae10a
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd emulator
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
