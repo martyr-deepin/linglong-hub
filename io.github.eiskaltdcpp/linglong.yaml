@@ -1,0 +1,28 @@
+package:
+  id: io.github.eiskaltdcpp
+  name: eiskaltdcpp
+  version: 2.4.2
+  kind: app
+  description: |
+    File sharing program using DC and ADC protocols.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: lua5.2/5.2.3.1
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/eiskaltdcpp/eiskaltdcpp.git
+  commit: 4e66fe1a5e65c1aeece350c2c53a8375ed506422
+
+variables:
+  extra_args: |
+    -DUSE_MINIUPNP=OFF
+    -DUSE_ASPELL=OFF
+
+build:
+  kind: cmake
