@@ -1,0 +1,29 @@
+package:
+  id: drumstick
+  name: drumstick
+  version: 2.9.0
+  kind: lib
+  description: |
+    Drumstick Qt/C++ MIDI libraries.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+depends:
+  - id: sonivox/3.6.12
+  - id: qttools/5.15.7
+  - id: doxygen/1.9.8
+
+source:
+  kind: git
+  url: https://github.com/pedrolcl/drumstick.git
+  commit: 702eecdf67f88dced270175421ee925a9c029fb3
+
+variables:
+  extra_args: |
+    -DUSE_QT5=ON
+
+build:
+  kind: cmake
+
