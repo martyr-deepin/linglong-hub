@@ -1,0 +1,33 @@
+package:
+  id: io.github.mupen64plus-qt
+  name: mupen64plus-qt
+  version: 1.15.0
+  kind: app
+  description: |
+    A customizable launcher for Mupen64Plus
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: quazip
+    type: runtime
+    version: 1.4.0
+    source:
+      kind: git
+      url: https://github.com/stachenov/quazip.git
+      version: master
+      commit: 7f82903e5b4752c5d9ebc36bf8801123c705ad64
+    build:
+      kind: cmake
+
+source:
+  kind: git
+  url: https://github.com/dh4/mupen64plus-qt.git
+  commit: 148073ef2d4d6c88e93cab5b2a8626ea4be4163a
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+ 
