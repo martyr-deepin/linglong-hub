@@ -1,0 +1,21 @@
+package:
+  id: io.github.musiqt
+  name: musiqt
+  version: 3.0.2
+  kind: app
+  description: |
+    Simple and cross-platform music player.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: ffmpeg/4.1.8
+source:
+  kind: git
+  url: https://github.com/MusiQt/musiqt.git
+  commit: 5879abe944f143533e54eb2bc0076ca3206b25ec
+
+build:
+  kind: cmake
