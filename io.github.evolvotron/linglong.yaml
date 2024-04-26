@@ -1,0 +1,32 @@
+package:
+  id: io.github.evolvotron
+  name: evolvotron
+  version: 0.8.2.1
+  kind: app
+  description: |
+    Evolvotron is interactive "generative art" software to evolve images/textures/patterns through an iterative process of random mutation and user-selection driven evolution
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: boost-defaults/1.74.0.3
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/WickedSmoke/evolvotron.git
+  commit: 7ba4cf3893b9ae10b394d32b5146d60cd4ad5b67
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cp dist/evolvotron.ico dist/evolvotron.png
+      qmake main.pro  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
