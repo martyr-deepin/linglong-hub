@@ -1,0 +1,46 @@
+From 49754900a8e632e8630b8e87696ef4c6943e3a6b Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 25 Apr 2024 17:32:24 +0800
+Subject: [PATCH] install
+
+---
+ QLogo.desktop | 9 +++++++++
+ QLogo.pro     | 8 ++++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 QLogo.desktop
+
+diff --git a/QLogo.desktop b/QLogo.desktop
+new file mode 100644
+index 0000000..2a0a06e
+--- /dev/null
++++ b/QLogo.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Type=Application
++Name=QLogo
++GenericName=UCBLogo Programming Environment
++Exec=QLogo
++Icon=QLogo
++Comment=A UCBLogo-compatible interpreter using Qt and OpenGL
++Categories=Development;IDE;
++Keywords=logo;qlogo;turtle;ucblogo;
+\ No newline at end of file
+diff --git a/QLogo.pro b/QLogo.pro
+index cf40b61..9483c2e 100644
+--- a/QLogo.pro
++++ b/QLogo.pro
+@@ -110,3 +110,11 @@ win32 {
+ # CONFIG += console
+ CONFIG += c++11
+ 
++
++target.path =$$PREFIX/bin
++desktop.files =QLogo.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = QLogo.png
++
++INSTALLS += target desktop icons
+-- 
+2.33.1
+

@@ -1,0 +1,28 @@
+package:
+  id: io.github.QLogo
+  name: QLogo
+  version: 0.92.0
+  kind: app
+  description: |
+    QLogo is a rewrite of the UCBLogo language and user interface with UCB compatibility.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/jasonsikes/QLogo.git
+  commit: 2703097b9806af92610175d3d8a2e0c52fb63d7c
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cp icon.ico QLogo.png
+      qmake QLogo.pro  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
