@@ -1,0 +1,88 @@
+From 75fe862d66c0165498de8b33f96c31ebaeb8b2b2 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 26 Apr 2024 10:12:56 +0800
+Subject: [PATCH] install
+
+---
+ mupen64plus-qt.pro                | 18 +++++++++++++-----
+ src/common.cpp                    |  4 ++--
+ src/emulation/emulatorhandler.cpp |  4 ++--
+ 3 files changed, 17 insertions(+), 9 deletions(-)
+
+diff --git a/mupen64plus-qt.pro b/mupen64plus-qt.pro
+index 7be60cc..5f3121a 100644
+--- a/mupen64plus-qt.pro
++++ b/mupen64plus-qt.pro
+@@ -15,7 +15,7 @@ macx {
+ TEMPLATE = app
+ macx:ICON = dist/macosx/mupen64plus.icns
+ win32:RC_FILE = dist/windows/icon.rc
+-
++INCLUDEPATH += $${PREFIX}/include   
+ 
+ SOURCES += src/main.cpp \
+     src/common.cpp \
+@@ -76,17 +76,25 @@ win32|macx|linux_quazip_static {
+     HEADERS += quazip5/*.h
+ } else {
+     lessThan(QT_MAJOR_VERSION, 5) {
+-        LIBS += -lquazip
++        LIBS += -lquazip1-qt5
+     } else {
+         # Debian distributions use a different library name for Qt5 quazip
+         system("which dpkg > /dev/null 2>&1") {
+             system("dpkg -l | grep libquazip-qt5-dev | grep ^ii > /dev/null") {
+-                LIBS += -lquazip-qt5
++                LIBS += -lquazip1-qt5
+             } else {
+-                LIBS += -lquazip5
++                LIBS += -lquazip1-qt5
+             }
+         } else {
+-            LIBS += -lquazip5
++            LIBS += -lquazip1-qt5
+         }
+     }
+ }
++
++target.path =$$PREFIX/bin
++desktop.files =resources/mupen64plus-qt.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = resources/images/mupen64plus-qt.png
++
++INSTALLS += target desktop icons
+\ No newline at end of file
+diff --git a/src/common.cpp b/src/common.cpp
+index 3ffdb7c..bfb7d02 100644
+--- a/src/common.cpp
++++ b/src/common.cpp
+@@ -40,8 +40,8 @@
+ #include <QLocale>
+ #include <QSize>
+ 
+-#include <quazip5/quazip.h>
+-#include <quazip5/quazipfile.h>
++#include <QuaZip-Qt5-1.4/quazip/quazip.h>
++#include <QuaZip-Qt5-1.4/quazip/quazipfile.h>
+ 
+ #ifdef Q_OS_WIN
+ #include <QCoreApplication>
+diff --git a/src/emulation/emulatorhandler.cpp b/src/emulation/emulatorhandler.cpp
+index 2f89307..a6650ca 100644
+--- a/src/emulation/emulatorhandler.cpp
++++ b/src/emulation/emulatorhandler.cpp
+@@ -38,8 +38,8 @@
+ #include <QFile>
+ #include <QMessageBox>
+ 
+-#include <quazip5/quazip.h>
+-#include <quazip5/quazipfile.h>
++#include <QuaZip-Qt5-1.4/quazip/quazip.h>
++#include <QuaZip-Qt5-1.4/quazip/quazipfile.h>
+ 
+ 
+ EmulatorHandler::EmulatorHandler(QWidget *parent) : QObject(parent)
+-- 
+2.33.1
+
