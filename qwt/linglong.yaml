@@ -1,0 +1,19 @@
+package:
+  id: qwt
+  name: qwt
+  version: 6.2.0
+  kind: lib
+  description: |
+    Qwt - Qt Widgets for Technical Applications
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/opencor/qwt.git
+  commit: 61afb7317ee3283f22dee78143cc6b3f2593f8e3
+
+build:
+  kind: qmake
