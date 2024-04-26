@@ -1,0 +1,23 @@
+package:
+  id: io.github.NatronPluginManager
+  name: NatronPluginManager
+  version: 1.0.0.3
+  kind: app
+  description: |
+    Natron Plug-in Manager.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: libzip/1.5.1.8
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/rodlie/NatronPluginManager.git
+  commit: 2eb8c8c95cb8bf5a73802201b927fb7c745444f0
+    
+build:
+  kind: cmake
