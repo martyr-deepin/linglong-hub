@@ -1,0 +1,29 @@
+From fd89d3f74c4eb6248a30874a4a5da24997b45346 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 25 Apr 2024 18:03:48 +0800
+Subject: [PATCH] install
+
+---
+ emulator/QtNeonBtl.pro | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/emulator/QtNeonBtl.pro b/emulator/QtNeonBtl.pro
+index f310df7..9c644a7 100644
+--- a/emulator/QtNeonBtl.pro
++++ b/emulator/QtNeonBtl.pro
+@@ -50,3 +50,12 @@ DEFINES -= UNICODE _UNICODE
+ TRANSLATIONS = neonbtl_en.ts neonbtl_ru.ts
+ CONFIG += c++11
+ QMAKE_CXXFLAGS += -std=c++11
++
++
++target.path =$$PREFIX/bin
++desktop.files =../linux/qtneonbtl.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = ../linux/qtneonbtl.png
++
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
