@@ -1,0 +1,22 @@
+package:
+  id: fftw3
+  name: fftw3
+  version: 3.3.7
+  kind: lib
+  description: |
+     the FFTW library for computing Fourier transforms (version 3.x), maintained by the FFTW authors.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+
+source:
+  kind: git
+  url: https://github.com/FFTW/fftw3.git
+  commit: 34082eb5d6ed7dc9436915df69f376c06fc39762
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
