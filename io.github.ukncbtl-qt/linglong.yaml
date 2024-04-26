@@ -1,0 +1,32 @@
+package:
+  id: io.github.ukncbtl-qt
+  name: ukncbtl-qt
+  version: 0.47.1
+  kind: app
+  description: |
+    UKNCBTL emulator
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtscript/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/nzeemin/ukncbtl-qt.git
+  commit: 51e8516474de6b57cac66754379b1915ab9e36da
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd emulator
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
