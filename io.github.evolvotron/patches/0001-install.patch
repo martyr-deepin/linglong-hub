@@ -1,0 +1,29 @@
+From 6e23f0a04ef772da7b9639ba197f73415254b70b Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 25 Apr 2024 16:09:16 +0800
+Subject: [PATCH] install
+ 
+---
+ evolvotron/evolvotron.pro | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/evolvotron/evolvotron.pro b/evolvotron/evolvotron.pro
+index 799a80f..3792ecf 100644
+--- a/evolvotron/evolvotron.pro
++++ b/evolvotron/evolvotron.pro
+@@ -15,3 +15,11 @@ INCLUDEPATH += ../libevolvotron ../libfunction
+ 
+ TARGETDEPS += ../libevolvotron/libevolvotron.a ../libfunction/libfunction.a
+ LIBS       += ../libevolvotron/libevolvotron.a ../libfunction/libfunction.a -lboost_program_options
++
++target.path =$$PREFIX/bin
++desktop.files =../dist/evolvotron.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files =../dist/evolvotron.png
++
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
