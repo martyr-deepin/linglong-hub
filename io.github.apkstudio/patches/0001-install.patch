@@ -1,0 +1,38 @@
+From bb65faa0c123b570f12a5704b70efbdc04d38da5 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 26 Apr 2024 12:20:13 +0800
+Subject: [PATCH] install
+
+---
+ apkstudio.pro               | 2 +-
+ resources/apkstudio.desktop | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/apkstudio.pro b/apkstudio.pro
+index b8e303d..1df232a 100644
+--- a/apkstudio.pro
++++ b/apkstudio.pro
+@@ -77,7 +77,7 @@ unix {
+ 
+     target.path = $$PREFIX/bin
+ 
+-    icons.files += resources/icon.png
++    icons.files += resources/apkstudio.png
+     icons.path = $$PREFIX/share/pixmaps/
+ 
+     shortcut.files = resources/apkstudio.desktop
+diff --git a/resources/apkstudio.desktop b/resources/apkstudio.desktop
+index cb91a66..0f6d3c0 100644
+--- a/resources/apkstudio.desktop
++++ b/resources/apkstudio.desktop
+@@ -3,6 +3,6 @@ Categories=Development;
+ Comment=Open-source, cross-platform Qt based IDE for reverse-engineering Android application packages.
+ Exec=apkstudio
+ Name=ApkStudio
+-Icon=icon
++Icon=apkstudio
+ Terminal=false
+ Type=Application
+-- 
+2.33.1
+

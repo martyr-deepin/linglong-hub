@@ -1,0 +1,28 @@
+package:
+  id: io.github.apkstudio
+  name: apkstudio
+  version: 5.2.4.1
+  kind: app
+  description: |
+    Open-source, cross platform Qt based IDE for reverse-engineering Android application packages.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/vaibhavpandeyvpz/apkstudio.git
+  commit: fb261c69430c4b15ab2192239c060d76743f3c18
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cp resources/icon.png resources/apkstudio.png
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
