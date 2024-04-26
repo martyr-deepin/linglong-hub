@@ -17,7 +17,7 @@ runtime:
 source:
   kind: git
   url: "https://github.com/mhc2910463910/Stacer.git"
-  commit: 878da5e3304aa2873b2db31632c4a7758d6f6a81
+  commit: 5419b6ec3bc919f153374030132bdd430f031270
   patch: patches/ab.patch
 
 build:

@@ -1,26 +1,13 @@
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 9a3e116..8996aa4 100644
+diff --git a/CMakeLists.txt b/CMakeLists2.txt
+index 8de9ed1..1e19dcb 100644
 --- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -5,9 +5,11 @@ project(Stacer)
- include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/cxxbasics/CXXBasics.cmake")
- 
- # Setting a cleaner directory structure for the generated binaries
--set(CMAKE_BINARY_DIR        "${CMAKE_BINARY_DIR}/output")
--set(EXECUTABLE_OUTPUT_PATH  "${CMAKE_BINARY_DIR}/")
-+set(CMAKE_BUILD_TYPE Release)
-+set(CMAKE_BINARY_DIR        "${CMAKE_BINARY_DIR}/")
-+set(EXECUTABLE_OUTPUT_PATH  "${CMAKE_BINARY_DIR}/bin")
- set(LIBRARY_OUTPUT_PATH     "${CMAKE_BINARY_DIR}/lib")
-+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
- 
- set(PROJECT_ROOT "${CMAKE_CURRENT_SOURCE_DIR}")
- 
-@@ -24,3 +26,19 @@ add_definitions(-DQT_DEPRECATED_WARNINGS)
++++ b/CMakeLists2.txt
+@@ -24,3 +24,20 @@ add_definitions(-DQT_DEPRECATED_WARNINGS)
  # Subprojects
  add_subdirectory(stacer-core)
  add_subdirectory(stacer)
 +
++# Desktop
 +set(DESKTOP_FILE ${CMAKE_CURRENT_SOURCE_DIR}/stacer.desktop)
 +add_custom_command(
 +    OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/stacer.desktop
@@ -30,9 +17,9 @@ index 9a3e116..8996aa4 100644
 +add_custom_target(desktop ALL DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/stacer.desktop)
 +install(FILES ${CMAKE_CURRENT_BINARY_DIR}/stacer.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
 +
++# Install
 +install(
 +    TARGETS stacer-core stacer
 +    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 +    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 +)
