@@ -1,0 +1,29 @@
+From 11af78bd61a36072e12da497d5102dee891b01ac Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 25 Apr 2024 18:09:08 +0800
+Subject: [PATCH] install
+
+---
+ emulator/QtUkncBtl.pro | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/emulator/QtUkncBtl.pro b/emulator/QtUkncBtl.pro
+index 86632f8..d5fb107 100644
+--- a/emulator/QtUkncBtl.pro
++++ b/emulator/QtUkncBtl.pro
+@@ -67,3 +67,11 @@ lrelease.input = TS_FILES
+ lrelease.clean = ${QMAKE_FILE_PATH}/${QMAKE_FILE_BASE}.qm
+ lrelease.CONFIG += no_link target_predeps
+ QMAKE_EXTRA_COMPILERS += lrelease
++
++target.path =$$PREFIX/bin
++desktop.files =../linux/qtukncbtl.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = ../linux/qtukncbtl.png
++
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
