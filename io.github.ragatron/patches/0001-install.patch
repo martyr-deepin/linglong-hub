@@ -1,0 +1,45 @@
+From bc1c4d10fdedbe8f220d1786d5d96c5f230e8824 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 27 Apr 2024 15:27:51 +0800
+Subject: [PATCH] install
+
+---
+ ragatron.pro              | 7 +++++++
+ ragatron/ragatron.desktop | 9 +++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 ragatron/ragatron.desktop
+
+diff --git a/ragatron.pro b/ragatron.pro
+index 0c51b84..3e09b4d 100755
+--- a/ragatron.pro
++++ b/ragatron.pro
+@@ -49,3 +49,10 @@ OTHER_FILES += \
+ RESOURCES += \
+     ragatron/ragatron.qrc
+ 
++target.path =$$PREFIX/bin
++desktop.files =ragatron/ragatron.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = ragatron/dannagle.png
++
++INSTALLS += target desktop icons
+diff --git a/ragatron/ragatron.desktop b/ragatron/ragatron.desktop
+new file mode 100644
+index 0000000..8bf5b54
+--- /dev/null
++++ b/ragatron/ragatron.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Exec=Ragatron
++Name=Ragatron
++Name[zh_CN]=Ragatron
++Icon=dannagle
++StartupNotify=false
++Terminal=false
++Type=Application
++Version=5.1
+\ No newline at end of file
+-- 
+2.33.1
+
