@@ -1,0 +1,20 @@
+package:
+  id: io.github.ragatron
+  name: ragatron
+  version: 5.1.0
+  kind: app
+  description: |
+    Ragatron is an HTML5 desktop game hacking tool
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dannagle/ragatron.git
+  commit: 3735e471aeeb5f945b4cf8c52cb6127fb3a11c23
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
