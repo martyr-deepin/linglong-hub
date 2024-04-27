@@ -1,0 +1,24 @@
+package:
+  id: io.github.KVIrc
+  name: KVIrc
+  version: 5.2.2
+  kind: app
+  description: |
+    The KVIrc IRC Client
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+variables:
+  extra_args: 
+    -DWANT_QTWEBKIT=OFF
+    -DWANT_PERL=OFF
+
+source:
+  kind: git
+  url: https://github.com/kvirc/KVIrc.git
+  commit: c2ae7a4d274623e2f63108f04b1e74f9f88f4ca6
+
+build:
+  kind: cmake
