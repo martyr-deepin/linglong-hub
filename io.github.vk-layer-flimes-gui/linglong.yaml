@@ -1,0 +1,20 @@
+package:
+  id: io.github.vk-layer-flimes-gui
+  name: vk-layer-flimes-gui
+  version: 1.5.3
+  kind: app
+  description: |
+    GUI for vk-layer-flimes external control
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/zaps166/vk-layer-flimes-gui.git
+  commit: 4e0b6c6d79134232be9ceff8b570f6f224876b51
+
+build:
+  kind: cmake
+  
