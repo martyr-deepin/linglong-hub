@@ -1,0 +1,25 @@
+diff --git a/CMakeLists.txt b/CMakeLists2.txt
+index 8de9ed1..1e19dcb 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists2.txt
+@@ -24,3 +24,20 @@ add_definitions(-DQT_DEPRECATED_WARNINGS)
+ # Subprojects
+ add_subdirectory(stacer-core)
+ add_subdirectory(stacer)
++
++# Desktop
++set(DESKTOP_FILE ${CMAKE_CURRENT_SOURCE_DIR}/stacer.desktop)
++add_custom_command(
++    OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/stacer.desktop
++    COMMAND ${CMAKE_COMMAND} -E copy ${DESKTOP_FILE} ${CMAKE_CURRENT_BINARY_DIR}
++    DEPENDS ${DESKTOP_FILE}
++)
++add_custom_target(desktop ALL DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/stacer.desktop)
++install(FILES ${CMAKE_CURRENT_BINARY_DIR}/stacer.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++
++# Install
++install(
++    TARGETS stacer-core stacer
++    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
++    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
++)
