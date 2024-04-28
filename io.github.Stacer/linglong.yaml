@@ -1,0 +1,24 @@
+# SPDX-FileCopyrightText: 2023 UnionTech Software Technology Co., Ltd.
+#
+# SPDX-License-Identifier: LGPL-3.0-or-later
+
+package:
+  id: io.github.Stacer
+  name: Stacer
+  version: 1.0.9
+  kind: app
+  description: |
+    Linux System Optimizer and Monitoring.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/mhc2910463910/Stacer.git"
+  commit: 5419b6ec3bc919f153374030132bdd430f031270
+  patch: patches/ab.patch
+
+build:
+  kind: cmake
