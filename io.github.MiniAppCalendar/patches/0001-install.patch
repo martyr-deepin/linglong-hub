@@ -1,0 +1,28 @@
+From f7300fa5b6e95d4bf8fab8a4ece6fd4392fe4f63 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 29 Apr 2024 17:51:50 +0800
+Subject: [PATCH] install
+
+---
+ src/MiniAppCalendar.pro | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/src/MiniAppCalendar.pro b/src/MiniAppCalendar.pro
+index 95fc1fd..0290b86 100755
+--- a/src/MiniAppCalendar.pro
++++ b/src/MiniAppCalendar.pro
+@@ -24,3 +24,11 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+ # You can make your code fail to compile if it uses deprecated APIs.
+ # In order to do so, uncomment the following line.
+ DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
++
++target.path =$$PREFIX/bin
++desktop.files =../linux/MiniAppCalendar.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = ../linux/MiniAppCalendar.png
++
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
