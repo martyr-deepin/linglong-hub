@@ -1,0 +1,32 @@
+From 4ff0bb0dd032db68e0d34144311fb78d6adb0a76 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 29 Apr 2024 17:41:08 +0800
+Subject: [PATCH] install
+
+---
+ Familiar.pro | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/Familiar.pro b/Familiar.pro
+index 2069780..a8ab78c 100644
+--- a/Familiar.pro
++++ b/Familiar.pro
+@@ -204,10 +204,12 @@ unix { \
+         }
+ 	target.path = $$PREFIX/bin
+ 	INSTALLS += target
++       desktop.files = desktop/familiar.desktop
++       desktop.path = $$PREFIX/share/applications/
+ 
+-	icons.path = $$(PREFIX)/share/pixmaps
+-	icons.files = redist/icons/*.*
+-
++	icons.path = $$PREFIX/share/icons
++	icons.files = src/MainWindow/images/familiar.png
++       INSTALLS += desktop icons
+ #	PRE_TARGETDEPS += buildinfo
+ }
+ 
+-- 
+2.33.1
+
