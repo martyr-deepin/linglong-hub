@@ -1,0 +1,29 @@
+From 121cde6a207303445af21487ed936ddbdd7d05c3 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 29 Apr 2024 15:39:06 +0800
+Subject: [PATCH] install
+
+---
+ src/qvv.qt5.pro | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/src/qvv.qt5.pro b/src/qvv.qt5.pro
+index 631c872..f0d550d 100644
+--- a/src/qvv.qt5.pro
++++ b/src/qvv.qt5.pro
+@@ -8,3 +8,11 @@ FORMS        = qvv_form_confirm_delete.ui
+ RESOURCES    = qvv.qrc
+ TARGET       = qvv
+ QT          += widgets
++
++target.path =$$PREFIX/bin
++desktop.files =../qvv.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = ../images/qvv.png
++
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
