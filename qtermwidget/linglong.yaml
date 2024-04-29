@@ -1,0 +1,23 @@
+package:
+  id: qtermwidget
+  version: 0.14.1
+  kind: lib
+  description: |
+    QTermWidget is an open-source project originally based on the KDE4 Konsole application.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+depends:
+  - id: lxqt-build-tools
+    version: 0.8.0.1
+  - id: qttools
+    version: 5.15.7
+source:
+  kind: git
+  url: "https://github.com/mhc2910463910/qtermwidget.git"
+  commit: b1b2619e12e2e519f4b8ae88320f63686d679ac6
+
+build:
+  kind: cmake
