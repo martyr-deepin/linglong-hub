@@ -1,0 +1,30 @@
+From db36d5c2b997931855dbc3a6d32d97be491a016e Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 29 Apr 2024 16:30:51 +0800
+Subject: [PATCH] install
+
+---
+ src/qtResistors.pro | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/src/qtResistors.pro b/src/qtResistors.pro
+index c7685d7..ddf6279 100644
+--- a/src/qtResistors.pro
++++ b/src/qtResistors.pro
+@@ -19,3 +19,12 @@ HEADERS   += wresistors.h
+ FORMS     += wresistors.ui
+ 
+ RESOURCES += wresistors.qrc
++
++
++target.path =$$PREFIX/bin
++desktop.files = ../qtResistors.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = ../icons/qtResistors.png
++
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+

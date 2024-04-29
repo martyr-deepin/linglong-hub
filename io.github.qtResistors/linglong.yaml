@@ -1,0 +1,28 @@
+package:
+  id: io.github.qtResistors
+  name: qtResistors
+  version: 1.0.0
+  kind: app
+  description: |
+    Calculate resistance value and tolerance of resistors
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/goetzc/qtResistors.git
+  commit: c65a0466650f0b07c553bbfd9d5f6c41e562c79f
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
