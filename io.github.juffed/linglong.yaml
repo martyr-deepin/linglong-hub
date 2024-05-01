@@ -1,0 +1,25 @@
+package:
+  id: io.github.juffed
+  name: juffed
+  version: 0.10.89
+  kind: app
+  description: |
+    JuffEd is a simple , cross-platform text editor written using the Qt toolkit and the QScintila library.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtermwidget
+    version: 0.14.1
+  - id: qscintilla
+    version: 2.13.3.1
+source:
+  kind: git
+  url: "https://github.com/Mezomish/juffed.git"
+  commit: 73ad560ebf0441d27e1544e0f349fbb3b840882f
+  patch: patches/make-install.patch
+
+build:
+  kind: cmake

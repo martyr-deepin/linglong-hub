@@ -1,0 +1,30 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index b19667a..c255e19 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -88,7 +88,7 @@ set (DATA_INSTALL_DIR
+ message ( STATUS "Install path for executables: ${BIN_INSTALL_DIR}" )
+ message ( STATUS "Install path for libraries: ${LIB_INSTALL_DIR}" )
+ message ( STATUS "" )
+-#set (CMAKE_INSTALL_RPATH "${LIB_INSTALL_DIR}")
++set (CMAKE_INSTALL_RPATH "${LIB_INSTALL_DIR}")
+ 
+ set (CMAKE_AUTOMOC ON)
+ 
+@@ -205,6 +205,8 @@ configure_file ("${CMAKE_SOURCE_DIR}/cmake/AppInfo.apple.h.cmake" "${CMAKE_BINAR
+ ####################
+ 
+ # library
++
++
+ add_library ( ${JUFFLIB} SHARED
+     ${juffed_lib_SRCS}
+     ${juffed_lib_MOC_HEADERS}
+@@ -217,6 +219,7 @@ if (ENCA_FOUND)
+     target_link_libraries( ${JUFFLIB} ${ENCA_LIBRARIES} )
+ endif (ENCA_FOUND)
+ 
++link_directories(${PREFIX}/lib${LIB_SUFFIX})
+ add_library ( ${QSCI_ENGINE} SHARED
+     ${juffed_qsci_SRCS}
+     ${juffed_qsci_UIS_H}
