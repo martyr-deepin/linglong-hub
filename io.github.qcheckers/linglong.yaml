@@ -1,0 +1,21 @@
+package:
+  id: io.github.qcheckers
+  name: QCheckers
+  version: 0.9.1.0
+  kind: app
+  description: |
+    QCheckers (formely known as KCheckers) is a Qt-based checkers board game. It can play english draughts and russian draughts..
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/portnov/qcheckers.git"
+  commit: 8b8a3e64520e8e074e6035e3a12ff3f7075c7463
+  patch: 
+    - patches/fix-icon.patch
+    - patches/fix-install.patch
+
+build:
+  kind: qmake
