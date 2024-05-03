@@ -1,0 +1,12 @@
+diff --git a/src/src.pro b/src/src.pro
+index df72aae..8858f5d 100644
+--- a/src/src.pro
++++ b/src/src.pro
+@@ -47,6 +47,6 @@ desktop.files += ../qcheckers.desktop
+ INSTALLS += desktop
+ 
+ # Install icon
+-icon.path += $$PREFIX/share/icons/hicolor/scalable/apps
++icon.path += $$PREFIX/share/icons/hicolor/scalable/apps
+ icon.files += ../qcheckers.svg
+ INSTALLS += icon

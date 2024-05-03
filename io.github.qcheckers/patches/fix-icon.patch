@@ -1,0 +1,10 @@
+diff --git a/qcheckers.desktop b/qcheckers.desktop
+index 925d31e..e144ef4 100644
+--- a/qcheckers.desktop
++++ b/qcheckers.desktop
+@@ -5,4 +5,4 @@ Name=QCheckers
+ GenericName=Checkers board game
+ Type=Application
+ Exec=qcheckers
+-Icon=qcheckers.svg
++Icon=qcheckers
