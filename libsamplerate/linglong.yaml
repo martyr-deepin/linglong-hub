@@ -1,0 +1,19 @@
+package:
+  id: libsamplerate
+  name: libsamplerate
+  version: 0.1.9
+  kind: lib
+  description: |
+    libsamplerate (also known as Secret Rabbit Code) is a library for performing sample rate conversion of audio data.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/Flamefire/libsamplerate.git
+  commit: b5d39fbfc86b656fed68c935ac7b0a06349e4aa1
+  patch: patches/0001-fix-path.patch
+build:
+  kind: cmake
