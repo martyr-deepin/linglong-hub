@@ -1,0 +1,25 @@
+From 82f29092f8be8cfde8de72605ffb50f4fd3f2480 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Mon, 6 May 2024 22:35:28 +0800
+Subject: [PATCH] fix-path
+
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index ff5913c..60e41e6 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -113,7 +113,7 @@ if(LIBSAMPLERATE_INSTALL)
+     configure_file(samplerate.pc.in samplerate.pc @ONLY)
+ 
+     install(TARGETS samplerate DESTINATION lib)
+-    install(FILES src/samplerate.h DESTINATION include)
++    install(FILES include/samplerate.h DESTINATION include)
+     install(DIRECTORY doc/ DESTINATION share/doc/libsamplerate)
+     install(FILES ${CMAKE_BINARY_DIR}/samplerate.pc DESTINATION lib/pkgconfig)
+ endif()
+-- 
+2.33.1
+
