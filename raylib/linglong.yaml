@@ -1,0 +1,19 @@
+package:
+  id: raylib
+  name: raylib
+  version: 4.0.0
+  kind: lib
+  description: |
+    A simple and easy-to-use library to enjoy videogames programming
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/raysan5/raylib.git
+  commit: 0851960397f02a477d80eda2239f90fae14dec64
+
+build:
+  kind: cmake
