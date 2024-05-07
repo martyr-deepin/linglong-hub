@@ -1,0 +1,19 @@
+package:
+  id: argparse
+  name: argparse
+  version: 3.0.0
+  kind: lib
+  description: |
+    Argument Parser for Modern C++
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/p-ranav/argparse.git
+  commit: eba16b3773a2f36397199b303d845618f49472fc
+
+build:
+  kind: cmake
