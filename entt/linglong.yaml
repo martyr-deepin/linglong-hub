@@ -1,0 +1,19 @@
+package:
+  id: entt
+  name: entt
+  version: 3.13.2
+  kind: lib
+  description: |
+    Gaming meets modern C++ - a fast and reliable entity component system (ECS) and much more
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/skypjack/entt.git
+  commit: 41aab920b083aa424ac1d27666ce287eeaff6ceb
+
+build:
+  kind: cmake
