@@ -1,0 +1,24 @@
+package:
+  id: io.github.Linux-SonivoxEas
+  name: Linux-SonivoxEas
+  version: 1.5.0
+  kind: app
+  description: |
+    Sonivox EAS for Linux and Qt
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/pedrolcl/Linux-SonivoxEas.git
+  commit: cea289c6aaab1aa996d87894504e1a12bb6282b1
+
+depends:
+  - id: drumstick/2.9.0
+    type: runtime
+  - id: sonivox/3.6.12
+    type: runtime
+build:
+  kind: cmake
