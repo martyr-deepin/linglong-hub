@@ -1,0 +1,22 @@
+package:
+  id: io.github.noctis-iv-lr
+  name: noctis-iv-lr
+  version: 0.0.1.2
+  kind: app
+  description: |
+    Modern source port of Noctis IV
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dgcole/noctis-iv-lr.git
+  commit: e1d26557d42fad4d94b5e9d78457b87277512ae5
+  patch: patches/0001-fix.patch
+depends:
+  - id: raylib/4.0.0
+  - id: glm/0.9.9.8
+build:
+  kind: cmake

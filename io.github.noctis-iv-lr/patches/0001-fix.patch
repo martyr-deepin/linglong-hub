@@ -1,0 +1,63 @@
+From 74ee0f0bf30bf98181f6d1d00aa54e4936c95fb6 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Wed, 8 May 2024 20:40:12 +0800
+Subject: [PATCH] fix
+
+---
+ CMakeLists.txt   | 18 +++++++++++++++++-
+ src/noctis-0.cpp |  4 ++--
+ 2 files changed, 19 insertions(+), 3 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index c8ddf2a..b9711d8 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -25,4 +25,20 @@ if (EMSCRIPTEN)
+     target_link_libraries(${PROJECT_NAME} /home/dcole/Projects/raylib/src/libraylib.a)
+ else()
+     target_link_libraries(${PROJECT_NAME} raylib)
+-endif()
+\ No newline at end of file
++endif()
++
++set(DATADIR1 "${CMAKE_INSTALL_PREFIX}/share/res/supports.nct")
++add_definitions(-DMY_DATADIR="${DATADIR1}")
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=nivlr
++Exec=nivlr
++Icon=rings
++Categories=game;
++")
++file(WRITE ${CMAKE_BINARY_DIR}/nivlr.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/nivlr.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++install(PROGRAMS ${CMAKE_BINARY_DIR}/../doc/img/rings.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/512x512/apps/)
++install(DIRECTORY ${CMAKE_BINARY_DIR}/../res/ DESTINATION ${CMAKE_INSTALL_PREFIX}/share/res)
++install(TARGETS nivlr DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+\ No newline at end of file
+diff --git a/src/noctis-0.cpp b/src/noctis-0.cpp
+index f8683f7..c6fd66b 100644
+--- a/src/noctis-0.cpp
++++ b/src/noctis-0.cpp
+@@ -39,7 +39,7 @@
+ 
+ #include "brtl.h"
+ #include "noctis-d.h"
+-
++#define DATA_DIR MY_DATADIR
+ // Date and specific functions imported from ASSEMBLY.H
+ 
+ uint16_t QUADWORDS = 16000;
+@@ -858,7 +858,7 @@ float fast_flandom() { return ((float) fast_random(32767) * 0.000030518); }
+ 
+ // Loads virtual file handles from supports.nct
+ FILE *sa_open(int32_t offset_of_virtual_file) {
+-    FILE *fh = fopen("res/supports.nct", "rb");
++    FILE *fh = fopen(MY_DATADIR, "rb");
+ 
+     if (fh == nullptr) {
+         return nullptr;
+-- 
+2.33.1
+
