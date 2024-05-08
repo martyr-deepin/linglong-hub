@@ -1,0 +1,36 @@
+From 7d4a84de6c27d33ef216f55fd0dd9867e4bf894b Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Wed, 8 May 2024 23:03:17 +0800
+Subject: [PATCH] fix
+
+---
+ buildplugs.sh | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/buildplugs.sh b/buildplugs.sh
+index 47c0677..819a598 100755
+--- a/buildplugs.sh
++++ b/buildplugs.sh
+@@ -28,7 +28,7 @@ buildPlug ()
+ 	WHERE="$2"
+ 	THISDIR=$(basename $(pwd))
+ 	PARENTDIR="$(basename "$(dirname $(pwd))")"
+-
++	PREFIX="$PREFIX"
+ 	mkdir -vp build
+ 
+ 	case $WHAT in
+@@ -38,8 +38,8 @@ buildPlug ()
+ 		"build")
+ 			mkdir -vp build
+ 			cd build
+-			qmake ..
+-			make
++			qmake .. PREFIX=${PREFIX}
++			make ${JOBS}
+ 			;;
+ 		 "install")
+ 			cd build
+-- 
+2.33.1
+

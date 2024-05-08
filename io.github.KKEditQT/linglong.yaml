@@ -1,0 +1,34 @@
+package:
+  id: io.github.KKEditQT
+  name: KKEditQT
+  version: 1.0.0.1
+  kind: app
+  description: |
+    KKEditQT Source Code Editor.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+depends:
+  - id: automake/1.16.5
+  - id: pkgconf/2.0.3
+  - id: qtwebengine/5.15.7
+  - id: aspell/0.60.8
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/KeithDHedger/KKEditQT.git
+  commit: b224132145635e0893831e84b2d8c1234e6a3b42
+  patch: 
+    - patches/0001-fix-include.patch
+    - patches/0001-fix.patch
+build:
+  kind: qmake
+  manual:
+    configure: |
+      ./autogen.sh
+      ./configure --prefix=${PREFIX} --libdir=${PREFIX}/lib/${TRIPLET} --includedir=${PREFIX}/include CXXFLAGS="-I/${PREFIX}/include"
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install

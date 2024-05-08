@@ -1,0 +1,94 @@
+From c2d224bb22a23258ef4f145efb1098c7676771c3 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Tue, 7 Nov 2023 14:22:38 +0800
+Subject: [PATCH] fix-include
+
+---
+ KKEditQT/plugins/Clipboard/plugin/plugin.pro             | 1 +
+ KKEditQT/plugins/Favourites/plugin/plugin.pro            | 2 +-
+ KKEditQT/plugins/OpenUri/plugin/plugin.pro               | 2 +-
+ KKEditQT/plugins/SaveHistory/plugin/plugin.pro           | 2 +-
+ KKEditQT/plugins/SymbolsMenu/plugin/plugin.pro           | 2 +-
+ KKEditQT/plugins/kkeditqtPluginExample/plugin/plugin.pro | 2 +-
+ 6 files changed, 6 insertions(+), 5 deletions(-)
+
+diff --git a/KKEditQT/plugins/Clipboard/plugin/plugin.pro b/KKEditQT/plugins/Clipboard/plugin/plugin.pro
+index 3701fe7..ff73a6d 100644
+--- a/KKEditQT/plugins/Clipboard/plugin/plugin.pro
++++ b/KKEditQT/plugins/Clipboard/plugin/plugin.pro
+@@ -5,6 +5,7 @@ HEADERS         = Clipboard.h
+ SOURCES         = Clipboard.cpp
+ TARGET          = $$qtLibraryTarget(Clipboard)
+ DESTDIR         = plugins
++INCLUDEPATH+=${PREFIX}/include
+ 
+ documentation.files = docs/*
+ image.files = ClipboardViewer.png
+diff --git a/KKEditQT/plugins/Favourites/plugin/plugin.pro b/KKEditQT/plugins/Favourites/plugin/plugin.pro
+index eb72bae..7d5748a 100644
+--- a/KKEditQT/plugins/Favourites/plugin/plugin.pro
++++ b/KKEditQT/plugins/Favourites/plugin/plugin.pro
+@@ -5,7 +5,7 @@ HEADERS         = Favourites.h
+ SOURCES         = Favourites.cpp
+ TARGET          = $$qtLibraryTarget(Favourites)
+ DESTDIR         = plugins
+-
++INCLUDEPATH+=${PREFIX}/include
+ documentation.files = docs/*
+ image.files = Favorite.png
+ 
+diff --git a/KKEditQT/plugins/OpenUri/plugin/plugin.pro b/KKEditQT/plugins/OpenUri/plugin/plugin.pro
+index 56a7a3f..cae4eb8 100644
+--- a/KKEditQT/plugins/OpenUri/plugin/plugin.pro
++++ b/KKEditQT/plugins/OpenUri/plugin/plugin.pro
+@@ -5,7 +5,7 @@ HEADERS         = OpenUri.h
+ SOURCES         = OpenUri.cpp
+ TARGET          = $$qtLibraryTarget(OpenUri)
+ DESTDIR         = plugins
+-
++INCLUDEPATH+=${PREFIX}/include
+ documentation.files = docs/*
+ image.files = OpenUri.png
+ 
+diff --git a/KKEditQT/plugins/SaveHistory/plugin/plugin.pro b/KKEditQT/plugins/SaveHistory/plugin/plugin.pro
+index 69b4e13..0a56d96 100644
+--- a/KKEditQT/plugins/SaveHistory/plugin/plugin.pro
++++ b/KKEditQT/plugins/SaveHistory/plugin/plugin.pro
+@@ -5,7 +5,7 @@ HEADERS         = SaveHistory.h
+ SOURCES         = SaveHistory.cpp
+ TARGET          = $$qtLibraryTarget(SaveHistory)
+ DESTDIR         = plugins
+-
++INCLUDEPATH+=${PREFIX}/include
+ documentation.files = docs/*
+ 
+ target.path = ../build/plugins
+diff --git a/KKEditQT/plugins/SymbolsMenu/plugin/plugin.pro b/KKEditQT/plugins/SymbolsMenu/plugin/plugin.pro
+index 42309dc..01097f0 100644
+--- a/KKEditQT/plugins/SymbolsMenu/plugin/plugin.pro
++++ b/KKEditQT/plugins/SymbolsMenu/plugin/plugin.pro
+@@ -5,7 +5,7 @@ HEADERS         = SymbolsMenu.h
+ SOURCES         = SymbolsMenu.cpp
+ TARGET          = $$qtLibraryTarget(SymbolsMenu)
+ DESTDIR         = plugins
+-
++INCLUDEPATH+=${PREFIX}/include
+ data.files = indicator-chars.txt
+ documentation.files = docs/*
+ image.files = Symbols.png
+diff --git a/KKEditQT/plugins/kkeditqtPluginExample/plugin/plugin.pro b/KKEditQT/plugins/kkeditqtPluginExample/plugin/plugin.pro
+index 566f7e5..19d2d90 100644
+--- a/KKEditQT/plugins/kkeditqtPluginExample/plugin/plugin.pro
++++ b/KKEditQT/plugins/kkeditqtPluginExample/plugin/plugin.pro
+@@ -5,7 +5,7 @@ HEADERS         = kkeditqtPluginExample.h
+ SOURCES         = kkeditqtPluginExample.cpp
+ TARGET          = $$qtLibraryTarget(kkeditqtPluginExample)
+ DESTDIR         = .plugins
+-
++INCLUDEPATH+=${PREFIX}/include
+ documentation.files = docs/*
+ 
+ target.path = ../build/plugins
+-- 
+2.33.1
+
