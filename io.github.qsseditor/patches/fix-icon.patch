@@ -1,0 +1,23 @@
+diff --git a/qsseditor.desktop b/qsseditor.desktop
+index 9d9f0ac..dc49810 100644
+--- a/qsseditor.desktop
++++ b/qsseditor.desktop
+@@ -1,11 +1,10 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+-Type=Application
+ Categories=Qt;Graphics;Viewer
+-Exec=qsseditor %f
+-Icon=qsseditor
+-Terminal=false
+-Name=QSS Editor
+-Name[ru]=Редактор QSS
+ Comment=Tool to edit and preview Qt style sheets
+-Comment[ru]=Утилита для редактирования и предпросмотра таблиц стилей Qt
++Encoding=UTF-8
++Exec=QssEditor %f
++Icon=qsseditor-48
++Name=QSS Editor
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom

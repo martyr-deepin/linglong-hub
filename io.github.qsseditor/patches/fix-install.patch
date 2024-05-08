@@ -1,0 +1,22 @@
+diff --git a/QssEditor.pro b/QssEditor.pro
+index 6beb244..5af598f 100644
+--- a/QssEditor.pro
++++ b/QssEditor.pro
+@@ -189,3 +189,16 @@ OTHER_FILES += \
+ # distribution
+ HTTPROOT="https://github.com/smoked-herring/qsseditor"
+ DEFINES += HTTPROOT=$$sprintf("\"\\\"%1\\\"\"", $$HTTPROOT)
++
++#install
++DESKTOP_FILE = qsseditor.desktop
++
++# 将 desktop 文件内容写入
++desktop.files += $$DESKTOP_FILE
++desktop.path = $${PREFIX}/share/applications
++
++icons.files += icons/qsseditor-48.png
++icons.path = $${PREFIX}/share/icons/hicolor/48x48/apps  # 图标文件的安装路径
++# 安装规则
++target.path = $$(PREFIX)/bin
++INSTALLS += target desktop icons
+\ No newline at end of file
