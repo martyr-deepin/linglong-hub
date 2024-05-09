@@ -1,0 +1,38 @@
+From 1e9c489c3a65fc18db42a1e6cad9f115d204877c Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Thu, 9 May 2024 12:35:23 +0800
+Subject: [PATCH] fix-header
+
+---
+ src/charts/axis.h   | 1 +
+ src/charts/cursor.h | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/charts/axis.h b/src/charts/axis.h
+index ad49697..633d22b 100644
+--- a/src/charts/axis.h
++++ b/src/charts/axis.h
+@@ -18,6 +18,7 @@
+ #ifndef CHARTAXIS_H
+ #define CHARTAXIS_H
+ 
++#include <cmath>
+ #include <QQuickPaintedItem>
+ #include "padding.h"
+ 
+diff --git a/src/charts/cursor.h b/src/charts/cursor.h
+index 8c217d8..26dcd90 100644
+--- a/src/charts/cursor.h
++++ b/src/charts/cursor.h
+@@ -17,7 +17,7 @@
+  */
+ #ifndef CHARTCURSOR_H
+ #define CHARTCURSOR_H
+-
++#include <cmath>
+ #include <QQuickPaintedItem>
+ #include "padding.h"
+ #include "axis.h"
+-- 
+2.33.1
+

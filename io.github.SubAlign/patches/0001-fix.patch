@@ -1,0 +1,55 @@
+From 4a090a0d6485b61cac88d81ac43606125f91093c Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Thu, 9 May 2024 12:39:28 +0800
+Subject: [PATCH] fix
+
+---
+ SubAlign.desktop |  9 +++++++++
+ SubAlign.pro     | 15 ++++++++++++---
+ 2 files changed, 21 insertions(+), 3 deletions(-)
+ create mode 100644 SubAlign.desktop
+
+diff --git a/SubAlign.desktop b/SubAlign.desktop
+new file mode 100644
+index 0000000..36e01a3
+--- /dev/null
++++ b/SubAlign.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Tool;Qt;
++Exec=SubAlign
++Name=SubAlign
++Icon=PavelLogo
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/SubAlign.pro b/SubAlign.pro
+index 8b75ad9..6b36339 100644
+--- a/SubAlign.pro
++++ b/SubAlign.pro
+@@ -38,9 +38,18 @@ QML_IMPORT_PATH =
+ QML_DESIGNER_IMPORT_PATH =
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
++#qnx: target.path = /tmp/$${TARGET}/bin
++#else: unix:!android: target.path = /opt/$${TARGET}/bin
++#!isEmpty(target.path): INSTALLS += target
++
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = SubAlign.desktop
++desktop.path = $$DATADIR/applications/
++icon.files = resources/PavelLogo.png
++icon.path= $$DATADIR/icons/hicolor/96x96/apps/
++INSTALLS += target desktop icon
+ 
+ ios: {
+     QMAKE_IOS_DEPLOYMENT_TARGET = 12.0
+-- 
+2.33.1
+
