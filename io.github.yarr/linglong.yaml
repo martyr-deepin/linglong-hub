@@ -1,0 +1,20 @@
+package:
+  id: io.github.yarr
+  name: yarr
+  version: 0.1.0.2
+  kind: app
+  description: |
+    Yet Another ReveRsi game
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/loimu/yarr.git
+  commit: 6eb2b06d0a2d18c741f8e94e64d558e18e3b4ccc
+  patch: patches/0001-fix-desktop.patch
+
+build:
+  kind: cmake
