@@ -1,0 +1,25 @@
+From 4fab5db2281e5d488dc8d25af47899a969014f3c Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Thu, 9 May 2024 11:57:37 +0800
+Subject: [PATCH] fix-path
+
+---
+ src/AniLibria.pro | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/AniLibria.pro b/src/AniLibria.pro
+index 4ab99ec..35a63f5 100644
+--- a/src/AniLibria.pro
++++ b/src/AniLibria.pro
+@@ -276,7 +276,7 @@ QML_DESIGNER_IMPORT_PATH =
+ # Default rules for deployment.
+ !flatpak{
+     qnx: target.path = /tmp/$${TARGET}/bin
+-    else: unix:!android: target.path = /opt/$${TARGET}/bin
++    else: unix:!android: target.path = $$PREFIX/bin
+ }else{
+     target.path = $$PREFIX/bin
+ }
+-- 
+2.33.1
+
