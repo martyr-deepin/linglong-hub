@@ -1,0 +1,93 @@
+From a0114de67bde0ceb9287f2641d40040436895cd5 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Thu, 9 May 2024 16:37:30 +0800
+Subject: [PATCH] fix
+
+---
+ FlappyBird.desktop |  9 +++++++++
+ FlappyBird.pro     | 14 ++++++++++++++
+ mainwindow.cpp     | 13 +++++++------
+ 3 files changed, 30 insertions(+), 6 deletions(-)
+ create mode 100644 FlappyBird.desktop
+
+diff --git a/FlappyBird.desktop b/FlappyBird.desktop
+new file mode 100644
+index 0000000..bb10f10
+--- /dev/null
++++ b/FlappyBird.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Categories=Tool;Qt;
++Exec=FlappyBird
++Name=FlappyBird
++Icon=FlappyBirdIcon
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/FlappyBird.pro b/FlappyBird.pro
+index aa65704..7955897 100644
+--- a/FlappyBird.pro
++++ b/FlappyBird.pro
+@@ -37,3 +37,17 @@ FORMS    +=
+ 
+ RESOURCES += \
+     flappy.qrc
++
++
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = FlappyBird.desktop
++desktop.path = $$DATADIR/applications/
++icon.files = Images/FlappyBirdIcon.png
++icon.path= $$DATADIR/icons/hicolor/48x48/apps/
++bgm.files= sounds/*
++bgm.path= $$DATADIR/sounds/
++DEFINES += \"BGM_sfx_wing_DIR=\\\"$$DATADIR/sounds/sfx_wing.mp3\\\"\" \"BGM_sfx_point_DIR=\\\"$$DATADIR/sounds/sfx_point.mp3\\\"\" \"BGM_sfx_die_DIR=\\\"$$DATADIR/sounds/sfx_die.mp3\\\"\" \"BGM_sfx_hit_DIR=\\\"$$DATADIR/sounds/sfx_hit.mp3\\\"\" \"BGM_sfx_swooshing_DIR=\\\"$$DATADIR/sounds/sfx_swooshing.mp3\\\"\" \"BGM_sfx_wing_DIR=\\\"$$DATADIR/sounds/sfx_wing.mp3\\\"\"
++
++INSTALLS += target desktop icon bgm
+\ No newline at end of file
+diff --git a/mainwindow.cpp b/mainwindow.cpp
+index cda48ce..392d014 100644
+--- a/mainwindow.cpp
++++ b/mainwindow.cpp
+@@ -3,6 +3,7 @@
+ #include <QMessageBox>
+ #include <ctime>
+ #include <iostream>
++
+ using namespace std;
+ 
+ MainWindow::MainWindow(QWidget *parent) :
+@@ -87,21 +88,21 @@ MainWindow::MainWindow(QWidget *parent) :
+     //////sound
+     playList=new QMediaPlaylist;
+     QFileInfo info;
+-    info.setFile("sounds/sfx_wing.mp3");
++    info.setFile(BGM_sfx_wing_DIR);
+     playList->addMedia(QUrl::fromLocalFile(info.absoluteFilePath()));
+-    info.setFile("sounds/sfx_point.mp3");
++    info.setFile(BGM_sfx_point_DIR);
+     playList->addMedia(QUrl::fromLocalFile(info.absoluteFilePath()));
+-    info.setFile("sounds/sfx_die.mp3");
++    info.setFile(BGM_sfx_die_DIR);
+     playList->addMedia(QUrl::fromLocalFile(info.absoluteFilePath()));
+-    info.setFile("sounds/sfx_hit.mp3");
++    info.setFile(BGM_sfx_hit_DIR);
+     playList->addMedia(QUrl::fromLocalFile(info.absoluteFilePath()));
+-    info.setFile("sounds/sfx_swooshing.mp3");
++    info.setFile(BGM_sfx_swooshing_DIR);
+     playList->addMedia(QUrl::fromLocalFile(info.absoluteFilePath()));
+ 
+     playList->setPlaybackMode(QMediaPlaylist::CurrentItemOnce);
+ 
+     playList_wing=new QMediaPlaylist;
+-    info.setFile("sounds/sfx_wing.mp3");
++    info.setFile(BGM_sfx_wing_DIR);
+     playList_wing->addMedia(QUrl::fromLocalFile(info.absoluteFilePath()));
+     playList_wing->setPlaybackMode(QMediaPlaylist::CurrentItemOnce);
+     playList_wing->setCurrentIndex(1);
+-- 
+2.33.1
+
