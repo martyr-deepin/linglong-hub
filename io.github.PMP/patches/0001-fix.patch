@@ -1,0 +1,35 @@
+From 3fd5619d322bcc5f238a8cf663aa17533385d48a Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Thu, 9 May 2024 15:06:54 +0800
+Subject: [PATCH] fix
+
+---
+ CMakeLists.txt | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 195c7e6..95de08a 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -61,3 +61,17 @@ endif(WIN32)
+ 
+ add_subdirectory(src)
+ add_subdirectory(testing)
++
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=PMP-Desktop-Remote
++Exec=PMP-Desktop-Remote
++Icon=PMPIcon
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/PMP-Desktop-Remote.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/PMP-Desktop-Remote.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++install(PROGRAMS ${CMAKE_BINARY_DIR}/../src/app-icon/PMPIcon.svg DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/apps/)
++install(TARGETS PMP-Desktop-Remote DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+\ No newline at end of file
+-- 
+2.33.1
+
