@@ -1,0 +1,35 @@
+package:
+  id: io.github.quentier
+  name: quentier
+  version: 0.5.0
+  kind: app
+  description: |
+    Cross-platform desktop Evernote client
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/d1vanov/quentier.git
+  commit: 76f102af907451472d81c9b77a9980f3caa5830d
+
+variables:
+  extra_args: |
+    -DTIDY_HTML5_IMPORT_LIBRARY=${PREFIX}/lib/libtidy.so
+
+depends:
+  - id: tidy-html5/5.8.0
+    type: runtime
+  - id: QEverCloud/6.1.0
+    type: runtime
+  - id: qtwebengine/5.15.7
+    type: runtime
+  - id: libquentier/0.5.0
+    type: runtime
+  - id: qtkeychain/0.14.0
+    type: runtime
+
+build:
+  kind: cmake
