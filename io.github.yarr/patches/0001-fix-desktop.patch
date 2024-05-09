@@ -1,0 +1,35 @@
+From 2276b2143aba5568cf17b34661549d108f520c08 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Thu, 9 May 2024 22:45:49 +0800
+Subject: [PATCH] fix-desktop
+
+---
+ CMakeLists.txt | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 9c05854..4368cc1 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -36,4 +36,16 @@ qt5_add_resources(yarr_RESOURCES_RCC ${yarr_RSRCS})
+ add_executable(yarr ${yarr_SRCS} ${yarr_HEADERS_MOC} ${yarr_FORMS_HEADERS} ${yarr_RESOURCES_RCC})
+ target_link_libraries(yarr Qt5::Core Qt5::Widgets Qt5::Network Qt5::Test)
+ 
+-install(TARGETS yarr RUNTIME DESTINATION bin)
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=yarr
++Exec=yarr
++Icon=yarr
++Categories=Game;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/yarr.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/yarr.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++install(PROGRAMS ${CMAKE_BINARY_DIR}/../yarr.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/128x128/apps/)
++install(TARGETS yarr DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+\ No newline at end of file
+-- 
+2.33.1
+
