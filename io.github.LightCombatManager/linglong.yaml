@@ -1,0 +1,18 @@
+package:
+  id: io.github.LightCombatManager
+  name: LightCombatManager
+  version: 2.0.1.1
+  kind: app
+  description: |
+    A small, lightweight cross-platform combat manager for d20-based role-playing games, based on Qt.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/MaxFleur/LightCombatManager.git
+  commit: eb8db0bbf5fcc0a016cb2516e992699ab8e2142a
+  patch: patches/0001-fix.patch
+build:
+  kind: cmake
