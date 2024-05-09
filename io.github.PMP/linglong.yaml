@@ -1,0 +1,35 @@
+package:
+  id: io.github.PMP
+  name: PMP
+  version: 0.2.0.1
+  kind: app
+  description: |
+    A multi-user client-server music player with advanced file tracking
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/hyperquantum/PMP.git
+  commit: 53d81d1aeb717f06418b7e17bb8c2814cb4d2b1f
+  patch: patches/0001-fix.patch
+
+variables:
+  extra_args: |
+    -DTAGLIB_INCLUDE_DIRS=${PREFIX}/include
+
+depends:
+  - id: taglib/1.12.0
+    type: runtime
+build:
+  kind: cmake
+  manual :
+    configure: |
+      cp src/app-icon/app-icon.svg src/app-icon/PMPIcon.svg
+      cmake -B ${build_dir} ${conf_args} ${extra_args}
+    build: |
+      cmake --build ${build_dir} -- ${jobs}
+    install: |
+      env DESTDIR=${dest_dir} cmake --build ${build_dir} --target install
