@@ -1,0 +1,38 @@
+package:
+  id: io.github.xchm
+  name: xchm
+  version: 1.37.0
+  kind: app
+  description: |
+    UNIX CHM viewer.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: automake
+    version: 1.16.5
+  - id: autoconf
+    version: 2.4.7
+  - id: libtool
+    version: 2.4.6
+  - id: wxWidgets
+    version: 3.2.3
+source:
+  kind: git
+  url: "https://github.com/rzvncj/xCHM.git"
+  commit: c63faadb67fd25e7f34fb1c78767f14938936abd
+  patch: patches/fix-install.patch
+
+build:
+  kind: manual
+  manual:
+    configure: |
+      ./bootstrap
+      CFLAGS="-Wall -O2" LDFLAGS="-L${PREFIX}/lib" CXXFLAGS="-L${PREFIX}/include" ./configure --prefix=${PREFIX} --enable-builtin-chmlib --disable-dependency-tracking
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install 
+    

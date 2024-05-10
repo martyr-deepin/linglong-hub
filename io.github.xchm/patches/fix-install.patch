@@ -1,0 +1,21 @@
+diff --git a/Makefile.am b/Makefile.am
+index 4c8c43f..6c02512 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -14,5 +14,16 @@ macbundle: all
+ clean-local:
+ 	-rm -rf $(top_srcdir)/xCHM.app
+ 
++
++install-data-local:
++	$(mkinstalldirs) $(DESTDIR)$(prefix)/bin
++	$(INSTALL_PROGRAM) $(top_builddir)/src/xchm $(DESTDIR)$(prefix)/bin
++
++	$(mkinstalldirs) $(DESTDIR)$(prefix)/share/applications
++	cp $(top_srcdir)/data/xchm.desktop $(DESTDIR)$(prefix)/share/applications/xchm.desktop
++
++	$(mkinstalldirs) $(DESTDIR)$(prefix)/share/icons
++	cp $(top_srcdir)/art/128x128/apps/xchm.png $(DESTDIR)$(prefix)/share/icons/hicolor/128x128/apps/xchm.png
++
+ .PHONY: bundle
+ 
