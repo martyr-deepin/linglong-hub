@@ -1,0 +1,28 @@
+package:
+  id: libzip-dev
+  name: libzip-dev
+  version: 1.7.3.1
+  kind: lib
+  description: |
+    This is libzip a C library for reading, creating, and modifying zip and zip64 archives.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/mhc2910463910/libzip-dev.git"
+  commit: 414fd6dbb06778dda6fdd11618881007cd6492d3
+
+build:
+  kind: cmake
+  manual:
+    configure: |
+      cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_LIBDIR=${PREFIX}/lib/${TRIPLET}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
+
+  
