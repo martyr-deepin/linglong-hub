@@ -1,0 +1,24 @@
+From 8e3678f57b7583639b4a8d8585ee177398c9901f Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sat, 11 May 2024 23:03:54 +0800
+Subject: [PATCH] fix
+
+---
+ tidy.pc.cmake.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tidy.pc.cmake.in b/tidy.pc.cmake.in
+index 7d819f1..6e9688a 100644
+--- a/tidy.pc.cmake.in
++++ b/tidy.pc.cmake.in
+@@ -1,6 +1,6 @@
+ prefix=@CMAKE_INSTALL_PREFIX@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/@LIB_INSTALL_DIR@
++libdir=@LIB_INSTALL_DIR@
+ includedir=${prefix}/@INCLUDE_INSTALL_DIR@
+ 
+ Name: @LIB_NAME@
+-- 
+2.33.1
+
