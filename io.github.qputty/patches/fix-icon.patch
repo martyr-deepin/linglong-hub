@@ -1,0 +1,13 @@
+diff --git a/qPutty.desktop b/qPutty.desktop
+index 7016e06..19726bc 100644
+--- a/qPutty.desktop
++++ b/qPutty.desktop
+@@ -3,7 +3,7 @@ Name=QPutty
+ GenericName=SSH and telnet client
+ Comment=Log on to remote systems using SSH, Telnet or Rlogin
+ Exec=qPutty
+-Icon=qputty
++Icon=putty-32
+ Terminal=false
+ Type=Application
+ StartupNotify=false

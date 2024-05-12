@@ -1,0 +1,31 @@
+diff --git a/qPutty.pro b/qPutty.pro
+index 31c7217..15526cb 100644
+--- a/qPutty.pro
++++ b/qPutty.pro
+@@ -21,17 +21,22 @@ CONFIG(release,debug|release) {
+ 
+ SOURCES *= putty.cpp
+ 
+-isEmpty(PREFIX){
+-    PREFIX=/usr/local
+-}
++# isEmpty(PREFIX){
++#    PREFIX=/usr/local
++# }
+ 
+ unix {
++    icons.files += putty-32.png
++    icons.path = $$PREFIX/share/icons/hicolor/32x32/apps
++
+     desktopEntry.path = $$PREFIX/share/applications/
+     desktopEntry.files = qPutty.desktop
+ 
+     target.path = $$PREFIX/bin
+     QT+=x11extras
+-    INSTALLS+=target desktopEntry
++    INSTALLS+=target desktopEntry icons
++
++    PKGCONFIG += libgssglue
+ }
+ 
+ macx {

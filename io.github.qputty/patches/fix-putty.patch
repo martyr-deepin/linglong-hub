@@ -1,0 +1,13 @@
+diff --git a/uxputty.c b/uxputty.c
+index 27f33f1..b5d061d 100644
+--- a/uxputty.c
++++ b/uxputty.c
+@@ -39,7 +39,7 @@
+  * Stubs to avoid uxpty.c needing to be linked in.
+  */
+ const int use_pty_argv = FALSE;
+-char **pty_argv;		       /* never used */
++//char **pty_argv;		       /* never used */
+ 
+ /*
+  * Clean up and exit.

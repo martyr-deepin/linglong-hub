@@ -1,0 +1,31 @@
+package:
+  id: io.github.qputty
+  name: qputty
+  version: 0.506.2
+  kind: app
+  description: |
+    A Qt 5 port for putty, the free telnet/ssh client.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+depends:
+  - id: libgssglue
+    version: 0.9.2
+source:
+  kind: git
+  url: "https://github.com/mhc2910463910/qputty-qt.git"
+  commit: 49535366e85c155d491d79940517d3f754b152d9
+  patch: 
+    - patches/fix-install.patch
+    - patches/fix-putty.patch
+    - patches/fix-icon.patch
+build:
+  kind: manual
+  manual: 
+    configure: |
+      qmake PREFIX=${PREFIX} LIB_INSTALL_DIR=${PREFIX}/lib/${TRIPLET}
+    build: |
+      make -j${JOBS}
+    install: |
+      make -j${JOBS} DESTDIR=${dest_dir} install
