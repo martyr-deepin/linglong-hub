@@ -1,0 +1,76 @@
+From f51d3d58382747db36bf6befa2a1792c90d78748 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 12 May 2024 13:53:48 +0800
+Subject: [PATCH] install
+
+---
+ src/cli/cli.pro         |  5 +----
+ src/lib/libscrobble.cpp | 10 ++--------
+ src/qt/qt.pro           |  2 --
+ 3 files changed, 3 insertions(+), 14 deletions(-)
+
+diff --git a/src/cli/cli.pro b/src/cli/cli.pro
+index 6879e0c..632ef2e 100755
+--- a/src/cli/cli.pro
++++ b/src/cli/cli.pro
+@@ -23,15 +23,12 @@ unix:mac {
+ unix:!mac {
+     INSTALLS += target \
+                 man \
+-                man-compress
++
+ 
+     target.path = $$BINDIR
+ 
+     man.files = scrobbler.1
+     man.path = $${DATADIR}/man/man1
+-
+-    man-compress.path = $${DATADIR}/man/man1
+-    man-compress.extra = "gzip -9 -f \$(INSTALL_ROOT)/$$DATADIR/man/man1/scrobbler.1"
+ }
+ 
+ include (../app.pri)
+diff --git a/src/lib/libscrobble.cpp b/src/lib/libscrobble.cpp
+index 74a9146..03297ad 100755
+--- a/src/lib/libscrobble.cpp
++++ b/src/lib/libscrobble.cpp
+@@ -21,9 +21,7 @@
+ 
+ #include "parse-log.h"
+ #include "parse-ipod.h"
+-#ifdef HAVE_MTP
+-    #include "parse-mtp.h"
+-#endif
++
+ #include "dbcache.h"
+ 
+ #ifdef _MSC_VER
+@@ -497,11 +495,7 @@ bool Scrobble::parse(SCROBBLE_METHOD method, QString path)
+         case SCROBBLE_IPOD:
+             parser = new Parse_Ipod();
+             break;
+-#ifdef HAVE_MTP
+-        case SCROBBLE_MTP:
+-            parser = new Parse_MTP();
+-            break;
+-#endif
++
+         case SCROBBLE_NONE:
+         default:
+             add_log(LOG_ERROR, tr("Error - asked to use an unknown Parser!"));
+diff --git a/src/qt/qt.pro b/src/qt/qt.pro
+index 0879bd2..ad66a9b 100755
+--- a/src/qt/qt.pro
++++ b/src/qt/qt.pro
+@@ -18,8 +18,6 @@ unix:!mac {
+     man.files = qtscrob.1
+     man.path = $${DATADIR}/man/man1
+     
+-    man-compress.path = $${DATADIR}/man/man1
+-    man-compress.extra = "gzip -9 -f \$(INSTALL_ROOT)/$$DATADIR/man/man1/qtscrob.1"
+ 
+     INSTALLS = target \
+         desktop \
+-- 
+2.33.1
+
