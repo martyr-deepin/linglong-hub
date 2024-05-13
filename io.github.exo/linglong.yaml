@@ -1,0 +1,24 @@
+package:
+  id: io.github.exo
+  name: exo
+  version: 0.9.0
+  kind: app
+  description: |
+    Qt GUI, MPRIS interface and a scrobbler for MOC console player / Cmus
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+  
+source:
+  kind: git
+  url: https://github.com/loimu/exo.git
+  commit: d429f9ef0d91a2cf3e6071764fa8664b9eea0712
+
+variables:
+  extra_args: 
+    -DBUILD_LASTFM=OFF
+    -DBUILD_DBUS=OFF
+
+build:
+  kind: cmake
