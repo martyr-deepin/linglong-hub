@@ -1,0 +1,28 @@
+package:
+  id: io.github.QtScrobbler
+  name: QtScrobbler
+  version: 1.0.0
+  kind: app
+  description: |
+    QTScrobbler ships both multiplatform GUI and CLI versions
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/marcelpetrick/QtScrobbler.git
+  commit: 279bc3035ce4e8575b90f4d37616f74d7bfab5ee
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
