@@ -1,0 +1,51 @@
+From 0ecceb2a8083f0ba2d79bdb89959800c92b2da00 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 12 May 2024 10:58:29 +0800
+Subject: [PATCH] install
+
+---
+ app/app.pro           | 10 +++++++++-
+ app/res/hexed.desktop |  9 +++++++++
+ 2 files changed, 18 insertions(+), 1 deletion(-)
+ create mode 100644 app/res/hexed.desktop
+
+diff --git a/app/app.pro b/app/app.pro
+index cbf0836..73fa1a9 100644
+--- a/app/app.pro
++++ b/app/app.pro
+@@ -51,7 +51,15 @@ RESOURCES += res/resources.qrc
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ win32:RC_ICONS = res/icon.ico
++
++target.path =$$PREFIX/bin
++desktop.files =res/hexed.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/scalable/apps
++icons.files = res/dark/cross.svg
++
++INSTALLS += target desktop icons
+diff --git a/app/res/hexed.desktop b/app/res/hexed.desktop
+new file mode 100644
+index 0000000..cb75bc4
+--- /dev/null
++++ b/app/res/hexed.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Exec=hexed
++Name=hexed
++Icon=cross
++StartupNotify=false
++Categories=Accessibility;Qt;Utility;
++Type=Application
++Comment=Binary file hex editor
++Version=1.2.1
+\ No newline at end of file
+-- 
+2.33.1
+
