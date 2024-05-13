@@ -1,0 +1,24 @@
+package:
+  id: io.github.hexed
+  name: hexed
+  version: 1.2.1
+  kind: app
+  description: |
+    Binary file hex editor
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtscript/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/pgeorgiev98/hexed.git
+  commit: dfe9e3e69b7c0d642b3a9b4b1a51f764d8339199
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
