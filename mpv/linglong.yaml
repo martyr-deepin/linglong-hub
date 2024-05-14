@@ -1,0 +1,29 @@
+package:
+  id: mpv
+  name: mpv
+  version: 0.35.0
+  kind: lib
+  description: |
+     mpv is a free (as in freedom) media player for the command line. It supports a wide variety of media file formats, audio and video codecs, and subtitle types.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+source:
+  kind: git
+  url: https://github.com/mpv-player/mpv.git
+  commit: 75d938912ddd50f5658d874c59e1b50e13b28bf1 
+  patch: patches/0001-fix-install.patch
+depends:
+  - id: meson/1.1.1
+  - id: python/3.10.13.0
+build:
+  kind: manual
+  manual: 
+    configure: |
+      export HOME=${PREFIX}
+      meson setup --prefix ${PREFIX} build
+    build: |
+      meson compile -C build
+    install: |
+      meson install -C build
