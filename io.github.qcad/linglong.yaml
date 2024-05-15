@@ -1,0 +1,22 @@
+package:
+  id: io.github.qcad
+  name: qcad
+  version: 3.29.6.7
+  kind: app
+  description: |
+    QCAD Community Edition 是一个计算机辅助设计应用 (CAD)。.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/qcad/qcad.git"
+  commit: 38a3944de996268087dc0c51f007109c0a7cb2b6
+  patch: 
+    - patches/fix-3rdparty.patch
+    - patches/fix-install.patch
+    - patches/fix-desktop.patch
+build:
+  kind: qmake

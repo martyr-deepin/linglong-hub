@@ -1,0 +1,13 @@
+diff --git a/qcad.desktop b/qcad.desktop
+index 93c5e97201..2d0e6bf32a 100644
+--- a/qcad.desktop
++++ b/qcad.desktop
+@@ -48,7 +48,7 @@ Comment[sv]=2D CAD-system
+ Comment[sl]=Sistem 2D CAD
+ Comment[uk]=2D САПР
+ Comment[tr]=2D CAD Sistemi
+-Exec=qcad %F
++Exec=qcad-bin %F
+ X-MultipleArgs=true
+ Icon=qcad_icon
+ Terminal=false
