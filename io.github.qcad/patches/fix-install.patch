@@ -1,0 +1,20 @@
+diff --git a/qcad.pro b/qcad.pro
+index 74f874ef9d..65d8958023 100644
+--- a/qcad.pro
++++ b/qcad.pro
+@@ -26,3 +26,14 @@ else {
+ dummy {
+     SUBDIRS += scripts
+ }
++releasefile.target = install
++releasefile.commands = mkdir -p $$PREFIX/bin && cp -r $$PWD/release/* $$PREFIX/bin && mkdir -p $$PREFIX/bin/plugins && cp -r $$PWD/plugins/* $$PREFIX/bin/plugins
++QMAKE_EXTRA_TARGETS += releasefile
++
++desktopfile.files += $$PWD/qcad.desktop
++desktopfile.path = $$PREFIX/share/applications
++INSTALLS += desktopfile
++
++iconfile.files += $$PWD/scripts/qcad_icon.svg
++iconfile.path = $$PREFIX/share/icons/hicolor/scalable/apps
++INSTALLS += iconfile
+\ No newline at end of file
