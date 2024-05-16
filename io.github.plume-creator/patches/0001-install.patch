@@ -1,0 +1,38 @@
+From 72669df77cf93ac25a9104f66179b256ab014cdb Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 16 May 2024 13:21:55 +0800
+Subject: [PATCH] install
+
+---
+ plume-creator.pro | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/plume-creator.pro b/plume-creator.pro
+index 6e2adc1..79d0d28 100644
+--- a/plume-creator.pro
++++ b/plume-creator.pro
+@@ -18,7 +18,7 @@ TEMPLATE = app
+ 
+ VERSION = 0.67
+ DEFINES += VERSIONSTR=\\\"$${VERSION}\\\"
+-
++INCLUDEPATH += $${PREFIX}/include/QuaZip-Qt5-1.4
+ #DESTDIR = bin
+ #MOC_DIR = build
+ #OBJECTS_DIR = build
+@@ -42,10 +42,10 @@ win32: LIBS += -lzdll
+ !win32: LIBS += -lz
+ 
+ equals(QT_MAJOR_VERSION, 4) {
+-    LIBS += -lquazip
++    LIBS += -lquazip1-qt5
+ }
+ greaterThan(QT_MAJOR_VERSION, 4) {
+-    LIBS += -lquazip-qt5
++    LIBS += -lquazip1-qt5
+ }
+ 
+ LIBS += -lhunspell
+-- 
+2.33.1
+
