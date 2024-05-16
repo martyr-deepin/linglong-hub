@@ -1,0 +1,27 @@
+package:
+  id: io.github.mdiedit
+  name: mdiedit
+  version: 0.1.0
+  kind: app
+  description: |
+    Simple text editor with MDI interface
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/selairi/mdiedit.git
+  commit: 4b94dc101f8f0711c75d72c7582d57243bb65ea5
+
+build:
+  kind: cmake
+  manual:
+    configure: |
+      cd mdiedit
+      cmake -B ${build_dir} ${conf_args} ${extra_args}
+    build: |
+      cmake --build ${build_dir} -- ${jobs}
+    install: |
+      env DESTDIR=${dest_dir} cmake --build ${build_dir} --target install
