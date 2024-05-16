@@ -1,0 +1,24 @@
+From 73032efe529e19d13991806d8d45af5b7b3f29d4 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 16 May 2024 13:17:42 +0800
+Subject: [PATCH] install
+
+---
+ src/newProjectWizard/selectpage.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/newProjectWizard/selectpage.cpp b/src/newProjectWizard/selectpage.cpp
+index 07b40db..0c2ce86 100644
+--- a/src/newProjectWizard/selectpage.cpp
++++ b/src/newProjectWizard/selectpage.cpp
+@@ -1,6 +1,6 @@
+ #include "selectpage.h"
+ #include "ui_selectpage.h"
+-
++#include <QRegExpValidator>
+ SelectPage::SelectPage(QWidget *parent) :
+     QWizardPage(parent),
+     ui(new Ui::SelectPage)
+-- 
+2.33.1
+
