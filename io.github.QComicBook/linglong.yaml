@@ -1,0 +1,23 @@
+package:
+  id: io.github.QComicBook
+  name: QComicBook
+  version: 0.9.1
+  kind: app
+  description: |
+    Viewer for comic book archives that aims at convenience and simplicity
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: poppler/0.71.0.2
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/stolowski/QComicBook.git
+  commit: d0fc37d6f269a999a24108c5d52026bf539da279
+
+build:
+  kind: cmake
