@@ -1,0 +1,19 @@
+package:
+  id: io.github.qt5ct
+  name: qt5ct
+  version: 1.0.0
+  kind: app
+  description: |
+     Qt5 Configuration Tool
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/desktop-app/qt5ct.git
+  commit: 9f60cd2352a4dcc55c8ca267f29bd8fff5c6a659
+
+build:
+  kind: qmake
