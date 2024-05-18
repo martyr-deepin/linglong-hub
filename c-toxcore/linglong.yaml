@@ -1,0 +1,19 @@
+package:
+  id: c-toxcore
+  name: c-toxcore
+  version: 0.2.19
+  kind: lib
+  description: |
+    This is an experimental cryptographic network library.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/TokTok/c-toxcore.git"
+  commit: 102a1fa9b82a32274ab86583f3716139ba92295c
+
+build:
+  kind: cmake
