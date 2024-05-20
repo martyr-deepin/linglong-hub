@@ -1,0 +1,46 @@
+From 134678ead7c309a673f03b751ef4575498484e8b Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Mon, 20 May 2024 19:46:06 +0800
+Subject: [PATCH] fix-desktop-and-binary-install
+
+---
+ CMakeLists.txt | 25 +++++++++++++++++++++++++
+ 1 file changed, 25 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index c5449b8..76433d1 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -687,3 +687,28 @@ add_custom_target(
+     src/mayo_version.h.cmake
+     README.md
+ )
++
++
++#install desktop
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=mayo
++Exec=mayo
++Icon=mayoIcon
++Categories=Utility;
++")
++file(WRITE ${CMAKE_BINARY_DIR}/mayo.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/mayo.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++
++#install icons
++install(PROGRAMS images/mayoIcon.svg DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/apps/ )
++install(PROGRAMS images/16x16/mayoIcon.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/16x16/apps/ )
++install(PROGRAMS images/24x24/mayoIcon.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/24x24/apps/ )
++install(PROGRAMS images/32x32/mayoIcon.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/32x32/apps/ )
++install(PROGRAMS images/64x64/mayoIcon.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/64x64/apps/ )
++install(PROGRAMS images/128x128/mayoIcon.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/128x128/apps/ )
++install(PROGRAMS images/256x256/mayoIcon.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/256x256/apps/ )
++
++#install binary
++install(TARGETS mayo DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+\ No newline at end of file
+-- 
+2.33.1
+
