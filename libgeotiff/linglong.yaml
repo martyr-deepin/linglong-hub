@@ -1,0 +1,25 @@
+package:
+  id: libgeotiff
+  name: libgeotiff
+  version: 1.7.1
+  kind: lib
+  description: |
+    Official repository of the libgeotiff project
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/OSGeo/libgeotiff.git
+  commit: 0bfa226256b9bcdbcc3dbe1ae79fec7b41a0a74e
+
+
+build:
+  kind: cmake
+  manual: 
+   configure: |
+     cd libgeotiff
+     cmake -B ${build_dir} ${conf_args} ${extra_args}
+  
