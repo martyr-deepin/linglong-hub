@@ -1,0 +1,24 @@
+package:
+  id: PROJ
+  name: PROJ
+  version: 9.4.0
+  kind: lib
+  description: |
+    PROJ - Cartographic Projections and Coordinate Transformations Library
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/OSGeo/PROJ.git
+  commit: ea00f187f7572b3b745ed41e0285d6223a2ec488
+
+depends:
+  - id: sqlite/3.45.1
+
+build:
+  kind: cmake
+ 
+  
