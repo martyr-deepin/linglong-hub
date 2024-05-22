@@ -1,0 +1,23 @@
+package:
+  id: sqlite
+  name: sqlite
+  version: 3.45.1
+  kind: lib
+  description: |
+    Official Git mirror of the SQLite source tree
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/sqlite/sqlite.git
+  commit: 3731703dbb9dc9f88c8ed0da5bb88c35399478c0
+
+depends:
+  - id: automake/1.16.5
+  - id: libtool/2.4.6
+
+build:
+  kind: autotools
