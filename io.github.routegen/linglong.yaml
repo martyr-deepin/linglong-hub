@@ -1,0 +1,32 @@
+package:
+  id: io.github.routegen
+  name: routegen
+  version: 1.12.2.1
+  kind: app
+  description: |
+    Route Generator (clone frome SourceForge.net)
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/michjans/routegen.git
+  commit: d53bc1aff7759e894a47365af06845719c073858
+  patch: patches/0001-fix-desktop.patch
+
+depends:
+  - id: qtwebengine/5.15.7
+  - id: libgeotiff/1.7.1
+    type: runtime
+  - id: PROJ/9.4.0
+    type: runtime
+build:
+  kind: cmake
+  manual: 
+   configure: |
+     ln -s ${PREFIX}/lib/${TRIPLET}/libproj.so ${PREFIX}/lib/${TRIPLET}/libproj.so.22
+     cd src
+     cmake -B ${build_dir} ${conf_args} ${extra_args}
+  

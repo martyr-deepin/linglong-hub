@@ -1,0 +1,26 @@
+From 208606b8bbb85cb65d8ad21029c1627d31127ffe Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Thu, 23 May 2024 00:27:36 +0800
+Subject: [PATCH] fix-desktop
+
+---
+ src/CMakeLists.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index b585ff2..fffaffc 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -103,6 +103,9 @@ install(TARGETS routegen
+     BUNDLE DESTINATION .
+     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+ )
++install(PROGRAMS ../deploy/linux/routegen/usr/share/applications/routegen.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++install(PROGRAMS ../deploy/linux/routegen/usr/share/icons/hicolor/48x48/apps/routegen.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/48x48/apps/)
++
+ 
+ # Consider using qt_generate_deploy_app_script() for app deployment if
+ # the project can use Qt 6.3. In that case rerun qmake2cmake with
+-- 
+2.33.1
+
