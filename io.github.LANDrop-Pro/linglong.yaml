@@ -1,0 +1,27 @@
+package:
+  id: io.github.LANDrop-Pro
+  name: LANDrop-Pro
+  version: 0.1.2
+  kind: app
+  description: |
+    Drop any files to any devices on your LAN even on WAN. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/WanMotion/LANDrop-Pro.git
+  commit: 036b3b86f30c2def5bda1f2bd26e3db73847c4a0
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd LANDrop
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
