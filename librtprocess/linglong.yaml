@@ -1,0 +1,20 @@
+package:
+  id: librtprocess
+  name: librtprocess
+  version: 0.1.0
+  kind: lib
+  description: |
+    A project to make RawTherapee's processing algorithms more readily available.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/CarVac/librtprocess.git
+  commit: 9a858270acb2096e2e403d932760ee688fcac425
+
+
+build:
+  kind: cmake
