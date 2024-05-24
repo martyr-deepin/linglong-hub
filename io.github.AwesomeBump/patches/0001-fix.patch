@@ -1,0 +1,70 @@
+From 0f626110765c9a4d0c76c9a2d23c240bc26397d8 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Fri, 24 May 2024 23:32:37 +0800
+Subject: [PATCH] fix
+
+---
+ AwesomeBump.desktop |  8 ++++++++
+ Sources/Sources.pro | 19 +++++++++++++++----
+ 2 files changed, 23 insertions(+), 4 deletions(-)
+ create mode 100644 AwesomeBump.desktop
+
+diff --git a/AwesomeBump.desktop b/AwesomeBump.desktop
+new file mode 100644
+index 0000000..102dcfe
+--- /dev/null
++++ b/AwesomeBump.desktop
+@@ -0,0 +1,8 @@
++[Desktop Entry]
++Exec=AwesomeBump
++Name=AwesomeBump
++Icon=AwesomeBump
++StartupNotify=false
++Terminal=false
++Type=Application
++X-Deepin-Vendor=user-custom
+diff --git a/Sources/Sources.pro b/Sources/Sources.pro
+index dbdcace..2fa90be 100644
+--- a/Sources/Sources.pro
++++ b/Sources/Sources.pro
+@@ -52,7 +52,7 @@ write_file("$$TOP_DIR/workdir/current", SPEC)
+ # continues to look for these resource files in its current
+ # directory's subfolders (Config/* and Core/*) when using
+ # qmake to compile
+-DEFINES += RESOURCE_BASE=\\\"./\\\"
++
+ 
+ VPATH += ../shared
+ INCLUDEPATH += ../shared include utils utils/QtnProperty utils/contextinfo
+@@ -165,9 +165,7 @@ DISTFILES += \
+ 
+ # install additional files into target destination
+ # (require "make install")
+-config.path = $$DESTDIR
+-config.files += $$TOP_DIR/Bin/Configs $$TOP_DIR/Bin/Core
+-INSTALLS += config
++
+ 
+ exists("utils/qtcopydialog/qtcopydialog.pri") {
+         message("*** Adding 'copydialog' module.")
+@@ -196,3 +194,16 @@ exists("utils/fervor/Fervor.pri") {
+         FV_APP_VERSION = $$VERSION_FULL
+         include("utils/fervor/Fervor.pri")
+ }
++
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++DEFINES += RESOURCE_BASE=\\\"$$BINDIR/\\\"
++
++target.path = $$BINDIR
++desktop.files = ../AwesomeBump.desktop
++desktop.path = $$DATADIR/applications/
++icon.files = resources/icons/AwesomeBump.png
++icon.path= $$DATADIR/icons/hicolor/256x256/apps/
++config.path = $$BINDIR
++config.files += $$TOP_DIR/Bin/Configs $$TOP_DIR/Bin/Core
++INSTALLS += target desktop icon config
+\ No newline at end of file
+-- 
+2.33.1
+
