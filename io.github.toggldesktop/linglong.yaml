@@ -1,0 +1,32 @@
+package:
+  id: io.github.toggldesktop
+  name: toggldesktop
+  version: 7.5.363
+  kind: app
+  description: |
+    Toggl Desktop app for Windows, Mac and Linux
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/toggl-open-source/toggldesktop.git
+  commit: 013038304ee8e9154db4a45fb642716956cf153b
+
+variables:
+  extra_args: |
+    -DPOCO_INCLUDE_DIRS=${PREFIX}/include
+
+depends:
+  - id: poco/1.13.3
+    type: runtime
+  - id: libxmu/1.1.2
+    type: runtime
+  - id: qtnetworkauth/5.15.7
+    type: runtime
+  - id: qtbase/5.15.7
+    type: runtime
+build:
+  kind: cmake
