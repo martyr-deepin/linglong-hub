@@ -1,0 +1,40 @@
+package:
+  id: io.github.filmulator-gui
+  name: filmulator-gui
+  version: 0.11.1.1
+  kind: app
+  description: |
+    Filmulator --- Simplified raw editing with the power of film
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/CarVac/filmulator-gui.git
+  commit: 68c055826ecead6f041e7f456b24b8596ec99b08
+  patch: patches/0001-fix.patch
+variables:
+  extra_args: |
+     -DLENSFUN_LIBRARY=${PREFIX}/lib/${TRIPLET}/liblensfun.so
+ 
+depends:
+  - id: librtprocess/0.1.0
+    type: runtime
+  - id: exiv2/0.28.1
+    type: runtime
+  - id: inih/0.0.57
+    type: runtime
+  - id: lensfun/0.3.95
+    type: runtime
+build:
+  kind: cmake
+  manual:
+    configure: |
+      cd filmulator-gui
+      cmake -B ${build_dir} ${conf_args} ${extra_args}
+    build: |
+      cmake --build ${build_dir} -- ${jobs}
+    install: |
+      env DESTDIR=${dest_dir} cmake --build ${build_dir} --target install
