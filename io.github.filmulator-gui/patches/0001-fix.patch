@@ -1,0 +1,89 @@
+From ee35c667381d2753c213b5548d6b36015cf2adc2 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Fri, 24 May 2024 19:25:02 +0800
+Subject: [PATCH] fix
+
+---
+ filmulator-gui/CMakeLists.txt             | 22 ++++++++++++++++++++--
+ filmulator-gui/core/imwriteJpeg.cpp       |  2 +-
+ filmulator-gui/database/exifFunctions.cpp |  4 ++--
+ 3 files changed, 23 insertions(+), 5 deletions(-)
+
+diff --git a/filmulator-gui/CMakeLists.txt b/filmulator-gui/CMakeLists.txt
+index 57e22bf..e5fb98d 100644
+--- a/filmulator-gui/CMakeLists.txt
++++ b/filmulator-gui/CMakeLists.txt
+@@ -116,7 +116,7 @@ else()
+         ${filmulator_SRCS}
+         ${filmulator_RSCS}
+     )
+-    target_compile_definitions(filmulator PRIVATE LF_GIT)
++    target_compile_definitions(filmulator PRIVATE )
+ endif()
+ 
+ target_compile_options(filmulator
+@@ -292,7 +292,25 @@ else()
+         RUNTIME
+             DESTINATION ${CMAKE_INSTALL_BINDIR}
+     )
+-
+ endif()
+ 
++#install desktop
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=filmulator
++Exec=filmulator
++Icon=filmulator64icon
++Categories=Utility;
++")
++file(WRITE ${CMAKE_BINARY_DIR}/filmulator.desktop "${DESKTOP_FILE_CONTENT}")
++install(PROGRAMS ${CMAKE_BINARY_DIR}/filmulator.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++
++#install icons 
++install(PROGRAMS resources/filmulator64icon.svg DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/apps/ )
++install(PROGRAMS resources/filmulator64icon.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/64x64/apps/)
++
++#install binary
++install(TARGETS filmulator DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
++
+ add_subdirectory(qml)
+diff --git a/filmulator-gui/core/imwriteJpeg.cpp b/filmulator-gui/core/imwriteJpeg.cpp
+index 81f9966..94e356b 100644
+--- a/filmulator-gui/core/imwriteJpeg.cpp
++++ b/filmulator-gui/core/imwriteJpeg.cpp
+@@ -186,7 +186,7 @@ static void remove_exif_keys(Exiv2::ExifData &exifData, const char *keys[], unsi
+             {
+                 exifData.erase(pos);
+             }
+-        } catch (Exiv2::AnyError &e) {
++        } catch (Exiv2::Error &e) {
+             //catch invalid tag
+         }
+     }
+diff --git a/filmulator-gui/database/exifFunctions.cpp b/filmulator-gui/database/exifFunctions.cpp
+index f7d5af5..6a38130 100644
+--- a/filmulator-gui/database/exifFunctions.cpp
++++ b/filmulator-gui/database/exifFunctions.cpp
+@@ -123,7 +123,7 @@ int exifDefaultRotation(const std::string fullFilename)
+         int exifOrientation;
+         try
+         {
+-            exifOrientation = (int) exifData["Exif.Image.Orientation"].value().toLong();
++            exifOrientation = (int) exifData["Exif.Image.Orientation"].value().toInt64();
+         }
+         catch (...)
+         {
+@@ -295,7 +295,7 @@ int exifRating(const std::string fullFilename)
+         std::string maker = exifData["Exif.Image.Make"].toString();
+         if (maker.compare("Canon") == 0)
+         {
+-            return min(5,max(0,(int) xmpData["Xmp.xmp.Rating"].toLong()));
++            return min(5,max(0,(int) xmpData["Xmp.xmp.Rating"].toInt64()));
+         }
+         return 0;
+     }
+-- 
+2.33.1
+
