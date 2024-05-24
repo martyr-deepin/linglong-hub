@@ -1,0 +1,23 @@
+package:
+  id: io.github.tigervnc-vncviewer
+  name: tigervnc
+  version: 1.13.1
+  kind: app
+  description: |
+    the cross-platform TigerVNC Viewer, written using FLTK.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: libjpeg-turbo/2.1.1
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/LMattsson/tigervnc.git
+  commit: 0ae4408e922c996d597b7b3845e06bd60a5f3c25
+
+build:
+  kind: cmake
