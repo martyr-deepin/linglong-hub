@@ -1,0 +1,19 @@
+package:
+  id: lensfun
+  name: lensfun
+  version: 0.3.95
+  kind: lib
+  description: |
+    The Lensfun project Git repository
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/lensfun/lensfun.git
+  commit: b7c7e49a3601690f3225b99a0acbe7272fe68bfa
+
+build:
+  kind: cmake
