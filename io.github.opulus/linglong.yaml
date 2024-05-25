@@ -1,0 +1,19 @@
+package:
+  id: io.github.opulus
+  name: opulus
+  version: 0.9.6
+  kind: app
+  description: |
+    Simple Petri net editor and simulator
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/zettdaymond/opulus.git
+  commit: ed04c26eb2fad755f22c4ad8267cdab2cbe5812d
+
+build:
+  kind: cmake
