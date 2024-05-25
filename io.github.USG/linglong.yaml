@@ -1,0 +1,32 @@
+package:
+  id: io.github.USG
+  name: USG
+  version: 2.0.8.2
+  kind: app
+  description: |
+    USG - free, open source, multi-platform software for evidence ultrasound examinations
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/debalex77/USG.git
+  commit: 04724a33d16526c0f5f62ad8be46d1a9052bb983
+  patch: patches/0001-fix.patch
+
+depends:
+  - id: qtwebengine/5.15.7
+    type: runtime
+  - id: LimeReport/1.7.7
+    type: runtime
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      mkdir img/256x256 img/512x512
+      cp img/eco_256x256.png img/256x256/USGicon.png
+      cp img/eco_512x512.png img/512x512/USGicon.png
+      qmake -makefile  ${conf_args} ${extra_args}

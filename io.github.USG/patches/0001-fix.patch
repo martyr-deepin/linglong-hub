@@ -1,0 +1,135 @@
+From 95e43119e0765a1be38edb99983b39da4e370d50 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Sat, 25 May 2024 11:00:51 +0800
+Subject: [PATCH] fix
+
+---
+ USG.pro                                       | 88 ++++---------------
+ .../applications/org.alovada.usg.desktop      |  4 +-
+ 2 files changed, 20 insertions(+), 72 deletions(-)
+
+diff --git a/USG.pro b/USG.pro
+index 73a4e56..a7e554d 100644
+--- a/USG.pro
++++ b/USG.pro
+@@ -156,12 +156,9 @@ TRANSLATIONS += \
+ 
+ CONFIG += lrelease
+ CONFIG += embed_translations
+-CONFIG += use_lld_linker
++CONFIG += use_ld_linker
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
+-!isEmpty(target.path): INSTALLS += target
+ 
+ DISTFILES += \
+     Fonts/Cantarell Bold.ttf \
+@@ -195,71 +192,22 @@ macx{
+ 
+ #----------------------------------------------------------------------------------------
+ #---------------------------------- LIMEREPORT ------------------------------------------
+-
+-INCLUDEPATH += $$PWD/LimeReport/include
+-DEPENDPATH += $$PWD/LimeReport/include
+-
+-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/LimeReport/release/ -llimereport
+-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/LimeReport/debug/ -llimereportd
+-else:unix:!macx: LIBS += -L$$PWD/LimeReport/release/ -llimereport
+-else:unix:!macx: LIBS += -L$$PWD/LimeReport/debug/ -llimereportd
+-
+-win32:CONFIG(release, release|debug): LIBS += -L$$PWD/LimeReport/release/ -lQtZint
+-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/LimeReport/debug/ -lQtZintd
+-else:unix:!macx: LIBS += -L$$PWD/LimeReport/release/ -lQtZint
+-else:unix:!macx: LIBS += -L$$PWD/LimeReport/debug/ -lQtZintd
+-
+-unix:{
+-
+-    #-------------------------------------------
+-    macx: LIBS += -L$$PWD/LimeReport/debug/ -llimereportd
+-    macx: LIBS += -L$$PWD/LimeReport/debug/ -lQtZintd
+-
+-    INCLUDEPATH += $$PWD/LimeReport/debug
+-    DEPENDPATH += $$PWD/LimeReport/debug
+-
+-    #-------------------------------------------
+-    macx: LIBS += -L$$PWD/LimeReport/release/ -llimereport
+-    macx: LIBS += -L$$PWD/LimeReport/release/ -lQtZint
+-
+-    INCLUDEPATH += $$PWD/LimeReport/release
+-    DEPENDPATH += $$PWD/LimeReport/release
+-
+-    linux{
+-        QMAKE_LFLAGS += -Wl,--rpath=\\\$\$ORIGIN
+-        QMAKE_LFLAGS += -Wl,--rpath=\\\$\$ORIGIN/LimeReport/debug
+-        QMAKE_LFLAGS += -Wl,--rpath=\\\$\$ORIGIN/../LimeReport/debug
+-        QMAKE_LFLAGS += -Wl,--rpath=\\\$\$ORIGIN/LimeReport/release
+-        QMAKE_LFLAGS += -Wl,--rpath=\\\$\$ORIGIN/../LimeReport/release
+-        QMAKE_LFLAGS_RPATH += #. .. ./libs
+-    }
+-}
+-
+-LIBS += -L$$PWD/LimeReport
+-CONFIG(debug, debug|release) {
+-    LIBS += -L$$PWD/LimeReport/debug/ -llimereportd
+-} else {
+-    LIBS += -L$$PWD/LimeReport/release/ -llimereport
+-}
+-message($$LIBS)
+-
+-!CONFIG(static_build) : CONFIG(zint) {
+-    LIBS += -L$${DEST_LIBS}
+-    CONFIG(debug, debug|release) {
+-        LIBS += -L$$PWD/LimeReport/debug/ -lQtZintd
+-    } else {
+-        LIBS += -L$$PWD/LimeReport/release/ -lQtZint
+-    }
+-}
+-
++INCLUDEPATH += $$PREFIX/include/limereport
++DEPENDPATH += $$PREFIX/include/limereport
++LIBS += -L$$PREFIX/lib -llimereport-qt5
++QMAKE_LFLAGS += -Wl,--rpath=$$PREFIX/include/limereport
+ #----------------------------------------------------------------------------------------
+ #------------------------------------- OPENSSL ------------------------------------------
+-
+-
+-unix:!macx: LIBS += -L$$PWD/lib/openssl/ -lssl
+-unix:!macx: LIBS += -L$$PWD/lib/openssl/ -lcrypto
+-win32: LIBS += -L$$PWD/lib/openssl/ -llibssl
+-win32: LIBS += -L$$PWD/lib/openssl/ -llibcrypto
+-
+-INCLUDEPATH += $$PWD/lib/openssl
+-DEPENDPATH += $$PWD/lib/openssl
++LIBS += -lssl
++LIBS += -lcrypto
++
++BINDIR  = $$PREFIX/bin
++DATADIR = $$PREFIX/share
++target.path = $$BINDIR
++desktop.files = debian/usr/share/applications/org.alovada.usg.desktop
++desktop.path = $$DATADIR/applications/
++icon256.files = img/256x256/USGicon.png
++icon256.path= $$DATADIR/icons/hicolor/256x256/apps/
++icon512.files = img/512x512/USGicon.png
++icon512.path= $$DATADIR/icons/hicolor/512x512/apps/
++INSTALLS += target desktop icon256 icon512
+\ No newline at end of file
+diff --git a/debian/usr/share/applications/org.alovada.usg.desktop b/debian/usr/share/applications/org.alovada.usg.desktop
+index 4694c0d..3509639 100644
+--- a/debian/usr/share/applications/org.alovada.usg.desktop
++++ b/debian/usr/share/applications/org.alovada.usg.desktop
+@@ -4,8 +4,8 @@ Comment[en]=USG Evidence of ultrasound investigations
+ Comment[ru]=УЗИ-учёт ультразвуковых исследований
+ Comment[ro]=USG-Evidența investigațiilor ecografice
+ Version=2.0.9
+-Exec=/opt/USG/USG.sh
+-Icon=/opt/USG/icons/eco_248x248.ico
++Exec=USG
++Icon=USGicon
+ Type=Application
+ Categories=Utility;Database;MedicalSoftware;Qt;
+ StartupWMClass=USG
+-- 
+2.33.1
