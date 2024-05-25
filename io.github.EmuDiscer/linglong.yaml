@@ -1,0 +1,20 @@
+package:
+  id: io.github.EmuDiscer
+  name: EmuDiscer
+  version: 1.1.0
+  kind: app
+  description: |
+     EmuDiscer recognizes which system the game is made for, and lauches the right emulator.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/LMauricius/EmuDiscer.git
+  commit: 02af5b8b0d07caa7d4e1b969f9962a5951ca075a
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
