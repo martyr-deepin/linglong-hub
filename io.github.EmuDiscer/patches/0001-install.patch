@@ -1,0 +1,59 @@
+From 9aedec24aa5b3fda1268b3280660ca0c264b322a Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 25 May 2024 16:31:30 +0800
+Subject: [PATCH] install
+
+---
+ EmuDiscer.pro                | 11 ++++++++++-
+ LMauricius.EmuDiscer.desktop | 14 +++++++-------
+ 2 files changed, 17 insertions(+), 8 deletions(-)
+
+diff --git a/EmuDiscer.pro b/EmuDiscer.pro
+index ebc31c9..a9b693e 100644
+--- a/EmuDiscer.pro
++++ b/EmuDiscer.pro
+@@ -59,10 +59,19 @@ DEFINES += EMUDISCER_APP_VERSION=\\\"$$VERSION\\\"
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     resources.qrc
+ 
+ DISTFILES +=
++
++
++target.path = $$PREFIX/bin
++desktop.files = LMauricius.EmuDiscer.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/scalable/apps
++icons.files = EmuDiscer.svg
++
++INSTALLS += target desktop icons
+diff --git a/LMauricius.EmuDiscer.desktop b/LMauricius.EmuDiscer.desktop
+index 2c9f46e..e41d1ca 100644
+--- a/LMauricius.EmuDiscer.desktop
++++ b/LMauricius.EmuDiscer.desktop
+@@ -1,9 +1,9 @@
+ [Desktop Entry]
+-Categories = Game;
+-Comment = A program for running emulators when a disc is inserted.
+-Exec = EmuDiscer --open-settings
+-Icon = EmuDiscer
+-Name = EmuDiscer
+-Terminal = false
+-Type = Application
++Categories=Game;
++Comment=A program for running emulators when a disc is inserted.
++Exec=EmuDiscer
++Icon=EmuDiscer
++Name=EmuDiscer
++Terminal=false
++Type=Application
+ 
+-- 
+2.33.1
+
