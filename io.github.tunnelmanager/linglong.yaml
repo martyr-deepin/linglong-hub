@@ -1,0 +1,19 @@
+package:
+  id: io.github.tunnelmanager
+  name: tunnelmanager
+  version: 0.3.0
+  kind: app
+  description: |
+    Simple GUI for SSH Tunnels
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/shyim/tunnelmanager.git
+  commit: cdd1598298f4b1d9c66b5f235c4c73b784d5f207
+
+build:
+  kind: cmake
