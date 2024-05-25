@@ -1,0 +1,54 @@
+From 2b7efa07feb341fa3c77a529f37fbd528d10dd8c Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 25 May 2024 18:32:15 +0800
+Subject: [PATCH] install
+
+---
+ src/aboutdialog.cpp        | 2 +-
+ src/editshortcutdialog.cpp | 4 +++-
+ src/waitform.cpp           | 1 +
+ 3 files changed, 5 insertions(+), 2 deletions(-)
+
+diff --git a/src/aboutdialog.cpp b/src/aboutdialog.cpp
+index 4f08f27..0a8f204 100644
+--- a/src/aboutdialog.cpp
++++ b/src/aboutdialog.cpp
+@@ -19,7 +19,7 @@
+  ***************************************************************************/
+ 
+ #include <QApplication>
+-
++#include <QIcon>
+ #include "ui_aboutdialog.h"
+ #include "aboutdialog.h"
+ 
+diff --git a/src/editshortcutdialog.cpp b/src/editshortcutdialog.cpp
+index 7675f20..e08bb72 100644
+--- a/src/editshortcutdialog.cpp
++++ b/src/editshortcutdialog.cpp
+@@ -23,7 +23,9 @@
+ #include <QDesktopWidget>
+ #include <QFileDialog>
+ #include <QSettings>
+-
++#include <QIcon>
++#include <QApplication>
++#include <QStyle>
+ #include "ui_editshortcutdialog.h"
+ #include "editshortcutdialog.h"
+ #include "mainmodel.h"
+diff --git a/src/waitform.cpp b/src/waitform.cpp
+index 1dc724a..e6da7ef 100644
+--- a/src/waitform.cpp
++++ b/src/waitform.cpp
+@@ -20,6 +20,7 @@
+ 
+ #include "ui_waitform.h"
+ #include "waitform.h"
++#include <QStyle>
+ 
+ WaitForm::WaitForm(QWidget *parent) :
+     QWidget(parent),
+-- 
+2.33.1
+
