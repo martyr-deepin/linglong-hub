@@ -1,0 +1,25 @@
+package:
+  id: io.github.Tasker
+  name: Tasker
+  version: 0.2.0
+  kind: app
+  description: |
+    A commitment tracker desktop app that tracks the progress of your tasks with mouse, keyboard and audio hooks.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/thebigG/Tasker.git
+  commit: 0678598ecc0aa3ac471b2504ba9bd640ea4417ac
+  patch:
+    - patches/fix_install.patch
+
+variables:
+  extra_args: |
+    -DUSE_XKB_FILE=OFF
+
+build:
+  kind: cmake
