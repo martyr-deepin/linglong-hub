@@ -1,0 +1,14 @@
+diff --git a/Tasker/CMakeLists.txt b/Tasker/CMakeLists.txt
+index cbfe8f5..70517c3 100644
+--- a/Tasker/CMakeLists.txt
++++ b/Tasker/CMakeLists.txt
+@@ -103,5 +103,7 @@ else(WIN32)
+ endif()
+ 
+ install(TARGETS Tasker
+-    DESTINATION ${CMAKE_INSTALL_PREFIX}
++    DESTINATION ${CMAKE_INSTALL_PREFIX}/bin
+     )
++install(FILES Tasker.desktop DESTINATION share/applications/)
++install(FILES clock-256.png DESTINATION share/icons/hicolor/16x16/)
+
