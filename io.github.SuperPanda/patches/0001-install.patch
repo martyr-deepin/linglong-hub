@@ -1,0 +1,45 @@
+From 74d88c880a624e95ac54b0a03a35e2d5ce0384ba Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 22 May 2024 13:05:51 +0800
+Subject: [PATCH] install
+
+---
+ Icons/SuperPanda.desktop | 10 ++++++++++
+ SuperPanda.pro           |  6 ++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 Icons/SuperPanda.desktop
+
+diff --git a/Icons/SuperPanda.desktop b/Icons/SuperPanda.desktop
+new file mode 100644
+index 0000000..b543e60
+--- /dev/null
++++ b/Icons/SuperPanda.desktop
+@@ -0,0 +1,10 @@
++[Desktop Entry]
++Exec=SuperPanda
++Categories=Qt;Utility;
++Name=SuperPanda
++Name[zh_CN]=SuperPanda
++Icon=SuperPanda
++StartupNotify=false
++Type=Application
++GenericName=SuperPanda
++Version=1.1
+diff --git a/SuperPanda.pro b/SuperPanda.pro
+index 9890733..d57e7b3 100644
+--- a/SuperPanda.pro
++++ b/SuperPanda.pro
+@@ -103,3 +103,9 @@ include(translation.pri)
+ target.path = $${PREFIX}/bin/
+ 
+ INSTALLS += target
++desktop.files = Icons/SuperPanda.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/16X16/apps/
++icons.files = Icons/SuperPanda.png
++
++INSTALLS += desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
