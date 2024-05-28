@@ -1,0 +1,58 @@
+From 61761d052d74ab8c7dd04fe1bbe176e4d3ba2be2 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 17 May 2024 11:53:53 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt          | 10 ++++++++++
+ ctrlcharacterspopup.cpp |  2 +-
+ cutecom.desktop         |  2 +-
+ 3 files changed, 12 insertions(+), 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 82d4ed7..0cf8f24 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -82,3 +82,13 @@ include (CPack)
+ 
+ add_custom_target(dist COMMAND git archive --format tar --prefix=cutecom-${CuteCom_VERSION}/ HEAD | gzip > ${CMAKE_CURRENT_BINARY_DIR}/${CPACK_SOURCE_PACKAGE_FILE_NAME}.tgz WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+ 
++#install(TARGETS ${PROJECT_NAME}
++            # DESTINATION bin)
++
++install(FILES cutecom.png
++        DESTINATION share/icons/hicolor/16X16/apps/)
++
++
++install(FILES cutecom.desktop
++            DESTINATION share/applications)
++
+diff --git a/ctrlcharacterspopup.cpp b/ctrlcharacterspopup.cpp
+index cec38d1..480cd20 100644
+--- a/ctrlcharacterspopup.cpp
++++ b/ctrlcharacterspopup.cpp
+@@ -31,7 +31,7 @@
+ #include <algorithm>
+ #include <iterator>
+ #include <map>
+-
++#include <QPainterPath>
+ namespace popup_widget
+ {
+ namespace
+diff --git a/cutecom.desktop b/cutecom.desktop
+index 6ecf7ec..5652ad4 100644
+--- a/cutecom.desktop
++++ b/cutecom.desktop
+@@ -4,7 +4,7 @@ Name=CuteCom
+ MimeType=
+ GenericName=Serial Terminal
+ Comment=A graphical serial terminal
+-Exec=cutecom
++Exec=cutecom
+ Icon=cutecom
+ Path=
+ Type=Application
+-- 
+2.33.1
+
