@@ -1,0 +1,51 @@
+From 797142f7a9447c7f59fc1a0325d48ac760f03410 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 13 May 2024 10:53:13 +0800
+Subject: [PATCH] install
+
+---
+ kronos.pro                  | 10 +++++++++-
+ packages/deb/kronos.desktop |  4 ++--
+ 2 files changed, 11 insertions(+), 3 deletions(-)
+
+diff --git a/kronos.pro b/kronos.pro
+index f8f141e..d88c1da 100644
+--- a/kronos.pro
++++ b/kronos.pro
+@@ -37,9 +37,17 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++target.path =$$PREFIX/bin
++desktop.files =packages/deb/kronos.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/16X16/apps/
++icons.files = resources/logo/favicon.png
++
++INSTALLS += target desktop icons
++
+ include(kronos.pri)
+ 
+ RESOURCES += \
+diff --git a/packages/deb/kronos.desktop b/packages/deb/kronos.desktop
+index 8124c1d..74ef235 100644
+--- a/packages/deb/kronos.desktop
++++ b/packages/deb/kronos.desktop
+@@ -3,6 +3,6 @@ Encoding=UTF-8
+ Version=1.0
+ Type=Application
+ Terminal=false
+-Exec=/opt/kronos/bin/kronos
++Exec=kronos
+ Name=Kronos
+-Icon=/opt/kronos/resources/logo.png
+\ No newline at end of file
++Icon=favicon
+\ No newline at end of file
+-- 
+2.33.1
+
