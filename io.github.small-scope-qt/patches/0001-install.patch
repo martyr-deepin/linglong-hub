@@ -1,0 +1,46 @@
+From 8c2eee492f3ca3e188192bebbf981e95753b05d5 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 22 May 2024 13:30:37 +0800
+Subject: [PATCH] install
+
+---
+ icons/small-scope-qt.desktop | 9 +++++++++
+ small-scope-qt.pro           | 8 ++++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 icons/small-scope-qt.desktop
+
+diff --git a/icons/small-scope-qt.desktop b/icons/small-scope-qt.desktop
+new file mode 100644
+index 0000000..24112e7
+--- /dev/null
++++ b/icons/small-scope-qt.desktop
+@@ -0,0 +1,9 @@
++[Desktop Entry]
++Exec=small-scope-qt
++Name=small-scope-qt
++Name[zh_CN]=small-scope-qt
++Icon=oscilloscope-icon
++Comment=GUI for small-scope arduino oscilloscope
++Type=Application
++GenericName=small-scope-qt
++Version=1.0
+\ No newline at end of file
+diff --git a/small-scope-qt.pro b/small-scope-qt.pro
+index 4fbfef6..4dc36c1 100644
+--- a/small-scope-qt.pro
++++ b/small-scope-qt.pro
+@@ -43,3 +43,11 @@ HEADERS  += settingsdialog.h \
+ FORMS    += settingsdialog.ui \
+     mainwindow.ui \
+     about.ui
++
++target.path = $$PREFIX/bin
++desktop.files = icons/small-scope-qt.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/16X16/apps/
++icons.files = icons/oscilloscope-icon.png
++
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
