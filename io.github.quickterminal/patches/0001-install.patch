@@ -1,0 +1,51 @@
+From 61558c5e93c706bf7c4cd602a30dfa342858c593 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 17 May 2024 10:58:03 +0800
+Subject: [PATCH] install
+
+---
+ desktop/quickterminal.desktop | 2 +-
+ quickterminal.pro             | 8 +++++---
+ 2 files changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/desktop/quickterminal.desktop b/desktop/quickterminal.desktop
+index c5f931d..ebe6be1 100644
+--- a/desktop/quickterminal.desktop
++++ b/desktop/quickterminal.desktop
+@@ -8,7 +8,7 @@ Comment[ru_RU]=Эмулятор терминала
+ Comment[fr]=Terminal
+ 
+ Icon=utilities-terminal
+-Exec=qt
++Exec=QuickTerminal
+ Terminal=false
+ Categories=Qt;System;TerminalEmulator;
+ Actions=Dropdown;
+diff --git a/quickterminal.pro b/quickterminal.pro
+index 0d71dad..2dd10a8 100644
+--- a/quickterminal.pro
++++ b/quickterminal.pro
+@@ -2,7 +2,7 @@ QT += gui gui-private widgets
+ CONFIG += c++11 link_pkgconfig
+ PKGCONFIG += qtermwidget5 x11
+ 
+-TARGET = qt
++TARGET = QuickTerminal
+ 
+ DEFINES += STR_VERSION=\\\"1.0\\\"
+ 
+@@ -29,7 +29,9 @@ unix {
+ 
+     shortcut.path = $$PREFIX/share/applications
+     shortcut.files = desktop/quickterminal.desktop
+-
+-    INSTALLS += target shortcut
++    icons.path = $$PREFIX/share/icons/hicolor/16X16/apps/
++    icons.files = src/icons/utilities-terminal.png
++ 
++    INSTALLS += target shortcut  icons
+ }
+ 
+-- 
+2.33.1
+
