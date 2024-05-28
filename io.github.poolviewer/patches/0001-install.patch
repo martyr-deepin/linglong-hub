@@ -1,0 +1,51 @@
+From c787a7615824be1ca42a2c1b592deafe6b9d7693 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 22 May 2024 12:42:59 +0800
+Subject: [PATCH] install
+
+---
+ images/poolviewer.desktop | 11 +++++++++++
+ poolview.pro              |  7 ++++++-
+ 2 files changed, 17 insertions(+), 1 deletion(-)
+ create mode 100644 images/poolviewer.desktop
+
+diff --git a/images/poolviewer.desktop b/images/poolviewer.desktop
+new file mode 100644
+index 0000000..c42395f
+--- /dev/null
++++ b/images/poolviewer.desktop
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Categories=Utility;
++Comment=Opensource Swimovate Poolmate application
++Exec=poolview
++GenericName=poolview
++Icon=pod
++Name=poolview
++StartupNotify=false
++Type=Application
++Version=0.6.1
++X-Deepin-Vendor=user-custom
+diff --git a/poolview.pro b/poolview.pro
+index 35a324c..1c41d77 100644
+--- a/poolview.pro
++++ b/poolview.pro
+@@ -35,9 +35,14 @@ CONFIG(debug, debug|release) {
+         win32: TARGET = $$join(TARGET,,d)
+ }
+ 
+-target.path = $$PREFIX/usr/bin
++target.path = $$PREFIX/bin
+ INSTALLS += target
++desktop.files = images/poolviewer.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/32X32/apps/
++icons.files = images/pod.png
+ 
++INSTALLS += desktop icons
+ FORMS = ui/summary.ui \
+     ui/sync.ui \
+     ui/config.ui \
+-- 
+2.33.1
+
