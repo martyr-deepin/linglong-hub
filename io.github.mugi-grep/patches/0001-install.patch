@@ -1,0 +1,45 @@
+From 8d568d0b4b826eee840f96e47fa288629cdb7c75 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 21 May 2024 14:45:17 +0800
+Subject: [PATCH] install
+
+---
+ mugi-grep.desktop | 5 +++++
+ mugi-grep.pro     | 9 +++++++--
+ 2 files changed, 12 insertions(+), 2 deletions(-)
+ create mode 100644 mugi-grep.desktop
+
+diff --git a/mugi-grep.desktop b/mugi-grep.desktop
+new file mode 100644
+index 0000000..d0adb74
+--- /dev/null
++++ b/mugi-grep.desktop
+@@ -0,0 +1,5 @@
++[Desktop Entry]
++Name=mugi-grep
++Icon=mugi-grep
++Exec=mugi-grep
++Categories=Utility
+diff --git a/mugi-grep.pro b/mugi-grep.pro
+index 858da1c..626380f 100644
+--- a/mugi-grep.pro
++++ b/mugi-grep.pro
+@@ -187,8 +187,13 @@ FORMS += \
+     src/widget/rxreplaceinput.ui \
+     src/widget/lineeditandcheckbox.ui
+ 
+-target.path = /usr/local/bin
+-INSTALLS += target
++target.path = $$PREFIX/bin
++desktop.files = mugi-grep.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/16X16/apps/
++icons.files = icons/*
++
++INSTALLS += target desktop icons
+ 
+ DISTFILES += \
+     todo.txt
+-- 
+2.33.1
+

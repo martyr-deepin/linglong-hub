@@ -1,0 +1,20 @@
+package:
+  id: io.github.mugi-grep
+  name: mugi-grep
+  version: 1.6.1.1
+  kind: app
+  description: |
+    Gui grep (and sed) with sessions and history
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/mugiseyebrows/mugi-grep.git
+  commit: 21f7a8d4964210151d55862f412f87d79bbda041
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
