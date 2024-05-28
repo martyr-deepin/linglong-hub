@@ -1,0 +1,24 @@
+package:
+  id: io.github.small-scope-qt
+  name: small-scope-qt
+  version: 1.0.0.1
+  kind: app
+  description: |
+    GUI for small-scope arduino oscilloscope
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtserialport/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/marvin-sinister/small-scope-qt.git
+  commit: 9ab33af10292a4c98b38557e30c2b117ce654e3a
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
