@@ -1,0 +1,56 @@
+From f079f73b7cf490d0682bbce5424a85afa87c96b0 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 12 May 2024 13:26:26 +0800
+Subject: [PATCH] install
+
+---
+ StudyFolderOrganizer-GUI.desktop | 10 ++++++++++
+ StudyFolderOrganizer-GUI.pro     | 10 +++++++++-
+ 2 files changed, 19 insertions(+), 1 deletion(-)
+ create mode 100644 StudyFolderOrganizer-GUI.desktop
+
+diff --git a/StudyFolderOrganizer-GUI.desktop b/StudyFolderOrganizer-GUI.desktop
+new file mode 100644
+index 0000000..0dbf9be
+--- /dev/null
++++ b/StudyFolderOrganizer-GUI.desktop
+@@ -0,0 +1,10 @@
++[Desktop Entry]
++Exec=StudyFolderOrganizer-GUI
++Name=StudyFolderOrganizer-GUI
++Icon=Main App Icon@4x
++Categories=Accessibility;Qt;Utility;
++Comment=Mange your study folders in a easy and time saving way.
++Terminal=false
++Type=Application
++GenericName=StudyFolderOrganizer
++Version=1.1.0
+\ No newline at end of file
+diff --git a/StudyFolderOrganizer-GUI.pro b/StudyFolderOrganizer-GUI.pro
+index cf7c394..beae016 100644
+--- a/StudyFolderOrganizer-GUI.pro
++++ b/StudyFolderOrganizer-GUI.pro
+@@ -26,7 +26,7 @@ TRANSLATIONS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+@@ -37,3 +37,11 @@ RC_ICONS += res/logo/SFO_v2.ico
+ 
+ # App Version
+ VERSION += 1.1.0
++
++target.path =$$PREFIX/bin
++desktop.files =StudyFolderOrganizer-GUI.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/16X16/apps/
++icons.files = res/logo/png/Main App Icon@4x.png
++
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
