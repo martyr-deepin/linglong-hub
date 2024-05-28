@@ -1,0 +1,48 @@
+From 1119ec3dfb973a6ca36135fbfebbdf0b62a6ce8f Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 15 May 2024 12:02:41 +0800
+Subject: [PATCH] install
+
+---
+ src/PosteRazor.desktop | 10 ++++++++++
+ src/posterazor.pro     |  8 ++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 src/PosteRazor.desktop
+
+diff --git a/src/PosteRazor.desktop b/src/PosteRazor.desktop
+new file mode 100644
+index 0000000..2a49792
+--- /dev/null
++++ b/src/PosteRazor.desktop
+@@ -0,0 +1,10 @@
++[Desktop Entry]
++Exec=PosteRazor
++Name=PosteRazor
++Name[zh_CN]=PosteRazor
++Icon=posterazor
++StartupNotify=false
++Categories=Accessibility;Qt;
++Comment=The PosteRazor cuts a raster image into pieces which can afterwards be printed out and assembled to a poster.
++Type=Application
++Version=1.0
+\ No newline at end of file
+diff --git a/src/posterazor.pro b/src/posterazor.pro
+index cabd845..863d101 100644
+--- a/src/posterazor.pro
++++ b/src/posterazor.pro
+@@ -66,3 +66,11 @@ contains (DEFINES, FREEIMAGE_LIB) {
+ }
+ 
+ include (posterazor.pri)
++
++target.path =$$PREFIX/bin
++desktop.files =PosteRazor.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/16X16/apps/
++icons.files = posterazor.png
++
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
