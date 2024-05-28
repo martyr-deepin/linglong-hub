@@ -1,0 +1,21 @@
+package:
+  id: io.github.pumpa
+  name: pumpa
+  version: 1.0.1
+  kind: app
+  description: |
+    Pumpa is a simple [pump.io][1] client written in C++ and Qt
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/enko/pumpa.git
+  commit: 3b3e4453c8d7ecfd7a26d133678c021aadd4de79
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+ 

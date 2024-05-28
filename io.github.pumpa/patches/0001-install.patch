@@ -1,0 +1,48 @@
+From d4fa7d32b54500317c5bdddc29a0efb5b5589d71 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 14 May 2024 13:44:30 +0800
+Subject: [PATCH] install
+ 
+---
+ pumpa.desktop | 4 ++--
+ pumpa.pro     | 8 ++++++--
+ 2 files changed, 8 insertions(+), 4 deletions(-)
+
+diff --git a/pumpa.desktop b/pumpa.desktop
+index 07f956a..1639bf9 100644
+--- a/pumpa.desktop
++++ b/pumpa.desktop
+@@ -1,8 +1,8 @@
+ [Desktop Entry]
+ Version=0.7.3
+ Name=Pumpa
+-Exec=./pumpa
+-Icon=./pumpa/images/pumpa.png
++Exec=pumpa
++Icon=pumpa
+ Terminal=false
+ Type=Application
+ Categories=Network
+diff --git a/pumpa.pro b/pumpa.pro
+index 19688d8..f40aef0 100644
+--- a/pumpa.pro
++++ b/pumpa.pro
+@@ -161,9 +161,13 @@ SOURCES += \
+ ######################################################################
+ # Install target
+ ######################################################################
++target.path =$$PREFIX/bin
++desktop.files =pumpa.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/16X16/apps/
++icons.files = images/pumpa.png
+ 
+-target.path = /usr/local/bin
+-INSTALLS += target
++INSTALLS += target desktop icons
+ 
+ 
+ ######################################################################
+-- 
+2.33.1
+
