@@ -1,0 +1,81 @@
+From b6e5c7d3e2ccd9a8394669ea149c68e6a3ba3975 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 13 May 2024 12:39:00 +0800
+Subject: [PATCH] install
+
+---
+ cen64-qt.pro                      | 16 ++++++++++++----
+ src/common.cpp                    |  4 ++--
+ src/emulation/emulatorhandler.cpp |  4 ++--
+ 3 files changed, 16 insertions(+), 8 deletions(-)
+
+diff --git a/cen64-qt.pro b/cen64-qt.pro
+index 4fbb3fd..a023605 100644
+--- a/cen64-qt.pro
++++ b/cen64-qt.pro
+@@ -15,7 +15,7 @@ macx {
+ TEMPLATE = app
+ macx:ICON = dist/macosx/cen64.icns
+ win32:RC_FILE = dist/windows/icon.rc
+-
++INCLUDEPATH += $${PREFIX}/include 
+ 
+ SOURCES += src/main.cpp \
+     src/common.cpp \
+@@ -76,12 +76,20 @@ win32|macx|linux_quazip_static {
+         # Debian distributions use a different library name for Qt5 quazip
+         system("which dpkg > /dev/null 2>&1") {
+             system("dpkg -l | grep libquazip-qt5-dev | grep ^ii > /dev/null") {
+-                LIBS += -lquazip-qt5
++                LIBS += -lquazip1-qt5
+             } else {
+-                LIBS += -lquazip5
++                LIBS += -lquazip1-qt5
+             }
+         } else {
+-            LIBS += -lquazip5
++            LIBS += -lquazip1-qt5
+         }
+     }
+ }
++
++target.path =$$PREFIX/bin
++desktop.files =resources/cen64-qt.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/16X16/apps/
++icons.files = resources/images/cen64-qt.png
++
++INSTALLS += target desktop icons
+diff --git a/src/common.cpp b/src/common.cpp
+index 3ffdb7c..bfb7d02 100644
+--- a/src/common.cpp
++++ b/src/common.cpp
+@@ -40,8 +40,8 @@
+ #include <QLocale>
+ #include <QSize>
+ 
+-#include <quazip5/quazip.h>
+-#include <quazip5/quazipfile.h>
++#include <QuaZip-Qt5-1.4/quazip/quazip.h>
++#include <QuaZip-Qt5-1.4/quazip/quazipfile.h>
+ 
+ #ifdef Q_OS_WIN
+ #include <QCoreApplication>
+diff --git a/src/emulation/emulatorhandler.cpp b/src/emulation/emulatorhandler.cpp
+index 53350ce..694e440 100644
+--- a/src/emulation/emulatorhandler.cpp
++++ b/src/emulation/emulatorhandler.cpp
+@@ -39,8 +39,8 @@
+ #include <QProcess>
+ #include <QCryptographicHash>
+ 
+-#include <quazip5/quazip.h>
+-#include <quazip5/quazipfile.h>
++#include <QuaZip-Qt5-1.4/quazip/quazip.h>
++#include <QuaZip-Qt5-1.4/quazip/quazipfile.h>
+ 
+ 
+ EmulatorHandler::EmulatorHandler(QWidget *parent) : QObject(parent)
+-- 
+2.33.1
+
