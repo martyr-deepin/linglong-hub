@@ -1,0 +1,43 @@
+From ec99abe489747db8cb8b5cb4688670475cbf31b2 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 13 May 2024 10:16:58 +0800
+Subject: [PATCH] install
+
+---
+ ImageEnlarger.pro   | 8 ++++++++
+ docs/smilla.desktop | 2 +-
+ 2 files changed, 9 insertions(+), 1 deletion(-)
+
+diff --git a/ImageEnlarger.pro b/ImageEnlarger.pro
+index 87780c5..a5f9afa 100644
+--- a/ImageEnlarger.pro
++++ b/ImageEnlarger.pro
+@@ -82,3 +82,11 @@ FORMS += src/enlargerdialog.ui \
+     src/preferences.ui
+ RESOURCES += ressources.qrc
+ CONFIG += console
++
++target.path =$$PREFIX/bin
++desktop.files =docs/smilla.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons//hicolor/16X16/apps/
++icons.files = img/smilla.png
++
++INSTALLS += target desktop icons
+\ No newline at end of file
+diff --git a/docs/smilla.desktop b/docs/smilla.desktop
+index 6ff21cd..7e0b5b6 100644
+--- a/docs/smilla.desktop
++++ b/docs/smilla.desktop
+@@ -8,7 +8,7 @@ Comment=Enlarge cropped piece of image
+ Type=Application
+ Categories=Graphics;Photography;
+ 
+-Exec=smillaenlarger
++Exec=smilla-enlarger
+ TryExec=smillaenlarger
+ Icon=smilla
+ 
+-- 
+2.33.1
+
