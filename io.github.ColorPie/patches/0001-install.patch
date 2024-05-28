@@ -1,0 +1,50 @@
+From 8529683f84ec31e348758431c9a7ceceabe578f3 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 18 Apr 2024 11:00:35 +0800
+Subject: [PATCH] install
+
+---
+ src/ColorPie.pro     | 10 +++++++++-
+ src/colorpie.desktop |  2 +-
+ 2 files changed, 10 insertions(+), 2 deletions(-)
+
+diff --git a/src/ColorPie.pro b/src/ColorPie.pro
+index 13f9230..22125bc 100644
+--- a/src/ColorPie.pro
++++ b/src/ColorPie.pro
+@@ -52,9 +52,17 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     breeze.qrc \
+     resources.qrc
++
++target.path =$$PREFIX/bin
++desktop.files =colorpie.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/128X128/apps/
++icons.files = icons/icon-128.png
++
++INSTALLS += target desktop icons
+\ No newline at end of file
+diff --git a/src/colorpie.desktop b/src/colorpie.desktop
+index 4227ed7..fe92b0e 100644
+--- a/src/colorpie.desktop
++++ b/src/colorpie.desktop
+@@ -2,7 +2,7 @@
+ Name=ColorPie
+ GenericName=Color picker
+ Comment=Professional color management utility
+-Icon=com.ktechpit.colorpie
++Icon=icon-128
+ Exec=colorpie
+ Terminal=false
+ Type=Application
+-- 
+2.33.1
+

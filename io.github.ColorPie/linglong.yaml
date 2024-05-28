@@ -1,0 +1,42 @@
+package:
+  id: io.github.ColorPie
+  name: ColorPie
+  version: 1.0.1
+  kind: app
+  description: |
+    ColorConverter utility written in Qt
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qthttpserver
+    type: runtime
+    version: 1.0.0
+    source:
+      kind: git
+      url: https://github.com/qt-labs/qthttpserver.git
+      version: master
+      commit: 52bce52413763ead7759f8c2e374a40bb82f058f
+    build:
+      kind: qmake
+  - id: qtwebengine/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/keshavbhatt/ColorPie.git
+  commit: e497f611da2381c3ba1a5dd31d1f92e3101e9c68
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
