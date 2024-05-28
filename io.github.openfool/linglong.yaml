@@ -1,0 +1,20 @@
+package:
+  id: io.github.openfool
+  name: openfool
+  version: 0.0.9.1
+  kind: app
+  description: |
+    Open source implementation of a Fool (Durak) card game
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/artenax/openfool.git
+  commit: ff48e1241dc79c75ad81d0728af4a6f57deda1e9
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

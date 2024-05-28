@@ -1,0 +1,29 @@
+From bbbb49c9889d3b8da150258d962b886ae591e8bc Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 16 May 2024 12:56:20 +0800
+Subject: [PATCH] install
+
+---
+ OpenFool.pro | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/OpenFool.pro b/OpenFool.pro
+index 0c3ea85..ddfceac 100644
+--- a/OpenFool.pro
++++ b/OpenFool.pro
+@@ -65,3 +65,11 @@ TRANSLATIONS += OpenFool_en.ts OpenFool_ru.ts
+ ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+ 
+ RC_ICONS = icons/icon_128_win.ico
++
++target.path = $$PREFIX/bin
++desktop.files = openfool.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/16X16/apps/
++icons.files = openfool.png
++
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
