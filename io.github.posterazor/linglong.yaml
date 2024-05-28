@@ -1,0 +1,28 @@
+package:
+  id: io.github.posterazor
+  name: posterazor
+  version: 1.0.1
+  kind: app
+  description: |
+    The PosteRazor cuts a raster image into pieces which can afterwards be printed out and assembled to a poster.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/aportale/posterazor.git
+  commit: 53661c3b09c0fd07c393bf43df2890e4d041b5d6
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile posterazor.pro  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
