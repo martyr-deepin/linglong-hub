@@ -1,0 +1,41 @@
+From 894182d65e251d7fb3c2f0ce760e9b786483f9c2 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 22 May 2024 11:57:47 +0800
+Subject: [PATCH] install
+
+---
+ esptool-gui.desktop | 2 +-
+ esptool-gui.pro     | 8 ++++++++
+ 2 files changed, 9 insertions(+), 1 deletion(-)
+
+diff --git a/esptool-gui.desktop b/esptool-gui.desktop
+index 61a5ecf..ec3d74f 100644
+--- a/esptool-gui.desktop
++++ b/esptool-gui.desktop
+@@ -2,5 +2,5 @@
+ Type=Application
+ Name=esptool-gui
+ Exec=esptool-gui
+-Icon=esptool-gui
++Icon=esptool-gui-screenshot
+ Categories=Development;
+diff --git a/esptool-gui.pro b/esptool-gui.pro
+index 82b4321..fdba787 100644
+--- a/esptool-gui.pro
++++ b/esptool-gui.pro
+@@ -18,3 +18,11 @@ SOURCES += main.cpp\
+ HEADERS  += mainwindow.h
+ 
+ FORMS    += mainwindow.ui
++
++target.path = $$PREFIX/bin
++desktop.files = esptool-gui.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/16X16/apps/
++icons.files = esptool-gui-screenshot.png
++
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
