@@ -1,0 +1,34 @@
+From 2cd66ac73047b2ad05e526e0f98760769b6c6a82 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Fri, 17 May 2024 12:05:50 +0800
+Subject: [PATCH] install
+
+---
+ src/QtBitcoinTrader_Desktop.pro | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+
+diff --git a/src/QtBitcoinTrader_Desktop.pro b/src/QtBitcoinTrader_Desktop.pro
+index 73814ed..01f6d27 100755
+--- a/src/QtBitcoinTrader_Desktop.pro
++++ b/src/QtBitcoinTrader_Desktop.pro
+@@ -293,14 +293,12 @@ unix:!macx {
+     UI_DIR = .ui
+     MOC_DIR = .moc
+     OBJECTS_DIR = .obj
+-    isEmpty( PREFIX ) {
+-        PREFIX=/usr
+-    }
++
+     isEmpty( DESKTOPDIR ) {
+-        DESKTOPDIR=/usr/share/applications
++        DESKTOPDIR= $$PREFIX/share/applications
+     }
+     isEmpty( ICONDIR ) {
+-        ICONDIR=/usr/share/pixmaps
++        ICONDIR= $$PREFIX/share/icons/hicolor/16X16/apps/
+     }
+ 
+     target.path = $${PREFIX}/bin
+-- 
+2.33.1
+
