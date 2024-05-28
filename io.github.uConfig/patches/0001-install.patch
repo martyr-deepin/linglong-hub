@@ -1,0 +1,81 @@
+From 89a13a9e65efebab15a8a0efb8cb435b2b5b55af Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 21 May 2024 14:40:19 +0800
+Subject: [PATCH] install
+
+---
+ src/kicad/kicad.pro                     |  2 +-
+ src/pdf_extract/pdf_extract.pro         |  4 +++-
+ src/uconfig_gui/img/uconfig_gui.desktop | 10 ++++++++++
+ src/uconfig_gui/uconfig_gui.pro         |  8 ++++++++
+ 4 files changed, 22 insertions(+), 2 deletions(-)
+ create mode 100644 src/uconfig_gui/img/uconfig_gui.desktop
+
+diff --git a/src/kicad/kicad.pro b/src/kicad/kicad.pro
+index b02314f..19924f2 100644
+--- a/src/kicad/kicad.pro
++++ b/src/kicad/kicad.pro
+@@ -123,6 +123,6 @@ RESOURCES += \
+     $$PWD/imgviewer.qrc
+ 
+ unix {
+-    target.path = /usr/lib
++    target.path = $$PREFIX/bin
+     INSTALLS += target
+ }
+diff --git a/src/pdf_extract/pdf_extract.pro b/src/pdf_extract/pdf_extract.pro
+index 5d3caf2..a6af3be 100644
+--- a/src/pdf_extract/pdf_extract.pro
++++ b/src/pdf_extract/pdf_extract.pro
+@@ -5,7 +5,7 @@ TEMPLATE = lib
+ 
+ PROJECT_ROOT = $$PWD/../..
+ SOURCE_ROOT = $$PWD/..
+-
++INCLUDEPATH += $${PREFIX}/include   
+ DESTDIR = "$$PROJECT_ROOT/bin"
+ INCLUDEPATH += $$SOURCE_ROOT
+ DEFINES += KICAD_EXPORT=Q_DECL_IMPORT
+@@ -72,3 +72,5 @@ packagesExist(poppler-qt5) {
+ else {
+   LIBS += -lpoppler-qt5
+ }
++target.path = $$PREFIX/bin
++INSTALLS += target
+\ No newline at end of file
+diff --git a/src/uconfig_gui/img/uconfig_gui.desktop b/src/uconfig_gui/img/uconfig_gui.desktop
+new file mode 100644
+index 0000000..6072d1c
+--- /dev/null
++++ b/src/uconfig_gui/img/uconfig_gui.desktop
+@@ -0,0 +1,10 @@
++[Desktop Entry]
++Exec=uconfig_gui
++Name=uconfig_gui
++Name[zh_CN]=uconfig_gui
++Icon=uConfig
++StartupNotify=false
++Terminal=false
++Type=Application
++GenericName=uconfig_gui
++Version=0.4
+\ No newline at end of file
+diff --git a/src/uconfig_gui/uconfig_gui.pro b/src/uconfig_gui/uconfig_gui.pro
+index 561de26..d61d5c5 100644
+--- a/src/uconfig_gui/uconfig_gui.pro
++++ b/src/uconfig_gui/uconfig_gui.pro
+@@ -53,3 +53,11 @@ INCLUDEPATH += $$SOURCE_ROOT/kicad
+ DEPENDPATH += $$SOURCE_ROOT/kicad
+ 
+ win32 : RC_FILE = uconfig_gui.rc
++
++target.path = $$PREFIX/bin
++desktop.files = img/uconfig_gui.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/scalable/apps
++icons.files = img/uConfig.svg
++
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
