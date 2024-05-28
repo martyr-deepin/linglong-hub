@@ -1,0 +1,20 @@
+package:
+  id: io.github.rdr2view
+  name: rdr2view
+  version: 0.5.2
+  kind: app
+  description: |
+    Open Source Photo and Savegame viewer/editor for RDR 2 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/SyDevTeam/rdr2view.git
+  commit: 5e7c7c580d7cd3d4060b95b56930e5df34273281
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
