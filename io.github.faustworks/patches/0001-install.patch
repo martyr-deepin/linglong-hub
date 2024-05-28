@@ -1,0 +1,31 @@
+From cea32e49df922eb50339c4f4b5d879a1b117b07b Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 25 May 2024 19:09:25 +0800
+Subject: [PATCH] install
+
+---
+ FaustWorks.pro | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/FaustWorks.pro b/FaustWorks.pro
+index 36f4178..47b0b35 100644
+--- a/FaustWorks.pro
++++ b/FaustWorks.pro
+@@ -60,6 +60,14 @@ QMAKE_EXTRA_TARGETS += i18n_qm
+ 
+ PRE_TARGETDEPS += i18n_qm
+ 
++target.path = $$PREFIX/bin
++desktop.files = faustworks.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/16X16/apps/
++icons.files = Resources/faustworks.png
++
++INSTALLS += target desktop icons
++
+ 
+ 
+ 
+-- 
+2.33.1
+
