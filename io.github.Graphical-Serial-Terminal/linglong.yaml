@@ -1,0 +1,24 @@
+package:
+  id: io.github.Graphical-Serial-Terminal
+  name: Graphical-Serial-Terminal
+  version: 0.50.0.1
+  kind: app
+  description: |
+    A graphical serial terminal
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtserialport/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/neundorf/CuteCom.git
+  commit: efc3f0efb72f9fc7d6506f6908ca83d689a09fe1
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake
