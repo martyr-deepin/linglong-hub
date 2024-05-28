@@ -1,0 +1,21 @@
+package:
+  id: io.github.feff
+  name: feff
+  version: 1.11.0.1
+  kind: app
+  description: |
+    ffmpeg Qt5 GUI
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://github.com/artenax/feff.git
+  commit: 974baf2d6cea524318433dea2e3dcff2ce74f30c
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

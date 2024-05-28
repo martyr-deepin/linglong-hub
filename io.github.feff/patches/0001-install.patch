@@ -1,0 +1,40 @@
+From a89f09bb28beeebf22c9923e895361f128edc7da Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 16 May 2024 12:50:13 +0800
+Subject: [PATCH] install
+
+---
+ feff.pro | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/feff.pro b/feff.pro
+index 06de7b3..53ddc53 100644
+--- a/feff.pro
++++ b/feff.pro
+@@ -47,19 +47,19 @@ updateqm.commands = $$QMAKE_LRELEASE -silent ${QMAKE_FILE_IN} -qm langs/${QMAKE_
+ updateqm.CONFIG += no_link target_predeps
+ QMAKE_EXTRA_COMPILERS += updateqm
+ 
+-data_bin.path = /usr/bin/
++data_bin.path = $$PREFIX/bin/
+ data_bin.files = Bin/feff
+ INSTALLS += data_bin
+ 
+-data_app.path = /usr/share/applications/
++data_app.path = $$PREFIX/share/applications/
+ data_app.files = pkg/feff.desktop
+ INSTALLS += data_app
+ 
+-data_pixmaps.path = /usr/share/pixmaps/
++data_pixmaps.path = $$PREFIX/share/icons/hicolor/16X16/apps/
+ data_pixmaps.files = feff.png
+ INSTALLS += data_pixmaps
+ 
+-data_langs.path = /usr/share/feff/langs/
++data_langs.path = $$PREFIX/share/feff/langs/
+ data_langs.files = langs/*.qm
+ INSTALLS += data_langs
+ 
+-- 
+2.33.1
+
