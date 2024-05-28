@@ -1,0 +1,30 @@
+From a635ff572585466a11852c5eb17d339c5c82a4bc Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 12 May 2024 11:53:59 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 0ba689f..0cd6dc1 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -16,3 +16,13 @@ pkg_check_modules(VORBIS vorbisfile)
+ 
+ set(CMAKE_AUTOUIC ON)
+ add_subdirectory(src)
++
++install(TARGETS ${PROJECT_NAME}
++             DESTINATION bin)
++
++install(FILES src/bpmdetect-icon.png
++        DESTINATION share/icons/hicolor/16X16/apps/)
++
++
++install(FILES src/bpmdetect.desktop
++            DESTINATION share/applications)
+-- 
+2.33.1
+
