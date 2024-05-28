@@ -1,0 +1,32 @@
+package:
+  id: io.github.QtBitcoinTrader
+  name: QtBitcoinTrader
+  version: 1.42.22
+  kind: app
+  description: |
+    Secure multi crypto exchange trading client
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtscript/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/JulyIghor/QtBitcoinTrader.git
+  commit: c42311bbda2adf3ec91bccfe12c94e78f82575e1
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
