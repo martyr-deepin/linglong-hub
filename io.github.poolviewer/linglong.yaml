@@ -1,0 +1,26 @@
+package:
+  id: io.github.poolviewer
+  name: poolviewer
+  version: 0.6.2
+  kind: app
+  description: |
+    Poolviewer - Opensource Swimovate Poolmate application
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtwebengine/5.15.7
+    type: runtime
+  - id: qtserialport/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/ihewitt/poolviewer.git
+  commit: b83ac69cd436325157e02aa914830e1e34888610
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
