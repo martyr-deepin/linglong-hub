@@ -1,0 +1,20 @@
+package:
+  id: io.github.kronos
+  name: kronos
+  version: 1.0.2
+  kind: app
+  description: |
+    Kronos is a desktop application for logging time in Jira
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/llob/kronos.git
+  commit: 6f6ab1cc29c369455f806a00e00b5c7baf4b27f7
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
