@@ -1,0 +1,20 @@
+package:
+  id: io.github.djvu-imager-qt
+  name: djvu-imager-qt
+  version: 2.9.1
+  kind: app
+  description: |
+     It is based on the combination of the background glueing and mask coloring methods.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/trufanov-nok/djvu-imager-qt.git
+  commit: 70913e3caf559210ff0f4e5fbbf60377c5fde426
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake

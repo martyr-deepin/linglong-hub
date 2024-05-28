@@ -1,0 +1,27 @@
+From 88c7bd09e02c87b246762c8c3f497fa1bbc93de5 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 22 May 2024 11:05:09 +0800
+Subject: [PATCH] install
+
+---
+ CMakeLists.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 0b0718b..9f0be71 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -136,8 +136,8 @@ target_link_libraries(djvu-imager-qt PRIVATE Qt5::Widgets)
+ 
+ 
+ IF(NOT WIN32 AND NOT APPLE)
+-    INSTALL(FILES res/djvu-imager-qt.png DESTINATION "/usr/share/pixmaps/")
+-    INSTALL(FILES debian/djvu-imager-qt.desktop DESTINATION "/usr/share/applications/")
++    INSTALL(FILES res/djvu-imager-qt.png DESTINATION  share/icons/hicolor/16X16/apps/)
++    INSTALL(FILES debian/djvu-imager-qt.desktop DESTINATION share/applications)
+ ENDIF(NOT WIN32 AND NOT APPLE)
+ 
+ IF(APPLE)
+-- 
+2.33.1
+
