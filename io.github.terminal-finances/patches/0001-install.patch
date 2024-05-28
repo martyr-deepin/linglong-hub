@@ -1,0 +1,60 @@
+From a87c2a291c6fa7b6774f0b4beb83c929baa08a44 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 12 May 2024 11:32:28 +0800
+Subject: [PATCH] install
+
+---
+ src/TerminalFinances.pro      | 17 ++++++++++-------
+ src/terminal-finances.desktop |  2 +-
+ 2 files changed, 11 insertions(+), 8 deletions(-)
+
+diff --git a/src/TerminalFinances.pro b/src/TerminalFinances.pro
+index 811a71d..4f6d556 100644
+--- a/src/TerminalFinances.pro
++++ b/src/TerminalFinances.pro
+@@ -41,19 +41,22 @@ TRANSLATIONS += \
+ 
+ CONFIG+=lrelease
+ 
+-shortcut.path = /usr/share/applications
++shortcut.path = $$PREFIX/share/applications
+ shortcut.files = terminal-finances.desktop
+ 
+-images.path = /usr/share/pixmaps
++images.path = $$PREFIX/share/icons/hicolor
+ images.files = assets/terminal-finances
+ 
+-configs.path = /etc/xdg
++icons.path = $$PREFIX/share/icons/hicolor/16X16/apps/
++icons.files = assets/terminal-finances/terminal-finances.png
++
++configs.path = $$PREFIX/etc/xdg
+ configs.files = terminalfinances
+ 
+-trans.path = = /etc/xdg/terminalfinances
+-trans.commands = @mv .qm/* /etc/xdg/terminalfinances
++trans.path = $$PREFIX/etc/xdg/terminalfinances
++trans.files = terminalfinances/*
+ 
+-target.path = /usr/local/bin
++target.path =$$PREFIX/bin
+ 
+-INSTALLS += target shortcut images configs trans
++INSTALLS += target shortcut images configs  icons
+ 
+diff --git a/src/terminal-finances.desktop b/src/terminal-finances.desktop
+index 51f981b..eec6670 100644
+--- a/src/terminal-finances.desktop
++++ b/src/terminal-finances.desktop
+@@ -4,7 +4,7 @@ Name=Terminal Finances
+ GenericName=Financial management
+ Comment=Personal Financial Management
+ Exec=terminal-finances %u
+-Icon=/usr/share/pixmaps/terminal-finances/terminal-finances.png
++Icon=terminal-finances
+ Terminal=false
+ Type=Application
+ StartupNotify=true
+-- 
+2.33.1
+

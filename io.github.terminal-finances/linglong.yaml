@@ -1,0 +1,28 @@
+package:
+  id: io.github.terminal-finances
+  name: terminal-finances
+  version: 1.0.2.1
+  kind: app
+  description: |
+    Personal Financial Management
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/terroo/terminal-finances.git
+  commit: 7e26b1bf01f0082e02c2e619977269d33374bf3c
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
