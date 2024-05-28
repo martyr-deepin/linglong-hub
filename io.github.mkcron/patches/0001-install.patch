@@ -1,0 +1,49 @@
+From fb972af16d75fa1c888542b73404c4dab84224d1 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 18 Apr 2024 11:24:15 +0800
+Subject: [PATCH] install
+
+---
+ snap_launcher/mkcron.desktop | 2 +-
+ src/mkcron.pro               | 9 ++++++++-
+ 2 files changed, 9 insertions(+), 2 deletions(-)
+
+diff --git a/snap_launcher/mkcron.desktop b/snap_launcher/mkcron.desktop
+index d108dbd..0e4a2ea 100644
+--- a/snap_launcher/mkcron.desktop
++++ b/snap_launcher/mkcron.desktop
+@@ -3,7 +3,7 @@ Version=1.0
+ GenericName=MkCron
+ Name=MkCron
+ Type=Application
+-Icon=${SNAP}/meta/gui/icon.png
++Icon=MkCron
+ Keywords=cron;schedule
+ Exec=mkcron %F
+ Categories=Utility;Qt;
+diff --git a/src/mkcron.pro b/src/mkcron.pro
+index ba1cccb..92c2195 100644
+--- a/src/mkcron.pro
++++ b/src/mkcron.pro
+@@ -47,9 +47,16 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+     breeze.qrc \
+     resources.qrc
++
++target.path =$$PREFIX/bin
++desktop.files =../snap_launcher/mkcron.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/16X16/apps/
++icons.files = ../snap/gui/MkCron.png
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.33.1
+
