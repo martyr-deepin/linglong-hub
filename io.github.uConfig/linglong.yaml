@@ -1,0 +1,32 @@
+package:
+  id: io.github.uConfig
+  name: uConfig
+  version: 0.4.1
+  kind: app
+  description: |
+    Datasheet pinout extractor from PDF and library Stylizer for Kicad.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: poppler/0.71.0.2
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/Robotips/uConfig.git
+  commit: c7a73b362362bfb2a1ef28857a2f994e978ec905
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install 
