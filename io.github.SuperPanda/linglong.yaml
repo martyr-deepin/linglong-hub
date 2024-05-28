@@ -1,0 +1,20 @@
+package:
+  id: io.github.SuperPanda
+  name: SuperPanda
+  version: 1.1.0.1
+  kind: app
+  description: |
+    A simple GUI for tuning Linux system.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/zwpwjwtz/SuperPanda.git
+  commit: 3061c7a74f26f9bcf8893c04a886b8910a4e3b39
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
