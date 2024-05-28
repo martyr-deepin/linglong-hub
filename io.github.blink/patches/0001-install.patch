@@ -1,0 +1,42 @@
+From 9c1944cbecec28329f5d1f37a524d3e4e43ff372 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 21 May 2024 14:27:01 +0800
+Subject: [PATCH] install
+
+---
+ blink.pro                                          | 6 ++++++
+ blinkAppImage/usr/share/applications/blink.desktop | 4 ++--
+ 2 files changed, 8 insertions(+), 2 deletions(-)
+
+diff --git a/blink.pro b/blink.pro
+index 0f562fd..f117a87 100644
+--- a/blink.pro
++++ b/blink.pro
+@@ -98,5 +98,11 @@ HEADERS     += Utils/commonType.h \
+                 Storage/IStorageHandler.h \
+ 
+ 
++target.path = $$PREFIX/bin
++desktop.files = blinkAppImage/usr/share/applications/blink.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/16X16/apps/
++icons.files = blinkAppImage/usr/share/icons/hicolor/128x128/blink.png
+ 
++INSTALLS += target desktop icons
+ 
+diff --git a/blinkAppImage/usr/share/applications/blink.desktop b/blinkAppImage/usr/share/applications/blink.desktop
+index 6dfbf87..3a3e868 100644
+--- a/blinkAppImage/usr/share/applications/blink.desktop
++++ b/blinkAppImage/usr/share/applications/blink.desktop
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ Type=Application
+ Name=Blink
+-Exec=/usr/bin/blink
+-Icon=/usr/share/icons/hicolor/128x128/blink
++Exec=blink
++Icon=blink
+ Categories=Development;
+-- 
+2.33.1
+

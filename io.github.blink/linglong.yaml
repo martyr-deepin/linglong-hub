@@ -1,0 +1,24 @@
+package:
+  id: io.github.blink
+  name: blink
+  version: 1.7.2
+  kind: app
+  description: |
+    GUI of live indexed grep for source code
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qscintilla/2.13.3.1
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/ychclone/blink.git
+  commit: 7b33e56d8291030f5a824aa29a905c0b83407c60
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
