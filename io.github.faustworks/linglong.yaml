@@ -1,0 +1,20 @@
+package:
+  id: io.github.faustworks
+  name: faustworks
+  version: 0.4.0.1
+  kind: app
+  description: |
+    FaustWorks is an IDE (Integrated Development Environment) for the Faust dsp programming language
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/grame-cncm/faustworks.git
+  commit: af03cba9c166715334c7e3c5263b6505ef16df26
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
