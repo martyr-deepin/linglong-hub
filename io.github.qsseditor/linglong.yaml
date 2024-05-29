@@ -1,0 +1,25 @@
+package:
+  id: io.github.qsseditor
+  name: qsseditor
+  version: 0.6.1.1
+  kind: app
+  description: |
+    A cross-platform tool to edit and preview Qt style sheets.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qscintilla
+    version: 2.13.3.1
+
+source:
+  kind: git
+  url: "https://github.com/HappySeaFox/qsseditor.git"
+  commit: 582a8fa147185d26c2ede7cab1d9f12322a15e37
+  patch: 
+    - patches/fix-install.patch
+    - patches/fix-icon.patch
+build:
+  kind: qmake
