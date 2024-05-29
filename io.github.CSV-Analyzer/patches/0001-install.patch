@@ -1,0 +1,54 @@
+From 8b14a24330019b4e62f49f78538a1e2de9da6d2b Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 29 May 2024 14:58:36 +0800
+Subject: [PATCH] install
+
+---
+ CsvAnalyzer.pro            | 9 +++++++--
+ images/CsvAnalyzer.desktop | 9 +++++++++
+ 2 files changed, 16 insertions(+), 2 deletions(-)
+ create mode 100644 images/CsvAnalyzer.desktop
+
+diff --git a/CsvAnalyzer.pro b/CsvAnalyzer.pro
+index 9cd6a40..eb9da0f 100644
+--- a/CsvAnalyzer.pro
++++ b/CsvAnalyzer.pro
+@@ -40,7 +40,7 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: #target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
+ RESOURCES += \
+@@ -58,5 +58,10 @@ DISTFILES += \
+ ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+ 
+ 
+-
++target.path = $$PREFIX/bin
++desktop.files = images/CsvAnalyzer.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/16X16/apps/
++icons.files = images/analyzing.png 
++INSTALLS += target desktop icons
+ 
+diff --git a/images/CsvAnalyzer.desktop b/images/CsvAnalyzer.desktop
+new file mode 100644
+index 0000000..6c4cc90
+--- /dev/null
++++ b/images/CsvAnalyzer.desktop
+@@ -0,0 +1,9 @@
++﻿[Desktop Entry]
++Exec=CsvAnalyzer
++Name=CsvAnalyzer
++Icon=analyzing
++Categories=tools;Qt;Utility;
++StartupNotify=false
++Type=Application
++GenericName=CsvAnalyzer
++Version=1.0
+-- 
+2.43.4
+
