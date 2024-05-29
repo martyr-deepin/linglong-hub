@@ -1,0 +1,20 @@
+package:
+  id: io.github.CSV-Analyzer
+  name: CSV-Analyzer
+  version: 1.0.5
+  kind: app
+  description: |
+    It can plot value vs line number/ time value (for only known log formats), and value vs another value scatter graphs.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/dd-sudo/CSV-Analyzer.git
+  commit: ba273f34c16fe38c3ab2798b0886912ce483b7d8
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
