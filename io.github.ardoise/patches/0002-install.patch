@@ -1,0 +1,28 @@
+From 72e85ab0b14dde17e43f00d3b378dc72f26ead1d Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 15 May 2024 11:51:28 +0800
+Subject: [PATCH] install
+ 
+---
+ ardoise.pro | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/ardoise.pro b/ardoise.pro
+index bb7d8a4..b0ab9c4 100755
+--- a/ardoise.pro
++++ b/ardoise.pro
+@@ -68,3 +68,11 @@ TRANSLATIONS = \
+ 
+ #DEFINES += NO_DEBUG
+ 
++
++target.path =$$PREFIX/bin
++desktop.files =linux/ardoise.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/16X16/apps/
++icons.files = ardoise.png
++
++INSTALLS += target desktop icons
+-- 
+2.33.1
+
