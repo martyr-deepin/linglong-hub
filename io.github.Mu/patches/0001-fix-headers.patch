@@ -1,0 +1,26 @@
+From 006789df9a04cf9db942a947ba377979e051fe96 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Wed, 17 Apr 2024 23:45:30 +0800
+Subject: [PATCH] fix-headers
+
+---
+ .../plugin/knmusicbackendmpv/knmusicbackendmpvthread.cpp       | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/plugin/knmusicplugin/plugin/knmusicbackendmpv/knmusicbackendmpvthread.cpp b/src/plugin/knmusicplugin/plugin/knmusicbackendmpv/knmusicbackendmpvthread.cpp
+index 8a164fed..ed30ee9c 100644
+--- a/src/plugin/knmusicplugin/plugin/knmusicbackendmpv/knmusicbackendmpvthread.cpp
++++ b/src/plugin/knmusicplugin/plugin/knmusicbackendmpv/knmusicbackendmpvthread.cpp
+@@ -19,7 +19,8 @@
+ #include <QEasingCurve>
+ #include <QWidget>
+ 
+-#include <mpv/qthelper.hpp>
++#include <mpv/client.h> 
++#define MPV_EVENT_UNPAUSE MPV_EVENT_NONE
+ 
+ #include "knglobal.h"
+ 
+-- 
+2.33.1
+
