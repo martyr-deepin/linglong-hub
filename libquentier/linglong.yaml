@@ -1,0 +1,29 @@
+package:
+  id: libquentier
+  name: libquentier
+  version: 0.5.0.5
+  kind: lib
+  description: |
+    Set of Qt/C++ APIs for feature rich desktop clients for Evernote service
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/d1vanov/libquentier.git
+  commit: 50305e255dc7430d639ccb5aae98a17a7b7120cb
+
+depends:
+  - id: qtwebengine/5.15.7
+    type: runtime
+  - id: qtkeychain/0.14.0
+    type: runtime
+  - id: QEverCloud/6.1.0
+    type: runtime
+  - id: tidy-html5/5.8.0.2
+    type: runtime
+
+build:
+  kind: cmake
