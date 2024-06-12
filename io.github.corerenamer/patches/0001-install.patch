@@ -1,0 +1,39 @@
+From a349576ae4114aefa2c89dbb856deac0b69a86d1 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 25 Feb 2024 20:42:49 +0800
+Subject: [PATCH] install
+
+---
+ corerenamer.desktop | 2 +-
+ corerenamer.pro     | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/corerenamer.desktop b/corerenamer.desktop
+index 3aea8fc..b2e5a2d 100644
+--- a/corerenamer.desktop
++++ b/corerenamer.desktop
+@@ -2,7 +2,7 @@
+ Name=CoreRenamer
+ Comment=CoreRenamer is a batch file renamer from CoreApps.
+ Exec=corerenamer %F
+-Icon=/usr/share/coreapps/icons/corerenamer.svg
++Icon=corerenamer
+ Type=Application
+ Categories=Utility;Qt;
+ Terminal=false
+diff --git a/corerenamer.pro b/corerenamer.pro
+index bb5d52e..7e42f79 100644
+--- a/corerenamer.pro
++++ b/corerenamer.pro
+@@ -8,7 +8,7 @@ QT       += core gui widgets
+ 
+ TARGET = corerenamer
+ TEMPLATE = app
+-
++INCLUDEPATH += $${PREFIX}/include  
+ # library for theme
+ unix:!macx: LIBS += -lcprime
+ 
+-- 
+2.33.1
+
