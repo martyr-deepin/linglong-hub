@@ -1,0 +1,21 @@
+package:
+  id: io.github.QT-GUIBased-NumberGuessingGame
+  name: QT-GUIBased-NumberGuessingGame
+  version: 0.0.1
+  kind: app
+  description: |
+    A simple QT based GUI application that allows the users to play with numbers 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/Ajay-Embed/QT-GUIBased-NumberGuessingGame.git"
+  commit: 2e56ae3
+  patch: patches/ab.patch
+
+build:
+  kind: qmake

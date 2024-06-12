@@ -1,0 +1,22 @@
+diff -Naur b/1-12GuessNumberGui.pro a/1-12GuessNumberGui.pro
+--- b/1-12GuessNumberGui.pro	2023-12-08 22:13:00.393414997 +0800
++++ a/1-12GuessNumberGui.pro	2023-12-08 22:18:26.217716950 +0800
+@@ -32,3 +32,8 @@
+ 
+ FORMS += \
+         widget.ui
++
++desktop.files += QT-GUIBased-NumberGuessingGame.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++INSTALLS += target desktop
+\ 文件尾没有换行符
+diff -Naur b/QT-GUIBased-NumberGuessingGame.desktop a/QT-GUIBased-NumberGuessingGame.desktop
+--- b/QT-GUIBased-NumberGuessingGame.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/QT-GUIBased-NumberGuessingGame.desktop	2023-12-08 22:15:26.857653730 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=1-12GuessNumberGui
++Exec=1-12GuessNumberGui
++Type=Application
+\ 文件尾没有换行符
