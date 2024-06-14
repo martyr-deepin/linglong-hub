@@ -1,0 +1,17 @@
+--- ../app/CMakeLists.txt	2023-11-01 19:54:59.503286000 +0800
++++ ../app/CMakeLists.txt	2023-11-01 19:57:03.111237261 +0800
+@@ -31,3 +31,14 @@
+ 
+ 
+ target_link_libraries(utext PRIVATE Qt${QT_VERSION_MAJOR}::Widgets app)
++
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=utext
++Exec=utext
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_INSTALL_PREFIX}/share/applications/utext.desktop "${DESKTOP_FILE_CONTENT}")
++install(TARGETS utext DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)

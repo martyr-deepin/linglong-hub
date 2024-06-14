@@ -1,0 +1,25 @@
+package:
+  id: io.github.TextEditor
+  name: TextEditor
+  version: 1.0.1
+  kind: app
+  description: |
+    This is a simply GUI text editor with C++ highlighter.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/vorobeyka/TextEditor.git
+  commit: 00c8c6362274808b53ff6695ad4b66bd2e82d541
+  patch: patches/fix-001.patch
+
+variables:
+  conf_args: |
+    -DCMAKE_INSTALL_PREFIX=/opt/apps/io.github.TextEditor/files \
+    -DCMAKE_INSTALL_LIBDIR=${PREFIX}/lib/${TRIPLET}
+
+build:
+  kind: cmake
