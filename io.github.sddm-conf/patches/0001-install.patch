@@ -1,0 +1,40 @@
+From 57d24b4eb3c7d1db0794705531959e75f1aebe91 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 14 Mar 2024 12:58:12 +0800
+Subject: [PATCH] install
+ 
+---
+ CMakeLists.txt                               | 3 +++
+ resources/freedesktop/application.desktop.in | 2 +-
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f075446..555d15e 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -84,6 +84,9 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
+ # Install application
+ #===============================================================================
+ install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")
++
++install(FILES resources/icons/preferences-system.png
++        DESTINATION share/icons)
+ #===============================================================================
+ # Project information
+ #===============================================================================
+diff --git a/resources/freedesktop/application.desktop.in b/resources/freedesktop/application.desktop.in
+index 0a4c522..5962a29 100644
+--- a/resources/freedesktop/application.desktop.in
++++ b/resources/freedesktop/application.desktop.in
+@@ -2,7 +2,7 @@
+ Type=Application
+ Categories=@PROJECT_CATEGORIES@;
+ Exec=@PROJECT_ID@
+-Icon=@PROJECT_ICON_FILE_NAME@
++Icon=preferences-system
+ StartupNotify=false
+ Terminal=false
+ 
+-- 
+2.33.1
+
