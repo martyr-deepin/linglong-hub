@@ -1,0 +1,20 @@
+package:
+  id: poco
+  name: poco
+  version: 1.13.3
+  kind: lib
+  description: |
+    The POCO C++ Libraries are powerful cross-platform C++ libraries for building network- and internet-based applications that run on desktop, server, mobile, IoT, and embedded systems. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/pocoproject/poco.git
+  commit: ad72b25ace25da47ff3250f349d00e7ee46fb4b5
+
+
+build:
+  kind: cmake
