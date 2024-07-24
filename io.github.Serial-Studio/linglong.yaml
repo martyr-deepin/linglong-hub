@@ -1,0 +1,23 @@
+package:
+  id: io.github.Serial-Studio
+  name: Serial-Studio
+  version: 1.1.4
+  kind: app
+  description: |
+    Multi-purpose serial data visualization & processing program.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtserialport/5.15.7
+    type: runtime
+
+source:
+  kind: git
+  url: https://github.com/Serial-Studio/Serial-Studio.git
+  commit: afd911f3e0cbf1fa63826e99f0ddd004f6085e18
+
+build:
+  kind: qmake
