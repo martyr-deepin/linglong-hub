@@ -1,0 +1,22 @@
+package:
+  id: eb
+  name: eb
+  version: 4.4.3
+  kind: lib
+  description: |
+    No description
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/FooSoft/eb.git
+  commit: c9d1015f9ec4fdc3936f8d3905ccb7b1145eb1cf
+
+
+depends:
+  - id: automake/1.16.5
+build:
+  kind: autotools
