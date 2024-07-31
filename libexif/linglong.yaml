@@ -1,0 +1,39 @@
+package:
+  id: libexif
+  name: libexif
+  version: 0.6.24
+  kind: lib
+  description: |
+    libexif is a library for parsing, editing, and saving EXIF data.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+depends:
+  - id: automake
+    version: 1.16.5
+  - id: autoconf
+    version: 2.4.7
+  - id: libtool
+    version: 2.4.6
+source:
+  kind: git
+  url: "https://github.com/libexif/libexif.git"
+  commit: 87abeae2a492629cd54e6bb38345b4d1d55b288d
+variables: 
+  build_dir: build_dir
+  conf_args: |
+    --prefix=${PREFIX} \
+    --libdir=${PREFIX}/lib/${TRIPLET}
+  extra_args: |
+  dest_dir: |
+build:
+  kind: manual
+  manual: 
+    configure: |
+      autoreconf -i
+      CFLAGS="-Wall -O2" LDFLAGS="-L${PREFIX}/lib" ./configure ${conf_args} ${extra_args} --disable-dependency-tracking
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
