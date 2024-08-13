@@ -1,0 +1,30 @@
+package:
+  id: io.github.uDevkit-IDE
+  name: uDevkit-IDE
+  version: 1.0.0
+  kind: app
+  description: |
+    An IDE for uDevkit or C/C++ projects with Git written in Qt5
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/UniSwarm/uDevkit-IDE.git
+  commit: 576c2166d23da47043f47b25089ef19314b29fb6
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  manual:
+    configure: |
+      cp src/udk-ide.ico src/udk-ide.png
+      rm contrib/edbee-data/syntaxfiles/'Rd (R Documentation).tmLanguage'
+      cd src
+      qmake -makefile  ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
