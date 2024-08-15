@@ -1,0 +1,21 @@
+package:
+  id: io.github.prototyper
+  name: prototyper
+  version: 2.0.0
+  kind: app
+  description: |
+    Prototyper is a desktop application to make UI prototypes
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/igormironchik/prototyper.git
+  commit: e21e8d9b0d102859d7106ef89ae5981dded22456
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+  
