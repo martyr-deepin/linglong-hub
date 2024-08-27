@@ -1,0 +1,26 @@
+package:
+  id: gtk2
+  name: gtk2
+  version: 2.24.33
+  kind: lib
+  description: |
+    GTK is a multi-platform toolkit for creating graphical user interfaces.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/lampze/gtk2.git
+  version: xz
+  commit: bb16948421159a6b4fb124f348de0b1c0b113c12
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      ln -s /usr/lib/x86_64-linux-gnu/gobject-introspection/giscanner/_giscanner.cpython-310-x86_64-linux-gnu.so /usr/lib/x86_64-linux-gnu/gobject-introspection/giscanner/_giscanner.so
+      tar xf gtk+-2.24.33.tar.xz
+      cd gtk+-2.24.33
+      ./configure ${conf_args} ${extra_args}
