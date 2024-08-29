@@ -1,0 +1,28 @@
+package:
+  id: libconfig
+  name: libconfig
+  version: 1.7.3
+  kind: lib
+  description: |
+    C/C++ library for processing structured configuration files.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends: 
+  - id: automake
+    version: 1.16.5
+
+source:
+  kind: archive
+  url: https://hyperrealm.github.io/libconfig/dist/libconfig-1.7.3.tar.gz
+  digest: 545166d6cac037744381d1e9cc5a5405094e7bfad16a411699bcff40bbb31ee7
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      cd libconfig-1.7.3
+      ./configure ${conf_args} ${extra_args}
+
