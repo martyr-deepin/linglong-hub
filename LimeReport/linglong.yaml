@@ -1,0 +1,20 @@
+package:
+  id: LimeReport
+  name: LimeReport
+  version: 1.7.7
+  kind: lib
+  description: |
+    AwesomeBump is a free program written using Qt library designed to generate normal
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/fralx/LimeReport.git
+  commit: 86df3b179a9d41176f0247c2fd530789cd609bf5
+
+
+build:
+  kind: cmake
