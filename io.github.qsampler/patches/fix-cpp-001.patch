@@ -1,0 +1,11 @@
+--- ../src/qsamplerChannel.cpp	2023-11-01 20:25:08.722779000 +0800
++++ ../src/qsamplerChannel.cpp	2023-11-01 20:37:10.147038126 +0800
+@@ -677,7 +677,7 @@
+ 	for (int i = 0; piAudioRouting && piAudioRouting[i] >= 0; i++)
+ 		m_audioRouting[i] = piAudioRouting[i];
+ #else
+-	char **ppszAudioRouting = pChannelInfo->audio_routing;
++	char **ppszAudioRouting = reinterpret_cast<char**>(pChannelInfo->audio_routing);
+ 	for (int i = 0; ppszAudioRouting && ppszAudioRouting[i]; i++)
+ 		m_audioRouting[i] = ::atoi(ppszAudioRouting[i]);
+ #endif
