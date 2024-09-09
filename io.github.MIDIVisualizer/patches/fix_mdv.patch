@@ -1,0 +1,23 @@
+--- ../CMakeLists.txt	2023-11-02 14:59:11.356172000 +0800
++++ ../CMakeLists.txt	2023-11-02 15:09:59.863020576 +0800
+@@ -154,6 +154,20 @@
+ target_link_libraries(MIDIVisualizer PRIVATE sr_gui glfw libremidi ${GLFW_LIBRARIES} ${OPENGL_gl_LIBRARY})
+ add_dependencies(MIDIVisualizer Packaging)
+ 
++set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=MIDIVisualizer
++Exec=MIDIVisualizer
++Categories=Utility;
++")
++
++file(WRITE ${CMAKE_BINARY_DIR}/MIDIVisualizer.desktop "${DESKTOP_FILE_CONTENT}")
++
++install(PROGRAMS ${CMAKE_BINARY_DIR}/MIDIVisualizer.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
++
++install(TARGETS MIDIVisualizer DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
++
+ # Add dependency to FFmpeg if available.
+ if(FFMPEG_FOUND)
+ 	message(STATUS "FFmpeg found, enabling video export.")
