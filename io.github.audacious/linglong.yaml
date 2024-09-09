@@ -1,0 +1,41 @@
+package:
+  id: io.github.audacious
+  name: audacious
+  version: 0.0.1
+  kind: app
+  description: |
+    the audacious App(need plugins).
+
+
+variables:
+  build_dir: build_dir
+  conf_args: |
+
+    --prefix=${PREFIX} \
+    --libdir=${PREFIX}/lib/${TRIPLET}
+  extra_args: |
+  dest_dir: |
+  jobs: -j${JOBS}
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/audacious-media-player/audacious.git"
+  commit: e995c3ca85f06b259d8f21f32b649f0d06485baf
+
+
+build:
+  kind: manual
+  manual :
+    build: |
+      rm -rf build
+      mkdir build
+      cd build 
+      meson --prefix=${PREFIX} \
+            --libdir=lib/${TRIPLEF} ..
+      ninja ${jobs} -v
+    install: |
+      ninja ${jobs} install
