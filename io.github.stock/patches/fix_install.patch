@@ -1,0 +1,28 @@
+diff --git a/stock/desktop/Stock.desktop b/stock/desktop/Stock.desktop
+new file mode 100644
+index 0000000..0e17ae7
+--- /dev/null
++++ b/stock/desktop/Stock.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Name=Stock
++Comment=Stock is a desktop and mobile applications to manage a small warehouse.
++Exec=Stock %F
++Icon=Stock
++Type=Application
+diff --git a/stock/desktop/desktop.pro b/stock/desktop/desktop.pro
+index 0d94a21..eae227f 100644
+--- a/stock/desktop/desktop.pro
++++ b/stock/desktop/desktop.pro
+@@ -88,3 +88,11 @@ FORMS += \
+     rename.ui \
+     edit_desc.ui \
+     amount.ui
++
++target.path = $$PREFIX/bin
++desktop.path = $$PREFIX/share/applications
++desktop.files += Stock.desktop
++icon.path = $$PREFIX/share/icons
++icon.extra = cp img/icon_256x256.png Stock.png
++icon.files += Stock.png
++INSTALLS += desktop icon target
