@@ -1,0 +1,22 @@
+diff --git a/qt_open_icon.pro b/qt_open_icon.pro
+index 4f22d1f..9ffec4e 100644
+--- a/qt_open_icon.pro
++++ b/qt_open_icon.pro
+@@ -188,4 +188,15 @@ FORMS += \
+     utils/label/labeltest.ui \
+     utils/navbar/navbartest.ui \
+     service/database/logic/databasewig.ui \
+-    utils/button/buttontest.ui
+\ No newline at end of file
++    utils/button/buttontest.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += qt_open_icon.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++ INSTALLS += target
++
++icons.path = $${PREFIX}/share/icons
++icons.files = resourse/images/icon.png
++INSTALLS += icons
