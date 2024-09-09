@@ -1,0 +1,35 @@
+From 23f6dc40cc3d17c0ccfb8faa62c1cae5529f60d4 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Tue, 7 Nov 2023 12:49:08 +0800
+Subject: [install.patch_] install
+
+---
+ mapmap.pro | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+diff --git a/mapmap.pro b/mapmap.pro
+index e6e3e16..d0273ff 100644
+--- a/mapmap.pro
++++ b/mapmap.pro
+@@ -77,3 +77,18 @@ message("MapMap version: $${VERSION}")
+ # message("The project contains the following files: $${SOURCES} $${HEADERS}}")
+ # message("To create a tarball, run `make tarball`")
+ # message("To build the documentation, run `make docs`")
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = resources/texts/mapmap.desktop
++INSTALLS += unix_desktop
++
++unix_metainfo.path = $${PREFIX}/share/metainfo
++unix_metainfo.files = resources/texts/desktop/mapmap.xml
++INSTALLS += unix_metainfo
++
++}
+-- 
+2.33.1
+
