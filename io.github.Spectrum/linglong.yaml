@@ -1,0 +1,22 @@
+package:
+  id: io.github.Spectrum
+  name: Spectrum
+  version: 1.0.0
+  kind: app
+  description: |
+    This is a Software Development course project - 2D-platform-puzzle game. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/ivan-ristovic/Spectrum.git
+  commit: 786792d3678922d70ab0d62256944b1620e991ab 
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
