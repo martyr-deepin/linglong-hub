@@ -1,0 +1,18 @@
+package:
+  id: io.github.qtquickapp
+  name: qtquickapp
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt Quick application for use with linuxdeployqt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/probonopd/QtQuickApp.git
+  commit: d0769f53639eaffdcd070bddfb7113c04f2a0de8
+build:
+  kind: qmake
