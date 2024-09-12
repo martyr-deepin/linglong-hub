@@ -1,0 +1,21 @@
+package:
+  id: io.github.qt-BugInvasionDefenseGame 
+  name: qt-BugInvasionDefenseGame 
+  version: 0.0.1
+  kind: app
+  description: |
+    Example 2D Defend The Base type Shooter Game made using Qt and C++ 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/mattearly/qt-BugInvasionDefenseGame.git"
+  commit: 920d51c
+  patch: patches/ab.patch
+
+build:
+  kind: qmake

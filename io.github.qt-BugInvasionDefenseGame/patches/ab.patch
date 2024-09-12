@@ -1,0 +1,22 @@
+diff -Naur b/First_Game.pro a/First_Game.pro
+--- b/First_Game.pro	2023-12-09 16:28:44.301297763 +0800
++++ a/First_Game.pro	2023-12-09 16:32:26.216732999 +0800
+@@ -30,3 +30,8 @@
+ FORMS    +=
+ 
+ RESOURCES += res.qrc
++
++desktop.files += qt-BugInvasionDefenseGame.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++INSTALLS += target desktop
+\ 文件尾没有换行符
+diff -Naur b/qt-BugInvasionDefenseGame.desktop a/qt-BugInvasionDefenseGame.desktop
+--- b/qt-BugInvasionDefenseGame.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/qt-BugInvasionDefenseGame.desktop	2023-12-09 16:33:46.352829868 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=First_Game
++Exec=First_Game
++Type=Application
+\ 文件尾没有换行符
