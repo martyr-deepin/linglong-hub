@@ -1,0 +1,20 @@
+package:
+  id: hiredis
+  name: hiredis
+  version: 1.2.0
+  kind: lib
+  description: |
+     Minimalistic C client for Redis >= 1.2
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/redis/hiredis.git
+  commit: 60e5075d4ac77424809f855ba3e398df7aacefe8 
+
+
+build:
+  kind: cmake
