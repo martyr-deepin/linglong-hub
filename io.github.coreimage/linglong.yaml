@@ -1,0 +1,32 @@
+package:
+  id: io.github.coreimage
+  name: coreimage
+  version: 0.0.1
+  kind: app
+  description: |
+    An app of CoreApps family.CoreImage is image viewer.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: libcprime
+    type: runtime
+    version: 1.0.0
+    source:
+      kind: git
+      url: https://github.com/rahmanshaber/libcprime.git
+      version: master
+      commit: 499f472b8d99cecec83c1064164edea64e8ca6bb
+    build:
+      kind: qmake
+
+source:
+  kind: git
+  url: https://github.com/rahmanshaber/coreimage.git
+  commit: 9fc9ee42b49127883f45f4332f81b89e51b3dc8c
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
