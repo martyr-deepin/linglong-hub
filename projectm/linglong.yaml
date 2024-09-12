@@ -1,0 +1,22 @@
+package:
+  id: projectm
+  name: projectm
+  version: 4.1.1
+  kind: lib
+  description: |
+     projectM - Cross-platform Music Visualization Library. Open-source and Milkdrop-compatible.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/projectM-visualizer/projectm.git
+  commit: ac77498318edb5688057809d03acaf56ee9b22fc
+
+depends:
+  - id: cmake/3.28.0
+
+build:
+  kind: cmake
