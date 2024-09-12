@@ -1,0 +1,22 @@
+package:
+  id: io.github.Simon 
+  name: Simon 
+  version: 0.0.1
+  kind: app
+  description: |
+     C++ program based on the electonic game from the 70's, first try using the QT framework
+
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/chrpwd/Simon.git"
+  commit: 8e3b384
+  patch: patches/ab.patch
+
+build:
+  kind: qmake
