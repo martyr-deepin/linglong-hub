@@ -1,0 +1,48 @@
+From 816243bc5d115e4e291c0a2232dd47bbbb74cd2b Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Mon, 20 Nov 2023 20:04:56 +0800
+Subject: [install.patch_] install
+
+---
+ GridSolver.pro | 11 +++++++++++
+ fgs.desktop    |  7 +++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 fgs.desktop
+
+diff --git a/GridSolver.pro b/GridSolver.pro
+index 04466c3..1cb4e70 100644
+--- a/GridSolver.pro
++++ b/GridSolver.pro
+@@ -45,3 +45,14 @@ RESOURCES += \
+ DISTFILES += \
+     assets/freeflow.png \
+     levels/*.json
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = fgs.desktop
++INSTALLS += unix_desktop
++
++}
+\ No newline at end of file
+diff --git a/fgs.desktop b/fgs.desktop
+new file mode 100644
+index 0000000..1caa3ec
+--- /dev/null
++++ b/fgs.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=GridSolver
++GenericName=GridSolver
++Hidden=false
++Name=GridSolver
++StartupNotify=false
++Type=Application
+\ No newline at end of file
+-- 
+2.33.1
+
