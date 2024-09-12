@@ -1,0 +1,30 @@
+package:
+  id: lame
+  name: lame 
+  version: 3.99.5.1
+  kind: lib
+  description: |
+     LAME Ain't an MP3 Encoder
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: automake/1.16.5
+  - id: autoconf/2.4.7
+  - id: pkgconf/2.0.3
+source:
+  kind: git
+  url: https://github.com/rbrito/deprecated-lame-mirror.git
+  commit: af984672a95bb0eedc9f3193604e269c97cca162
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      ./configure ${conf_args} ${extra_args}
+    build: |
+      make ${jobs}
+    install: |
+      make ${jobs} DESTDIR=${dest_dir} install
