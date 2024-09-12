@@ -1,0 +1,39 @@
+From 8bb2d549da6b9cafcbcf8bf842a53cb6d5ac1b34 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sun, 25 Feb 2024 20:01:18 +0800
+Subject: [PATCH] install
+
+---
+ corepad.desktop | 2 +-
+ corepad.pro     | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/corepad.desktop b/corepad.desktop
+index 1e6ca45..46718ff 100644
+--- a/corepad.desktop
++++ b/corepad.desktop
+@@ -2,7 +2,7 @@
+ Name=CorePad
+ Comment=CorePad is document editor app from CoreApps.
+ Exec=corepad %F
+-Icon=/usr/share/coreapps/icons/corepad.svg
++Icon=corepad
+ Type=Application
+ Categories=Utility;Qt;TextEditor;Viewer;
+ Terminal=false
+diff --git a/corepad.pro b/corepad.pro
+index ccd3ccc..b54e205 100644
+--- a/corepad.pro
++++ b/corepad.pro
+@@ -8,7 +8,7 @@ QT       += core gui widgets
+ 
+ TARGET = corepad
+ TEMPLATE = app
+-
++INCLUDEPATH += $${PREFIX}/include  
+ # library for theme
+ unix:!macx: LIBS += -lcprime
+ 
+-- 
+2.33.1
+
