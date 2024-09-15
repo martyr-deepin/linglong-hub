@@ -1,0 +1,21 @@
+diff -Naur b/LorenzoMineSweeper.desktop a/LorenzoMineSweeper.desktop
+--- b/LorenzoMineSweeper.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/LorenzoMineSweeper.desktop	2023-12-11 20:24:39.888610546 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=LorenzoMineSweeper
++Exec=LorenzoMineSweeper
++Type=Application
+\ 文件尾没有换行符
+diff -Naur b/LorenzoMineSweeper.pro a/LorenzoMineSweeper.pro
+--- b/LorenzoMineSweeper.pro	2023-12-11 20:23:01.754512511 +0800
++++ a/LorenzoMineSweeper.pro	2023-12-11 20:23:55.637300687 +0800
+@@ -17,3 +17,8 @@
+ # Input
+ HEADERS += MinefieldButton.h MyMainWindow.h MyWizardDialog.h
+ SOURCES += main.cpp MinefieldButton.cpp MyMainWindow.cpp MyWizardDialog.cpp
++
++desktop.files += LorenzoMineSweeper.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++INSTALLS += target desktop
