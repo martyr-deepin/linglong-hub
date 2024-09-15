@@ -1,0 +1,19 @@
+package:
+  id: doctest
+  name: doctest
+  version: 2.4.11
+  kind: lib
+  description: |
+     doctest is a new C++ testing framework but is by far the fastest both in compile times (by orders of magnitude) and runtime compared to other feature-rich alternatives.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/doctest/doctest.git
+  commit: ae7a13539fb71f270b87eb2e874fbac80bc8dda2
+
+build:
+  kind: cmake
