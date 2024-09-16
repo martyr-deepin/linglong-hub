@@ -1,0 +1,22 @@
+diff -Naur AwardRandom-o/award-pickup.desktop AwardRandom/award-pickup.desktop
+--- AwardRandom-o/award-pickup.desktop	1970-01-01 08:00:00.000000000 +0800
++++ AwardRandom/award-pickup.desktop	2023-12-02 21:26:25.451051341 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=award-pickup
++Exec=award-pickup
++Type=Application
+diff -Naur AwardRandom-o/award-pickup.pro AwardRandom/award-pickup.pro
+--- AwardRandom-o/award-pickup.pro	2023-12-02 21:23:23.788663000 +0800
++++ AwardRandom/award-pickup.pro	2023-12-02 21:24:45.627906645 +0800
+@@ -30,3 +30,10 @@
+ 
+ RESOURCES += \
+     awardpickup.qrc
++
++desktop.files += award-pickup.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop
++
