@@ -14,7 +14,7 @@ source:
   kind: git
   url: "https://github.com/BensonLaur/Beslyric-for-X.git"
   commit: 8b06a38e8f833650e8e273e97f6a0c0f34fd7ec5
-  patch: patches/install.patch
+  patch: patches/0001-install.patch
 
 build:
   kind: qmake
