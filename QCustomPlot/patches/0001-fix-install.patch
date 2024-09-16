@@ -1,0 +1,24 @@
+From 9a2341a7c3c805647b832aafa75c3bcd14ae9bbf Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Mon, 22 Apr 2024 20:05:33 +0800
+Subject: [PATCH] fix-install
+
+---
+ src/qcp-staticlib.pro | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/src/qcp-staticlib.pro b/src/qcp-staticlib.pro
+index 56951f1..a99d363 100644
+--- a/src/qcp-staticlib.pro
++++ b/src/qcp-staticlib.pro
+@@ -148,3 +148,6 @@ OTHER_FILES += \
+     doc-specialqtflags.dox \
+     doc-performance.dox \
+     doc-dataselection.dox
++
++target.path=$${PREFIX}/lib/$${TRIPLET}
++INSTALLS += target
+\ No newline at end of file
+-- 
+2.33.1
+
