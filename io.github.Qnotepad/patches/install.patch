@@ -1,0 +1,28 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 70d2b0c..bc4b453 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,11 +1,6 @@
+ cmake_minimum_required(VERSION 3.5)
+ project(QNotepad)
+ 
+-if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+-    set(CMAKE_INSTALL_PREFIX "/usr/local")
+-else()
+-    set(CMAKE_INSTALL_PREFIX "/usr")
+-endif()
+ 
+ set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+@@ -49,7 +44,8 @@ else()
+ target_link_libraries(qnotepad Qt5::Widgets Qt5::PrintSupport spdlog fmt)
+ endif()
+ 
++
+ install(TARGETS qnotepad DESTINATION bin)
+ if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+-    install(FILES ${CMAKE_SOURCE_DIR}/qnotepad.desktop DESTINATION /usr/share/applications)
++    install(FILES qnotepad.desktop DESTINATION share/applications)
+ endif ()
+\ No newline at end of file
+
