@@ -1,0 +1,814 @@
+From c010f72bc8af0074cd404d1d4c6fe2de1f7b9933 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 28 Nov 2023 21:16:56 +0800
+Subject: [PATCH] fix
+
+---
+ libs/basicflakes/tools/KoCreatePathTool_p.h                     | 2 +-
+ libs/brush/kis_auto_brush.cpp                                   | 2 +-
+ libs/brush/kis_boundary.cc                                      | 2 +-
+ libs/brush/kis_brush.cpp                                        | 2 +-
+ libs/flake/KoOdfGradientBackground.cpp                          | 2 +-
+ libs/flake/KoPathShape.cpp                                      | 2 +-
+ libs/flake/KoShapeBackground.h                                  | 2 +-
+ libs/flake/KoShapeManager.cpp                                   | 2 +-
+ libs/flake/KoShapeShadow.cpp                                    | 1 +
+ libs/flake/KoSnapGuide.cpp                                      | 2 +-
+ libs/flake/KoSnapStrategy.cpp                                   | 2 +-
+ libs/flake/KoUnavailShape.cpp                                   | 2 +-
+ libs/flake/tests/TestSnapStrategy.cpp                           | 2 +-
+ libs/flake/tools/KoPathTool.cpp                                 | 1 +
+ libs/image/brushengine/kis_paintop_settings.cpp                 | 2 +-
+ libs/ui/KisResourceBundleManifest.cpp                           | 2 +-
+ libs/ui/dialogs/kis_dlg_preferences.h                           | 2 +-
+ libs/ui/flake/kis_shape_selection.h                             | 2 +-
+ libs/ui/input/config/kis_input_configuration_page_item.cpp      | 2 +-
+ libs/ui/kis_selection_decoration.h                              | 2 +-
+ libs/ui/tool/kis_tool_paint.h                                   | 1 +
+ libs/ui/widgets/kis_cie_tongue_widget.cpp                       | 1 +
+ libs/ui/widgets/kis_selection_options.cc                        | 2 +-
+ libs/ui/widgets/kis_tone_curve_widget.cpp                       | 1 +
+ libs/vectorimage/libemf/EmfOutputPainterStrategy.cpp            | 2 +-
+ libs/vectorimage/libsvm/SvmPainterBackend.cpp                   | 2 +-
+ libs/widgets/KoMarkerItemDelegate.cpp                           | 2 +-
+ libs/widgets/KoPageLayoutWidget.cpp                             | 2 +-
+ plugins/assistants/RulerAssistant/ConcentricEllipseAssistant.cc | 1 +
+ plugins/assistants/RulerAssistant/EllipseAssistant.cc           | 1 +
+ plugins/assistants/RulerAssistant/FisheyePointAssistant.cc      | 1 +
+ plugins/assistants/RulerAssistant/InfiniteRulerAssistant.cc     | 1 +
+ plugins/assistants/RulerAssistant/ParallelRulerAssistant.cc     | 1 +
+ plugins/assistants/RulerAssistant/PerspectiveAssistant.cc       | 1 +
+ plugins/assistants/RulerAssistant/RulerAssistant.cc             | 1 +
+ plugins/assistants/RulerAssistant/SplineAssistant.cc            | 1 +
+ plugins/assistants/RulerAssistant/VanishingPointAssistant.cc    | 1 +
+ plugins/assistants/RulerAssistant/kis_ruler_assistant_tool.cc   | 1 +
+ plugins/extensions/imagesize/dlg_canvassize.cc                  | 2 +-
+ plugins/filters/colorsfilters/kis_desaturate_filter.cpp         | 2 +-
+ plugins/flake/pathshapes/enhancedpath/EnhancedPathShape.cpp     | 2 +-
+ plugins/paintops/chalk/kis_chalk_paintop_settings.cpp           | 1 +
+ plugins/paintops/curvebrush/curve_brush.cpp                     | 1 +
+ plugins/paintops/curvebrush/kis_curve_paintop.cpp               | 1 +
+ plugins/paintops/experiment/kis_experiment_paintop.cpp          | 2 +-
+ plugins/paintops/experiment/kis_experiment_paintop.h            | 1 +
+ plugins/paintops/experiment/kis_experiment_paintop_settings.cpp | 2 +-
+ plugins/paintops/experiment/kis_experiment_paintop_settings.h   | 2 +-
+ plugins/paintops/libpaintop/kis_brush_selection_widget.cpp      | 2 +-
+ plugins/tools/defaulttool/defaulttool/DefaultTool.cpp           | 2 +-
+ .../karbonplugins/tools/CalligraphyTool/KarbonCalligraphyTool.h | 2 +-
+ plugins/tools/tool_text/kis_text_tool_option_widget.cpp         | 2 +-
+ plugins/tools/tool_text/kis_tool_text.cc                        | 2 +-
+ plugins/tools/tool_transform2/kis_free_transform_strategy.cpp   | 1 +
+ plugins/tools/tool_transform2/kis_liquify_paint_helper.cpp      | 1 +
+ .../tools/tool_transform2/kis_liquify_transform_strategy.cpp    | 1 +
+ .../tool_transform2/kis_perspective_transform_strategy.cpp      | 2 +-
+ plugins/tools/tool_transform2/kis_transform_strategy_base.cpp   | 2 +-
+ plugins/tools/tool_transform2/kis_warp_transform_strategy.cpp   | 1 +
+ 59 files changed, 59 insertions(+), 36 deletions(-)
+
+diff --git a/libs/basicflakes/tools/KoCreatePathTool_p.h b/libs/basicflakes/tools/KoCreatePathTool_p.h
+index adaeebe..5562106 100644
+--- a/libs/basicflakes/tools/KoCreatePathTool_p.h
++++ b/libs/basicflakes/tools/KoCreatePathTool_p.h
+@@ -31,7 +31,7 @@
+ #include "KoSnapStrategy.h"
+ #include "KoToolBase_p.h"
+ #include <KoViewConverter.h>
+-
++#include <QPainterPath>
+ #include "math.h"
+ 
+ class KoStrokeConfigWidget;
+diff --git a/libs/brush/kis_auto_brush.cpp b/libs/brush/kis_auto_brush.cpp
+index d67d6f4..1b05dd4 100644
+--- a/libs/brush/kis_auto_brush.cpp
++++ b/libs/brush/kis_auto_brush.cpp
+@@ -31,7 +31,7 @@
+ #include <QBuffer>
+ #include <QFile>
+ #include <QFileInfo>
+-
++#include <QPainterPath>
+ #include <KoColor.h>
+ #include <KoColorSpace.h>
+ #include <KoColorSpaceRegistry.h>
+diff --git a/libs/brush/kis_boundary.cc b/libs/brush/kis_boundary.cc
+index a599d8e..8963d7d 100644
+--- a/libs/brush/kis_boundary.cc
++++ b/libs/brush/kis_boundary.cc
+@@ -19,7 +19,7 @@
+ #include "kis_boundary.h"
+ #include <QPainter>
+ #include <QPen>
+-
++#include <QPainterPath>
+ #include "KoColorSpace.h"
+ #include "kis_fixed_paint_device.h"
+ #include "kis_outline_generator.h"
+diff --git a/libs/brush/kis_brush.cpp b/libs/brush/kis_brush.cpp
+index 55c079b..02675da 100644
+--- a/libs/brush/kis_brush.cpp
++++ b/libs/brush/kis_brush.cpp
+@@ -31,7 +31,7 @@
+ 
+ #include <kis_debug.h>
+ #include <klocalizedstring.h>
+-
++#include <QPainterPath>
+ #include <KoColor.h>
+ #include <KoColorSpaceMaths.h>
+ #include <KoColorSpaceRegistry.h>
+diff --git a/libs/flake/KoOdfGradientBackground.cpp b/libs/flake/KoOdfGradientBackground.cpp
+index d6c71a8..c583e02 100644
+--- a/libs/flake/KoOdfGradientBackground.cpp
++++ b/libs/flake/KoOdfGradientBackground.cpp
+@@ -30,7 +30,7 @@
+ #include <KoOdfLoadingContext.h>
+ #include <KoStyleStack.h>
+ #include <KoOdfStylesReader.h>
+-
++#include <QPainterPath>
+ #include <QPainter>
+ #include <QColor>
+ #include <QImage>
+diff --git a/libs/flake/KoPathShape.cpp b/libs/flake/KoPathShape.cpp
+index 68dd426..2ce430c 100644
+--- a/libs/flake/KoPathShape.cpp
++++ b/libs/flake/KoPathShape.cpp
+@@ -50,7 +50,7 @@
+ 
+ #include <FlakeDebug.h>
+ #include <QPainter>
+-
++#include <QPainterPath>
+ #include <qnumeric.h> // for qIsNaN
+ static bool qIsNaNPoint(const QPointF &p) {
+     return qIsNaN(p.x()) || qIsNaN(p.y());
+diff --git a/libs/flake/KoShapeBackground.h b/libs/flake/KoShapeBackground.h
+index ca60193..6337502 100644
+--- a/libs/flake/KoShapeBackground.h
++++ b/libs/flake/KoShapeBackground.h
+@@ -23,7 +23,7 @@
+ #include "kritaflake_export.h"
+ 
+ #include <QtGlobal>
+-
++#include <QPainterPath>
+ class QSizeF;
+ class QPainter;
+ class QPainterPath;
+diff --git a/libs/flake/KoShapeManager.cpp b/libs/flake/KoShapeManager.cpp
+index 6f861f1..b1812b8 100644
+--- a/libs/flake/KoShapeManager.cpp
++++ b/libs/flake/KoShapeManager.cpp
+@@ -47,7 +47,7 @@
+ #include <QPainter>
+ #include <QTimer>
+ #include <FlakeDebug.h>
+-
++#include <QPainterPath>
+ #include "kis_painting_tweaks.h"
+ 
+ 
+diff --git a/libs/flake/KoShapeShadow.cpp b/libs/flake/KoShapeShadow.cpp
+index 9838405..27b9232 100644
+--- a/libs/flake/KoShapeShadow.cpp
++++ b/libs/flake/KoShapeShadow.cpp
+@@ -35,6 +35,7 @@
+ #include <QAtomicInt>
+ #include <QImage>
+ #include <QRectF>
++#include <QPainterPath>
+ 
+ class Q_DECL_HIDDEN KoShapeShadow::Private
+ {
+diff --git a/libs/flake/KoSnapGuide.cpp b/libs/flake/KoSnapGuide.cpp
+index 50992dc..0eb05b9 100644
+--- a/libs/flake/KoSnapGuide.cpp
++++ b/libs/flake/KoSnapGuide.cpp
+@@ -20,7 +20,7 @@
+ #include "KoSnapGuide.h"
+ #include "KoSnapProxy.h"
+ #include "KoSnapStrategy.h"
+-
++#include <QPainterPath>
+ #include <KoPathShape.h>
+ #include <KoPathPoint.h>
+ #include <KoViewConverter.h>
+diff --git a/libs/flake/KoSnapStrategy.cpp b/libs/flake/KoSnapStrategy.cpp
+index 7935b44..50c5bf1 100644
+--- a/libs/flake/KoSnapStrategy.cpp
++++ b/libs/flake/KoSnapStrategy.cpp
+@@ -25,7 +25,7 @@
+ #include <KoPathSegment.h>
+ #include <KoCanvasBase.h>
+ #include <KoViewConverter.h>
+-
++#include <QPainterPath>
+ #include <QPainter>
+ 
+ #include <cmath>
+diff --git a/libs/flake/KoUnavailShape.cpp b/libs/flake/KoUnavailShape.cpp
+index 0e0494f..3a1854d 100644
+--- a/libs/flake/KoUnavailShape.cpp
++++ b/libs/flake/KoUnavailShape.cpp
+@@ -32,7 +32,7 @@
+ #include <QStringList>
+ #include <QSvgRenderer>
+ #include <QStandardPaths>
+-
++#include <QPainterPath>
+ // Calligra
+ #include <KoUnit.h>
+ #include <KoStore.h>
+diff --git a/libs/flake/tests/TestSnapStrategy.cpp b/libs/flake/tests/TestSnapStrategy.cpp
+index ec30aba..253aa90 100644
+--- a/libs/flake/tests/TestSnapStrategy.cpp
++++ b/libs/flake/tests/TestSnapStrategy.cpp
+@@ -26,7 +26,7 @@
+ #include "MockShapes.h"
+ #include "KoPathPoint.h"
+ #include "KoViewConverter.h"
+-
++#include <QPainterPath>
+ //#include <PointProperties.h>
+ #include <KoSnapData.h>
+ 
+diff --git a/libs/flake/tools/KoPathTool.cpp b/libs/flake/tools/KoPathTool.cpp
+index 00b2ac9..a8a143a 100644
+--- a/libs/flake/tools/KoPathTool.cpp
++++ b/libs/flake/tools/KoPathTool.cpp
+@@ -50,6 +50,7 @@
+ #include "KoSnapGuide.h"
+ #include "KoShapeController.h"
+ #include "kis_action_registry.h"
++#include <QPainterPath>
+ 
+ #include <KoIcon.h>
+ 
+diff --git a/libs/image/brushengine/kis_paintop_settings.cpp b/libs/image/brushengine/kis_paintop_settings.cpp
+index a5bb0c5..5a26fe1 100644
+--- a/libs/image/brushengine/kis_paintop_settings.cpp
++++ b/libs/image/brushengine/kis_paintop_settings.cpp
+@@ -22,7 +22,7 @@
+ #include <QImage>
+ #include <QColor>
+ #include <QPointer>
+-
++#include <QPainterPath>
+ #include <KoPointerEvent.h>
+ #include <KoColor.h>
+ #include <KoCompositeOpRegistry.h>
+diff --git a/libs/ui/KisResourceBundleManifest.cpp b/libs/ui/KisResourceBundleManifest.cpp
+index 0714e56..f4d7288 100644
+--- a/libs/ui/KisResourceBundleManifest.cpp
++++ b/libs/ui/KisResourceBundleManifest.cpp
+@@ -22,7 +22,7 @@
+ #include <QDomElement>
+ #include <QDomNode>
+ #include <QDomNodeList>
+-#include <QForeachContainer>
++
+ 
+ #include <KoXmlNS.h>
+ #include <KoXmlReader.h>
+diff --git a/libs/ui/dialogs/kis_dlg_preferences.h b/libs/ui/dialogs/kis_dlg_preferences.h
+index c4ec62e..95510da 100644
+--- a/libs/ui/dialogs/kis_dlg_preferences.h
++++ b/libs/ui/dialogs/kis_dlg_preferences.h
+@@ -23,7 +23,7 @@
+ #define _KIS_DLG_PREFERENCES_H_
+ 
+ #include <QWidget>
+-
++#include <QButtonGroup>
+ #include <kpagedialog.h>
+ 
+ #include "kis_global.h"
+diff --git a/libs/ui/flake/kis_shape_selection.h b/libs/ui/flake/kis_shape_selection.h
+index 6c26a8d..2922eef 100644
+--- a/libs/ui/flake/kis_shape_selection.h
++++ b/libs/ui/flake/kis_shape_selection.h
+@@ -17,7 +17,7 @@
+  */
+ #ifndef KIS_SHAPE_SELECTION_H
+ #define KIS_SHAPE_SELECTION_H
+-
++#include <QPainterPath>
+ #include <KoShapeLayer.h>
+ #include <KoShapeFactoryBase.h>
+ #include <KoShapeUserData.h>
+diff --git a/libs/ui/input/config/kis_input_configuration_page_item.cpp b/libs/ui/input/config/kis_input_configuration_page_item.cpp
+index fc7a28c..d0b6c94 100644
+--- a/libs/ui/input/config/kis_input_configuration_page_item.cpp
++++ b/libs/ui/input/config/kis_input_configuration_page_item.cpp
+@@ -28,7 +28,7 @@
+ #include "kis_input_mode_delegate.h"
+ #include "kis_input_editor_delegate.h"
+ #include "ui_kis_input_configuration_page_item.h"
+-
++#include <QAction> 
+ KisInputConfigurationPageItem::KisInputConfigurationPageItem(QWidget *parent, Qt::WindowFlags f)
+     : QWidget(parent, f)
+ {
+diff --git a/libs/ui/kis_selection_decoration.h b/libs/ui/kis_selection_decoration.h
+index 29973a8..c5f2fd5 100644
+--- a/libs/ui/kis_selection_decoration.h
++++ b/libs/ui/kis_selection_decoration.h
+@@ -21,7 +21,7 @@
+ #include <QTimer>
+ #include <QPolygon>
+ #include <QPen>
+-
++#include <QPainterPath>
+ #include <kis_signal_compressor.h>
+ #include "canvas/kis_canvas_decoration.h"
+ 
+diff --git a/libs/ui/tool/kis_tool_paint.h b/libs/ui/tool/kis_tool_paint.h
+index 11bd769..70e97e0 100644
+--- a/libs/ui/tool/kis_tool_paint.h
++++ b/libs/ui/tool/kis_tool_paint.h
+@@ -32,6 +32,7 @@
+ #include <resources/KoAbstractGradient.h>
+ 
+ #include <kritaui_export.h>
++#include <QPainterPath>
+ 
+ #include <kis_types.h>
+ #include <kis_image.h>
+diff --git a/libs/ui/widgets/kis_cie_tongue_widget.cpp b/libs/ui/widgets/kis_cie_tongue_widget.cpp
+index 9afa114..7ed4ccc 100644
+--- a/libs/ui/widgets/kis_cie_tongue_widget.cpp
++++ b/libs/ui/widgets/kis_cie_tongue_widget.cpp
+@@ -45,6 +45,7 @@ wavelength, and thus define the outline of the CIE "tongue" diagram.
+ #include <QPaintEvent>
+ #include <QImage>
+ #include <cmath>
++#include <QPainterPath>
+ 
+ #include <klocalizedstring.h>
+ #include <kpixmapsequence.h>
+diff --git a/libs/ui/widgets/kis_selection_options.cc b/libs/ui/widgets/kis_selection_options.cc
+index f8f0a0a..f5bb40a 100644
+--- a/libs/ui/widgets/kis_selection_options.cc
++++ b/libs/ui/widgets/kis_selection_options.cc
+@@ -32,7 +32,7 @@
+ #include "kis_paint_device.h"
+ #include "canvas/kis_canvas2.h"
+ #include "KisViewManager.h"
+-
++#include <QButtonGroup>
+ KisSelectionOptions::KisSelectionOptions(KisCanvas2 * /*canvas*/)
+ {
+     m_page = new WdgSelectionOptions(this);
+diff --git a/libs/ui/widgets/kis_tone_curve_widget.cpp b/libs/ui/widgets/kis_tone_curve_widget.cpp
+index cc197e8..18b85c4 100644
+--- a/libs/ui/widgets/kis_tone_curve_widget.cpp
++++ b/libs/ui/widgets/kis_tone_curve_widget.cpp
+@@ -29,6 +29,7 @@
+ #include <QImage>
+ #include <cmath>
+ #include <klocalizedstring.h>
++#include <QPainterPath>
+ 
+ 
+ #include "kis_tone_curve_widget.h"
+diff --git a/libs/vectorimage/libemf/EmfOutputPainterStrategy.cpp b/libs/vectorimage/libemf/EmfOutputPainterStrategy.cpp
+index b044a31..c1f2af4 100644
+--- a/libs/vectorimage/libemf/EmfOutputPainterStrategy.cpp
++++ b/libs/vectorimage/libemf/EmfOutputPainterStrategy.cpp
+@@ -19,7 +19,7 @@
+ #include "EmfOutputPainterStrategy.h"
+ 
+ #include <math.h>
+-
++#include <QPainterPath>
+ #include <VectorImageDebug.h>
+ 
+ #include "EmfObjects.h"
+diff --git a/libs/vectorimage/libsvm/SvmPainterBackend.cpp b/libs/vectorimage/libsvm/SvmPainterBackend.cpp
+index 4bc83ae..a823f86 100644
+--- a/libs/vectorimage/libsvm/SvmPainterBackend.cpp
++++ b/libs/vectorimage/libsvm/SvmPainterBackend.cpp
+@@ -25,7 +25,7 @@
+ #include <QPolygon>
+ #include <QString>
+ #include <QPainter>
+-
++#include <QPainterPath>
+ // KDE
+ #include <VectorImageDebug.h>
+ 
+diff --git a/libs/widgets/KoMarkerItemDelegate.cpp b/libs/widgets/KoMarkerItemDelegate.cpp
+index acfa19d..77994d3 100644
+--- a/libs/widgets/KoMarkerItemDelegate.cpp
++++ b/libs/widgets/KoMarkerItemDelegate.cpp
+@@ -22,7 +22,7 @@
+ 
+ #include <KoPathShape.h>
+ #include <KoMarker.h>
+-
++#include <QPainterPath>
+ #include <QPainter>
+ #include <QPen>
+ 
+diff --git a/libs/widgets/KoPageLayoutWidget.cpp b/libs/widgets/KoPageLayoutWidget.cpp
+index f5c19a0..4326ba7 100644
+--- a/libs/widgets/KoPageLayoutWidget.cpp
++++ b/libs/widgets/KoPageLayoutWidget.cpp
+@@ -18,7 +18,7 @@
+  */
+ 
+ #include "KoPageLayoutWidget.h"
+-
++#include <QButtonGroup>
+ #include <ui_KoPageLayoutWidget.h>
+ 
+ #include <KoUnit.h>
+diff --git a/plugins/assistants/RulerAssistant/ConcentricEllipseAssistant.cc b/plugins/assistants/RulerAssistant/ConcentricEllipseAssistant.cc
+index d0b508a..d4d89ee 100644
+--- a/plugins/assistants/RulerAssistant/ConcentricEllipseAssistant.cc
++++ b/plugins/assistants/RulerAssistant/ConcentricEllipseAssistant.cc
+@@ -17,6 +17,7 @@
+  */
+ 
+ #include "ConcentricEllipseAssistant.h"
++#include <QPainterPath>
+ 
+ #include <klocalizedstring.h>
+ #include "kis_debug.h"
+diff --git a/plugins/assistants/RulerAssistant/EllipseAssistant.cc b/plugins/assistants/RulerAssistant/EllipseAssistant.cc
+index 3a65856..2a9f33e 100644
+--- a/plugins/assistants/RulerAssistant/EllipseAssistant.cc
++++ b/plugins/assistants/RulerAssistant/EllipseAssistant.cc
+@@ -17,6 +17,7 @@
+  */
+ 
+ #include "EllipseAssistant.h"
++#include <QPainterPath>
+ 
+ #include <klocalizedstring.h>
+ #include "kis_debug.h"
+diff --git a/plugins/assistants/RulerAssistant/FisheyePointAssistant.cc b/plugins/assistants/RulerAssistant/FisheyePointAssistant.cc
+index aa8eba2..b2b48fe 100644
+--- a/plugins/assistants/RulerAssistant/FisheyePointAssistant.cc
++++ b/plugins/assistants/RulerAssistant/FisheyePointAssistant.cc
+@@ -21,6 +21,7 @@
+ 
+ #include "kis_debug.h"
+ #include <klocalizedstring.h>
++#include <QPainterPath>
+ 
+ #include <QPainter>
+ #include <QLinearGradient>
+diff --git a/plugins/assistants/RulerAssistant/InfiniteRulerAssistant.cc b/plugins/assistants/RulerAssistant/InfiniteRulerAssistant.cc
+index 8672ff9..d6c69e0 100644
+--- a/plugins/assistants/RulerAssistant/InfiniteRulerAssistant.cc
++++ b/plugins/assistants/RulerAssistant/InfiniteRulerAssistant.cc
+@@ -25,6 +25,7 @@
+ #include <QPainter>
+ #include <QLinearGradient>
+ #include <QTransform>
++#include <QPainterPath>
+ 
+ #include <kis_canvas2.h>
+ #include <kis_coordinates_converter.h>
+diff --git a/plugins/assistants/RulerAssistant/ParallelRulerAssistant.cc b/plugins/assistants/RulerAssistant/ParallelRulerAssistant.cc
+index 8fe35eb..39faf22 100644
+--- a/plugins/assistants/RulerAssistant/ParallelRulerAssistant.cc
++++ b/plugins/assistants/RulerAssistant/ParallelRulerAssistant.cc
+@@ -21,6 +21,7 @@
+ 
+ #include "kis_debug.h"
+ #include <klocalizedstring.h>
++#include <QPainterPath>
+ 
+ #include <QPainter>
+ #include <QLinearGradient>
+diff --git a/plugins/assistants/RulerAssistant/PerspectiveAssistant.cc b/plugins/assistants/RulerAssistant/PerspectiveAssistant.cc
+index d837ba6..48adf3b 100644
+--- a/plugins/assistants/RulerAssistant/PerspectiveAssistant.cc
++++ b/plugins/assistants/RulerAssistant/PerspectiveAssistant.cc
+@@ -24,6 +24,7 @@
+ #include <QPainter>
+ #include <QLinearGradient>
+ #include <QTransform>
++#include <QPainterPath>
+ 
+ #include <kis_canvas2.h>
+ #include <kis_coordinates_converter.h>
+diff --git a/plugins/assistants/RulerAssistant/RulerAssistant.cc b/plugins/assistants/RulerAssistant/RulerAssistant.cc
+index 9bc7ed6..1f7f49d 100644
+--- a/plugins/assistants/RulerAssistant/RulerAssistant.cc
++++ b/plugins/assistants/RulerAssistant/RulerAssistant.cc
+@@ -16,6 +16,7 @@
+  */
+ 
+ #include "RulerAssistant.h"
++#include <QPainterPath>
+ 
+ #include "kis_debug.h"
+ #include <klocalizedstring.h>
+diff --git a/plugins/assistants/RulerAssistant/SplineAssistant.cc b/plugins/assistants/RulerAssistant/SplineAssistant.cc
+index e81ed2c..73aff5d 100644
+--- a/plugins/assistants/RulerAssistant/SplineAssistant.cc
++++ b/plugins/assistants/RulerAssistant/SplineAssistant.cc
+@@ -19,6 +19,7 @@
+ #include "SplineAssistant.h"
+ 
+ #include <klocalizedstring.h>
++#include <QPainterPath>
+ 
+ #include <QPainter>
+ #include <QLinearGradient>
+diff --git a/plugins/assistants/RulerAssistant/VanishingPointAssistant.cc b/plugins/assistants/RulerAssistant/VanishingPointAssistant.cc
+index a277b80..86dd207 100644
+--- a/plugins/assistants/RulerAssistant/VanishingPointAssistant.cc
++++ b/plugins/assistants/RulerAssistant/VanishingPointAssistant.cc
+@@ -25,6 +25,7 @@
+ #include <QPainter>
+ #include <QLinearGradient>
+ #include <QTransform>
++#include <QPainterPath>
+ 
+ #include <kis_canvas2.h>
+ #include <kis_coordinates_converter.h>
+diff --git a/plugins/assistants/RulerAssistant/kis_ruler_assistant_tool.cc b/plugins/assistants/RulerAssistant/kis_ruler_assistant_tool.cc
+index 297821f..85fe4c6 100644
+--- a/plugins/assistants/RulerAssistant/kis_ruler_assistant_tool.cc
++++ b/plugins/assistants/RulerAssistant/kis_ruler_assistant_tool.cc
+@@ -18,6 +18,7 @@
+  */
+ 
+ #include <kis_ruler_assistant_tool.h>
++#include <QPainterPath>
+ 
+ #include <QPainter>
+ #include <QXmlStreamReader>
+diff --git a/plugins/extensions/imagesize/dlg_canvassize.cc b/plugins/extensions/imagesize/dlg_canvassize.cc
+index af146bd..e4bfd24 100644
+--- a/plugins/extensions/imagesize/dlg_canvassize.cc
++++ b/plugins/extensions/imagesize/dlg_canvassize.cc
+@@ -20,7 +20,7 @@
+ 
+ #include "dlg_canvassize.h"
+ #include "kcanvaspreview.h"
+-
++#include <QButtonGroup>
+ #include <KoUnit.h>
+ #include <kis_icon.h>
+ #include <kis_size_group.h>
+diff --git a/plugins/filters/colorsfilters/kis_desaturate_filter.cpp b/plugins/filters/colorsfilters/kis_desaturate_filter.cpp
+index 47c9b4a..9cf9b9b 100644
+--- a/plugins/filters/colorsfilters/kis_desaturate_filter.cpp
++++ b/plugins/filters/colorsfilters/kis_desaturate_filter.cpp
+@@ -22,7 +22,7 @@
+ 
+ 
+ #include <math.h>
+-
++#include <QButtonGroup>
+ #include <stdlib.h>
+ #include <string.h>
+ 
+diff --git a/plugins/flake/pathshapes/enhancedpath/EnhancedPathShape.cpp b/plugins/flake/pathshapes/enhancedpath/EnhancedPathShape.cpp
+index a65c627..b76f3e4 100644
+--- a/plugins/flake/pathshapes/enhancedpath/EnhancedPathShape.cpp
++++ b/plugins/flake/pathshapes/enhancedpath/EnhancedPathShape.cpp
+@@ -27,7 +27,7 @@
+ #include "EnhancedPathParameter.h"
+ #include "EnhancedPathHandle.h"
+ #include "EnhancedPathFormula.h"
+-
++#include <QPainterPath>
+ #include <KoXmlNS.h>
+ #include <KoXmlWriter.h>
+ #include <KoXmlReader.h>
+diff --git a/plugins/paintops/chalk/kis_chalk_paintop_settings.cpp b/plugins/paintops/chalk/kis_chalk_paintop_settings.cpp
+index f6cfd67..30c684d 100644
+--- a/plugins/paintops/chalk/kis_chalk_paintop_settings.cpp
++++ b/plugins/paintops/chalk/kis_chalk_paintop_settings.cpp
+@@ -17,6 +17,7 @@
+  */
+ 
+ #include "kis_chalk_paintop_settings.h"
++#include <QPainterPath>
+ 
+ #include <kis_chalkop_option.h>
+ 
+diff --git a/plugins/paintops/curvebrush/curve_brush.cpp b/plugins/paintops/curvebrush/curve_brush.cpp
+index 347cc31..d643f5b 100644
+--- a/plugins/paintops/curvebrush/curve_brush.cpp
++++ b/plugins/paintops/curvebrush/curve_brush.cpp
+@@ -17,6 +17,7 @@
+  */
+ 
+ #include "curve_brush.h"
++#include <QPainterPath>
+ 
+ #include <KoColor.h>
+ #include <KoColorSpace.h>
+diff --git a/plugins/paintops/curvebrush/kis_curve_paintop.cpp b/plugins/paintops/curvebrush/kis_curve_paintop.cpp
+index 57d9ad2..3afe840 100644
+--- a/plugins/paintops/curvebrush/kis_curve_paintop.cpp
++++ b/plugins/paintops/curvebrush/kis_curve_paintop.cpp
+@@ -19,6 +19,7 @@
+ #include "kis_curve_paintop.h"
+ 
+ #include <cmath>
++#include <QPainterPath>
+ 
+ #include <QRect>
+ 
+diff --git a/plugins/paintops/experiment/kis_experiment_paintop.cpp b/plugins/paintops/experiment/kis_experiment_paintop.cpp
+index 92b806e..8b281af 100644
+--- a/plugins/paintops/experiment/kis_experiment_paintop.cpp
++++ b/plugins/paintops/experiment/kis_experiment_paintop.cpp
+@@ -19,7 +19,7 @@
+ 
+ #include "kis_experiment_paintop.h"
+ #include "kis_experiment_paintop_settings.h"
+-
++#include <QPainterPath>
+ #include <cmath>
+ 
+ #include <KoCompositeOpRegistry.h>
+diff --git a/plugins/paintops/experiment/kis_experiment_paintop.h b/plugins/paintops/experiment/kis_experiment_paintop.h
+index 513172b..49c0b80 100644
+--- a/plugins/paintops/experiment/kis_experiment_paintop.h
++++ b/plugins/paintops/experiment/kis_experiment_paintop.h
+@@ -22,6 +22,7 @@
+ #include <klocalizedstring.h>
+ #include <brushengine/kis_paintop.h>
+ #include <kis_types.h>
++#include <QPainterPath>
+ 
+ #include "kis_experiment_paintop_settings.h"
+ #include "kis_experimentop_option.h"
+diff --git a/plugins/paintops/experiment/kis_experiment_paintop_settings.cpp b/plugins/paintops/experiment/kis_experiment_paintop_settings.cpp
+index b2bad5d..814f99e 100644
+--- a/plugins/paintops/experiment/kis_experiment_paintop_settings.cpp
++++ b/plugins/paintops/experiment/kis_experiment_paintop_settings.cpp
+@@ -18,7 +18,7 @@
+ 
+ #include "kis_experiment_paintop_settings.h"
+ #include "kis_current_outline_fetcher.h"
+-
++#include <QPainterPath>
+ bool KisExperimentPaintOpSettings::paintIncremental()
+ {
+     /**
+diff --git a/plugins/paintops/experiment/kis_experiment_paintop_settings.h b/plugins/paintops/experiment/kis_experiment_paintop_settings.h
+index aea0b17..df358d7 100644
+--- a/plugins/paintops/experiment/kis_experiment_paintop_settings.h
++++ b/plugins/paintops/experiment/kis_experiment_paintop_settings.h
+@@ -18,7 +18,7 @@
+ 
+ #ifndef KIS_EXPERIMENT_PAINTOP_SETTINGS_H_
+ #define KIS_EXPERIMENT_PAINTOP_SETTINGS_H_
+-
++#include <QPainterPath>
+ #include <brushengine/kis_paintop_settings.h>
+ 
+ class KisExperimentPaintOpSettings : public KisPaintOpSettings
+diff --git a/plugins/paintops/libpaintop/kis_brush_selection_widget.cpp b/plugins/paintops/libpaintop/kis_brush_selection_widget.cpp
+index 142d6ab..f3b63e5 100644
+--- a/plugins/paintops/libpaintop/kis_brush_selection_widget.cpp
++++ b/plugins/paintops/libpaintop/kis_brush_selection_widget.cpp
+@@ -25,7 +25,7 @@
+ #include <QBrush>
+ #include <QColor>
+ #include <QToolButton>
+-
++#include <QButtonGroup>
+ #include <klocalizedstring.h>
+ 
+ #include <widgets/kis_preset_chooser.h>
+diff --git a/plugins/tools/defaulttool/defaulttool/DefaultTool.cpp b/plugins/tools/defaulttool/defaulttool/DefaultTool.cpp
+index a1a92c2..55aecf7 100644
+--- a/plugins/tools/defaulttool/defaulttool/DefaultTool.cpp
++++ b/plugins/tools/defaulttool/defaulttool/DefaultTool.cpp
+@@ -29,7 +29,7 @@
+ #include "ShapeRotateStrategy.h"
+ #include "ShapeShearStrategy.h"
+ #include "ShapeResizeStrategy.h"
+-
++#include <QPainterPath>
+ #include <KoPointerEvent.h>
+ #include <KoToolSelection.h>
+ #include <KoToolManager.h>
+diff --git a/plugins/tools/karbonplugins/tools/CalligraphyTool/KarbonCalligraphyTool.h b/plugins/tools/karbonplugins/tools/CalligraphyTool/KarbonCalligraphyTool.h
+index 50fd45f..ad0266f 100644
+--- a/plugins/tools/karbonplugins/tools/CalligraphyTool/KarbonCalligraphyTool.h
++++ b/plugins/tools/karbonplugins/tools/CalligraphyTool/KarbonCalligraphyTool.h
+@@ -23,7 +23,7 @@
+ #include <KoToolBase.h>
+ #include <KoPathShape.h>
+ #include <QPointer>
+-
++#include <QPainterPath>
+ class KoPathShape;
+ class KarbonCalligraphicShape;
+ 
+diff --git a/plugins/tools/tool_text/kis_text_tool_option_widget.cpp b/plugins/tools/tool_text/kis_text_tool_option_widget.cpp
+index b95f840..c654444 100644
+--- a/plugins/tools/tool_text/kis_text_tool_option_widget.cpp
++++ b/plugins/tools/tool_text/kis_text_tool_option_widget.cpp
+@@ -18,7 +18,7 @@
+  */
+ 
+ #include "kis_text_tool_option_widget.h"
+-
++#include <QButtonGroup>
+ KisTextToolOptionWidget::KisTextToolOptionWidget(QWidget* parent): QWidget(parent)
+ {
+     setupUi(this);
+diff --git a/plugins/tools/tool_text/kis_tool_text.cc b/plugins/tools/tool_text/kis_tool_text.cc
+index 327deaa..0e38f7f 100644
+--- a/plugins/tools/tool_text/kis_tool_text.cc
++++ b/plugins/tools/tool_text/kis_tool_text.cc
+@@ -18,7 +18,7 @@
+  */
+ 
+ #include "kis_tool_text.h"
+-
++#include <QButtonGroup>
+ #include <ksharedconfig.h>
+ 
+ #include <KoShapeRegistry.h>
+diff --git a/plugins/tools/tool_transform2/kis_free_transform_strategy.cpp b/plugins/tools/tool_transform2/kis_free_transform_strategy.cpp
+index cd04386..83f871a 100644
+--- a/plugins/tools/tool_transform2/kis_free_transform_strategy.cpp
++++ b/plugins/tools/tool_transform2/kis_free_transform_strategy.cpp
+@@ -21,6 +21,7 @@
+ #include <QPointF>
+ #include <QPainter>
+ #include <QMatrix4x4>
++#include <QPainterPath>
+ 
+ #include <KoResourcePaths.h>
+ 
+diff --git a/plugins/tools/tool_transform2/kis_liquify_paint_helper.cpp b/plugins/tools/tool_transform2/kis_liquify_paint_helper.cpp
+index e500406..75bce44 100644
+--- a/plugins/tools/tool_transform2/kis_liquify_paint_helper.cpp
++++ b/plugins/tools/tool_transform2/kis_liquify_paint_helper.cpp
+@@ -17,6 +17,7 @@
+  */
+ 
+ #include "kis_liquify_paint_helper.h"
++#include <QPainterPath>
+ 
+ #include "KoPointerEvent.h"
+ #include <brushengine/kis_paint_information.h>
+diff --git a/plugins/tools/tool_transform2/kis_liquify_transform_strategy.cpp b/plugins/tools/tool_transform2/kis_liquify_transform_strategy.cpp
+index 28d716d..e7ac41e 100644
+--- a/plugins/tools/tool_transform2/kis_liquify_transform_strategy.cpp
++++ b/plugins/tools/tool_transform2/kis_liquify_transform_strategy.cpp
+@@ -19,6 +19,7 @@
+ #include "kis_liquify_transform_strategy.h"
+ 
+ #include <algorithm>
++#include <QPainterPath>
+ 
+ #include <QPointF>
+ #include <QPainter>
+diff --git a/plugins/tools/tool_transform2/kis_perspective_transform_strategy.cpp b/plugins/tools/tool_transform2/kis_perspective_transform_strategy.cpp
+index 88ee17a..01dc2fb 100644
+--- a/plugins/tools/tool_transform2/kis_perspective_transform_strategy.cpp
++++ b/plugins/tools/tool_transform2/kis_perspective_transform_strategy.cpp
+@@ -22,7 +22,7 @@
+ #include <QPainter>
+ #include <QMatrix4x4>
+ #include <QVector2D>
+-
++#include <QPainterPath>
+ #include <Eigen/Dense>
+ 
+ #include "kis_coordinates_converter.h"
+diff --git a/plugins/tools/tool_transform2/kis_transform_strategy_base.cpp b/plugins/tools/tool_transform2/kis_transform_strategy_base.cpp
+index aab7b55..ebedf5a 100644
+--- a/plugins/tools/tool_transform2/kis_transform_strategy_base.cpp
++++ b/plugins/tools/tool_transform2/kis_transform_strategy_base.cpp
+@@ -21,7 +21,7 @@
+ #include <QImage>
+ #include <QTransform>
+ #include "KoPointerEvent.h"
+-
++#include <QPainterPath>
+ 
+ struct KisTransformStrategyBase::Private
+ {
+diff --git a/plugins/tools/tool_transform2/kis_warp_transform_strategy.cpp b/plugins/tools/tool_transform2/kis_warp_transform_strategy.cpp
+index 4be3e2e..aa79c5a 100644
+--- a/plugins/tools/tool_transform2/kis_warp_transform_strategy.cpp
++++ b/plugins/tools/tool_transform2/kis_warp_transform_strategy.cpp
+@@ -19,6 +19,7 @@
+ #include "kis_warp_transform_strategy.h"
+ 
+ #include <algorithm>
++#include <QPainterPath>
+ 
+ #include <QPointF>
+ #include <QPainter>
+-- 
+2.33.1
+

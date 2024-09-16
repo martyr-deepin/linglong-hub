@@ -1,0 +1,25 @@
+From a3703c152ff13a33d68be117ba4a071de394c98a Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 27 Nov 2023 10:59:16 +0800
+Subject: [PATCH] install
+
+---
+ krita/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/krita/CMakeLists.txt b/krita/CMakeLists.txt
+index a546a8d..a07c7e0 100644
+--- a/krita/CMakeLists.txt
++++ b/krita/CMakeLists.txt
+@@ -97,7 +97,7 @@ if (APPLE)
+     set_target_properties(krita PROPERTIES MACOSX_BUNDLE_COPYRIGHT "GNU Public License, V2 or, at your option, any later version.")
+ endif ()
+ 
+-install(TARGETS krita ${INSTALL_TARGETS_DEFAULT_ARGS})
++install(TARGETS krita DESTINATION ${CMAKE_INSTALL_BINDIR})
+ install(PROGRAMS krita.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR})
+ install(FILES  krita.action kritamenu.action DESTINATION ${DATA_INSTALL_DIR}/krita/actions)
+ install(FILES  krita.appdata.xml DESTINATION ${SHARE_INSTALL_PREFIX}/appdata/ )
+-- 
+2.33.1
+

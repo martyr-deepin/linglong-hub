@@ -1,0 +1,111 @@
+From 59e9f37e832a65a75440bb4bba5eb0c74af1e7b1 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Wed, 29 Nov 2023 11:10:33 +0800
+Subject: [PATCH] fix_install
+
+---
+ CMakeLists.txt | 67 +++++++++++++++++++++++++-------------------------
+ 1 file changed, 33 insertions(+), 34 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 43a8c48..86bb0d7 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -403,36 +403,36 @@ macro_log_feature(ZLIB_FOUND "zlib" "Compression library" "http://www.zlib.net/"
+ macro_bool_to_01(ZLIB_FOUND HAVE_ZLIB)
+ 
+ 
+-macro_optional_find_package(OpenEXR)
+-macro_log_feature(OPENEXR_FOUND "OpenEXR" "High dynamic-range (HDR) image file format" "http://www.openexr.com" FALSE "" "Required by the Krita OpenEXR filter")
+-macro_bool_to_01(OPENEXR_FOUND HAVE_OPENEXR)
+-set(LINK_OPENEXR_LIB)
+-if(OPENEXR_FOUND)
+-    include_directories(SYSTEM ${OPENEXR_INCLUDE_DIR})
+-    set(LINK_OPENEXR_LIB ${OPENEXR_LIBRARIES})
+-    add_definitions(${OPENEXR_DEFINITIONS})
+-endif()
+-
+-macro_optional_find_package(TIFF)
+-macro_log_feature(TIFF_FOUND "tiff" "TIFF Library and Utilities" "http://www.remotesensing.org/libtiff" FALSE "" "Required by the Krita TIFF filter")
+-
+-macro_optional_find_package(JPEG)
+-macro_log_feature(JPEG_FOUND "jpeg" "Free library for JPEG image compression. Note: libjpeg8 is NOT supported." "http://www.libjpeg-turbo.org" FALSE "" "Required by the Krita JPEG filter")
+-
+-macro_optional_find_package(OpenJPEG)
+-macro_log_feature(OPENJPEG_FOUND "openjpeg" "Free library for JPEG 2000 image compression" "http://www.openjpeg.org" FALSE "" "Required by the Krita JPEG 2000 filter")
+-
+-set(LIBRAW_MIN_VERSION  "0.16")
+-macro_optional_find_package(LibRaw ${LIBRAW_MIN_VERSION})
+-macro_log_feature(LIBRAW_FOUND "LibRaw" "Library to decode RAW images" "http://www.libraw.org" FALSE "" "Required to build the raw import plugin")
+-
+-macro_optional_find_package(FFTW3)
+-macro_log_feature(FFTW3_FOUND "FFTW3" "A fast, free C FFT library" "http://www.fftw.org/" FALSE "" "Required by the Krita for fast convolution operators and some G'Mic features")
+-macro_bool_to_01(FFTW3_FOUND HAVE_FFTW3)
+-
+-macro_optional_find_package(OCIO)
+-macro_log_feature(OCIO_FOUND "OCIO" "The OpenColorIO Library" "http://www.opencolorio.org" FALSE "" "Required by the Krita LUT docker")
+-macro_bool_to_01(OCIO_FOUND HAVE_OCIO)
++#macro_optional_find_package(OpenEXR)
++#macro_log_feature(OPENEXR_FOUND "OpenEXR" "High dynamic-range (HDR) image file format" "http://www.openexr.com" FALSE "" "Required by the Krita OpenEXR filter")
++#macro_bool_to_01(OPENEXR_FOUND HAVE_OPENEXR)
++#set(LINK_OPENEXR_LIB)
++#if(OPENEXR_FOUND)
++#    include_directories(SYSTEM ${OPENEXR_INCLUDE_DIR})
++#    set(LINK_OPENEXR_LIB ${OPENEXR_LIBRARIES})
++#    add_definitions(${OPENEXR_DEFINITIONS})
++#endif()
++
++#macro_optional_find_package(TIFF)
++#macro_log_feature(TIFF_FOUND "tiff" "TIFF Library and Utilities" "http://www.remotesensing.org/libtiff" FALSE "" "Required by the Krita TIFF filter")
++#
++#macro_optional_find_package(JPEG)
++#macro_log_feature(JPEG_FOUND "jpeg" "Free library for JPEG image compression. Note: libjpeg8 is NOT supported." "http://www.libjpeg-turbo.org" FALSE "" "Required by the Krita JPEG filter")
++#
++#macro_optional_find_package(OpenJPEG)
++#macro_log_feature(OPENJPEG_FOUND "openjpeg" "Free library for JPEG 2000 image compression" "http://www.openjpeg.org" FALSE "" "Required by the Krita JPEG 2000 filter")
++#
++#set(LIBRAW_MIN_VERSION  "0.16")
++#macro_optional_find_package(LibRaw ${LIBRAW_MIN_VERSION})
++#macro_log_feature(LIBRAW_FOUND "LibRaw" "Library to decode RAW images" "http://www.libraw.org" FALSE "" "Required to build the raw import plugin")
++#
++#macro_optional_find_package(FFTW3)
++#macro_log_feature(FFTW3_FOUND "FFTW3" "A fast, free C FFT library" "http://www.fftw.org/" FALSE "" "Required by the Krita for fast convolution operators and some G'Mic features")
++#macro_bool_to_01(FFTW3_FOUND HAVE_FFTW3)
++##
++#macro_optional_find_package(OCIO)
++#macro_log_feature(OCIO_FOUND "OCIO" "The OpenColorIO Library" "http://www.opencolorio.org" FALSE "" "Required by the Krita LUT docker")
++#macro_bool_to_01(OCIO_FOUND HAVE_OCIO)
+ 
+ ##
+ ## Look for OpenGL
+@@ -454,7 +454,7 @@ macro_log_feature(EIGEN3_FOUND "Eigen" "C++ template library for linear algebra"
+ ## Test for exiv2
+ ##
+ set(EXIV2_MIN_VERSION "0.16")
+-find_package(Exiv2 REQUIRED)
++find_package(LibExiv2 REQUIRED)
+ macro_log_feature(EXIV2_FOUND "Exiv2" "Image metadata library and tools" "http://www.exiv2.org" FALSE "0.16" "Required by Krita")
+ 
+ ##
+@@ -673,9 +673,9 @@ calligra_drop_unbuildable_products()
+ ####################
+ ###################
+ 
+-if(SHOULD_BUILD_APP_KRITA)
++
+   add_subdirectory(krita)
+-endif()
++
+ 
+ # non-app directories are moved here because they can depend on SHOULD_BUILD_{appname} variables set above
+ add_subdirectory(libs)
+@@ -691,6 +691,5 @@ calligra_log_should_build()
+ configure_file(KoConfig.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/KoConfig.h )
+ configure_file(config_convolution.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config_convolution.h)
+ configure_file(config-ocio.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-ocio.h )
+-
+ check_function_exists(powf HAVE_POWF)
+ configure_file(config-powf.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-powf.h)
+-- 
+2.33.1
+
