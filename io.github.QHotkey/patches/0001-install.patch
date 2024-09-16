@@ -1,0 +1,48 @@
+From ec6593e82ff8af431ad936c1483c0b82a6a13ad0 Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Sun, 5 Nov 2023 16:52:41 +0800
+Subject: [install.patch_] install
+
+---
+ HotkeyTest.desktop        |  7 +++++++
+ HotkeyTest/HotkeyTest.pro | 13 +++++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 HotkeyTest.desktop
+
+diff --git a/HotkeyTest.desktop b/HotkeyTest.desktop
+new file mode 100644
+index 0000000..c093f8e
+--- /dev/null
++++ b/HotkeyTest.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=HotkeyTest
++GenericName=HotkeyTest
++Hidden=false
++Name=HotkeyTest
++StartupNotify=false
++Type=Application
+diff --git a/HotkeyTest/HotkeyTest.pro b/HotkeyTest/HotkeyTest.pro
+index a43f662..d4fd4dd 100644
+--- a/HotkeyTest/HotkeyTest.pro
++++ b/HotkeyTest/HotkeyTest.pro
+@@ -19,3 +19,16 @@ SOURCES += main.cpp\
+ HEADERS  += hottestwidget.h
+ 
+ FORMS    += hottestwidget.ui
++
++
++unix: {
++
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = ../HotkeyTest.desktop
++INSTALLS += unix_desktop
++
++
++}
+-- 
+2.33.1
+

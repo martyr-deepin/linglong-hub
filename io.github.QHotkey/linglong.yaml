@@ -1,0 +1,24 @@
+package:
+  id: io.github.QHotkey
+  name: QHotkey
+  version: 1.5.0
+  kind: app
+  description: |
+    A global shortcut/hotkey for Desktop Qt-Applications.  
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+
+source:
+  kind: git 
+  url: "https://github.com/Skycoder42/QHotkey.git"
+  commit: cd72a013275803fce33e028fc8b05ae32248da1f
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
+
+      
