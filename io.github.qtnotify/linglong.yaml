@@ -1,0 +1,20 @@
+package:
+  id: io.github.qtnotify
+  name: qtnotify
+  version: 0.0.1
+  kind: app
+  description: |
+    Simple notifications for qt apps
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/cassfrontend/qt-notify.git"
+  commit: a20a47a815c040f0bf5c903cc17e54519a59840f
+  patch: patches/install.patch
+
+build:
+  kind: qmake
