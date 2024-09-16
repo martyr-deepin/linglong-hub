@@ -1,0 +1,18 @@
+package:
+  id: com.gitee.gwzd-qt-software
+  name: gwzd-qt-software
+  version: 1.0.0
+  kind: app
+  description: |
+    内部上位机调试软件
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/liukuansir/gwzd-qt-software.git"
+  commit: 89cdc2f
+  patch: patches/ab.patch
+build:
+  kind: qmake
