@@ -1,0 +1,20 @@
+package:
+  id: cmark-gfm
+  name: cmark-gfm
+  version: 0.29.0
+  kind: lib
+  description: |
+     GitHub's fork of cmark, a CommonMark parsing and rendering library and program in C
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/github/cmark-gfm.git
+  commit: 587a12bb54d95ac37241377e6ddc93ea0e45439b 
+
+
+build:
+  kind: cmake
