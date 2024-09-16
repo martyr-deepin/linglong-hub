@@ -1,0 +1,19 @@
+package:
+  id: com.gitee.pushing-the-box
+  name: pushing-the-box
+  version: 1.0.0
+  kind: app
+  description: |
+    基于Qt的推箱子小游戏
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/ltcctl/pushing-the-box.git"
+  commit: ebed52d
+  patch: patches/ab.patch
+build:
+  kind: qmake
