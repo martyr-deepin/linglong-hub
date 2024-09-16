@@ -1,0 +1,39 @@
+--- ../CMakeLists.txt	2023-11-29 15:08:51.026874000 +0800
++++ ../CMakeLists.txt	2023-11-29 15:19:52.512904255 +0800
+@@ -13,7 +13,7 @@
+ set(CMAKE_CXX_STANDARD 11)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
+-find_package(Qt6 COMPONENTS Widgets Svg Xml LinguistTools REQUIRED)
++find_package(Qt5 COMPONENTS Widgets Svg Xml LinguistTools REQUIRED)
+ 
+ set (PICONPICKER_CPP_FILES
+     main.cpp
+@@ -79,18 +79,16 @@
+     set (LIB_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}") # "lib" or "lib64"
+     pmusic_convert_to_relative_path(LIB_INSTALL_DIR)
+ 
+-    # install icon
+-    install (
+-        FILES icons/app-icon.svg
+-        DESTINATION "${CMAKE_INSTALL_DATADIR}/icons/hicolor/48x48/apps"
+-        RENAME pineapple-icon-picker.svg
+-    )
++    # 写入desktop
++    set(DESKTOP_FILE_CONTENT "
++[Desktop Entry]
++Type=Application
++Name=pmusic
++Exec=pmusic
++Categories=Utility;
++")
++    file(WRITE ${CMAKE_INSTALL_PREFIX}/share/applications/pineapple-icon-picker.desktop "${DESKTOP_FILE_CONTENT}")
+ 
+-    # install shortcut
+-    install (
+-        FILES pineapple-icon-picker.desktop
+-        DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/applications"
+-    )
+ endif()
+ 
+ set (INSTALL_TARGETS_DEFAULT_ARGS

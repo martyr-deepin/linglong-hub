@@ -1,0 +1,20 @@
+package:
+  id: io.github.pineapple-icon-picker
+  name: pineapple-icon-picker
+  version: 1.0.1
+  kind: app
+  description: |
+    bridge between SVG iconfont & design software.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/BLumia/pineapple-icon-picker.git
+  commit: b25bf6a5de84771e30d9eab025113b6b9d1d87ed
+  patch: patches/fix-001.patch
+
+build:
+  kind: cmake
