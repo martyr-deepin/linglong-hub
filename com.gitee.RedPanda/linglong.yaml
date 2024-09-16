@@ -1,0 +1,20 @@
+package:
+  id: io.gitee.RedPanda-CPP
+  name: RedPanda-CPP
+  version: 0.0.1
+  kind: app
+  description: |
+    RedPanda-CPP.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://gitee.com/royqh1979/RedPanda-CPP.git"
+  commit: eda8611
+
+build:
+  kind: qmake
