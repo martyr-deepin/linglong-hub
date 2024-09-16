@@ -1,0 +1,30 @@
+diff -Naur b/coreavor.desktop a/coreavor.desktop
+--- b/coreavor.desktop	2023-12-10 18:11:05.976125238 +0800
++++ a/coreavor.desktop	2023-12-10 18:18:28.710230939 +0800
+@@ -1,9 +1,9 @@
+ [Desktop Entry]
+ Type=Application
+ Name=Coreavor
+-Icon=/usr/share/icons/coreavor.png
++Icon=coreavor.png
+ Comment=A simple Image Viewer
+-Exec=/usr/local/bin/Coreavor %U
+-TryExec=/usr/local/bin/Coreavor
++Exec=Coreavor
++TryExec=Coreavor
+ Terminal=false
+ MimeType=image/png;image/gif;image/jpg;
+diff -Naur b/Coreavor.pro a/Coreavor.pro
+--- b/Coreavor.pro	2023-12-10 18:11:05.976125238 +0800
++++ a/Coreavor.pro	2023-12-10 18:12:21.960487948 +0800
+@@ -27,8 +27,8 @@
+ clang-format.commands += find . -regex \'.*\\.\\(cpp\\|hpp\\|cu\\|c\\|h\\)\' -exec clang-format -style=file -i {} \;
+ QMAKE_EXTRA_TARGETS += clang-format
+ 
+-target.path = /usr/local/bin
+-desktop.path = /usr/share/applications
++target.path = $$PREFIX/bin
++desktop.path = $$PREFIX/share/applications
+ desktop.files += coreavor.desktop
+ 
+ INSTALLS += target desktop
