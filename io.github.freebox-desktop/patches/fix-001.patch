@@ -1,0 +1,31 @@
+--- ../mafreebox.pro	2023-10-29 17:42:53.710420000 +0800
++++ ../mafreebox.pro	2023-11-20 21:50:41.532335088 +0800
+@@ -43,3 +43,28 @@
+     assets/license.html \
+     myapp.rc
+ 
++
++# desktop指定
++DESKTOP_FILE = ./freebox-desktop.desktop
++system("echo '[Desktop Entry]' > $$DESKTOP_FILE")
++system("echo 'Version=0.1.1' >> $$DESKTOP_FILE")
++system("echo 'Type=Application' >> $$DESKTOP_FILE")
++system("echo 'Name=freebox-desktop' >> $$DESKTOP_FILE")
++system("echo 'Comment=freebox-desktop.' >> $$DESKTOP_FILE")
++system("echo 'Exec=$$PREFIX/bin/freebox-desktop' >> $$DESKTOP_FILE")
++system("echo 'Icon=myappico' >> $$DESKTOP_FILE")
++system("echo 'Terminal=false' >> $$DESKTOP_FILE")
++system("echo 'Categories=Utility;' >> $$DESKTOP_FILE")
++
++desktop.files += $$DESKTOP_FILE
++desktop.path = $$PREFIX/share/applications
++INSTALLS += desktop
++
++# bin文件指定
++target.path = $$PREFIX/bin
++INSTALLS += target
++
++icon.files = $$PWD/myappico.ico
++icon.path = $$PREFIX/share/icons/freebox-desktop/
++INSTALLS += icon
++
