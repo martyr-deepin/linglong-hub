@@ -1,0 +1,36 @@
+diff -Naur b/qt-magic-wand-tool.desktop a/qt-magic-wand-tool.desktop
+--- b/qt-magic-wand-tool.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/qt-magic-wand-tool.desktop	2023-12-02 14:18:51.866988228 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=qt-magic-wand-tool
++Exec=qt-magic-wand-tool
++Type=Application
+diff -Naur b/qt-magic-wand-tool.pro a/qt-magic-wand-tool.pro
+--- b/qt-magic-wand-tool.pro	2023-12-02 14:17:33.188058599 +0800
++++ a/qt-magic-wand-tool.pro	2023-12-02 14:24:18.202780152 +0800
+@@ -4,9 +4,23 @@
+ 
+ DEFINES += QT_DEPRECATED_WARNINGS
+ 
++TARGET = qt-magic-wand-tool
++TEMPLATE = app
++
+ SOURCES += src/area.cpp
+ SOURCES += src/main.cpp
+ SOURCES += src/mainwindow.cpp
+ 
+ HEADERS += src/area.h
+ HEADERS += src/mainwindow.h
++
++# Default rules for deployment.
++#qnx: target.path = /tmp/$${TARGET}/bin
++#else: unix:!android: target.path = /opt/$${TARGET}/bin
++!isEmpty(target.path): INSTALLS += target
++
++desktop.files += qt-magic-wand-tool.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
++
++INSTALLS += target desktop
+\ 文件尾没有换行符
