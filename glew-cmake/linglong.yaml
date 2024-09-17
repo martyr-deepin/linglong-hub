@@ -1,0 +1,16 @@
+package:
+  id: glew-cmake
+  name: glew-cmake
+  version: 2.2.0.3
+  kind: lib
+  description: |
+    GLEW is upstream of this project. But GLEW repository does not contain generated sources. Only releases include generated sources.
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+source:
+  kind: git
+  url: https://github.com/Perlmint/glew-cmake.git
+  commit: b9f61b43b2fd045a38dd50d2fd34a6f7abf4a32c
+build:
+  kind: cmake
