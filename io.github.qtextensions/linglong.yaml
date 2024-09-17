@@ -1,0 +1,23 @@
+package:
+  id: io.github.qtextensions
+  name: qtextensions
+  version: 0.0.1
+  kind: app
+  description: |
+    qtExtensions is an open source collection of utility classes and tools for Qt.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: icu
+    version: 63.1
+    type: runtime
+
+source:
+  kind: git
+  url: "https://github.com/Kitware/qtextensions.git"
+  commit: 0ff5b486f08435c8cdfbc9f05d2f104f63b16aed
+build:
+  kind: cmake
