@@ -1,0 +1,46 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 90b47c2..11f5110 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -38,18 +38,17 @@ target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Network
+ )
+ 
+ # 设置安装路径的前缀(默认为"/usr/local")
+-set(CMAKE_INSTALL_PREFIX "/usr")
++
+ 
+ # 设置执行 make install 时哪个目标应该被 install 到哪个位置
+-install(TARGETS ${PROJECT_NAME} 
+-    DESTINATION /usr/share/youwant/linux-module-view/)
++install(TARGETS linux-module-view DESTINATION bin)
+ # CMAKE_INSTALL_PREFIX + "bin" --> /usr/bin
+ 
+-install(FILES linux-module-view.jpg
+-    DESTINATION share/youwant/linux-module-view/icon)
++install(FILES linux-module-view.jpg DESTINATION share/youwant/linux-module-view/icon)
++
++install(PROGRAMS linux-module-view.desktop DESTINATION share/applications)
++
+ 
+-install(FILES linux-module-view.desktop
+-    DESTINATION share/applications)
+ 
+ 
+ find_package(DebPackage PATHS ${CMAKE_SOURCE_DIR})
+diff --git a/linux-module-view.desktop b/linux-module-view.desktop
+index 9bf1f42..276311c 100644
+--- a/linux-module-view.desktop
++++ b/linux-module-view.desktop
+@@ -3,9 +3,9 @@ Version=1.0
+ Name=Linux 驱动信息查看器
+ Comment=查看系统当前加载的驱动信息
+ Type=Application
+-Exec=/usr/share/youwant/linux-module-view/linux-module-view
++Exec=linux-module-view
+ Icon=/usr/share/youwant/linux-module-view/icon/linux-module-view.jpg
+ Categories=Development
+-Keywords=
++
+ 
+ # Generated from the DesktopGenerater component of the z-Tools toolkit
+\ No newline at end of file
