@@ -14,7 +14,7 @@ source:
   kind: git
   url: "https://github.com/188080501/JQTools.git"
   commit: 4c901a0671c0610f63bf38070d6674ef9bf00ef1
-  patch: patches/install.patch
+  patch: patches/0001-install.patch
 
 build:
   kind: qmake

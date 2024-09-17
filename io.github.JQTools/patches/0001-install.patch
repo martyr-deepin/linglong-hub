@@ -1,3 +1,14 @@
+From 7fa65076ed6a96d0acc7c97a782d5aece77655ff Mon Sep 17 00:00:00 2001
+From: aizhuzhudegua <1648476050@qq.com>
+Date: Sun, 5 Nov 2023 14:25:38 +0800
+Subject: [install.patch_] install
+
+---
+ JQTools.desktop |  7 +++++++
+ JQTools.pro     | 12 ++++++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 JQTools.desktop
+
 diff --git a/JQTools.desktop b/JQTools.desktop
 new file mode 100644
 index 0000000..d28631b
@@ -33,3 +44,6 @@ index 3644228..8d97d2b 100644
 +
 +}
 \ No newline at end of file
+-- 
+2.33.1
+
