@@ -1,0 +1,20 @@
+package:
+  id: io.github.TexasSolver 
+  name: TexasSolver 
+  version: 0.2.0
+  kind: app
+  description: |
+    A open sourced, extremely efficient Texas Hold'em and short deck solver.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/bupticybee/TexasSolver.git
+  commit: 7d912fc3025df6eaab102d01682a2acc4736e436
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

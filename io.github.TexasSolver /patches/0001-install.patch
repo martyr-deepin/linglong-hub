@@ -1,0 +1,49 @@
+From 9e08255ffe0f1c5b794beefe1797cfe5d139c8f4 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Mon, 20 Nov 2023 21:29:36 +0800
+Subject: [install.patch_] install
+
+---
+ TexasSolverGui.desktop |  7 +++++++
+ TexasSolverGui.pro     | 13 +++++++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 TexasSolverGui.desktop
+
+diff --git a/TexasSolverGui.desktop b/TexasSolverGui.desktop
+new file mode 100644
+index 0000000..7c86e0d
+--- /dev/null
++++ b/TexasSolverGui.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=TexasSolverGui
++Exec=TexasSolverGui
++Terminal=false
++Icon=texassolver_logo
+\ No newline at end of file
+diff --git a/TexasSolverGui.pro b/TexasSolverGui.pro
+index c932ba6..0aa2f21 100644
+--- a/TexasSolverGui.pro
++++ b/TexasSolverGui.pro
+@@ -200,3 +200,16 @@ FORMS += \
+ RESOURCES += \
+     translations.qrc \
+     compairer.qrc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = TexasSolverGui.desktop
++INSTALLS += unix_desktop
++
++unix_icons.path = $${PREFIX}/share/icons
++unix_icons.files = imgs/texassolver_logo.png
++INSTALLS += unix_icons
++}
+-- 
+2.33.1
+
