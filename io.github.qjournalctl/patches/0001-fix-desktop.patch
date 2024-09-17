@@ -1,0 +1,35 @@
+From cef38aee36c5ffa28f959be22055e364222122a5 Mon Sep 17 00:00:00 2001
+From: van <751890223@qq.com>
+Date: Mon, 15 Apr 2024 20:45:20 +0800
+Subject: [PATCH] fix-desktop
+
+---
+ qjournalctl.pro | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/qjournalctl.pro b/qjournalctl.pro
+index 4f9ea0f..ecc4edf 100644
+--- a/qjournalctl.pro
++++ b/qjournalctl.pro
+@@ -64,14 +64,14 @@ RESOURCES += \
+ # This prevents qmake from failing when trying to install
+ # the desktop environment files
+ QMAKE_STRIP = echo
+-target.path = /usr/bin
++target.path = $$PREFIX/bin
+ 
+ # Desktop environment files
+-desktop-file.path = /usr/share/applications
++desktop-file.path = $$PREFIX/share/applications
+ desktop-file.files += ui/qjournalctl.desktop
+-desktop-icon.path = /usr/share/pixmaps
++desktop-icon.path = $$PREFIX/share/icons
+ desktop-icon.files += ui/qjournalctl.png
+-metainfo-file.path = /usr/share/metainfo
++metainfo-file.path = $$PREFIX/share/metainfo
+ metainfo-file.files += qjournalctl.appdata.xml
+ 
+ INSTALLS += target desktop-file desktop-icon metainfo-file
+-- 
+2.33.1
+
