@@ -1,39 +1,36 @@
+version: "5.13.0"
+
 package:
   id: org.dde.calendar
   name: "dde-calendar"
-  version: 5.13.0
+  version: 5.13.0.0
   kind: app
   description: |
     calendar for deepin os.
 
-runtime:
-  id: org.deepin.Runtime
-  version: 23.0.0
+base: org.deepin.foundation/20.0.0.10
 
-depends:
-  - id: "dde-qt-dbus-factory"
-    version: 5.5.12
-    type: runtime
-  - id: icu
-    version: 63.1
-    type: runtime
-  - id: xcb-util
-    version: 0.3.8.1
-    type: runtime
-  - id: libical3
-    version: 3.0.4
-    type: runtime
+runtime: org.deepin.Runtime/20.0.0.7
 
-source:
-  kind: git
-  url: https://github.com/linuxdeepin/dde-calendar.git
-  commit: 63a7516a3521a1aa6c3b82d4f17666d46820c0d6
+sources:
+  - kind: git
+    url: https://github.com/linuxdeepin/dde-calendar
+    commit: 5.12.3
 
-build:
-  kind: cmake
-  manual:
-    configure: |
-      cmake -B ${build_dir} ${conf_args} \
-        -DVERSION=${VERSION} \
-        -DEXEC_DDE_CALENDAR="/usr/bin/ll-cli run org.dde.calendar --exec dde-calendar" \
-        -DEXEC_DDE_CALENDAR_SERVICE="/usr/bin/ll-cli run org.dde.calendar --exec /opt/apps/org.dde.calendar/files/libexec/deepin-daemon/dde-calendar-service"
+build: |
+  set -x
+  bash tools/deb-source.bash linglong/pool "$PREFIX"
+  SYSTEM_PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/lib/${TRIPLET}/pkgconfig:/usr/share/pkgconfig
+  RUNTIME_PKG_CONFIG_PATH=/runtime/lib/pkgconfig:/runtime/lib/${TRIPLET}/pkgconfig:/runtime/share/pkgconfig
+  APP_PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig:$PREFIX/lib/${TRIPLET}/pkgconfig:$PREFIX/share/pkgconfig
+  export PKG_CONFIG_PATH=$SYSTEM_PKG_CONFIG_PATH:$RUNTIME_PKG_CONFIG_PATH:$APP_PKG_CONFIG_PATH
+  export LIBRARY_PATH=/runtime/lib:$PREFIX/lib:$PREFIX/lib/${TRIPLET}:$LIBRARY_PATH
+  export LD_LIBRARY_PATH=/runtime/lib:/runtime/lib/${TRIPLET}:$LD_LIBRARY_PATH
+
+  cmake -S linglong/sources/dde-calendar -B build_dir ${conf_args} \
+    -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
+    -DVERSION=${VERSION} \
+    -DEXEC_DDE_CALENDAR="/usr/bin/ll-cli run org.dde.calendar --exec dde-calendar" \
+    -DEXEC_DDE_CALENDAR_SERVICE="/usr/bin/ll-cli run org.dde.calendar --exec /opt/apps/org.dde.calendar/files/libexec/deepin-daemon/dde-calendar-service"
+  cd build_dir
+  make -j8 && make install
