@@ -1,0 +1,20 @@
+package:
+  id: io.github.WordClockWidget
+  name: WordClockWidget
+  version: 0.0.1
+  kind: app
+  description: |
+    Word clock brings you a new way to read the time on your Linux desktop.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/eboateng25/WordClockWidget.git"
+  commit: eff4d48abb291f2dbfc8f3f8d442e33deb24ac86
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

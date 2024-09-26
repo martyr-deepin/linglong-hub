@@ -1,0 +1,51 @@
+From b3684ec42277e796ba57fccb6ceed862f832334a Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Mon, 6 Nov 2023 10:52:33 +0800
+Subject: [install.patch_] install
+
+---
+ ClockV2.desktop | 6 ++++++
+ ClockV2.pro     | 9 ++++++++-
+ 2 files changed, 14 insertions(+), 1 deletion(-)
+ create mode 100644 ClockV2.desktop
+
+diff --git a/ClockV2.desktop b/ClockV2.desktop
+new file mode 100644
+index 0000000..a8403a7
+--- /dev/null
++++ b/ClockV2.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=ClockV2
++Exec=ClockV2
++Terminal=false
+\ No newline at end of file
+diff --git a/ClockV2.pro b/ClockV2.pro
+index 1032cd8..1c776d2 100644
+--- a/ClockV2.pro
++++ b/ClockV2.pro
+@@ -1,5 +1,8 @@
+ QT       += core gui
+ 
++TARGET = ClockV2
++TEMPLATE = app
++
+ QMAKE_LFLAGS += -no-pie
+ 
+ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+@@ -22,5 +25,9 @@ FORMS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $${PREFIX}/bin
+ !isEmpty(target.path): INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = ClockV2.desktop
++INSTALLS += unix_desktop
+-- 
+2.33.1
+
