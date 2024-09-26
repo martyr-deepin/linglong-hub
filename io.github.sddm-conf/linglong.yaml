@@ -1,0 +1,30 @@
+package:
+  id: io.github.sddm-conf
+  name: sddm-conf
+  version: 0.2.0
+  kind: app
+  description: |
+    SDDM configuration editor.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: qtilitools
+    version: 0.1.1
+  - id: policykit-1
+    version: 0.105.11.1
+    type: runtime
+
+
+source:
+  kind: git
+  url: https://github.com/qtilities/sddm-conf.git
+  commit: 1666f3d0ea6bf35a3143c9cbd8b9c3157f793aa8
+
+
+build:
+  kind: cmake
+
+
