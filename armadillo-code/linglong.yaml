@@ -1,0 +1,19 @@
+package:
+  id: armadillo-code
+  name: armadillo-code
+  version: 10.8.2
+  kind: lib
+  description: |
+     Armadillo: C++ Library for Linear Algebra & Scientific Computing
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://gitlab.com/conradsnicta/armadillo-code.git
+  commit: 8687f1d6412134c9846b72220740915c2a477236
+
+build:
+  kind: cmake
