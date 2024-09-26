@@ -1,0 +1,20 @@
+package:
+  id: io.github.corekeyboard
+  name: corekeyboard
+  version: 2.5.0
+  kind: app
+  description: |
+    A virtual keyboard for X11 from the CoreApps family.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://gitlab.com/cubocore/coreapps/corekeyboard.git
+  commit: 1b70d3a0114170adef1c77941865f12a6f4e25e7
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
