@@ -1,0 +1,20 @@
+package:
+  id: com.gitee.lilydict
+  name: lilydict
+  version: 1.0.1
+  kind: app
+  description: |
+    百合词典，是一个开源跨平台桌面版词典软件，使用C++开发，图形界面框架库Qt5 QML。
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/lieefu/lilydict.git"
+  commit: 67c5896
+  patch: patches/fix.patch
+
+build:
+  kind: qmake
