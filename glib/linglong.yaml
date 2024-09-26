@@ -1,0 +1,31 @@
+package:
+  id: glib
+  name: glib
+  version: 2.7.8
+  kind: lib
+  description: |
+    GLib is the low-level core library that forms the basis for projects such as GTK and GNOME.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: https://gitlab.gnome.org/GNOME/glib.git
+  commit: e1aef8bfea8b0668417eaaac011b8591cfaf3ffe
+
+
+build:
+  kind: manual
+  manual:
+    configure: |
+      ln -s /usr/lib/x86_64-linux-gnu/gobject-introspection/giscanner/_giscanner.cpython-310-x86_64-linux-gnu.so /usr/lib/x86_64-linux-gnu/gobject-introspection/giscanner/_giscanner.so
+      echo "tempuser:x:$(id -u):$(id -g):,,,:${HOME}:/bin/bash" >> /etc/passwd
+      echo "tempuser:x:$(id -G | cut -d' ' -f 2)" >> /etc/group
+      meson setup _build --prefix=${PREFIX} --libdir=${PREFIX}/lib/${TRIPLET}
+    build: |
+      meson compile -C _build  
+    install: |
+      meson install -C _build 
