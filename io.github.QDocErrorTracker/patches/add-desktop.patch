@@ -1,0 +1,25 @@
+diff --git a/src/QDocErrorTracker.desktop b/src/QDocErrorTracker.desktop
+new file mode 100644
+index 0000000..f454066
+--- /dev/null
++++ b/src/QDocErrorTracker.desktop
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Type=Application
++Name=QDocErrorTracker
++Exec=QDocErrorTracker %f
+diff --git a/src/QDocErrorTracker.pro b/src/QDocErrorTracker.pro
+index 9597930..15b9199 100644
+--- a/src/QDocErrorTracker.pro
++++ b/src/QDocErrorTracker.pro
+@@ -27,3 +27,10 @@ HEADERS  += \
+ FORMS    += \
+     gui.ui \
+     fileselectiondialog.ui
++
++desktop.path = $$PREFIX/share/applications
++desktop.files += QDocErrorTracker.desktop
++INSTALLS += desktop
++
++target.path = $$PREFIX/bin
++INSTALLS += target

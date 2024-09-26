@@ -1,0 +1,25 @@
+package:
+  id: io.github.QDocErrorTracker
+  name: QDocErrorTracker
+  version: 0.0.1
+  kind: app
+  description: |
+    A tool to help Qt developers keep track of issues in the Qt documentation.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://github.com/JKSH/QDocErrorTracker.git"
+  commit: 4f7d6e0dc40c3d8155280c8917aaa9c1b938679d
+  patch:
+    - patches/add-desktop.patch
+
+build:
+  kind: qmake
+  manual :
+    configure: |
+      cd src
+      qmake -makefile ${conf_args} ${extra_args}
