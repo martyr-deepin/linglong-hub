@@ -1,0 +1,24 @@
+diff -Naur b/CuteGammon.desktop a/CuteGammon.desktop
+--- b/CuteGammon.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/CuteGammon.desktop	2023-12-03 19:55:03.083778953 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=CuteGammon
++Exec=CuteGammon
++Type=Application
+\ 文件尾没有换行符
+diff -Naur b/CuteGammon.pro a/CuteGammon.pro
+--- b/CuteGammon.pro	2023-12-03 19:50:14.183957235 +0800
++++ a/CuteGammon.pro	2023-12-03 19:55:41.543749403 +0800
+@@ -37,3 +37,10 @@
+ 
+ RESOURCES += \
+     images.qrc
++
++desktop.files += CuteGammon.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop
++ 
+\ 文件尾没有换行符
