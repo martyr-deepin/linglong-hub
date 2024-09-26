@@ -1,0 +1,20 @@
+diff -Naur b/qnodeseditor.desktop a/qnodeseditor.desktop
+--- b/qnodeseditor.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/qnodeseditor.desktop	2023-12-09 17:23:35.685191406 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=qnodesedtior
++Exec=qnodeseditor
++Type=Application
+diff -Naur b/qnodeseditor.pro a/qnodeseditor.pro
+--- b/qnodeseditor.pro	2023-12-09 17:22:26.186647590 +0800
++++ a/qnodeseditor.pro	2023-12-09 17:24:16.040310686 +0800
+@@ -24,4 +24,8 @@
+     qneport.h \
+     qneconnection.h \
+     qnodeseditor.h
++desktop.files += qnodeseditor.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
+ 
++INSTALLS += target desktop
