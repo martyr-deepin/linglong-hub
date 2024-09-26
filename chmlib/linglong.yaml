@@ -1,0 +1,35 @@
+package:
+  name: chmlib
+  id: chmlib
+  kind: lib
+  version: 0.40.2
+  description:
+    chmlib is a small library designed for accessing MS ITSS files.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+depends:
+  - id: automake/1.16.5
+  - id: libtool/2.4.2
+source:
+  kind: git
+  url: "https://github.com/mhc2910463910/chmlib.git"
+  commit: 9058471237a79855b476ab64048ba6fab4e6b9d8
+variables:
+  build_dir: build_dir
+  conf_args: |
+    --prefix=${PREFIX} \
+    --libdir=${PREFIX}/lib/${TRIPLET}
+  extra_args: |
+  dest_dir: |  
+build:
+  kind: autotools
+  manual: 
+    configure: |
+      CFLAGS="-Wall -O2" LDFLAGS="-L${PREFIX}/lib" ./configure ${conf_args} ${extra_args}
+    build: |
+      make
+    install: |
+      make DESTDIR=${dest_dir} install
