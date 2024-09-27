@@ -1,0 +1,20 @@
+package:
+  id: com.gitee.QT-Tetrix
+  name: QT-Tetrix
+  version: 0.0.1
+  kind: app
+  description: |
+    Qt俄罗斯方块小游戏
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/slowrookie/Qt-Tetrix.git"
+  commit: 1c3eb87
+  patch: patches/fix.patch
+
+build:
+  kind: qmake
