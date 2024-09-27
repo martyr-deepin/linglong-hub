@@ -1,0 +1,21 @@
+package:
+  id: Dice-Rolling-Game 
+  name: Dice-Rolling-Game 
+  version: 0.0.1
+  kind: app
+  description: |
+    A simple game created with QT, based on producer-comsumer model. 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/chrisbutton/Dice-Rolling-Game.git"
+  commit: e66543b
+  patch: patches/ab.patch
+
+build:
+  kind: qmake
