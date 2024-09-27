@@ -1,0 +1,21 @@
+package:
+  id: io.github.4connect 
+  name: 4connect 
+  version: 0.0.1
+  kind: app
+  description: |
+    A GUI-4-Connect game with multiplayer capabilities (tcp and udp) based on Qt 
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/NiWaRe/4connect.git"
+  commit: e90059a
+  patch: patches/ab.patch
+
+build:
+  kind: qmake
