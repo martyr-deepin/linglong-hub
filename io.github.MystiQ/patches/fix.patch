@@ -1,0 +1,13 @@
+diff -Naur MystiQ-o/mystiq.pro MystiQ/mystiq.pro
+--- MystiQ-o/mystiq.pro	2023-12-03 14:07:24.135303000 +0800
++++ MystiQ/mystiq.pro	2023-12-03 14:14:15.646996461 +0800
+@@ -214,3 +214,9 @@
+ 
+ OTHER_FILES +=
+ 
++desktop.files += mystiq.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++
++INSTALLS += target desktop
++
