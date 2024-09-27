@@ -1,0 +1,25 @@
+package:
+  id: pixman
+  name: pixman
+  version: 0.42.0
+  kind: lib
+  description: |
+    This is HarfBuzz, a text shaping library.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: automake/1.16.5
+  - id: pkgconf/2.0.3
+  - id: libtool/2.4.2
+
+source:
+  kind: git
+  url: https://gitlab.freedesktop.org/pixman/pixman.git
+  commit: 8d6d7f44f44744ab43ca4f775b59c618b414033d
+
+
+build:
+  kind: autotools
