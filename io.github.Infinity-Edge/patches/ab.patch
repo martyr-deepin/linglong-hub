@@ -1,0 +1,22 @@
+diff -Naur b/Infinity-Edge.desktop a/Infinity-Edge.desktop
+--- b/Infinity-Edge.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/Infinity-Edge.desktop	2023-12-10 20:15:23.543133049 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=Infinity-Edge
++Exec=Infinity-Edge
++Type=Application
+\ 文件尾没有换行符
+diff -Naur b/Infinity-Edge.pro a/Infinity-Edge.pro
+--- b/Infinity-Edge.pro	2023-12-10 20:14:06.038851323 +0800
++++ a/Infinity-Edge.pro	2023-12-10 20:14:43.866988824 +0800
+@@ -27,3 +27,8 @@
+ FORMS    += infinityedge.ui
+ 
+ QMAKE_CXXFLAGS += -std=c++11
++
++desktop.files += Infinity-Edge.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $${PREFIX}/bin
++INSTALLS += target desktop
+\ 文件尾没有换行符
