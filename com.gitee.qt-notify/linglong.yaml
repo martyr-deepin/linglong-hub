@@ -1,0 +1,18 @@
+package:
+  id: com.gitee.qt-notify
+  name: qt-notify
+  version: 1.0.0
+  kind: app
+  description: |
+    基于Qt的提醒工具
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/cassfrontend/qt-notify.git"
+  commit: a20a47a
+  patch: patches/ab.patch
+build:
+  kind: qmake
