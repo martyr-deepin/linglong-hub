@@ -1,0 +1,21 @@
+package:
+  id: io.github.CookieClicker 
+  name: CookieClicker 
+  version: 0.0.1
+  kind: app
+  description: |
+    A Qt-based game. The original idea belongs to Orteil.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+
+source:
+  kind: git
+  url: "https://github.com/quantumFeline/CookieClicker.git"
+  commit: 069e1c5
+  patch: patches/ab.patch
+
+build:
+  kind: qmake
