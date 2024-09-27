@@ -1,0 +1,20 @@
+package:
+  id: sonivox
+  name: sonivox
+  version: 3.6.12
+  kind: lib
+  description: |
+    This is a Wave Table synthesizer, not using external soundfont files by default but embedded samples.
+
+base:
+  id: org.deepin.base
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/pedrolcl/sonivox.git
+  commit: a8c84f962f6676d1a238f310e83f0888bd88edd2
+
+build:
+  kind: cmake
+
