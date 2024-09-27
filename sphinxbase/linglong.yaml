@@ -1,0 +1,28 @@
+package:
+  id: sphinxbase
+  name: sphinxbase
+  version: 3.0.0
+  kind: lib
+  description: |
+     This package contains the basic libraries shared by the CMU Sphinx trainer and all the Sphinx decoders (Sphinx-II, Sphinx-III, and PocketSphinx), as well as some common utilities for manipulating acoustic feature and audio files.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+source:
+  kind: git
+  url: https://github.com/cmusphinx/sphinxbase.git
+  commit: 617e53691889336a482631380f75b453445d0dae 
+
+variables:
+  extra_args: |
+     PYTHON=python3.10
+
+depends:
+  - id: automake/1.16.5
+  - id: python/3.10.13.0
+  - id: swig/8.3.0
+  - id: libtool/2.4.6
+
+build:
+  kind: autotools
