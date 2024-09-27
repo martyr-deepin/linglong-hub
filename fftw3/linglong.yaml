@@ -1,0 +1,27 @@
+package:
+  id: fftw3
+  name: fftw3
+  version: 3.3.10
+  kind: lib
+  description: |
+   FFTW is a C subroutine library for computing the discrete Fourier transform (DFT) in one or more dimensions, of arbitrary input size, and of both real and complex data (as well as of even/odd data, i.e. the discrete cosine/sine transforms or DCT/DST).
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: automake
+    version: 1.16.5
+
+source:
+  kind: archive
+  url: https://fftw.org/fftw-3.3.10.tar.gz
+  digest: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+build:
+  kind: autotools
+  manual:
+    configure: |
+      cd fftw-3.3.10
+      ./configure ${conf_args} ${extra_args}
