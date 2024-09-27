@@ -1,0 +1,23 @@
+package:
+  id: io.githun.linuxdeployqt
+  name: linuxdeployqt
+  version: 0.0.1
+  kind: app
+  description: |
+    This Linux Deployment Tool, linuxdeployqt, takes an application as input and makes it self-contained by copying in the resources that the application uses (like libraries, graphics, and plugins) into a bundle.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+depends:
+  - id: icu
+    version: 63.1
+    type: runtime
+
+source:
+  kind: git
+  url: "https://github.com/probonopd/linuxdeployqt.git"
+  commit: 2b38449ca9e9c68ad53e28531c017910ead6ebc4
+build:
+  kind: qmake
