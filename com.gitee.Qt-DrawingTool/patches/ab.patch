@@ -1,0 +1,25 @@
+diff -Naur b/DrawingTool.pro a/DrawingTool.pro
+--- b/DrawingTool.pro	2023-12-02 17:46:17.054387970 +0800
++++ a/DrawingTool.pro	2023-12-02 17:49:23.636907604 +0800
+@@ -44,6 +44,11 @@
+ FORMS +=
+ 
+ # Default rules for deployment.
+-qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++#qnx: target.path = /tmp/$${TARGET}/bin
++#else: unix:!android: target.path = /opt/$${TARGET}/bin
+ !isEmpty(target.path): INSTALLS += target
++desktop.files += Qt-DrawingTool.desktop
++desktop.path = $${PREFIX}/share/applications
++target.path = $$(PREFIX)/bin
++
++INSTALLS += target desktop
+diff -Naur b/Qt-DrawingTool.desktop a/Qt-DrawingTool.desktop
+--- b/Qt-DrawingTool.desktop	1970-01-01 08:00:00.000000000 +0800
++++ a/Qt-DrawingTool.desktop	2023-12-02 17:51:46.099778516 +0800
+@@ -0,0 +1,4 @@
++[Desktop Entry]
++Name=Qt-DrawingTool
++Exec=DrawingTool
++Type=Application
